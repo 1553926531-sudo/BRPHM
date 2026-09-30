@@ -1,0 +1,24 @@
+{
+  "final_method": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+  "formal_fold_count": 6,
+  "all_rmse_and_mae_deltas_nonpositive": true,
+  "receipt_sha256": "b99ed8a3d2f168483f1072e7363fe1793a08708c16693ea6ba59e29bf03631f1",
+  "pdf_bytes": {
+    "en/main.pdf": 118860,
+    "zh/main.pdf": 164032
+  },
+  "docx_bytes": {
+    "en/paper_en.docx": 253936,
+    "zh/paper_zh.docx": 254143
+  },
+  "provenance": {
+    "canonical_data_modified": false,
+    "competition_line_modified": false,
+    "sealed_holdout_read": false,
+    "a1_b1_source_heldout_read": false,
+    "holdout_used_for_training_or_selection": false,
+    "outer_test_used_for_selection": false,
+    "outer_evaluated_once": true,
+    "population_generalization_verified": false
+  }
+}

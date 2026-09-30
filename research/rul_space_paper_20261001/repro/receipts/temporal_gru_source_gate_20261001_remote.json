@@ -1,0 +1,798 @@
+{
+  "schema": "brphm-temporal-gru-source-gate-20261001",
+  "method_id": "source_only_temporal_gru_unit_weighted",
+  "execution_complete": true,
+  "source_protocol": {
+    "directions": [
+      "LEO500->LEO550",
+      "LEO500->LEO700",
+      "LEO550->LEO500",
+      "LEO550->LEO700",
+      "LEO700->LEO500",
+      "LEO700->LEO550"
+    ],
+    "residual_pairs": [
+      "LEO500<->LEO550",
+      "LEO500<->LEO700",
+      "LEO550<->LEO700"
+    ],
+    "fit_scope": "one registered source orbit at a time; unit-disjoint validation orbit",
+    "normalization": "per-channel mean/std fitted on source windows only",
+    "loss": "unit-balanced SmoothL1 on normalized RUL",
+    "ensemble": "median of three fixed seeds",
+    "input_representation": "source-standardized telemetry",
+    "learner": "two-layer unidirectional GRU with last-state and mean-state pooling",
+    "configuration": {
+      "bat": {
+        "hidden": 32,
+        "layers": 2,
+        "dropout": 0.1,
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "epochs": 70,
+        "postprocess": "isotonic_nonincreasing"
+      },
+      "rwa": {
+        "hidden": 32,
+        "layers": 2,
+        "dropout": 0.1,
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "epochs": 70,
+        "postprocess": "causal_running_min"
+      }
+    }
+  },
+  "components": {
+    "bat": {
+      "input_tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "input_shape": [
+        3681,
+        60,
+        4
+      ],
+      "rmax": 150.0,
+      "controls": {
+        "LEO500->LEO550": {
+          "rmse": 2.310186815924871,
+          "mae": 1.5492044811821677
+        },
+        "LEO500->LEO700": {
+          "rmse": 3.7782273038351253,
+          "mae": 2.4275718135740756
+        },
+        "LEO550->LEO500": {
+          "rmse": 4.842174082890342,
+          "mae": 2.7084681127587644
+        },
+        "LEO550->LEO700": {
+          "rmse": 4.761093785880281,
+          "mae": 3.1608175570645907
+        },
+        "LEO700->LEO500": {
+          "rmse": 6.156910405155991,
+          "mae": 3.7728216224664535
+        },
+        "LEO700->LEO550": {
+          "rmse": 4.184516588392175,
+          "mae": 2.7431020803759703
+        },
+        "LEO500<->LEO550": {
+          "residual_ks": 0.13263559841342057
+        },
+        "LEO500<->LEO700": {
+          "residual_ks": 0.24453693061988957
+        },
+        "LEO550<->LEO700": {
+          "residual_ks": 0.1438721136767318
+        }
+      },
+      "control_diagnostics": {
+        "LEO500->LEO550": {
+          "train_windows": 1377,
+          "valid_windows": 1178,
+          "train_units": 70,
+          "valid_units": 68,
+          "tmax": 354.0,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "median3"
+        },
+        "LEO500->LEO700": {
+          "train_windows": 1377,
+          "valid_windows": 1126,
+          "train_units": 70,
+          "valid_units": 65,
+          "tmax": 354.0,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "median3"
+        },
+        "LEO550->LEO500": {
+          "train_windows": 1178,
+          "valid_windows": 1377,
+          "train_units": 68,
+          "valid_units": 70,
+          "tmax": 384.0,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "median3"
+        },
+        "LEO550->LEO700": {
+          "train_windows": 1178,
+          "valid_windows": 1126,
+          "train_units": 68,
+          "valid_units": 65,
+          "tmax": 384.0,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "median3"
+        },
+        "LEO700->LEO500": {
+          "train_windows": 1126,
+          "valid_windows": 1377,
+          "train_units": 65,
+          "valid_units": 70,
+          "tmax": 364.0,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "median3"
+        },
+        "LEO700->LEO550": {
+          "train_windows": 1126,
+          "valid_windows": 1178,
+          "train_units": 65,
+          "valid_units": 68,
+          "tmax": 364.0,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "median3"
+        }
+      },
+      "candidate_diagnostics": {
+        "source_fits": {
+          "LEO500": {
+            "train_windows": 1377,
+            "train_units": 70,
+            "center": [
+              -0.08641023933887482,
+              0.0,
+              -0.19469843804836273,
+              -0.12271834909915924
+            ],
+            "scale": [
+              0.7769034504890442,
+              9.999999974752427e-07,
+              1.068777084350586,
+              0.8565759062767029
+            ],
+            "seeds": [
+              17,
+              42,
+              73
+            ],
+            "configuration": {
+              "hidden": 32,
+              "layers": 2,
+              "dropout": 0.1,
+              "lr": 0.001,
+              "weight_decay": 0.0001,
+              "epochs": 70,
+              "postprocess": "isotonic_nonincreasing"
+            }
+          },
+          "LEO550": {
+            "train_windows": 1178,
+            "train_units": 68,
+            "center": [
+              -0.07112732529640198,
+              0.0,
+              0.06880562752485275,
+              -0.09020866453647614
+            ],
+            "scale": [
+              0.7720367312431335,
+              9.999999974752427e-07,
+              0.8731663227081299,
+              0.9295669794082642
+            ],
+            "seeds": [
+              17,
+              42,
+              73
+            ],
+            "configuration": {
+              "hidden": 32,
+              "layers": 2,
+              "dropout": 0.1,
+              "lr": 0.001,
+              "weight_decay": 0.0001,
+              "epochs": 70,
+              "postprocess": "isotonic_nonincreasing"
+            }
+          },
+          "LEO700": {
+            "train_windows": 1126,
+            "train_units": 65,
+            "center": [
+              -0.07578356564044952,
+              0.0,
+              0.4095506966114044,
+              0.1947856843471527
+            ],
+            "scale": [
+              0.785925567150116,
+              9.999999974752427e-07,
+              0.9207026362419128,
+              1.1792174577713013
+            ],
+            "seeds": [
+              17,
+              42,
+              73
+            ],
+            "configuration": {
+              "hidden": 32,
+              "layers": 2,
+              "dropout": 0.1,
+              "lr": 0.001,
+              "weight_decay": 0.0001,
+              "epochs": 70,
+              "postprocess": "isotonic_nonincreasing"
+            }
+          }
+        }
+      },
+      "records": [
+        {
+          "direction": "LEO500->LEO550",
+          "metrics": {
+            "rmse": 8.400349067911597,
+            "mae": 6.098668113728773,
+            "bias": -0.5413801763886633,
+            "unit_macro_rmse": 4.993005251398756,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 1178,
+            "n_units": 68
+          },
+          "training_orbit": "LEO500",
+          "validation_orbit": "LEO550"
+        },
+        {
+          "direction": "LEO500->LEO700",
+          "metrics": {
+            "rmse": 8.485101696869494,
+            "mae": 6.439663745631624,
+            "bias": -1.6853858431433963,
+            "unit_macro_rmse": 4.798656757730337,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 1126,
+            "n_units": 65
+          },
+          "training_orbit": "LEO500",
+          "validation_orbit": "LEO700"
+        },
+        {
+          "direction": "LEO550->LEO500",
+          "metrics": {
+            "rmse": 10.892003825386448,
+            "mae": 8.200710018678754,
+            "bias": -4.042027506993552,
+            "unit_macro_rmse": 6.200217134162601,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 1377,
+            "n_units": 70
+          },
+          "training_orbit": "LEO550",
+          "validation_orbit": "LEO500"
+        },
+        {
+          "direction": "LEO550->LEO700",
+          "metrics": {
+            "rmse": 10.545613476563256,
+            "mae": 7.689618846305628,
+            "bias": -4.1130469579309175,
+            "unit_macro_rmse": 5.621452118568132,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 1126,
+            "n_units": 65
+          },
+          "training_orbit": "LEO550",
+          "validation_orbit": "LEO700"
+        },
+        {
+          "direction": "LEO700->LEO500",
+          "metrics": {
+            "rmse": 15.371998676239773,
+            "mae": 10.13587432099843,
+            "bias": -4.293163789513324,
+            "unit_macro_rmse": 7.642522235455372,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 1377,
+            "n_units": 70
+          },
+          "training_orbit": "LEO700",
+          "validation_orbit": "LEO500"
+        },
+        {
+          "direction": "LEO700->LEO550",
+          "metrics": {
+            "rmse": 11.564291862673535,
+            "mae": 7.6930206071772,
+            "bias": 0.24342608147147404,
+            "unit_macro_rmse": 6.782590921638285,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 1178,
+            "n_units": 68
+          },
+          "training_orbit": "LEO700",
+          "validation_orbit": "LEO550"
+        },
+        {
+          "orbit_pair": "LEO500<->LEO550",
+          "residual_ks": 0.20008926666937918
+        },
+        {
+          "orbit_pair": "LEO500<->LEO700",
+          "residual_ks": 0.10390505784578156
+        },
+        {
+          "orbit_pair": "LEO550<->LEO700",
+          "residual_ks": 0.19278995919869002
+        }
+      ],
+      "gate": {
+        "passes": false,
+        "reason_codes": [
+          "control_mae_regression:LEO500->LEO550",
+          "control_mae_regression:LEO500->LEO700",
+          "control_mae_regression:LEO550->LEO500",
+          "control_mae_regression:LEO550->LEO700",
+          "control_mae_regression:LEO700->LEO500",
+          "control_mae_regression:LEO700->LEO550",
+          "control_residual_ks_regression:LEO500<->LEO550",
+          "control_residual_ks_regression:LEO550<->LEO700",
+          "control_rmse_regression:LEO500->LEO550",
+          "control_rmse_regression:LEO500->LEO700",
+          "control_rmse_regression:LEO550->LEO500",
+          "control_rmse_regression:LEO550->LEO700",
+          "control_rmse_regression:LEO700->LEO500",
+          "control_rmse_regression:LEO700->LEO550",
+          "no_strict_component_gain"
+        ],
+        "strict_error_gain": false,
+        "mean_rmse": 10.876559767607352,
+        "mean_mae": 7.709592608753401,
+        "worst_residual_ks": 0.20008926666937918
+      },
+      "selected_candidate_id": null
+    },
+    "rwa": {
+      "input_tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+      "input_shape": [
+        7051,
+        30,
+        13
+      ],
+      "rmax": 0.2,
+      "controls": {
+        "LEO500->LEO550": {
+          "rmse": 0.02156603877372707,
+          "mae": 0.01559733434375087
+        },
+        "LEO500->LEO700": {
+          "rmse": 0.022592618653098532,
+          "mae": 0.01724707592217509
+        },
+        "LEO550->LEO500": {
+          "rmse": 0.021773893093417682,
+          "mae": 0.016662792987564626
+        },
+        "LEO550->LEO700": {
+          "rmse": 0.02268377841941233,
+          "mae": 0.01768441667166894
+        },
+        "LEO700->LEO500": {
+          "rmse": 0.022896349706285256,
+          "mae": 0.016556426962439082
+        },
+        "LEO700->LEO550": {
+          "rmse": 0.021571208871844518,
+          "mae": 0.0159750717713617
+        },
+        "LEO500<->LEO550": {
+          "residual_ks": 0.1270746250307352
+        },
+        "LEO500<->LEO700": {
+          "residual_ks": 0.08983082706766918
+        },
+        "LEO550<->LEO700": {
+          "residual_ks": 0.15067959054262162
+        }
+      },
+      "control_diagnostics": {
+        "LEO500->LEO550": {
+          "train_windows": 2352,
+          "valid_windows": 2324,
+          "train_units": 78,
+          "valid_units": 79,
+          "tmax": 0.7107638888888889,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "mean3"
+        },
+        "LEO500->LEO700": {
+          "train_windows": 2352,
+          "valid_windows": 2375,
+          "train_units": 78,
+          "valid_units": 83,
+          "tmax": 0.7107638888888889,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "mean3"
+        },
+        "LEO550->LEO500": {
+          "train_windows": 2324,
+          "valid_windows": 2352,
+          "train_units": 79,
+          "valid_units": 78,
+          "tmax": 0.6974537037037037,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "mean3"
+        },
+        "LEO550->LEO700": {
+          "train_windows": 2324,
+          "valid_windows": 2375,
+          "train_units": 79,
+          "valid_units": 83,
+          "tmax": 0.6974537037037037,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "mean3"
+        },
+        "LEO700->LEO500": {
+          "train_windows": 2375,
+          "valid_windows": 2352,
+          "train_units": 83,
+          "valid_units": 78,
+          "tmax": 0.6443287037037037,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "mean3"
+        },
+        "LEO700->LEO550": {
+          "train_windows": 2375,
+          "valid_windows": 2324,
+          "train_units": 83,
+          "valid_units": 79,
+          "tmax": 0.6443287037037037,
+          "seeds": [
+            17,
+            42,
+            73
+          ],
+          "aggregation": "mean3"
+        }
+      },
+      "candidate_diagnostics": {
+        "source_fits": {
+          "LEO500": {
+            "train_windows": 2352,
+            "train_units": 78,
+            "center": [
+              -0.3946980834007263,
+              0.21062691509723663,
+              -0.40589281916618347,
+              -0.3289921283721924,
+              -1.141373872756958,
+              0.054287947714328766,
+              -0.9919461607933044,
+              -1.0738794803619385,
+              -0.9445391893386841,
+              -0.17886601388454437,
+              -0.9269167184829712,
+              -0.956822395324707,
+              -0.6632727980613708
+            ],
+            "scale": [
+              0.567391037940979,
+              1.0312087535858154,
+              0.6228553056716919,
+              0.6545564532279968,
+              0.40591445565223694,
+              0.86620032787323,
+              0.48925888538360596,
+              0.5764986276626587,
+              0.3662084639072418,
+              0.6379403471946716,
+              0.3645975887775421,
+              0.3731476366519928,
+              0.6984164714813232
+            ],
+            "seeds": [
+              17,
+              42,
+              73
+            ],
+            "configuration": {
+              "hidden": 32,
+              "layers": 2,
+              "dropout": 0.1,
+              "lr": 0.001,
+              "weight_decay": 0.0001,
+              "epochs": 70,
+              "postprocess": "causal_running_min"
+            }
+          },
+          "LEO550": {
+            "train_windows": 2324,
+            "train_units": 79,
+            "center": [
+              -0.3656288683414459,
+              0.15203841030597687,
+              -0.36252930760383606,
+              -0.3204871714115143,
+              -1.1291019916534424,
+              0.016994774341583252,
+              -0.9702359437942505,
+              -1.0789216756820679,
+              -0.8966642618179321,
+              -0.1930162012577057,
+              -0.878491997718811,
+              -0.9093018770217896,
+              -0.7203859090805054
+            ],
+            "scale": [
+              0.6355252861976624,
+              1.0275607109069824,
+              0.6750673651695251,
+              0.7117369771003723,
+              0.4183919429779053,
+              0.8634105324745178,
+              0.49379226565361023,
+              0.5875308513641357,
+              0.38355085253715515,
+              0.6429387331008911,
+              0.3801000714302063,
+              0.3916885256767273,
+              0.7052294611930847
+            ],
+            "seeds": [
+              17,
+              42,
+              73
+            ],
+            "configuration": {
+              "hidden": 32,
+              "layers": 2,
+              "dropout": 0.1,
+              "lr": 0.001,
+              "weight_decay": 0.0001,
+              "epochs": 70,
+              "postprocess": "causal_running_min"
+            }
+          },
+          "LEO700": {
+            "train_windows": 2375,
+            "train_units": 83,
+            "center": [
+              -0.3907536566257477,
+              0.193781778216362,
+              -0.3971039652824402,
+              -0.33113008737564087,
+              -1.1197099685668945,
+              0.04172743111848831,
+              -0.9688639640808105,
+              -1.0570355653762817,
+              -0.8278990387916565,
+              -0.18996146321296692,
+              -0.8091744780540466,
+              -0.8421024084091187,
+              -0.8188127875328064
+            ],
+            "scale": [
+              0.5772934556007385,
+              1.0304186344146729,
+              0.6300142407417297,
+              0.6627830862998962,
+              0.43022555112838745,
+              0.8706549406051636,
+              0.5028669834136963,
+              0.5990310907363892,
+              0.38161566853523254,
+              0.6483770608901978,
+              0.37810149788856506,
+              0.3900867998600006,
+              0.6905613541603088
+            ],
+            "seeds": [
+              17,
+              42,
+              73
+            ],
+            "configuration": {
+              "hidden": 32,
+              "layers": 2,
+              "dropout": 0.1,
+              "lr": 0.001,
+              "weight_decay": 0.0001,
+              "epochs": 70,
+              "postprocess": "causal_running_min"
+            }
+          }
+        }
+      },
+      "records": [
+        {
+          "direction": "LEO500->LEO550",
+          "metrics": {
+            "rmse": 0.025162302192031073,
+            "mae": 0.018245891375321312,
+            "bias": -0.0042461145757785685,
+            "unit_macro_rmse": 0.01845404419671496,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 2324,
+            "n_units": 79
+          },
+          "training_orbit": "LEO500",
+          "validation_orbit": "LEO550"
+        },
+        {
+          "direction": "LEO500->LEO700",
+          "metrics": {
+            "rmse": 0.02667716026009061,
+            "mae": 0.019666355025915946,
+            "bias": 0.0013474974451788803,
+            "unit_macro_rmse": 0.021553773539994724,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 2375,
+            "n_units": 83
+          },
+          "training_orbit": "LEO500",
+          "validation_orbit": "LEO700"
+        },
+        {
+          "direction": "LEO550->LEO500",
+          "metrics": {
+            "rmse": 0.02708240048898972,
+            "mae": 0.02043149172953477,
+            "bias": -0.007949310079187803,
+            "unit_macro_rmse": 0.02088637031692528,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 2352,
+            "n_units": 78
+          },
+          "training_orbit": "LEO550",
+          "validation_orbit": "LEO500"
+        },
+        {
+          "direction": "LEO550->LEO700",
+          "metrics": {
+            "rmse": 0.024682036349213232,
+            "mae": 0.01869021504849845,
+            "bias": -0.006716075565792791,
+            "unit_macro_rmse": 0.019694341990891876,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 2375,
+            "n_units": 83
+          },
+          "training_orbit": "LEO550",
+          "validation_orbit": "LEO700"
+        },
+        {
+          "direction": "LEO700->LEO500",
+          "metrics": {
+            "rmse": 0.024766214794952817,
+            "mae": 0.018495144384391107,
+            "bias": -0.003924404582232987,
+            "unit_macro_rmse": 0.01917299865985379,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 2352,
+            "n_units": 78
+          },
+          "training_orbit": "LEO700",
+          "validation_orbit": "LEO500"
+        },
+        {
+          "direction": "LEO700->LEO550",
+          "metrics": {
+            "rmse": 0.022703655143683873,
+            "mae": 0.01678574638334608,
+            "bias": -0.0031831459703706142,
+            "unit_macro_rmse": 0.017037746680894188,
+            "rul_upward_fraction": 0.0,
+            "n_windows": 2324,
+            "n_units": 79
+          },
+          "training_orbit": "LEO700",
+          "validation_orbit": "LEO550"
+        },
+        {
+          "orbit_pair": "LEO500<->LEO550",
+          "residual_ks": 0.09776862552249815
+        },
+        {
+          "orbit_pair": "LEO500<->LEO700",
+          "residual_ks": 0.08057447189402077
+        },
+        {
+          "orbit_pair": "LEO550<->LEO700",
+          "residual_ks": 0.10331569888576864
+        }
+      ],
+      "gate": {
+        "passes": false,
+        "reason_codes": [
+          "control_mae_regression:LEO500->LEO550",
+          "control_mae_regression:LEO500->LEO700",
+          "control_mae_regression:LEO550->LEO500",
+          "control_mae_regression:LEO550->LEO700",
+          "control_mae_regression:LEO700->LEO500",
+          "control_mae_regression:LEO700->LEO550",
+          "control_rmse_regression:LEO500->LEO550",
+          "control_rmse_regression:LEO500->LEO700",
+          "control_rmse_regression:LEO550->LEO500",
+          "control_rmse_regression:LEO550->LEO700",
+          "control_rmse_regression:LEO700->LEO500",
+          "control_rmse_regression:LEO700->LEO550",
+          "no_strict_component_gain"
+        ],
+        "strict_error_gain": false,
+        "mean_rmse": 0.02517896153816022,
+        "mean_mae": 0.018719140657834612,
+        "worst_residual_ks": 0.10331569888576864
+      },
+      "selected_candidate_id": null
+    }
+  },
+  "frozen_reference": {
+    "path": "/mnt/data/BRPHM/rul-space/work/augmented_features_isolated_20260929/reference_summary_remote.json",
+    "sha256": "b708df9c448a051b8669c29789f00d282aa7907784e6f99d7e20ef1fb96b6733"
+  },
+  "canonical_data_modified": false,
+  "competition_line_modified": false,
+  "sealed_holdout_read": false,
+  "a1_b1_source_heldout_read": false,
+  "holdout_used_for_training_or_selection": false,
+  "outer_test_used_for_selection": false,
+  "outer_evaluated_once": false,
+  "population_generalization_verified": false,
+  "formal": null,
+  "formal_eligible": false,
+  "next_action": "continue_with_next_candidate",
+  "outer_selection_independent": true
+}
