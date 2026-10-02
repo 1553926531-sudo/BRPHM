@@ -1,0 +1,43 @@
+{
+  "schema": "brphm-paper-upload-manifest-v2",
+  "generated_utc": "2026-10-02T19:12:39Z",
+  "repository": "https://github.com/1553926531-sudo/BRPHM",
+  "target_path": "release/paper_artifacts_20261003/",
+  "release_tree": {
+    "path": "paper_release_20261003",
+    "file_count": 356,
+    "checksum_entries": 355,
+    "checksums_sha256": "7ede649237b7fce8e2af0ee1803b3204428d0d8e1d4e7e787f39cd3579b63354"
+  },
+  "archives": [
+    {
+      "name": "paper_manuscript_20261003.tar.gz",
+      "bytes": 914985,
+      "sha256": "000c07ff6deaa15851266f8fcff72ed9953cebc45d38afb65bbe09917ce059f5"
+    },
+    {
+      "name": "paper_review_evidence_20261003.tar.gz",
+      "bytes": 7530166,
+      "sha256": "8007fe545ad26e2639b8d401cf82bac5fcba7bd6ad61d37edc8aa6f5e3ef60ab"
+    },
+    {
+      "name": "paper_reproduction_20261003.tar.gz",
+      "bytes": 2316880,
+      "sha256": "9e28b621cfc044a01df2b6bd3df556e550a81c53299fc7a899c00efd6efa19a3"
+    }
+  ],
+  "contents": "isolated paper source, PDF, figures, F1-F10 evidence, reproduction scripts and receipts",
+  "excluded": [
+    "ModelScope data files",
+    "private keys",
+    "tokens",
+    "sealed/A1/B1/canonical/production/competition assets",
+    "Python caches",
+    "nested Git repositories"
+  ],
+  "verification": {
+    "secret_scan": "PASS",
+    "forbidden_asset_scan": "PASS",
+    "nested_git_scan": "PASS"
+  }
+}
