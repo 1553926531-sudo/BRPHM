@@ -1,0 +1,49 @@
+{
+  "verified_at_utc": "2026-10-02T21:12:06.897288+00:00",
+  "repository": "https://github.com/1553926531-sudo/BRPHM",
+  "branch": "rul-space-paper-20261001",
+  "commit_sha": "3ceeec01f7fd2bf7bcf58164b98f99c55341665c",
+  "parent_sha": "cb29448a7afa7518eb451b8d9e633f86e434ff35",
+  "commit_message": "Refresh paper artifacts after API verification\n\nReplace all four BRPHM paper release files with the rebuilt 20261003 package whose local evidence ledger records the verified release history.",
+  "api_url": "https://api.github.com/repos/1553926531-sudo/BRPHM/commits/rul-space-paper-20261001",
+  "files": [
+    {
+      "path": "release/paper_artifacts_20261003/paper_manuscript_20261003.tar.gz",
+      "commit_blob_sha": "bfb56a3a2638220d447f51a8042ce32d7ec112a3",
+      "computed_git_blob_sha": "bfb56a3a2638220d447f51a8042ce32d7ec112a3",
+      "blob_match": true,
+      "local_bytes": 915473,
+      "local_sha256": "30e9d26123f5bd9482d0128c91de51e9c47f9dd306d79044d99c25ab60f8125b",
+      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/3ceeec01f7fd2bf7bcf58164b98f99c55341665c/release%2Fpaper_artifacts_20261003%2Fpaper_manuscript_20261003.tar.gz"
+    },
+    {
+      "path": "release/paper_artifacts_20261003/paper_reproduction_20261003.tar.gz",
+      "commit_blob_sha": "2cf3b27f541bcfbc0ebdc2a02b07d5a05d3f5251",
+      "computed_git_blob_sha": "2cf3b27f541bcfbc0ebdc2a02b07d5a05d3f5251",
+      "blob_match": true,
+      "local_bytes": 2357433,
+      "local_sha256": "52955e01dfe56ad928b64bea9c3d6793bc4e00582281e32f531ea88d8f1edf50",
+      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/3ceeec01f7fd2bf7bcf58164b98f99c55341665c/release%2Fpaper_artifacts_20261003%2Fpaper_reproduction_20261003.tar.gz"
+    },
+    {
+      "path": "release/paper_artifacts_20261003/paper_review_evidence_20261003.tar.gz",
+      "commit_blob_sha": "85966db354b4f521fb55bd817db8a0ce31b948a9",
+      "computed_git_blob_sha": "85966db354b4f521fb55bd817db8a0ce31b948a9",
+      "blob_match": true,
+      "local_bytes": 7530749,
+      "local_sha256": "ba1a22baf67e9dc07fef6ed31215c53dbe52da15640172eb809fe79a6d36c2e0",
+      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/3ceeec01f7fd2bf7bcf58164b98f99c55341665c/release%2Fpaper_artifacts_20261003%2Fpaper_review_evidence_20261003.tar.gz"
+    },
+    {
+      "path": "release/paper_artifacts_20261003/upload_manifest.json",
+      "commit_blob_sha": "410f56c9e3c4e39e7ac27aef69bb301d8886bc48",
+      "computed_git_blob_sha": "410f56c9e3c4e39e7ac27aef69bb301d8886bc48",
+      "blob_match": true,
+      "local_bytes": 1366,
+      "local_sha256": "7d1fc357ec3789d9a549facc6f4007d78ff59ebb79526b78cbfb383428308671",
+      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/3ceeec01f7fd2bf7bcf58164b98f99c55341665c/release%2Fpaper_artifacts_20261003%2Fupload_manifest.json"
+    }
+  ],
+  "all_blob_match": true,
+  "verification_scope": "The four release files at this commit; this ledger is published separately to avoid a self-referential archive hash."
+}
