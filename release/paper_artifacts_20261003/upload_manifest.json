@@ -1,6 +1,6 @@
 {
   "schema": "brphm-paper-upload-manifest-v2",
-  "generated_utc": "2026-10-02T21:08:35Z",
+  "generated_utc": "2026-10-02T21:15:14Z",
   "repository": "https://github.com/1553926531-sudo/BRPHM",
   "target_path": "release/paper_artifacts_20261003/",
   "release_tree": {
@@ -12,18 +12,18 @@
   "archives": [
     {
       "name": "paper_manuscript_20261003.tar.gz",
-      "bytes": 915473,
-      "sha256": "30e9d26123f5bd9482d0128c91de51e9c47f9dd306d79044d99c25ab60f8125b"
+      "bytes": 915467,
+      "sha256": "93e81b46b7ee6210ec5b06ba940e2404c30704208db8fb27984a18b3db5bb868"
     },
     {
       "name": "paper_review_evidence_20261003.tar.gz",
-      "bytes": 7530749,
-      "sha256": "ba1a22baf67e9dc07fef6ed31215c53dbe52da15640172eb809fe79a6d36c2e0"
+      "bytes": 7530748,
+      "sha256": "779495f1b96d443775fcad8ec21b52bafc935425480a4ab991a71baef6688a46"
     },
     {
       "name": "paper_reproduction_20261003.tar.gz",
-      "bytes": 2357433,
-      "sha256": "52955e01dfe56ad928b64bea9c3d6793bc4e00582281e32f531ea88d8f1edf50"
+      "bytes": 2357435,
+      "sha256": "ae4aa2998744c7f45576a47e196c4ff27205f8c843e7bf3d76866fd7038a9893"
     }
   ],
   "contents": "isolated paper source, PDF, figures, F1-F10 evidence, reproduction scripts and receipts",
