@@ -1,0 +1,62 @@
+{
+  "schema": "brphm-f1-execution-amendment-v1",
+  "amendment_id": "leo600-run1-resource-scale-w12-before-output",
+  "created_utc": "2026-10-02T07:19:15Z",
+  "resource_observation_utc": "2026-10-02T07:15:44Z",
+  "disposition": "CANCELLED_BEFORE_EXECUTION: a fresh output check observed two completed RWA raw files in the same frozen batch; the active eight-worker run was retained to avoid disrupting in-flight work",
+  "scope": "compute allocation and exit-status capture only; no candidate, route, source gate, input, unit, label, metric, threshold, or selection changes",
+  "candidate_snapshot_sha256": "bdcbb38020dc84c077445929f30cd86c24ea7bf4ce9eb665e6e723578fe1f92b",
+  "candidate_preregistration_sha256": "128bc704843332440057b9f65700c57034d7835a4eb91c5c6521ba25abc46b53",
+  "preparation_manifest_sha256": "4cdf569ff96022d1897de88687742ef1ef1ab46f57089dec7b9d9a4f5cd02f21",
+  "previous_attempt": {
+    "workers": 8,
+    "launcher_pid": 7120,
+    "matlab_pid": 7122,
+    "worker_pids": [9780, 9786, 9788, 9791, 9793, 9795, 9797, 9799],
+    "started_utc_from_pid_file": "2026-10-02T07:09:10.545858Z",
+    "observed_utc": "2026-10-02T07:15:44Z",
+    "worker_cpu_percent": [47.8, 46.4, 47.8, 47.5, 48.1, 48.7, 47.4, 47.4],
+    "generated_raw_file_count_at_071544z": 0,
+    "available_memory_gib": 118,
+    "exit_status_captured": false,
+    "disposition": "proposal cancelled after later check found two raw outputs; no W8 process was stopped and no W12 runner was launched"
+  },
+  "resource_evidence": {
+    "logical_processors": 208,
+    "proposed_workers": 12,
+    "proposed_cpu_affinity": "0-11",
+    "proposed_priority": "nice -n 15; ionice -c 3",
+    "estimated_worker_memory_gib": 3.3,
+    "estimated_total_worker_memory_gib": 39.6,
+    "available_memory_before_start_gib": 118,
+    "cpu_reserve_logical_processors": 196,
+    "rationale": "12 registered units run once; observed 8-worker run used under half a CPU per worker while host retained 196 unallocated CPUs"
+  },
+  "unchanged_partition": {
+    "orbit": "LEO600",
+    "unit_count": 12,
+    "sample_id_range": "S940-S951, exact IDs bound in preparation_manifest.json",
+    "generated_output_root": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_leo600_v1/generated"
+  },
+  "replacement_code": {
+    "matlab_script": "work/paper/repro/run_f1_leo600_generate_w12_20261002.m",
+    "runner": "work/paper/repro/run_f1_leo600_generate_w12_20261002.sh",
+    "launcher": "work/paper/repro/start_f1_leo600_generate_w12_20261002.sh",
+    "exit_status_capture": "runner would write MATLAB exit status to generator_w12.exitcode after batch completion; runner was not launched"
+  },
+  "physical_modeling_risk": {
+    "registered_fixed_tile_period_s": 5740,
+    "GMAT_LEO600_period_approx_s": 5819,
+    "period_difference_s": -79,
+    "reported_tile_seam_km": 608,
+    "importer_check_coverage": "V1-V8 pass but do not test temporal tile closure",
+    "disposition": "report as unresolved simulation boundary risk; final metrics remain limited to this simulator configuration"
+  },
+  "label_barrier": {
+    "final_label_read_before_freeze": false,
+    "semantic_label_read_before_freeze": false,
+    "partition_seal_reads_raw_metadata_and_hashes_only": true,
+    "required_order": ["all 12 raw files complete", "metadata-only partition seal", "preflight", "candidate freeze", "final label access event", "one evaluation"]
+  }
+}
+

@@ -1,0 +1,59 @@
+% GMAT R2026a+ mission: new 600 km orbit, B30 geometry matched to the registered LEO550_B30 design.
+
+Create Spacecraft DefaultSC;
+GMAT DefaultSC.DateFormat = UTCGregorian;
+GMAT DefaultSC.Epoch = '01 Jan 2026 00:00:00.000';
+GMAT DefaultSC.CoordinateSystem = EarthMJ2000Eq;
+GMAT DefaultSC.DisplayStateType = Keplerian;
+GMAT DefaultSC.SMA = 6978.137;
+GMAT DefaultSC.ECC = 0.001;
+GMAT DefaultSC.INC = 97.3;
+GMAT DefaultSC.RAAN = 71.6;
+GMAT DefaultSC.AOP = 90;
+GMAT DefaultSC.TA = 0;
+
+Create ForceModel EarthPointMass;
+GMAT EarthPointMass.CentralBody = Earth;
+GMAT EarthPointMass.PrimaryBodies = {Earth};
+GMAT EarthPointMass.Drag = None;
+GMAT EarthPointMass.SRP = Off;
+GMAT EarthPointMass.RelativisticCorrection = Off;
+GMAT EarthPointMass.ErrorControl = RSSStep;
+
+Create Propagator OrbitProp;
+GMAT OrbitProp.FM = EarthPointMass;
+GMAT OrbitProp.Type = RungeKutta89;
+GMAT OrbitProp.InitialStepSize = 60;
+GMAT OrbitProp.Accuracy = 1e-11;
+GMAT OrbitProp.MinStep = 60;
+GMAT OrbitProp.MaxStep = 60;
+GMAT OrbitProp.MaxStepAttempts = 50;
+GMAT OrbitProp.StopIfAccuracyIsViolated = true;
+
+Create ReportFile OrbitReport;
+GMAT OrbitReport.Filename = '/mnt/data/BRPHM/tool-cache/f1_leo600_b30_20261002/LEO600_B30.csv';
+GMAT OrbitReport.Precision = 16;
+GMAT OrbitReport.WriteHeaders = true;
+GMAT OrbitReport.LeftJustify = On;
+GMAT OrbitReport.ZeroFill = Off;
+GMAT OrbitReport.FixedWidth = false;
+GMAT OrbitReport.Delimiter = ',';
+GMAT OrbitReport.WriteReport = true;
+GMAT OrbitReport.Add = {DefaultSC.A1ModJulian, DefaultSC.UTCGregorian, DefaultSC.EarthMJ2000Eq.X, DefaultSC.EarthMJ2000Eq.Y, DefaultSC.EarthMJ2000Eq.Z, DefaultSC.EarthMJ2000Eq.VX, DefaultSC.EarthMJ2000Eq.VY, DefaultSC.EarthMJ2000Eq.VZ};
+
+Create EclipseLocator EclipseEvents;
+EclipseEvents.Spacecraft = DefaultSC;
+GMAT EclipseEvents.Filename = '/mnt/data/BRPHM/tool-cache/f1_leo600_b30_20261002/LEO600_B30_eclipse.txt';
+GMAT EclipseEvents.OccultingBodies = {Earth};
+GMAT EclipseEvents.EclipseTypes = {Umbra};
+GMAT EclipseEvents.InputEpochFormat = 'UTCGregorian';
+GMAT EclipseEvents.InitialEpoch = '01 Jan 2026 00:00:00.000';
+GMAT EclipseEvents.StepSize = 60;
+GMAT EclipseEvents.FinalEpoch = '31 Jan 2026 00:00:00.000';
+GMAT EclipseEvents.UseLightTimeDelay = true;
+GMAT EclipseEvents.UseStellarAberration = false;
+GMAT EclipseEvents.WriteReport = true;
+
+BeginMissionSequence;
+FindEvents EclipseEvents;
+Propagate OrbitProp(DefaultSC) {DefaultSC.ElapsedSecs = 2592000};

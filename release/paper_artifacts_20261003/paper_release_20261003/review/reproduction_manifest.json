@@ -1,0 +1,128 @@
+{
+  "schema": "brphm-reproduction-manifest-v1",
+  "generated_utc": "2026-10-02T19:09:18Z",
+  "scope": "isolated paper evidence only",
+  "prohibited_inputs": [
+    "sealed",
+    "A1",
+    "B1",
+    "canonical",
+    "production",
+    "competition assets"
+  ],
+  "public_data": {
+    "name": "BRPHM-datasets",
+    "url": "https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets",
+    "commit": "85ebba12f3ec132dc9e0ea8ae49012f57505ccf1",
+    "access_date": "2026-10-02",
+    "doi": null,
+    "license_observation": "CC-BY-4.0 declared by live API; pinned commit license file absent."
+  },
+  "split": {
+    "registered_units": 648,
+    "components": {
+      "BAT": 324,
+      "RWA": 324
+    },
+    "orbits": 3,
+    "train_units": 388,
+    "validation_units": 162,
+    "holdout_units": 98,
+    "membership_sha256": "f07ac79a69986b407b3af0458201be993a2a0956d59ba7af24abd028a14a24d0"
+  },
+  "model": {
+    "type": "unit-first relative temporal TCN",
+    "raw_channels": {
+      "BAT": 4,
+      "RWA": 13
+    },
+    "model_channels": {
+      "BAT": 8,
+      "RWA": 26
+    },
+    "seeds": [
+      17,
+      42,
+      73
+    ],
+    "epochs": 90,
+    "loss": "unit-balanced SmoothL1",
+    "route_count": 320
+  },
+  "final_partition": {
+    "name": "LEO600",
+    "manifest_sha256": "910c0582bc7e451385faccc48987f1cdb5b5684ba2b105efa240a1e8f5ce3123",
+    "candidate_freeze_sha256": "0e13d131ecf28d9f867e823a9387fd3ed3af398144d90c6afaf5cda2d1f04e69",
+    "selection_sha256": "65fcbd77c2c16a1da0cb2bb93e8bab24818d78ca98282d0214cd6052944ded58",
+    "receipt_sha256": "3eff57fe0703fc851e8a96c0016660034fc72c30d2e20b3c3de220c6893ce459",
+    "BAT": {
+      "units": 5,
+      "windows": 125,
+      "rmse_delta": -9.530122000667163e-06,
+      "mae_delta": -9.132921695798046e-06
+    },
+    "RWA": {
+      "units": 1,
+      "windows": 1,
+      "rmse_delta": 0.0,
+      "mae_delta": 0.0
+    }
+  },
+  "artifacts": {
+    "work/paper/en/main.tex": "a6fa47353027862afeec3fe9b37c43984887e4738b4f528a854a71fb5587d783",
+    "work/paper/en/main.pdf": "cb49907939e88aa0404368a5041ca12c1e626c82d672f6d5e7d0eabb118b1c83",
+    "work/paper/en/main.log": "231e46b0b8c1998ab2757325764dcf0b5db4973469782c65c8a3879e7faaa622",
+    "work/paper/en/main_extracted.txt": "77928910208f1efe8305855df1d504c727c3fee02dea85650377da033d6a71cb",
+    "work/paper/review/f1_evidence_ledger.json": "eec1ddf32eb0866a3909583f84da8e47c0302e0a93a49f5baca94033c90c3b07",
+    "work/paper/review/f2_evidence_ledger.json": "7d99a6fd78885c89791a6493d36c767ce3d50b90ea691701a76eaaf056fa287a",
+    "work/paper/review/f3_method_20261002/f3_evidence_ledger.json": "d5050006fead49e47f1d258bdd99325833a87c9285272c6e289f0b1a9e340141",
+    "work/paper/review/f4_route_20261002/f4_evidence_ledger.json": "96b98846b0eb5a3aa0af3331ff302ef308ad129569405eab86bf6b04d96b3585",
+    "work/paper/review/f5_unit_metrics_20261002/f5_evidence_ledger.json": "f54be964590e78675fb878a6ebf8f28fe4907f29644b7d8f1a2c321f3ca64c7e",
+    "work/paper/review/f6_statistics_20261002/f6_statistics_reconciled.json": "60893f9d36799e5c245e661ca1d36053139c63b0ba637d7ccdccf80d30a21d6e",
+    "work/paper/review/f6_statistics_20261002/f6_evidence_ledger_reconciled.md": "18bfea5c41496718a1aa5fffd044af7c657bd8139505940ef943333634808b5c",
+    "work/paper/review/f8_source_gate_20261002/f8_evidence_ledger.json": "6c6c44a33b045571d38c4487bc0528bfa4b883ead4b104d86163442c189b5fd0",
+    "work/paper/review/f7_literature_evidence_20261002.md": "083b6401d49ac84cb75e44cc3c739b295ed0021a616d1730001f04e0e0189ae6",
+    "work/paper/review/venue_research_20261002.md": "0e0986230b399dcc03c2b65d602e9f39c593cf0ea9308e3e63405e94bc00ceb5",
+    "work/paper/review/venue_strategy_20261003.md": "fd5cb28fbeac8e87b59e043124bba8cc29091da03f484b115bf306516f94379d",
+    "work/paper/review/q1_venue_research_20261003.md": "c6c2fae8cdc4fbd97e75816bcb63e95ddaf48c8bd98c3be6f2b2821d7854a70e",
+    "work/paper/review/f1_closeout_20261002.md": "42d873e7e40838946001c9522272d2df9d5247c593418ce96f73a3986de05de8",
+    "work/paper/review/pdf_build_verification_20261003.json": "db4271d9bae4e0b009ac2ae7e1214103bcef8cac3aa3ce42054c87c0968d960c",
+    "work/paper/review/pdf_build_verification_20261003.md": "7bd5dbe70cf8065642965306eea60754db68ef33e87248fb579e18ca5a7e9318",
+    "work/paper/repro/README.md": "b6572b56af27ffce89bc90b1169bfe3b04789401ae44b40ac8e5bdb0e4862cb0",
+    "work/paper/repro/build_f2_dataset_split_manifest.py": "6a1f6ab9db7e22d12ce81d52d3580b7c5da0dbb9e72383a77bf2beef0d9476fc",
+    "work/paper/repro/build_f3_method_ledger.py": "416d3c6aecdb2812315b63d9d2e94f07be0f8afe0cfe502e1acb68c324d8d885",
+    "work/paper/repro/build_f4_route_ledger.py": "fd6782e851a300794d77824aaa17cf9ad266294217174ba7e74c2c537e846959",
+    "work/paper/repro/build_f5_precision_ledger.py": "1af56312812ecfa59bcec776f4eb0b1323702534c841eb63d4a26fa950bd586b",
+    "work/paper/repro/build_f6_statistics_20261002.py": "b05bdc804b7d4c0dd66d677d8ff0404fe03e01d13d6e1ddc5da71de349ed81b9",
+    "work/paper/repro/build_f8_evidence_ledger_20261002.py": "09a1c5f8ec1029e5eb896cc455256911b09547f7c165d93df21cbf6a56b91d1c",
+    "work/paper/repro/analyze_f8_cluster_residuals_20261002.py": "de9a2503825c4802941f3ae1dc5d7f935d755c5acce5239fece63984349d57bd",
+    "work/paper/repro/export_f8_source_residuals_20261002.py": "9e07d3841ccfb5ac61902b9836d442d08741e35a58cfdb651e01a7614ddb0529",
+    "work/paper/repro/generate_figures.py": "bae0f590311aa4270d82547e3f7ec64d7186cab518889709afbf007aabd4a43a",
+    "work/paper/review/rebuild_pdf_verification_20261003.py": "7450bbf8ac039b6f8e2db49ca3047120be00aea1e6afa301a3280ab269d513f6",
+    "work/paper/figures/method_progression.pdf": "4c1b9f2ba2c0723e01a572278b8ba6b4749584708f4a9fef237704f148a0cf63",
+    "work/paper/figures/formal_deltas.pdf": "52afb96f9d247585a31183c6cc352e349d494619c70a089f579fa7159a44189d",
+    "work/paper/figures/evaluation_protocol.pdf": "b7ee9e3609d53c6b8e53451f8f96fcec41f816d2ecbee00a68820b612242cac6",
+    "work/paper/figures/relative_rmse.pdf": "c6d197c3b5922a881f6c4f21e646243de05415847ac2b4533d1ec0abe5272cf4",
+    "work/paper/figures/method_progression.png": "1a6d031b8c68bb19f97a0bcc3e1ef310661854a6cb915a2aaecf6c415b8efac6",
+    "work/paper/figures/formal_deltas.png": "69b075499f1e9f6c924c7ea2dad13f74e561e5004c8a79b67d7f179c3a9bab3e",
+    "work/paper/figures/evaluation_protocol.png": "21c3a4611c82e4904d03cdd36f0d36208bc3ee177a8798e57ca0c59973090e97",
+    "work/paper/figures/relative_rmse.png": "57dd72d113629582ac4a5a9ada38c844bee786e793dc9f74b0b5a9112339c43d"
+  },
+  "commands": [
+    "python work/paper/repro/build_f2_dataset_split_manifest.py --root .",
+    "python work/paper/repro/build_f3_method_ledger.py",
+    "python work/paper/repro/build_f4_route_ledger.py",
+    "python work/paper/repro/build_f5_precision_ledger.py",
+    "python work/paper/repro/build_f6_statistics_20261002.py",
+    "python work/paper/repro/build_f8_evidence_ledger_20261002.py",
+    "pdflatex -interaction=nonstopmode -halt-on-error main.tex (twice)",
+    "pdfinfo main.pdf; pdffonts main.pdf; pdftotext main.pdf main_extracted.txt",
+    "pdflatex -interaction=nonstopmode -halt-on-error main.tex (twice)",
+    "pdfinfo main.pdf",
+    "pdffonts main.pdf",
+    "pdftotext main.pdf main_extracted.txt",
+    "Select-String -Path main.log -Pattern 'Overfull|Underfull|Warning|undefined|Fatal|Error'",
+    "Get-FileHash main.tex,main.pdf -Algorithm SHA256"
+  ],
+  "reproducibility_limit": "The LEO600 result is a deterministic same-partition gate, not a statistical significance or population-generalization claim; historical six-fold outer reuse is diagnostic only. Venue quartile is tracked separately from experiment evidence."
+}

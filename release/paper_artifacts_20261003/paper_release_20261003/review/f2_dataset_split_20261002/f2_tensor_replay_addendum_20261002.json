@@ -1,0 +1,157 @@
+{
+  "schema": "brphm-f2-processed-tensor-replay-addendum-1.0",
+  "created_utc": "2026-10-02T14:55:58Z",
+  "finding_id": "F2",
+  "supersedes_status_for_current_evidence": "f2_revision_binding_addendum_20261002.json.raw_to_processed_tensor_binding",
+  "scope": "Deterministic replay of the registered train/validation BAT and RWA processed tensors from the hash-verified ModelScope interim Parquet records; holdout telemetry and labels, A1/B1 data, and sealed payloads excluded.",
+  "rack": {
+    "host": "first@10.123.100.40",
+    "project_root": "/mnt/data/BRPHM/rul-space",
+    "isolated_output_root": "work/paper/review/f2_tensor_replay_20261002",
+    "canonical_data_modified": false
+  },
+  "dataset_release_binding": {
+    "dataset_url": "https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets",
+    "git_url": "https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets.git",
+    "historical_verified_commit": "85ebba12f3ec132dc9e0ea8ae49012f57505ccf1",
+    "observed_current_head": "cfe0a27a99fa776d6e464649576432c871992771",
+    "complete_tier_tree_oid_both_commits": "f0b07bea4a1d2eb9286b26f7c91f34b951391da3",
+    "complete_tier_manifest_sha256_both_commits": "ba3aae4d5de48d9b1e1fcd78de219230bbf26cf3abb84f3d147a462f0bfe3062",
+    "root_manifests_identical": false,
+    "complete_tier_payload_identical": true,
+    "train_validation_registered_units": 550,
+    "train_validation_units_per_component": 275,
+    "published_raw_and_interim_files_hash_matched": 1100,
+    "hash_binding_report": {
+      "path": "work/paper/review/f2_dataset_split_20261002/f2_modelscope_raw_hash_binding_20261002.json",
+      "sha256": "a7c995973d122c0084ec0d65f02de053c407330fce068b23b4d7daa4a11a3fb95"
+    }
+  },
+  "replay": {
+    "date_utc": "2026-10-02",
+    "entrypoint": "src.datasets.preprocess.run_target via src.datasets.preprocess.run",
+    "runtime": {
+      "python": "3.10.20",
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "torch": "2.3.1+cu121",
+      "pyyaml": "6.0.3",
+      "workers": 1,
+      "device": "CPU preprocessing; no model training or GPU computation"
+    },
+    "config_override": {
+      "only_overridden_fields": "out.pt, out.pt_train, out.pt_val, out.norm_stats, out.stats_doc",
+      "output_location": "work/paper/review/f2_tensor_replay_20261002/{bat,rwa}",
+      "input_config_files_unchanged": true,
+      "split_manifests_read_only": true
+    },
+    "read_trace": {
+      "method": "Wrapped src.datasets.preprocess._read_parquet for workers=1; recorded only the basename of each Parquet path passed to the production reader, then compared the resulting unit set with the frozen split CSV and holdout manifest.",
+      "bat": {
+        "parquet_read_calls": 275,
+        "unique_units_read": 275,
+        "expected_train_validation_units": 275,
+        "read_set_equals_train_validation": true,
+        "holdout_unit_intersection": 0,
+        "sorted_unit_ids_lf_sha256": "f11eb56134f9bf6239802591b5101dfd757d8bb76c3999fad71da728b5b7c85f"
+      },
+      "rwa": {
+        "parquet_read_calls": 275,
+        "unique_units_read": 275,
+        "expected_train_validation_units": 275,
+        "read_set_equals_train_validation": true,
+        "holdout_unit_intersection": 0,
+        "sorted_unit_ids_lf_sha256": "b9ebc781752afa3ed1174fcdca67ccca1db801f19d4d204e70387a568499deed"
+      },
+      "raw_mat_files_opened_by_replay": 0,
+      "holdout_parquet_files_opened_by_replay": 0,
+      "holdout_manifest_records_read_as_metadata": 98
+    },
+    "inputs": {
+      "holdout_manifest_sha256": "ee1e2f760ebc69319d3dc0625744a602114a5dc249ebe8b283f0d9cb53d0c981",
+      "bat_split_csv_sha256": "3b6ad1bbb5a8df5da9ab35dd044e69576bae9bf9b08867b0d109c252314e5e6",
+      "rwa_split_csv_sha256": "969590b62f250ea7ecb632520e4ad8da312f8f4fbe381b1a198d692d175efa16",
+      "bat_interim_meta_sha256": "7b9b2efc34d328e1060e220dc2cd75f2f27950f394fb6ac670d29cda27dd89c0",
+      "rwa_interim_meta_sha256": "5c1abd369da7fabb51b956a0035bd05ee32e9685bc949d95ff4260c805718e70"
+    },
+    "source_code_sha256": {
+      "src/datasets/preprocess.py": "5d6720d486a9c2cb7ef580881462492490b705311a69f7688487d2bda5868463",
+      "src/datasets/windows.py": "0bb61ab593272c18177a33724f29bbc2f0b45595d55913c12686d2635db50945",
+      "src/datasets/labels.py": "08a5aaf74e9cb1f97f035e815da86ccd4d88485a675d0c02e64cc3451c9943d2",
+      "src/datasets/sim_loader.py": "05afe14c78200be6523c5e23802d0c4c1298f693d5dbe580a4d478d58090dd06",
+      "scripts/_serveropt.py": "62e20910ecb866ef950b2a601d0ca0d54050d922f1fe864f57613cf78936f267",
+      "scripts/validate_tree.py": "b6eeb5e501140ca99802d2199c4d1394856c7374e83a565cb9a84a0424c6818f"
+    },
+    "config_sha256": {
+      "configs/preprocess/bat_target.yaml": "a9fb5a6c22e1de4364dd44d160de9cff93d446453b90d32b839f4f86f35ab095",
+      "configs/preprocess/rwa_target.yaml": "95d4fc52a5de90a7fb4513fad58d6f6edcb72aa7a2460f1b325940a3e1a76457"
+    }
+  },
+  "outcomes": {
+    "bat": {
+      "windows": 3681,
+      "train_windows": 2364,
+      "validation_windows": 1317,
+      "shape": [3681, 60, 4],
+      "canonical_tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "replay_tensor_sha256_with_scratch_path_metadata": "5cb4aa0bf6116b8f01e1d2f4ddd207616eaec919e247e13c8fa0b42b12e429bc",
+      "exact_hash_after_restoring_canonical_norm_stats_path_metadata": true,
+      "exact_replayed_tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "bitwise_equal_fields": {"x": true, "y_rul": true, "y_hi": true, "mask.y_hi": true},
+      "canonical_norm_stats_sha256": "2d85f3a241a343f8ac18d0ba2c0e3d09019cfb13c913869bf2d72743fc547796",
+      "replay_norm_stats_sha256": "28af79a0fd4815ee2be3442bb43a9e94539a86c610c3b6af18d26842af2c5b7b",
+      "norm_stats_stable_fields_equal_excluding_created_utc": true
+    },
+    "rwa": {
+      "windows": 7051,
+      "train_windows": 4884,
+      "validation_windows": 2167,
+      "shape": [7051, 30, 13],
+      "canonical_tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+      "replay_tensor_sha256_with_scratch_path_metadata": "1347c22d59eaebe47286613435c8a07760db4f7ef479f73bbc6335b114636ba9",
+      "exact_hash_after_restoring_canonical_norm_stats_path_metadata": true,
+      "exact_replayed_tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+      "bitwise_equal_fields": {"x": true, "y_rul": true, "y_hi": true, "mask.y_hi": true},
+      "canonical_norm_stats_sha256": "b65cc7be29a372748188550250dfd65ce1483b01a5796fabfc36ba1a586be0e4",
+      "replay_norm_stats_sha256": "fced96e199488d5a9cbc32edc3f78d94e9ab0e98047eed5a041a4bbeb46e6203",
+      "norm_stats_stable_fields_equal_excluding_created_utc": true
+    }
+  },
+  "serialization_path_difference": {
+    "initial_hash_mismatch_cause": "The only serialized object-field difference was meta.norm_stats: scratch replay path versus the canonical relative norm_stats path embedded in the registered tensor.",
+    "data_tensor_values_changed_for_exact_hash_comparison": false,
+    "operation": "Set only replay_payload.meta.norm_stats to the canonical relative path and serialize with src.datasets.preprocess._save_pt into another scratch file.",
+    "result": "The resulting SHA-256 exactly matched each canonical tensor. Canonical files were read-only throughout."
+  },
+  "execution_anomalies": [
+    {
+      "attempt": "A remote inline Python command was first passed with incorrect PowerShell/Bash quote nesting.",
+      "result": "The remote shell rejected parsing before the replay entry point ran.",
+      "data_effect": "None; no pipeline invocation or file write occurred.",
+      "resolution": "Retried with a PowerShell here-string piped to the Rack Python process."
+    },
+    {
+      "attempt": "A first standalone serialization comparison passed the _save_pt path and payload arguments in reverse order.",
+      "result": "TypeError was raised before a file was written.",
+      "data_effect": "None; canonical and scratch replay artifacts were unchanged.",
+      "resolution": "Retried with the production signature _save_pt(payload, path); exact hashes matched."
+    }
+  ],
+  "historical_provenance_boundary": {
+    "present_code_config_data_replay_to_canonical_bytes": "verified",
+    "contemporaneous_2026_07_creation_receipt": "not found in inspected formal receipt; current replay cannot recover original operator, runtime timestamp, or prove which historical code/config files were used at original creation time",
+    "modelscope_doi": "No DOI disclosed by inspected ModelScope API/README; exact-name DataCite and Crossref searches returned no record on 2026-10-02.",
+    "license": "Live ModelScope dataset-detail API declared CC-BY-4.0 on 2026-10-02; neither inspected Git commit has a versioned license file, so commit-specific applicability remains unauthenticated.",
+    "root_metadata": "Historical/current root MANIFEST.json differ; complete-tier subtree/tree and tier manifest are identical. Paper must cite one immutable commit and describe the live license metadata date and limitation."
+  },
+  "verification": {
+    "run_exit_status": 0,
+    "all_train_validation_parquet_reads_traced": true,
+    "holdout_parquet_reads": 0,
+    "bitwise_tensor_equality": true,
+    "replay_sha256_matches_frozen_receipt": true,
+    "normalization_stable_fields_match": true,
+    "confidence": "high for current released train/validation interim-to-processed derivation and holdout exclusion; no claim about the unreceipted historical creation event"
+  }
+}
+

@@ -1,0 +1,171 @@
+{
+  "schema": "brphm-f8-unit-cluster-ks-analysis-v1",
+  "created_utc": "2026-10-02T14:57:11.321718+00:00",
+  "residual_export_sha256": "e6ebe138beaa450444eac738505df26f62b2441a3ca1987ae12a68537258a261",
+  "source_receipt_sha256": "b99ed8a3d2f168483f1072e7363fe1793a08708c16693ea6ba59e29bf03631f1",
+  "scope": "Source-validation residuals only; no formal/outer evaluation; analysis is exploratory because route selection used the source-validation data.",
+  "methods": {
+    "bootstrap": "Paired unit-cluster bootstrap within each target orbit; resample units with replacement and retain all windows; recompute D_candidate-D_control; percentile 95% interval.",
+    "permutation": "For each unit within each orbit, swap the candidate/control residual vectors as one cluster under the paired exchangeability null; one-sided alternative delta-KS>0; Monte Carlo plus-one p-value.",
+    "multiplicity": "Holm step-down across six component-by-orbit-pair candidate-minus-control tests.",
+    "iid_reference": "SciPy exact two-sample KS p-values are included as nominal window-IID references only; overlapping windows violate that independence assumption and these values are not inferential claims."
+  },
+  "parameters": {
+    "bootstrap_replicates": 5000,
+    "permutation_replicates": 5000,
+    "seed": 20261002
+  },
+  "results": [
+    {
+      "component": "bat",
+      "orbit_pair": "LEO500<->LEO550",
+      "left_direction": "LEO500->LEO550",
+      "right_direction": "LEO550->LEO500",
+      "n_candidate_windows_left": 1178,
+      "n_candidate_windows_right": 1377,
+      "n_units_left": 68,
+      "n_units_right": 70,
+      "receipt_candidate_ks_d": 0.13263559841342057,
+      "replayed_candidate_ks_d": 0.13263559841342057,
+      "replayed_control_ks_d": 0.13263559841342057,
+      "delta_ks_candidate_minus_control": 0.0,
+      "delta_ks_cluster_bootstrap_ci95": [
+        0.0,
+        0.019906932958890323
+      ],
+      "cluster_swap_permutation_p_worse_one_sided": 0.9168166366726654,
+      "iid_window_candidate_ks_p_noninferential": 3.3413999360075174e-10,
+      "iid_window_control_ks_p_noninferential": 3.3413999360075174e-10,
+      "bootstrap_replicates": 5000,
+      "permutation_replicates": 5000,
+      "seed": 20261002,
+      "cluster_swap_permutation_p_holm_family6": 1.0
+    },
+    {
+      "component": "bat",
+      "orbit_pair": "LEO500<->LEO700",
+      "left_direction": "LEO500->LEO700",
+      "right_direction": "LEO700->LEO500",
+      "n_candidate_windows_left": 1126,
+      "n_candidate_windows_right": 1377,
+      "n_units_left": 65,
+      "n_units_right": 70,
+      "receipt_candidate_ks_d": 0.24453693061988957,
+      "replayed_candidate_ks_d": 0.24453693061988957,
+      "replayed_control_ks_d": 0.24453693061988957,
+      "delta_ks_candidate_minus_control": 0.0,
+      "delta_ks_cluster_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "cluster_swap_permutation_p_worse_one_sided": 1.0,
+      "iid_window_candidate_ks_p_noninferential": 5.174266777717232e-33,
+      "iid_window_control_ks_p_noninferential": 5.174266777717232e-33,
+      "bootstrap_replicates": 5000,
+      "permutation_replicates": 5000,
+      "seed": 20261003,
+      "cluster_swap_permutation_p_holm_family6": 1.0
+    },
+    {
+      "component": "bat",
+      "orbit_pair": "LEO550<->LEO700",
+      "left_direction": "LEO550->LEO700",
+      "right_direction": "LEO700->LEO550",
+      "n_candidate_windows_left": 1126,
+      "n_candidate_windows_right": 1178,
+      "n_units_left": 65,
+      "n_units_right": 68,
+      "receipt_candidate_ks_d": 0.1438721136767318,
+      "replayed_candidate_ks_d": 0.1438721136767318,
+      "replayed_control_ks_d": 0.1438721136767318,
+      "delta_ks_candidate_minus_control": 0.0,
+      "delta_ks_cluster_bootstrap_ci95": [
+        0.0,
+        0.0
+      ],
+      "cluster_swap_permutation_p_worse_one_sided": 0.9726054789042191,
+      "iid_window_candidate_ks_p_noninferential": 7.258123094944035e-11,
+      "iid_window_control_ks_p_noninferential": 7.258123094944035e-11,
+      "bootstrap_replicates": 5000,
+      "permutation_replicates": 5000,
+      "seed": 20261004,
+      "cluster_swap_permutation_p_holm_family6": 1.0
+    },
+    {
+      "component": "rwa",
+      "orbit_pair": "LEO500<->LEO550",
+      "left_direction": "LEO500->LEO550",
+      "right_direction": "LEO550->LEO500",
+      "n_candidate_windows_left": 2324,
+      "n_candidate_windows_right": 2352,
+      "n_units_left": 79,
+      "n_units_right": 78,
+      "receipt_candidate_ks_d": 0.11318744365215966,
+      "replayed_candidate_ks_d": 0.11318744365215966,
+      "replayed_control_ks_d": 0.1148881239242685,
+      "delta_ks_candidate_minus_control": -0.0017006802721088454,
+      "delta_ks_cluster_bootstrap_ci95": [
+        -0.004354215480741515,
+        0.013322540524310195
+      ],
+      "cluster_swap_permutation_p_worse_one_sided": 0.9022195560887822,
+      "iid_window_candidate_ks_p_noninferential": 1.6652842324826153e-13,
+      "iid_window_control_ks_p_noninferential": 6.688333469188509e-14,
+      "bootstrap_replicates": 5000,
+      "permutation_replicates": 5000,
+      "seed": 20261005,
+      "cluster_swap_permutation_p_holm_family6": 1.0
+    },
+    {
+      "component": "rwa",
+      "orbit_pair": "LEO500<->LEO700",
+      "left_direction": "LEO500->LEO700",
+      "right_direction": "LEO700->LEO500",
+      "n_candidate_windows_left": 2375,
+      "n_candidate_windows_right": 2352,
+      "n_units_left": 83,
+      "n_units_right": 78,
+      "receipt_candidate_ks_d": 0.09837540279269602,
+      "replayed_candidate_ks_d": 0.09837540279269602,
+      "replayed_control_ks_d": 0.1013474758324382,
+      "delta_ks_candidate_minus_control": -0.0029720730397421735,
+      "delta_ks_cluster_bootstrap_ci95": [
+        -0.009008207634626226,
+        0.013365118215416338
+      ],
+      "cluster_swap_permutation_p_worse_one_sided": 0.7988402319536093,
+      "iid_window_candidate_ks_p_noninferential": 2.0540547994940487e-10,
+      "iid_window_control_ks_p_noninferential": 5.014034929997313e-11,
+      "bootstrap_replicates": 5000,
+      "permutation_replicates": 5000,
+      "seed": 20261006,
+      "cluster_swap_permutation_p_holm_family6": 1.0
+    },
+    {
+      "component": "rwa",
+      "orbit_pair": "LEO550<->LEO700",
+      "left_direction": "LEO550->LEO700",
+      "right_direction": "LEO700->LEO550",
+      "n_candidate_windows_left": 2375,
+      "n_candidate_windows_right": 2324,
+      "n_units_left": 83,
+      "n_units_right": 79,
+      "receipt_candidate_ks_d": 0.15532964942476674,
+      "replayed_candidate_ks_d": 0.15532964942476668,
+      "replayed_control_ks_d": 0.15532964942476668,
+      "delta_ks_candidate_minus_control": 0.0,
+      "delta_ks_cluster_bootstrap_ci95": [
+        0.0,
+        0.0012684989429175286
+      ],
+      "cluster_swap_permutation_p_worse_one_sided": 1.0,
+      "iid_window_candidate_ks_p_noninferential": 3.363071851150796e-25,
+      "iid_window_control_ks_p_noninferential": 3.363071851150796e-25,
+      "bootstrap_replicates": 5000,
+      "permutation_replicates": 5000,
+      "seed": 20261007,
+      "cluster_swap_permutation_p_holm_family6": 1.0
+    }
+  ]
+}
+

@@ -1,0 +1,166 @@
+IEEE.org
+IEEE Xplore®
+IEEE Standards
+IEEE Spectrum
+More Sites
+Login
+Join IEEE
+Donate
+Home
+About About IMS About the I&M Society Contact Us Get Involved! Join IMS Committees & Representatives IMS Standing Committees Representatives & Liaisons Who We Are Officers Current Members-at-Large AdCom Members History Presidents Members-at-Large (by term) Governing Documents Constitution Bylaws Society Handbook Society Strategic Plan
+Awards Awards & Recognition Program About Awards & Recognitions Society Awards Career Excellence Award Distinguished Service Award Outstanding Young Engineer Award Technical Award J. Barry Oakes Advancement Award Best Application in I&M Award Membership Awards Best Student Chapter Award Outstanding Chapter Award Education Awards Graduate Fellowship Award Faculty Course Development Award Best Dissertation Award Undergraduate Student Scholarship International Student Contest Technical & Standards Awards Outstanding Technical Committee Award IEEE IEEE Fellows Tips for IEEE Fellow Nominations IEEE Senior Members Joseph F. Keithley Award in I&M
+Activities Technical Activities About Technical & Standards Activities Council Memberships Technical Committees Listing Technical & Standards Activity Award Standards Activities Educational Activities About Educational Activities Education Awards Distinguished Lecturer Program Virtual Distinguished Lecturer Webinars Video Tutorials Program Short Courses Video Library Membership Activities About Membership Activities Membership Benefits (Join Us) Women in I&M Student Activities Young Professionals Chapters Mentorship Program IMS EPICS in IEEE Regional Growth Initiative
+Publications General Information About Publications Publications Committee Andy Chi Best Paper Award Cam Ingelin Best Paper Award I&M Society Bookshelf Society Publications Instrumentation & Measurement Magazine Transactions on Instrumentation and Measurement Open Journal of Instrumentation and Measurement Co-Sponsored Periodicals I&M Society Newsletter
+Conferences General Information About Conferences Conferences Committee Organize a Conference Society Conferences All Events Financially Sponsored Conferences Technically Co-Sponsored Conferences
+Search
+
+Publication
+IEEE Transactions On Instrumentation and Measurement
+Information For Authors
+Information for Authors
+Information for Authors
+Submit Manuscript
+Overlength Page Charge Agreement
+Publication Tutorial Videos
+Paper Guidelines
+Promoting Your Accepted Paper
+Paper Templates: Word Version & LaTex Verison
+Important Guidance on Scope
+Please carefully read the scope of the journal before submitting a manuscript, to avoid an immediate rejection. The following types of papers are typically rejected without peer review, because they do not fall within the scope of the journal:
+Papers that include some instrumentation and/or measurement aspects, but whose main novel contribution falls within another discipline (e.g. artificial intelligence, computer vision, communication systems, navigation, robotics, healthcare, material science, optics, power systems, control systems, etc.).
+Papers that do not provide novel contributions in electrical/electronic instrumentation and focus on measurements of non-electrical quantities (e.g. mechanical, chemical, etc.) or on non-electrical/electronic aspects of sensor fabrication (e.g. material properties).
+Papers that focus on new electronic circuits or implementation aspects that do not provide a convincing demonstration of the resulting improvements in measurement performance.
+Papers that present novel algorithms for signal/image processing, image enhancement, image segmentation or machine learning (including classification), without clearly demonstrating how the algorithm improves measurement performance.
+Papers that do not comply (or do not reasonably justify why they do not comply) with established international metrology guidelines, such as the Guide to the Expression of Uncertainty in Measurement, GUM, and the International Vocabulary of Metrology, VIM (freely available here ), when discussing measurement uncertainty or other fundamental metrological concepts.
+Papers that use metrological terminology incorrectly or ambiguously (e.g. referring to classification accuracy as measurement accuracy, without assuming that the dataset contains accepted reference values) or fail to distinguish algorithmic performance metrics from the performance characteristics of a measurement system (e.g. treating a model’s test-set RMSE as the measurement uncertainty of the instrument).
+Papers that do not adequately compare the proposed novel contribution to the existing literature in Instrumentation & Measurement (see here for a list of I&M journals).
+Papers that are based only on simulation or analysis of existing datasets, without adequate discussion of Instrumentation & Measurement aspects and without a strong justification for the lack of authors’ own experimental validation, in line with established practices in the particular field of work.
+Papers that do not include enough detailed information about the experimental setup and the considered measurement chain or, in case of existing datasets, information about how the data was obtained and with what uncertainty, to allow, in principle, the results to be replicated.
+Topical Guides
+For the benefit of our first-time authors whose primary field might not be Instrumentation & Measurement (I&M), we have prepared the following guides that explain how research in certain related fields should be properly presented in an I&M context, such that the resulting paper will be within TIM's scope:
+Artificial Intelligence, regression, classification, LLMs, and uncertainty in measurement systems | DOI: 10.1109/OJIM.2025.3621742
+Vision Based Measurement, Computer Vision, Image Processing | DOI: 10.1109/MIM.2014.6825388
+Communication Systems | DOI: 10.1109/MIM.2015.7066676
+Medical/Biomedical and Healthcare | DOI: 10.1109/MIM.2016.7579063
+Navigation Systems | DOI: 10.1109/MIM.2015.7108397
+Internet of Things (IoT) | DOI: 10.1109/MIM.2020.9082794
+Big Data | DOI: 10.1109/MIM.2020.9082796
+Deep Learning | DOI: 10.1109/MIM.2020.9200875
+Machine Learning: basics (measurement error and terminology) | DOI: 10.1109/MIM.2021.9400955
+Machine Learning: measurement uncertainty quantification | DOI: 10.1109/MIM.2021.9436102
+In addition, the following general information about I&M will be quite useful:
+How to use I&M in modern applications of today : Modern Measurements: Fundamentals and Applications
+A short introduction to Measurement Uncertainty : DOI: 10.1109/MIM.2006.1637979
+A short tutorial on accuracy, precision, trueness, systematic and random errors, and avoiding a common mistake regarding accuracy/precision relation : DOI: 10.1109/MIM.2021.9345597
+Please also check the Erratum: DOI: 10.1109/MIM.2021.9401017
+Paper Guidelines
+Regular Papers
+Short Papers
+Survey/Review Papers
+Special Section Papers
+Comment Papers
+Important Notes
+Please carefully read TIM's Scope and the important note there. Following the instructions there could save your paper from being immediately rejected for being out of scope.
+Authors are strongly advised to watch the "Publication Tutorial" videos posted here , where many common author mistakes, including serious misconduct issues, as well as good practices that will help you write better papers, plus the review process, are explained.
+Manuscripts submitted to TIM must describe original work within TIM's scope . The manuscript must be exclusively submitted to this journal, must not have been published before, and must not be under consideration for publication elsewhere. If you are submitting an extended version of a previously published proceedings paper, please see the instructions below.
+IEEE Publication Policies: Please familiarize yourself with and strictly follow relevant IEEE policies in the IEEE Publication Services and Products Board Operations Manual ( PSPB Manual ), in particular, Sections 8.2.1A (Authorship), 8.2.1.B (Responsibilities of Authors), 6.3.1 + 8.1.4 (Copyright), and 8.2.4 (Author misconduct and plagiarism). Please take very seriously author misconduct and plagiarism , which will subject you to disciplinary actions, and in addition, permanently remove your eligibility to be nominated to IEEE Fellow (see IEEE Fellow Operation Manual section 9.2.2 Eligibility requirements)!
+IEEE Publishing Ethics: please strictly follow the Ethical Requirements , including the definition of authorship, the appropriate citation of sources, the accurate reporting of data, and the publishing of original research.
+Instructions To submit a paper, the corresponding author needs to register for an account on the PeerTrack system here . The manuscript submission process starts by clicking the "Submit New Manuscript" link on your "Main Menu" page. Once you click on that, follow the system's instructions to submit your paper. You will need the following information to submit your paper:
+Mandatory Information:
+Each Author : First Name, Last Name ORCID E-mail Address
+First Name, Last Name
+ORCID
+E-mail Address
+Title (you may copy and paste the title from your manuscript)
+Abstract (you may copy and paste the abstract from your manuscript)
+Classifications (a.k.a. EDICS): Please choose two EDICS from the list here . EDICS must represent the technical core of your work, and should therefore be very specific. Do not choose EDICS in the general area of your work. Choosing the correct EDICS ensures that your paper goes to the right Associate Editor and reviewers; otherwise your paper will be delayed.
+Manuscript file in PDF: Please include your figures and tables inline at their correct positions within the text of the manuscript. Please do NOT remove figures and tables from the main paper, and do NOT submit figures and tables separately. Doing so makes the reviewing job quite difficult! Please submit a single self-contained unencrypted PDF file no larger than 100 MB . Files larger than 100 MB will not be accepted. Authors are asked to submit their manuscript in IEEE double-column Transactions format . The minimum number of pages for regular papers is 5 pages. There is no maximum, although overlength charges apply ( see here ). If your paper is less than 5 pages, you need to submit it as a short paper.
+Optional Information:
+Optional Cover Letter You may submit a cover letter if you need to make an important point to the EiC and the AE. Please note that reviewers do not see cover letters! For example, use the cover letter to report that the paper is an extended version of a previously published proceedings paper or to report that this is a resubmission of a previously rejected TIM paper. Please do not submit a list of suggested reviewers or reviewers to avoid: TIM has high standards for quality control and does not consider such requests. Please do NOT upload a cover letter that simply repeats information that we can already see in the submission system, such as the list of authors, their affiliation, paper title, abstract, etc. If you don't have anything extraordinary to say, please do not submit a cover letter.
+Optional Graphical Abstract: To enhance the appearance of your article on IEEEXplore®, an optional graphical abstract can be displayed along your paper. The graphical abstract should provide a clear, visual summary of your article's findings by means of an image, animation, video, or audio clip. The graphical abstract is considered a part of the technical content of the article, and you must submit it for peer review during the article submission process as supplementary files, following the instructions that can be found here . Please note that failing to meet the technical specifications found in the above-mentioned file will cause immediate rejection of your manuscript.
+Optional Supplementary Text File: A supplementary text file may be submitted, containing additional information (e.g. additional results, detailed derivation of mathematical formulas, etc.) that is not essential for a full understanding of the paper, but may still be of interest to the readers. The main manuscript file must remain self-contained, and should not have excessive reference to the supplementary material. Please note that the supplementary file(s) will be reviewed, but will not be edited by the IEEE prior to publication. Therefore, it is the author’s responsibility to submit them in a suitable format for publication, including a title that clearly identifies them as supplementary material, with reference to the article title.
+Optional Multimedia Material: For the submission of audio/video files as supplementary material, please refer to the IEEE guidance available here .
+Optional dataset: TIM supports IEEE DataPort datasets, which can be accessed by reviewers during the review process, and by readers when the paper is published. To associate your paper with an IEEE DataPort DOI, in the “Additional Information” stage of submission, go to the bottom of the page, and answer “Yes” to this question, Do you have DATA associated with your article and follow the instructions.
+After you completely submit your manuscript, you must view it, and then approve it. Otherwise, your submission remains incomplete and will not be processed!
+Extended Version of Proceedings Paper If you are submitting an extended version of a previously-published proceedings paper , you must additionally perform the following tasks:
+Upload a Cover Letter, explaining that the paper is an extended version of a previously-published proceedings paper.
+If any co-authors present in the proceedings version have been removed in the journal version, the reason for the removal must be explained in the Cover Letter. Additionally, the removed co-authors must sign the same Cover Letter, stating that they agree to be removed from the journal version.
+Upload a document with item type "List of Extensions" that explains exactly what has been extended from the proceedings version. Please note that TIM only considers "Technical Extensions"; i.e., the extension must present new technical thing(s), not just more explanation, etc.
+Upload a copy of the proceedings paper with item type "Copy of Proceedings Papers".
+Cite and refer to your proceedings paper in the extended journal version. Additionally, in the introduction, add a sentence which declares that this paper is an extension of the proceedings paper, or makes reuse of the proceedings paper, or some language similar to that.
+It is the responsibility of the author(s) to obtain permission to re-use and re-print materials from the proceedings paper and this permission must be obtained ahead of time from its publisher. The author(s) is (are) solely responsible for this and any other copyright permission-related requirements and issues. As per IEEE rules, if the proceedings paper was copyrighted by the IEEE, this permission is not required.
+Reusing Material from a Thesis If your paper is reusing material from the author's thesis, please make a declaration about that in the Introduction section. You can use a language similar to this example:
+It should be declared that this paper, in sections II and III.B, reuses some content from thesis [X] with permission.
+[X] Adam One, “My thesis”, Master’s thesis, University of All Technologies, Springfield, USA, December 2019.
+Please note that it is your responsibility to obtain permission, if the permission is not owned by the aforementioned author. This declaration should be done not only for transparency and good scientific publishing practice, but also for your own protection from possible future allegations of plagiarism.
+Reusing Material from a Technical/Research Report
+If your paper is reusing material from the authors' technical/research report, please make a declaration about that in the Introduction section. You can use a language similar to this example:
+It should be declared that this paper is based on our technical report [X].
+[X] Give reference to the report .
+Resubmitting revised or rejected papers
+A paper may receive one Major Revision decision. A second Major Revision will lead to rejection.
+A paper that has received a "Reject and Resubmit" decision, can be revised and resubmitted.
+A paper that has received a Reject decision, cannot be resubmitted anymore.
+Tandem Papers TIM does not accept submission of tandem papers; i.e., papers in part 1, part 2, etc. If the reviewers, during the review process, determine that the paper needs to give more details and needs to split into two papers, that's acceptable. But authors cannot from the beginning submit a multi-part paper.
+Open Access Papers TIM is a hybrid journal, allowing both traditional and Open Access papers to be published. By default, papers will be published in the traditional way (paywall). If you choose to publish your paper as Open Access, please request it when submitting your final files of your accepted paper, and note that by doing so you commit to pay the following:
+For papers submitted in 2024, the Article Processing Charge (APC) is US$2,495 plus applicable local taxes.
+For papers submitted in 2025, the APC is US$2,645 plus applicable local taxes.
+For papers submitted in 2026, the APC is US$2,800 plus applicable local taxes.
+The following discounts apply:
+IEEE Members receive a 5% discount.
+IEEE Instrumentation and Measurement Society Members receive a 20% discount (Go here to become a member of the IEEE Instrumentation and Measurement Society).
+Authors from low-income countries are eligible for waived or reduced APCs .
+The above discounts cannot be combined.
+Discounts do not apply to IEEE undergraduate and graduate students members.
+Manuscript Status You can see the status of your manuscript in the system. Please note that TIM does not answer paper status query messages within the first 2 months of the submission of a paper. Please do not contact us during that period asking about your paper.
+Rapid Publication When a paper is accepted, its last version which the authors had submitted for review in the submission system will appear on IEEE Xplore with a DOI as Early Access in about 10 business days after acceptance. Furthermore, the IEEE-edited final version of the paper, after the authors approve the proofs, is assigned to a Volume with article sequence number in approximately 3 weeks after the paper is accepted, assuming the authors submit the final files correctly and in time.
+Short papers are intended to provide authors with a means for a relatively rapid publication of novel, significant and time-sensitive articles in TIM's scope. Short papers are limited to a minimum of three and a maximum of four published pages and must be submitted in the two-column format of the IEEE transactions. There will be no author bios published at the end of Short Papers. Short papers:
+are reviewed faster than regular papers (our target is to be twice as fast as regular papers)
+have a faster revision time than regular papers (in case of "Minor revision" decision)
+A Short Paper is considered an archival journal publication and therefore must possess technical novelty, direct relevance to TIM's scope , be on a current topic with a certain degree of publication time sensitivity, have an adequate number of relevant references, include a no more than a 150-word abstract, and NO part of it may have been previously published in ANY form, including as part of a proceedings paper.
+Subsequent to the review process, a decision of “Accept", "Minor Revisions", "Reject and Resubmit", or “Reject” will be rendered.
+To partially defer the publications cost, authors agree to pay a mandatory overlength page charge for each page or fraction thereof beyond the THIRD page of the short paper.
+The submission rules, other than what is mentioned above, are exactly the same as the regular papers, and can be seen here .
+TIM encourages submission of high-quality survey or review papers. Like any other paper published in TIM, a survey or review paper must also make a journal-level technical contribution, such as a novel taxonomy that will guide other researchers, deep analysis with new findings that were previously unknown, or identifying gaps and providing new insights that weren't known before. Please note that simply listing a bunch of papers in a given topic and/or doing shallow analysis will not be enough to be considered for TIM. A paper that is simply a sequence of "Authors in paper X did so and so, and authors in paper Y did such and such, etc." without any journal-level contributions (as described above), will be rejected during the screening process and without going to reviewers.
+Please check the survey papers already published in TIM , so you don't submit a survey paper that overlaps with the published ones.
+Overlength charges apply to Survey/Review papers longer than 18 pages (see here ). Other than this, Survey/Review papers have the same submission instructions as Regular papers. For more information about submitting regular papers, please see the Regular Papers tab .
+Submitting your paper to a Special Section
+To submit a paper to a special section (SS), please follow the general instructions for regular papers, especially paying attention to the scope , and additionally, following ALL the instructions under "Extended Version of Proceedings Paper" section. Special Section papers that are 4 pages or less must in addition follow the short paper rules. Furthermore, at the "General Information" stage of submission, you must select the correct SS in the "Section/Category" box.
+Please note that only papers that were accepted, registered, and presented at the workshop/conference/symposium are eligible for submitting an extended version to the SS.
+Special Section in TIM
+At this time, Special Sections are assigned only to the conferences that are solely-sponsored by the IEEE IMS society (except CPEM). This will be arranged between the conference organizers and TIM's EiC, according to the "Special Section Request Process" below. Please note that we do not consider any other types of SS proposals, so please do not send us SS proposals outside of the above. However, authors of any proceedings papers, assuming the paper is within TIM's scope , are welcome to submit a technically-extended version of their proceedings paper as a regular paper to TIM. Such submission can be done only after the conference closes. To submit such a paper, please follow the instructions here for submitting an extended version of a previously-published proceedings paper.
+Special Section Request Process
+If you are organizing an IMS-sponsored conference, and are interested to have a Special Section of your conference in TIM, please follow these steps:
+Conferences and workshops MUST contact the EiC and request a Special Section immediately after their request for sponsorship from the society has been approved, and not later (in particular not after the conference has taken place).
+The EiC makes a determination as to whether or not a Special Section will be assigned to the conference or workshop based on considering several pertinent factors (including but not limited to the technical scope of the conference, request timeliness, etc.). There three options that may be considered: The guest editor acts as the associate editor and will monitor the review process; The guest editor only screens the submitted papers for whether the papers are technically extended beyond the proceedings copy and also whether the authors registered (full registration) and presented the paper (oral or poster) at the conference and then the EiC assigns the papers to the regular Associate Editors who will handle the review process; No special section will be assigned, but authors will be allowed to submit their extended papers, still fulfilling the special section requirements. In this case the papers will be reviewed as "regular" papers and, if accepted, will be published under the common technical area grouping.
+The guest editor acts as the associate editor and will monitor the review process;
+The guest editor only screens the submitted papers for whether the papers are technically extended beyond the proceedings copy and also whether the authors registered (full registration) and presented the paper (oral or poster) at the conference and then the EiC assigns the papers to the regular Associate Editors who will handle the review process;
+No special section will be assigned, but authors will be allowed to submit their extended papers, still fulfilling the special section requirements. In this case the papers will be reviewed as "regular" papers and, if accepted, will be published under the common technical area grouping.
+If the publication of a Special Section has been approved by the EiC, conferences and workshops MUST immediately and clearly advertise (in their web site, brochures, announcements, etc.) the fact that all papers, independent of the mode of presentation (i.e., oral or poster), that are presented at the conference with at least one author having paid full registration fee, are eligible to be considered for the Special Section. Any exceptions (limited and such as conference-sponsored keynotes and invited speakers, etc.) must be approved by the society vice president for conferences and the transactions EiC. In addition, the conference or workshop MUST identify a two-week period, after the conference has taken place (usually about four weeks after the conference), during which (and only in this period) the authors may upload their extended Special Section papers.
+The conference or workshop, in agreement with the TIM EiC, MUST identify one or two individuals as the guest editor(s) for the Special Section. The EiC might add one of TIM's regular AEs as a GE, to ensure that TIM's quality standards are adhered to.
+Only a maximum of ten papers from any given conference or workshop (with the exception of the Special Sections dedicated to I2MTC and CPEM conferences) will be published in the Special Section section of TIM. However, since many more papers may be submitted, the remaining reviewed and accepted papers will appear as regular papers in TIM.
+The guest editor(s) are expected to prepare an introductory page for the Special Section.
+Comment papers are papers of 3 pages (IEEE transactions format) or less, that comment on a previously-published paper, usually to point to a technical problem/error in the latter.
+The process for Comment papers is as follows:
+Commenting authors email their comment paper directly to the EiC. Please do not upload your comment paper to the submission system! The paper must be in IEEE double-column transactions format.
+Commenting authors email their comment paper directly to the EiC. Please do not upload your comment paper to the submission system! The paper must be in IEEE double-column transactions format.
+The EiC will send the comment paper to the authors of the commented paper, asking them to submit a rebuttal, if they so wish. A deadline will be given to submit the rebuttal.
+The EiC will send the comment paper to the authors of the commented paper, asking them to submit a rebuttal, if they so wish. A deadline will be given to submit the rebuttal.
+As soon as the rebuttal is submitted or the deadline expires, both the commenting paper and the rebuttal (if available) will be sent to a cognizant reviewer, who will submit his/her recommendation to the EiC. This reviewer is normally (but not always) one of the existing TIM Associate Editors.
+As soon as the rebuttal is submitted or the deadline expires, both the commenting paper and the rebuttal (if available) will be sent to a cognizant reviewer, who will submit his/her recommendation to the EiC. This reviewer is normally (but not always) one of the existing TIM Associate Editors.
+If the recommendation is to accept the comment paper (rebuttal is incorrect), the comment paper will be accepted for publication in the journal.
+If the recommendation is to accept the comment paper (rebuttal is incorrect), the comment paper will be accepted for publication in the journal.
+If the recommendation is to accept both the comment and the rebuttal paper (review is inconclusive, or both parties are correct from their respective perspectives), both will be accepted for publication in the journal.
+If the recommendation is to accept both the comment and the rebuttal paper (review is inconclusive, or both parties are correct from their respective perspectives), both will be accepted for publication in the journal.
+If the recommendation is to reject the comment paper (comment paper is incorrect), the decision will be final with no options to submit the comment paper again.
+If the recommendation is to reject the comment paper (comment paper is incorrect), the decision will be final with no options to submit the comment paper again.
+Home
+Contact
+Accessibility
+Nondiscrimination Policy
+IEEE Ethics Reporting
+Terms & Disclosures
+IEEE Privacy Policy
+Sitemap
+© Copyright 2026 IEEE – All rights reserved. A public charity, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.
+This site is created, maintained, and managed by Conference Catalysts, LLC

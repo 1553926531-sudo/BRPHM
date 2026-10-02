@@ -1,0 +1,228 @@
+IEEE Transactions on Reliability Review Policy
+
+  1. TRel requires each paper to be reviewed by AT LEAST TWO (2) independent reviewers
+     with THREE (3) reviewers preferred by default. When inviting reviewers, please be sure
+     to check if the author has any suggested/non-preferred reviewers. If you invite a reviewer
+     recommended by the author, you must also invite at least one another independent
+     reviewer not recommended by the author.
+
+     Special cases: Contact Professor Steven Li, Editor-in-Chief
+
+     Every paper needs to be reviewed by at least TWO (2) reviewers not recommended by
+     the author.
+
+  2. IEEE requires that each accepted paper have at least two ACCEPT recommendations
+     from independent peer reviewers, and an AE cannot be a peer reviewer.
+
+     This requirement can be waived if the previous version of a paper has
+     an ACCEPT recommendation and a Minor Revision recommendation. Under this
+     condition, the AE can serve as a reviewer to carefully examine the revised submission
+     and to make sure all the comments have been satisfactorily addressed. If so, the AE can
+     recommend to accept this paper. However, the AE must also complete a review report in
+     the section “Comments to the Author” like a regular reviewer to justify why he/she gives
+     an ACCEPT recommendation.
+
+  3. If a paper receives at least one Major Revision and one Reject recommendation (no
+     matter what the other recommendations are), it should be rejected unless the AE can
+     provide a strong justification to explain why the paper should not be rejected.
+
+     Under no circumstances can a paper be accepted without revision if it receives at least
+     one REJECT recommendation from any reviewer.
+
+  4. A paper is allowed to go through at most TWO (2) iterations (initial submission, and R1).
+     After the revision, except for very minor editorial changes, if the paper still cannot be
+     accepted, any additional revision must be submitted as a new submission.
+
+     Please inform authors that when they submit a revised version, in addition to the
+     manuscript, they must also include a separate list at the beginning of the pdf file detailing
+     how each reviewer’s comment is addressed item-by-item in their paper.
+
+  5. Please examine whether a paper is within the main scope of TRel.
+
+     We will not publish papers:
+       •   with only a few pages and many mathematical formulas based on assumptions
+           and approximations and do not provide clear examples of the practical use of
+           these formulas
+       •   with incremental works, that is, work depicting minor variations on other
+           publications
+       •   based on simplified simulations and yet-to-be-proved theories
+
+   TRel requires all papers to include a substantial discussion of previous and related works,
+   including and especially previous work from the same author (group).
+
+   TRel gives higher priority to papers with results from case studies on real-life
+   applications and discussions of possible impacts in the field.
+
+   Papers published in TRel should deal with real challenges in reliability. We are not
+   interested in publishing a paper with only a few pages, unless it is exceptionally well-
+   written with solid real-life applications. Those that mainly consist of models and/or
+   mathematical formulas based on simplified/artificial assumptions and approximations and
+   do not provide clear examples of the practical use of these models/formulas are unlikely
+   to be accepted.
+
+   Since we have a large number of high-quality submissions, we only accept papers that
+   have solid endorsement from the reviewers. A paper in which there are any major
+   concerns that have not been addressed cannot be accepted.
+
+   TRel has a long tradition on being strict about overlapping/plagiarism between
+   submissions and previously published papers. The current threshold is 30%. Any
+   submission that is over this limit will be rejected without further evaluation. Please advise
+   authors that the best way to avoid this problem is not to copy and paste paragraphs from
+   other papers, including their own publications.
+
+6. Information or content contained in or about a manuscript under review shall not be
+   processed through a public platform (directly or indirectly) for AI generation of text for a
+   review. Doing so is considered a breach of confidentiality because AI systems generally
+   learn from any input. (IEEE Publication Services and Products Board Operations
+   Manual, Section 8.2.1.C.6)
+7. When you submit your preliminary decision, you need to justify it. Please do not leave
+   the section “Associate Editor’s Summary” blank. Also, the justification cannot be
+   over-simplified. For example, it is inappropriate to say that a paper should be rejected (or
+   accepted) because the reviewers have suggested so. You should read all the comments
+   and determine whether there are any contradictions between a reviewer’s
+   recommendation and his/her detailed comments. Any recommendation without
+   appropriate justification should be excluded.
+
+   We have noticed that some reviewers (especially those recommended by the authors)
+   simply want to accept a paper without providing any comments or only giving very
+   shallow comments. Such biased reviews cannot be used to support the acceptance of a
+   paper.
+
+   To improve the review quality, it is critical that you write your own concluding
+   comments based on reviewers’ feedback and your overall evaluation of the paper to be
+   shared as Comments to the EiC in the ScholarOne Manuscript center. In short, your
+   preliminary decision should not only be based on reviewers’ recommendations without
+   examining their detailed comments. If you observe some suspicious and/or inconsistent
+   comments, please use your best judgment to determine whether they should be discarded.
+   If you still want to include them, you may consider lowering their weight while making
+   your decision.
+
+8. In some cases, the detailed comments submitted by a reviewer as an attachment are either
+    not properly uploaded to the system or are in the system but not included along with an
+    AE’s preliminary decision. If this happens, the AE needs to manually upload these files
+    and send an email to the Editor-in-Chief so that he can ask IEEE to check with
+    ScholarOne Manuscripts to find out what goes wrong.
+9. A reviewer may mistakenly enter his/her comments into the filed marked “Confidential
+    Comments to the Editor” even though they are really meant for the authors. As a result,
+    only the editors can see these comments. If this is the case, you need to manually copy
+    and paste these comments into your decision letter so that such information can be shared
+    with the authors to not only help them understand how you make your
+    acceptance/revision/rejection decision, but also provide them with useful guidance to
+    further improve their papers.
+10. To make sure all the submissions are in the same format and to better estimate the length
+    of each manuscript, authors will be required to use a style similar to that in the printed
+    version of TRel. More precisely, it should be in the standard double-column and
+    single-space format. The font size should be 11-point. Any submissions that do not
+    comply with the required format will be returned to the authors for reformatting.
+11. To accelerate the review process, the Assistant to the Editor-in-Chief tracks submissions
+    that have gone more than six months without receiving a single review, despite more than
+    10 relevant reviewers having been invited. For such submissions, authors will be notified
+    of the status and given the option to either consider alternative publication venues or
+    continue waiting to obtain at least two reviews for a decision.
+
+   In addition, for submissions with only one review (e.g., a recommendation of Rejection
+   or Major Revision) after THREE months of review time, the AE, at their discretion, may
+   proceed with a decision of Reject or Major revision, respectively. Such measures help
+   prevent excessively delayed reviews and demonstrate our commitment to timely and
+   responsible editorial decisions.
+
+   When making a recommendation of Reject or Major revision to the EiC, PLEASE
+   summarize all reviewer feedback in 2-3 sentences in the AE Comment Section. This will
+   help expedite and facilitate concurrence with your recommendation for the final decision.
+        We will contact you via email if you are on the AE list. If you receive such a reminder,
+        please complete your assignment(s) as soon as possible. It is very important that we
+        speed up the review process.
+
+
+
+
+Special Guidelines for Authors
+
+(This is posted at the beginning of the submission page in ScholarOne Manuscript system so that every
+author must read them and click the associated check box to show his/her understanding before
+proceeding with the submission. The same information also appears on the website of Reliability Society
+under Publications.)
+
+    •   We welcome high quality submissions that are original work, not published, and not
+        currently submitted elsewhere. We also welcome extensions of conference papers, unless
+        prohibited by copyright, if there is a significant difference in the technical content.
+        Improvements such as adding a new case study or including a description of additional
+        related studies do not satisfy this requirement.
+
+    •   Each submission must conform to the double column and single-spaced format of printed
+        articles in the IEEE Transactions on Reliability, with all figures and tables embedded in
+        the paper rather than listed at the end or in the appendix.
+
+    •   An abstract must be included at the beginning of each submission, as well as copied and
+        pasted into the corresponding Abstract box at Step 1 of the submission. If it is uploaded
+        as an attachment, a message such as “See the attached abstract” must be entered into the
+        corresponding box.
+
+    •   If you are submitting a revised version, the main file should have a list detailing how
+        each reviewer’s comment has been addressed in the beginning, followed by a revised
+        version of the paper. More precisely, include everything in one single pdf file. Do not
+        submit your responses to comments as part of the cover letter as reviewers may have
+        trouble finding them.
+
+    •   The overlap between a submission and other articles, including the authors’ own
+        papers/reports and dissertations, should be less than 30%. All materials accessible by the
+        public will be included for plagiarism check. You should not copy and paste any
+        paragraphs from other papers, even if they are your own publications.
+
+    •   The use of content generated by artificial intelligence (AI) in an article (including but not
+        limited to text, figures, images, and code) shall be disclosed in the acknowledgments
+        section of any article submitted to an IEEE publication. The AI system used shall be
+        identified, and specific sections of the article that use AI-generated content shall be
+      identified and accompanied by a brief explanation regarding the level at which the AI
+      system was used to generate the content. The use of AI systems for editing and grammar
+      enhancement is common practice and, as such, is generally outside the intent of the above
+      policy. In this case, disclosure as noted above is recommended. (IEEE Publication
+      Services and Products Board Operations Manual, Section 8.2.1.B.10)
+
+  •   For submissions with over FIVE authors, please provide the justification for the
+      contributions of each of the individual authors to the work in front of the main
+      manuscript.
+
+  •   Papers not complying with these guidelines may be rejected without further evaluation.
+
+
+
+
+Additional Information for Authors
+
+
+  •   Any paper shorter than five pages is likely to be rejected without evaluation unless it is
+      well-written with solid contributions to advance reliability and related areas.
+
+  •   The page limit of a manuscript is 15. A manuscript over 15 pages will be rejected without
+      further review.
+
+  •   Papers with many formulas based on assumptions and approximations that are yet to be
+      justified and do not provide clear examples of the practical use of these formulas are
+      unlikely to be accepted.
+
+  •   Papers with only incremental improvements that are minor variations of other
+      publications are likely to be rejected without evaluation.
+
+  •   Papers based on simplified simulations and yet-to-be-proven theories without appropriate
+      justifications are unlikely to be accepted.
+
+  •   All submissions must include a substantial discussion of previous and related works,
+      including and especially, previous publications from the same author (group).
+
+  •   Papers reporting results from case studies on real-life applications and discussions of
+      possible impacts in the field will receive high priority for hardcopy publication after they
+      are accepted.
+•   Once a paper is accepted, authors cannot make changes to the technical contents beyond
+    those noted in the reviews and the AE's decision letter. Otherwise, the paper will be
+    returned to the corresponding AE for further evaluation. It is also not allowed to add
+    additional authors or remove those listed on the accepted version.
+
+•   After a paper is accepted, authors are encouraged to submit the required files to IEEE
+    following the instructions provided in the decision letter and to address all editorial
+    inquiries from IEEE in a timely manner to avoid possible delay of the online publication
+    of their paper.
+
+•   Send inquiries to Professor Steven Li, Editor-in-Chief of IEEE Transactions on
+    Reliability.
+

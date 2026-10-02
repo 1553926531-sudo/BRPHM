@@ -1,0 +1,215 @@
+{
+  "schema": "brphm-leave-one-orbit-out-generalization-20260825",
+  "status": "pass",
+  "scope": "same_simulator_unseen_orbit_domain_generalization",
+  "canonical_project_mutation": false,
+  "competition_line_modified": false,
+  "holdout_access": false,
+  "selection_access": false,
+  "protocol": {
+    "source": "existing processed target tensors only",
+    "test_orbits": [
+      "LEO500",
+      "LEO550",
+      "LEO700"
+    ],
+    "source_orbits_per_fold": 2,
+    "frozen_route": "component-specific segmented HGB/MLP with fixed three-seed aggregation and monotone postprocess",
+    "no_target_orbit_windows_in_fit": true,
+    "device": "cpu"
+  },
+  "results": [
+    {
+      "component": "bat",
+      "test_orbit": "LEO500",
+      "source_orbits": [
+        "LEO550",
+        "LEO700"
+      ],
+      "source_windows": 2304,
+      "test_windows": 1377,
+      "source_units": 133,
+      "test_units": 70,
+      "metrics": {
+        "rmse": 1.9458075686003256,
+        "mae": 1.2965988587913477,
+        "bias": -0.08232313125408995,
+        "unit_macro_rmse": 1.323814184432918,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 1377,
+        "n_units": 70
+      },
+      "input_tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "configuration": {
+        "threshold": 139.0,
+        "low_mlp_weight": 0.2,
+        "high_mlp_weight": 0.7,
+        "postprocess": "isotonic_nonincreasing",
+        "aggregation": "median3",
+        "mlp_epochs": 169
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    },
+    {
+      "component": "bat",
+      "test_orbit": "LEO550",
+      "source_orbits": [
+        "LEO500",
+        "LEO700"
+      ],
+      "source_windows": 2503,
+      "test_windows": 1178,
+      "source_units": 135,
+      "test_units": 68,
+      "metrics": {
+        "rmse": 1.7944888327735873,
+        "mae": 1.1889396841474829,
+        "bias": -0.21439814610737423,
+        "unit_macro_rmse": 1.4281254850914227,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 1178,
+        "n_units": 68
+      },
+      "input_tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "configuration": {
+        "threshold": 139.0,
+        "low_mlp_weight": 0.2,
+        "high_mlp_weight": 0.7,
+        "postprocess": "isotonic_nonincreasing",
+        "aggregation": "median3",
+        "mlp_epochs": 169
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    },
+    {
+      "component": "bat",
+      "test_orbit": "LEO700",
+      "source_orbits": [
+        "LEO500",
+        "LEO550"
+      ],
+      "source_windows": 2555,
+      "test_windows": 1126,
+      "source_units": 138,
+      "test_units": 65,
+      "metrics": {
+        "rmse": 2.3908374358972697,
+        "mae": 1.5583111231774527,
+        "bias": 0.3802163574866207,
+        "unit_macro_rmse": 1.7772816658329789,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 1126,
+        "n_units": 65
+      },
+      "input_tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "configuration": {
+        "threshold": 139.0,
+        "low_mlp_weight": 0.2,
+        "high_mlp_weight": 0.7,
+        "postprocess": "isotonic_nonincreasing",
+        "aggregation": "median3",
+        "mlp_epochs": 169
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO500",
+      "source_orbits": [
+        "LEO550",
+        "LEO700"
+      ],
+      "source_windows": 4699,
+      "test_windows": 2352,
+      "source_units": 162,
+      "test_units": 78,
+      "metrics": {
+        "rmse": 0.02075027835243831,
+        "mae": 0.015583504892392552,
+        "bias": -0.0001369492302338973,
+        "unit_macro_rmse": 0.01704952408527588,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 2352,
+        "n_units": 78
+      },
+      "input_tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+      "configuration": {
+        "threshold": 0.25243055555555555,
+        "low_mlp_weight": 0.7,
+        "high_mlp_weight": 1.0,
+        "postprocess": "causal_running_min",
+        "aggregation": "mean3",
+        "mlp_epochs": 61
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO550",
+      "source_orbits": [
+        "LEO500",
+        "LEO700"
+      ],
+      "source_windows": 4727,
+      "test_windows": 2324,
+      "source_units": 161,
+      "test_units": 79,
+      "metrics": {
+        "rmse": 0.02027167806043328,
+        "mae": 0.01505406402486654,
+        "bias": -0.0012460911568340793,
+        "unit_macro_rmse": 0.01576232113731409,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 2324,
+        "n_units": 79
+      },
+      "input_tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+      "configuration": {
+        "threshold": 0.25243055555555555,
+        "low_mlp_weight": 0.7,
+        "high_mlp_weight": 1.0,
+        "postprocess": "causal_running_min",
+        "aggregation": "mean3",
+        "mlp_epochs": 61
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO700",
+      "source_orbits": [
+        "LEO500",
+        "LEO550"
+      ],
+      "source_windows": 4676,
+      "test_windows": 2375,
+      "source_units": 157,
+      "test_units": 83,
+      "metrics": {
+        "rmse": 0.021490337094875866,
+        "mae": 0.01671229343003606,
+        "bias": 0.00173825172171254,
+        "unit_macro_rmse": 0.01827869194036116,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 2375,
+        "n_units": 83
+      },
+      "input_tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+      "configuration": {
+        "threshold": 0.25243055555555555,
+        "low_mlp_weight": 0.7,
+        "high_mlp_weight": 1.0,
+        "postprocess": "causal_running_min",
+        "aggregation": "mean3",
+        "mlp_epochs": 61
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    }
+  ],
+  "non_claims": [
+    "not an independently acquired real-world dataset",
+    "not a public redistribution or license result",
+    "not a competition score or route promotion",
+    "not a full external-domain validation across FEMTO/XJTU/C-MAPSS"
+  ]
+}

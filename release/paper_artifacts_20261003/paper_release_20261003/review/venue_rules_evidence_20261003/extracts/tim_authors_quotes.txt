@@ -1,0 +1,3 @@
+QUOTE: Please submit a single self-contained unencrypted PDF file no larger than 100 MB. Files larger than 100 MB will not be accepted.
+QUOTE: Authors are asked to submit their manuscript in IEEE double-column Transactions format. The minimum number of pages for regular papers is 5 pages. There is no maximum, although overlength charges apply. If your paper is less than 5 pages, you need to submit it as a short paper.
+QUOTE: include a no more than a 150-word abstract

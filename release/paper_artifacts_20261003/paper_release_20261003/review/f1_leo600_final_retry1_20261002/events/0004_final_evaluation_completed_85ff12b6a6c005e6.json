@@ -1,0 +1,2 @@
+{"created_utc":"2026-10-02T10:38:35.143702Z","event_type":"final_evaluation_completed","payload":{"candidate_route_unchanged":true,"final_metrics_used_for_paper_decision":false,"final_metrics_used_for_selection":false,"final_receipt_sha256":"3eff57fe0703fc851e8a96c0016660034fc72c30d2e20b3c3de220c6893ce459"},"previous_event_sha256":"0fe031378ac1fbad08f760b58467ac76e7483d295568ced9ce0537759116b339","schema":"brphm-f1-event-v1","sequence":4}
+

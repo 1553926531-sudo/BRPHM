@@ -1,0 +1,322 @@
+{
+  "schema": "brphm-f2-dataset-split-manifest-1.0",
+  "generated_utc": "2026-10-02T15:09:02Z",
+  "scope": "F2 dataset, split, label and window contract plus deterministic train/validation tensor replay; holdout telemetry/labels, A1/B1 data and sealed payloads excluded",
+  "project": "BRPHM/rul-space",
+  "rack": {
+    "host": "first@10.123.100.40",
+    "root": "/mnt/data/BRPHM/rul-space"
+  },
+  "dataset_identity": {
+    "registered_public_repository": "https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets",
+    "registered_public_git_repository": "https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets.git",
+    "current_remote_head_observed_2026_10_02": "cfe0a27a99fa776d6e464649576432c871992771",
+    "historical_verified_commit_2026_08_31": "85ebba12f3ec132dc9e0ea8ae49012f57505ccf1",
+    "historical_root_manifest_sha256": "0f8d21b05eb0168ad36a070e1beb22421c962fcbbb46f65ff6cc6bba9bc3d697",
+    "historical_tier_verification": {
+      "mini": {
+        "files": 8,
+        "bytes": 3112496,
+        "tier_manifest_sha256": "151f9e9ae0b1344f75a12d8c8538525c6853409c15fc3082059bf72387d8fb46"
+      },
+      "standard": {
+        "files": 1151,
+        "bytes": 997506805,
+        "tier_manifest_sha256": "c4e0806bcc6c62370f9c53d15f62a87080e8949099188ea4c87dc1c482c0546f"
+      },
+      "complete": {
+        "files": 67539,
+        "bytes": 107243597734,
+        "tier_manifest_sha256": "ba3aae4d5de48d9b1e1fcd78de219230bbf26cf3abb84f3d147a462f0bfe3062"
+      }
+    },
+    "access_date": "2026-10-02",
+    "doi": null,
+    "doi_status": "Not disclosed by the inspected ModelScope API or README; DataCite exact-name query returned zero records and Crossref returned no exact BRPHM title match on 2026-10-02.",
+    "license": "CC-BY-4.0 declared by the live ModelScope dataset-detail API on 2026-10-02; neither checked Git commit contains a versioned license file, so applicability to a pinned historical revision is not commit-authenticated.",
+    "license_evidence": {
+      "api_url": "https://www.modelscope.cn/api/v1/datasets/modelscope1553926531/BRPHM-datasets",
+      "api_response_sha256": "61f2c24187366406f4b26df31b52434d90e9afaaffa9b7ac41ad4a50f16c1902",
+      "api_modified_utc": "2026-10-02T13:38:33Z",
+      "versioned_license_file": false,
+      "publisher_readme_authorization_is_not_a_license_file": true,
+      "analyzed_partitions": [
+        "SIM_bat",
+        "SIM_rwa"
+      ],
+      "analyzed_partition_provenance": "internally generated simulation; no third-party upstream source URL in PROVENANCE.json",
+      "unrelated_collection_partitions_share_this_license": false
+    },
+    "paper_input_revision_binding": {
+      "status": "complete_tier_payload_and_current_tensor_replay_verified",
+      "historical_verified_commit": "85ebba12f3ec132dc9e0ea8ae49012f57505ccf1",
+      "observed_current_head": "cfe0a27a99fa776d6e464649576432c871992771",
+      "complete_tier_tree_oid_both_commits": "f0b07bea4a1d2eb9286b26f7c91f34b951391da3",
+      "complete_tier_manifest_sha256_both_commits": "ba3aae4d5de48d9b1e1fcd78de219230bbf26cf3abb84f3d147a462f0bfe3062",
+      "complete_tier_payload_identical": true,
+      "root_manifests_identical": false,
+      "recommended_immutable_paper_citation_commit": "85ebba12f3ec132dc9e0ea8ae49012f57505ccf1",
+      "current_processed_tensor_derivation_verified": true,
+      "historical_canonical_tensor_creation_event_receipted": false,
+      "do_not_claim_entire_repository_revisions_are_identical": true,
+      "remaining_metadata_gaps": [
+        "No DOI disclosed by inspected ModelScope API/README; exact-name DataCite and Crossref searches returned no record on 2026-10-02.",
+        "Live API declared CC-BY-4.0 on 2026-10-02, but the inspected commits contain no versioned license file, so commit-specific license applicability is unauthenticated."
+      ]
+    }
+  },
+  "registered_project_data": {
+    "datasets": [
+      "SIM_bat",
+      "SIM_rwa"
+    ],
+    "raw_manifest_rows": 648,
+    "raw_manifest_sha256": "93710e01e18684e6296d52c4ae8ea98491841440db8f2b9798e0139901fccbc8",
+    "holdout_manifest_rows": 98,
+    "holdout_manifest_sha256": "ee1e2f760ebc69319d3dc0625744a602114a5dc249ebe8b283f0d9cb53d0c981",
+    "split_membership_csv": "unit_split_membership.csv",
+    "split_membership_sha256": "f07ac79a69986b407b3af0458201be993a2a0956d59ba7af24abd028a14a24d0",
+    "summary": {
+      "unit_count": 648,
+      "by_product_line": {
+        "bat": 324,
+        "rwa": 324
+      },
+      "by_orbit": {
+        "LEO500": 216,
+        "LEO550": 216,
+        "LEO700": 216
+      },
+      "by_split": {
+        "holdout": 98,
+        "train": 388,
+        "val": 162
+      },
+      "by_product_line_and_orbit_and_split": {
+        "bat/LEO500": {
+          "holdout": 16,
+          "train": 65,
+          "val": 27
+        },
+        "bat/LEO550": {
+          "holdout": 15,
+          "train": 66,
+          "val": 27
+        },
+        "bat/LEO700": {
+          "holdout": 18,
+          "train": 63,
+          "val": 27
+        },
+        "rwa/LEO500": {
+          "holdout": 20,
+          "train": 61,
+          "val": 27
+        },
+        "rwa/LEO550": {
+          "holdout": 18,
+          "train": 63,
+          "val": 27
+        },
+        "rwa/LEO700": {
+          "holdout": 11,
+          "train": 70,
+          "val": 27
+        }
+      },
+      "doe_cell_count": 162,
+      "holdout_sha_count": 98
+    }
+  },
+  "processed_window_summary": {
+    "audited_utc": "2026-10-02",
+    "inspection_method": "Initial window-count audit used torch.load(map_location='meta') and meta.index only; the later deterministic replay read train/validation tensor values for bitwise comparison. No holdout telemetry/labels or data/holdout payload was opened.",
+    "registered_unit_counts_per_product_line": {
+      "bat": {
+        "train": 194,
+        "val": 81,
+        "holdout": 49
+      },
+      "rwa": {
+        "train": 194,
+        "val": 81,
+        "holdout": 49
+      }
+    },
+    "processed_payloads": {
+      "bat": {
+        "tensor_path": "data/processed/bat_target.pt",
+        "tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+        "split_csv_sha256": "3b6ad1bbb5a8df5da9ab35dd044e69576bae9bf9b08867b0d109c252314e5e6",
+        "total_windows": 3681,
+        "represented_units": {
+          "train": 146,
+          "val": 57,
+          "holdout": 0
+        },
+        "windows_by_orbit_and_split": {
+          "LEO500": {
+            "train": 954,
+            "val": 423
+          },
+          "LEO550": {
+            "train": 803,
+            "val": 375
+          },
+          "LEO700": {
+            "train": 607,
+            "val": 519
+          }
+        },
+        "train_val_units_without_valid_windows": 72,
+        "membership_mismatches": 0,
+        "multi_split_units": 0
+      },
+      "rwa": {
+        "tensor_path": "data/processed/rwa_target.pt",
+        "tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+        "split_csv_sha256": "969590b62f250ea7ecb632520e4ad8da312f8f4fbe381b1a198d692d175efa16",
+        "total_windows": 7051,
+        "represented_units": {
+          "train": 169,
+          "val": 71,
+          "holdout": 0
+        },
+        "windows_by_orbit_and_split": {
+          "LEO500": {
+            "train": 1610,
+            "val": 742
+          },
+          "LEO550": {
+            "train": 1664,
+            "val": 660
+          },
+          "LEO700": {
+            "train": 1610,
+            "val": 765
+          }
+        },
+        "train_val_units_without_valid_windows": 35,
+        "membership_mismatches": 0,
+        "multi_split_units": 0
+      }
+    },
+    "independent_remote_checks": {
+      "processed_tensor_sha256_matches_receipt": true,
+      "split_csv_sha256_matches_remote_and_local_copy": true,
+      "payload_unit_membership_matches_split_csv": true,
+      "registered_holdout_units_in_processed_payload": 0
+    },
+    "deterministic_train_validation_replay": {
+      "addendum_json": "f2_tensor_replay_addendum_20261002.json",
+      "addendum_json_sha256": "c6c177ac93fad6cffd47244e3dfbdfd919f898a48b7113244be5e087e8131a1c",
+      "reader_trace_confirmed_only_train_validation_parquets": true,
+      "holdout_parquet_reads": 0,
+      "feature_label_and_mask_bitwise_equal": true,
+      "canonical_processed_tensor_sha256_reproduced": true,
+      "normalization_stable_fields_equal_excluding_created_utc": true,
+      "historical_creation_timestamp_operator_and_runtime_verified": false
+    }
+  },
+  "split_contract": {
+    "unit_of_split": "sample/unit; windows cannot cross unit",
+    "holdout": {
+      "fraction": 0.15,
+      "round_mode": "nearest",
+      "seed": 20260715,
+      "stratify_by": "doe_cell",
+      "per_cell_cap": 1,
+      "source": "configs/holdout.yaml"
+    },
+    "train_validation": {
+      "policy": "cell_tail",
+      "seed": 0,
+      "val_frac": 0.2,
+      "hash": "sha256(f'{seed}:{unit_id}')",
+      "ordering": "ascending hash; take final n_val",
+      "n_val": "clamp(floor(n*0.2), 1, n-1) for n>1; n=1 is all train"
+    },
+    "precedence": "holdout manifest membership is assigned before cell-tail train/val"
+  },
+  "window_and_label_contract": {
+    "sampling": {
+      "raw_main": "0.1 Hz / 10 s grid",
+      "event_high_resolution": "1 Hz windows, +/-120 s where present"
+    },
+    "bat": {
+      "dataset_id": "SIM_bat",
+      "input_channels": 4,
+      "input_channel_names": [
+        "bat.capacity_ah",
+        "bat.ir_proxy_ohm",
+        "bat.temp_mean_c",
+        "bat.charge_time_s"
+      ],
+      "window_length": 60,
+      "stride": 5,
+      "rmax": 150,
+      "rul_unit": "cycle",
+      "missing_policy": "impute_mean; ir_proxy_ohm is explicitly absent_ok and becomes zero after identity stats",
+      "rul_floor": "drop_negative"
+    },
+    "rwa": {
+      "dataset_id": "SIM_rwa",
+      "input_channels": 13,
+      "window_length": 30,
+      "stride": 1,
+      "aggregation": "daily_agg with bin_s=574.0 seconds",
+      "rmax": 0.2,
+      "rul_unit": "day",
+      "missing_policy": "impute_mean; singleton-bin std NaN is imputed with train statistic",
+      "rul_floor": "drop_negative",
+      "derived_channels": "3 base telemetry channels x {mean,std,min,max} plus fric_tc.mean"
+    },
+    "raw_label_semantics": {
+      "rul_days": "Tf - t; uncensored raw label",
+      "fail": "0 before failure and monotone 1 from failure; censored units remain 0",
+      "censored": "failure_time_days NaN and rul_days NaN",
+      "source": "docs/data_dictionary.md and configs/preprocess/{bat_target,rwa_target}.yaml"
+    },
+    "normalization": "statistics fit on train split only and reused for validation/holdout"
+  },
+  "final_f1_partition": {
+    "source_file": "f1_leo600_partition_manifest_20261002.json",
+    "source_sha256": "910c0582bc7e451385faccc48987f1cdb5b5684ba2b105efa240a1e8f5ce3123",
+    "partition_id": "f1_final_unseen_orbit_leo600_v1_20261002",
+    "orbit": "LEO600",
+    "unit_counts": {
+      "bat": 6,
+      "rwa": 6
+    },
+    "semantic_labels_read_before_freeze": false,
+    "raw_generation_exit_code": 0,
+    "censored_units": [
+      "BAT_LEO600_B60_H1_L3_S944"
+    ],
+    "usable_metric_counts": {
+      "bat": {
+        "units": 5,
+        "windows": 125
+      },
+      "rwa": {
+        "units": 1,
+        "windows": 1
+      }
+    },
+    "status": "separate untouched final test; not part of train/validation membership"
+  },
+  "machine_checks": {
+    "membership_rows_equal_raw_manifest": true,
+    "unit_ids_unique": true,
+    "holdout_rows_equal_holdout_manifest": true,
+    "no_unit_in_multiple_split": true,
+    "all_non_holdout_have_cell_tail_key": true,
+    "all_checks_pass": true,
+    "processed_payload_indices_match_registered_split": true,
+    "processed_payload_contains_no_holdout_units": true,
+    "initial_window_count_audit_used_metadata_only": true,
+    "train_validation_tensor_replay_bitwise_equal": true,
+    "replay_reader_trace_excluded_holdout_parquets": true,
+    "modelscope_complete_tier_payload_equivalent_across_inspected_commits": true
+  }
+}

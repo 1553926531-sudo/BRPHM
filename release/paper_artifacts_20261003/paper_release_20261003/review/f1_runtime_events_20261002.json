@@ -1,0 +1,643 @@
+{
+  "schema": "brphm-f1-runtime-events-v1",
+  "date_scope": "2026-10-02",
+  "status": "leo600_run1_raw_generation_running_w8_observed_20261002T072838Z",
+  "active_f1_run": {
+    "snapshot": "f1_leo600_run1_20261002/execution_snapshot_20261002T072838Z.json",
+    "snapshot_sha256": "eb5bcbf325f5a1bffa47d7b51a388604e7ececf2e2a94ec082807147cd0786ce",
+    "candidate_preregistration_sha256": "128bc704843332440057b9f65700c57034d7835a4eb91c5c6521ba25abc46b53",
+    "candidate_snapshot_sha256": "bdcbb38020dc84c077445929f30cd86c24ea7bf4ce9eb665e6e723578fe1f92b",
+    "preparation_manifest_sha256": "4cdf569ff96022d1897de88687742ef1ef1ab46f57089dec7b9d9a4f5cd02f21",
+    "orbit": "LEO600",
+    "units_registered": 12,
+    "raw_units_complete_at_observation": 6,
+    "completed_component": "rwa",
+    "remaining_component": "bat",
+    "workers": 8,
+    "launcher_pid": 7120,
+    "matlab_pid": 7122,
+    "worker_pids": [9780, 9786, 9788, 9791, 9793, 9795, 9797, 9799],
+    "semantic_labels_read": false,
+    "final_labels_read": false,
+    "evaluation_started": false,
+    "physical_tile_period_difference_s": -79,
+    "physical_tile_seam_km": 608
+  },
+  "fit_label_boundary_audit": {
+    "recorded_date": "2026-10-02",
+    "source_observation_timestamp_captured": false,
+    "method": "static source inspection with numbered lines and SHA-256 on Rack",
+    "candidate_training_inputs": "source_x=data[x][train]; source_y=data[y][train]; normalization statistics derive from source_x only",
+    "candidate_valid_inputs": "data[x][valid] is used only in predict_models",
+    "control_training_inputs": "x_train/y_train only for HGB and MLP fitting",
+    "valid_labels": "used for metric/residual reporting after prediction; not fed back to fit or route selection",
+    "wrapper_event_order": "verify_freeze -> append final_label_access_started -> construct payload -> fit/predict -> report metrics and receipt",
+    "fallback_sha256": "facca14f7abc9b78956245be102b131100f73a29988562766237f293b6a6f65d",
+    "relative_blend_sha256": "f9fa246661793ad098231efeb45f5967f33cd83f35f80aa179453e53d1cacc09",
+    "relative_model_sha256": "386de2a1a2a2073215ccf7b526e2f7bb20cffd00c6366a83e08391e3830c1cbf",
+    "base_tcn_sha256": "0a50fe3839fdb804903cf8ece5e6191e1cb4dd9bf6b8e23938ae13ab946b1d74",
+    "control_sha256": "658b99fecc31689ef624e0726b330b07bccf377ce7f0977d1814331a728f6bf7",
+    "confidence": "high for static fit/label separation; runtime confirmation awaits the final event chain",
+    "final_evaluation_started": false
+  },
+  "clock_sources": {
+    "rack_last_observed_utc": "2026-10-01T18:32:47Z",
+    "local_observed": "2026-10-02T02:35:20.427802+08:00",
+    "note": "Rack and local clocks are retained as observed; no silent normalization."
+  },
+  "hashes": {
+    "run_f1_generator_v8_bat_20261002.m": "0cd020b8413eb3ab1002fd481b64f7baac1b7735cc641e46ec18b7eb4ae5a4d2",
+    "build_f1_generator_v8_20261002.py": "09b7be0bf75c3d5ee017b79b6e7aa6bc845ec0d793a052d66d0a93b814b1cf53",
+    "build_f1_final_partition_v8_20261002.py": "a19be6291e04b71d7b48f515bf0646c9a3e08155412277cb755c360814e20db6",
+    "build_f1_raw_partition_v8_20261002.py": "d6839d3b2ef6179157d74f8a6c78cfd8d78bd694586e8ca4ae60019bf0c01ad4",
+    "f1_clean_final_test_20261001_v2.py": "7cf9be5fc5d19859955f71384afcfd27533dbd098369e0767fac73c0715f2482",
+    "build_f1_single_generator_v11_20261002.py": "d38e26eab0bb4fd63f0103fc9c69b206436e96a1253d864d03b0c94cd20be882",
+    "run_f1_single_S917_20261002.m": "2b42162450390d10ea5759d95db6cebc4ca5795eeb9dc5feebbbbe84eea9de070",
+    "run_f1_single_S918_20261002.m": "d2ed0a3dea30c53b704f272e4929e756cf378e660f1de3ae29a72936cad45def",
+    "run_f1_single_S917_20261002.sh": "6b9a799510858c5ac28f75611cf94d06485f50eeb28601bb9a6644e155f91e9",
+    "run_f1_single_S918_20261002.sh": "4e9da5b3dabb936191b3c8979d293a0823f87cd684db94e1495b40c1327b2376"
+  },
+  "events": [
+    {
+      "event_id": "raw_manifest_runtime_missing_torch",
+      "status": "repaired",
+      "error": "ModuleNotFoundError: No module named 'torch'",
+      "cause": "Rack default python3 lacks project dependency; PowerShell expanded remote $out in the first guard.",
+      "final_labels_read": false,
+      "output_written": false,
+      "repair": "Use .venv-fm/bin/python and an absolute remote output path."
+    },
+    {
+      "event_id": "raw_candidate_manifest_v8_20261002",
+      "status": "created_as_backup_only",
+      "output": "/mnt/data/BRPHM/rul-space/work/f1_raw_candidate_manifest_v8_20261002.json",
+      "sha256": "8381021c60703f0cdf6cb163a2d4df9b06f2a20ebc06857cfeaad6e08cf86326",
+      "sidecar_sha256": "6294d4e06557063a520e1b8d20a20c97738250379ff61d0896018e864900fbbd",
+      "rows": 6,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "exit_code": 0,
+      "elapsed_seconds": 25.22,
+      "max_rss_kb": 375992,
+      "selection_rule": "minimum SHA256(sample_id) within each component/orbit cell"
+    },
+    {
+      "event_id": "v8_bat_generation_poll_20261001T183247Z",
+      "status": "running",
+      "pid": 2902630,
+      "elapsed": "01:12:32",
+      "cpu_time": "01:07:45",
+      "cpu_percent": 93.4,
+      "memory_percent": 1.3,
+      "process_state": "SNl",
+      "generated_mat_count": 0,
+      "summary_count": 0,
+      "exitcode_count": 0,
+      "interrupted": false,
+      "duplicate_started": false,
+      "observation_scope": "counts at this poll timestamp, before S984 completion"
+    },
+    {
+      "event_id": "v8_bat_s984_completed_20261001T184333Z",
+      "status": "completed",
+      "pid": 2902630,
+      "sample_id": "BAT_LEO500_B00_H2_L3_S984",
+      "exit_code": 0,
+      "n": 80935,
+      "k": 282,
+      "wall_seconds": 4401.2,
+      "output": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_v8_bat/generated/bat/BAT_LEO500_B00_H2_L3_S984.mat",
+      "size": 2376431,
+      "mode": "664",
+      "sha256": "75b38245b947ffcd8c178e2ed1c868a1e8d0532000b1239d1f76a089a52b77bd",
+      "final_labels_read": false,
+      "next_sample_started": "BAT_LEO550_B30_H2_L3_S985",
+      "duplicate_started": false
+    },
+    {
+      "event_id": "v8_bat_s985_completed_20261001T201453Z",
+      "status": "completed",
+      "pid": 2902630,
+      "sample_id": "BAT_LEO550_B30_H2_L3_S985",
+      "exit_code": 0,
+      "n": 109635,
+      "k": 382,
+      "wall_seconds": 5800.1,
+      "output": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_v8_bat/generated/bat/BAT_LEO550_B30_H2_L3_S985.mat",
+      "size": 3179040,
+      "mode": "664",
+      "sha256": "f8a17ae95ed87efa0666a4cad986311630df3757fdf9990704efd94a7eec901e",
+      "final_labels_read": false,
+      "next_sample_started": "BAT_LEO700_B60_H2_L3_S986",
+      "duplicate_started": false
+    },
+    {
+      "event_id": "v11_single_builder_argument_binding_error_20261001T224000Z",
+      "status": "failed_before_generation",
+      "error": "RuntimeError: source contract drift: BAT_LEO550_B30_H0_L2_S187",
+      "cause": "The first builder invocation placed orbit/new_id/source_id arguments in the wrong positions; no config, raw output or semantic label was read.",
+      "final_labels_read": false,
+      "output_written": false,
+      "disposition": "retained as a failed command; retry used manifest-verified source IDs"
+    },
+    {
+      "event_id": "v11_wrong_source_s915_aborted_20261001T225000Z",
+      "status": "aborted_and_burned",
+      "sample_id": "BAT_LEO550_B30_H0_L2_S915",
+      "source_sample_id": "BAT_LEO550_B30_H0_L2_S149",
+      "reason": "B30 source was not the predeclared B60/H0/L2 cell; copied mixed-tree generated directory contained three inherited RWA artifacts.",
+      "pid": 3417128,
+      "inherited_generated_files": 3,
+      "fresh_bat_output_files": 0,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "disposition": "never eligible for final partition; do not reuse ID or tree"
+    },
+    {
+      "event_id": "v11_inherited_output_s916_aborted_20261001T225000Z",
+      "status": "aborted_and_burned",
+      "sample_id": "BAT_LEO700_B30_H2_L1_S916",
+      "source_sample_id": "BAT_LEO700_B30_H2_L1_S279",
+      "reason": "Single-source tree inherited three RWA artifacts from mixed tree; generation was stopped before a fresh BAT output.",
+      "pid": 3417126,
+      "inherited_generated_files": 3,
+      "fresh_bat_output_files": 0,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "disposition": "never eligible for final partition; do not reuse ID or tree"
+    },
+    {
+      "event_id": "v11_clean_single_tree_builder_20261001T225100Z",
+      "status": "created",
+      "trees": [
+        "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_v11_s917",
+        "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_v11_s918"
+      ],
+      "source_bindings": {
+        "BAT_LEO550_B60_H0_L2_S917": "BAT_LEO550_B60_H0_L2_S187",
+        "BAT_LEO700_B30_H2_L1_S918": "BAT_LEO700_B30_H2_L1_S279"
+      },
+      "source_cards_sha256": {
+        "S917": "533a6add4fb9815867338dd19f84d85cb300e9d7ac8fff6565468b7c41e908f4",
+        "S918": "50a0caff2ecf378591b49f75780b23302632904da0e6c4984939ef2ced672fff"
+      },
+      "inherited_generated_files_after_cleanup": 0,
+      "semantic_labels_read": false,
+      "final_labels_read": false
+    },
+    {
+      "event_id": "v11_bat_s917_s918_started_observed_20261001T225138Z",
+      "status": "running",
+      "observed_utc": "2026-10-01T22:51:38Z",
+      "processes": [
+        {
+          "sample_id": "BAT_LEO550_B60_H0_L2_S917",
+          "pid": 3424547,
+          "cpu": 1,
+          "seed": 891917,
+          "stop_time_max_s": 1500000,
+          "source_sample_id": "BAT_LEO550_B60_H0_L2_S187"
+        },
+        {
+          "sample_id": "BAT_LEO700_B30_H2_L1_S918",
+          "pid": 3424543,
+          "cpu": 2,
+          "seed": 891918,
+          "stop_time_max_s": 1500000,
+          "source_sample_id": "BAT_LEO700_B30_H2_L1_S279"
+        }
+      ],
+      "resource_contract": "one MATLAB process per unit, taskset CPU 1/2, nice 15, ionice class 3; CPU 0 remains reserved for S914",
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "fresh_output_files_at_observation": {
+        "S917": 0,
+        "S918": 0
+      },
+      "duplicate_started": false
+    },
+    {
+      "event_id": "v11_bat_s917_completed_20261001T232530Z",
+      "status": "completed_diagnostic_only",
+      "sample_id": "BAT_LEO550_B60_H0_L2_S917",
+      "pid": 3424547,
+      "exit_code": 0,
+      "code": 11,
+      "n": 33293,
+      "k": 117,
+      "tf_days": 3.72545,
+      "wall_seconds": 1792.3,
+      "output": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_v11_s917/generated/bat/BAT_LEO550_B60_H0_L2_S917.mat",
+      "size": 1126473,
+      "sha256": "2a8641557bab826e2f733231fe9395fed8282cd43021f8543692c33f8e6fb9c7",
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "disposition": "diagnostic batch; burn after v12 feasibility probe; never eligible for final partition"
+    },
+    {
+      "event_id": "v11_s914_batch_queue_aborted_20261001T234800Z",
+      "status": "aborted_before_output",
+      "sample_id": "BAT_LEO500_B60_H2_L3_S914",
+      "pid": 3393102,
+      "reason": "runner used the six-row mixed manifest and processed the historical BAT queue instead of the single predeclared S914 row; no S914 raw output was written",
+      "fresh_bat_output_files": 0,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "disposition": "burned; do not reuse S914 or mixed-tree BAT queue as final evidence"
+    },
+    {
+      "event_id": "v11_bat_s925_started_20261001T234900Z",
+      "status": "running",
+      "sample_id": "BAT_LEO500_B60_H2_L3_S925",
+      "pid": 3526285,
+      "cpu": 0,
+      "seed": 891925,
+      "source_sample_id": "BAT_LEO500_B60_H2_L3_S106",
+      "stop_time_max_s": 1500000,
+      "source_card_sha256": "406c2038025cc9aa82bbd40eb12562028e453cd0acba3d23493a038473832790",
+      "generator_manifest_sha256": "3900ae0c9a9f0ac3bb6a2a4ff4e304ecd57088b75d26519240bbee13ed5e1752",
+      "inherited_generated_files": 0,
+      "semantic_labels_read": false,
+      "final_labels_read": false
+    },
+    {
+      "event_id": "v11_bat_s918_failed_stop_contract_20261002T010705Z",
+      "status": "failed_after_simulation_before_output",
+      "sample_id": "BAT_LEO700_B30_H2_L1_S918",
+      "pid": 3424543,
+      "requested_stop_time_max_s": 1500000,
+      "orbit_period_s": 5740,
+      "failure": "make_dataset:stop: BAT line must stop at an integer orbit boundary",
+      "wall_seconds": 7888.6,
+      "generated_output": false,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "matlab_log_sha256": "13b2661c7404d07eab30d09fcb55a4a28efc4ccf25612ed96a8e9641a6af6599",
+      "manifest_sha256": "b5889f500212b080fc502f5f195d91124db4ee2e93cfbfe66852c9f54c40ac28",
+      "disposition": "burned; no MAT or label payload exists; not eligible for diagnostic or final partition"
+    },
+    {
+      "event_id": "v11_bat_s925_aborted_known_stop_contract_20261002T010903Z",
+      "status": "aborted_before_output",
+      "sample_id": "BAT_LEO500_B60_H2_L3_S925",
+      "pid": 3526285,
+      "termination": "SIGTERM after S918 established deterministic stop-time contract failure",
+      "requested_stop_time_max_s": 1500000,
+      "orbit_period_s": 5740,
+      "generated_output": false,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "matlab_log_sha256": "729813068c1ea6d9e225c7995c95421ee8ffc63dc9c644f847e5b457ee543e52",
+      "manifest_sha256": "3900ae0c9a9f0ac3bb6a2a4ff4e304ecd57088b75d26519240bbee13ed5e1752",
+      "disposition": "burned; deterministic contract failure; no MAT or label payload exists"
+    },
+    {
+      "event_id": "v12_orbit_aligned_diagnostic_trees_created_20261002T011000Z",
+      "status": "created_and_verified",
+      "units": {
+        "BAT_LEO700_B30_H2_L1_S926": {
+          "source_sample_id": "BAT_LEO700_B30_H2_L1_S279",
+          "seed": 891926,
+          "requested_stop_time_max_s": 1500000,
+          "effective_stop_time_max_s": 1498140,
+          "source_card_sha256": "7ae77b70089d60e58f7055aed1fdc60cf3b2549f37bb43c22a732ac64c0fbc8a",
+          "manifest_sha256": "d21e1c829477743247237ea4fcb233a7bdae3c5100c9532802e6e67d616fe06f"
+        },
+        "BAT_LEO500_B60_H2_L3_S927": {
+          "source_sample_id": "BAT_LEO500_B60_H2_L3_S106",
+          "seed": 891927,
+          "requested_stop_time_max_s": 1500000,
+          "effective_stop_time_max_s": 1498140,
+          "source_card_sha256": "9b5e213a8530730aa23100454f57c0bfa54ecafd7adb2fbee695d75e8a208417",
+          "manifest_sha256": "9378e926bee216013c5498a222d1b30ec5580b475406fe15ff6c4092aa2b87f6"
+        }
+      },
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "generated_file_count_before_start": 0,
+      "repair": "floor requested BAT stop ceiling to integer 5740-second orbit and record both values"
+    },
+    {
+      "event_id": "v12_bat_s926_s927_started_20261002T011010Z",
+      "status": "running",
+      "processes": [
+        {
+          "sample_id": "BAT_LEO700_B30_H2_L1_S926",
+          "pid": 3652511,
+          "cpu": 2,
+          "seed": 891926,
+          "effective_stop_time_max_s": 1498140
+        },
+        {
+          "sample_id": "BAT_LEO500_B60_H2_L3_S927",
+          "pid": 3652516,
+          "cpu": 0,
+          "seed": 891927,
+          "effective_stop_time_max_s": 1498140
+        }
+      ],
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "resource_contract": "one MATLAB process per unit, taskset CPU 2/0, nice 15, ionice class 3"
+    },
+    {
+      "event_id": "v12_bat_s926_s927_runner_quote_failure_20261002T011526Z",
+      "status": "failed_before_generation_and_burned",
+      "units": [
+        "BAT_LEO700_B30_H2_L1_S926",
+        "BAT_LEO500_B60_H2_L3_S927"
+      ],
+      "processes": [
+        {
+          "pid": 3652511,
+          "exit": "immediate"
+        },
+        {
+          "pid": 3652516,
+          "exit": "immediate"
+        }
+      ],
+      "failure": "MATLAB cd received '/home/first/ /mnt/data/BRPHM/rul-space/work/paper/repro' because nested SSH quoting was malformed",
+      "log_evidence": "no make_dataset banner, no simulation, no generated output, no semantic labels",
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "disposition": "trees burned; replacement uses file-based runner and fresh S928/S929 IDs"
+    },
+    {
+      "event_id": "v12_replacement_plan_s928_s929_20261002T011600Z",
+      "status": "predeclared",
+      "units": {
+        "BAT_LEO700_B30_H2_L1_S928": {
+          "source_sample_id": "BAT_LEO700_B30_H2_L1_S279",
+          "seed": 891928,
+          "effective_stop_time_max_s": 1498140
+        },
+        "BAT_LEO500_B60_H2_L3_S929": {
+          "source_sample_id": "BAT_LEO500_B60_H2_L3_S106",
+          "seed": 891929,
+          "effective_stop_time_max_s": 1498140
+        }
+      },
+      "repair": "invoke the uploaded file-based .sh runner; no nested SSH MATLAB quoting"
+    },
+    {
+      "event_id": "v12_orbit_aligned_replacement_trees_created_20261002T011700Z",
+      "status": "created_and_verified",
+      "units": {
+        "BAT_LEO700_B30_H2_L1_S928": {
+          "source_sample_id": "BAT_LEO700_B30_H2_L1_S279",
+          "seed": 891928,
+          "effective_stop_time_max_s": 1498140,
+          "generated_file_count_before_start": 0
+        },
+        "BAT_LEO500_B60_H2_L3_S929": {
+          "source_sample_id": "BAT_LEO500_B60_H2_L3_S106",
+          "seed": 891929,
+          "effective_stop_time_max_s": 1498140,
+          "generated_file_count_before_start": 0
+        }
+      },
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "builder_sha256": "52cd405d02858717f0be791e85eb58a5d8ab5d8e8e9d19de26fe040b9cb95e1a"
+    },
+    {
+      "event_id": "v12_bat_s928_s929_started_20261002T011720Z",
+      "status": "running",
+      "processes": [
+        {
+          "sample_id": "BAT_LEO700_B30_H2_L1_S928",
+          "pid": 3658040,
+          "cpu": 2,
+          "seed": 891928
+        },
+        {
+          "sample_id": "BAT_LEO500_B60_H2_L3_S929",
+          "pid": 3658041,
+          "cpu": 0,
+          "seed": 891929
+        }
+      ],
+      "runner_sha256": {
+        "S928": "d2b12eb79d0a744b9fe2f72c3f2ebb8c0b12c65b2f3c91f1be59fef64755dbd8",
+        "S929": "f03b1241c13c5483e16d8760c05c207671f5b3a2f3239132ec107a68f31a3aa0"
+      },
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "resource_contract": "one MATLAB process per unit, taskset CPU 2/0, nice 15, ionice class 3"
+    },
+    {
+      "event_id": "v12_bat_s929_completed_20261002T030713Z",
+      "status": "completed_diagnostic_only",
+      "sample_id": "BAT_LEO500_B60_H2_L3_S929",
+      "pid": 3658041,
+      "exit_code": 0,
+      "simulation_code": 11,
+      "n": 117671,
+      "k": 411,
+      "tf_days": 13.08708,
+      "wall_seconds": 6505.1,
+      "output_size": 3641177,
+      "output_sha256": "151969b33490752d7b4672edb036025afe30ff5a6c6b823b2ab6fedc967e264a",
+      "matlab_log_sha256": "bee7b627ab14fc802237e927d9f511e8237be3bc72e59a43b48e26e977bfbc34",
+      "manifest_sha256": "66058e032658210a1b9c4af1bf92ae8c2a2ac2a665a41e12b431342afd7f47ca",
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "disposition": "diagnostic-only; probe will read labels once and burn unit"
+    },
+    {
+      "event_id": "v12_bat_s928_completed_20261002T033225Z",
+      "status": "completed_diagnostic_only",
+      "sample_id": "BAT_LEO700_B30_H2_L1_S928",
+      "pid": 3658040,
+      "exit_code": 0,
+      "simulation_code": 0,
+      "censored": true,
+      "n": 149815,
+      "k": 522,
+      "tf_days": null,
+      "wall_seconds": 8017.9,
+      "output_size": 4295131,
+      "output_sha256": "5cbba9d844f988a22322deda9d6e3cb5d4cf8450d1b158a3a6ed329dbafaec5b",
+      "matlab_log_sha256": "f2ff3c6ca94abfeb0bd49978b1cdf9753e74ff12e0eff0757df30af8cf1e9105",
+      "manifest_sha256": "347de2a69e4cda1a1b767e246f625bedb1c89ede621a9c663960783de81f134b",
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "disposition": "diagnostic-only; probe will read labels once and burn unit"
+    },
+    {
+      "event_id": "v12_diagnostic_partition_manifest_created_20261002T033300Z",
+      "status": "created_metadata_only",
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_final_partition_v12_20261002/partition_manifest.json",
+      "sha256": "6cb683245434874c114eda84c286cacbf067f868903af064e7829a8aa01fa767",
+      "rows": 6,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "selection_inputs": "predeclared IDs, source-card schema/hash, config hash, raw file size/hash",
+      "disposition": "eligible only for diagnostic feasibility probe; never for final partition"
+    },
+    {
+      "event_id": "v12_diagnostic_feasibility_probe_completed_20261002T033833Z",
+      "status": "completed_and_burned",
+      "probe_path": "/mnt/data/BRPHM/rul-space/work/f1_diagnostic_probe_v12_20261002.json",
+      "probe_sha256": "a3998d1ad99e539cad05c7b4153b6b5664d291d639666aef547d1cf8c9fb36b8",
+      "partition_manifest": "/mnt/data/BRPHM/rul-space/work/f1_final_partition_v12_20261002/partition_manifest.json",
+      "partition_manifest_sha256": "6cb683245434874c114eda84c286cacbf067f868903af064e7829a8aa01fa767",
+      "probe_started_utc": "2026-10-02T03:38:29.508916Z",
+      "probe_completed_utc": "2026-10-02T03:38:33.74672Z",
+      "semantic_labels_read": true,
+      "final_label_access": false,
+      "diagnostic_only": true,
+      "all_touched_units_excluded_from_future_final_partitions": true,
+      "unit_counts": {
+        "BAT_LEO500_B60_H2_L3_S929": {
+          "raw_windows": 30,
+          "finite_labels": 30,
+          "kept_windows": 28,
+          "status": "feasible"
+        },
+        "BAT_LEO550_B60_H0_L2_S917": {
+          "raw_windows": 0,
+          "finite_labels": 0,
+          "kept_windows": 0,
+          "status": "zero_windows_after_label_filter"
+        },
+        "BAT_LEO700_B30_H2_L1_S928": {
+          "raw_windows": 41,
+          "finite_labels": 0,
+          "kept_windows": 0,
+          "status": "zero_windows_after_label_filter"
+        },
+        "RWA_LEO500_B00_H0_L1_S911": {
+          "raw_windows": 57,
+          "finite_labels": 57,
+          "kept_windows": 3,
+          "status": "feasible"
+        },
+        "RWA_LEO550_B30_H0_L1_S912": {
+          "raw_windows": 57,
+          "finite_labels": 57,
+          "kept_windows": 11,
+          "status": "feasible"
+        },
+        "RWA_LEO700_B60_H0_L1_S913": {
+          "raw_windows": 57,
+          "finite_labels": 57,
+          "kept_windows": 8,
+          "status": "feasible"
+        }
+      },
+      "burned_units": [
+        "S911",
+        "S912",
+        "S913",
+        "S917",
+        "S928",
+        "S929"
+      ],
+      "next_action": "generate predeclared S919-S921 and S923-S924 plus fresh replacement S930 after this burn"
+    },
+    {
+      "event_id": "v13_final_builder_s922_permission_failure_observed_20261002T034839Z",
+      "status": "failed_before_generation_and_burned",
+      "sample_id": "BAT_LEO500_B60_H2_L3_S922",
+      "source_sample_id": "BAT_LEO500_B60_H2_L3_S106",
+      "builder": "/mnt/data/BRPHM/rul-space/work/paper/repro/build_f1_single_generator_v12_20261002.py",
+      "source_tree": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_v12_s928",
+      "failure": "PermissionError: read-only inherited single_source_card.json prevented creation of the replacement source card",
+      "failure_class": "resource_or_filesystem_permission",
+      "observed_utc": "2026-10-02T03:48:39Z",
+      "failure_timestamp_source": "command returned before a per-process timestamp was emitted; observed time is recorded as the upper bound",
+      "matlab_started": false,
+      "generated_output_written": false,
+      "semantic_labels_read": false,
+      "final_label_access": false,
+      "disposition": "burned; no output or labels; replacement uses fresh S930 ID and v11_mixed base tree",
+      "repair": "use a base tree whose read-only diagnostic card is not at the destination path; preserve card hash validation and fresh output directory"
+    },
+    {
+      "event_id": "v13_s923_completed_20261002T043009Z",
+      "status": "completed_raw_generation",
+      "sample_id": "BAT_LEO550_B60_H0_L2_S923",
+      "pid": 3918683,
+      "cpu": 2,
+      "seed": 891923,
+      "matlab_completion_timestamp_from_log_mtime_utc": "2026-10-02T04:30:32.594595Z",
+      "observed_complete_utc": "2026-10-02T04:33:09Z",
+      "simulation_code": 11,
+      "n": 33293,
+      "k": 117,
+      "tf_days": 3.72545,
+      "wall_seconds": 1792.9,
+      "output": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_v12_s923/generated/bat/BAT_LEO550_B60_H0_L2_S923.mat",
+      "output_size": 1126605,
+      "output_sha256": "c701a9762c2cd55c28501a15216b4b2786dae96a069b43c487d41c7bace9dc92",
+      "matlab_log_sha256": "c05d0f8c0eeabd17b68f8b074f395ac90830c8852c99aea49ff0fd3b0510462e",
+      "matlab_reported_make_dataset_status": "ok",
+      "reported_failures": 0,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "detached_shell_exit_status_retained": false,
+      "disposition": "eligible for metadata-only v13 partition; not yet semantic-label-probed"
+    },
+    {
+      "event_id": "v13_s930_started_20261002T035951Z",
+      "status": "running",
+      "sample_id": "BAT_LEO500_B60_H2_L3_S930",
+      "pid": 3918684,
+      "cpu": 1,
+      "seed": 891930,
+      "started_utc": "2026-10-02T03:59:51Z",
+      "nice": 15,
+      "ionice_class": 3,
+      "runner_sha256": "9b7d1f61c7c86735879322b12a1289409d381e30c8e8279922b6964b41d0ba6b",
+      "matlab_script_sha256": "0762cc1b3443f764296d6d9c6b1413cdb2b6372ba94a0f2cc6f6a6a31aab47c7",
+      "source_card_sha256": "8acc511d4783e231aab871ebeba49b0eca1b20f797abb18b38d82984035b9afd",
+      "generated_file_count_at_last_observation": 0,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "observation_utc": "2026-10-02T04:35:16Z"
+    },
+    {
+      "event_id": "v13_s921_started_20261002T043504Z",
+      "status": "running",
+      "sample_id": "RWA_LEO700_B60_H0_L1_S921",
+      "pid": 3968538,
+      "cpu": 2,
+      "seed": 891921,
+      "started_utc": "2026-10-02T04:35:04Z",
+      "nice": 15,
+      "ionice_class": 3,
+      "runner_sha256": "8151dc44f1604664b90ca5401fe3fb472cb6bd4abd1e87097da078f617c7b895",
+      "matlab_script_sha256": "c205d8d845126e5b22e0c90ce5c8f5588b99a3ff9f95900d974e8f1b1567101b",
+      "source_card_sha256": "bcb535187001a2297546d3d63d205fe64fb4d3e1d28eae1624b611419d0bea44",
+      "source_card_manifest_sha256": "3dad01245a82d997399476a192054cbaa916cc3cf8ebb2bac8e0b142f54677f2",
+      "generated_file_count_at_start": 0,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "verified_utc": "2026-10-02T04:35:16Z"
+    },
+    {
+      "event_id": "gmat_leo600_v1_failed_before_propagation_20261002T045207Z",
+      "status": "failed_script_validation",
+      "tool": "GMAT R2026a GmatConsole",
+      "exit_code": 1,
+      "script_path": "work/paper/repro/generate_f1_leo600_b30_gmat_20261002.script",
+      "script_sha256": "112036458f3fd2626befc966bf3b9a9f704b33a7a6188bc3a882a299a20c63ce",
+      "remote_log": "/mnt/data/BRPHM/tool-cache/f1_leo600_b30_20261002/run.log",
+      "log_sha256": "55c7271e95af5da7b096769b88042ff4dea2dd4adc750e2daf9d75dbda78b04f",
+      "failure": "EclipseEvents.Spacecraft list with braces rejected by R2026a",
+      "failure_class": "toolchain_compatibility",
+      "cause_evidence": "Bundled samples/Ex_EclipseLocation.script assigns a single spacecraft object without braces",
+      "propagation_started": false,
+      "csv_written": false,
+      "eclipse_report_written": false,
+      "raw_data_written": false,
+      "semantic_labels_read": false,
+      "final_labels_read": false,
+      "repair": "Create immutable v2 script using EclipseEvents.Spacecraft = DefaultSC; preserve v1 and log"
+    }
+  ],
+  "promotion_rule": "Historical v13 attempts remain classified by their earlier per-attempt records. Current F1 chain is LEO600 run1: complete the 12 pre-registered raw simulations, seal metadata-only manifest, freeze candidate and partition, then evaluate once after the immutable label-access event. Do not use final metrics to revise the tested candidate."
+}
+

@@ -1,0 +1,231 @@
+{
+  "created_at_local": "2026-10-03T03:10:18.154957+08:00",
+  "timezone": "Asia/Shanghai",
+  "records": [
+    {
+      "artifact": "raw/tim_authors.html",
+      "source_file": "tim_authors.html",
+      "capture_time_local": "2026-10-03T02:47:24.862611+08:00",
+      "sha256": "c005653e5c4a585fccd3a0d38b9dd76d8d69832c17dc264a2bf3329ed490d416",
+      "bytes": 107365,
+      "url": "https://ieee-ims.org/publication/ieee-tim/information-authors",
+      "http_status": 200,
+      "final_url": "https://ieee-ims.org/publication/ieee-tim/information-authors",
+      "access_time_local": "2026-10-03T02:47:24.862611+08:00"
+    },
+    {
+      "artifact": "raw/tim_templates.html",
+      "source_file": "tim_templates.html",
+      "capture_time_local": "2026-10-03T02:47:49.303256+08:00",
+      "sha256": "32bfb57bba59d06e4ea2e798c54a276a67d2cfa3a169ecd503d2a619eda80a6c",
+      "bytes": 70604,
+      "url": "https://ieee-ims.org/publication/ieee-tim/tim-paper-templates",
+      "http_status": 200,
+      "final_url": "https://ieee-ims.org/publication/ieee-tim/tim-paper-templates",
+      "access_time_local": "2026-10-03T02:47:49.303256+08:00"
+    },
+    {
+      "artifact": "raw/tim_charge.pdf",
+      "source_file": "tim_charge.pdf",
+      "capture_time_local": "2026-10-03T02:47:57.839362+08:00",
+      "sha256": "e2b3b4af8b624b34a38b1fe821416b11378109aba28a316e63d06be2e68f41a3",
+      "bytes": 133598,
+      "url": "https://ieee-ims.org/files/ieeeims/2025-12/on-lineoverlengthpagechargeagreement-nov2025.pdf",
+      "http_status": 200,
+      "final_url": "https://ieee-ims.org/files/ieeeims/2025-12/on-lineoverlengthpagechargeagreement-nov2025.pdf",
+      "access_time_local": "2026-10-03T02:47:57.839362+08:00"
+    },
+    {
+      "artifact": "raw/tim_landing.html",
+      "source_file": "tim.html",
+      "capture_time_local": "2026-10-03T02:45:49.855995+08:00",
+      "sha256": "14c3d78bdd21caaed119582c6fc24f020744b622892ffbc2bde1dac30686fd24",
+      "bytes": 537717,
+      "url": "https://ieee-ims.org/publication/ieee-transactions-instrumentation-and-measurement",
+      "http_status": 200,
+      "final_url": "https://ieee-ims.org/publication/ieee-transactions-instrumentation-and-measurement",
+      "access_time_local": "2026-10-03T02:45:49.855995+08:00"
+    },
+    {
+      "artifact": "raw/trel_rs.html",
+      "source_file": "trel_rs.html",
+      "capture_time_local": "2026-10-03T02:55:26.672194+08:00",
+      "sha256": "9e6257e2ef3075fda46623aae1d8c935f3252e775923b168f4cd0596ced15518",
+      "bytes": 31876,
+      "url": "https://rs.ieee.org/publications/transactions-on-reliability.html",
+      "http_status": 200,
+      "final_url": "https://rs.ieee.org/publications/transactions-on-reliability.html",
+      "access_time_local": "2026-10-03T02:55:26.672194+08:00"
+    },
+    {
+      "artifact": "raw/trel_review_policy.pdf",
+      "source_file": "trel_review_policy.pdf",
+      "capture_time_local": "2026-10-03T02:55:57.048028+08:00",
+      "sha256": "3a02580e5510d452d69d1eac7a6f9a2419f8490f954cf5bb5b1721e7d7471d5d",
+      "bytes": 278871,
+      "url": "https://rs.ieee.org/images/files/Publications/Trans_Reliability/IEEE%20TrR%20Review%20Policy_2026_519.pdf",
+      "http_status": 200,
+      "final_url": "https://rs.ieee.org/images/files/Publications/Trans_Reliability/IEEE%20TrR%20Review%20Policy_2026_519.pdf",
+      "access_time_local": "2026-10-03T02:55:57.048028+08:00"
+    },
+    {
+      "artifact": "raw/trel_review_policy_extracted.txt",
+      "source_file": "trel_policy.txt",
+      "capture_time_local": "2026-10-03T02:56:06.780884+08:00",
+      "sha256": "47dab8f99a674277629af6934ce261f6d36070b5d711638bb88da6858c4087e1",
+      "bytes": 14318,
+      "access_time_local": "2026-10-03T02:56:06.780884+08:00"
+    },
+    {
+      "artifact": "raw/trel_xplore_response.html",
+      "source_file": "trel_xplore.html",
+      "capture_time_local": "2026-10-03T02:55:30.493418+08:00",
+      "sha256": "c71094f5dffba9728b4540d81afcce5920f74dacd8165d79426f10b001fc228d",
+      "bytes": 38908,
+      "url": "https://www.ieee.org/publications/periodicals/transactions-on-reliability.html",
+      "http_status": 202,
+      "final_url": "https://www.ieee.org/publications/periodicals/transactions-on-reliability.html",
+      "access_time_local": "2026-10-03T02:55:30.493418+08:00"
+    },
+    {
+      "artifact": "raw/taes_page.html",
+      "source_file": "taes_page.html",
+      "capture_time_local": "2026-10-03T02:53:42.586168+08:00",
+      "sha256": "57017c71496dd7b26fe82bbfdeab3490b43bf393d4c48cbdd52d0b04b9e77e73",
+      "bytes": 314408,
+      "url": "https://ieee-aess.org/publications/taes",
+      "http_status": 200,
+      "final_url": "https://ieee-aess.org/publications/taes",
+      "access_time_local": "2026-10-03T02:53:42.586168+08:00"
+    },
+    {
+      "artifact": "raw/taes_authors.html",
+      "source_file": "taes_authors.html",
+      "capture_time_local": "2026-10-03T02:53:46.766194+08:00",
+      "sha256": "54091b9a11f5e9f4bceae6e3168d6e08961c5a71125dfb422b0f4d562e3c1f0d",
+      "bytes": 250478,
+      "url": "https://ieee-aess.org/publications/transactions-aes/author-information",
+      "http_status": 200,
+      "final_url": "https://ieee-aess.org/publications/transactions-aes/author-information",
+      "access_time_local": "2026-10-03T02:53:46.766194+08:00"
+    },
+    {
+      "artifact": "raw/taes_template.zip",
+      "source_file": "taes_template.zip",
+      "capture_time_local": "2026-10-03T02:56:37.190331+08:00",
+      "sha256": "6579ae30c43eaf695445e802603970c0c770269e3e88b3c28bee2cf99af8803e",
+      "bytes": 2617396,
+      "url": "https://confcats-web-assets.s3.amazonaws.com/ieeeaess/documents/TAES+Template.zip",
+      "http_status": 200,
+      "final_url": "https://confcats-web-assets.s3.amazonaws.com/ieeeaess/documents/TAES+Template.zip",
+      "access_time_local": "2026-10-03T02:56:37.190331+08:00"
+    },
+    {
+      "artifact": "raw/ieee_general_peer_review.html",
+      "source_file": "ieee_src_0.html",
+      "capture_time_local": "2026-10-03T02:51:12.016866+08:00",
+      "sha256": "7e89a6277ba28a386b1b8fd7ab7adc43466f2938268ef42686ae787c8bcf4aac",
+      "bytes": 66362,
+      "url": "https://journals.ieeeauthorcenter.ieee.org/submit-your-article-for-peer-review/about-the-peer-review-process/",
+      "http_status": 200,
+      "final_url": "https://journals.ieeeauthorcenter.ieee.org/submit-your-article-for-peer-review/about-the-peer-review-process/",
+      "access_time_local": "2026-10-03T02:51:12.016866+08:00"
+    },
+    {
+      "artifact": "raw/cas_home.html",
+      "source_file": "cas_cas.html",
+      "capture_time_local": "2026-10-03T03:01:37.400448+08:00",
+      "sha256": "3350d9911b202470f398b4f72ce54594f6613c4b770d4bd073b71a05136a8406",
+      "bytes": 126749,
+      "url": "https://www.cas.cn/",
+      "http_status": 200,
+      "final_url": "https://www.cas.cn/",
+      "access_time_local": "2026-10-03T03:01:37.400448+08:00"
+    },
+    {
+      "artifact": "raw/clarivate_jcr_home.html",
+      "source_file": "clarivate_jcr_home.html",
+      "capture_time_local": "2026-10-03T02:59:35.828247+08:00",
+      "sha256": "ffbafd3eb37a3014e2fbcff07015bdb3e22eb4fe13802d722b523d7c7d79c796",
+      "bytes": 56896,
+      "url": "https://jcr.clarivate.com/jcr/home",
+      "http_status": 200,
+      "final_url": "https://jcr.clarivate.com/jcr/home",
+      "access_time_local": "2026-10-03T02:59:35.828247+08:00"
+    },
+    {
+      "artifact": "raw/clarivate_jcr_bundle.js",
+      "source_file": "jcr_main.js",
+      "capture_time_local": "2026-10-03T03:00:06.484331+08:00",
+      "sha256": "5d06d88f6f699bdabaff4cf7090a1823cb6eae257b5f882273ed3569039ab717",
+      "bytes": 950260,
+      "url": "https://jcr.clarivate.com/jcr/home (application bundle discovered during audit)",
+      "http_status": 200,
+      "final_url": "https://jcr.clarivate.com/jcr/home",
+      "access_time_local": "2026-10-03T03:00:06.484331+08:00"
+    },
+    {
+      "artifact": "raw/ieee_accessibility_guidance.html",
+      "url": "https://journals.ieeeauthorcenter.ieee.org/become-an-ieee-journal-author/publishing-ethics/guidelines-and-policies/ieee-guidelines-on-advertising-accessibility-data-privacy/",
+      "http_status": 200,
+      "final_url": "https://journals.ieeeauthorcenter.ieee.org/become-an-ieee-journal-author/publishing-ethics/guidelines-and-policies/ieee-guidelines-on-advertising-accessibility-data-privacy/",
+      "access_time_utc": "2026-10-02T19:10:17.481881+00:00",
+      "sha256": "63d66ae2e6377dafcf3aef2f849ff165eb2dff45aa52a47d77992bf6adbc56ea",
+      "bytes": 68309,
+      "content_type": "text/html; charset=UTF-8",
+      "access_time_local": null
+    },
+    {
+      "artifact": "raw/clarivate_api_09518320_401.txt",
+      "url": "https://jcr.clarivate.com/api/jcr3/journalprofile/v1/journal-informationByIssnEssn",
+      "http_status": 401,
+      "final_url": "https://jcr.clarivate.com/api/jcr3/journalprofile/v1/journal-informationByIssnEssn",
+      "access_time_local": "2026-10-03 (capture run; exact request timestamp unavailable in prior shell log)",
+      "request_method": "POST",
+      "request_parameter": {
+        "issn": "0951-8320"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "interpretation": "Unauthorized response with empty body; no JCR quartile extracted."
+    },
+    {
+      "artifact": "raw/clarivate_api_08883270_401.txt",
+      "url": "https://jcr.clarivate.com/api/jcr3/journalprofile/v1/journal-informationByIssnEssn",
+      "http_status": 401,
+      "final_url": "https://jcr.clarivate.com/api/jcr3/journalprofile/v1/journal-informationByIssnEssn",
+      "access_time_local": "2026-10-03 (capture run; exact request timestamp unavailable in prior shell log)",
+      "request_method": "POST",
+      "request_parameter": {
+        "issn": "0888-3270"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "interpretation": "Unauthorized response with empty body; no JCR quartile extracted."
+    },
+    {
+      "artifact": "raw/clarivate_api_12709638_401.txt",
+      "url": "https://jcr.clarivate.com/api/jcr3/journalprofile/v1/journal-informationByIssnEssn",
+      "http_status": 401,
+      "final_url": "https://jcr.clarivate.com/api/jcr3/journalprofile/v1/journal-informationByIssnEssn",
+      "access_time_local": "2026-10-03 (capture run; exact request timestamp unavailable in prior shell log)",
+      "request_method": "POST",
+      "request_parameter": {
+        "issn": "1270-9638"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "interpretation": "Unauthorized response with empty body; no JCR quartile extracted."
+    },
+    {
+      "artifact": "raw/fenqubiao_dns_failure.txt",
+      "url": "https://www.fenqubiao.com/",
+      "http_status": "DNS_FAILURE",
+      "final_url": null,
+      "access_time_local": "2026-10-03 (capture run; exact request timestamp unavailable in prior shell log)",
+      "sha256": "fdb696b76624ff7921f5348a0d41907ba7f94874a6eeb37ebc7a32343929e231",
+      "bytes": 148,
+      "interpretation": "No public CAS partition record was verified."
+    }
+  ]
+}

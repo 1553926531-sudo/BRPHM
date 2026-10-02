@@ -1,0 +1,34 @@
+{
+  "schema": "brphm-f1-evaluation-retry-amendment-v1",
+  "created_utc": "2026-10-02T10:24:30Z",
+  "status": "recorded_before_retry_freeze",
+  "failed_attempt": {
+    "output_dir": "/mnt/data/BRPHM/rul-space/work/f1_leo600_final_20261002",
+    "freeze_manifest_sha256": "542735e14757f2d2327f3efe5d81f15e2694be53fb3ab960e57e3f3597ca6a07",
+    "final_label_access_event": "0003_final_label_access_started_8c0d457e703ab0b0.json",
+    "final_label_access_event_sha256": "8c0d457e703ab0b0d5138e1251654f7c1f048f9773f1c46cc8d907fa33f2256d",
+    "failure": "ModuleNotFoundError: No module named 'src'",
+    "failure_class": "runtime_import_path",
+    "receipt_written": false,
+    "bat_payload_written": false,
+    "rwa_payload_written": false,
+    "semantic_labels_read": false,
+    "reason_semantic_labels_not_read": "the exception occurred while importing src.datasets before build_raw_holdout_payload accessed raw labels"
+  },
+  "unchanged_inputs": {
+    "candidate_snapshot_sha256": "bdcbb38020dc84c077445929f30cd86c24ea7bf4ce9eb665e6e723578fe1f92b",
+    "candidate_preregistration_sha256": "128bc704843332440057b9f65700c57034d7835a4eb91c5c6521ba25abc46b53",
+    "partition_manifest_sha256": "910c0582bc7e451385faccc48987f1cdb5b5684ba2b105efa240a1e8f5ce3123",
+    "candidate_route_changed": false,
+    "partition_units_changed": false,
+    "thresholds_changed": false
+  },
+  "repair": {
+    "command_prefix": "PYTHONPATH=/mnt/data/BRPHM/rul-space",
+    "wrapper_sha256": "12d4c0d0beb6f1d7ba42ad8f1b776e3432129143cb62818d9f7da639a91acc7b",
+    "base_runner_sha256": "7cf9be5fc5d19859955f71384afcfd27533dbd098369e0767fac73c0715f2482",
+    "new_output_dir": "/mnt/data/BRPHM/rul-space/work/f1_leo600_final_retry1_20261002",
+    "policy": "retain failed directory; create a new immutable freeze directory; retry only after verifying no payload or receipt was written"
+  }
+}
+

@@ -1,0 +1,228 @@
+{
+  "schema": "brphm-f8-source-gate-diagnostic-ledger-v1",
+  "finding": "F8",
+  "audit_date": "2026-10-02T18:18:49.393609+00:00",
+  "status": "RECEIPT_MATRIX_RECONCILED_CLUSTER_INFERENCE_PENDING",
+  "location": {
+    "review_report": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-01\\ni-d\\outputs\\IEEE_Review_Report_English.md",
+    "manuscript_source": "work/paper/en/main.tex:72-91 and Fig. 2 source work/paper/generate_figures.py"
+  },
+  "original_text": {
+    "table": "A dash means formal was not eligible.",
+    "figure": "The reused-fold candidate progression is shown under a fixed six-fold promotion gate; the GRU value was sourced from promotion_failure_count=0."
+  },
+  "problem": "The six successive candidate receipts contain reused outer outcomes and are development/diagnostic evidence. GRU failed both source gates and has no formal folds; encoding its absent failure count as 0 falsely equated ineligibility with zero failures. The source receipts store KS statistics but not residual vectors, KS p-values, or cluster uncertainty.",
+  "correction": "The figure now marks the old folds development/diagnostic only and renders GRU as ineligible without a numeric bar. The machine-readable matrices include all six eligible candidates x six folds (36 rows) and all candidate source directions/pairs. Unit-cluster resampling is pending the isolated residual replay.",
+  "thresholds": {
+    "formal_fold_gate": "candidate metric - frozen reference metric <= 1e-12 for RMSE and MAE on each of six folds",
+    "source_gate": "candidate RMSE/MAE/KS <= frozen-control value + 1e-12 for every required comparison; at least one strict error gain below -1e-12",
+    "multiplicity": "The deterministic gates are conjunctions, not p-value tests. Multiplicity-adjusted statistical inference is not present in the original receipts; a six-comparison cluster-aware analysis is being computed separately and will be labeled exploratory because routes were chosen on the same source-validation data."
+  },
+  "counts": {
+    "eligible_candidates": 6,
+    "fold_matrix_rows": 36,
+    "folds_per_eligible_candidate": 6,
+    "formal_ineligible_candidates": 1,
+    "source_gate_rows": 126,
+    "historical_failure_counts": {
+      "source_only_temporal_tcn_unit_first_relative": 5,
+      "source_only_temporal_tcn_unit_first_relative_residual_centered": 4,
+      "source_only_temporal_tcn_unit_first_relative_residual_centered_l1": 3,
+      "source_only_temporal_tcn_unit_first_relative_residual_centered_l1_worst_direction": 1,
+      "source_only_temporal_tcn_unit_first_relative_residual_centered_rwa_leo550_alpha_floor": 3,
+      "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor": 0
+    },
+    "gru": {
+      "source_gate_bat": false,
+      "source_gate_rwa": false,
+      "formal_eligible": false,
+      "formal_folds": 0,
+      "diagnostic_failure_count": null
+    }
+  },
+  "methods": [
+    {
+      "candidate": "source_only_temporal_tcn_unit_first_relative",
+      "receipt": "temporal_tcn_unit_first_source_gate_20261001_remote.json",
+      "source_gate_bat": true,
+      "source_gate_rwa": true,
+      "formal_eligible": true,
+      "formal_folds_observed": 6,
+      "formal_fold_denominator": 6,
+      "diagnostic_failure_folds": 5,
+      "diagnostic_failure_denominator": 6,
+      "summary_failure_count_match": true,
+      "interpretation": "reused outer folds; development/diagnostic only"
+    },
+    {
+      "candidate": "source_only_temporal_tcn_unit_first_relative_residual_centered",
+      "receipt": "temporal_tcn_unit_first_residual_centered_source_gate_20261001_remote.json",
+      "source_gate_bat": true,
+      "source_gate_rwa": true,
+      "formal_eligible": true,
+      "formal_folds_observed": 6,
+      "formal_fold_denominator": 6,
+      "diagnostic_failure_folds": 4,
+      "diagnostic_failure_denominator": 6,
+      "summary_failure_count_match": true,
+      "interpretation": "reused outer folds; development/diagnostic only"
+    },
+    {
+      "candidate": "source_only_temporal_tcn_unit_first_relative_residual_centered_l1",
+      "receipt": "temporal_tcn_unit_first_residual_centered_l1_source_gate_20261001_remote.json",
+      "source_gate_bat": true,
+      "source_gate_rwa": true,
+      "formal_eligible": true,
+      "formal_folds_observed": 6,
+      "formal_fold_denominator": 6,
+      "diagnostic_failure_folds": 3,
+      "diagnostic_failure_denominator": 6,
+      "summary_failure_count_match": true,
+      "interpretation": "reused outer folds; development/diagnostic only"
+    },
+    {
+      "candidate": "source_only_temporal_tcn_unit_first_relative_residual_centered_l1_worst_direction",
+      "receipt": "temporal_tcn_unit_first_residual_centered_l1_worst_direction_source_gate_20261001_remote.json",
+      "source_gate_bat": true,
+      "source_gate_rwa": true,
+      "formal_eligible": true,
+      "formal_folds_observed": 6,
+      "formal_fold_denominator": 6,
+      "diagnostic_failure_folds": 1,
+      "diagnostic_failure_denominator": 6,
+      "summary_failure_count_match": true,
+      "interpretation": "reused outer folds; development/diagnostic only"
+    },
+    {
+      "candidate": "source_only_temporal_tcn_unit_first_relative_residual_centered_rwa_leo550_alpha_floor",
+      "receipt": "temporal_tcn_unit_first_residual_centered_rwa_leo550_floor_source_gate_20261001_remote.json",
+      "source_gate_bat": true,
+      "source_gate_rwa": true,
+      "formal_eligible": true,
+      "formal_folds_observed": 6,
+      "formal_fold_denominator": 6,
+      "diagnostic_failure_folds": 3,
+      "diagnostic_failure_denominator": 6,
+      "summary_failure_count_match": true,
+      "interpretation": "reused outer folds; development/diagnostic only"
+    },
+    {
+      "candidate": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+      "receipt": "temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_source_gate_20261001_remote.json",
+      "source_gate_bat": true,
+      "source_gate_rwa": true,
+      "formal_eligible": true,
+      "formal_folds_observed": 6,
+      "formal_fold_denominator": 6,
+      "diagnostic_failure_folds": 0,
+      "diagnostic_failure_denominator": 6,
+      "summary_failure_count_match": true,
+      "interpretation": "reused outer folds; development/diagnostic only"
+    },
+    {
+      "candidate": "source_only_temporal_gru_unit_weighted",
+      "receipt": "temporal_gru_source_gate_20261001_remote.json",
+      "source_gate_bat": false,
+      "source_gate_rwa": false,
+      "formal_eligible": false,
+      "formal_folds_observed": 0,
+      "formal_fold_denominator": 0,
+      "diagnostic_failure_folds": null,
+      "diagnostic_failure_denominator": null,
+      "summary_failure_count_match": false,
+      "interpretation": "source gate failed; no formal evaluation"
+    }
+  ],
+  "original_source_gate_receipt": {
+    "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+    "sha256": "b99ed8a3d2f168483f1072e7363fe1793a08708c16693ea6ba59e29bf03631f1",
+    "source_protocol": {
+      "directions": [
+        "LEO500->LEO550",
+        "LEO500->LEO700",
+        "LEO550->LEO500",
+        "LEO550->LEO700",
+        "LEO700->LEO500",
+        "LEO700->LEO550"
+      ],
+      "residual_pairs": [
+        "LEO500<->LEO550",
+        "LEO500<->LEO700",
+        "LEO550<->LEO700"
+      ],
+      "fit_scope": "one source orbit per transfer; one globally consistent target-orbit alpha route chosen from source-only directions",
+      "normalization": "source-window channel mean/std; relative-to-window-start channels",
+      "loss": "unit-balanced SmoothL1 on normalized RUL",
+      "ensemble": "median of three fixed seeds",
+      "alpha_catalog": [
+        0.0,
+        1e-05,
+        5e-05,
+        0.0001,
+        0.0005,
+        0.001,
+        0.002,
+        0.005,
+        0.01,
+        0.02,
+        0.05,
+        0.1,
+        0.15,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "route_count": 4913,
+      "selection": "source-gate-only uniform target-orbit alpha floor >= 1e-5 for BAT and RWA; then minimum total alpha and existing source-only tie-breaks",
+      "uniform_alpha_floor": 1e-05
+    },
+    "selected_routes": {
+      "bat": {
+        "route_id": "target_alpha_LEO500_1e-05_LEO550_1e-05_LEO700_1e-05",
+        "alpha_by_target": {
+          "LEO500": 1e-05,
+          "LEO550": 1e-05,
+          "LEO700": 1e-05
+        }
+      },
+      "rwa": {
+        "route_id": "target_alpha_LEO500_0.02_LEO550_1e-05_LEO700_1e-05",
+        "alpha_by_target": {
+          "LEO500": 0.02,
+          "LEO550": 1e-05,
+          "LEO700": 1e-05
+        }
+      }
+    },
+    "input_tensor_hashes": {
+      "bat": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "rwa": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595"
+    }
+  },
+  "artifacts": {
+    "work\\paper\\evidence\\evidence_summary.json": "f6761089a13926ed988d92a4b8ab990dfa17140175f16955b1445a6a96ff26f7",
+    "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-01\\ni-d\\outputs\\IEEE_Review_Report_English.md": "9d75bf227ae883552af326352f3586bc23b84ebaf4c73d2a7fa4d1a26cfc8be5",
+    "work\\paper\\generate_figures.py": "03efe39d480ee070f2441f6b19fdcb8aa739f14b3133c0e414d61a2a16cbba97",
+    "work\\paper\\repro\\receipts\\temporal_tcn_unit_first_source_gate_20261001_remote.json": "aa4d62635249d12110ac67973fd1fc7101685e5ecb4cda6651a23dc272159c22",
+    "work\\paper\\repro\\receipts\\temporal_tcn_unit_first_residual_centered_source_gate_20261001_remote.json": "e84800759ae4f41a763a910a0dae691ec3ae21ae722dcb333a2a83e7109f4e58",
+    "work\\paper\\repro\\receipts\\temporal_tcn_unit_first_residual_centered_l1_source_gate_20261001_remote.json": "5c41add145be66993a58a60286e1526dd26e98fc05ffc8b5b504a20de9e0e566",
+    "work\\paper\\repro\\receipts\\temporal_tcn_unit_first_residual_centered_l1_worst_direction_source_gate_20261001_remote.json": "31c8d2b87fb8972278fc74bf0be69e832102ca8bbda33b3a7260878e943eab65",
+    "work\\paper\\repro\\receipts\\temporal_tcn_unit_first_residual_centered_rwa_leo550_floor_source_gate_20261001_remote.json": "897cc75ee291cf2fd950b5f84da4f04bbb3de6c83026aec0ed09f60da1b2da2a",
+    "work\\paper\\repro\\receipts\\temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_source_gate_20261001_remote.json": "b99ed8a3d2f168483f1072e7363fe1793a08708c16693ea6ba59e29bf03631f1",
+    "work\\paper\\repro\\receipts\\temporal_gru_source_gate_20261001_remote.json": "d6d8bedbae0af8d6f586c38ea2daf28aa15811d30ea52a75d400dc04714a4932"
+  },
+  "commands": [
+    "python work/paper/repro/build_f8_evidence_ledger_20261002.py",
+    "python work/paper/repro/export_f8_source_residuals_20261002.py --root /mnt/data/BRPHM/rul-space --data-root /mnt/data/BRPHM/rul-space --receipt <hash-bound frozen receipt> --output <isolated f8_source_residuals.json>"
+  ],
+  "cross_validation": [
+    "Per-fold failure counts are recomputed from full-precision receipt metrics and the 1e-12 tolerance, then compared with evidence_summary.json.",
+    "Each direction's candidate metrics and each KS statistic are paired with the frozen-control values in the same receipt.",
+    "GRU eligibility is checked in both the receipt and evidence_summary; no missing formal result is coerced to zero.",
+    "F1 closeout independently classifies all old outer outcomes as development/diagnostic only."
+  ],
+  "confidence": "high for receipt completeness, fold denominator, failure counts, source direction metrics, thresholds, and GRU ineligibility; medium for source residual inferential uncertainty until replay cross-check completes",
+  "remaining_risk": "The historical candidate sequence used the same outer folds during development. These matrices do not restore confirmatory status. Window-level KS p-values would violate independence assumptions because windows overlap and cluster within units; only unit-cluster results may support uncertainty, and source-route selection makes them exploratory.",
+  "status_detail": "The historical results may be described as development/diagnostic evidence only. The separate F1 LEO600 test is not part of this F8 matrix and its result remains under its own preregistration constraints."
+}

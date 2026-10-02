@@ -1,0 +1,215 @@
+{
+  "schema": "brphm-f5-precision-reconciliation-v2",
+  "observed_utc": "2026-10-02T19:09:42.755526Z",
+  "finding": "F5",
+  "status": "AGGREGATE_GATE_VERIFIED_FROZEN_UNIT_PAIRING_INVALID",
+  "original": {
+    "location": "work/paper/en/main.tex:38,108,112",
+    "problem": "Eight-decimal paper values do not audit a 1e-12 gate.",
+    "superseded_ledger_sha256": {
+      "json": "f54be964590e78675fb878a6ebf8f28fe4907f29644b7d8f1a2c321f3ca64c7e",
+      "markdown": "5297018c90e3e284d109554bc028e969012ce5b7c0144fa28be080e383778274"
+    }
+  },
+  "reference_binding": {
+    "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\reference_summary_remote.json",
+    "sha256": "b708df9c448a051b8669c29789f00d282aa7907784e6f99d7e20ef1fb96b6733",
+    "summary_sha256_matches_receipt": true,
+    "all_six_fold_metrics_match_frozen_summary": true
+  },
+  "candidate_unit_reaggregation": {
+    "all_six_folds_match": true,
+    "relative_tolerance": 1e-10,
+    "absolute_tolerance": 1e-12,
+    "aggregation": "window-weighted unit RMSE/MAE reconstruct candidate fold RMSE/MAE"
+  },
+  "unit_pairing": {
+    "frozen_reference_pairing": "NOT_AVAILABLE",
+    "replay_csv_role": "DIAGNOSTIC_REPLAY_ONLY",
+    "replay_csv_definition": "The reference_* columns are captured from a newly fitted current control in build_f5_unit_metrics_20261002.py; they are not unit errors from the frozen reference prediction artifact.",
+    "replay_generator_sha256": "e933ed6da5546b9ba9d7230566b8378f03b0f96bf174ce1c3a0b5a531e362933",
+    "replay_reference_fold_mismatches": 6,
+    "paired_csv_valid_for_frozen_reference_inference": false
+  },
+  "aggregation": "window-level RMSE/MAE over all outer windows; unit table additionally reports per-unit RMSE/MAE and n_windows",
+  "gate": {
+    "tolerance": 1e-12,
+    "fold_count": 6,
+    "all_primary_metrics_nonregressive": true,
+    "at_least_one_strict_gain": true,
+    "promotion_eligible": true,
+    "rule": "all six frozen-reference folds pass RMSE and MAE at tolerance 1e-12 and at least one strict gain"
+  },
+  "fold_checks": [
+    {
+      "component": "bat",
+      "test_orbit": "LEO500",
+      "n_units": 70,
+      "n_windows": 1377,
+      "reference_rmse": 1.9458075686003256,
+      "candidate_rmse": 1.9458039118294947,
+      "delta_rmse": -3.6567708308066216e-06,
+      "rmse_pass": true,
+      "reference_mae": 1.2965988587913477,
+      "candidate_mae": 1.2965975128997191,
+      "delta_mae": -1.3458916285902234e-06,
+      "mae_pass": true,
+      "candidate_rmse_from_units": 1.9458039118294947,
+      "candidate_mae_from_units": 1.2965975128997191,
+      "replayed_control_rmse_from_units": 1.9458081191183265,
+      "replayed_control_mae_from_units": 1.296599029013882,
+      "replayed_control_rmse_minus_frozen": 5.505180009635069e-07,
+      "replayed_control_mae_minus_frozen": 1.7022253429033185e-07,
+      "replayed_control_matches_frozen_at_gate_tolerance": false
+    },
+    {
+      "component": "bat",
+      "test_orbit": "LEO550",
+      "n_units": 68,
+      "n_windows": 1178,
+      "reference_rmse": 1.7944888327735873,
+      "candidate_rmse": 1.7944792392764701,
+      "delta_rmse": -9.59349711715518e-06,
+      "rmse_pass": true,
+      "reference_mae": 1.1889396841474829,
+      "candidate_mae": 1.1889357521418609,
+      "delta_mae": -3.932005621987145e-06,
+      "mae_pass": true,
+      "candidate_rmse_from_units": 1.7944792392764701,
+      "candidate_mae_from_units": 1.1889357521418609,
+      "replayed_control_rmse_from_units": 1.7944887629170811,
+      "replayed_control_mae_from_units": 1.1889396851295517,
+      "replayed_control_rmse_minus_frozen": -6.98565061352241e-08,
+      "replayed_control_mae_minus_frozen": 9.8206887066965e-10,
+      "replayed_control_matches_frozen_at_gate_tolerance": false
+    },
+    {
+      "component": "bat",
+      "test_orbit": "LEO700",
+      "n_units": 65,
+      "n_windows": 1126,
+      "reference_rmse": 2.3908374358972697,
+      "candidate_rmse": 2.3908073726542862,
+      "delta_rmse": -3.006324298349128e-05,
+      "rmse_pass": true,
+      "reference_mae": 1.5583111231774527,
+      "candidate_mae": 1.5582925316087028,
+      "delta_mae": -1.859156874983725e-05,
+      "mae_pass": true,
+      "candidate_rmse_from_units": 2.3908073726542862,
+      "candidate_mae_from_units": 1.5582925316087028,
+      "replayed_control_rmse_from_units": 2.390838196216149,
+      "replayed_control_mae_from_units": 1.558311485087849,
+      "replayed_control_rmse_minus_frozen": 7.603188794114146e-07,
+      "replayed_control_mae_minus_frozen": 3.619103963181658e-07,
+      "replayed_control_matches_frozen_at_gate_tolerance": false
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO500",
+      "n_units": 78,
+      "n_windows": 2352,
+      "reference_rmse": 0.02075027835243831,
+      "candidate_rmse": 0.02072511343967948,
+      "delta_rmse": -2.5164912758831454e-05,
+      "rmse_pass": true,
+      "reference_mae": 0.015583504892392552,
+      "candidate_mae": 0.015582983999944547,
+      "delta_mae": -5.208924480047672e-07,
+      "mae_pass": true,
+      "candidate_rmse_from_units": 0.02072511343967948,
+      "candidate_mae_from_units": 0.01558298399994455,
+      "replayed_control_rmse_from_units": 0.0207502805008555,
+      "replayed_control_mae_from_units": 0.015583504722531116,
+      "replayed_control_rmse_minus_frozen": 2.1484171872088176e-09,
+      "replayed_control_mae_minus_frozen": -1.6986143568098466e-10,
+      "replayed_control_matches_frozen_at_gate_tolerance": false
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO550",
+      "n_units": 79,
+      "n_windows": 2324,
+      "reference_rmse": 0.02027167806043328,
+      "candidate_rmse": 0.020271664723422712,
+      "delta_rmse": -1.3337010568853502e-08,
+      "rmse_pass": true,
+      "reference_mae": 0.01505406402486654,
+      "candidate_mae": 0.015054062536072867,
+      "delta_mae": -1.4887936734125917e-09,
+      "mae_pass": true,
+      "candidate_rmse_from_units": 0.020271664723422712,
+      "candidate_mae_from_units": 0.015054062536072867,
+      "replayed_control_rmse_from_units": 0.020271678365510006,
+      "replayed_control_mae_from_units": 0.015054063977098185,
+      "replayed_control_rmse_minus_frozen": 3.0507672429958e-10,
+      "replayed_control_mae_minus_frozen": -4.776835524356038e-11,
+      "replayed_control_matches_frozen_at_gate_tolerance": false
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO700",
+      "n_units": 83,
+      "n_windows": 2375,
+      "reference_rmse": 0.021490337094875866,
+      "candidate_rmse": 0.021490307719580153,
+      "delta_rmse": -2.9375295713257588e-08,
+      "rmse_pass": true,
+      "reference_mae": 0.01671229343003606,
+      "candidate_mae": 0.016712271758414634,
+      "delta_mae": -2.167162142449608e-08,
+      "mae_pass": true,
+      "candidate_rmse_from_units": 0.021490307719580153,
+      "candidate_mae_from_units": 0.016712271758414634,
+      "replayed_control_rmse_from_units": 0.021490337528041196,
+      "replayed_control_mae_from_units": 0.01671229249914483,
+      "replayed_control_rmse_minus_frozen": 4.331653299938232e-10,
+      "replayed_control_mae_minus_frozen": -9.30891228684283e-10,
+      "replayed_control_matches_frozen_at_gate_tolerance": false
+    }
+  ],
+  "unit_rows": 443,
+  "artifacts": {
+    "frozen_reference_summary": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\reference_summary_remote.json",
+      "sha256": "b708df9c448a051b8669c29789f00d282aa7907784e6f99d7e20ef1fb96b6733"
+    },
+    "candidate_receipt": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\frozen_candidate_receipt.json",
+      "sha256": "e65cdbc4dc26b52bc6adb2238c163b134328b18b975bd6341d2fd14a64cd4a8c"
+    },
+    "fold_metrics": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\formal_metrics_unrounded.json",
+      "sha256": "6d7762e86ccd92c19bed4fb4787fe79ccb70233b99db1b24f7c9576fb0ff4aad"
+    },
+    "candidate_unit_metrics": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\formal_unit_metrics.csv",
+      "sha256": "e13f9443d0f7b99c77110344d7f3fc1947484f60d328770eadf4f5e8641f4d7a"
+    },
+    "diagnostic_replay_pair_csv": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\formal_unit_paired_metrics.csv",
+      "sha256": "96047569d472141bbfd661fa740321e270297bf71090b0e58322d45260868446"
+    },
+    "unit_metrics_builder": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\repro\\build_f5_unit_metrics_20261002.py",
+      "sha256": "e933ed6da5546b9ba9d7230566b8378f03b0f96bf174ce1c3a0b5a531e362933"
+    },
+    "reconciliation_script": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\repro\\build_f5_precision_ledger.py",
+      "sha256": "1af56312812ecfa59bcec776f4eb0b1323702534c841eb63d4a26fa950bd586b"
+    }
+  },
+  "cross_validation": {
+    "frozen_reference_hash_binding": "PASS",
+    "frozen_reference_fold_values": "PASS: all six values match the hash-bound reference summary",
+    "candidate_unit_to_fold_reaggregation": "PASS for all six folds",
+    "delta_and_gate_recomputation": "PASS from unrounded frozen-reference and candidate fold values",
+    "replayed_control_pair_identity": "FAIL for frozen-reference inference; explicitly marked diagnostic-only"
+  },
+  "confidence": {
+    "aggregate_gate_and_candidate_unit_metrics": "HIGH",
+    "frozen_reference_unit_pairing": "INVALID: exact reference predictions or unit metrics were not retained in searched artifacts"
+  },
+  "remaining_risk": "The existing paired CSV cannot support frozen-reference paired uncertainty. F6 reports it only as a replay sensitivity and separately estimates candidate unit-cluster uncertainty against the fixed hash-bound fold benchmark.",
+  "required_modification": "Publish the unrounded fold JSON and candidate unit CSV; do not present the replay control CSV as frozen-reference unit pairs."
+}

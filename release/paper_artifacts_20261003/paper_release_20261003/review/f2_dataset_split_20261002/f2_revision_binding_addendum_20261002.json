@@ -1,0 +1,184 @@
+{
+  "schema": "brphm-f2-revision-binding-addendum-1.0",
+  "access_date": "2026-10-02",
+  "timezone": "Asia/Shanghai",
+  "scope": "Read-only public Git and manifest metadata plus local registration/split/receipt metadata; no telemetry, held-out labels, A1/B1 data, or sealed payloads accessed.",
+  "repository": {
+    "dataset_id": "modelscope1553926531/BRPHM-datasets",
+    "url": "https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets",
+    "git_url": "https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets.git",
+    "historical_verified_commit": "85ebba12f3ec132dc9e0ea8ae49012f57505ccf1",
+    "current_head_at_access": "cfe0a27a99fa776d6e464649576432c871992771",
+    "current_head_refs": [
+      "HEAD",
+      "refs/heads/master"
+    ],
+    "remote_head_command": "git ls-remote https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets.git HEAD refs/heads/master refs/heads/main"
+  },
+  "root_manifest_comparison": {
+    "path": "MANIFEST.json",
+    "historical": {
+      "bytes": 2120,
+      "sha256": "0f8d21b05eb0168ad36a070e1beb22421c962fcbbb46f65ff6cc6bba9bc3d697",
+      "git_blob_sha1": "1667f724b6f2d55f30c8b892bc9cd5cd9e304f20",
+      "generated_utc": "2026-08-31T01:54:28+00:00"
+    },
+    "current": {
+      "bytes": 2120,
+      "sha256": "27701f270180dd00fb35c835a62bb0583102fb950f22981199c7dd6bdf56cba1",
+      "git_blob_sha1": "c86cea05d65f566fbfbc0aef45e600bb0a4af7e4",
+      "generated_utc": "2026-09-05T14:03:14+00:00"
+    },
+    "packages_identical": true,
+    "published_tiers_identical": true,
+    "tier_status_identical": true,
+    "root_file_sha_differences": {
+      "README.md": {
+        "historical_sha256": "767aded6fd0e2391d2b626888204531d171fd39ce3c94a3b948537b62317810d",
+        "current_sha256": "0fb8af759ce32804fc2455e79478785cd533e2f07136cf3818576b4eeada3a01"
+      }
+    },
+    "other_root_file_hashes_identical": true,
+    "complete_tier_package": {
+      "file_count": 67539,
+      "total_bytes": 107243597734,
+      "manifest_sha256": "ba3aae4d5de48d9b1e1fcd78de219230bbf26cf3abb84f3d147a462f0bfe3062"
+    }
+  },
+  "complete_tier_comparison": {
+    "path": "BRPHM_RUL_complete",
+    "historical_tree_oid": "f0b07bea4a1d2eb9286b26f7c91f34b951391da3",
+    "current_tree_oid": "f0b07bea4a1d2eb9286b26f7c91f34b951391da3",
+    "tree_identical": true,
+    "manifest_path": "BRPHM_RUL_complete/MANIFEST.json",
+    "manifest_git_blob_oid": "5fbb843ed576b746c547250a0e9a4cd4546ed7f1",
+    "manifest_bytes": 23922408,
+    "manifest_sha256": "ba3aae4d5de48d9b1e1fcd78de219230bbf26cf3abb84f3d147a462f0bfe3062",
+    "manifest_record_count": 67539,
+    "same_manifest_and_file_tree_across_commits": true,
+    "sim_raw_count": 550,
+    "sim_raw_by_source_family": {
+      "SIM_bat": 275,
+      "SIM_rwa": 275
+    },
+    "sim_raw_records_sha256_valid": true,
+    "public_raw_id_set_sha256_sorted_lf": "538c33e36678f443591a62983237360dea94dce569b6458c58298d33a815335f",
+    "canonical_public_raw_record_set_sha256": "2ad5d1c281741e86c439d4cd208391a63cd72de91436f74b311cc93df778ca9b",
+    "canonical_record_digest_algorithm": "Filter files where layer=raw and source_family in [SIM_bat,SIM_rwa], sort by path, JSON serialize with sort_keys=true, separators=(',',':'), ensure_ascii=true, encode ASCII, then SHA-256."
+  },
+  "registration_comparison": {
+    "registration_manifest": {
+      "path": "work/paper/review/sim_manifest_remote.csv",
+      "rows": 648,
+      "by_dataset_id": {
+        "SIM_bat": 324,
+        "SIM_rwa": 324
+      },
+      "sha256": "93710e01e18684e6296d52c4ae8ea98491841440db8f2b9798e0139901fccbc8",
+      "unit_id_set_sha256_sorted_lf": "a038bcd2410f61894fb044c9e975ce0d7f92109d1c4fdc02d0a66108ad5c9952",
+      "contains_per_unit_raw_sha256": false
+    },
+    "split_membership": {
+      "path": "work/paper/review/f2_dataset_split_20261002/unit_split_membership.csv",
+      "rows": 648,
+      "counts": {
+        "train": 388,
+        "val": 162,
+        "holdout": 98
+      },
+      "sha256": "f07ac79a69986b407b3af0458201be993a2a0956d59ba7af24abd028a14a24d0",
+      "train_val_id_set_sha256_sorted_lf": "538c33e36678f443591a62983237360dea94dce569b6458c58298d33a815335f",
+      "holdout_id_set_sha256_sorted_lf": "128a53ff720f2f9e8ac2323525c3f573fbbc529f64000be5769e7e87eefe60f3"
+    },
+    "holdout_manifest": {
+      "path": "work/paper/review/f1_holdout_manifest.csv",
+      "rows": 98,
+      "bytes": 11706,
+      "sha256": "ee1e2f760ebc69319d3dc0625744a602114a5dc249ebe8b283f0d9cb53d0c981"
+    },
+    "public_raw_ids_equal_registered_train_val_ids": true,
+    "public_raw_ids_disjoint_from_registered_holdout_ids": true,
+    "registered_ids_missing_from_public": 98,
+    "missing_registered_ids_are_exactly_holdout": true,
+    "extra_public_ids_not_in_registration": 0,
+    "public_ids_missing_from_nonholdout_registration": 0,
+    "path_or_source_family_mismatches": 0,
+    "path_mapping_rule": "For each local out_mat, basename matches the ModelScope manifest path basename; expected public path is raw/sim/bat/<basename> for SIM_bat and raw/sim/rwa/<basename> for SIM_rwa; public source_family equals local dataset_id.",
+    "set_hash_algorithm": "Sort IDs lexicographically, join with LF including a trailing LF, UTF-8 encode, then SHA-256."
+  },
+  "formal_tensor_binding": {
+    "formal_receipt": {
+      "path": "work/paper/review/f5_unit_metrics_20261002/frozen_candidate_receipt.json",
+      "bytes": 6138349,
+      "sha256": "b99ed8a3d2f168483f1072e7363fe1793a08708c16693ea6ba59e29bf03631f1"
+    },
+    "input_tensor_sha256": {
+      "bat": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "rwa": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595"
+    },
+    "receipt_key_audit": {
+      "raw_manifest_sha256_present": false,
+      "input_manifest_sha256_present": false,
+      "raw_sha256_present": false,
+      "source_raw_sha256_present": false,
+      "dataset_commit_present": false,
+      "modelscope_commit_present": false,
+      "dataset_revision_present": false
+    },
+    "evidence_summary": {
+      "path": "work/paper/evidence/evidence_summary.json",
+      "sha256": "24666999c05051435e5ffcf418ddab428e709b797b8c06f947a2b7fcada91417"
+    },
+    "raw_to_processed_tensor_binding": "not established by inspected artifacts",
+    "reason": [
+      "The 648-row raw registration CSV binds sample IDs and paths but has no per-unit raw file SHA-256.",
+      "The public manifest contains per-file SHA-256 values for the 550 released train/validation records, but no matching local per-file hashes are recorded in the experiment registration artifact.",
+      "The formal receipt binds component-level processed tensor SHA-256 values but has no public dataset commit, source manifest SHA-256, per-unit raw SHA list, or deterministic preprocessing receipt linking those inputs to the tensor bytes."
+    ],
+    "source_level_version_conclusion": "The 550 released non-holdout source records are identical at both commits and may be cited with either immutable commit.",
+    "processed_tensor_version_conclusion": "Neither commit is presently proven as the byte-level source of the recorded processed tensors."
+  },
+  "f2_manifest_hash_discrepancy": {
+    "current_file_path": "work/paper/review/f2_dataset_split_20261002/f2_dataset_split_manifest.json",
+    "current_file_sha256": "5ce4f9733dbf858df49e469545a0c8dcaa212e372a7b98bf20ada56c5b58f79d",
+    "previous_ledger_claimed_sha256": "7bf5e5b040ab09c7025de937950635ee210b44406b36dc4db15566a1760d9524",
+    "previous_ledger_path": "work/paper/review/f2_evidence_ledger.json",
+    "ledger_file_sha256": "89d084065607d5912ab3e6dcc22806ed1d6decde354e3b1a06a9317e0ab36944",
+    "matches": false,
+    "disposition": "Historical discrepancy retained as an append-only audit record; the current manifest digest is current_reconciled_file_sha256 and is bound in the post-freeze ledger and consistency record.",
+    "current_file_sha256_role": "historical_snapshot_at_2026-10-02_before_post_freeze_rebinding",
+    "current_reconciled_file_sha256": "3de92e0266a2555823dde6b04699db45d6f20f72414013c9eb153246f837d2e2",
+    "reconciliation_date": "2026-10-03",
+    "reconciliation_status": "RECONCILED__CURRENT_LEDGER_REBOUND",
+    "post_reconciliation": {
+      "manifest_sha256": "3de92e0266a2555823dde6b04699db45d6f20f72414013c9eb153246f837d2e2",
+      "ledger_json_path": "work/paper/review/f2_evidence_ledger.json",
+      "consistency_check_path": "work/paper/review/f2_dataset_split_20261002/f2_current_consistency_check_20261003.json",
+      "purpose": "Current manifest pointer after post-freeze rebinding; old hashes above remain historical. The ledger digest is labeled as the pre-final-consistency-pointer observation because the ledger points back to the consistency report.",
+      "ledger_json_sha256_observed_before_consistency_pointer_update": "65d39f37266c0ec8589f674ae500b3bdebd07bd67ee5282b9ad3b86e2a35ff3c"
+    }
+  },
+  "historical_remote_verification": {
+    "path": "C:/Users/Administrator/Documents/Codex/2026-07-21/host-rack-linux-hostname-10-123/work/frontend_20260806_redesign/results/research/modelscope_complete_remote_verify_20260831_fix14/verification.json",
+    "sha256": "DB52292024356F86EB2D5D6A3641DD6A9F96332FBA9AE6A0C02DD5CE4B2E8E72",
+    "verified_utc": "2026-08-31T12:02:07.1306395Z",
+    "result": "REMOTE_HEAD_MATCH=true; complete tier verification PASS for 67,539 files / 107,243,597,734 bytes; PUBLIC_HTTP=200."
+  },
+  "read_only_commands": [
+    "git ls-remote https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets.git HEAD refs/heads/master refs/heads/main",
+    "git -c protocol.version=2 clone --filter=blob:none --depth=1 --no-checkout https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets.git <temporary-metadata-clone>",
+    "git -C <temporary-metadata-clone> fetch --filter=blob:none origin 85ebba12f3ec132dc9e0ea8ae49012f57505ccf1",
+    "git -C <temporary-metadata-clone> ls-tree --long <commit> MANIFEST.json BRPHM_RUL_complete/MANIFEST.json",
+    "git -C <temporary-metadata-clone> rev-parse <commit>:BRPHM_RUL_complete",
+    "Python 3.12 stdlib read-only comparison: parse git show <commit>:BRPHM_RUL_complete/MANIFEST.json and local registration/membership CSVs; filter SIM_bat/SIM_rwa raw records; compare sorted ID sets, normalized paths, and family labels; compute canonical SHA-256 digests."
+  ],
+  "confidence": {
+    "complete_tier_version_identity": "high",
+    "public_sim_source_id_set_reconciliation": "high",
+    "raw_to_processed_tensor_byte_lineage": "not established by current evidence",
+    "remaining_risks": [
+      "The input tensor bytes cannot be replay-bound to per-unit raw hashes or a particular ModelScope commit from existing receipts.",
+      "Historical F2 manifest hash discrepancy is reconciled; the current ledger and consistency record bind manifest SHA-256 3de92e0266a2555823dde6b04699db45d6f20f72414013c9eb153246f837d2e2."
+    ]
+  }
+}

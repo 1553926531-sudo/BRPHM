@@ -1,0 +1,86 @@
+{
+  "schema": "brphm-f1-leo600-final-verification-v1",
+  "observed_utc": "2026-10-02T10:38:35.144547Z",
+  "status": "F1_PROVENANCE_PASS_AND_PERFORMANCE_PASS",
+  "old_outer_disposition": "development_or_diagnostic_only",
+  "partition": {
+    "orbit": "LEO600",
+    "manifest_sha256": "910c0582bc7e451385faccc48987f1cdb5b5684ba2b105efa240a1e8f5ce3123",
+    "unit_counts": {"bat": 6, "rwa": 6},
+    "semantic_labels_read_before_freeze": false,
+    "raw_generation_exit_code": 0,
+    "raw_generation_failures": 0,
+    "censored_units": ["BAT_LEO600_B60_H1_L3_S944"],
+    "raw_sha256": {
+      "BAT_LEO600_B00_H0_L2_S941": "1eac8fbb006c5a63ad54ade7e979485e3e3260a9e0c28fbf246c21a8db7117ed",
+      "BAT_LEO600_B00_H1_L1_S940": "aa5dd598c48408f1376b7ba198988251d455424ffacc152ea80e811ccd18ce60",
+      "BAT_LEO600_B30_H0_L1_S942": "ee66a96596168b82ad30d881b2867cebcd9c9678b4b0b253c52a3503ddfc1ae6",
+      "BAT_LEO600_B30_H1_L2_S943": "5757db676f60baed537e1d80d7f97136eb47941b133940351f454cad5ed4cabc",
+      "BAT_LEO600_B60_H0_L1_S945": "3bc195ed8825da90b53bc153288bf5d36a7a787947c859216a4002a89f17ce16",
+      "BAT_LEO600_B60_H1_L3_S944": "3a02d4a18537ccce91375cbd166c93d250ffbd2793b6a2a138d90ee0395e72b4",
+      "RWA_LEO600_B00_H1_L2_S947": "344c1af0c5c85133cf80d7cac4d71d90e38968c26f8a31b3b881df48a5e4e12d",
+      "RWA_LEO600_B00_H1_L3_S946": "fd960310e92ba03f3927befcc62ca53c285db7da15bce3b1847c9c4bc310fcf3",
+      "RWA_LEO600_B30_H1_L1_S949": "f280b5fce13cac8672c524a880006d1f2e621b4d7f19bec752cd368127a75b92",
+      "RWA_LEO600_B30_H2_L2_S948": "f3c515589fa3a9fd072ba1a744d17559353f3479dedef46dceb3093e63951a64",
+      "RWA_LEO600_B60_H1_L2_S950": "6a2821adf4134425b34b18b261a84ecdec2e1eec6b7d13e5f5d5e121ec0378f8",
+      "RWA_LEO600_B60_H2_L2_S951": "78387b0ba946d91f96dc350f99a2d4435135f7aedc6b6ddd5691addc5c95ca99"
+    }
+  },
+  "failed_attempt_retained": {
+    "output": "/mnt/data/BRPHM/rul-space/work/f1_leo600_final_20261002",
+    "event_sha256": "8c0d457e703ab0b0d5138e1251654f7c1f048f9773f1c46cc8d907fa33f2256d",
+    "error": "ModuleNotFoundError: No module named 'src'",
+    "receipt_written": false,
+    "payload_written": false,
+    "semantic_labels_read": false,
+    "amendment_sha256": "8e2fb3ae9d4c7e68f7e5358c676665dd008a235b53067e51c7756bc5b1f5b96e"
+  },
+  "retry_chain": {
+    "output": "/mnt/data/BRPHM/rul-space/work/f1_leo600_final_retry1_20261002",
+    "freeze_manifest_sha256": "0e13d131ecf28d9f867e823a9387fd3ed3af398144d90c6afaf5cda2d1f04e69",
+    "selection_decision_sha256": "65fcbd77c2c16a1da0cb2bb93e8bab24818d78ca98282d0214cd6052944ded58",
+    "final_receipt_sha256": "3eff57fe0703fc851e8a96c0016660034fc72c30d2e20b3c3de220c6893ce459",
+    "performance_gate_sha256": "1f7be0be1ef4761e37b311f3f764094bfac4cd26871c497e9576617585e3bc5b",
+    "event_chain": [
+      {"sequence": 1, "type": "preflight_recorded", "sha256": "e0a6a7379b89893229464f72bfb3d9db25cedc6ca1e1e667cda4a8a32ed42ce0"},
+      {"sequence": 2, "type": "candidate_frozen", "sha256": "aa85bab5b3fa1124db9d1cb1e7090f13248bfc8cb646e7276d534358a7d0d2e7"},
+      {"sequence": 3, "type": "final_label_access_started", "sha256": "0fe031378ac1fbad08f760b58467ac76e7483d295568ced9ce0537759116b339"},
+      {"sequence": 4, "type": "final_evaluation_completed", "sha256": "85ff12b6a6c005e66ebb04cdd093066e9ae758e25aef8c5f358bac03360d1c13"},
+      {"sequence": 5, "type": "same_partition_reference_gate_completed", "sha256": "b69310177df39dd4d18f6b8a0ceda69abc724bfa6049b9e463f291098ac7cd04"}
+    ],
+    "receipt_assertions": {
+      "evaluation": "exactly_once_after_freeze",
+      "holdout_used_for_training_or_selection": false,
+      "sealed_read": false,
+      "a1_b1_read": false,
+      "canonical_project_modified": false,
+      "competition_line_modified": false,
+      "holdout_written": false
+    }
+  },
+  "metrics": {
+    "bat": {
+      "candidate": {"rmse": 1.1142871129918521, "mae": 0.673842205479741, "n_units": 5, "n_windows": 125},
+      "same_partition_reference": {"rmse": 1.1142966431138528, "mae": 0.6738513384014369, "n_units": 5, "n_windows": 125},
+      "delta_candidate_minus_reference": {"rmse": -9.530122000667163e-06, "mae": -9.132921695798046e-06}
+    },
+    "rwa": {
+      "candidate": {"rmse": 0.005497685074806214, "mae": 0.005497685074806214, "n_units": 1, "n_windows": 1},
+      "same_partition_reference": {"rmse": 0.005497685074806214, "mae": 0.005497685074806214, "n_units": 1, "n_windows": 1},
+      "delta_candidate_minus_reference": {"rmse": 0.0, "mae": 0.0}
+    }
+  },
+  "performance_gate": {
+    "tolerance": 1e-12,
+    "passes": true,
+    "strict_gain": true,
+    "regressions": [],
+    "rule": "both components non-inferior on RMSE and MAE to same-partition projected frozen HGB/MLP reference, with at least one strict gain"
+  },
+  "limitations": [
+    "RWA final evaluation has one usable unit and one usable window on this registered partition.",
+    "LEO600 GMAT period is approximately 5819 s while the model tile is fixed at 5740 s; result remains scoped to this simulator configuration.",
+    "F2-F10, manuscript edits and venue-specific checks remain frozen until the next user-directed phase."
+  ]
+}
+

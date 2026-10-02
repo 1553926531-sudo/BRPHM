@@ -1,0 +1,76 @@
+{
+  "schema": "brphm-f2-current-consistency-check-v1",
+  "created_utc": "2026-10-02T17:12:00Z",
+  "scope": "Read-only reconciliation of F2 dataset/split/provenance records; restricted payloads excluded.",
+  "status": "RECONCILED__PUBLIC_METADATA_LIMITS_REMAIN",
+  "source_sha256": {
+    "f2_dataset_split_manifest.json": "3de92e0266a2555823dde6b04699db45d6f20f72414013c9eb153246f837d2e2",
+    "f2_tensor_replay_addendum_20261002.json": "c6c177ac93fad6cffd47244e3dfbdfd919f898a48b7113244be5e087e8131a1c",
+    "f2_tensor_replay_addendum_20261002.md": "074bea858318d2572b77f660a56361357a7b536ccc3c626d57333b93096483b1",
+    "f2_modelscope_provenance_20261002.md": "e247870bec20b9ae311a936ae6cb4480d4bb6668bd9ec1c20e4bc00eed823cb4",
+    "f2_revision_binding_addendum_20261002.json": "7cc6484c91ddbaab2f1bd31d212e3cb599395b7657bfae70d2dd721abd48560d",
+    "f2_revision_binding_addendum_20261002.md": "50dbadca342b97ef968d61856cdb7647012efda5fa61b1c2e2665270fb2669be"
+  },
+  "current_hashes_that_must_replace_ledger_values": {
+    "manifest": "3de92e0266a2555823dde6b04699db45d6f20f72414013c9eb153246f837d2e2",
+    "tensor_replay_addendum_json": "c6c177ac93fad6cffd47244e3dfbdfd919f898a48b7113244be5e087e8131a1c",
+    "tensor_replay_addendum_markdown": "074bea858318d2572b77f660a56361357a7b536ccc3c626d57333b93096483b1"
+  },
+  "stale_ledger_values": {
+    "manifest": "61842ba3d1ee89e7180a29449365bd0e2ab9734a89ed0c96f0939bb596cbcb4c",
+    "tensor_replay_addendum_json": "9128647da2c9fab7c20c55ca18ff1d07e44092a8e51f07df4c73919c32629e85",
+    "tensor_replay_addendum_markdown": "96507e32172b19db9bc32d3552377918a61cc61ed7ddd1739c9b57a94247fc9c"
+  },
+  "manifest_self_reference": {
+    "field": "processed_window_summary.deterministic_train_validation_replay.addendum_json_sha256",
+    "stale_value": "9128647da2c9fab7c20c55ca18ff1d07e44092a8e51f07df4c73919c32629e85",
+    "required_value": "c6c177ac93fad6cffd47244e3dfbdfd919f898a48b7113244be5e087e8131a1c"
+  },
+  "prose_reconciliation": {
+    "file": "f2_modelscope_provenance_20261002.md",
+    "stale_statement": "The existing F2 manifest ... does not prove that their complete-tier payload manifests are identical.",
+    "current_evidence": {
+      "complete_tier_tree_oid": "f0b07bea4a1d2eb9286b26f7c91f34b951391da3",
+      "complete_tier_manifest_sha256": "ba3aae4d5de48d9b1e1fcd78de219230bbf26cf3abb84f3d147a462f0bfe3062",
+      "root_manifests_identical": false,
+      "complete_tier_payload_identical": true
+    }
+  },
+  "substantive_cross_checks": {
+    "membership_rows": 648,
+    "membership_sha256": "f07ac79a69986b407b3af0458201be993a2a0956d59ba7af24abd028a14a24d0",
+    "split_reconstruction_rows_match": 648,
+    "split_reconstruction_differences": 0,
+    "bat_tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+    "rwa_tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+    "replay_train_validation_reads_per_component": 275,
+    "replay_holdout_reads": 0,
+    "complete_tier_equal_at_inspected_commits": true
+  },
+  "commands": [
+    "Get-FileHash <listed F2 files> -Algorithm SHA256",
+    "python -c \"hashlib.sha256 over listed F2 files\"",
+    "rg -n -S 'stale hashes and superseded ModelScope statement' review"
+  ],
+  "confidence": "high for hash mismatches and complete-tier comparison; medium for license applicability because only live API metadata declares CC-BY-4.0",
+  "remaining_risk": "Concurrent rebuilds can change PDF and generated records; F2 local artifact bindings are reconciled, but the report/ledger pointer must be refreshed together after the shared source/build tree is frozen. Historical July tensor creation remains unreceipted, and raw-to-processed per-unit hash lineage is not established by the inspected receipts.",
+  "required_next_action": "Run the independent verifier against this report and the frozen F2 files after any source/build freeze; retain the live-license, DOI, historical-creation, and raw-to-processed lineage limitations explicitly.",
+  "pre_reconciliation_hashes": {
+    "manifest": "09105491c34161fd3be9155478406950ce60d8f9f0c0f29491de8914f493fe97",
+    "f2_evidence_ledger_json": "14f0958a1552549c0f119a53825c5e26272ec9d66a86aeaca62f60320b4c4eea"
+  },
+  "post_reconciliation": {
+    "manifest_sha256": "3de92e0266a2555823dde6b04699db45d6f20f72414013c9eb153246f837d2e2",
+    "replay_json_sha256": "c6c177ac93fad6cffd47244e3dfbdfd919f898a48b7113244be5e087e8131a1c",
+    "replay_markdown_sha256": "074bea858318d2572b77f660a56361357a7b536ccc3c626d57333b93096483b1",
+    "historical_values_retained": true,
+    "f2_ledger_json_sha256_snapshot_before_consistency_pointer_update": "65d39f37266c0ec8589f674ae500b3bdebd07bd67ee5282b9ad3b86e2a35ff3c",
+    "f2_ledger_json_path": "work/paper/review/f2_evidence_ledger.json",
+    "ledger_hash_binding_note": "The ledger contains this report hash, so its final digest must be refreshed after this report is frozen; the report intentionally avoids a self-referential current-ledger digest."
+  },
+  "historical_source_snapshots_before_pointer_update": {
+    "f2_evidence_ledger.json": "840ba3197d820207046b791ee5222ce6c31520e59d9cad54abda11f26d945349",
+    "f2_evidence_ledger.md": "66264ecf140a565325a45727a32613de940004444ffe353b8cf7f412d20a8db1",
+    "note": "Ledger hashes are retained for chronology only because the ledger points back to this report; do not use these as current artifact hashes."
+  }
+}

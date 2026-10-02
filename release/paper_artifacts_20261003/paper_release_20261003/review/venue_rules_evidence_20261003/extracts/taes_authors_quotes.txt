@@ -1,0 +1,5 @@
+QUOTE: Contributions may be in the form of regular papers or correspondence items.
+QUOTE: Each published article is reviewed by a minimum of two independent reviewers using a single-anonymous peer-review process
+QUOTE: Overlength page charges are $200 per page for each printed page beyond ten for a regular paper or $200 per page for each printed page beyond six for a correspondence item.
+QUOTE: All IEEE journals require an Open Researcher and Contributor ID (ORCID) for all authors.
+QUOTE: Authors can submit supplementary materials including multimedia files, images, data sets, code and accompanying PDF documents. To aid reproducibility, authors are encouraged to submit all files necessary to recreate the results in the paper.

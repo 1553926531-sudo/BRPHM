@@ -1,0 +1,89 @@
+{
+  "schema": "brphm-f1-leo600-runtime-snapshot-v1",
+  "observed_utc": "2026-10-02T07:28:38Z",
+  "supersedes_snapshot": {
+    "path": "execution_snapshot_20261002T071916Z.json",
+    "sha256": "f71baba6cc406290d1d1e6d0171b22e60aabebd24b7c4be8ee5dd8522c48d105"
+  },
+  "candidate_preregistration_sha256": "128bc704843332440057b9f65700c57034d7835a4eb91c5c6521ba25abc46b53",
+  "candidate_snapshot_sha256": "bdcbb38020dc84c077445929f30cd86c24ea7bf4ce9eb665e6e723578fe1f92b",
+  "preparation_manifest_sha256": "4cdf569ff96022d1897de88687742ef1ef1ab46f57089dec7b9d9a4f5cd02f21",
+  "candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+  "partition": {
+    "orbit": "LEO600",
+    "registered_unit_count": 12,
+    "registered_unit_ids": [
+      "BAT_LEO600_B00_H1_L1_S940",
+      "BAT_LEO600_B00_H0_L2_S941",
+      "BAT_LEO600_B30_H0_L1_S942",
+      "BAT_LEO600_B30_H1_L2_S943",
+      "BAT_LEO600_B60_H1_L3_S944",
+      "BAT_LEO600_B60_H0_L1_S945",
+      "RWA_LEO600_B00_H1_L3_S946",
+      "RWA_LEO600_B00_H1_L2_S947",
+      "RWA_LEO600_B30_H2_L2_S948",
+      "RWA_LEO600_B30_H1_L1_S949",
+      "RWA_LEO600_B60_H1_L2_S950",
+      "RWA_LEO600_B60_H2_L2_S951"
+    ]
+  },
+  "execution": {
+    "status": "RAW_GENERATION_RUNNING",
+    "launcher_pid": 7120,
+    "matlab_pid": 7122,
+    "worker_pids": [9780, 9786, 9788, 9791, 9793, 9795, 9797, 9799],
+    "workers": 8,
+    "cpu_affinity": "0-7",
+    "nice": 15,
+    "ionice_class": 3,
+    "started_utc_from_pid_file_mtime": "2026-10-02T07:09:10.545858157Z",
+    "matlab_script_sha256": "c5ac3dd6323cf760612b984c1f26252c61f3e7a3d3d26d9877e6098731e16dcf",
+    "runner_sha256": "e397f9807d16483671c94e6ba0c9e2e920166896d61c886e89943e6fa64923b1",
+    "launcher_sha256": "8d5ae3b6e8f241360a3edf15dcd05dd852d5b8d77c3dc40f5f9348c208b90f57",
+    "generator_log_sha256_at_observation": "eef44b1f19e2a07a30ce390c719b4e385d7f563954c9727bf9fc589411aa817f",
+    "exit_code_file": "/mnt/data/BRPHM/rul-space/work/f1_leo600_run1_20261002/generator_w8.exitcode",
+    "exit_code_written": false,
+    "raw_output_root": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_leo600_v1/generated",
+    "completed_outputs": [
+      {"sample_id":"RWA_LEO600_B00_H1_L3_S946","size":174161,"mtime_utc":"2026-10-02T07:16:13.665327386Z","sha256":"fd960310e92ba03f3927befcc62ca53c285db7da15bce3b1847c9c4bc310fcf3"},
+      {"sample_id":"RWA_LEO600_B00_H1_L2_S947","size":204671,"mtime_utc":"2026-10-02T07:16:43.735997858Z","sha256":"344c1af0c5c85133cf80d7cac4d71d90e38968c26f8a31b3b881df48a5e4e12d"},
+      {"sample_id":"RWA_LEO600_B30_H2_L2_S948","size":171764,"mtime_utc":"2026-10-02T07:19:12.662356083Z","sha256":"f3c515589fa3a9fd072ba1a744d17559353f3479dedef46dceb3093e63951a64"},
+      {"sample_id":"RWA_LEO600_B30_H1_L1_S949","size":269566,"mtime_utc":"2026-10-02T07:23:04.112779651Z","sha256":"f280b5fce13cac8672c524a880006d1f2e621b4d7f19bec752cd368127a75b92"},
+      {"sample_id":"RWA_LEO600_B60_H1_L2_S950","size":228930,"mtime_utc":"2026-10-02T07:23:44.785324529Z","sha256":"6a2821adf4134425b34b18b261a84ecdec2e1eec6b7d13e5f5d5e121ec0378f8"},
+      {"sample_id":"RWA_LEO600_B60_H2_L2_S951","size":178357,"mtime_utc":"2026-10-02T07:25:08.084390674Z","sha256":"78387b0ba946d91f96dc350f99a2d4435135f7aedc6b6ddd5691addc5c95ca99"}
+    ],
+    "matlab_reported_progress_positions": [7, 8, 9, 10, 11, 12],
+    "matlab_reported_ok": 6,
+    "matlab_reported_failures": 0,
+    "remaining_units": [
+      "BAT_LEO600_B00_H1_L1_S940",
+      "BAT_LEO600_B00_H0_L2_S941",
+      "BAT_LEO600_B30_H0_L1_S942",
+      "BAT_LEO600_B30_H1_L2_S943",
+      "BAT_LEO600_B60_H1_L3_S944",
+      "BAT_LEO600_B60_H0_L1_S945"
+    ]
+  },
+  "label_barrier": {
+    "semantic_labels_read": false,
+    "final_labels_read": false,
+    "partition_manifest_sealed": false,
+    "preflight_started": false,
+    "candidate_freeze_started": false,
+    "evaluation_started": false
+  },
+  "physical_validity_boundary": {
+    "source_contract_period_s": 5740,
+    "GMAT_LEO600_period_approx_s": 5819,
+    "difference_s": -79,
+    "tile_seam_km": 608,
+    "importer_check_coverage": "V1-V8 pass but do not test temporal tile closure",
+    "risk": "comparison remains scoped to this simulator configuration; physical orbit accuracy is unverified"
+  },
+  "verification": {
+    "wrapper_tests": "10 passed",
+    "partition_builder_tests": "6 passed",
+    "runtime_and_snapshot_json_validation": "passed"
+  }
+}
+

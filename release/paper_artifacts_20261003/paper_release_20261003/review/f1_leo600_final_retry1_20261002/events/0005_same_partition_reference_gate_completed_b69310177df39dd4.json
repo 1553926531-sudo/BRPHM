@@ -1,0 +1,2 @@
+{"created_utc":"2026-10-02T10:38:35.144547Z","event_type":"same_partition_reference_gate_completed","payload":{"final_receipt_sha256":"3eff57fe0703fc851e8a96c0016660034fc72c30d2e20b3c3de220c6893ce459","gate_passed":true,"labels_reloaded_or_model_rerun":false,"performance_gate_sha256":"1f7be0be1ef4761e37b311f3f764094bfac4cd26871c497e9576617585e3bc5b"},"previous_event_sha256":"85ff12b6a6c005e66ebb04cdd093066e9ae758e25aef8c5f358bac03360d1c13","schema":"brphm-f1-event-v1","sequence":5}
+

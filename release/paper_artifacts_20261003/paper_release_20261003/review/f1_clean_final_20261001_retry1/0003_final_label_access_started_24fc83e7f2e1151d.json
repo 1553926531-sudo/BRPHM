@@ -1,0 +1,2 @@
+{"created_utc":"2026-10-01T07:17:44.307780Z","event_type":"final_label_access_started","payload":{"candidate_or_route_mutation_allowed":false,"freeze_manifest_sha256":"56a685ec43e8fd76ec47c4b68003a2f1363e18a005ec9daffbb5757eedfa88ca","reason":"one-time construction of evaluation-only holdout tensors"},"previous_event_sha256":"8e86c7148fbe8cd918f03913d0497378c885743e95bb804d409d00b1bf6fdf4a","schema":"brphm-f1-event-v1","sequence":3}
+

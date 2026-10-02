@@ -1,0 +1,26 @@
+{
+  "schema": "brphm-f8-artifact-checksums-v1",
+  "generated_utc": "2026-10-02T18:18:49.393609+00:00",
+  "artifacts": [
+    {
+      "path": "work\\paper\\review\\f8_source_gate_20261002\\f8_evidence_ledger.json",
+      "sha256": "6c6c44a33b045571d38c4487bc0528bfa4b883ead4b104d86163442c189b5fd0",
+      "bytes": 12484
+    },
+    {
+      "path": "work\\paper\\review\\f8_source_gate_20261002\\f8_evidence_ledger.md",
+      "sha256": "5f1df86675ba65ec29316c9c1544560c584ec7a61fed3c18dbd1a181adb6fe1f",
+      "bytes": 6166
+    },
+    {
+      "path": "work\\paper\\review\\f8_source_gate_20261002\\candidate_fold_matrix.csv",
+      "sha256": "d3233e1171d1a540f3c781f7a5fe7e1954f41a14dad739f5eb09ca3c5d1e16da",
+      "bytes": 11637
+    },
+    {
+      "path": "work\\paper\\review\\f8_source_gate_20261002\\source_gate_matrix.csv",
+      "sha256": "a75e8b0f9f6010c2c54774e1132d94319ba5b8285d44b8eee1ec174477eef3ec",
+      "bytes": 40605
+    }
+  ]
+}

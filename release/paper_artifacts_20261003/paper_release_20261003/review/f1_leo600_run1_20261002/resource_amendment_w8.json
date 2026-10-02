@@ -1,0 +1,89 @@
+{
+  "schema": "brphm-f1-execution-amendment-v1",
+  "amendment_id": "leo600-run1-resource-scale-w8-before-output",
+  "created_utc": "2026-10-02T07:04:31Z",
+  "status_at_creation": "planned_before_restart; requires zero-output recheck before stopping prior run",
+  "scope": "compute allocation and exit-status capture only; no candidate, route, input, unit, label, metric, threshold, or selection changes",
+  "candidate_snapshot_sha256": "bdcbb38020dc84c077445929f30cd86c24ea7bf4ce9eb665e6e723578fe1f92b",
+  "candidate_preregistration_sha256": "128bc704843332440057b9f65700c57034d7835a4eb91c5c6521ba25abc46b53",
+  "preparation_manifest_sha256": "4cdf569ff96022d1897de88687742ef1ef1ab46f57089dec7b9d9a4f5cd02f21",
+  "prior_attempt_code": {
+    "matlab_script_sha256": "e62bc3b08574e6e425a9b78a7b6244f40b4812146cd73463bb4bb7564f893629",
+    "runner_sha256": "659b6bd80762e2c52f006759a84104e530c0323efa6d0caba8742df2f0939e28",
+    "launcher_sha256": "03c71807efcc9277bb9a7bc7be8807deb1e8e105e1e8cef1963bf4b7db2a3672",
+    "generator_log_sha256_at_070048z": "5ab6de68faaf29fc9257ddb6bd646a7dd7ca321c692660900c584ac29b9fa07a"
+  },
+  "replacement_code": {
+    "matlab_script": "work/paper/repro/run_f1_leo600_generate_w8_20261002.m",
+    "matlab_script_sha256": "c5ac3dd6323cf760612b984c1f26252c61f3e7a3d3d26d9877e6098731e16dcf",
+    "runner": "work/paper/repro/run_f1_leo600_generate_w8_20261002.sh",
+    "runner_sha256": "e397f9807d16483671c94e6ba0c9e2e920166896d61c886e89943e6fa64923b1",
+    "launcher": "work/paper/repro/start_f1_leo600_generate_w8_20261002.sh",
+    "launcher_sha256": "8d5ae3b6e8f241360a3edf15dcd05dd852d5b8d77c3dc40f5f9348c208b90f57"
+  },
+  "unchanged_partition": {
+    "orbit": "LEO600",
+    "unit_count": 12,
+    "sample_ids": [
+      "BAT_LEO600_B00_H1_L1_S940",
+      "BAT_LEO600_B00_H0_L2_S941",
+      "BAT_LEO600_B30_H0_L1_S942",
+      "BAT_LEO600_B30_H1_L2_S943",
+      "BAT_LEO600_B60_H1_L3_S944",
+      "BAT_LEO600_B60_H0_L1_S945",
+      "RWA_LEO600_B00_H1_L3_S946",
+      "RWA_LEO600_B00_H1_L2_S947",
+      "RWA_LEO600_B30_H2_L2_S948",
+      "RWA_LEO600_B30_H1_L1_S949",
+      "RWA_LEO600_B60_H1_L2_S950",
+      "RWA_LEO600_B60_H2_L2_S951"
+    ],
+    "seeds": "891940 through 891951, bound one-to-one in preparation_manifest.json",
+    "generated_output_root": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_leo600_v1/generated"
+  },
+  "resource_evidence": {
+    "observed_utc": "2026-10-02T07:00:48Z",
+    "logical_processors": 208,
+    "old_worker_pids": [4163311, 4163313],
+    "old_worker_cpu_percent": [93.4, 93.3],
+    "old_affinity": "0,1",
+    "system_cpu_idle_percent_over_1s": 89,
+    "available_memory_gib": 132,
+    "swap_io_pages_in_out_over_1s": [0, 0],
+    "proposed_workers": 8,
+    "proposed_affinity": "0-7",
+    "proposed_priority": "nice -n 15; ionice -c 3",
+    "memory_basis": "preflight estimated 3.3 GiB per worker; 8 workers project to about 26.4 GiB, leaving substantial measured headroom"
+  },
+  "old_attempt_at_observation": {
+    "launcher_pid": 4160191,
+    "pid_file_mtime_local": "2026-10-02T14:44:44.422811953+08:00",
+    "pid_file_mtime_utc": "2026-10-02T06:44:44.422811953Z",
+    "process_observed_running_utc": "2026-10-02T07:00:48Z",
+    "generated_raw_file_count": 0,
+    "generated_directory_exists": false,
+    "semantic_labels_read": false,
+    "final_labels_read": false,
+    "final_evaluation_started": false
+  },
+  "restart_plan": {
+    "old_run_log_and_pid_record": "retain unchanged as evidence",
+    "stop_condition": "recheck exact output path is absent and recorded processes still match the LEO600 generator before SIGTERM",
+    "new_workers": 8,
+    "new_cpu_affinity": "0-7",
+    "new_priority": "nice -n 15; ionice -c 3",
+    "new_matlab_script": "work/paper/repro/run_f1_leo600_generate_w8_20261002.m",
+    "new_runner": "work/paper/repro/run_f1_leo600_generate_w8_20261002.sh",
+    "new_launcher": "work/paper/repro/start_f1_leo600_generate_w8_20261002.sh",
+    "exit_status_capture": "runner writes MATLAB exit status to generator_w8.exitcode after batch completion",
+    "same_frozen_raw_output_root": true
+  },
+  "physical_modeling_risk": {
+    "registered_fixed_tile_period_s": 5740,
+    "GMAT_LEO600_period_approx_s": 5819,
+    "period_difference_s": -79,
+    "reported_tile_seam_km": 608,
+    "disposition": "unresolved physical approximation; retain as a validity limitation and assess before final-label access"
+  }
+}
+

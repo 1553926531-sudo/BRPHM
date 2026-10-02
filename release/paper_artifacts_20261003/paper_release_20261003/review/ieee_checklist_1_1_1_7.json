@@ -1,0 +1,42 @@
+{
+  "schema": "ieee-checklist-1.1-1.7-v1",
+  "generated_utc": "2026-10-02T19:09:18Z",
+  "venue": "IEEE basket (TIM primary; T-Rel and TAES fallbacks) plus SCI-Q1 fallbacks pending JCR/CAS",
+  "rows": [
+    {
+      "item": "1.1 Scope match",
+      "status": "MULTI_VENUE_SHORTLISTED",
+      "evidence": "IEEE routes TIM/T-Rel/TAES and non-IEEE RESS/MSSP/AST fallbacks are maintained. Scope and evidence are in venue_research_20261002.md, venue_strategy_20261003.md, and q1_venue_research_20261003.md; exact article type, track, current submission rules, and non-IEEE JCR/CAS Q1 verification remain pending."
+    },
+    {
+      "item": "1.2 Novelty and contribution",
+      "status": "CONDITIONAL",
+      "evidence": "The manuscript claims an auditable chronology and protocol, not algorithmic superiority; contribution is publishable only if the selected venue accepts this framing."
+    },
+    {
+      "item": "1.3 Technical rigor",
+      "status": "PASS_WITH_LIMITS",
+      "evidence": "F1-F8 ledgers formalize split, model, route, gate, precision, uncertainty, and source diagnostics; historical outer reuse is disclosed."
+    },
+    {
+      "item": "1.4 Experiments and validation",
+      "status": "PASS_WITH_LIMITS",
+      "evidence": "Six source directions, three KS pairs, unit/seed diagnostics, 20,000-resample analysis, and one frozen LEO600 evaluation are reported; LEO600 is small and RWA has one usable observation."
+    },
+    {
+      "item": "1.5 Reproducibility",
+      "status": "PASS_WITH_LIMITS",
+      "evidence": "Hash-linked manifests, source scripts, runtime, commands, and ModelScope commit are recorded; public paper release/DOI and commit-level license remain pending."
+    },
+    {
+      "item": "1.6 Writing and format",
+      "status": "LOCAL_PASS_VENUE_PENDING",
+      "evidence": "IEEEtran local build is 6-page Letter with embedded fonts and successful text extraction; exact template/page/article type, PDF eXpress, accessibility, and metadata rules await venue selection."
+    },
+    {
+      "item": "1.7 Ethics and compliance",
+      "status": "CONDITIONAL",
+      "evidence": "Generated-simulation privacy/ethics disposition is documented; funding, COI, authorship, data permissions, and venue forms require author confirmation."
+    }
+  ]
+}

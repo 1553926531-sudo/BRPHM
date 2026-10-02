@@ -1,0 +1,445 @@
+{
+  "schema": "brphm-f6-statistics-v1",
+  "observed_utc": "2026-10-02T13:13:40.031346Z",
+  "finding": "F6",
+  "status": "EVIDENCE_CLOSED_CURRENT_ARTIFACTS_BOUND_VENUE_METADATA_PENDING",
+  "paired_input_sha256": "96047569d472141bbfd661fa740321e270297bf71090b0e58322d45260868446",
+  "fold_input_sha256": "6360a274c2ac31f9dee88b0ea42435c55a2dacbe7f38cf9e133a98b82f606c74",
+  "seed_fold_input_sha256": "26e1c26e63e5c790ec1c389230b8ecf0e709120d7ce5c32a20d2c465eecc22a9",
+  "seeds": [
+    17,
+    42,
+    73
+  ],
+  "seed_aggregation": "elementwise median of three fixed seed predictions; seed sensitivity was captured by applying each seed model through the same frozen source correction, control blend, and route; seed-level statistics are descriptive (n=3)",
+  "bootstrap": {
+    "repetitions": 20000,
+    "seed": 20261002,
+    "ci": "percentile 95% CI of paired unit mean delta"
+  },
+  "wilcoxon": {
+    "alternative": "candidate delta < 0",
+    "zero_method": "wilcox",
+    "multiplicity": "Bonferroni over 12 fold x metric tests",
+    "family_alpha": 0.05,
+    "adjusted_alpha": 0.004166666666666667
+  },
+  "physical_units": {
+    "bat": "cycles",
+    "rwa": "days"
+  },
+  "folds": [
+    {
+      "component": "bat",
+      "test_orbit": "LEO500",
+      "physical_unit": "cycles",
+      "reference_rmse": 1.9458075686003256,
+      "reference_mae": 1.2965988587913477,
+      "relative_rmse_change_pct": -0.0001879307537814256,
+      "relative_mae_change_pct": -0.00010380169776216099,
+      "fold_delta_rmse": -3.6567708308066216e-06,
+      "fold_delta_mae": -1.3458916285902234e-06,
+      "unit_rmse": {
+        "n_units": 70,
+        "mean_delta": -3.2056315100753576e-06,
+        "median_delta": -4.1019983391676895e-06,
+        "sd_delta": 8.780230896076776e-06,
+        "cohen_dz": -0.36509649324913684,
+        "wilcoxon_statistic": 674.0,
+        "wilcoxon_p_less": 0.00043898570834290264,
+        "bootstrap_ci95_mean": [
+          -5.1583316197633044e-06,
+          -1.1179399958405348e-06
+        ],
+        "wilcoxon_p_bonferroni": 0.005267828500114832
+      },
+      "unit_mae": {
+        "n_units": 70,
+        "mean_delta": -1.6458913840381293e-06,
+        "median_delta": -3.3178366720676422e-06,
+        "sd_delta": 7.746282612485492e-06,
+        "cohen_dz": -0.2124749981862622,
+        "wilcoxon_statistic": 900.0,
+        "wilcoxon_p_less": 0.022514854241430262,
+        "bootstrap_ci95_mean": [
+          -3.4553619371478575e-06,
+          1.5886643681154664e-07
+        ],
+        "wilcoxon_p_bonferroni": 0.27017825089716313
+      },
+      "seed_ensemble_sensitivity": {
+        "interpretation": "descriptive only; each seed prediction is blended with the same frozen control and route; the published candidate remains the elementwise median ensemble",
+        "rmse_mean": 1.9458042526317074,
+        "rmse_sd": 4.896140271421128e-07,
+        "rmse_min": 1.945803810255103,
+        "rmse_max": 1.9458047786955588,
+        "rmse_seed_deltas_vs_reference": [
+          -3.758345222593107e-06,
+          -3.3996558648219377e-06,
+          -2.7899047667645505e-06
+        ],
+        "mae_mean": 1.296597568359279,
+        "mae_sd": 3.1132550927413087e-07,
+        "mae_min": 1.2965972116383337,
+        "mae_max": 1.2965977852709918,
+        "mae_seed_deltas_vs_reference": [
+          -1.0735203559431028e-06,
+          -1.647153013983882e-06,
+          -1.1506228361213289e-06
+        ],
+        "seed_count": 3
+      },
+      "multiple_comparison_family": "6 folds x 2 metrics = 12 paired tests",
+      "bonferroni_alpha": 0.004166666666666667
+    },
+    {
+      "component": "bat",
+      "test_orbit": "LEO550",
+      "physical_unit": "cycles",
+      "reference_rmse": 1.7944888327735873,
+      "reference_mae": 1.1889396841474829,
+      "relative_rmse_change_pct": -0.0005346089059984473,
+      "relative_mae_change_pct": -0.00033071531503354177,
+      "fold_delta_rmse": -9.59349711715518e-06,
+      "fold_delta_mae": -3.932005621987145e-06,
+      "unit_rmse": {
+        "n_units": 68,
+        "mean_delta": -4.9741911638818155e-06,
+        "median_delta": -5.844928423925921e-06,
+        "sd_delta": 1.0022080615718873e-05,
+        "cohen_dz": -0.4963232041937653,
+        "wilcoxon_statistic": 565.0,
+        "wilcoxon_p_less": 0.00010156371336768029,
+        "bootstrap_ci95_mean": [
+          -7.365117414382889e-06,
+          -2.626486057021039e-06
+        ],
+        "wilcoxon_p_bonferroni": 0.0012187645604121635
+      },
+      "unit_mae": {
+        "n_units": 68,
+        "mean_delta": -2.0456798002760673e-06,
+        "median_delta": -3.7299469113349915e-06,
+        "sd_delta": 9.041437437733987e-06,
+        "cohen_dz": -0.22625603664949612,
+        "wilcoxon_statistic": 845.0,
+        "wilcoxon_p_less": 0.02252453735229222,
+        "bootstrap_ci95_mean": [
+          -4.189036959066883e-06,
+          8.451256248700441e-08
+        ],
+        "wilcoxon_p_bonferroni": 0.27029444822750665
+      },
+      "seed_ensemble_sensitivity": {
+        "interpretation": "descriptive only; each seed prediction is blended with the same frozen control and route; the published candidate remains the elementwise median ensemble",
+        "rmse_mean": 1.7944790925430514,
+        "rmse_sd": 1.4482719039232147e-06,
+        "rmse_min": 1.7944782450276895,
+        "rmse_max": 1.794480764811762,
+        "rmse_seed_deltas_vs_reference": [
+          -8.067961825286574e-06,
+          -1.0564983884631118e-05,
+          -1.058774589779432e-05
+        ],
+        "mae_mean": 1.1889359694552342,
+        "mae_sd": 8.725064416314901e-07,
+        "mae_min": 1.1889351151118837,
+        "mae_max": 1.1889368590558989,
+        "mae_seed_deltas_vs_reference": [
+          -2.8250915840022373e-06,
+          -4.5690355992000775e-06,
+          -3.749949562870114e-06
+        ],
+        "seed_count": 3
+      },
+      "multiple_comparison_family": "6 folds x 2 metrics = 12 paired tests",
+      "bonferroni_alpha": 0.004166666666666667
+    },
+    {
+      "component": "bat",
+      "test_orbit": "LEO700",
+      "physical_unit": "cycles",
+      "reference_rmse": 2.3908374358972697,
+      "reference_mae": 1.5583111231774527,
+      "relative_rmse_change_pct": -0.001257435680573936,
+      "relative_mae_change_pct": -0.0011930588489882797,
+      "fold_delta_rmse": -3.006324298349128e-05,
+      "fold_delta_mae": -1.859156874983725e-05,
+      "unit_rmse": {
+        "n_units": 65,
+        "mean_delta": -1.1013298937140315e-05,
+        "median_delta": -4.64584886539221e-06,
+        "sd_delta": 2.403273986599945e-05,
+        "cohen_dz": -0.4582623121020623,
+        "wilcoxon_statistic": 374.0,
+        "wilcoxon_p_less": 2.5016099172404983e-06,
+        "bootstrap_ci95_mean": [
+          -1.7167980265691648e-05,
+          -5.7566868146645025e-06
+        ],
+        "wilcoxon_p_bonferroni": 3.001931900688598e-05
+      },
+      "unit_mae": {
+        "n_units": 65,
+        "mean_delta": -8.91718164794685e-06,
+        "median_delta": -4.973262548446655e-06,
+        "sd_delta": 2.068298918182234e-05,
+        "cohen_dz": -0.4311360205024859,
+        "wilcoxon_statistic": 491.5,
+        "wilcoxon_p_less": 7.328266201317951e-05,
+        "bootstrap_ci95_mean": [
+          -1.4401183280431362e-05,
+          -4.433164539723804e-06
+        ],
+        "wilcoxon_p_bonferroni": 0.0008793919441581542
+      },
+      "seed_ensemble_sensitivity": {
+        "interpretation": "descriptive only; each seed prediction is blended with the same frozen control and route; the published candidate remains the elementwise median ensemble",
+        "rmse_mean": 2.3908087617911242,
+        "rmse_sd": 4.229613049177998e-06,
+        "rmse_min": 2.3908047728001183,
+        "rmse_max": 2.3908131966943005,
+        "rmse_seed_deltas_vs_reference": [
+          -3.266309715144189e-05,
+          -2.4239202969233986e-05,
+          -2.9120018315342833e-05
+        ],
+        "mae_mean": 1.5582920461953835,
+        "mae_sd": 2.7375710056271826e-06,
+        "mae_min": 1.5582889730838698,
+        "mae_max": 1.5582942240655944,
+        "mae_seed_deltas_vs_reference": [
+          -2.215009358286224e-05,
+          -1.81817407660656e-05,
+          -1.6899111858315052e-05
+        ],
+        "seed_count": 3
+      },
+      "multiple_comparison_family": "6 folds x 2 metrics = 12 paired tests",
+      "bonferroni_alpha": 0.004166666666666667
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO500",
+      "physical_unit": "days",
+      "reference_rmse": 0.02075027835243831,
+      "reference_mae": 0.015583504892392552,
+      "relative_rmse_change_pct": -0.12127506114092387,
+      "relative_mae_change_pct": -0.003342588535773187,
+      "fold_delta_rmse": -2.5164912758831454e-05,
+      "fold_delta_mae": -5.208924480047672e-07,
+      "unit_rmse": {
+        "n_units": 78,
+        "mean_delta": -2.683604726709978e-05,
+        "median_delta": -5.9976187282255455e-06,
+        "sd_delta": 0.0001939854976356987,
+        "cohen_dz": -0.13834048211942832,
+        "wilcoxon_statistic": 1310.0,
+        "wilcoxon_p_less": 0.12547119303197612,
+        "bootstrap_ci95_mean": [
+          -6.94354177241764e-05,
+          1.4744664642097003e-05
+        ],
+        "wilcoxon_p_bonferroni": 1.0
+      },
+      "unit_mae": {
+        "n_units": 78,
+        "mean_delta": -1.84997267393959e-05,
+        "median_delta": -6.773329527407813e-06,
+        "sd_delta": 0.00018362957283562996,
+        "cohen_dz": -0.10074481170827167,
+        "wilcoxon_statistic": 1392.0,
+        "wilcoxon_p_less": 0.22975870913277102,
+        "bootstrap_ci95_mean": [
+          -5.941029856504758e-05,
+          2.158092072903968e-05
+        ],
+        "wilcoxon_p_bonferroni": 1.0
+      },
+      "seed_ensemble_sensitivity": {
+        "interpretation": "descriptive only; each seed prediction is blended with the same frozen control and route; the published candidate remains the elementwise median ensemble",
+        "rmse_mean": 0.020725545506066343,
+        "rmse_sd": 5.380859192246775e-06,
+        "rmse_min": 0.02071968431975331,
+        "rmse_max": 0.02073026174109617,
+        "rmse_seed_deltas_vs_reference": [
+          -2.0016611342141277e-05,
+          -2.358789508876552e-05,
+          -3.059403268500238e-05
+        ],
+        "mae_mean": 0.015586278815783705,
+        "mae_sd": 3.816866219704996e-06,
+        "mae_min": 0.015581872888397894,
+        "mae_max": 0.015588578322950485,
+        "mae_seed_deltas_vs_reference": [
+          5.073430557932593e-06,
+          4.880343610182483e-06,
+          -1.6320039946584458e-06
+        ],
+        "seed_count": 3
+      },
+      "multiple_comparison_family": "6 folds x 2 metrics = 12 paired tests",
+      "bonferroni_alpha": 0.004166666666666667
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO550",
+      "physical_unit": "days",
+      "reference_rmse": 0.02027167806043328,
+      "reference_mae": 0.01505406402486654,
+      "relative_rmse_change_pct": -6.57913495325529e-05,
+      "relative_mae_change_pct": -9.889646217482394e-06,
+      "fold_delta_rmse": -1.3337010568853502e-08,
+      "fold_delta_mae": -1.4887936734125917e-09,
+      "unit_rmse": {
+        "n_units": 79,
+        "mean_delta": -1.0478709006403464e-08,
+        "median_delta": -4.917743351429138e-09,
+        "sd_delta": 9.425117107209764e-08,
+        "cohen_dz": -0.1111785549952239,
+        "wilcoxon_statistic": 1344.0,
+        "wilcoxon_p_less": 0.1243837030930417,
+        "bootstrap_ci95_mean": [
+          -3.1172414628953e-08,
+          1.01436459576876e-08
+        ],
+        "wilcoxon_p_bonferroni": 1.0
+      },
+      "unit_mae": {
+        "n_units": 79,
+        "mean_delta": -4.880481385187825e-09,
+        "median_delta": -5.091230074246583e-09,
+        "sd_delta": 8.786599477407216e-08,
+        "cohen_dz": -0.05554459831402235,
+        "wilcoxon_statistic": 1430.0,
+        "wilcoxon_p_less": 0.23176078584211346,
+        "bootstrap_ci95_mean": [
+          -2.409092155698221e-08,
+          1.4450918895342625e-08
+        ],
+        "wilcoxon_p_bonferroni": 1.0
+      },
+      "seed_ensemble_sensitivity": {
+        "interpretation": "descriptive only; each seed prediction is blended with the same frozen control and route; the published candidate remains the elementwise median ensemble",
+        "rmse_mean": 0.02027166696639289,
+        "rmse_sd": 1.4884465134975966e-08,
+        "rmse_min": 0.020271650979907047,
+        "rmse_max": 0.020271680425118878,
+        "rmse_seed_deltas_vs_reference": [
+          2.364685596639715e-09,
+          -8.566280539079596e-09,
+          -2.7080526234651847e-08
+        ],
+        "mae_mean": 0.01505406537269281,
+        "mae_sd": 8.311117811381354e-09,
+        "mae_min": 0.01505405703986708,
+        "mae_max": 0.015054073661931257,
+        "mae_seed_deltas_vs_reference": [
+          9.637064717418764e-09,
+          1.3914135572890007e-09,
+          -6.984999460779573e-09
+        ],
+        "seed_count": 3
+      },
+      "multiple_comparison_family": "6 folds x 2 metrics = 12 paired tests",
+      "bonferroni_alpha": 0.004166666666666667
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO700",
+      "physical_unit": "days",
+      "reference_rmse": 0.021490337094875866,
+      "reference_mae": 0.01671229343003606,
+      "relative_rmse_change_pct": -0.0001366907163139,
+      "relative_mae_change_pct": -0.00012967473025304177,
+      "fold_delta_rmse": -2.9375295713257588e-08,
+      "fold_delta_mae": -2.167162142449608e-08,
+      "unit_rmse": {
+        "n_units": 83,
+        "mean_delta": -3.2294819074136483e-08,
+        "median_delta": -2.3002655765401447e-08,
+        "sd_delta": 8.122711627192959e-08,
+        "cohen_dz": -0.39758667494757416,
+        "wilcoxon_statistic": 1037.0,
+        "wilcoxon_p_less": 0.0006745273375047142,
+        "bootstrap_ci95_mean": [
+          -4.977904134444501e-08,
+          -1.497707527671772e-08
+        ],
+        "wilcoxon_p_bonferroni": 0.008094328050056571
+      },
+      "unit_mae": {
+        "n_units": 83,
+        "mean_delta": -2.6795348272223073e-08,
+        "median_delta": -1.50922017175259e-08,
+        "sd_delta": 7.383885461252813e-08,
+        "cohen_dz": -0.3628895438970791,
+        "wilcoxon_statistic": 1110.0,
+        "wilcoxon_p_less": 0.0020271545498012473,
+        "bootstrap_ci95_mean": [
+          -4.273905384629386e-08,
+          -1.1136076655913147e-08
+        ],
+        "wilcoxon_p_bonferroni": 0.024325854597614965
+      },
+      "seed_ensemble_sensitivity": {
+        "interpretation": "descriptive only; each seed prediction is blended with the same frozen control and route; the published candidate remains the elementwise median ensemble",
+        "rmse_mean": 0.02149030203944947,
+        "rmse_sd": 6.557678506636016e-09,
+        "rmse_min": 0.021490294543810372,
+        "rmse_max": 0.02149030671715789,
+        "rmse_seed_deltas_vs_reference": [
+          -3.2237495728448806e-08,
+          -3.037771797650968e-08,
+          -4.255106549402865e-08
+        ],
+        "mae_mean": 0.016712268872373422,
+        "mae_sd": 5.0095997836784e-09,
+        "mae_min": 0.01671226311968211,
+        "mae_max": 0.01671227227407324,
+        "mae_seed_deltas_vs_reference": [
+          -2.1155962818403262e-08,
+          -2.2206671144303636e-08,
+          -3.031035394895909e-08
+        ],
+        "seed_count": 3
+      },
+      "multiple_comparison_family": "6 folds x 2 metrics = 12 paired tests",
+      "bonferroni_alpha": 0.004166666666666667
+    }
+  ],
+  "pooled_unit_distribution": {
+    "rmse": {
+      "n_units": 443,
+      "mean_delta": -7.619014922329121e-06,
+      "median_delta": -8.427409312408707e-08,
+      "sd_delta": 8.22106500839891e-05,
+      "cohen_dz": -0.09267673853138597,
+      "wilcoxon_statistic": 33354.5,
+      "wilcoxon_p_less": 2.218811722245898e-09,
+      "bootstrap_ci95_mean": [
+        -1.5380301589644705e-05,
+        -9.382413890097721e-08
+      ]
+    },
+    "mae": {
+      "n_units": 443,
+      "mean_delta": -5.145651665974924e-06,
+      "median_delta": -5.1308709836384025e-08,
+      "sd_delta": 7.748931912948247e-05,
+      "cohen_dz": -0.06640465710347364,
+      "wilcoxon_statistic": 38808.5,
+      "wilcoxon_p_less": 6.0488732317881514e-05,
+      "bootstrap_ci95_mean": [
+        -1.2531209383315423e-05,
+        1.9975616944482718e-06
+      ]
+    }
+  },
+  "limitations": [
+    "Unit-level pairs are not independent replications across windows; fold is the domain-level grouping.",
+    "The three seed models are a deterministic median ensemble; seed-level ranges are descriptive because n=3 and seed-model metrics are not independent replications.",
+    "A deterministic non-regression gate is not statistical significance or practical relevance."
+  ]
+}
+

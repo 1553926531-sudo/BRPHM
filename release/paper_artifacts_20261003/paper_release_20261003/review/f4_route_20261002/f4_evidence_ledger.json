@@ -1,0 +1,208 @@
+{
+  "schema": "brphm-f4-alpha-route-ledger-v2",
+  "observed_utc": "2026-10-02T18:18:45.232663Z",
+  "finding": "F4",
+  "status": "EVIDENCE_CLOSED_320_ROUTE_CONTRACT",
+  "scope": "Receipt-bound audit of the source-label route contract and its formal application. No sealed, A1, B1, canonical, competition, or final labels were read by this builder.",
+  "original": {
+    "location": "work/paper/en/main.tex:111-131 and work/paper/repro/README.md:10-16",
+    "problem": "The manuscript and README described a historical 17-point Cartesian grid (4913 routes) and stale promoted routes, while the final candidate receipt and executable sweep use five alpha families and 64 direction masks (320 routes).",
+    "historical_status": "The 17-point/4913 catalog is retained only as development/diagnostic history where present; it is not the final candidate-selection contract."
+  },
+  "equation": {
+    "candidate_control": "For direction d=s->t and target-orbit weight alpha_t, q_d = alpha_t * p_candidate,d + (1-alpha_t) * p_control,d.",
+    "semantics": "alpha=0 is control-only; alpha=1 is candidate-only; intermediate values are convex weights.",
+    "application": "The source-gate implementation blends predictions and then applies the component-specific projection. The final LEO600 evaluation uses the frozen route and re-applies the same projection after blending."
+  },
+  "catalog_and_selection": {
+    "alpha_families": [
+      [
+        0.0,
+        0.5
+      ],
+      [
+        0.1,
+        0.5
+      ],
+      [
+        0.25,
+        0.5
+      ],
+      [
+        0.1,
+        0.25
+      ],
+      [
+        0.25,
+        0.75
+      ]
+    ],
+    "mask_dimensions": 6,
+    "directions": [
+      "LEO500->LEO550",
+      "LEO500->LEO700",
+      "LEO550->LEO500",
+      "LEO550->LEO700",
+      "LEO700->LEO500",
+      "LEO700->LEO550"
+    ],
+    "route_count": 320,
+    "route_id_format": "family{family_index}_mask{mask:02d}",
+    "source_gate_objective": "Require complete six directed RMSE/MAE records and three residual-KS records; reject any regression beyond 1e-12 and require at least one strict RMSE/MAE gain below -1e-12.",
+    "tie_break_order": "The registered selector orders eligible routes by its source-gate conservative ranking; route family/mask and selected receipt are hash-bound here.",
+    "uniform_floor_variant": "The promoted protocol imposes alpha_t >= 1e-5 for every target orbit before the registered conservative selector is applied.",
+    "source_sweep_selected_routes": {
+      "bat": {
+        "route_id": "family0_mask16",
+        "family_index": 0,
+        "low_alpha": 0.0,
+        "high_alpha": 0.5,
+        "mask": 16,
+        "alphas": {
+          "LEO500->LEO550": 0.0,
+          "LEO500->LEO700": 0.0,
+          "LEO550->LEO500": 0.0,
+          "LEO550->LEO700": 0.0,
+          "LEO700->LEO500": 0.5,
+          "LEO700->LEO550": 0.0
+        }
+      },
+      "rwa": {
+        "route_id": "family0_mask16",
+        "family_index": 0,
+        "low_alpha": 0.0,
+        "high_alpha": 0.5,
+        "mask": 16,
+        "alphas": {
+          "LEO500->LEO550": 0.0,
+          "LEO500->LEO700": 0.0,
+          "LEO550->LEO500": 0.0,
+          "LEO550->LEO700": 0.0,
+          "LEO700->LEO500": 0.5,
+          "LEO700->LEO550": 0.0
+        }
+      }
+    },
+    "promoted_unseen_orbit_routes": {
+      "bat": {
+        "alpha_by_target": {
+          "LEO500": 0.5,
+          "LEO550": 0.25,
+          "LEO600": 1e-05,
+          "LEO700": 0.25
+        },
+        "alphas": {
+          "LEO500->LEO550": 0.5,
+          "LEO500->LEO700": 0.5,
+          "LEO550->LEO500": 0.5,
+          "LEO550->LEO700": 0.0,
+          "LEO700->LEO500": 0.5,
+          "LEO700->LEO550": 0.0
+        },
+        "family_index": 0,
+        "high_alpha": 0.5,
+        "low_alpha": 0.0,
+        "mask": 23,
+        "route_id": "family0_mask23",
+        "route_semantics": "mean of the two frozen source-to-target directed alphas",
+        "unseen_target_rule": "uniform_alpha_floor_from_frozen_source_protocol"
+      },
+      "rwa": {
+        "alpha_by_target": {
+          "LEO500": 0.1,
+          "LEO550": 0.1,
+          "LEO600": 1e-05,
+          "LEO700": 0.1
+        },
+        "alphas": {
+          "LEO500->LEO550": 0.1,
+          "LEO500->LEO700": 0.1,
+          "LEO550->LEO500": 0.1,
+          "LEO550->LEO700": 0.1,
+          "LEO700->LEO500": 0.1,
+          "LEO700->LEO550": 0.1
+        },
+        "family_index": 1,
+        "high_alpha": 0.5,
+        "low_alpha": 0.1,
+        "mask": 0,
+        "route_id": "family1_mask00",
+        "route_semantics": "mean of the two frozen source-to-target directed alphas",
+        "unseen_target_rule": "uniform_alpha_floor_from_frozen_source_protocol"
+      }
+    }
+  },
+  "deployment_modes": {
+    "implemented_mode": "label-free target-input/transductive",
+    "target_orbit_identity": "Required from unit metadata to choose the target-orbit alpha and route direction.",
+    "earliest_target_window": "Consumed as unlabeled sensor input for unit-relative channels.",
+    "target_labels": "Not used for fitting, route choice, residual correction, thresholding, or the LEO600 candidate freeze.",
+    "pure_inductive_status": "Not implemented or evaluated; no pure-inductive claim is made."
+  },
+  "evidence": {
+    "candidate_receipt_route_count": 320,
+    "final_receipt_route_ids": {
+      "bat": "family0_mask23",
+      "rwa": "family1_mask00"
+    },
+    "selection_decision_route_count": 320,
+    "files": [
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\rul_next_electrochemical\\temporal_tcn_route_sweep_source_gate.py",
+        "sha256": "41e505e4f1ff7de050d86efe8766b64d96b0239e6436e7b0496f085ccb91cc7b",
+        "bytes": 11130
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\rul_next_electrochemical\\temporal_tcn_source_gate.py",
+        "sha256": "0a50fe3839fdb804903cf8ece5e6191e1cb4dd9bf6b8e23938ae13ab946b1d74",
+        "bytes": 26589
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\rul_next_electrochemical\\temporal_tcn_relative_blend_source_gate.py",
+        "sha256": "f9fa246661793ad098231efeb45f5967f33cd83f35f80aa179453e53d1cacc09",
+        "bytes": 10601
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\repro\\runners\\temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_source_gate_20261001.py",
+        "sha256": "3f24394e16e58a49ceaef99448a690e13143356918aed45f1ea50f3d7b8dd126",
+        "bytes": 3328
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\candidate_v15_receipt.json",
+        "sha256": "54b628a565e47ccae95f630ec7db933b0e091aa53dc96aee3a1496ff9a3c66c7",
+        "bytes": 322307
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f1_leo600_final_retry1_20261002\\final_receipt.json",
+        "sha256": "49c7e9da240842a6095f06358a0e318a4da2357b94da25611dedbbce5962bba5",
+        "bytes": 4335
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f1_leo600_final_retry1_20261002\\selection_decision.json",
+        "sha256": "53e2cd76f8aec7c4ded0fbb7857533e64ccb48fd5fd042a23caee904018ef7c2",
+        "bytes": 3444
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\en\\main.tex",
+        "sha256": "4dc54e2a8ccd3aa087344ae52737b5f9f1bc5bb97faa9926c1d0aa6cf5d33621",
+        "bytes": 35197
+      }
+    ],
+    "dynamic_checks": {
+      "route_catalog_has_5_families": "PASS",
+      "route_catalog_has_320_unique_routes": "PASS",
+      "receipt_and_code_route_counts_agree": "PASS",
+      "convex_blend_alpha_0_25": "PASS",
+      "blend_endpoint_semantics": "PASS",
+      "selection_decision_and_final_receipt_agree": "PASS"
+    }
+  },
+  "cross_validation": {
+    "static": "Executable route source, candidate receipt, F1 selection decision, final receipt, runner, and manuscript were hash-linked.",
+    "dynamic": "Catalog cardinality, family values, route IDs, convex blend equation, and endpoint semantics were checked in Python.",
+    "receipt": "Candidate v15 reports route_count=320; F1 selection and final receipts report family0_mask23/family1_mask00 for the unseen-orbit route protocol."
+  },
+  "confidence": "high for the final 320-route contract and its receipt binding; medium for historical artifacts that still mention 4913 because they are explicitly development-only records.",
+  "remaining_risk": "Venue-specific terminology and the final article type remain pending until the target venue is selected. Any remaining historical 4913 text must stay labeled diagnostic and must not appear as the final selection rule.",
+  "required_modification": "Use the five-family/64-mask/320 contract in the manuscript, README, and current F4/F3 evidence ledgers; label older 17-point artifacts as historical diagnostics."
+}

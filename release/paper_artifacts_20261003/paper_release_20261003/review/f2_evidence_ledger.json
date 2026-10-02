@@ -1,0 +1,163 @@
+{
+  "schema": "brphm-f2-evidence-ledger-1.0",
+  "audit_date": "2026-10-02",
+  "finding_id": "F2",
+  "status": "CURRENT_DERIVATION_VERIFIED_MANUSCRIPT_PATCHED_LICENSE_DOI_AND_RELEASE_LIMITS_EXPLICIT",
+  "scope": "Dataset split, label, window contract and deterministic train/validation tensor replay; no holdout telemetry/labels, A1/B1 data or sealed payload read.",
+  "manuscript_locations": [
+    "work/paper/en/main.tex:30",
+    "work/paper/en/main.tex:133"
+  ],
+  "original_claims": [
+    "ModelScope-backed project data root",
+    "BAT contains 13 channels and RWA contains 13 channels",
+    "source and validation units are disjoint by construction"
+  ],
+  "corrected_receipt_dimensions": {
+    "bat": [
+      3681,
+      60,
+      4
+    ],
+    "rwa": [
+      7051,
+      30,
+      13
+    ]
+  },
+  "artifacts": {
+    "manifest": {
+      "path": "work/paper/review/f2_dataset_split_20261002/f2_dataset_split_manifest.json",
+      "sha256": "3de92e0266a2555823dde6b04699db45d6f20f72414013c9eb153246f837d2e2"
+    },
+    "tensor_replay_addendum_json": {
+      "path": "work/paper/review/f2_dataset_split_20261002/f2_tensor_replay_addendum_20261002.json",
+      "sha256": "c6c177ac93fad6cffd47244e3dfbdfd919f898a48b7113244be5e087e8131a1c"
+    },
+    "tensor_replay_addendum_markdown": {
+      "path": "work/paper/review/f2_dataset_split_20261002/f2_tensor_replay_addendum_20261002.md",
+      "sha256": "074bea858318d2572b77f660a56361357a7b536ccc3c626d57333b93096483b1"
+    },
+    "modelscope_file_hash_binding": {
+      "path": "work/paper/review/f2_dataset_split_20261002/f2_modelscope_raw_hash_binding_20261002.json",
+      "sha256": "a7c995973d122c0084ec0d65f02de053c407330fce068b23b4d7daa4a11a3fb95",
+      "train_validation_raw_and_interim_hash_matches": 1100
+    },
+    "membership": {
+      "path": "work/paper/review/f2_dataset_split_20261002/unit_split_membership.csv",
+      "sha256": "f07ac79a69986b407b3af0458201be993a2a0956d59ba7af24abd028a14a24d0"
+    },
+    "raw_manifest": {
+      "path": "work/paper/review/sim_manifest_remote.csv",
+      "sha256": "93710e01e18684e6296d52c4ae8ea98491841440db8f2b9798e0139901fccbc8",
+      "rows": 648
+    },
+    "holdout_manifest": {
+      "path": "work/paper/review/f1_holdout_manifest.csv",
+      "sha256": "ee1e2f760ebc69319d3dc0625744a602114a5dc249ebe8b283f0d9cb53d0c981",
+      "rows": 98
+    },
+    "rack_bat_split": {
+      "sha256": "3b6ad1bbb5a8df5da9ab35dd044e69576bae9bf9b08867b0d109c252314e5e6",
+      "rows": 324
+    },
+    "rack_rwa_split": {
+      "sha256": "969590b62f250ea7ecb632520e4ad8da312f8f4fbe381b1a198d692d175efa16",
+      "rows": 324
+    },
+    "current_consistency_check": {
+      "path": "work/paper/review/f2_dataset_split_20261002/f2_current_consistency_check_20261003.json",
+      "sha256": "e5299342a2c39451926c2488d673cad68189d62e530cbfda191b45dfed0d104d",
+      "status": "post_reconciliation_record"
+    }
+  },
+  "summary": {
+    "units": 648,
+    "bat": 324,
+    "rwa": 324,
+    "holdout": 98,
+    "train": 388,
+    "val": 162,
+    "orbits": {
+      "LEO500": 216,
+      "LEO550": 216,
+      "LEO700": 216
+    }
+  },
+  "split_reconstruction": {
+    "algorithm": "sha256(f'{seed}:{unit_id}') ascending then final clamp(floor(n*0.2),1,n-1) per non-holdout DOE cell",
+    "holdout_precedence": true,
+    "row_match": 648,
+    "row_difference": 0
+  },
+  "public_dataset": {
+    "url": "https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets",
+    "current_head_2026_10_02": "cfe0a27a99fa776d6e464649576432c871992771",
+    "historical_verified_commit": "85ebba12f3ec132dc9e0ea8ae49012f57505ccf1",
+    "historical_root_manifest_sha256": "0f8d21b05eb0168ad36a070e1beb22421c962fcbbb46f65ff6cc6bba9bc3d697",
+    "complete_tier_tree_identical_at_both_commits": "f0b07bea4a1d2eb9286b26f7c91f34b951391da3",
+    "complete_tier_payload_identical": true,
+    "paper_content_commit_recommendation": "85ebba12f3ec132dc9e0ea8ae49012f57505ccf1",
+    "doi_status": "No DOI disclosed by the inspected API/README; exact-name DataCite and Crossref searches returned no record on 2026-10-02.",
+    "license_status": "Live dataset-detail API declared CC-BY-4.0 on 2026-10-02; neither inspected Git commit contains a versioned license file, so commit-specific applicability is unauthenticated."
+  },
+  "evidence_sources": [
+    "Rack configs/holdout.yaml",
+    "Rack src/datasets/preprocess.py::assign_splits_cell_tail",
+    "Rack configs/preprocess/bat_target.yaml",
+    "Rack configs/preprocess/rwa_target.yaml",
+    "Rack docs/data_dictionary.md",
+    "Rack persisted bat_target_split.csv and rwa_target_split.csv",
+    "promoted source receipt",
+    "ModelScope git ls-remote and historical remote verification JSON",
+    "F2 current train-validation-only deterministic processed tensor replay and traced Parquet reader",
+    "F2 current consistency check and post-freeze hash rebinding (2026-10-03)"
+  ],
+  "builder_script": {
+    "path": "work/paper/repro/build_f2_dataset_split_manifest.py",
+    "sha256": "6a1f6ab9db7e22d12ce81d52d3580b7c5da0dbb9e72383a77bf2beef0d9476fc"
+  },
+  "commands": [
+    "python work/paper/repro/build_f2_dataset_split_manifest.py --root .",
+    "git ls-remote https://www.modelscope.cn/datasets/modelscope1553926531/BRPHM-datasets.git HEAD refs/heads/master refs/heads/main",
+    "scp Rack data/processed/splits/bat_target_split.csv and rwa_target_split.csv",
+    "PowerShell unit-level comparison by unit_id, split, and strata"
+  ],
+  "current_tensor_replay": {
+    "bat": {
+      "read_units": 275,
+      "holdout_reads": 0,
+      "windows": 3681,
+      "bitwise_tensor_fields_equal": true,
+      "exact_canonical_sha256_reproduced": true
+    },
+    "rwa": {
+      "read_units": 275,
+      "holdout_reads": 0,
+      "windows": 7051,
+      "bitwise_tensor_fields_equal": true,
+      "exact_canonical_sha256_reproduced": true
+    },
+    "normalization_stable_fields_equal_excluding_created_utc": true,
+    "historical_creation_event_receipted": false,
+    "artifact_binding_reconciled_2026_10_03": true
+  },
+  "cross_validation": {
+    "primary": "Rack manifests/configuration and current production preprocessing pipeline",
+    "independent_recompute": "local pure-Python 648-row split reconstruction plus Rack reader trace and tensor field comparison",
+    "persisted_split_check": "648/648 exact row matches",
+    "processed_tensor_check": "all train-validation Parquet read sets exact; all checked tensor values bitwise equal; canonical serialized SHA-256 reproduced",
+    "confidence": "high for current released train/validation derivation, split membership, and holdout exclusion; medium for commit-specific license applicability"
+  },
+  "required_modification": "Retain the dataset table and hash-linked manifest in the paper; cite one immutable complete-tier-equivalent ModelScope commit; state access date and the live API license observation with its commit-level limitation; include label/window/missing-value contract and the separate LEO600 partition. Current manuscript patch and F2 artifact bindings are reconciled; public release/DOI and author confirmations remain pending.",
+  "remaining_risk": "Current split and tensor replay bindings are reconciled. No DOI was disclosed in the checked sources; the live API CC-BY-4.0 declaration is not authenticated by a versioned license file at either commit. The current replay proves derivability from current data/code/config but cannot identify the original July 2026 creator, time or historical runtime/code state. Public paper release and author metadata remain pending.",
+  "historical_hash_bindings_20261002_pre_reconciliation": {
+    "recorded_in_previous_ledger": {
+      "manifest": "61842ba3d1ee89e7180a29449365bd0e2ab9734a89ed0c96f0939bb596cbcb4c",
+      "tensor_replay_addendum_json": "9128647da2c9fab7c20c55ca18ff1d07e44092a8e51f07df4c73919c32629e85",
+      "tensor_replay_addendum_markdown": "96507e32172b19db9bc32d3552377918a61cc61ed7ddd1739c9b57a94247fc9c"
+    },
+    "manifest_self_reference_pre_reconciliation": "9128647da2c9fab7c20c55ca18ff1d07e44092a8e51f07df4c73919c32629e85",
+    "disposition": "superseded_by_2026-10-03_reconciliation; retained for chronology only"
+  }
+}

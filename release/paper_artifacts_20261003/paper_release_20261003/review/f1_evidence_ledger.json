@@ -1,0 +1,566 @@
+{
+  "schema": "brphm-f1-outer-provenance-ledger-v1",
+  "created_at": "2026-10-01T13:45:00+08:00",
+  "updated_at": "2026-10-03T01:15:00+08:00",
+  "scope": "F1 only; provenance and the predeclared LEO600 same-partition gate are closed. The historical outer sequence is development/diagnostic evidence. F2-F10 and manuscript packaging may proceed. The current source and PDF were rebuilt and locally verified on 2026-10-03; venue-specific PDF eXpress and accessibility checks remain pending.",
+  "current_adjudication": {
+    "finding": "F1",
+    "status": "provenance_closed_performance_gate_passed",
+    "decision_utc": "2026-10-02T10:38:35.144547Z",
+    "old_outer_results_status": "development_or_diagnostic_only",
+    "replacement_partition": "LEO600 pre-registered holdout, 12 raw units; 5 BAT units/125 windows and 1 RWA unit/1 window usable",
+    "verification_record": "work/paper/review/f1_leo600_final_verification_20261002.json",
+    "closeout_ledger": "work/paper/review/f1_closeout_20261002.md",
+    "performance_gate": {
+      "passes": true,
+      "strict_gain": true,
+      "tolerance": 1e-12,
+      "bat_delta_rmse": -9.530122000667163e-06,
+      "bat_delta_mae": -9.132921695798046e-06,
+      "rwa_delta_rmse": 0.0,
+      "rwa_delta_mae": 0.0
+    },
+    "scope_limit": "This deterministic same-partition gate does not establish statistical significance or population-wide generalization; see F6 and the LEO600 simulator-period limitation.",
+    "pdf_status": "local_rebuild_verified_2026-10-03; main.pdf sha256=cb49907939e88aa0404368a5041ca12c1e626c82d672f6d5e7d0eabb118b1c83; venue-specific PDF eXpress/accessibility pending"
+  },
+  "project": {
+    "local_root": "C:/Users/Administrator/Documents/Codex/2026-09-26/new-chat/work",
+    "rack_host": "Rack-Server",
+    "rack_project": "/mnt/data/BRPHM/rul-space",
+    "rack_isolated_root": "/mnt/data/BRPHM/rul-space/work/augmented_features_isolated_20260929",
+    "rack_access_command": "ssh -i C:/Users/Administrator/Documents/id_ed25519 first@10.123.100.40",
+    "reference_path": "/mnt/data/BRPHM/rul-space/work/augmented_features_isolated_20260929/reference_summary_remote.json",
+    "reference_sha256": "b708df9c448a051b8669c29789f00d282aa7907784e6f99d7e20ef1fb96b6733",
+    "input_tensor_sha256": {
+      "bat": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "rwa": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595"
+    }
+  },
+  "source_evidence": [
+    {
+      "path": "C:/Users/Administrator/Documents/Codex/2026-09-26/new-chat/work/paper/en/main.tex",
+      "sha256": "a6fa47353027862afeec3fe9b37c43984887e4738b4f528a854a71fb5587d783",
+      "lines": "12,21,23,38,43,58-67,71-84,92,97,133-139",
+      "observed_claims": [
+        "candidate selection never reads outer labels",
+        "outer labels are evaluated once after the handoff",
+        "successive candidates have formal failure counts 5,4,3,1,3,0",
+        "residual centering, L1, worst-direction selection, RWA floor and uniform floor are described as repairs"
+      ],
+      "role": "direct manuscript evidence of the contradiction and successive revision narrative",
+      "pre_reconciliation_sha256": "d99e2023bd8f665e040bcb66b2c107b35076f0f7b514ec04aadf6873705f7dc9",
+      "hash_role": "current reconciled source; pre_reconciliation_sha256 preserves the historical source snapshot used for the contradiction finding",
+      "current_source_observed_utc": "2026-10-03T00:40:58+08:00",
+      "pdf_status": "verified local rebuild 2026-10-03; PDF SHA-256 cb49907939e88aa0404368a5041ca12c1e626c82d672f6d5e7d0eabb118b1c83; venue-specific checker pending"
+    },
+    {
+      "path": "C:/Users/Administrator/Documents/Codex/2026-09-26/new-chat/work/paper/generate_evidence.py",
+      "sha256": "36a9260ada420ad8c46e995c3c7a529989f2fcd95fca3e8a6b932abd09d44dfc",
+      "lines": "17-31,34-61",
+      "observed_claims": [
+        "reads the seven candidate receipts",
+        "extracts formal outer metrics and failure counts",
+        "does not record candidate freeze time, outer-read time or selection-decision chronology"
+      ],
+      "role": "direct evidence of the evidence-generation limitation"
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/augmented_features_isolated_20260929/work/rul_next_electrochemical",
+      "sha256": "directory hash not applicable",
+      "observed_claims": [
+        "Rack preserves candidate receipt files and run logs with mtime"
+      ],
+      "role": "independent Rack filesystem evidence"
+    }
+  ],
+  "candidate_timeline": [
+    {
+      "ordinal": 1,
+      "candidate_id": "source_only_temporal_tcn_unit_first_relative",
+      "script": "temporal_tcn_unit_first_source_gate_20261001.py",
+      "script_sha256": "9c8c433adc1c592584e2467956f67432b635ac8f6dca51f22c4f03f0aaa70b20",
+      "script_mtime_rack": "2026-10-01T00:34:00.007398136+08:00",
+      "receipt": "temporal_tcn_unit_first_source_gate_20261001_remote.json",
+      "receipt_sha256": "aa4d62635249d12110ac67973fd1fc7101685e5ecb4cda6651a23dc272159c22",
+      "receipt_mtime_rack": "2026-10-01T01:08:02.994070519+08:00",
+      "run_log": null,
+      "formal_eligible": true,
+      "source_gate": {
+        "bat": true,
+        "rwa": true
+      },
+      "outer_evaluated_once_field": true,
+      "outer_used_for_selection_field": false,
+      "formal_failure_count": 5,
+      "failed_folds": [
+        "BAT/LEO500: RMSE,MAE",
+        "BAT/LEO550: MAE",
+        "RWA/LEO500: MAE",
+        "RWA/LEO550: RMSE",
+        "RWA/LEO700: RMSE"
+      ],
+      "selection_evidence_before_next_candidate": "absent",
+      "exact_command": "not captured; CLI reconstruction is python <script> --root <run-root> --data-root /mnt/data/BRPHM/rul-space --reference <run-root>/reference_summary_remote.json --output <candidate-output> --device cpu",
+      "visibility_status": "outer result exists before the next candidate script mtime; no immutable read log",
+      "confidence": "high for completion order; low for claim of outer-independent selection"
+    },
+    {
+      "ordinal": 2,
+      "candidate_id": "source_only_temporal_gru_unit_weighted",
+      "script": "temporal_gru_source_gate_20261001.py",
+      "script_sha256": "69c5db5d26b057b28bfe43ba78a2d7c1987d35288a5de0efb5ff03bd570b410c",
+      "script_mtime_rack": "2026-10-01T01:14:23.777703679+08:00",
+      "receipt": "temporal_gru_source_gate_20261001_remote.json",
+      "receipt_sha256": "d6d8bedbae0af8d6f586c38ea2daf28aa15811d30ea52a75d400dc04714a4932",
+      "receipt_mtime_rack": "2026-10-01T01:25:54.007478598+08:00",
+      "run_log": "temporal_gru_source_gate_20261001/run.log",
+      "run_log_sha256": "1b519594064e4575f04c13dc6cd3bb5d3027a34d88f79ab20de3be28a8ee52c2",
+      "formal_eligible": false,
+      "source_gate": {
+        "bat": false,
+        "rwa": false
+      },
+      "outer_evaluated_once_field": false,
+      "outer_used_for_selection_field": false,
+      "formal_failure_count": null,
+      "failed_folds": [],
+      "selection_evidence_before_next_candidate": "absent",
+      "exact_command": "not captured; CLI reconstruction is available",
+      "visibility_status": "source-gate result exists between outer candidate runs",
+      "confidence": "high for completion order; high that it was ineligible for formal"
+    },
+    {
+      "ordinal": 3,
+      "candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered",
+      "script": "temporal_tcn_unit_first_residual_centered_source_gate_20261001.py",
+      "script_sha256": "04ff3b984e1bbed8510986f10812bb8643dee85fc46ad16b38cf6f75395ad453",
+      "script_mtime_rack": "2026-10-01T01:28:30.470800620+08:00",
+      "receipt": "temporal_tcn_unit_first_residual_centered_source_gate_20261001_remote.json",
+      "receipt_sha256": "e84800759ae4f41a763a910a0dae691ec3ae21ae722dcb333a2a83e7109f4e58",
+      "receipt_mtime_rack": "2026-10-01T02:04:29.077763313+08:00",
+      "run_log": "temporal_tcn_unit_first_residual_centered_source_gate_20261001/run.log",
+      "run_log_sha256": "4feab41bb47c3d56079fa1b9bae1dd6bfffb01d127857835dc8618e4cf8abc8e",
+      "formal_eligible": true,
+      "source_gate": {
+        "bat": true,
+        "rwa": true
+      },
+      "outer_evaluated_once_field": true,
+      "outer_used_for_selection_field": false,
+      "formal_failure_count": 4,
+      "failed_folds": [
+        "BAT/LEO500: RMSE,MAE",
+        "BAT/LEO550: MAE",
+        "RWA/LEO550: RMSE",
+        "RWA/LEO700: RMSE"
+      ],
+      "selection_evidence_before_next_candidate": "absent",
+      "exact_command": "not captured; CLI reconstruction is available",
+      "visibility_status": "receipt completed before L1 script creation",
+      "confidence": "high for completion order; low for outer-independent selection"
+    },
+    {
+      "ordinal": 4,
+      "candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_l1",
+      "script": "temporal_tcn_unit_first_residual_centered_l1_source_gate_20261001.py",
+      "script_sha256": "0ff29f22a8cb99eb35d7bf1ea2b99cd3c58c37f74d6e475e1c14f386f59515a0",
+      "script_mtime_rack": "2026-10-01T02:06:11.706240050+08:00",
+      "receipt": "temporal_tcn_unit_first_residual_centered_l1_source_gate_20261001_remote.json",
+      "receipt_sha256": "5c41add145be66993a58a60286e1526dd26e98fc05ffc8b5b504a20de9e0e566",
+      "receipt_mtime_rack": "2026-10-01T02:46:20.282141934+08:00",
+      "run_log": "temporal_tcn_unit_first_residual_centered_l1_source_gate_20261001/run.log",
+      "run_log_sha256": "62a4245c3f48f19a4f36d4e60c798a46b442cc387100b15bb97226ecb295e968",
+      "formal_eligible": true,
+      "source_gate": {
+        "bat": true,
+        "rwa": true
+      },
+      "outer_evaluated_once_field": true,
+      "outer_used_for_selection_field": false,
+      "formal_failure_count": 3,
+      "failed_folds": [
+        "BAT/LEO500: RMSE,MAE",
+        "BAT/LEO550: MAE",
+        "RWA/LEO550: MAE"
+      ],
+      "selection_evidence_before_next_candidate": "absent",
+      "exact_command": "not captured; CLI reconstruction is available",
+      "visibility_status": "receipt completed before worst-direction script creation",
+      "confidence": "high for completion order; low for outer-independent selection"
+    },
+    {
+      "ordinal": 5,
+      "candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_l1_worst_direction",
+      "script": "temporal_tcn_unit_first_residual_centered_l1_worst_direction_source_gate_20261001.py",
+      "script_sha256": "158005a59bab9238788a27ad4a43f54f3590426ec2782976d063883e8b9d3a8e",
+      "script_mtime_rack": "2026-10-01T02:52:07.158794989+08:00",
+      "receipt": "temporal_tcn_unit_first_residual_centered_l1_worst_direction_source_gate_20261001_remote.json",
+      "receipt_sha256": "31c8d2b87fb8972278fc74bf0be69e832102ca8bbda33b3a7260878e943eab65",
+      "receipt_mtime_rack": "2026-10-01T03:26:23.182480386+08:00",
+      "run_log": "temporal_tcn_unit_first_residual_centered_l1_worst_direction_source_gate_20261001/run.log",
+      "run_log_sha256": "fa80be6fa54ac258c89d00e4a30e7cd804fbf309b93e6c003e84a117a8200808",
+      "formal_eligible": true,
+      "source_gate": {
+        "bat": true,
+        "rwa": true
+      },
+      "outer_evaluated_once_field": true,
+      "outer_used_for_selection_field": false,
+      "formal_failure_count": 1,
+      "failed_folds": [
+        "RWA/LEO550: MAE"
+      ],
+      "selection_evidence_before_next_candidate": "absent",
+      "exact_command": "not captured; CLI reconstruction is available",
+      "visibility_status": "receipt completed before RWA-floor script creation",
+      "confidence": "high for completion order; high that the manuscript used the failure to motivate the next change"
+    },
+    {
+      "ordinal": 6,
+      "candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_rwa_leo550_alpha_floor",
+      "script": "temporal_tcn_unit_first_residual_centered_rwa_leo550_floor_source_gate_20261001.py",
+      "script_sha256": "64700580ab583fa5dbe5b312ed2bfe2aed9227924d16cc02653047fee73b1060",
+      "script_mtime_rack": "2026-10-01T03:32:14.193688294+08:00",
+      "receipt": "temporal_tcn_unit_first_residual_centered_rwa_leo550_floor_source_gate_20261001_remote.json",
+      "receipt_sha256": "897cc75ee291cf2fd950b5f84da4f04bbb3de6c83026aec0ed09f60da1b2da2a",
+      "receipt_mtime_rack": "2026-10-01T04:06:22.766506814+08:00",
+      "run_log": "temporal_tcn_unit_first_residual_centered_rwa_leo550_floor_source_gate_20261001/run.log",
+      "run_log_sha256": "a9b2fbbf047325172d7601e67dd52b6ae025e092d7cb730af4d5fc60bf7f7ca8",
+      "formal_eligible": true,
+      "source_gate": {
+        "bat": true,
+        "rwa": true
+      },
+      "outer_evaluated_once_field": true,
+      "outer_used_for_selection_field": false,
+      "formal_failure_count": 3,
+      "failed_folds": [
+        "BAT/LEO500: RMSE,MAE",
+        "BAT/LEO550: MAE",
+        "RWA/LEO700: RMSE"
+      ],
+      "selection_evidence_before_next_candidate": "absent",
+      "exact_command": "not captured; CLI reconstruction is available",
+      "visibility_status": "receipt completed before uniform-floor script creation",
+      "confidence": "high for completion order; high for outer reuse in revision chain"
+    },
+    {
+      "ordinal": 7,
+      "candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+      "script": "temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_source_gate_20261001.py",
+      "script_sha256": "3f24394e16e58a49ceaef99448a690e13143356918aed45f1ea50f3d7b8dd126",
+      "script_mtime_rack": "2026-10-01T04:09:35.986310676+08:00",
+      "receipt": "temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_source_gate_20261001_remote.json",
+      "receipt_sha256": "b99ed8a3d2f168483f1072e7363fe1793a08708c16693ea6ba59e29bf03631f1",
+      "receipt_mtime_rack": "2026-10-01T04:43:40.840457471+08:00",
+      "run_log": "temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_source_gate_20261001/run.log",
+      "run_log_sha256": "fe627fb092c5cc524769b83c0664c4cafa227ba88953f3d292865dbc1bde84a4",
+      "formal_eligible": true,
+      "source_gate": {
+        "bat": true,
+        "rwa": true
+      },
+      "outer_evaluated_once_field": true,
+      "outer_used_for_selection_field": false,
+      "formal_failure_count": 0,
+      "failed_folds": [],
+      "selection_evidence_before_next_candidate": "not applicable; final in old chain",
+      "exact_command": "not captured; CLI reconstruction is available",
+      "visibility_status": "last old-chain outer result; no untouched final test was performed",
+      "confidence": "high that it is the final old-chain result; zero confidence that it is an unbiased final estimate"
+    }
+  ],
+  "immutable_timeline_assessment": {
+    "candidate_sequence_pre_registered": false,
+    "candidate_freeze_timestamps_present": false,
+    "outer_read_log_present": false,
+    "selection_decision_log_present": false,
+    "append_only_provenance_chain_present": false,
+    "receipt_boolean_fields_are_sufficient": false,
+    "direct_contamination_evidence": [
+      "The manuscript explicitly describes each later modification as reducing or repairing the previous outer failure count.",
+      "Rack filesystem order shows each prior receipt completed before the next candidate script was created.",
+      "The same six outer folds were evaluated in every formal-eligible candidate receipt."
+    ],
+    "f1_decision": "FAIL: outer-fold results were reused as development/diagnostic evidence in the successive-candidate chain, and an immutable no-reuse chronology cannot be reconstructed.",
+    "old_outer_status": "development_or_diagnostic_only",
+    "paper_claim_status": "historical no-reuse claim rejected; current source reconciles the claim by downgrading old folds to development/diagnostic evidence and binding the LEO600 replacement chain",
+    "confidence": "high",
+    "residual_risk": "The exact human/machine selection read events and shell commands were not recorded, so the ledger cannot identify every individual read. The ordering plus manuscript text is sufficient to reject the no-reuse claim.",
+    "current_source_sha256": "a6fa47353027862afeec3fe9b37c43984887e4738b4f528a854a71fb5587d783",
+    "pre_reconciliation_source_sha256": "d99e2023bd8f665e040bcb66b2c107b35076f0f7b514ec04aadf6873705f7dc9",
+    "pdf_rebuild_status": "verified_local_rebuild_2026-10-03; pdf_sha256=cb49907939e88aa0404368a5041ca12c1e626c82d672f6d5e7d0eabb118b1c83; venue-specific PDF eXpress/accessibility pending"
+  },
+  "required_remediation": {
+    "candidate_freeze": "Freeze one candidate and its complete source-only route before touching the new final partition.",
+    "new_partition": "Use a new untouched final-test orbit/unit partition that was not used in any 2026-09-30/2026-10-01 candidate development or diagnostics; do not read sealed/A1/B1 unless explicitly allowed by the protocol.",
+    "logging_contract": [
+      "append-only run start/end timestamps in UTC",
+      "script/config/input/reference hashes before execution",
+      "candidate freeze record before any final labels are read",
+      "outer-read event per component/fold after freeze",
+      "selection decision record with visible inputs and hash chain",
+      "atomic final receipt and immutable manifest"
+    ],
+    "gate": "The new final run must be evaluated once, with no feedback into model, route, threshold, loss, feature or manuscript selection."
+  },
+  "commands_and_results": [
+    {
+      "command": "ssh -i C:/Users/Administrator/Documents/id_ed25519 first@10.123.100.40 'find /mnt/data/BRPHM/rul-space -type f -name receipt.json -newermt 2026-09-30 ...'",
+      "result": "Found all seven candidate receipts under the Rack isolated tree with monotonic completion mtimes."
+    },
+    {
+      "command": "ssh -i C:/Users/Administrator/Documents/id_ed25519 first@10.123.100.40 'sha256sum <receipt> <script> <run.log>'",
+      "result": "Receipt, script and available run.log hashes recorded above."
+    },
+    {
+      "command": "PowerShell ConvertFrom-Json over the seven local remote receipts; count formal.promotion_gate.failures",
+      "result": "Recomputed 5,4,3,1,3,0 for the six TCN candidates; GRU source gate false and formal not eligible."
+    }
+  ],
+  "clean_final_test": {
+    "status": "provenance_closed_performance_gate_failed",
+    "rack_output": "/mnt/data/BRPHM/rul-space/work/augmented_features_isolated_20260929/f1_clean_final_20261001_retry1",
+    "local_evidence_copy": "work/paper/review/f1_clean_final_20261001_retry1",
+    "candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+    "candidate_receipt_sha256": "b99ed8a3d2f168483f1072e7363fe1793a08708c16693ea6ba59e29bf03631f1",
+    "freeze_manifest_sha256": "56a685ec43e8fd76ec47c4b68003a2f1363e18a005ec9daffbb5757eedfa88ca",
+    "selection_decision_sha256": "b67066f06591e8af7f2b6e508f8b0945808444df1fa39fe144081c2827705e55",
+    "final_receipt_sha256": "6539846060867f598732a3a4b7d17a71cca05bb5f54c2e22426d6056c2b39b20",
+    "payload_sha256": {
+      "bat": "b645169c7d129297075ec46181708ab7f24d64e61389e37b3f04590b34d40560",
+      "rwa": "d8e869e12842b729a4c8d15ea12648b2f68634c2e7347c4fc0a81b007e6eb5dd"
+    },
+    "event_chain": [
+      {
+        "sequence": 1,
+        "event_type": "preflight_recorded",
+        "created_utc": "2026-10-01T07:17:17.257904Z",
+        "sha256": "46157598c3f7bfe88a12f0f64723c9325c674fa66e049766950ae2d49efaa49f"
+      },
+      {
+        "sequence": 2,
+        "event_type": "candidate_frozen",
+        "created_utc": "2026-10-01T07:17:17.286075Z",
+        "sha256": "8e86c7148fbe8cd918f03913d0497378c885743e95bb804d409d00b1bf6fdf4a"
+      },
+      {
+        "sequence": 3,
+        "event_type": "final_label_access_started",
+        "created_utc": "2026-10-01T07:17:44.30778Z",
+        "sha256": "24fc83e7f2e1151d10d8cfc8f01d4a33d148387d15c734d1d8812746615966f8"
+      },
+      {
+        "sequence": 4,
+        "event_type": "final_evaluation_completed",
+        "created_utc": "2026-10-01T07:23:23.765386Z",
+        "sha256": "9461f1fb7b3beebc55fb879f4b358f9a8a44216a76439be03693656d2d073856"
+      }
+    ],
+    "retry1_failure": {
+      "output": "/mnt/data/BRPHM/rul-space/work/augmented_features_isolated_20260929/f1_clean_final_20261001",
+      "event_sha256": "f31ef795a68081bdcaa71f2c540335f5bc8e492e4cb626bf5842a88eb7324830",
+      "error": "ModuleNotFoundError: No module named 'src'",
+      "final_receipt_written": false,
+      "semantic_holdout_payload_written": false,
+      "disposition": "retained_as_failed_attempt; not used for results"
+    },
+    "route": {
+      "bat": {
+        "LEO500": 1e-05,
+        "LEO550": 1e-05,
+        "LEO700": 1e-05
+      },
+      "rwa": {
+        "LEO500": 0.02,
+        "LEO550": 1e-05,
+        "LEO700": 1e-05
+      }
+    },
+    "holdout_manifest_units": {
+      "bat": 49,
+      "rwa": 49
+    },
+    "usable_evaluation_units": {
+      "bat": 38,
+      "rwa": 42
+    },
+    "metrics": {
+      "bat": {
+        "rmse": 1.6578676802765389,
+        "mae": 1.0855729667557303,
+        "n_units": 38,
+        "n_windows": 732
+      },
+      "rwa": {
+        "rmse": 0.018801855461304577,
+        "mae": 0.01389681839862735,
+        "n_units": 42,
+        "n_windows": 1260
+      }
+    },
+    "reference_thresholds": {
+      "bat": {
+        "rmse_max": 1.5708675425257754,
+        "mae_max": 0.9909339180191383
+      },
+      "rwa": {
+        "rmse_max": 0.01847260338317068,
+        "mae_max": 0.014055847407832358
+      }
+    },
+    "performance_gate": {
+      "bat": {
+        "rmse": false,
+        "mae": false,
+        "pass": false
+      },
+      "rwa": {
+        "rmse": false,
+        "mae": true,
+        "pass": false
+      },
+      "all_components_pass": false
+    },
+    "receipt_assertions": {
+      "evaluation": "exactly_once_after_freeze",
+      "holdout_used_for_training_or_selection": false,
+      "sealed_read": false,
+      "a1_b1_read": false,
+      "canonical_project_modified": false,
+      "competition_line_modified": false,
+      "holdout_written": false
+    },
+    "provenance_decision": "CLOSED/PASS: immutable freeze-to-label-access-to-receipt chain exists; old outer results remain development/diagnostic only",
+    "performance_decision": "FAIL: frozen candidate does not pass the complete BAT/RWA reference metric gate",
+    "command": "ssh -i C:/Users/Administrator/Documents/id_ed25519 first@10.123.100.40 'cd /mnt/data/BRPHM/rul-space && PYTHONPATH=/mnt/data/BRPHM/rul-space taskset -c 0 nice -n 15 ionice -c 3 .venv-fm/bin/python work/paper/repro/f1_clean_final_test_20261001.py evaluate --root /mnt/data/BRPHM/rul-space --output /mnt/data/BRPHM/rul-space/work/augmented_features_isolated_20260929/f1_clean_final_20261001_retry1 --device cpu'"
+  },
+  "latest_clean_final_test": {
+    "status": "provenance_closed_performance_gate_passed",
+    "rack_output": "/mnt/data/BRPHM/rul-space/work/f1_leo600_final_retry1_20261002",
+    "local_evidence_copy": "work/paper/review/f1_leo600_final_retry1_20261002",
+    "partition_manifest_sha256": "910c0582bc7e451385faccc48987f1cdb5b5684ba2b105efa240a1e8f5ce3123",
+    "freeze_manifest_sha256": "0e13d131ecf28d9f867e823a9387fd3ed3af398144d90c6afaf5cda2d1f04e69",
+    "selection_decision_sha256": "65fcbd77c2c16a1da0cb2bb93e8bab24818d78ca98282d0214cd6052944ded58",
+    "final_receipt_sha256": "3eff57fe0703fc851e8a96c0016660034fc72c30d2e20b3c3de220c6893ce459",
+    "performance_gate_sha256": "1f7be0be1ef4761e37b311f3f764094bfac4cd26871c497e9576617585e3bc5b",
+    "event_chain_sha256": [
+      "e0a6a7379b89893229464f72bfb3d9db25cedc6ca1e1e667cda4a8a32ed42ce0",
+      "aa85bab5b3fa1124db9d1cb1e7090f13248bfc8cb646e7276d534358a7d0d2e7",
+      "0fe031378ac1fbad08f760b58467ac76e7483d295568ced9ce0537759116b339",
+      "85ff12b6a6c005e66ebb04cdd093066e9ae758e25aef8c5f358bac03360d1c13",
+      "b69310177df39dd4d18f6b8a0ceda69abc724bfa6049b9e463f291098ac7cd04"
+    ],
+    "metrics": {
+      "bat": {
+        "rmse": 1.1142871129918521,
+        "mae": 0.673842205479741,
+        "reference_rmse": 1.1142966431138528,
+        "reference_mae": 0.6738513384014369,
+        "delta_rmse": -9.530122000667163e-06,
+        "delta_mae": -9.132921695798046e-06,
+        "n_units": 5,
+        "n_windows": 125
+      },
+      "rwa": {
+        "rmse": 0.005497685074806214,
+        "mae": 0.005497685074806214,
+        "reference_rmse": 0.005497685074806214,
+        "reference_mae": 0.005497685074806214,
+        "delta_rmse": 0.0,
+        "delta_mae": 0.0,
+        "n_units": 1,
+        "n_windows": 1
+      }
+    },
+    "gate": {
+      "passes": true,
+      "strict_gain": true,
+      "tolerance": 1e-12,
+      "regressions": []
+    },
+    "old_outer_disposition": "development_or_diagnostic_only",
+    "receipt_assertions": {
+      "evaluation": "exactly_once_after_freeze",
+      "holdout_used_for_training_or_selection": false,
+      "sealed_read": false,
+      "a1_b1_read": false,
+      "canonical_project_modified": false,
+      "competition_line_modified": false,
+      "holdout_written": false
+    }
+  },
+  "failed_final_attempts": [
+    {
+      "attempt_id": "v6_partition_zero_bat_windows",
+      "status": "FAILED_AFTER_FINAL_LABEL_ACCESS_PARTITION_BURNED",
+      "rack_output": "/mnt/data/BRPHM/rul-space/work/augmented_features_isolated_20260929/f1_clean_final_v6_20261001",
+      "partition_manifest": "/mnt/data/BRPHM/rul-space/work/f1_final_partition_v6_20261001/partition_manifest.json",
+      "partition_manifest_sha256": "ca3567124fd6d3f0d3ebbd3548160093c52c494e49920df150366eb81b0b6ef0",
+      "freeze_manifest_sha256": "602f384ff38ed45cad8f3201d569a95493f71eea41e8852d59a1fed955c57464",
+      "selection_decision_sha256": "aa491a61bf97e9da85eef7ed879a3e6f512f12c4f4173d1be6b235f2d0ab1be2",
+      "candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+      "route": {
+        "bat": {
+          "LEO500": 1e-05,
+          "LEO550": 1e-05,
+          "LEO700": 1e-05
+        },
+        "rwa": {
+          "LEO500": 0.02,
+          "LEO550": 1e-05,
+          "LEO700": 1e-05
+        }
+      },
+      "events": [
+        {
+          "event_type": "preflight_recorded",
+          "created_utc": "2026-10-01T14:28:17.967177Z",
+          "sha256": "20631d2bad0f7c24492067d54c6c4a7b290776c23cf6d943806f661c44f1ebdc"
+        },
+        {
+          "event_type": "candidate_frozen",
+          "created_utc": "2026-10-01T14:28:17.982408Z",
+          "sha256": "abd41d414d63d7aa3b8975f58645ed87b2c058d057eae128e5b9d747c3df833b"
+        },
+        {
+          "event_type": "final_label_access_started",
+          "created_utc": "2026-10-01T14:28:48.458304Z",
+          "sha256": "1a7c4ee738176862f8df8a37e89423964d8d2c1eb3985f32d3c06951ecd37451"
+        }
+      ],
+      "evaluator_sha256": "7cf9be5fc5d19859955f71384afcfd27533dbd098369e0767fac73c0715f2482",
+      "partition_builder_sha256": "9834e76a4953ba6ff302b99218ea9b894f1e788898f3995fd124696a9629c217",
+      "generator_exit_code": 0,
+      "generator_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "error": "RuntimeError: zero final windows for bat",
+      "diagnostic_observation": "All three generated BAT raw units converted to 56, 48, and 50 rows respectively; no BAT evaluation windows were constructed. No model metric was computed.",
+      "final_receipt_written": false,
+      "final_evaluation_completed_event_written": false,
+      "sealed_read": false,
+      "a1_b1_read": false,
+      "canonical_or_competition_modified": false,
+      "disposition": "Do not rerun or reuse the v6 partition. The partition was created and labels accessed after freeze; the crash yielded no model metric. All six v6 raw units are burned. New final test must use distinct v7 unit IDs."
+    }
+  ],
+  "pdf_build_verification": {
+    "path": "work/paper/review/pdf_build_verification_20261003.json",
+    "source_sha256": "a6fa47353027862afeec3fe9b37c43984887e4738b4f528a854a71fb5587d783",
+    "pdf_sha256": "cb49907939e88aa0404368a5041ca12c1e626c82d672f6d5e7d0eabb118b1c83",
+    "pages": 6,
+    "paper_size": "letter (612 x 792 pt)",
+    "type3_fonts": 0,
+    "fonts_embedded": true,
+    "overfull_hbox_count": 0,
+    "underfull_hbox_count": 28,
+    "undefined_references": 0,
+    "tagged_pdf": false,
+    "local_build_exit_codes": [
+      0,
+      0
+    ],
+    "venue_specific_checks": "pending venue confirmation"
+  }
+}
+
+

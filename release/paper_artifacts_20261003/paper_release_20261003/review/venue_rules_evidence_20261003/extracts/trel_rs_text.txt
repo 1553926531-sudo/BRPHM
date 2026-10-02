@@ -1,0 +1,118 @@
+IEEE.org
+IEEE Xplore®
+IEEE Standards
+IEEE Spectrum
+More Sites More Sites IEEE Xplore® IEEE Standards IEEE Spectrum More Sites
+IEEE Xplore®
+IEEE Standards
+IEEE Spectrum
+More Sites
+Join the IEEE Reliability Society
+About RS
+Membership
+Chapters
+Publications Transactions on Reliability Editorial Board Special Sections Reliability Magazine IEEE Access Reliability Society Section Reliability Society Newsletter Transactions on Device and Material Reliability Transactions on Semiconductor Manufacturing Journal of Photovoltaics Security and Privacy IoT Magazine Transactions on Transportation Electrification Transactions on Energy Markets, Policy, and Regulation Data Description Magazine
+Transactions on Reliability Editorial Board Special Sections
+Editorial Board
+Special Sections
+Reliability Magazine
+IEEE Access Reliability Society Section
+Reliability Society Newsletter
+Transactions on Device and Material Reliability
+Transactions on Semiconductor Manufacturing
+Journal of Photovoltaics
+Security and Privacy
+IoT Magazine
+Transactions on Transportation Electrification
+Transactions on Energy Markets, Policy, and Regulation
+Data Description Magazine
+Events & Conferences
+Education
+Awards
+Technical Activities
+Roadmap
+
+Home
+Publications
+Transactions on Reliability
+Transactions on Reliability
+Mission: This IEEE Transactions on Reliability is a refereed journal for the reliability and allied disciplines including, but not limited to, maintainability, physics of failure, life testing, prognostics, design and manufacture for reliability, reliability for systems of systems, network availability, mission success, warranty, safety, and various measures of effectiveness.
+Topics eligible for publications range:
+from hardware to software,
+from materials to systems,
+from consumer & industrial devices to manufacturing plants,
+from individual items to networks, and
+from techniques for making things better to ways of predicting/measuring behavior in the field.
+As an engineering subject that supports new and existing technologies, we constantly expand into new areas of the assurance sciences.
+Topics not eligible for publication include routine mathematical exercises on well-known topics that do not provide a useful insight or tool for a manager, engineer, scientist, or theoretician.
+When writing a paper to submit to our Transactions, be sure to write clearly, correctly, concise, consistently, with contribution, and be convincing. Always make your key contribution obvious, and make clear to the reader why they should take interest in your paper.
+Submission of Manuscripts: The Transactions on Reliability now offers the option to publish via either Open Access or traditional means! In either case the journal maintains review integrity and quality of publishing. You have the option of submission of your manuscript for IEEE Open Access at a discounted rate of $2,495* To find out more, click here.
+All submissions, reviews, status updates, and communications about Transactions on Reliability papers should be conducted through the following website: https://ieee.atyponrex.com/journal/tr-ieee
+The articles in this journal are peer reviewed in accordance with the requirements set forth in the IEEE Publication Services and Products Board Operations Manual ( https://pspb.ieee.org/images/files/files/opsmanual.pdf ). Each published article was reviewed by three independent reviewers using a single-anonymous peer review process, where the identities of the reviewers are not known to the authors, but the reviewers know the identities of the authors. Articles will be screened for plagiarism before acceptance.
+* View the Editorial Board and Review Policy of IEEE Transactions on Reliability .
+• When submitting a manuscript, the authors must classify their regular and journal first submission into the following categories:
+Category A: This category focuses on systems and networks in computer software and hardware. It addresses critical aspects of enhancing reliability, security, and trust. Key areas include reliability and security modeling, rigorous testing, cybersecurity, emerging technologies like IoT and AI, and trusted computing. This comprehensive approach not only mitigates risks but also drives innovation in adapting to evolving technological challenges. The subcategories include: A1: Reliability and Security Modeling, Statistical Analysis, and Simulation A2: Application or Empirical Studies: Computer Hardware and Software Systems A3: Software and Hardware Testing, Verification, Security, and Quality Assurance A4: Cybersecurity, Privacy, Cryptography, Safety, Dependability, and Resilience A5: IoT, Autonomous Driving, Blockchains, Mobile and Cloud Computing A6: AI, Machine Learning, Trustworthy AI, AI Security, and Data Science A7: Intrusion Detection, Threat Intelligence, Malware and Vulnerability Analysis A8: Trust, Trustworthiness, and Trusted Computing
+Category A: This category focuses on systems and networks in computer software and hardware. It addresses critical aspects of enhancing reliability, security, and trust. Key areas include reliability and security modeling, rigorous testing, cybersecurity, emerging technologies like IoT and AI, and trusted computing. This comprehensive approach not only mitigates risks but also drives innovation in adapting to evolving technological challenges. The subcategories include:
+A1: Reliability and Security Modeling, Statistical Analysis, and Simulation
+A2: Application or Empirical Studies: Computer Hardware and Software Systems
+A3: Software and Hardware Testing, Verification, Security, and Quality Assurance
+A4: Cybersecurity, Privacy, Cryptography, Safety, Dependability, and Resilience
+A5: IoT, Autonomous Driving, Blockchains, Mobile and Cloud Computing
+A6: AI, Machine Learning, Trustworthy AI, AI Security, and Data Science
+A7: Intrusion Detection, Threat Intelligence, Malware and Vulnerability Analysis
+A8: Trust, Trustworthiness, and Trusted Computing
+Category B: This category focuses on reliability and management in industrial applications. It emphasizes ensuring robustness and efficiency in industry-specific systems. Critical areas include the importance of prognostics and health management. It also covers network reliability and security, and focuses on managing system degradation and maintenance. Collectively, these areas contribute to optimizing operational performance and mitigating risks in industrial environments. The subcategories include: B1: Reliability of Industry Applications and Information Processing B2: Prognostics and Health Management B3: Application or Empirical Studies: Device, Engineering or Mechanical Systems B4: Network Reliability and Security B5: Degradation and Maintenance
+Category B: This category focuses on reliability and management in industrial applications. It emphasizes ensuring robustness and efficiency in industry-specific systems. Critical areas include the importance of prognostics and health management. It also covers network reliability and security, and focuses on managing system degradation and maintenance. Collectively, these areas contribute to optimizing operational performance and mitigating risks in industrial environments. The subcategories include:
+B1: Reliability of Industry Applications and Information Processing
+B2: Prognostics and Health Management
+B3: Application or Empirical Studies: Device, Engineering or Mechanical Systems
+B4: Network Reliability and Security
+B5: Degradation and Maintenance
+Special Guidelines for Authors
+We welcome high quality submissions that are original work, not published, and not currently submitted elsewhere. We also welcome extensions of conference papers, unless prohibited by copyright, if there is a significant difference in the technical content. Improvements such as adding a new case study or including a description of additional related studies do not satisfy this requirement.
+If you claim that your paper is a Journal First Submission, you should upload a file at Step 2 under the file designation “Journal First Novelty Statement” to explain the new results of your research or significant extensions of prior work that have not been published or submitted for publications elsewhere. Improvements such as additional case studies, variations and minor enhancements of existing methodologies or algorithms, or proofs and other details for completeness do not satisfy this requirement.
+Each submission must conform to the double column and single-spaced format of printed articles in the IEEE Transactions on Reliability with all figures and tables embedded in the paper, rather than listed at the end or in the appendix. The page limit is 15.
+An abstract must be included at the beginning of each submission, as well as copied and pasted into the corresponding Abstract box at Step 1 of the submission. If it is uploaded as an attachment, a message such as “See the attached abstract” must be entered into the corresponding box.
+If you are submitting a revised version, the main file should have a list detailing how each reviewer’s comment has been addressed in the beginning, followed by a revised version of the paper. More precisely, include everything in one single pdf file. Do not submit your responses to comments as part of the cover letter as reviewers may have trouble finding them.
+The overlap between a submission and other articles, including the authors’ own papers/reports and dissertations, should be less than 30%. All materials accessible by the public will be included for plagiarism check. You should not copy and paste any paragraphs from other papers, even if they are your own publications.
+Papers not complying with these guidelines may be rejected without further evaluation.
+
+Additional Information for Authors
+Any paper shorter than five pages is likely to be rejected without evaluation unless it is well-written with solid contributions to advance reliability and related areas.
+Papers with many formulas based on assumptions and approximations that are yet to be justified and do not provide clear examples of the practical use of these formulas are unlikely to be accepted.
+Papers with only incremental improvements that are minor variations of other publications are likely to be rejected without evaluation.
+Papers based on simplified simulations and yet-to-be-proven theories without appropriate justifications are unlikely to be accepted.
+All submissions must include a substantial discussion of previous and related works, including and especially, previous publications from the same author (group).
+Papers reporting results from case studies on real-life applications and discussions of possible impacts in the field will receive high priority for hardcopy publication after they are accepted.
+Once a paper is accepted, authors cannot make changes to the technical contents beyond those noted in the reviews and the AE decision letter. Otherwise, the paper will be returned to the corresponding AE for further evaluation. It is also not allowed to add additional authors or remove those listed on the accepted version.
+After a paper is accepted, authors are encouraged to submit the required files to IEEE following the instructions provided in the decision letter and to address all editorial inquiries from IEEE in a timely manner to avoid possible delay of the online publication of their paper.
+Send inquires to Professor Z. Steven Li, Editor-in-Chief of IEEE Transactions on Reliability, email: stevenli777@gmail.com
+Need help with English or to improve your paper?
+
+Click here for the latest content of the IEEE Transactions on Reliability.
+Click here for a list of special sections.
+
+Transactions on Reliability
+Transactions on Reliability Editorial Board Special Sections
+Editorial Board
+Special Sections
+Reliability Magazine
+IEEE Access Reliability Society Section
+Reliability Society Newsletter
+Transactions on Device and Material Reliability
+Transactions on Semiconductor Manufacturing
+Journal of Photovoltaics
+Security and Privacy
+IoT Magazine
+Transactions on Transportation Electrification
+Transactions on Energy Markets, Policy, and Regulation
+Data Description Magazine
+Home
+Sitemap
+Contact IEEE RS
+Accessibility
+Nondiscrimination Policy
+IEEE Ethics Reporting
+IEEE Privacy Policy
+Terms & Disclosures
+IEEE Reliability Society

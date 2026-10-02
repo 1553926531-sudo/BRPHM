@@ -1,0 +1,975 @@
+{
+  "schema": "brphm-f6-statistics-reconciled-v2",
+  "observed_utc": "2026-10-02T19:09:44.542030Z",
+  "finding": "F6",
+  "status": "RECONCILED_DIAGNOSTIC_STATISTICS_REFERENCE_PAIRING_UNAVAILABLE",
+  "source_f5_status": "AGGREGATE_GATE_VERIFIED_FROZEN_UNIT_PAIRING_INVALID",
+  "unit_pairing": {
+    "frozen_reference_pairing_available": false,
+    "replay_csv_role": "DIAGNOSTIC_REPLAY_ONLY",
+    "historical_outer_fold_role": "DEVELOPMENT_DIAGNOSTIC_AFTER_F1_CHRONOLOGY_REVIEW",
+    "paired_csv_sha256": "96047569d472141bbfd661fa740321e270297bf71090b0e58322d45260868446",
+    "candidate_unit_csv_sha256": "e13f9443d0f7b99c77110344d7f3fc1947484f60d328770eadf4f5e8641f4d7a"
+  },
+  "frozen_fold_benchmark": {
+    "fold_count": 6,
+    "reference_summary_sha256": "b708df9c448a051b8669c29789f00d282aa7907784e6f99d7e20ef1fb96b6733",
+    "candidate_receipt_sha256": "e65cdbc4dc26b52bc6adb2238c163b134328b18b975bd6341d2fd14a64cd4a8c",
+    "unit_cluster_bootstrap": {
+      "repetitions": 20000,
+      "seed": 20261002,
+      "sampling_unit": "unit_id clusters within each component-orbit fold",
+      "window_counts_preserved": true,
+      "candidate_metric": "window-weighted RMSE and MAE reconstructed by preserving each sampled unit's complete windows",
+      "reference_metric": "hash-bound frozen fold aggregate treated as fixed; no paired unit uncertainty available",
+      "familywise_alpha": 0.05,
+      "multiplicity": "Bonferroni over 6 folds x 2 metrics = 12 one-sided upper bounds",
+      "one_sided_upper_quantile": 0.9958333333333333,
+      "decision": "upper bound <= 1e-12 supports non-regression conditional on the fixed reference point; upper bound < -1e-12 supports strict gain"
+    },
+    "folds": [
+      {
+        "component": "bat",
+        "test_orbit": "LEO500",
+        "physical_unit": "cycles",
+        "n_units": 70,
+        "n_windows": 1377,
+        "frozen_reference_rmse": 1.9458075686003256,
+        "candidate_rmse": 1.9458039118294947,
+        "delta_rmse": -3.6567708308066216e-06,
+        "relative_rmse_change_pct": -0.0001879307537814256,
+        "candidate_rmse_cluster_bootstrap_ci95": [
+          1.570181686251456,
+          2.410381309754701
+        ],
+        "delta_rmse_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.3756258823488697,
+          0.4645737411543756
+        ],
+        "delta_rmse_bonferroni_one_sided_upper_bound": 0.623395047725097,
+        "familywise_nonregression_supported_rmse": false,
+        "familywise_strict_gain_supported_rmse": false,
+        "frozen_reference_mae": 1.2965988587913477,
+        "candidate_mae": 1.2965975128997191,
+        "delta_mae": -1.3458916285902234e-06,
+        "relative_mae_change_pct": -0.00010380169776216099,
+        "candidate_mae_cluster_bootstrap_ci95": [
+          1.0916303831408414,
+          1.546756870251865
+        ],
+        "delta_mae_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.20496847565050627,
+          0.25015801146051736
+        ],
+        "delta_mae_bonferroni_one_sided_upper_bound": 0.34089419785094865,
+        "familywise_nonregression_supported_mae": false,
+        "familywise_strict_gain_supported_mae": false,
+        "candidate_unit_distribution": {
+          "n_units": 70,
+          "mean_unit_rmse": 1.323811088682717,
+          "median_unit_rmse": 1.2520693477969116,
+          "sd_unit_rmse": 0.7842998711483535,
+          "mean_unit_mae": 1.0167064720729289,
+          "median_unit_mae": 0.9242303759002914,
+          "sd_unit_mae": 0.5837817238982871
+        },
+        "unit_cluster_bootstrap": {
+          "repetitions": 20000,
+          "rng_seed": 20261002,
+          "sampling_unit": "unit_id; sample n_units with replacement and retain all windows per sampled unit",
+          "window_counts_preserved": true,
+          "reference_treatment": "frozen fold aggregate held fixed; its unit-level sampling variance and paired covariance are unavailable"
+        }
+      },
+      {
+        "component": "bat",
+        "test_orbit": "LEO550",
+        "physical_unit": "cycles",
+        "n_units": 68,
+        "n_windows": 1178,
+        "frozen_reference_rmse": 1.7944888327735873,
+        "candidate_rmse": 1.7944792392764701,
+        "delta_rmse": -9.59349711715518e-06,
+        "relative_rmse_change_pct": -0.0005346089059984473,
+        "candidate_rmse_cluster_bootstrap_ci95": [
+          1.5453564083542386,
+          2.0507155136011583
+        ],
+        "delta_rmse_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.2491324244193488,
+          0.2562266808275709
+        ],
+        "delta_rmse_bonferroni_one_sided_upper_bound": 0.35474262557386665,
+        "familywise_nonregression_supported_rmse": false,
+        "familywise_strict_gain_supported_rmse": false,
+        "frozen_reference_mae": 1.1889396841474829,
+        "candidate_mae": 1.1889357521418609,
+        "delta_mae": -3.932005621987145e-06,
+        "relative_mae_change_pct": -0.00033071531503354177,
+        "candidate_mae_cluster_bootstrap_ci95": [
+          1.0510666821778953,
+          1.3446234087703555
+        ],
+        "delta_mae_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.13787300196958743,
+          0.15568372462287258
+        ],
+        "delta_mae_bonferroni_one_sided_upper_bound": 0.2195731426194572,
+        "familywise_nonregression_supported_mae": false,
+        "familywise_strict_gain_supported_mae": false,
+        "candidate_unit_distribution": {
+          "n_units": 68,
+          "mean_unit_rmse": 1.4281204118844466,
+          "median_unit_rmse": 1.3009229105947258,
+          "sd_unit_rmse": 0.7290642902556168,
+          "mean_unit_mae": 1.0880973899843016,
+          "median_unit_mae": 1.0073938982232529,
+          "sd_unit_mae": 0.5181606978688821
+        },
+        "unit_cluster_bootstrap": {
+          "repetitions": 20000,
+          "rng_seed": 20261002,
+          "sampling_unit": "unit_id; sample n_units with replacement and retain all windows per sampled unit",
+          "window_counts_preserved": true,
+          "reference_treatment": "frozen fold aggregate held fixed; its unit-level sampling variance and paired covariance are unavailable"
+        }
+      },
+      {
+        "component": "bat",
+        "test_orbit": "LEO700",
+        "physical_unit": "cycles",
+        "n_units": 65,
+        "n_windows": 1126,
+        "frozen_reference_rmse": 2.3908374358972697,
+        "candidate_rmse": 2.3908073726542862,
+        "delta_rmse": -3.006324298349128e-05,
+        "relative_rmse_change_pct": -0.001257435680573936,
+        "candidate_rmse_cluster_bootstrap_ci95": [
+          1.9682457783119893,
+          2.7899820757964093
+        ],
+        "delta_rmse_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.4225916575852805,
+          0.39914463989913956
+        ],
+        "delta_rmse_bonferroni_one_sided_upper_bound": 0.5376635408669305,
+        "familywise_nonregression_supported_rmse": false,
+        "familywise_strict_gain_supported_rmse": false,
+        "frozen_reference_mae": 1.5583111231774527,
+        "candidate_mae": 1.5582925316087028,
+        "delta_mae": -1.859156874983725e-05,
+        "relative_mae_change_pct": -0.0011930588489882797,
+        "candidate_mae_cluster_bootstrap_ci95": [
+          1.2681919111747448,
+          1.8703575551718898
+        ],
+        "delta_mae_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.2901192120027079,
+          0.3120464319944372
+        ],
+        "delta_mae_bonferroni_one_sided_upper_bound": 0.43243981108012314,
+        "familywise_nonregression_supported_mae": false,
+        "familywise_strict_gain_supported_mae": false,
+        "candidate_unit_distribution": {
+          "n_units": 65,
+          "mean_unit_rmse": 1.7772707630947766,
+          "median_unit_rmse": 1.2663151131735595,
+          "sd_unit_rmse": 1.2712262205125198,
+          "mean_unit_mae": 1.396306450505655,
+          "median_unit_mae": 1.0364087857306004,
+          "sd_unit_mae": 0.9859343487705503
+        },
+        "unit_cluster_bootstrap": {
+          "repetitions": 20000,
+          "rng_seed": 20261002,
+          "sampling_unit": "unit_id; sample n_units with replacement and retain all windows per sampled unit",
+          "window_counts_preserved": true,
+          "reference_treatment": "frozen fold aggregate held fixed; its unit-level sampling variance and paired covariance are unavailable"
+        }
+      },
+      {
+        "component": "rwa",
+        "test_orbit": "LEO500",
+        "physical_unit": "days",
+        "n_units": 78,
+        "n_windows": 2352,
+        "frozen_reference_rmse": 0.02075027835243831,
+        "candidate_rmse": 0.02072511343967948,
+        "delta_rmse": -2.5164912758831454e-05,
+        "relative_rmse_change_pct": -0.12127506114092387,
+        "candidate_rmse_cluster_bootstrap_ci95": [
+          0.018366174581166513,
+          0.023093572515648128
+        ],
+        "delta_rmse_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.0023841037712718,
+          0.002343294163209816
+        ],
+        "delta_rmse_bonferroni_one_sided_upper_bound": 0.0031847831060326085,
+        "familywise_nonregression_supported_rmse": false,
+        "familywise_strict_gain_supported_rmse": false,
+        "frozen_reference_mae": 0.015583504892392552,
+        "candidate_mae": 0.015582983999944547,
+        "delta_mae": -5.208924480047672e-07,
+        "relative_mae_change_pct": -0.003342588535773187,
+        "candidate_mae_cluster_bootstrap_ci95": [
+          0.013526888964036666,
+          0.01768458939721807
+        ],
+        "delta_mae_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.0020566159283558864,
+          0.0021010845048255182
+        ],
+        "delta_mae_bonferroni_one_sided_upper_bound": 0.0028375629443523316,
+        "familywise_nonregression_supported_mae": false,
+        "familywise_strict_gain_supported_mae": false,
+        "candidate_unit_distribution": {
+          "n_units": 78,
+          "mean_unit_rmse": 0.017022688403650663,
+          "median_unit_rmse": 0.015898098973584796,
+          "sd_unit_rmse": 0.0092957247305597,
+          "mean_unit_mae": 0.014785153843493756,
+          "median_unit_mae": 0.013077656471599548,
+          "sd_unit_mae": 0.008624613731985215
+        },
+        "unit_cluster_bootstrap": {
+          "repetitions": 20000,
+          "rng_seed": 20261002,
+          "sampling_unit": "unit_id; sample n_units with replacement and retain all windows per sampled unit",
+          "window_counts_preserved": true,
+          "reference_treatment": "frozen fold aggregate held fixed; its unit-level sampling variance and paired covariance are unavailable"
+        }
+      },
+      {
+        "component": "rwa",
+        "test_orbit": "LEO550",
+        "physical_unit": "days",
+        "n_units": 79,
+        "n_windows": 2324,
+        "frozen_reference_rmse": 0.02027167806043328,
+        "candidate_rmse": 0.020271664723422712,
+        "delta_rmse": -1.3337010568853502e-08,
+        "relative_rmse_change_pct": -6.57913495325529e-05,
+        "candidate_rmse_cluster_bootstrap_ci95": [
+          0.017689352753951677,
+          0.022679224849518474
+        ],
+        "delta_rmse_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.0025823253064816048,
+          0.0024075467890851943
+        ],
+        "delta_rmse_bonferroni_one_sided_upper_bound": 0.003225750769228031,
+        "familywise_nonregression_supported_rmse": false,
+        "familywise_strict_gain_supported_rmse": false,
+        "frozen_reference_mae": 0.01505406402486654,
+        "candidate_mae": 0.015054062536072867,
+        "delta_mae": -1.4887936734125917e-09,
+        "relative_mae_change_pct": -9.889646217482394e-06,
+        "candidate_mae_cluster_bootstrap_ci95": [
+          0.013043673925631149,
+          0.017121250853666663
+        ],
+        "delta_mae_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.0020103900992353915,
+          0.002067186828800122
+        ],
+        "delta_mae_bonferroni_one_sided_upper_bound": 0.002760719528249494,
+        "familywise_nonregression_supported_mae": false,
+        "familywise_strict_gain_supported_mae": false,
+        "candidate_unit_distribution": {
+          "n_units": 79,
+          "mean_unit_rmse": 0.015762310852377958,
+          "median_unit_rmse": 0.01331030855009029,
+          "sd_unit_rmse": 0.009660202895229142,
+          "mean_unit_mae": 0.013556659400956178,
+          "median_unit_mae": 0.011348355716715256,
+          "sd_unit_mae": 0.00857699514052339
+        },
+        "unit_cluster_bootstrap": {
+          "repetitions": 20000,
+          "rng_seed": 20261002,
+          "sampling_unit": "unit_id; sample n_units with replacement and retain all windows per sampled unit",
+          "window_counts_preserved": true,
+          "reference_treatment": "frozen fold aggregate held fixed; its unit-level sampling variance and paired covariance are unavailable"
+        }
+      },
+      {
+        "component": "rwa",
+        "test_orbit": "LEO700",
+        "physical_unit": "days",
+        "n_units": 83,
+        "n_windows": 2375,
+        "frozen_reference_rmse": 0.021490337094875866,
+        "candidate_rmse": 0.021490307719580153,
+        "delta_rmse": -2.9375295713257588e-08,
+        "relative_rmse_change_pct": -0.0001366907163139,
+        "candidate_rmse_cluster_bootstrap_ci95": [
+          0.01934017064263559,
+          0.02356220611304197
+        ],
+        "delta_rmse_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.002150166452240276,
+          0.002071869018166105
+        ],
+        "delta_rmse_bonferroni_one_sided_upper_bound": 0.0028269979328117475,
+        "familywise_nonregression_supported_rmse": false,
+        "familywise_strict_gain_supported_rmse": false,
+        "frozen_reference_mae": 0.01671229343003606,
+        "candidate_mae": 0.016712271758414634,
+        "delta_mae": -2.167162142449608e-08,
+        "relative_mae_change_pct": -0.00012967473025304177,
+        "candidate_mae_cluster_bootstrap_ci95": [
+          0.014763163944011205,
+          0.01874491318838588
+        ],
+        "delta_mae_cluster_bootstrap_ci95_vs_fixed_reference": [
+          -0.0019491294860248527,
+          0.0020326197583498185
+        ],
+        "delta_mae_bonferroni_one_sided_upper_bound": 0.002784901593903542,
+        "familywise_nonregression_supported_mae": false,
+        "familywise_strict_gain_supported_mae": false,
+        "candidate_unit_distribution": {
+          "n_units": 83,
+          "mean_unit_rmse": 0.018278659701362672,
+          "median_unit_rmse": 0.0169778409612286,
+          "sd_unit_rmse": 0.009976889413623033,
+          "mean_unit_mae": 0.01634511758582136,
+          "median_unit_mae": 0.014542332344821522,
+          "sd_unit_mae": 0.009701464899273763
+        },
+        "unit_cluster_bootstrap": {
+          "repetitions": 20000,
+          "rng_seed": 20261002,
+          "sampling_unit": "unit_id; sample n_units with replacement and retain all windows per sampled unit",
+          "window_counts_preserved": true,
+          "reference_treatment": "frozen fold aggregate held fixed; its unit-level sampling variance and paired covariance are unavailable"
+        }
+      }
+    ]
+  },
+  "replay_control_sensitivity": {
+    "paired_unit_tests_are_diagnostic_only": true,
+    "comparison": "candidate vs newly refitted current control; not the historical frozen-reference predictions",
+    "bootstrap": {
+      "repetitions": 20000,
+      "seed": 20261002,
+      "sampling_unit": "paired unit_id within each fold",
+      "ci": "percentile 95% CI for equally weighted mean per-unit delta"
+    },
+    "wilcoxon": {
+      "alternative": "candidate minus replay control < 0",
+      "zero_method": "wilcox",
+      "multiplicity": "Bonferroni over 12 fold x metric tests",
+      "family_alpha": 0.05,
+      "adjusted_alpha": 0.004166666666666667
+    },
+    "multiplicity_family_size": 12,
+    "folds": [
+      {
+        "component": "bat",
+        "test_orbit": "LEO500",
+        "physical_unit": "cycles",
+        "comparison": "candidate vs refitted current control replay",
+        "rmse": {
+          "n_units": 70,
+          "mean_delta": -3.2056315100753576e-06,
+          "median_delta": -4.1019983391676895e-06,
+          "sd_delta": 8.780230896076776e-06,
+          "cohen_dz": -0.36509649324913684,
+          "wilcoxon_statistic": 674.0,
+          "wilcoxon_p_less": 0.00043898570834290264,
+          "wilcoxon_p_bonferroni": 0.005267828500114832,
+          "bootstrap_ci95_mean_delta": [
+            -5.2294999709017404e-06,
+            -1.1337881914822384e-06
+          ]
+        },
+        "mae": {
+          "n_units": 70,
+          "mean_delta": -1.6458913840381293e-06,
+          "median_delta": -3.3178366720676422e-06,
+          "sd_delta": 7.746282612485492e-06,
+          "cohen_dz": -0.2124749981862622,
+          "wilcoxon_statistic": 900.0,
+          "wilcoxon_p_less": 0.022514854241430262,
+          "wilcoxon_p_bonferroni": 0.27017825089716313,
+          "bootstrap_ci95_mean_delta": [
+            -3.4367513884685627e-06,
+            1.5557065908765909e-07
+          ]
+        },
+        "fold_delta_vs_frozen_reference_rmse": -3.6567708308066216e-06,
+        "fold_delta_vs_frozen_reference_mae": -1.3458916285902234e-06,
+        "interpretation": "paired unit analysis of a current control replay; not inference against historical frozen-reference predictions"
+      },
+      {
+        "component": "bat",
+        "test_orbit": "LEO550",
+        "physical_unit": "cycles",
+        "comparison": "candidate vs refitted current control replay",
+        "rmse": {
+          "n_units": 68,
+          "mean_delta": -4.9741911638818155e-06,
+          "median_delta": -5.844928423925921e-06,
+          "sd_delta": 1.0022080615718873e-05,
+          "cohen_dz": -0.4963232041937653,
+          "wilcoxon_statistic": 565.0,
+          "wilcoxon_p_less": 0.00010156371336768029,
+          "wilcoxon_p_bonferroni": 0.0012187645604121635,
+          "bootstrap_ci95_mean_delta": [
+            -7.294271133247262e-06,
+            -2.637695357009774e-06
+          ]
+        },
+        "mae": {
+          "n_units": 68,
+          "mean_delta": -2.0456798002760673e-06,
+          "median_delta": -3.7299469113349915e-06,
+          "sd_delta": 9.041437437733987e-06,
+          "cohen_dz": -0.22625603664949612,
+          "wilcoxon_statistic": 845.0,
+          "wilcoxon_p_less": 0.02252453735229222,
+          "wilcoxon_p_bonferroni": 0.27029444822750665,
+          "bootstrap_ci95_mean_delta": [
+            -4.146980359737111e-06,
+            7.775941610557083e-08
+          ]
+        },
+        "fold_delta_vs_frozen_reference_rmse": -9.59349711715518e-06,
+        "fold_delta_vs_frozen_reference_mae": -3.932005621987145e-06,
+        "interpretation": "paired unit analysis of a current control replay; not inference against historical frozen-reference predictions"
+      },
+      {
+        "component": "bat",
+        "test_orbit": "LEO700",
+        "physical_unit": "cycles",
+        "comparison": "candidate vs refitted current control replay",
+        "rmse": {
+          "n_units": 65,
+          "mean_delta": -1.1013298937140315e-05,
+          "median_delta": -4.64584886539221e-06,
+          "sd_delta": 2.403273986599945e-05,
+          "cohen_dz": -0.4582623121020623,
+          "wilcoxon_statistic": 374.0,
+          "wilcoxon_p_less": 2.5016099172404983e-06,
+          "wilcoxon_p_bonferroni": 3.001931900688598e-05,
+          "bootstrap_ci95_mean_delta": [
+            -1.7348594440369053e-05,
+            -5.803463441503554e-06
+          ]
+        },
+        "mae": {
+          "n_units": 65,
+          "mean_delta": -8.91718164794685e-06,
+          "median_delta": -4.973262548446655e-06,
+          "sd_delta": 2.068298918182234e-05,
+          "cohen_dz": -0.4311360205024859,
+          "wilcoxon_statistic": 491.5,
+          "wilcoxon_p_less": 7.328266201317951e-05,
+          "wilcoxon_p_bonferroni": 0.0008793919441581542,
+          "bootstrap_ci95_mean_delta": [
+            -1.4264249020973763e-05,
+            -4.354728984766788e-06
+          ]
+        },
+        "fold_delta_vs_frozen_reference_rmse": -3.006324298349128e-05,
+        "fold_delta_vs_frozen_reference_mae": -1.859156874983725e-05,
+        "interpretation": "paired unit analysis of a current control replay; not inference against historical frozen-reference predictions"
+      },
+      {
+        "component": "rwa",
+        "test_orbit": "LEO500",
+        "physical_unit": "days",
+        "comparison": "candidate vs refitted current control replay",
+        "rmse": {
+          "n_units": 78,
+          "mean_delta": -2.683604726709978e-05,
+          "median_delta": -5.9976187282255455e-06,
+          "sd_delta": 0.0001939854976356987,
+          "cohen_dz": -0.13834048211942832,
+          "wilcoxon_statistic": 1310.0,
+          "wilcoxon_p_less": 0.12547119303197612,
+          "wilcoxon_p_bonferroni": 1.0,
+          "bootstrap_ci95_mean_delta": [
+            -6.989494706946322e-05,
+            1.554787076328438e-05
+          ]
+        },
+        "mae": {
+          "n_units": 78,
+          "mean_delta": -1.84997267393959e-05,
+          "median_delta": -6.773329527407813e-06,
+          "sd_delta": 0.00018362957283562996,
+          "cohen_dz": -0.10074481170827167,
+          "wilcoxon_statistic": 1392.0,
+          "wilcoxon_p_less": 0.22975870913277102,
+          "wilcoxon_p_bonferroni": 1.0,
+          "bootstrap_ci95_mean_delta": [
+            -5.8973350792866115e-05,
+            2.1914413724598628e-05
+          ]
+        },
+        "fold_delta_vs_frozen_reference_rmse": -2.5164912758831454e-05,
+        "fold_delta_vs_frozen_reference_mae": -5.208924480047672e-07,
+        "interpretation": "paired unit analysis of a current control replay; not inference against historical frozen-reference predictions"
+      },
+      {
+        "component": "rwa",
+        "test_orbit": "LEO550",
+        "physical_unit": "days",
+        "comparison": "candidate vs refitted current control replay",
+        "rmse": {
+          "n_units": 79,
+          "mean_delta": -1.0478709006403464e-08,
+          "median_delta": -4.917743351429138e-09,
+          "sd_delta": 9.425117107209764e-08,
+          "cohen_dz": -0.1111785549952239,
+          "wilcoxon_statistic": 1344.0,
+          "wilcoxon_p_less": 0.1243837030930417,
+          "wilcoxon_p_bonferroni": 1.0,
+          "bootstrap_ci95_mean_delta": [
+            -3.116640618014037e-08,
+            1.0206046856603156e-08
+          ]
+        },
+        "mae": {
+          "n_units": 79,
+          "mean_delta": -4.880481385187825e-09,
+          "median_delta": -5.091230074246583e-09,
+          "sd_delta": 8.786599477407216e-08,
+          "cohen_dz": -0.05554459831402235,
+          "wilcoxon_statistic": 1430.0,
+          "wilcoxon_p_less": 0.23176078584211346,
+          "wilcoxon_p_bonferroni": 1.0,
+          "bootstrap_ci95_mean_delta": [
+            -2.4324700599845656e-08,
+            1.4524397806714186e-08
+          ]
+        },
+        "fold_delta_vs_frozen_reference_rmse": -1.3337010568853502e-08,
+        "fold_delta_vs_frozen_reference_mae": -1.4887936734125917e-09,
+        "interpretation": "paired unit analysis of a current control replay; not inference against historical frozen-reference predictions"
+      },
+      {
+        "component": "rwa",
+        "test_orbit": "LEO700",
+        "physical_unit": "days",
+        "comparison": "candidate vs refitted current control replay",
+        "rmse": {
+          "n_units": 83,
+          "mean_delta": -3.2294819074136483e-08,
+          "median_delta": -2.3002655765401447e-08,
+          "sd_delta": 8.122711627192959e-08,
+          "cohen_dz": -0.39758667494757416,
+          "wilcoxon_statistic": 1037.0,
+          "wilcoxon_p_less": 0.0006745273375047142,
+          "wilcoxon_p_bonferroni": 0.008094328050056571,
+          "bootstrap_ci95_mean_delta": [
+            -4.983744589830386e-08,
+            -1.5168998819515432e-08
+          ]
+        },
+        "mae": {
+          "n_units": 83,
+          "mean_delta": -2.6795348272223073e-08,
+          "median_delta": -1.50922017175259e-08,
+          "sd_delta": 7.383885461252813e-08,
+          "cohen_dz": -0.3628895438970791,
+          "wilcoxon_statistic": 1110.0,
+          "wilcoxon_p_less": 0.0020271545498012473,
+          "wilcoxon_p_bonferroni": 0.024325854597614965,
+          "bootstrap_ci95_mean_delta": [
+            -4.2828096415758686e-08,
+            -1.1133176181169486e-08
+          ]
+        },
+        "fold_delta_vs_frozen_reference_rmse": -2.9375295713257588e-08,
+        "fold_delta_vs_frozen_reference_mae": -2.167162142449608e-08,
+        "interpretation": "paired unit analysis of a current control replay; not inference against historical frozen-reference predictions"
+      }
+    ]
+  },
+  "seed_sensitivity": {
+    "seeds": [
+      17,
+      42,
+      73
+    ],
+    "seed_count": 3,
+    "fold_row_count": 18,
+    "unit_row_count": 1329,
+    "fold_metrics_sha256": "26e1c26e63e5c790ec1c389230b8ecf0e709120d7ce5c32a20d2c465eecc22a9",
+    "unit_metrics_sha256": "bedab9dcb6288a40b6a0fd04bbe0998c0f8f2dd135c2ce4374662d4792e840bf",
+    "inferential_status": "DESCRIPTIVE_ONLY",
+    "aggregation": "published candidate is elementwise median of three seed predictions",
+    "folds": [
+      {
+        "component": "bat",
+        "test_orbit": "LEO500",
+        "physical_unit": "cycles",
+        "seed_count": 3,
+        "seed_rmse_mean": 1.9458042526317074,
+        "seed_rmse_sd": 4.896140271421128e-07,
+        "seed_rmse_range": [
+          1.945803810255103,
+          1.9458047786955588
+        ],
+        "seed_mae_mean": 1.296597568359279,
+        "seed_mae_sd": 3.1132550927413087e-07,
+        "seed_mae_range": [
+          1.2965972116383337,
+          1.2965977852709918
+        ],
+        "per_seed": [
+          {
+            "seed": 17,
+            "rmse": 1.945803810255103,
+            "rmse_delta_vs_frozen_fold_point": -3.758345222593107e-06,
+            "mae": 1.2965977852709918,
+            "mae_delta_vs_frozen_fold_point": -1.0735203559431028e-06,
+            "unit_rmse_mean": 1.3238113319155331,
+            "unit_rmse_sd": 0.7842995035588137,
+            "unit_mae_mean": 1.0167065301711453,
+            "unit_mae_sd": 0.5837812191330409
+          },
+          {
+            "seed": 42,
+            "rmse": 1.9458041689444607,
+            "rmse_delta_vs_frozen_fold_point": -3.3996558648219377e-06,
+            "mae": 1.2965972116383337,
+            "mae_delta_vs_frozen_fold_point": -1.647153013983882e-06,
+            "unit_rmse_mean": 1.3238107159497001,
+            "unit_rmse_sd": 0.7843001847110894,
+            "unit_mae_mean": 1.0167065592612174,
+            "unit_mae_sd": 0.5837826475107278
+          },
+          {
+            "seed": 73,
+            "rmse": 1.9458047786955588,
+            "rmse_delta_vs_frozen_fold_point": -2.7899047667645505e-06,
+            "mae": 1.2965977081685116,
+            "mae_delta_vs_frozen_fold_point": -1.1506228361213289e-06,
+            "unit_rmse_mean": 1.3238113881838078,
+            "unit_rmse_sd": 0.7843004748813429,
+            "unit_mae_mean": 1.0167063684857949,
+            "unit_mae_sd": 0.5837815438648184
+          }
+        ],
+        "interpretation": "descriptive sensitivity only; three fixed seeds are not independent experiment replications"
+      },
+      {
+        "component": "bat",
+        "test_orbit": "LEO550",
+        "physical_unit": "cycles",
+        "seed_count": 3,
+        "seed_rmse_mean": 1.7944790925430514,
+        "seed_rmse_sd": 1.4482719039232147e-06,
+        "seed_rmse_range": [
+          1.7944782450276895,
+          1.794480764811762
+        ],
+        "seed_mae_mean": 1.1889359694552342,
+        "seed_mae_sd": 8.725064416314901e-07,
+        "seed_mae_range": [
+          1.1889351151118837,
+          1.1889368590558989
+        ],
+        "per_seed": [
+          {
+            "seed": 17,
+            "rmse": 1.794480764811762,
+            "rmse_delta_vs_frozen_fold_point": -8.067961825286574e-06,
+            "mae": 1.1889368590558989,
+            "mae_delta_vs_frozen_fold_point": -2.8250915840022373e-06,
+            "unit_rmse_mean": 1.4281211340624542,
+            "unit_rmse_sd": 0.7290650792936728,
+            "unit_mae_mean": 1.088098216425341,
+            "unit_mae_sd": 0.5181618129115366
+          },
+          {
+            "seed": 42,
+            "rmse": 1.7944782677897027,
+            "rmse_delta_vs_frozen_fold_point": -1.0564983884631118e-05,
+            "mae": 1.1889351151118837,
+            "mae_delta_vs_frozen_fold_point": -4.5690355992000775e-06,
+            "unit_rmse_mean": 1.4281194279299128,
+            "unit_rmse_sd": 0.7290643133120865,
+            "unit_mae_mean": 1.0880961089227632,
+            "unit_mae_sd": 0.5181596857639111
+          },
+          {
+            "seed": 73,
+            "rmse": 1.7944782450276895,
+            "rmse_delta_vs_frozen_fold_point": -1.058774589779432e-05,
+            "mae": 1.18893593419792,
+            "mae_delta_vs_frozen_fold_point": -3.749949562870114e-06,
+            "unit_rmse_mean": 1.4281206927769192,
+            "unit_rmse_sd": 0.7290625607807626,
+            "unit_mae_mean": 1.088098199071512,
+            "unit_mae_sd": 0.5181597237968371
+          }
+        ],
+        "interpretation": "descriptive sensitivity only; three fixed seeds are not independent experiment replications"
+      },
+      {
+        "component": "bat",
+        "test_orbit": "LEO700",
+        "physical_unit": "cycles",
+        "seed_count": 3,
+        "seed_rmse_mean": 2.3908087617911242,
+        "seed_rmse_sd": 4.229613049177998e-06,
+        "seed_rmse_range": [
+          2.3908047728001183,
+          2.3908131966943005
+        ],
+        "seed_mae_mean": 1.5582920461953835,
+        "seed_mae_sd": 2.7375710056271826e-06,
+        "seed_mae_range": [
+          1.5582889730838698,
+          1.5582942240655944
+        ],
+        "per_seed": [
+          {
+            "seed": 17,
+            "rmse": 2.3908047728001183,
+            "rmse_delta_vs_frozen_fold_point": -3.266309715144189e-05,
+            "mae": 1.5582889730838698,
+            "mae_delta_vs_frozen_fold_point": -2.215009358286224e-05,
+            "unit_rmse_mean": 1.7772697586879058,
+            "unit_rmse_sd": 1.271225971263114,
+            "unit_mae_mean": 1.3963050781796487,
+            "unit_mae_sd": 0.9859345716133258
+          },
+          {
+            "seed": 42,
+            "rmse": 2.3908131966943005,
+            "rmse_delta_vs_frozen_fold_point": -2.4239202969233986e-05,
+            "mae": 1.5582929414366866,
+            "mae_delta_vs_frozen_fold_point": -1.81817407660656e-05,
+            "unit_rmse_mean": 1.777272763156128,
+            "unit_rmse_sd": 1.271236457680073,
+            "unit_mae_mean": 1.3963063676372398,
+            "unit_mae_sd": 0.9859394293011805
+          },
+          {
+            "seed": 73,
+            "rmse": 2.3908083158789544,
+            "rmse_delta_vs_frozen_fold_point": -2.9120018315342833e-05,
+            "mae": 1.5582942240655944,
+            "mae_delta_vs_frozen_fold_point": -1.6899111858315052e-05,
+            "unit_rmse_mean": 1.777271026854276,
+            "unit_rmse_sd": 1.2712257484560983,
+            "unit_mae_mean": 1.3963075307852206,
+            "unit_mae_sd": 0.9859348762059472
+          }
+        ],
+        "interpretation": "descriptive sensitivity only; three fixed seeds are not independent experiment replications"
+      },
+      {
+        "component": "rwa",
+        "test_orbit": "LEO500",
+        "physical_unit": "days",
+        "seed_count": 3,
+        "seed_rmse_mean": 0.020725545506066343,
+        "seed_rmse_sd": 5.380859192246775e-06,
+        "seed_rmse_range": [
+          0.02071968431975331,
+          0.02073026174109617
+        ],
+        "seed_mae_mean": 0.015586278815783705,
+        "seed_mae_sd": 3.816866219704996e-06,
+        "seed_mae_range": [
+          0.015581872888397894,
+          0.015588578322950485
+        ],
+        "per_seed": [
+          {
+            "seed": 17,
+            "rmse": 0.02073026174109617,
+            "rmse_delta_vs_frozen_fold_point": -2.0016611342141277e-05,
+            "mae": 0.015588578322950485,
+            "mae_delta_vs_frozen_fold_point": 5.073430557932593e-06,
+            "unit_rmse_mean": 0.01702532128196164,
+            "unit_rmse_sd": 0.00928878415646087,
+            "unit_mae_mean": 0.014786825070756576,
+            "unit_mae_sd": 0.008614641083021067
+          },
+          {
+            "seed": 42,
+            "rmse": 0.020726690457349546,
+            "rmse_delta_vs_frozen_fold_point": -2.358789508876552e-05,
+            "mae": 0.015588385236002734,
+            "mae_delta_vs_frozen_fold_point": 4.880343610182483e-06,
+            "unit_rmse_mean": 0.017019248087767218,
+            "unit_rmse_sd": 0.009300195916547972,
+            "unit_mae_mean": 0.014783706659108787,
+            "unit_mae_sd": 0.008629562835042735
+          },
+          {
+            "seed": 73,
+            "rmse": 0.02071968431975331,
+            "rmse_delta_vs_frozen_fold_point": -3.059403268500238e-05,
+            "mae": 0.015581872888397894,
+            "mae_delta_vs_frozen_fold_point": -1.6320039946584458e-06,
+            "unit_rmse_mean": 0.01702398326950109,
+            "unit_rmse_sd": 0.009300362301029876,
+            "unit_mae_mean": 0.0147928148449203,
+            "unit_mae_sd": 0.008632683191346965
+          }
+        ],
+        "interpretation": "descriptive sensitivity only; three fixed seeds are not independent experiment replications"
+      },
+      {
+        "component": "rwa",
+        "test_orbit": "LEO550",
+        "physical_unit": "days",
+        "seed_count": 3,
+        "seed_rmse_mean": 0.02027166696639289,
+        "seed_rmse_sd": 1.4884465134975966e-08,
+        "seed_rmse_range": [
+          0.020271650979907047,
+          0.020271680425118878
+        ],
+        "seed_mae_mean": 0.01505406537269281,
+        "seed_mae_sd": 8.311117811381354e-09,
+        "seed_mae_range": [
+          0.01505405703986708,
+          0.015054073661931257
+        ],
+        "per_seed": [
+          {
+            "seed": 17,
+            "rmse": 0.020271680425118878,
+            "rmse_delta_vs_frozen_fold_point": 2.364685596639715e-09,
+            "mae": 0.015054073661931257,
+            "mae_delta_vs_frozen_fold_point": 9.637064717418764e-09,
+            "unit_rmse_mean": 0.015762318965958477,
+            "unit_rmse_sd": 0.009660207582775466,
+            "unit_mae_mean": 0.013556666473965242,
+            "unit_mae_sd": 0.008576998894903829
+          },
+          {
+            "seed": 42,
+            "rmse": 0.020271669494152742,
+            "rmse_delta_vs_frozen_fold_point": -8.566280539079596e-09,
+            "mae": 0.015054065416280097,
+            "mae_delta_vs_frozen_fold_point": 1.3914135572890007e-09,
+            "unit_rmse_mean": 0.015762312481704854,
+            "unit_rmse_sd": 0.009660206160669451,
+            "unit_mae_mean": 0.013556660528217902,
+            "unit_mae_sd": 0.008576997782155042
+          },
+          {
+            "seed": 73,
+            "rmse": 0.020271650979907047,
+            "rmse_delta_vs_frozen_fold_point": -2.7080526234651847e-08,
+            "mae": 0.01505405703986708,
+            "mae_delta_vs_frozen_fold_point": -6.984999460779573e-09,
+            "unit_rmse_mean": 0.015762308586943313,
+            "unit_rmse_sd": 0.009660193241207269,
+            "unit_mae_mean": 0.013556657043664573,
+            "unit_mae_sd": 0.008576990353398347
+          }
+        ],
+        "interpretation": "descriptive sensitivity only; three fixed seeds are not independent experiment replications"
+      },
+      {
+        "component": "rwa",
+        "test_orbit": "LEO700",
+        "physical_unit": "days",
+        "seed_count": 3,
+        "seed_rmse_mean": 0.02149030203944947,
+        "seed_rmse_sd": 6.557678506636016e-09,
+        "seed_rmse_range": [
+          0.021490294543810372,
+          0.02149030671715789
+        ],
+        "seed_mae_mean": 0.016712268872373422,
+        "seed_mae_sd": 5.0095997836784e-09,
+        "seed_mae_range": [
+          0.01671226311968211,
+          0.01671227227407324
+        ],
+        "per_seed": [
+          {
+            "seed": 17,
+            "rmse": 0.021490304857380137,
+            "rmse_delta_vs_frozen_fold_point": -3.2237495728448806e-08,
+            "mae": 0.01671227227407324,
+            "mae_delta_vs_frozen_fold_point": -2.1155962818403262e-08,
+            "unit_rmse_mean": 0.018278664579059325,
+            "unit_rmse_sd": 0.009976893416291682,
+            "unit_mae_mean": 0.01634512382704744,
+            "unit_mae_sd": 0.009701472402354958
+          },
+          {
+            "seed": 42,
+            "rmse": 0.02149030671715789,
+            "rmse_delta_vs_frozen_fold_point": -3.037771797650968e-08,
+            "mae": 0.016712271223364914,
+            "mae_delta_vs_frozen_fold_point": -2.2206671144303636e-08,
+            "unit_rmse_mean": 0.018278659101781315,
+            "unit_rmse_sd": 0.009976889622642461,
+            "unit_mae_mean": 0.016345117019330255,
+            "unit_mae_sd": 0.009701465491949259
+          },
+          {
+            "seed": 73,
+            "rmse": 0.021490294543810372,
+            "rmse_delta_vs_frozen_fold_point": -4.255106549402865e-08,
+            "mae": 0.01671226311968211,
+            "mae_delta_vs_frozen_fold_point": -3.031035394895909e-08,
+            "unit_rmse_mean": 0.018278646369863705,
+            "unit_rmse_sd": 0.00997686944770704,
+            "unit_mae_mean": 0.016345103563700444,
+            "unit_mae_sd": 0.009701441577678781
+          }
+        ],
+        "interpretation": "descriptive sensitivity only; three fixed seeds are not independent experiment replications"
+      }
+    ]
+  },
+  "limitations": [
+    "Historical frozen-reference per-unit predictions were not retained; no frozen-reference paired bootstrap, Wilcoxon, or paired effect size is claimed.",
+    "The candidate cluster bootstrap treats the frozen fold aggregate as fixed and does not include reference sampling variance or paired covariance.",
+    "The current replay-control paired tests are sensitivity diagnostics for a refitted control and are not substitutes for frozen-reference inference.",
+    "The six orbit-component folds are not independent replications; all intervals and tests are fold-specific, with Bonferroni familywise handling across 12 metric comparisons.",
+    "Legacy outer folds are development/diagnostic evidence under the F1 chronology resolution, not a fresh untouched population confirmation.",
+    "No engineering-relevance threshold was registered; numerical gate passage alone is not practical significance."
+  ],
+  "artifacts": {
+    "f5_reconciled_ledger": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\f5_evidence_ledger_reconciled.json",
+      "sha256": "9d651bd8e2400269725d608cc75bd76d64ba819f7c3116dd2903f6d797e5a4be"
+    },
+    "frozen_fold_metrics": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\formal_metrics_unrounded.json",
+      "sha256": "6d7762e86ccd92c19bed4fb4787fe79ccb70233b99db1b24f7c9576fb0ff4aad"
+    },
+    "candidate_unit_metrics": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\formal_unit_metrics.csv",
+      "sha256": "e13f9443d0f7b99c77110344d7f3fc1947484f60d328770eadf4f5e8641f4d7a"
+    },
+    "diagnostic_replay_pairs": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\formal_unit_paired_metrics.csv",
+      "sha256": "96047569d472141bbfd661fa740321e270297bf71090b0e58322d45260868446"
+    },
+    "seed_fold_metrics": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f6_seed_metrics_20261002\\seed_fold_metrics.csv",
+      "sha256": "26e1c26e63e5c790ec1c389230b8ecf0e709120d7ce5c32a20d2c465eecc22a9"
+    },
+    "seed_unit_metrics": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f6_seed_metrics_20261002\\seed_unit_metrics.csv",
+      "sha256": "bedab9dcb6288a40b6a0fd04bbe0998c0f8f2dd135c2ce4374662d4792e840bf"
+    },
+    "seed_export_summary": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f6_seed_metrics_20261002\\seed_metrics_summary.json",
+      "sha256": "78ecf4832b05455d483291ae34cda10548be1428c689027454945612b5f7952c"
+    },
+    "statistics_builder": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\repro\\build_f6_statistics_20261002.py",
+      "sha256": "b05bdc804b7d4c0dd66d677d8ff0404fe03e01d13d6e1ddc5da71de349ed81b9"
+    }
+  }
+}

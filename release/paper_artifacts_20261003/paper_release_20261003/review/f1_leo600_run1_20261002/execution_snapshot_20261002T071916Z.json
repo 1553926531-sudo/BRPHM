@@ -1,0 +1,114 @@
+{
+  "schema": "brphm-f1-leo600-runtime-snapshot-v1",
+  "observed_utc": "2026-10-02T07:19:16Z",
+  "candidate_preregistration_sha256": "128bc704843332440057b9f65700c57034d7835a4eb91c5c6521ba25abc46b53",
+  "candidate_snapshot_sha256": "bdcbb38020dc84c077445929f30cd86c24ea7bf4ce9eb665e6e723578fe1f92b",
+  "preparation_manifest_sha256": "4cdf569ff96022d1897de88687742ef1ef1ab46f57089dec7b9d9a4f5cd02f21",
+  "source_card_manifest_sha256": "a4436f155d7b5fc2b6602492d6550c79723b6d55c9ef23f819a59efe107e1d0b",
+  "candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+  "partition": {
+    "orbit": "LEO600",
+    "registered_unit_count": 12,
+    "registered_unit_ids": [
+      "BAT_LEO600_B00_H1_L1_S940",
+      "BAT_LEO600_B00_H0_L2_S941",
+      "BAT_LEO600_B30_H0_L1_S942",
+      "BAT_LEO600_B30_H1_L2_S943",
+      "BAT_LEO600_B60_H1_L3_S944",
+      "BAT_LEO600_B60_H0_L1_S945",
+      "RWA_LEO600_B00_H1_L3_S946",
+      "RWA_LEO600_B00_H1_L2_S947",
+      "RWA_LEO600_B30_H2_L2_S948",
+      "RWA_LEO600_B30_H1_L1_S949",
+      "RWA_LEO600_B60_H1_L2_S950",
+      "RWA_LEO600_B60_H2_L2_S951"
+    ],
+    "seeds": "891940-891951; exact ID-to-seed and config bindings are in the hash-bound preparation manifest"
+  },
+  "execution": {
+    "status": "RAW_GENERATION_RUNNING",
+    "launcher_pid": 7120,
+    "matlab_pid": 7122,
+    "worker_pids": [9780, 9786, 9788, 9791, 9793, 9795, 9797, 9799],
+    "workers": 8,
+    "cpu_affinity": "0-7",
+    "nice": 15,
+    "ionice_class": 3,
+    "started_utc_from_pid_file_mtime": "2026-10-02T07:09:10.545858157Z",
+    "effective_command": "taskset -c 0-7 nice -n 15 ionice -c 3 matlab -batch run('/mnt/data/BRPHM/rul-space/work/paper/repro/run_f1_leo600_generate_w8_20261002.m')",
+    "matlab_script_sha256": "c5ac3dd6323cf760612b984c1f26252c61f3e7a3d3d26d9877e6098731e16dcf",
+    "runner_sha256": "e397f9807d16483671c94e6ba0c9e2e920166896d61c886e89943e6fa64923b1",
+    "launcher_sha256": "8d5ae3b6e8f241360a3edf15dcd05dd852d5b8d77c3dc40f5f9348c208b90f57",
+    "generator_log_sha256_at_observation": "d6b80df72ebb3d8480be0af5ee9b8d54fc222b632a96c76d03b09e72de738290",
+    "exit_code_file": "/mnt/data/BRPHM/rul-space/work/f1_leo600_run1_20261002/generator_w8.exitcode",
+    "exit_code_written": false,
+    "raw_output_root": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_leo600_v1/generated",
+    "completed_outputs": [
+      {
+        "sample_id": "RWA_LEO600_B00_H1_L3_S946",
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_leo600_v1/generated/rwa/RWA_LEO600_B00_H1_L3_S946.mat",
+        "size": 174161,
+        "mtime_utc": "2026-10-02T07:16:13.665327386Z",
+        "sha256": "fd960310e92ba03f3927befcc62ca53c285db7da15bce3b1847c9c4bc310fcf3"
+      },
+      {
+        "sample_id": "RWA_LEO600_B00_H1_L2_S947",
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_leo600_v1/generated/rwa/RWA_LEO600_B00_H1_L2_S947.mat",
+        "size": 204671,
+        "mtime_utc": "2026-10-02T07:16:43.735997858Z",
+        "sha256": "344c1af0c5c85133cf80d7cac4d71d90e38968c26f8a31b3b881df48a5e4e12d"
+      },
+      {
+        "sample_id": "RWA_LEO600_B30_H2_L2_S948",
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261002_leo600_v1/generated/rwa/RWA_LEO600_B30_H2_L2_S948.mat",
+        "size": 171764,
+        "mtime_utc": "2026-10-02T07:19:12.662356083Z",
+        "sha256": "f3c515589fa3a9fd072ba1a744d17559353f3479dedef46dceb3093e63951a64"
+      }
+    ],
+    "matlab_log_rows": {
+      "reported_ok": 3,
+      "reported_failures": 0,
+      "reported_manifest_positions": [7, 8, 9],
+      "semantic_label_read": false,
+      "final_label_read": false
+    }
+  },
+  "resource_adjustments": {
+    "two_worker_attempt": {
+      "launcher_pid": 4160191,
+      "workers": 2,
+      "raw_outputs_at_stop": 0,
+      "final_evaluation_started": false,
+      "stopped_by": "SIGTERM sent to launcher and workers after zero-output identity recheck",
+      "exact_os_exit_status_retained": false,
+      "original_log_sha256": "5ab6de68faaf29fc9257ddb6bd646a7dd7ca321c692660900c584ac29b9fa07a"
+    },
+    "eight_worker_attempt": "active; retained because output began",
+    "twelve_worker_proposal": "cancelled before execution after the 8-worker run produced raw outputs"
+  },
+  "label_barrier": {
+    "semantic_labels_read": false,
+    "final_labels_read": false,
+    "partition_manifest_sealed": false,
+    "preflight_started": false,
+    "candidate_freeze_started": false,
+    "evaluation_started": false,
+    "next_permitted_sequence": [
+      "finish the registered 12 raw simulations",
+      "seal metadata-only partition manifest from raw file paths, sizes and SHA-256 values",
+      "verify exact IDs, counts and all raw hashes",
+      "freeze candidate and partition and verify immutable events",
+      "run one evaluation invocation"
+    ]
+  },
+  "physical_validity_boundary": {
+    "source_contract_period_s": 5740,
+    "GMAT_LEO600_period_approx_s": 5819,
+    "difference_s": -79,
+    "tile_seam_km": 608,
+    "LEO600_importer_v1_v8": "all checks pass; the checks do not test periodic tile closure",
+    "risk": "final comparison is internal to this registered simulator setup; do not generalize it to physical orbit accuracy without a separate closure validation"
+  }
+}
+

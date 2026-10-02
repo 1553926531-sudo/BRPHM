@@ -1,0 +1,103 @@
+{
+  "schema": "brphm-f5-precision-ledger-v1",
+  "observed_utc": "2026-10-02T11:59:07.684709Z",
+  "finding": "F5",
+  "status": "EVIDENCE_CLOSED_CURRENT_ARTIFACTS_BOUND_VENUE_METADATA_PENDING",
+  "original": {
+    "location": "work/paper/en/main.tex:38,108,112",
+    "problem": "Eight-decimal table values cannot independently audit a 1e-12 gate; prior receipt lacked unit-level metrics."
+  },
+  "aggregation": "window-level RMSE/MAE over all outer windows; unit table additionally reports per-unit RMSE/MAE and n_windows",
+  "gate": {
+    "tolerance": 1e-12,
+    "fold_count": 6,
+    "all_primary_metrics_nonregressive": true,
+    "at_least_one_strict_gain": true,
+    "promotion_eligible": true,
+    "rule": "all six folds pass RMSE and MAE at tolerance 1e-12 and at least one strict gain"
+  },
+  "fold_checks": [
+    {
+      "component": "bat",
+      "test_orbit": "LEO500",
+      "delta_rmse": -3.6567708308066216e-06,
+      "delta_mae": -1.3458916285902234e-06,
+      "rmse_pass": true,
+      "mae_pass": true,
+      "strict_gain": true
+    },
+    {
+      "component": "bat",
+      "test_orbit": "LEO550",
+      "delta_rmse": -9.59349711715518e-06,
+      "delta_mae": -3.932005621987145e-06,
+      "rmse_pass": true,
+      "mae_pass": true,
+      "strict_gain": true
+    },
+    {
+      "component": "bat",
+      "test_orbit": "LEO700",
+      "delta_rmse": -3.006324298349128e-05,
+      "delta_mae": -1.859156874983725e-05,
+      "rmse_pass": true,
+      "mae_pass": true,
+      "strict_gain": true
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO500",
+      "delta_rmse": -2.5164912758831454e-05,
+      "delta_mae": -5.208924480047672e-07,
+      "rmse_pass": true,
+      "mae_pass": true,
+      "strict_gain": true
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO550",
+      "delta_rmse": -1.3337010568853502e-08,
+      "delta_mae": -1.4887936734125917e-09,
+      "rmse_pass": true,
+      "mae_pass": true,
+      "strict_gain": true
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO700",
+      "delta_rmse": -2.9375295713257588e-08,
+      "delta_mae": -2.167162142449608e-08,
+      "rmse_pass": true,
+      "mae_pass": true,
+      "strict_gain": true
+    }
+  ],
+  "unit_rows": 443,
+  "artifacts": {
+    "metrics_json": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\formal_metrics_unrounded.json",
+      "sha256": "6360a274c2ac31f9dee88b0ea42435c55a2dacbe7f38cf9e133a98b82f606c74"
+    },
+    "unit_csv": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\formal_unit_metrics.csv",
+      "sha256": "e13f9443d0f7b99c77110344d7f3fc1947484f60d328770eadf4f5e8641f4d7a"
+    },
+    "candidate_receipt": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\f5_unit_metrics_20261002\\frozen_candidate_receipt.json",
+      "sha256": "b99ed8a3d2f168483f1072e7363fe1793a08708c16693ea6ba59e29bf03631f1"
+    },
+    "validator_script": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\repro\\build_f5_precision_ledger.py",
+      "sha256": "c190513d564aecab7026f5c523da051c47cacf414ecbb7a59a180b1b30eae4be"
+    }
+  },
+  "cross_validation": {
+    "delta_recomputation": "PASS using full JSON float values",
+    "fold_completeness": "PASS: 2 components x 3 orbits",
+    "unit_to_fold_counts": "PASS: unit window counts sum to each fold n_windows and unit counts match",
+    "hash_binding": "PASS"
+  },
+  "confidence": "high for machine-readable precision and deterministic gate recomputation; medium for statistical interpretation pending F6",
+  "remaining_risk": "The manuscript displays rounded values for readability while linking the full-precision CSV/JSON artifacts and stating that gate calculations use unrounded values; venue-specific metadata remain pending.",
+  "required_modification": "Replace rounded-only reporting with hash-linked unrounded fold/unit files and show enough digits or a reproducibility pointer in the PDF."
+}

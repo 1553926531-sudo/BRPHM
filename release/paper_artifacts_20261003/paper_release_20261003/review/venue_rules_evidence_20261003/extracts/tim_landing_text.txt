@@ -1,0 +1,488 @@
+IEEE.org
+IEEE Xplore®
+IEEE Standards
+IEEE Spectrum
+More Sites
+Login
+Join IEEE
+Donate
+Home
+About About IMS About the I&M Society Contact Us Get Involved! Join IMS Committees & Representatives IMS Standing Committees Representatives & Liaisons Who We Are Officers Current Members-at-Large AdCom Members History Presidents Members-at-Large (by term) Governing Documents Constitution Bylaws Society Handbook Society Strategic Plan
+Awards Awards & Recognition Program About Awards & Recognitions Society Awards Career Excellence Award Distinguished Service Award Outstanding Young Engineer Award Technical Award J. Barry Oakes Advancement Award Best Application in I&M Award Membership Awards Best Student Chapter Award Outstanding Chapter Award Education Awards Graduate Fellowship Award Faculty Course Development Award Best Dissertation Award Undergraduate Student Scholarship International Student Contest Technical & Standards Awards Outstanding Technical Committee Award IEEE IEEE Fellows Tips for IEEE Fellow Nominations IEEE Senior Members Joseph F. Keithley Award in I&M
+Activities Technical Activities About Technical & Standards Activities Council Memberships Technical Committees Listing Technical & Standards Activity Award Standards Activities Educational Activities About Educational Activities Education Awards Distinguished Lecturer Program Virtual Distinguished Lecturer Webinars Video Tutorials Program Short Courses Video Library Membership Activities About Membership Activities Membership Benefits (Join Us) Women in I&M Student Activities Young Professionals Chapters Mentorship Program IMS EPICS in IEEE Regional Growth Initiative
+Publications General Information About Publications Publications Committee Andy Chi Best Paper Award Cam Ingelin Best Paper Award I&M Society Bookshelf Society Publications Instrumentation & Measurement Magazine Transactions on Instrumentation and Measurement Open Journal of Instrumentation and Measurement Co-Sponsored Periodicals I&M Society Newsletter
+Conferences General Information About Conferences Conferences Committee Organize a Conference Society Conferences All Events Financially Sponsored Conferences Technically Co-Sponsored Conferences
+Search
+
+Publication
+IEEE Transactions On Instrumentation and Measurement
+IEEE Transactions on Instrumentation and Measurement
+About
+Editorial Committee
+For all inquiries regarding TIM, please contact: tim-support @conferencecatalysts.com
+
+NOTE: TIM is an online-only volume-only journal. Papers are published continuously as they are accepted in the current Volume with an Article Sequence Number. Please note that TIM is not a printed journal.
+IEEE Transactions on Instrumentation and Measurement publishes papers that address innovative solutions to the development and use of electrical and electronic instruments and equipment to measure, monitor and/or record physical phenomena for the purpose of advancing measurement science, methods, functionality and applications. The scope of these papers may encompass: (1) theory, methodology, and practice of measurement; (2) design, development and evaluation of instrumentation and measurement systems and components used in generating, acquiring, conditioning and processing signals; (3) analysis, representation, display, and preservation of the information obtained from a set of measurements; and (4) scientific and technical support to establishment and maintenance of technical standards in the field of Instrumentation and Measurement.
+Important Note
+A large number of submissions are immediately rejected at first screening stage, because not well aligned to TIM's scope. If you intend to submit a manuscript to TIM, please carefully read the information in this page and the additional important guidance provided here
+When submitting a paper, please ensure you have clearly indicated how your work is within the field of Instrumentation and Measurement (I&M), in addition to placing its novelties and contributions in the proper context of the existing I&M literature. In other words, in your paper:
+Highlight the novelty of your work and what it contributes to: methods or instruments for measurement, detection, tracking, monitoring, characterization, identification, sensing, estimation, recognition, or diagnosis of a physical phenomenon; uniqueness of an application furthering the I&M fields; or measurement theory including uncertainty, calibration, etc. Ideally, this should be made clear in the abstract and/or the introduction.
+Position your work clearly in the context of relevant published literature in the field (I&M) and its body of knowledge. There are two main ways this may be accomplished: Comparison of your work (analytical and/or experimental) and its uniqueness and/or advantages over related previous works published in the existing I&M literature. For example, the primary focus of the following journals is on the I&M field: IEEE TIM IEEE OJIM Metrologia Measurement (Elsevier) Metrology and Measurement Systems Measurement Science and Technology Review of Scientific Instruments IEEE Instrumentation and Measurement Magazine Measurement Science Review Journal of Instrumentation Instrumentation Science & Technology Instruments and Experimental Techniques Measurement Techniques In addition, the following journals cover topic-specific I&M: Nuclear Instruments and Methods in Physics Research; Section A and Section B Atmospheric Measurement Techniques Physiological Measurement Journal of Dynamic Systems, Measurement, and Control Radiation Measurements Flow Measurement and Instrumentation IET Science, Measurement & Technology Finally, the following high-impact conferences also cover I&M topics: Internet Measurement Conference IEEE I 2 MTC Passive and Active Network Measurement Clear description of novelties and advances that your work makes in the I&M context, if your work is completely new to the I&M field and cannot really be compared against existing I&M Body of Knowledge, as represented by the above-mentioned literature. We expect this to happen only in rare cases.
+Comparison of your work (analytical and/or experimental) and its uniqueness and/or advantages over related previous works published in the existing I&M literature. For example, the primary focus of the following journals is on the I&M field: IEEE TIM IEEE OJIM Metrologia Measurement (Elsevier) Metrology and Measurement Systems Measurement Science and Technology Review of Scientific Instruments IEEE Instrumentation and Measurement Magazine Measurement Science Review Journal of Instrumentation Instrumentation Science & Technology Instruments and Experimental Techniques Measurement Techniques In addition, the following journals cover topic-specific I&M: Nuclear Instruments and Methods in Physics Research; Section A and Section B Atmospheric Measurement Techniques Physiological Measurement Journal of Dynamic Systems, Measurement, and Control Radiation Measurements Flow Measurement and Instrumentation IET Science, Measurement & Technology Finally, the following high-impact conferences also cover I&M topics: Internet Measurement Conference IEEE I 2 MTC Passive and Active Network Measurement
+For example, the primary focus of the following journals is on the I&M field: IEEE TIM IEEE OJIM Metrologia Measurement (Elsevier) Metrology and Measurement Systems Measurement Science and Technology Review of Scientific Instruments IEEE Instrumentation and Measurement Magazine Measurement Science Review Journal of Instrumentation Instrumentation Science & Technology Instruments and Experimental Techniques Measurement Techniques
+IEEE TIM
+IEEE OJIM
+Metrologia
+Measurement (Elsevier)
+Metrology and Measurement Systems
+Measurement Science and Technology
+Review of Scientific Instruments
+IEEE Instrumentation and Measurement Magazine
+Measurement Science Review
+Journal of Instrumentation
+Instrumentation Science & Technology
+Instruments and Experimental Techniques
+Measurement Techniques
+In addition, the following journals cover topic-specific I&M: Nuclear Instruments and Methods in Physics Research; Section A and Section B Atmospheric Measurement Techniques Physiological Measurement Journal of Dynamic Systems, Measurement, and Control Radiation Measurements Flow Measurement and Instrumentation IET Science, Measurement & Technology
+Nuclear Instruments and Methods in Physics Research; Section A and Section B
+Atmospheric Measurement Techniques
+Physiological Measurement
+Journal of Dynamic Systems, Measurement, and Control
+Radiation Measurements
+Flow Measurement and Instrumentation
+IET Science, Measurement & Technology
+Finally, the following high-impact conferences also cover I&M topics: Internet Measurement Conference IEEE I 2 MTC Passive and Active Network Measurement
+Internet Measurement Conference
+IEEE I 2 MTC
+Passive and Active Network Measurement
+Clear description of novelties and advances that your work makes in the I&M context, if your work is completely new to the I&M field and cannot really be compared against existing I&M Body of Knowledge, as represented by the above-mentioned literature. We expect this to happen only in rare cases.
+In addition, for your benefit, we have prepared some Topical Guides that explain how research in certain related fields, such as Image Processing, Computational Intelligence, Medical and Biomedical Engineering, Navigation, and Communication Systems should be properly presented in an I&M context.
+Serial: ISSN : 0018-9456 eISSN : 1557-9662
+Indexes (this list is not exhaustive): Science Citation Index Expanded Essential Science Indicators Current Contents: Engineering, Computing & Technology SCOPUS SCImago IEEE Xplore DBLP Google Scholar
+TIM has a long history, and in fact, celebrates its 70 th anniversary in 2021. In 1952, the Transactions of the IRE Professional Group on Instrumentation was launched. Its papers can be accessed in IEEE Xplore . In 1955, the name was changed to the IRE Transactions on Instrumentation , whose papers can also be accessed in IEEE Xplore . IRE was the Institute of Radio Engineers , which in 1963 merged with the American Institute of Electrical Engineers (AIEE) to form the present-day IEEE. Subsequently, in 1963 the name of the transactions was changed to the IEEE Transactions on Instrumentation and Measurement .
+Read the EiC's 70th Anniversary Editorial
+TIM Editorial Board
+EiC Transactions
+Roberto Ferrero Affiliation University of Liverpool Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Roberto Ferrero
+SAE: Vision-Based Instrumentation and Measurement
+Jesús Ureña Affiliation University of Alcalá Country Spain IEEE Region Region 08 (Africa, Europe, Middle East)
+Jesús Ureña
+SAE: Automation, Fault Diagnosis, Maintenance, and Testing
+Lorenzo Ciani Affiliation Department of Information Engineering (DINFO), University of Florence Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Lorenzo Ciani
+SAE: Artificial Intelligence for Instrumentation and Measurement
+Daniele Fontanelli Affiliation University of Trento Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Daniele Fontanelli
+Hongrui Wang Affiliation Southwest Jiaotong University Country China IEEE Region Region 10 (Asia and Pacific)
+Hongrui Wang
+SAE: Biomedical Instrumentation and Measurement
+Adam G. Polak Affiliation Wrocław University of Science and Technology Country Poland IEEE Region Region 08 (Africa, Europe, Middle East)
+Adam G. Polak
+SAE: Power Instrumentation and Measurement
+Paolo Attilio Pegoraro Affiliation University of Cagliari Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Paolo Attilio Pegoraro
+TIM Associate Editor-in-Chief
+Mohamed Abou-Khousa Affiliation Khalifa University of Science & Technology Country United Arab Emirates IEEE Region Region 08 (Africa, Europe, Middle East)
+Mohamed Abou-Khousa
+Kurt Barbé Affiliation Vrije Universiteit Brussel Country Belgium IEEE Region Region 08 (Africa, Europe, Middle East)
+Kurt Barbé
+Valentina Bianchi Affiliation University of Parma Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Valentina Bianchi
+Zhenghua Chen Affiliation University of Glasgow Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Zhenghua Chen
+Mohamad Forouzanfar Affiliation SRI International Country United States of America IEEE Region Region 06 (Western U.S.)
+Mohamad Forouzanfar
+Alessandra Galli Affiliation Eindhoven University of Technology Country Netherlands IEEE Region Region 08 (Africa, Europe, Middle East)
+Alessandra Galli
+Hamed Hamzehbahmani Affiliation Durham University Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Hamed Hamzehbahmani
+Chi Hung Hwang Affiliation Taiwan Instrument Research Institute, NARLabs Country Taiwan IEEE Region Region 10 (Asia and Pacific)
+Chi Hung Hwang
+Carlos G. Juan Affiliation Institute of Bioengineering, UMH Country Spain IEEE Region Region 08 (Africa, Europe, Middle East)
+Carlos G. Juan
+Huang-Chen Lee Affiliation National Chung-Cheng University Country Taiwan IEEE Region Region 10 (Asia and Pacific)
+Huang-Chen Lee
+Jing Lei Affiliation North China Electric Power University Country China IEEE Region Region 10 (Asia and Pacific)
+Jing Lei
+Datong Liu Affiliation Harbin Institute of Technology (HIT) Country China IEEE Region Region 10 (Asia and Pacific)
+Datong Liu
+Qiang Miao Affiliation Sichuan University Country China IEEE Region Region 10 (Asia and Pacific)
+Qiang Miao
+Arunava Naha Affiliation Linköping University Country Sweden IEEE Region Region 08 (Africa, Europe, Middle East)
+Arunava Naha
+Gabriele Patrizi Affiliation University of Florence: Universita degli Studi di Firenze Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Gabriele Patrizi
+Marco Pau Affiliation Fraunhofer Institute for Energy Economics and Energy System Technology Country Germany IEEE Region Region 08 (Africa, Europe, Middle East)
+Marco Pau
+Seyed Hossein Hesamedin Sadeghi Affiliation Amirkabir University of Technology Country Iran (Islamic Republic of) IEEE Region Region 08 (Africa, Europe, Middle East)
+Seyed Hossein Hesamedin Sadeghi
+Yang Song Affiliation Southwest Jiaotong University Country China IEEE Region Region 10 (Asia and Pacific)
+Yang Song
+Rosenda Valdes Arencibia Affiliation Federal University of Uberlândia Country Brazil IEEE Region Region 09 (Latin America)
+Rosenda Valdes Arencibia
+Helko E. van den Brom Affiliation Dutch National Metrology Institute Country Netherlands IEEE Region Region 08 (Africa, Europe, Middle East)
+Helko E. van den Brom
+Yu Yang Affiliation Xiamen University Country China IEEE Region Region 10 (Asia and Pacific)
+Yu Yang
+TIM Associate Editor
+Andrea Alimenti Affiliation Universita degli Studi Roma Tre Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Andrea Alimenti
+Fernando J. Álvarez Affiliation Universidad de Extremadura Facultad de Ciencias Country Spain IEEE Region Region 08 (Africa, Europe, Middle East)
+Fernando J. Álvarez
+Yasutaka Amagai Affiliation National Institute of Advanced Industrial Science and Technology (AIST), G-QuAT & NMIJ Country Japan IEEE Region Region 10 (Asia and Pacific)
+Yasutaka Amagai
+Bruno Andò Affiliation University of Catania Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Bruno Andò
+Jerome Antoni Affiliation University of Lyon Country France IEEE Region Region 08 (Africa, Europe, Middle East)
+Jerome Antoni
+Enes Ataç Affiliation Izmir Institute of Technology Country Türkiye IEEE Region Region 08 (Africa, Europe, Middle East)
+Enes Ataç
+Yang Bai Affiliation National Institute of Metrology (NIM) Country China IEEE Region Region 10 (Asia and Pacific)
+Yang Bai
+Grazia Barchi Affiliation Eurac Research Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Grazia Barchi
+Valentina Bello Affiliation University of Pavia Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Valentina Bello
+Alice Buffi Affiliation University of Pisa Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Alice Buffi
+Eduardo Cabal-Yepez Affiliation Universidad de Guanajuato Country Mexico IEEE Region Region 09 (Latin America)
+Eduardo Cabal-Yepez
+Gaigai Cai Affiliation Xidian University Country China IEEE Region Region 10 (Asia and Pacific)
+Gaigai Cai
+Marco Carratù Affiliation University of Salerno Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Marco Carratù
+Anna Case Affiliation Sandia National Labs Country United States of America IEEE Region Region 06 (Western U.S.)
+Anna Case
+Nuria Novas Castellano Affiliation University of Almería Country Spain IEEE Region Region 08 (Africa, Europe, Middle East)
+Nuria Novas Castellano
+Paolo Castello Affiliation University of Cagliari Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Paolo Castello
+Stefano Cattini Affiliation University of Modena and Reggio Emilia Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Stefano Cattini
+Hongtian Chen Affiliation Shanghai Jiao Tong University Country China IEEE Region Region 10 (Asia and Pacific)
+Hongtian Chen
+Shiqian Chen Affiliation State Key Laboratory of Rail Transit Vehicle System, Southwest Jiaotong University Country China IEEE Region Region 08 (Africa, Europe, Middle East)
+Shiqian Chen
+Valentina Cosentino Affiliation University of Palermo Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Valentina Cosentino
+Loredana Cristaldi Affiliation Politecnico di Milano Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Loredana Cristaldi
+Ernst Karl Csencsics Affiliation Automation and Control Institute (ACIN) of TU Wien Country Austria IEEE Region Region 08 (Africa, Europe, Middle East)
+Ernst Karl Csencsics
+Ziqiang Cui Affiliation Tianjin University Country China IEEE Region Region 10 (Asia and Pacific)
+Ziqiang Cui
+Sayantan Das Affiliation Texas A&M University Country United States of America IEEE Region Region 05 (Southwestern U.S.)
+Sayantan Das
+Alessio De Angelis Affiliation University of Perugia Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Alessio De Angelis
+Francesco de Paulis Affiliation Electromagnetic Compatibility and Signal Integrity Laboratory, University of L'Aquila Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Francesco de Paulis
+Thiago Destri Cabral Affiliation Federal Technological University of Paraná (campus Medianeira) Country Brazil IEEE Region Region 09 (Latin America)
+Thiago Destri Cabral
+Harimurugan Devarajan Affiliation Dr B R Ambedkar National Institute of Technology Jalandhar (NIT Jalandhar) Country India IEEE Region Region 10 (Asia and Pacific)
+Harimurugan Devarajan
+Mengyu Ding Affiliation Hong Kong Polytechnic University Country Hong Kong IEEE Region Region 10 (Asia and Pacific)
+Mengyu Ding
+Aditya Dixit Affiliation Aalborg University Country Denmark IEEE Region Region 08 (Africa, Europe, Middle East)
+Aditya Dixit
+Guanfeng Du Affiliation Northeast Electric Power University Country China IEEE Region Region 10 (Asia and Pacific)
+Guanfeng Du
+Paolo Durandetto Affiliation Istituto Nazionale di Ricerca Metrologica (INRIM) Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Paolo Durandetto
+Matthew Dvorsky Affiliation Iowa State University Country United States of America IEEE Region Region 04 (Central U.S.)
+Matthew Dvorsky
+Antonio Esposito Affiliation University of Naples Federico II Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Antonio Esposito
+Marco Faifer Affiliation Politecnico di Milano Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Marco Faifer
+Wei Fan Affiliation Jiangsu University Country China IEEE Region Region 10 (Asia and Pacific)
+Wei Fan
+Ke Feng Affiliation Xi'an Jiatong University Country China IEEE Region Region 10 (Asia and Pacific)
+Ke Feng
+Giorgio Ferrari Affiliation Politecnico di Milano Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Giorgio Ferrari
+Giorgia Fiori Affiliation Roma Tre University Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Giorgia Fiori
+Ada Fort Affiliation The University of Siena Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Ada Fort
+Michael E. Gadringer Affiliation Graz University of Technology Country Austria IEEE Region Region 08 (Africa, Europe, Middle East)
+Michael E. Gadringer
+Vincenzo Gallo Affiliation University of Salerno Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Vincenzo Gallo
+Yuan Gao Affiliation Great Bay University Country China IEEE Region Region 10 (Asia and Pacific)
+Yuan Gao
+Javad Gatabi Affiliation Bedrock Energy Country United States of America IEEE Region Region 05 (Southwestern U.S.)
+Javad Gatabi
+Boby George Affiliation IIT Madras Country India IEEE Region Region 10 (Asia and Pacific)
+Boby George
+Giada Giorgi Affiliation University of Padova Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Giada Giorgi
+Sabrina Grassini Affiliation Politecnico di Torino Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Sabrina Grassini
+Salvatore Graziani Affiliation Università di Catania Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Salvatore Graziani
+Rajarshi Gupta Affiliation University of Calcutta Country India IEEE Region Region 10 (Asia and Pacific)
+Rajarshi Gupta
+Kamel Haddadi Affiliation University of Lille Country France IEEE Region Region 08 (Africa, Europe, Middle East)
+Kamel Haddadi
+Jae-Ho Han Affiliation Korea University Country Republic of Korea (South Korea) IEEE Region Region 10 (Asia and Pacific)
+Jae-Ho Han
+Dave Hanley Affiliation DePaul University School of Computing Country United States of America IEEE Region Region 04 (Central U.S.)
+Dave Hanley
+Guolin He Affiliation South China University of Technology Country China IEEE Region Region 10 (Asia and Pacific)
+Guolin He
+Sudao He Affiliation The Hong Kong University of Science and Technology Country Hong Kong IEEE Region Region 10 (Asia and Pacific)
+Sudao He
+Álvaro Hernández Affiliation University of Alcala Country Spain IEEE Region Region 08 (Africa, Europe, Middle East)
+Álvaro Hernández
+José A. Hidalgo-López Affiliation University of Málaga Country Spain IEEE Region Region 08 (Africa, Europe, Middle East)
+José A. Hidalgo-López
+M. Shamim Hossain Affiliation King Saud University Country Saudi Arabia IEEE Region Region 08 (Africa, Europe, Middle East)
+M. Shamim Hossain
+Bingchang Hou Affiliation Chongqing University Country China IEEE Region Region 10 (Asia and Pacific)
+Bingchang Hou
+Xiao Hu Affiliation International Digital Economy Academy (IDEA) Country Hong Kong IEEE Region Region 10 (Asia and Pacific)
+Xiao Hu
+Ruyi Huang Affiliation City University of Hong Kong Country Hong Kong IEEE Region Region 10 (Asia and Pacific)
+Ruyi Huang
+Weiguo Huang Affiliation Soochow University Country China IEEE Region Region 10 (Asia and Pacific)
+Weiguo Huang
+Yulong Huang Affiliation Harbin Engineering University Country Hong Kong IEEE Region Region 10 (Asia and Pacific)
+Yulong Huang
+Zhiqiang Huo Affiliation Queen Mary University of London Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Zhiqiang Huo
+Xingxing Jiang Affiliation Soochow University Country China IEEE Region Region 10 (Asia and Pacific)
+Xingxing Jiang
+Yandan Jiang (she/her) Affiliation Beihang University Country China IEEE Region Region 10 (Asia and Pacific)
+Yandan Jiang (she/her)
+Ali Kara Affiliation Gazi University, Ankara Country Türkiye IEEE Region Region 08 (Africa, Europe, Middle East)
+Ali Kara
+Anıl Karatay Affiliation Izmir Democracy University Country Türkiye IEEE Region Region 08 (Africa, Europe, Middle East)
+Anıl Karatay
+Yuto Kato Affiliation National Metrology Institute of Japan, National Institute of Advanced Industrial Science and Technology Country Japan IEEE Region Region 10 (Asia and Pacific)
+Yuto Kato
+Martti Kirkko-Jaakkola Affiliation Nordic Inertial Oy Country Finland IEEE Region Region 08 (Africa, Europe, Middle East)
+Martti Kirkko-Jaakkola
+Itzik Klein Affiliation University of Haifa Country Israel IEEE Region Region 08 (Africa, Europe, Middle East)
+Itzik Klein
+Michal Koziol Affiliation Opole University of Technology Country Poland IEEE Region Region 08 (Africa, Europe, Middle East)
+Michal Koziol
+Pradeep Kumar Das Affiliation National Institute of Technology Warangal Country India IEEE Region Region 10 (Asia and Pacific)
+Pradeep Kumar Das
+Anant Kumar Verma Affiliation Universidad de O'Higgins Country Chile IEEE Region Region 09 (Latin America)
+Anant Kumar Verma
+Roman Kusche Affiliation Hamburg University of Applied Sciences Country Germany IEEE Region Region 08 (Africa, Europe, Middle East)
+Roman Kusche
+Paweł Kwiatkowski Affiliation Military University of Technology (MUT) Country Poland IEEE Region Region 08 (Africa, Europe, Middle East)
+Paweł Kwiatkowski
+Grazia Iadarola Affiliation Polytechnic University of Marche Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Grazia Iadarola
+Jochen Lang Affiliation University of Ottawa Country Canada IEEE Region Region 07 (Canada)
+Jochen Lang
+Massimo Lazzaroni Affiliation University of Milan Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Massimo Lazzaroni
+Yifan Li Affiliation Southwest Jiaotong University Country China IEEE Region Region 10 (Asia and Pacific)
+Yifan Li
+Nan Li Affiliation Xidian University Country China IEEE Region Region 10 (Asia and Pacific)
+Nan Li
+Tianfu Li Affiliation Kunming University of Science and Technology Country China IEEE Region Region 10 (Asia and Pacific)
+Tianfu Li
+Huan Liu Affiliation China University of Geosciences Country China IEEE Region Region 10 (Asia and Pacific)
+Huan Liu
+Wenqiang Liu Affiliation The Hong Kong Polytechnic University Country Hong Kong IEEE Region Region 10 (Asia and Pacific)
+Wenqiang Liu
+Ran Liu Affiliation AUMOVIO-NTU Corporate Lab at NTU Country Singapore IEEE Region Region 10 (Asia and Pacific)
+Ran Liu
+Weibo Liu Affiliation Brunel University London Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Weibo Liu
+Siliang Lu Affiliation Anhui University Country China IEEE Region Region 10 (Asia and Pacific)
+Siliang Lu
+Yixin Ma Affiliation Shanghai Jiao Tong University Country China IEEE Region Region 10 (Asia and Pacific)
+Yixin Ma
+Lei Mao Affiliation University of Science of Technology of China Country China IEEE Region Region 10 (Asia and Pacific)
+Lei Mao
+Mirko Marracci Affiliation University of Pisa Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Mirko Marracci
+Alessandro Mingotti Affiliation University of Bologna Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Alessandro Mingotti
+George Mois Affiliation Technical University of Cluj-Napoca Country Romania IEEE Region Region 08 (Africa, Europe, Middle East)
+George Mois
+Antonio Moschitta Affiliation University of Perugia Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Antonio Moschitta
+Priya Ranjan Muduli (he/him) Affiliation Indian Institute of Technology (BHU) Varanasi Country India IEEE Region Region 10 (Asia and Pacific)
+Priya Ranjan Muduli (he/him)
+Humbet Nasibli Affiliation Scientific and Technological Research Council of Turkiye (TUBITAK) Country Türkiye IEEE Region Region 08 (Africa, Europe, Middle East)
+Humbet Nasibli
+Qing Ni Affiliation University of Technology Sydney Country Australia IEEE Region Region 10 (Asia and Pacific)
+Qing Ni
+Pedro Oliveira Affiliation University of São Paulo (São Carlos School of Engineering - EESC/USP) Country Brazil IEEE Region Region 09 (Latin America)
+Pedro Oliveira
+Mayukha Pal Affiliation ABB's Ability Innovation Center Country India IEEE Region Region 10 (Asia and Pacific)
+Mayukha Pal
+Zhengyu Peng Affiliation Aptiv Country Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Zhengyu Peng
+Giacomo Peruzzi Affiliation University of Padova Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Giacomo Peruzzi
+Ivan Petrunin Affiliation Cranfield University Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Ivan Petrunin
+Emanuele Piuzzi Affiliation Sapienza University of Rome Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Emanuele Piuzzi
+Ladislav Polak Affiliation Brno University of Technology Country Czechia IEEE Region Region 08 (Africa, Europe, Middle East)
+Ladislav Polak
+Ferdinanda Ponci Affiliation RWTH Aachen University Country Germany IEEE Region Region 08 (Africa, Europe, Middle East)
+Ferdinanda Ponci
+Jorge Portilla Affiliation Universidad Técnica Federico Santa María (UTFSM) Country Chile IEEE Region Region 09 (Latin America)
+Jorge Portilla
+Antonino Quattrocchi Affiliation University of Messina Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Antonino Quattrocchi
+Sergio Rapuano Affiliation University of Sannio Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Sergio Rapuano
+Damodar Reddy Edla Affiliation National Institute of Technology (NIT Country India IEEE Region Region 10 (Asia and Pacific)
+Damodar Reddy Edla
+Zhen Ren Affiliation University of Chicago Country United States of America IEEE Region Region 04 (Central U.S.)
+Zhen Ren
+Stefano Rinaldi Affiliation University of Brescia Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Stefano Rinaldi
+Arka Roy Affiliation Beth Israel Deaconess Medical Center Country United States of America IEEE Region Region 01 (Northeastern U.S.)
+Arka Roy
+Mahdi Saleh Affiliation University of Manchester Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Mahdi Saleh
+Anik Kumar Samanta Affiliation Danfoss India Innovation Centre Country India IEEE Region Region 10 (Asia and Pacific)
+Anik Kumar Samanta
+Luca Santoro Affiliation IMDEA Networks Institute: IMDEA Networks Country Spain IEEE Region Region 08 (Africa, Europe, Middle East)
+Luca Santoro
+Lorenzo Scalise Affiliation Marche Polytechnic University Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Lorenzo Scalise
+Irida Shallari Affiliation Mid Sweden University Country Sweden IEEE Region Region 08 (Africa, Europe, Middle East)
+Irida Shallari
+Maryam Shamgholi Affiliation EddyWise Country Iran (Islamic Republic of) IEEE Region Region 08 (Africa, Europe, Middle East)
+Maryam Shamgholi
+Rishi Raj Sharma Affiliation Defence Institute of Advanced Technology (DIAT), DRDO Country India IEEE Region Region 10 (Asia and Pacific)
+Rishi Raj Sharma
+Gordon A. Shaw Affiliation NIST Country United States of America IEEE Region Region 02 (Eastern U.S.)
+Gordon A. Shaw
+Carlo Sitzia Affiliation University of Cagliari Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Carlo Sitzia
+James A. Smith Affiliation Retired Country United States of America IEEE Region Region 06 (Western U.S.)
+James A. Smith
+Liuyang Song Affiliation Beijing University of Chemical Technology Country China IEEE Region Region 10 (Asia and Pacific)
+Liuyang Song
+Yuchen Song Affiliation Harbin Institute of Technology (HIT) Country China IEEE Region Region 10 (Asia and Pacific)
+Yuchen Song
+Andrea Sosso Affiliation INRIM: Istituto Nazionale di Ricerca Metrologica Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Andrea Sosso
+Roman Sotner Affiliation Brno University of Technology Country Czechia IEEE Region Region 08 (Africa, Europe, Middle East)
+Roman Sotner
+Susanna Spinsante Affiliation Marche Polytechnic University Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Susanna Spinsante
+Sara Sulis Affiliation University of Cagliari Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Sara Sulis
+Chuang Sun Affiliation Xi’an Jiaotong University Country China IEEE Region Region 10 (Asia and Pacific)
+Chuang Sun
+Jiangtao Sun Affiliation Beihang University Country China IEEE Region Region 10 (Asia and Pacific)
+Jiangtao Sun
+Linas Svilainis Affiliation Kaunas University of Technology Country Lithuania IEEE Region Region 08 (Africa, Europe, Middle East)
+Linas Svilainis
+Mahnoosh Tajmirriahi Affiliation Isfahan University of Medical Sciences Country Iran (Islamic Republic of) IEEE Region Region 08 (Africa, Europe, Middle East)
+Mahnoosh Tajmirriahi
+Chao Tan Affiliation Tianjin University Country China IEEE Region Region 10 (Asia and Pacific)
+Chao Tan
+Carlo Trigona Affiliation University of Catania, DIEEI Country Italy IEEE Region Region 08 (Africa, Europe, Middle East)
+Carlo Trigona
+Chao Wang Affiliation Tianjin University Country China IEEE Region Region 10 (Asia and Pacific)
+Chao Wang
+Dong Wang Affiliation Shanghai Jiao Tong University Country China IEEE Region Region 10 (Asia and Pacific)
+Dong Wang
+Ting-Wei Wang Affiliation National Tsing Hua University Country Taiwan IEEE Region Region 10 (Asia and Pacific)
+Ting-Wei Wang
+Shixiong Wang Affiliation Xi'an Jiaotong University Country China IEEE Region Region 10 (Asia and Pacific)
+Shixiong Wang
+Benkuan Wang Affiliation Harbin Institute of Technology Country China IEEE Region Region 10 (Asia and Pacific)
+Benkuan Wang
+Takuma Watanabe Affiliation University of Toyama Country Japan IEEE Region Region 10 (Asia and Pacific)
+Takuma Watanabe
+He Wen Affiliation Hunan University Country China IEEE Region Region 10 (Asia and Pacific)
+He Wen
+Logan Wilcox (he/him/his) Affiliation GE Aerospace Country United States of America IEEE Region Region 02 (Eastern U.S.)
+Logan Wilcox (he/him/his)
+Min Xia Affiliation Western University Country Canada IEEE Region Region 07 (Canada)
+Min Xia
+Jiawen Xu Affiliation Southeast University Country China IEEE Region Region 10 (Asia and Pacific)
+Jiawen Xu
+Juan Xu Affiliation Anhui University Country China IEEE Region Region 10 (Asia and Pacific)
+Juan Xu
+Tongtong Yan Affiliation University of British Columbia Country Canada
+Tongtong Yan
+Rui Yang (he/him) Affiliation Xi’an Jiaotong-Liverpool University Country China IEEE Region Region 08 (Africa, Europe, Middle East)
+Rui Yang (he/him)
+Xianqiang Yang Affiliation Harbin Institute of Technology Country China IEEE Region Region 10 (Asia and Pacific)
+Xianqiang Yang
+Yunjie Yang Affiliation The University of Edinburgh Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Yunjie Yang
+Lei Yao Affiliation Oxford Brookes University Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Lei Yao
+Shen Yin Affiliation Norwegian Institute of Science and Technology Country Norway IEEE Region Region 08 (Africa, Europe, Middle East)
+Shen Yin
+Tangwen Yin Affiliation Shanghai Jiao Tong University Country China IEEE Region Region 10 (Asia and Pacific)
+Tangwen Yin
+Dr. Jing Yuan Affiliation University of Shanghai for Science and Technology Country China IEEE Region Region 10 (Asia and Pacific)
+Dr. Jing Yuan
+Yu (Eve) Zhang Affiliation Loughborough University Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Yu (Eve) Zhang
+Yujie Zhang Affiliation Sichuan University Country China IEEE Region Region 10 (Asia and Pacific)
+Yujie Zhang
+Hui Zhang Affiliation National Engineering Research Center for Robotic Vision Perception and Control Technology Country China IEEE Region Region 10 (Asia and Pacific)
+Hui Zhang
+Liuyang Zhang Affiliation Xi'an Jiaotong University Country China IEEE Region Region 10 (Asia and Pacific)
+Liuyang Zhang
+Ming Zhang Affiliation Aston University Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Ming Zhang
+Shiwu Zhang Affiliation University of Science and Technology of China (USTC) Country China IEEE Region Region 10 (Asia and Pacific)
+Shiwu Zhang
+Jun Zhu Affiliation Northwestern Polytechnical University Country China IEEE Region Region 10 (Asia and Pacific)
+Jun Zhu
+Kunpeng Zhu Affiliation Chinese Academy of Science Country China IEEE Region Region 10 (Asia and Pacific)
+Kunpeng Zhu
+Yan Zhuang Affiliation Dalian University of Technology Country China IEEE Region Region 10 (Asia and Pacific)
+Yan Zhuang
+Bin Zi Affiliation Hefei University of Technology Country China IEEE Region Region 10 (Asia and Pacific)
+Bin Zi
+Senior Publications Administrator
+No Current Incumbents
+Publications Administrators
+Vicki Collins Affiliation IEEE TIM Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Vicki Collins
+Sharon Gillie
+Sharon Gillie
+Rich Handley (He/Him) Affiliation IEEE TIM Country United States of America
+Rich Handley (He/Him)
+LeeAnn Pannebaker Affiliation Publications Administrator Country United States of America IEEE Region Region 02 (Eastern U.S.)
+LeeAnn Pannebaker
+Serena Sensi Affiliation IEEE TIM Country United Kingdom of Great Britain and Northern Ireland IEEE Region Region 08 (Africa, Europe, Middle East)
+Serena Sensi
+Aleah Shockley Affiliation IEEE TIM Country United States of America IEEE Region Region 04 (Central U.S.)
+Aleah Shockley
+EiC Transactions
+Roberto Ferrero Affiliation University of Liverpool Country GBR IEEE Region Region 08 (Africa, Europe, Middle East) Email Email
+Roberto Ferrero
+2025 - 2026 Roberto Ferrero Affiliation University of Liverpool Country GBR IEEE Region Region 08 (Africa, Europe, Middle East) Email Email
+Roberto Ferrero
+Metrics
+Information for Authors
+Information for Reviewers
+Information for Editors
+Editors Information Classification Scheme (EDICS)
+TIM Outstanding Reviewers
+TIM Outstanding Associate Editors
+IEEE IMS Andy Chi Best Paper Award
+Home
+Contact
+Accessibility
+Nondiscrimination Policy
+IEEE Ethics Reporting
+Terms & Disclosures
+IEEE Privacy Policy
+Sitemap
+© Copyright 2026 IEEE – All rights reserved. A public charity, IEEE is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity.
+This site is created, maintained, and managed by Conference Catalysts, LLC

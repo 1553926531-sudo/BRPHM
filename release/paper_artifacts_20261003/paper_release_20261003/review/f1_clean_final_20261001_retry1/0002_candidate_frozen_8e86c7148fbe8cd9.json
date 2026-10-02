@@ -1,0 +1,2 @@
+{"created_utc":"2026-10-01T07:17:17.286075Z","event_type":"candidate_frozen","payload":{"freeze_manifest_sha256":"56a685ec43e8fd76ec47c4b68003a2f1363e18a005ec9daffbb5757eedfa88ca","selection_decision_sha256":"b67066f06591e8af7f2b6e508f8b0945808444df1fa39fe144081c2827705e55","semantic_final_label_read":false},"previous_event_sha256":"46157598c3f7bfe88a12f0f64723c9325c674fa66e049766950ae2d49efaa49f","schema":"brphm-f1-event-v1","sequence":2}
+

@@ -1,0 +1,253 @@
+{
+  "schema": "brphm-f3-method-input-ledger-v1",
+  "observed_utc": "2026-10-02T18:16:23.142770Z",
+  "finding": "F3",
+  "status": "EVIDENCE_CLOSED_320_ROUTE_CONTRACT",
+  "scope": "Read-only audit of isolated electrochemical source-gate implementation and promoted receipt; no training and no sealed/A1/B1/canonical/competition access.",
+  "original": {
+    "location": "work/paper/en/main.tex:30 and :49-59",
+    "text": [
+      "BAT contains 13 channels and RWA contains 13 channels in the temporal input used by the final receipt; windows have length 30.",
+      "For each window x_{u,t,:}, we identify the earliest window of unit u and concatenate the baseline-relative trajectory."
+    ],
+    "problem": "The paper conflates raw tensor channels with the final model representation and omits the complete optimization, projection, correction, and route-order contract."
+  },
+  "evidence": {
+    "raw_tensor_shapes": {
+      "bat": [
+        3681,
+        60,
+        4
+      ],
+      "rwa": [
+        7051,
+        30,
+        13
+      ]
+    },
+    "rmax": {
+      "bat": 150.0,
+      "rwa": 0.2
+    },
+    "actual_model_input_channels": {
+      "bat": 8,
+      "rwa": 26
+    },
+    "source_protocol": {
+      "directions": [
+        "LEO500->LEO550",
+        "LEO500->LEO700",
+        "LEO550->LEO500",
+        "LEO550->LEO700",
+        "LEO700->LEO500",
+        "LEO700->LEO550"
+      ],
+      "residual_pairs": [
+        "LEO500<->LEO550",
+        "LEO500<->LEO700",
+        "LEO550<->LEO700"
+      ],
+      "fit_scope": "one registered source orbit at a time; route chosen only from source gate",
+      "normalization": "source-window channel mean/std; relative-to-window-start channels",
+      "loss": "unit-balanced SmoothL1 on normalized RUL",
+      "ensemble": "median of three fixed seeds",
+      "route_catalog": {
+        "alpha_families": [
+          [
+            0.0,
+            0.5
+          ],
+          [
+            0.1,
+            0.5
+          ],
+          [
+            0.25,
+            0.5
+          ],
+          [
+            0.1,
+            0.25
+          ],
+          [
+            0.25,
+            0.75
+          ]
+        ],
+        "route_count": 320,
+        "selection": "source-gate-only conservative route: minimum total candidate alpha, then max alpha, residual-KS and source error; fixed before outer evaluation",
+        "selection_function": "select_conservative_route"
+      }
+    },
+    "files": [
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\rul_next_electrochemical\\temporal_tcn_source_gate.py",
+        "sha256": "0a50fe3839fdb804903cf8ece5e6191e1cb4dd9bf6b8e23938ae13ab946b1d74",
+        "bytes": 26589
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\rul_next_electrochemical\\temporal_tcn_unit_first_source_gate_20261001.py",
+        "sha256": "9c8c433adc1c592584e2467956f67432b635ac8f6dca51f22c4f03f0aaa70b20",
+        "bytes": 3648
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\rul_next_electrochemical\\temporal_tcn_unit_first_residual_centered_source_gate_20261001.py",
+        "sha256": "04ff3b984e1bbed8510986f10812bb8643dee85fc46ad16b38cf6f75395ad453",
+        "bytes": 6695
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\rul_next_electrochemical\\temporal_tcn_route_sweep_source_gate.py",
+        "sha256": "41e505e4f1ff7de050d86efe8766b64d96b0239e6436e7b0496f085ccb91cc7b",
+        "bytes": 11130
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\rul_next_electrochemical\\temporal_tcn_global_inner_route_source_gate.py",
+        "sha256": "9f82f37eb8bc02eb670de4062d4102d7aa33f8cc0ce458fd32e8ce917c6d0749",
+        "bytes": 11179
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\rul_next_electrochemical\\temporal_tcn_fine_global_inner_route_source_gate.py",
+        "sha256": "3e8d66db4f0c7adfe7a6d123be931eadf3eedf6925180434a62716311276cd90",
+        "bytes": 1925
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\repro\\runners\\temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_source_gate_20261001.py",
+        "sha256": "3f24394e16e58a49ceaef99448a690e13143356918aed45f1ea50f3d7b8dd126",
+        "bytes": 3328
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\en\\main.tex",
+        "sha256": "4dc54e2a8ccd3aa087344ae52737b5f9f1bc5bb97faa9926c1d0aa6cf5d33621",
+        "bytes": 35197
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper\\review\\candidate_v15_receipt.json",
+        "sha256": "54b628a565e47ccae95f630ec7db933b0e091aa53dc96aee3a1496ff9a3c66c7",
+        "bytes": 322307
+      }
+    ]
+  },
+  "formal_spec": {
+    "problem_definition": "For component c, each window is X_i in R^(L_c x C_c) with unit u_i, end time t_i and normalized label y_i=RUL_i/rmax_c in [0,1]. For every ordered orbit pair s != t, fit only rows with orbit s and evaluate only rows with orbit t; source and validation unit sets must be disjoint.",
+    "notation": {
+      "C_c": "raw sensor channels: BAT 4, RWA 13",
+      "L_c": "window length: BAT 60, RWA 30",
+      "C_prime": "2*C_c after concatenating standardized raw and earliest-window residual channels",
+      "a_i": "t_end_i / max(t_end_source), denominator floored at 1e-9",
+      "rmax_c": "component scale used to normalize labels and restore physical metric units",
+      "u_i": "unit identifier; earliest baseline is selected by minimum t_end within unit"
+    },
+    "representation": "mu_s and sigma_s are computed over source windows and channels; sigma is floored at 1e-6. x'_i=(x_i-mu_s)/sigma_s. Let j(u) be the source/target row with minimum t_end for unit u. z_i=concat(x'_i, x'_i - x'_{j(u),0}) in R^(L_c x 2C_c).",
+    "network": "Conv1d(2C_c -> 16, k=1), then three residual blocks with dilations 1,2,4. Each block has Conv1d(16->16,k=3,padding=dilation,dilation=dilation), GroupNorm(1,16), SiLU, Dropout(0.05), repeated twice, then residual addition. Pool last hidden state and temporal mean (32 values); concatenate age features (a,a^2,sqrt(max(a,0))) to 35 values; Linear(35->16), SiLU, Linear(16->1), sigmoid.",
+    "receptive_field": "With two k=3 convolutions at each dilation (1,2,4), the nominal temporal receptive field is 1 + 2*(k-1)*(1+2+4) = 29 samples. Symmetric padding is used; this is not a causal TCN.",
+    "training": "For each fixed seed in (17,42,73), seed Python/NumPy/PyTorch, use AdamW(lr=0.002, weight_decay=1e-4), batch=min(256,n), shuffled DataLoader with a seeded generator, 90 epochs, SmoothL1(beta=1.0 default) weighted by inverse unit window count and rescaled so weights sum to n, gradient norm clip 1.0, no early stopping. Ensemble is the elementwise median of the three seed predictions.",
+    "correction_projection_blend_order": [
+      "fit source-standardized unit-first TCN and take median seed prediction",
+      "compute source-fit correction = -0.25 * median(pred_source - y_source)",
+      "add correction to candidate prediction",
+      "apply component postprocess per unit: BAT isotonic non-increasing; RWA causal running minimum; clip to [0,1]",
+      "blend candidate and frozen control as alpha*candidate + (1-alpha)*control",
+      "apply the same component postprocess and [0,1] clipping to the blended result",
+      "restore physical units only inside metrics by multiplying prediction and truth by rmax"
+    ],
+    "route_selection": "Enumerate five alpha families crossed with 64 masks over six directed transfers (320 routes). Keep complete source-gate passes and apply the registered conservative selector; the promoted uniform-floor variant requires every target alpha to be at least 1e-5. Outer labels are not read by the selector. The historical 17^3 catalog is diagnostic-only.",
+    "pseudocode": [
+      "For component c and each source orbit s: select source windows and labels only; fit channel mean/std on source windows.",
+      "For every row, standardize raw channels and append the difference from that unit's minimum-t_end window first sample.",
+      "For seed in (17,42,73): train the fixed TCN for 90 epochs with source labels; predict source and transfer windows.",
+      "Take the elementwise median source prediction; compute delta=-0.25*median(pred_source-y_source); add delta to candidate predictions.",
+      "Project candidate predictions per unit using BAT isotonic or RWA causal running minimum; clip to [0,1].",
+      "For each target-orbit alpha route: blend candidate and frozen control, reproject, compute all source-gate metrics and residual KS.",
+      "Discard gate failures; select the lexicographic minimum of (sum alpha,max alpha,worst KS,mean RMSE,mean MAE,route_id), subject to alpha>=1e-5 for the promoted route.",
+      "Freeze route; for each outer fold, refit on the other two registered orbits, predict the held-out orbit once, blend with frozen alpha, project, and report metrics."
+    ],
+    "complexity": "For N windows, length L, raw channels C, width W=16, B=3 blocks, kernel k=3, one epoch costs O(N*L*(2CW + 2B*W^2*k)); the three-seed 90-epoch fit multiplies this by 270, and memory is O(min(256,N)*L*2C + parameters). Parameter count is 32C+5505: 5633 for BAT (C=4) and 5921 for RWA (C=13).",
+    "initialization_termination": "Initialization is PyTorch default module initialization after deterministic seed setup. Training terminates after exactly max(1, epochs)=90 epochs; no validation-based early stopping or adaptive termination is implemented.",
+    "assumptions_degenerate_cases": [
+      "Every fitted source set is nonempty and every unit has at least one window.",
+      "Input arrays are rank-3, finite, and channel-compatible; nonfinite arrays raise before fitting.",
+      "A constant source channel uses scale 1e-6; tmax uses denominator floor 1e-9.",
+      "No source/validation unit overlap is permitted; empty or incomplete direction grids raise/fail the source gate.",
+      "One-window units are valid; their monotonic projection has no adjacent pair and their upward fraction is null."
+    ]
+  },
+  "invariants": {
+    "representation": {
+      "raw_shape_bat": [
+        3681,
+        60,
+        4
+      ],
+      "raw_shape_rwa": [
+        7051,
+        30,
+        13
+      ],
+      "model_input_channels_bat": 8,
+      "model_input_channels_rwa": 26,
+      "unit_first_shape_check": "PASS",
+      "constant_shift_invariance_check": "PASS for relative channels"
+    },
+    "network_check": {
+      "bat_model_sequence_length": 60,
+      "rwa_model_sequence_length": 30,
+      "finite_unit_interval_output": "PASS",
+      "projection_monotonicity_and_bounds": "PASS"
+    },
+    "training_contract": {
+      "seeds": [
+        17,
+        42,
+        73
+      ],
+      "epochs": 90,
+      "batch_size": "min(256, n)",
+      "optimizer": "AdamW",
+      "loss": "SmoothL1(beta=1.0 default) weighted by normalized inverse unit window counts",
+      "gradient_clip_norm": 1.0,
+      "early_stopping": false
+    },
+    "route_contract": {
+      "alpha_families": [
+        [
+          0.0,
+          0.5
+        ],
+        [
+          0.1,
+          0.5
+        ],
+        [
+          0.25,
+          0.5
+        ],
+        [
+          0.1,
+          0.25
+        ],
+        [
+          0.25,
+          0.75
+        ]
+      ],
+      "mask_dimensions": 6,
+      "registered_route_count": 320,
+      "historical_fine_alpha_catalog_count": 17,
+      "historical_global_route_count": 4913,
+      "selector_outer_symbol_check": "PASS"
+    }
+  },
+  "commands": [
+    "python work/paper/repro/build_f3_method_ledger.py",
+    "python -m pytest work/rul_next_electrochemical/test_temporal_tcn_source_gate.py -q"
+  ],
+  "cross_validation": {
+    "static_source_check": "Implementation line inspection and SHA-256 binding",
+    "dynamic_invariants": "Representation shape/shift, unit weights, network output, projection, and route catalog checks passed",
+    "receipt_check": "Candidate v15 receipt independently reports BAT [3681,60,4] and RWA [7051,30,13], median3 source protocol, and the current 320-route family/mask contract; historical 4913 routes are diagnostic-only",
+    "independent_source": "The paper's Eq. (2) was compared against both unit-first implementation and receipt dimensions"
+  },
+  "confidence": "high for the implementation contract, input dimensions, and current 320-route receipt binding; medium for venue-specific supplement and metadata requirements",
+  "remaining_risk": "Historical 17-point artifacts remain in the evidence tree as development diagnostics; venue-specific space and supplement limits remain pending.",
+  "required_modification": "Preserve the component-specific tensor table, formal specification, pseudocode, and operation order in the manuscript or a hash-linked supplement; label historical 17-point artifacts diagnostic-only."
+}

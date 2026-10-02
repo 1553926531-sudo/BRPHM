@@ -1,0 +1,421 @@
+{
+  "generated_from": {
+    "temporal_tcn_unit_first_source_gate_20261001_remote.json": "aa4d62635249d12110ac67973fd1fc7101685e5ecb4cda6651a23dc272159c22",
+    "temporal_tcn_unit_first_residual_centered_source_gate_20261001_remote.json": "e84800759ae4f41a763a910a0dae691ec3ae21ae722dcb333a2a83e7109f4e58",
+    "temporal_tcn_unit_first_residual_centered_l1_source_gate_20261001_remote.json": "5c41add145be66993a58a60286e1526dd26e98fc05ffc8b5b504a20de9e0e566",
+    "temporal_tcn_unit_first_residual_centered_l1_worst_direction_source_gate_20261001_remote.json": "31c8d2b87fb8972278fc74bf0be69e832102ca8bbda33b3a7260878e943eab65",
+    "temporal_tcn_unit_first_residual_centered_rwa_leo550_floor_source_gate_20261001_remote.json": "897cc75ee291cf2fd950b5f84da4f04bbb3de6c83026aec0ed09f60da1b2da2a",
+    "temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_source_gate_20261001_remote.json": "b99ed8a3d2f168483f1072e7363fe1793a08708c16693ea6ba59e29bf03631f1",
+    "temporal_gru_source_gate_20261001_remote.json": "d6d8bedbae0af8d6f586c38ea2daf28aa15811d30ea52a75d400dc04714a4932"
+  },
+  "frozen_reference_sha256": "b708df9c448a051b8669c29789f00d282aa7907784e6f99d7e20ef1fb96b6733",
+  "reference_results": [
+    {
+      "component": "bat",
+      "test_orbit": "LEO500",
+      "source_orbits": [
+        "LEO550",
+        "LEO700"
+      ],
+      "source_windows": 2304,
+      "test_windows": 1377,
+      "source_units": 133,
+      "test_units": 70,
+      "metrics": {
+        "rmse": 1.9458075686003256,
+        "mae": 1.2965988587913477,
+        "bias": -0.08232313125408995,
+        "unit_macro_rmse": 1.323814184432918,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 1377,
+        "n_units": 70
+      },
+      "input_tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "configuration": {
+        "threshold": 139.0,
+        "low_mlp_weight": 0.2,
+        "high_mlp_weight": 0.7,
+        "postprocess": "isotonic_nonincreasing",
+        "aggregation": "median3",
+        "mlp_epochs": 169
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    },
+    {
+      "component": "bat",
+      "test_orbit": "LEO550",
+      "source_orbits": [
+        "LEO500",
+        "LEO700"
+      ],
+      "source_windows": 2503,
+      "test_windows": 1178,
+      "source_units": 135,
+      "test_units": 68,
+      "metrics": {
+        "rmse": 1.7944888327735873,
+        "mae": 1.1889396841474829,
+        "bias": -0.21439814610737423,
+        "unit_macro_rmse": 1.4281254850914227,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 1178,
+        "n_units": 68
+      },
+      "input_tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "configuration": {
+        "threshold": 139.0,
+        "low_mlp_weight": 0.2,
+        "high_mlp_weight": 0.7,
+        "postprocess": "isotonic_nonincreasing",
+        "aggregation": "median3",
+        "mlp_epochs": 169
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    },
+    {
+      "component": "bat",
+      "test_orbit": "LEO700",
+      "source_orbits": [
+        "LEO500",
+        "LEO550"
+      ],
+      "source_windows": 2555,
+      "test_windows": 1126,
+      "source_units": 138,
+      "test_units": 65,
+      "metrics": {
+        "rmse": 2.3908374358972697,
+        "mae": 1.5583111231774527,
+        "bias": 0.3802163574866207,
+        "unit_macro_rmse": 1.7772816658329789,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 1126,
+        "n_units": 65
+      },
+      "input_tensor_sha256": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+      "configuration": {
+        "threshold": 139.0,
+        "low_mlp_weight": 0.2,
+        "high_mlp_weight": 0.7,
+        "postprocess": "isotonic_nonincreasing",
+        "aggregation": "median3",
+        "mlp_epochs": 169
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO500",
+      "source_orbits": [
+        "LEO550",
+        "LEO700"
+      ],
+      "source_windows": 4699,
+      "test_windows": 2352,
+      "source_units": 162,
+      "test_units": 78,
+      "metrics": {
+        "rmse": 0.02075027835243831,
+        "mae": 0.015583504892392552,
+        "bias": -0.0001369492302338973,
+        "unit_macro_rmse": 0.01704952408527588,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 2352,
+        "n_units": 78
+      },
+      "input_tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+      "configuration": {
+        "threshold": 0.25243055555555555,
+        "low_mlp_weight": 0.7,
+        "high_mlp_weight": 1.0,
+        "postprocess": "causal_running_min",
+        "aggregation": "mean3",
+        "mlp_epochs": 61
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO550",
+      "source_orbits": [
+        "LEO500",
+        "LEO700"
+      ],
+      "source_windows": 4727,
+      "test_windows": 2324,
+      "source_units": 161,
+      "test_units": 79,
+      "metrics": {
+        "rmse": 0.02027167806043328,
+        "mae": 0.01505406402486654,
+        "bias": -0.0012460911568340793,
+        "unit_macro_rmse": 0.01576232113731409,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 2324,
+        "n_units": 79
+      },
+      "input_tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+      "configuration": {
+        "threshold": 0.25243055555555555,
+        "low_mlp_weight": 0.7,
+        "high_mlp_weight": 1.0,
+        "postprocess": "causal_running_min",
+        "aggregation": "mean3",
+        "mlp_epochs": 61
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    },
+    {
+      "component": "rwa",
+      "test_orbit": "LEO700",
+      "source_orbits": [
+        "LEO500",
+        "LEO550"
+      ],
+      "source_windows": 4676,
+      "test_windows": 2375,
+      "source_units": 157,
+      "test_units": 83,
+      "metrics": {
+        "rmse": 0.021490337094875866,
+        "mae": 0.01671229343003606,
+        "bias": 0.00173825172171254,
+        "unit_macro_rmse": 0.01827869194036116,
+        "rul_upward_fraction": 0.0,
+        "n_windows": 2375,
+        "n_units": 83
+      },
+      "input_tensor_sha256": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+      "configuration": {
+        "threshold": 0.25243055555555555,
+        "low_mlp_weight": 0.7,
+        "high_mlp_weight": 1.0,
+        "postprocess": "causal_running_min",
+        "aggregation": "mean3",
+        "mlp_epochs": 61
+      },
+      "normalization": "target tensor normalization; rmax fit metadata from source tensor"
+    }
+  ],
+  "methods": [
+    {
+      "receipt": "temporal_tcn_unit_first_source_gate_20261001_remote.json",
+      "method_id": "source_only_temporal_tcn_unit_first_relative",
+      "schema": "brphm-temporal-tcn-unit-first-source-gate-20261001",
+      "execution_complete": true,
+      "formal_eligible": true,
+      "bat_source_gate": true,
+      "rwa_source_gate": true,
+      "promotion_eligible": false,
+      "promotion_failure_count": 5,
+      "next_action": "formal_complete"
+    },
+    {
+      "receipt": "temporal_tcn_unit_first_residual_centered_source_gate_20261001_remote.json",
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered",
+      "schema": "brphm-temporal-tcn-unit-first-residual-centered-source-gate-20261001",
+      "execution_complete": true,
+      "formal_eligible": true,
+      "bat_source_gate": true,
+      "rwa_source_gate": true,
+      "promotion_eligible": false,
+      "promotion_failure_count": 4,
+      "next_action": "formal_complete"
+    },
+    {
+      "receipt": "temporal_tcn_unit_first_residual_centered_l1_source_gate_20261001_remote.json",
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_l1",
+      "schema": "brphm-temporal-tcn-unit-first-residual-centered-l1-source-gate-20261001",
+      "execution_complete": true,
+      "formal_eligible": true,
+      "bat_source_gate": true,
+      "rwa_source_gate": true,
+      "promotion_eligible": false,
+      "promotion_failure_count": 3,
+      "next_action": "formal_complete"
+    },
+    {
+      "receipt": "temporal_tcn_unit_first_residual_centered_l1_worst_direction_source_gate_20261001_remote.json",
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_l1_worst_direction",
+      "schema": "brphm-temporal-tcn-unit-first-residual-centered-l1-worst-direction-source-gate-20261001",
+      "execution_complete": true,
+      "formal_eligible": true,
+      "bat_source_gate": true,
+      "rwa_source_gate": true,
+      "promotion_eligible": false,
+      "promotion_failure_count": 1,
+      "next_action": "formal_complete"
+    },
+    {
+      "receipt": "temporal_tcn_unit_first_residual_centered_rwa_leo550_floor_source_gate_20261001_remote.json",
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_rwa_leo550_alpha_floor",
+      "schema": "brphm-temporal-tcn-unit-first-residual-centered-rwa-leo550-floor-source-gate-20261001",
+      "execution_complete": true,
+      "formal_eligible": true,
+      "bat_source_gate": true,
+      "rwa_source_gate": true,
+      "promotion_eligible": false,
+      "promotion_failure_count": 3,
+      "next_action": "formal_complete"
+    },
+    {
+      "receipt": "temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_source_gate_20261001_remote.json",
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+      "schema": "brphm-temporal-tcn-unit-first-residual-centered-uniform-alpha-floor-source-gate-20261001",
+      "execution_complete": true,
+      "formal_eligible": true,
+      "bat_source_gate": true,
+      "rwa_source_gate": true,
+      "promotion_eligible": true,
+      "promotion_failure_count": 0,
+      "next_action": "formal_complete"
+    },
+    {
+      "receipt": "temporal_gru_source_gate_20261001_remote.json",
+      "method_id": "source_only_temporal_gru_unit_weighted",
+      "schema": "brphm-temporal-gru-source-gate-20261001",
+      "execution_complete": true,
+      "formal_eligible": false,
+      "bat_source_gate": false,
+      "rwa_source_gate": false,
+      "promotion_eligible": null,
+      "promotion_failure_count": 0,
+      "next_action": "continue_with_next_candidate"
+    }
+  ],
+  "final_formal_folds": [
+    {
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+      "component": "bat",
+      "test_orbit": "LEO500",
+      "rmse": 1.9458039118294947,
+      "mae": 1.2965975128997191,
+      "rmse_delta": -3.6567708308066216e-06,
+      "mae_delta": -1.3458916285902234e-06,
+      "route_id": "target_alpha_LEO500_1e-05_LEO550_1e-05_LEO700_1e-05",
+      "outer_test_used_for_selection": false,
+      "outer_evaluated_once": true
+    },
+    {
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+      "component": "bat",
+      "test_orbit": "LEO550",
+      "rmse": 1.7944792392764701,
+      "mae": 1.1889357521418609,
+      "rmse_delta": -9.59349711715518e-06,
+      "mae_delta": -3.932005621987145e-06,
+      "route_id": "target_alpha_LEO500_1e-05_LEO550_1e-05_LEO700_1e-05",
+      "outer_test_used_for_selection": false,
+      "outer_evaluated_once": true
+    },
+    {
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+      "component": "bat",
+      "test_orbit": "LEO700",
+      "rmse": 2.3908073726542862,
+      "mae": 1.5582925316087028,
+      "rmse_delta": -3.006324298349128e-05,
+      "mae_delta": -1.859156874983725e-05,
+      "route_id": "target_alpha_LEO500_1e-05_LEO550_1e-05_LEO700_1e-05",
+      "outer_test_used_for_selection": false,
+      "outer_evaluated_once": true
+    },
+    {
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+      "component": "rwa",
+      "test_orbit": "LEO500",
+      "rmse": 0.02072511343967948,
+      "mae": 0.015582983999944547,
+      "rmse_delta": -2.5164912758831454e-05,
+      "mae_delta": -5.208924480047672e-07,
+      "route_id": "target_alpha_LEO500_0.02_LEO550_1e-05_LEO700_1e-05",
+      "outer_test_used_for_selection": false,
+      "outer_evaluated_once": true
+    },
+    {
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+      "component": "rwa",
+      "test_orbit": "LEO550",
+      "rmse": 0.020271664723422712,
+      "mae": 0.015054062536072867,
+      "rmse_delta": -1.3337010568853502e-08,
+      "mae_delta": -1.4887936734125917e-09,
+      "route_id": "target_alpha_LEO500_0.02_LEO550_1e-05_LEO700_1e-05",
+      "outer_test_used_for_selection": false,
+      "outer_evaluated_once": true
+    },
+    {
+      "method_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor",
+      "component": "rwa",
+      "test_orbit": "LEO700",
+      "rmse": 0.021490307719580153,
+      "mae": 0.016712271758414634,
+      "rmse_delta": -2.9375295713257588e-08,
+      "mae_delta": -2.167162142449608e-08,
+      "route_id": "target_alpha_LEO500_0.02_LEO550_1e-05_LEO700_1e-05",
+      "outer_test_used_for_selection": false,
+      "outer_evaluated_once": true
+    }
+  ],
+  "final_provenance": {
+    "canonical_data_modified": false,
+    "competition_line_modified": false,
+    "sealed_holdout_read": false,
+    "a1_b1_source_heldout_read": false,
+    "holdout_used_for_training_or_selection": false,
+    "outer_test_used_for_selection": false,
+    "outer_evaluated_once": true,
+    "population_generalization_verified": false
+  },
+  "final_source_protocol": {
+    "directions": [
+      "LEO500->LEO550",
+      "LEO500->LEO700",
+      "LEO550->LEO500",
+      "LEO550->LEO700",
+      "LEO700->LEO500",
+      "LEO700->LEO550"
+    ],
+    "residual_pairs": [
+      "LEO500<->LEO550",
+      "LEO500<->LEO700",
+      "LEO550<->LEO700"
+    ],
+    "fit_scope": "one source orbit per transfer; one globally consistent target-orbit alpha route chosen from source-only directions",
+    "normalization": "source-window channel mean/std; relative-to-window-start channels",
+    "loss": "unit-balanced SmoothL1 on normalized RUL",
+    "ensemble": "median of three fixed seeds",
+    "alpha_catalog": [
+      0.0,
+      1e-05,
+      5e-05,
+      0.0001,
+      0.0005,
+      0.001,
+      0.002,
+      0.005,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.15,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "route_count": 4913,
+    "selection": "source-gate-only uniform target-orbit alpha floor >= 1e-5 for BAT and RWA; then minimum total alpha and existing source-only tie-breaks",
+    "uniform_alpha_floor": 1e-05
+  },
+  "final_route_by_component": {
+    "bat": {
+      "route_id": "target_alpha_LEO500_1e-05_LEO550_1e-05_LEO700_1e-05",
+      "selected_candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor"
+    },
+    "rwa": {
+      "route_id": "target_alpha_LEO500_0.02_LEO550_1e-05_LEO700_1e-05",
+      "selected_candidate_id": "source_only_temporal_tcn_unit_first_relative_residual_centered_uniform_alpha_floor"
+    }
+  }
+}
