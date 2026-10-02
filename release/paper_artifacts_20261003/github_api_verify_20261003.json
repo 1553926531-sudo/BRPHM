@@ -1,47 +1,47 @@
 {
-  "verified_at_utc": "2026-10-02T21:12:06.897288+00:00",
+  "verified_at_utc": "2026-10-02T21:22:39.205786+00:00",
   "repository": "https://github.com/1553926531-sudo/BRPHM",
   "branch": "rul-space-paper-20261001",
-  "commit_sha": "3ceeec01f7fd2bf7bcf58164b98f99c55341665c",
-  "parent_sha": "cb29448a7afa7518eb451b8d9e633f86e434ff35",
-  "commit_message": "Refresh paper artifacts after API verification\n\nReplace all four BRPHM paper release files with the rebuilt 20261003 package whose local evidence ledger records the verified release history.",
-  "api_url": "https://api.github.com/repos/1553926531-sudo/BRPHM/commits/rul-space-paper-20261001",
+  "commit_sha": "894f8c044006138d4bb28f34c4e4525a0f21bd06",
+  "parent_sha": "56c780ea7db40eb037434e12a5864e39540b5be0",
+  "commit_message": "Publish audited paper artifacts 20261003",
+  "api_url": "https://api.github.com/repos/1553926531-sudo/BRPHM/commits/894f8c044006138d4bb28f34c4e4525a0f21bd06",
   "files": [
     {
       "path": "release/paper_artifacts_20261003/paper_manuscript_20261003.tar.gz",
-      "commit_blob_sha": "bfb56a3a2638220d447f51a8042ce32d7ec112a3",
-      "computed_git_blob_sha": "bfb56a3a2638220d447f51a8042ce32d7ec112a3",
+      "commit_blob_sha": "a785b703ab697497380734a8480ef9eefe5d0fc1",
+      "computed_git_blob_sha": "a785b703ab697497380734a8480ef9eefe5d0fc1",
       "blob_match": true,
-      "local_bytes": 915473,
-      "local_sha256": "30e9d26123f5bd9482d0128c91de51e9c47f9dd306d79044d99c25ab60f8125b",
-      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/3ceeec01f7fd2bf7bcf58164b98f99c55341665c/release%2Fpaper_artifacts_20261003%2Fpaper_manuscript_20261003.tar.gz"
+      "local_bytes": 915467,
+      "local_sha256": "93e81b46b7ee6210ec5b06ba940e2404c30704208db8fb27984a18b3db5bb868",
+      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/894f8c044006138d4bb28f34c4e4525a0f21bd06/release%2Fpaper_artifacts_20261003%2Fpaper_manuscript_20261003.tar.gz"
     },
     {
       "path": "release/paper_artifacts_20261003/paper_reproduction_20261003.tar.gz",
-      "commit_blob_sha": "2cf3b27f541bcfbc0ebdc2a02b07d5a05d3f5251",
-      "computed_git_blob_sha": "2cf3b27f541bcfbc0ebdc2a02b07d5a05d3f5251",
+      "commit_blob_sha": "fb49fe95ce6831f7ede980e8fda41868f1b06590",
+      "computed_git_blob_sha": "fb49fe95ce6831f7ede980e8fda41868f1b06590",
       "blob_match": true,
-      "local_bytes": 2357433,
-      "local_sha256": "52955e01dfe56ad928b64bea9c3d6793bc4e00582281e32f531ea88d8f1edf50",
-      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/3ceeec01f7fd2bf7bcf58164b98f99c55341665c/release%2Fpaper_artifacts_20261003%2Fpaper_reproduction_20261003.tar.gz"
+      "local_bytes": 2357435,
+      "local_sha256": "ae4aa2998744c7f45576a47e196c4ff27205f8c843e7bf3d76866fd7038a9893",
+      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/894f8c044006138d4bb28f34c4e4525a0f21bd06/release%2Fpaper_artifacts_20261003%2Fpaper_reproduction_20261003.tar.gz"
     },
     {
       "path": "release/paper_artifacts_20261003/paper_review_evidence_20261003.tar.gz",
-      "commit_blob_sha": "85966db354b4f521fb55bd817db8a0ce31b948a9",
-      "computed_git_blob_sha": "85966db354b4f521fb55bd817db8a0ce31b948a9",
+      "commit_blob_sha": "d48c2fe442cb8bab539570eb842e92ee17a77d50",
+      "computed_git_blob_sha": "d48c2fe442cb8bab539570eb842e92ee17a77d50",
       "blob_match": true,
-      "local_bytes": 7530749,
-      "local_sha256": "ba1a22baf67e9dc07fef6ed31215c53dbe52da15640172eb809fe79a6d36c2e0",
-      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/3ceeec01f7fd2bf7bcf58164b98f99c55341665c/release%2Fpaper_artifacts_20261003%2Fpaper_review_evidence_20261003.tar.gz"
+      "local_bytes": 7530748,
+      "local_sha256": "779495f1b96d443775fcad8ec21b52bafc935425480a4ab991a71baef6688a46",
+      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/894f8c044006138d4bb28f34c4e4525a0f21bd06/release%2Fpaper_artifacts_20261003%2Fpaper_review_evidence_20261003.tar.gz"
     },
     {
       "path": "release/paper_artifacts_20261003/upload_manifest.json",
-      "commit_blob_sha": "410f56c9e3c4e39e7ac27aef69bb301d8886bc48",
-      "computed_git_blob_sha": "410f56c9e3c4e39e7ac27aef69bb301d8886bc48",
+      "commit_blob_sha": "adb815ef12ef8c930ddb8e1531428eb4edf9f4d2",
+      "computed_git_blob_sha": "adb815ef12ef8c930ddb8e1531428eb4edf9f4d2",
       "blob_match": true,
       "local_bytes": 1366,
-      "local_sha256": "7d1fc357ec3789d9a549facc6f4007d78ff59ebb79526b78cbfb383428308671",
-      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/3ceeec01f7fd2bf7bcf58164b98f99c55341665c/release%2Fpaper_artifacts_20261003%2Fupload_manifest.json"
+      "local_sha256": "49b17af8d9e52d0ad90ea5efa8a8c2976a2dac1b8811445134ce29d1bfdcb005",
+      "raw_url": "https://github.com/1553926531-sudo/BRPHM/raw/894f8c044006138d4bb28f34c4e4525a0f21bd06/release%2Fpaper_artifacts_20261003%2Fupload_manifest.json"
     }
   ],
   "all_blob_match": true,
