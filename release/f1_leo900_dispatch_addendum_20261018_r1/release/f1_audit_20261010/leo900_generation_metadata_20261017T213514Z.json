@@ -1,0 +1,182 @@
+{
+  "capture_script_sha256": "092436282a00aa4e89aac3f56c2b521e05b6ecdb14febf7d74fba7b6efb01877",
+  "code_sha256": {
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/partition_builder.py": "139bd9d8b53b86c3eaeff7b1d9dc8489575431a2609bc532b777a22e7069dd58",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/partition_builder_test.py": "76837a84cfdd51ad2001f64b42db993c732a937927ba5257f7fcf987c75bc52d",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/preparation_builder.py": "be507a56f181048ba64c6eb18bb75ff95ab0d1afb8ac62dd35feb6b2237d1fda",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/preparation_builder_test.py": "6fe32b3d51ba2574978293bfe2691f8908832c0e8fdedad004fcc6399ea55bf8",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/protocol_inputs/f1_clean_final_test_20261001_v2.py": "7cf9be5fc5d19859955f71384afcfd27533dbd098369e0767fac73c0715f2482",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/protocol_inputs/f1_leo900_partition_builder_20261017.py": "139bd9d8b53b86c3eaeff7b1d9dc8489575431a2609bc532b777a22e7069dd58",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/protocol_inputs/f1_leo900_plain_l1_clean_final_test_20261017.py": "f550bd10e7a1575fa28f24de4b2426ff5713dc884fabfbf144a24a2495334f32",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/protocol_inputs/f1_prepare_leo900_run_20261017.py": "be507a56f181048ba64c6eb18bb75ff95ab0d1afb8ac62dd35feb6b2237d1fda",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/protocol_inputs/temporal_tcn_unit_first_residual_centered_l1_source_gate_20261001.py": "0ff29f22a8cb99eb35d7bf1ea2b99cd3c58c37f74d6e475e1c14f386f59515a0",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/protocol_inputs/test_f1_leo900_partition_builder_20261017.py": "76837a84cfdd51ad2001f64b42db993c732a937927ba5257f7fcf987c75bc52d",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/protocol_inputs/test_f1_prepare_leo900_run_20261017.py": "6fe32b3d51ba2574978293bfe2691f8908832c0e8fdedad004fcc6399ea55bf8",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/protocol_inputs/verify_f1_leo900_preparation_20261017.py": "6a3d673a71c9b257ecad186c34629df97fb60f330862ff27e565b8c55764127e"
+  },
+  "counts": {
+    "bat": 26,
+    "rwa": 0
+  },
+  "disk_free_bytes": 293757116416,
+  "files": [
+    {
+      "mtime_ns": 1792240953498824205,
+      "name": "BAT_LEO900_B00_H0_L2_S1304.mat",
+      "size": 3584256
+    },
+    {
+      "mtime_ns": 1792251072000810231,
+      "name": "BAT_LEO900_B00_H0_L2_S1309.mat",
+      "size": 2957515
+    },
+    {
+      "mtime_ns": 1792251799077600950,
+      "name": "BAT_LEO900_B00_H0_L2_S1311.mat",
+      "size": 2084013
+    },
+    {
+      "mtime_ns": 1792272399658032641,
+      "name": "BAT_LEO900_B00_H0_L3_S1310.mat",
+      "size": 1975190
+    },
+    {
+      "mtime_ns": 1792254436478224260,
+      "name": "BAT_LEO900_B00_H1_L1_S1305.mat",
+      "size": 2579080
+    },
+    {
+      "mtime_ns": 1792262355946332425,
+      "name": "BAT_LEO900_B00_H1_L3_S1307.mat",
+      "size": 4046360
+    },
+    {
+      "mtime_ns": 1792265136835283358,
+      "name": "BAT_LEO900_B30_H0_L1_S1320.mat",
+      "size": 1674163
+    },
+    {
+      "mtime_ns": 1792266921382017379,
+      "name": "BAT_LEO900_B30_H0_L1_S1322.mat",
+      "size": 1874396
+    },
+    {
+      "mtime_ns": 1792269294157318070,
+      "name": "BAT_LEO900_B30_H0_L1_S1324.mat",
+      "size": 1500609
+    },
+    {
+      "mtime_ns": 1792241206293932405,
+      "name": "BAT_LEO900_B30_H0_L2_S1316.mat",
+      "size": 3659218
+    },
+    {
+      "mtime_ns": 1792255802713434021,
+      "name": "BAT_LEO900_B30_H0_L2_S1321.mat",
+      "size": 2474072
+    },
+    {
+      "mtime_ns": 1792263919277138849,
+      "name": "BAT_LEO900_B30_H0_L2_S1323.mat",
+      "size": 1974976
+    },
+    {
+      "mtime_ns": 1792248500251717070,
+      "name": "BAT_LEO900_B30_H0_L2_S1325.mat",
+      "size": 4603209
+    },
+    {
+      "mtime_ns": 1792250184323514725,
+      "name": "BAT_LEO900_B30_H1_L1_S1318.mat",
+      "size": 5290581
+    },
+    {
+      "mtime_ns": 1792260786474488060,
+      "name": "BAT_LEO900_B30_H1_L2_S1326.mat",
+      "size": 3010357
+    },
+    {
+      "mtime_ns": 1792260575637640759,
+      "name": "BAT_LEO900_B30_H1_L2_S1330.mat",
+      "size": 3655718
+    },
+    {
+      "mtime_ns": 1792267375819886063,
+      "name": "BAT_LEO900_B30_H2_L2_S1329.mat",
+      "size": 3775296
+    },
+    {
+      "mtime_ns": 1792268101820781580,
+      "name": "BAT_LEO900_B60_H0_L1_S1335.mat",
+      "size": 1759748
+    },
+    {
+      "mtime_ns": 1792264618086151559,
+      "name": "BAT_LEO900_B60_H0_L1_S1336.mat",
+      "size": 1825697
+    },
+    {
+      "mtime_ns": 1792261643283008488,
+      "name": "BAT_LEO900_B60_H0_L1_S1338.mat",
+      "size": 1963773
+    },
+    {
+      "mtime_ns": 1792244838731411095,
+      "name": "BAT_LEO900_B60_H0_L1_S1345.mat",
+      "size": 5514973
+    },
+    {
+      "mtime_ns": 1792271093692349769,
+      "name": "BAT_LEO900_B60_H0_L3_S1344.mat",
+      "size": 2287272
+    },
+    {
+      "mtime_ns": 1792246252324881833,
+      "name": "BAT_LEO900_B60_H1_L1_S1339.mat",
+      "size": 6085978
+    },
+    {
+      "mtime_ns": 1792254841232948505,
+      "name": "BAT_LEO900_B60_H1_L2_S1342.mat",
+      "size": 5248882
+    },
+    {
+      "mtime_ns": 1792258447824052089,
+      "name": "BAT_LEO900_B60_H1_L2_S1343.mat",
+      "size": 4342683
+    },
+    {
+      "mtime_ns": 1792270937343309883,
+      "name": "BAT_LEO900_B60_H2_L1_S1334.mat",
+      "size": 3440748
+    }
+  ],
+  "logs": {
+    "matlab_stderr.log": {
+      "mtime_ns": 1792234880947818124,
+      "size": 0
+    },
+    "matlab_stdout.log": {
+      "mtime_ns": 1792272399666032640,
+      "size": 9004
+    },
+    "start_utc.txt": {
+      "mtime_ns": 1792234880946818143,
+      "size": 21,
+      "value": "2026-10-17T11:01:20Z"
+    }
+  },
+  "mat_contents_read": false,
+  "memory": {
+    "MemAvailable": "123203436 kB",
+    "MemTotal": "263688948 kB",
+    "SwapFree": "785860 kB"
+  },
+  "observed_utc": "2026-10-17T21:35:14.488498+00:00",
+  "processes": "    PID    PPID  NI %CPU %MEM     ELAPSED COMMAND\n4138426 4138417  15  0.4  1.1    10:33:54 MATLAB\n4141867 4138426  15 99.7  1.3    10:32:00 MATLAB\n4141869 4138426  15 99.7  1.3    10:32:00 MATLAB\n4141871 4138426  15 99.7  1.3    10:32:00 MATLAB\n4141873 4138426  15 99.7  1.3    10:32:00 MATLAB\n",
+  "remote_writes": false,
+  "root": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1",
+  "schema": "brphm-f1-leo900-generation-metadata-progress-v1",
+  "semantic_labels_read": false,
+  "simulation_or_configuration_modified": false
+}

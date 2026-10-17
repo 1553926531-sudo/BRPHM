@@ -1,0 +1,184 @@
+{
+  "artifact_sha256": {
+    "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json": "7ace7afcbb8756f681134975fc999865745086d8b62db751977c73a138de2f29",
+    "release/f1_audit_20261010/append_f1_leo900_preflight_r9_20261018.py": "bd5f74b59cff75a3bac0f280d26f96df99c0d0784a01cfd9303bb8f47f9372b8",
+    "release/f1_audit_20261010/deploy_leo900_prediction_summary_audit_20261018_r1.py": "a06aabdb79202c90ba579713a01eba27604c01e8a12104e1bf5b70c3df76288c",
+    "release/f1_audit_20261010/leo900_audit_addendum_publication_20261017T210327Z.json": "887d833e37c1d499180a0eda9459475de54af1186d7baaa4c2b143929c1018a7",
+    "release/f1_audit_20261010/leo900_continuation_observation_20261017T211439Z.json": "6dc96dbfedbbb5ca5946ad15ccc3b97733755b660b22f94a5c5d8a3afe769ace",
+    "release/f1_audit_20261010/leo900_generation_metadata_20261017T211439Z.json": "2deb91e8032abf7884f5e353a7381265fbd9a18f3a22e07294833e289c987c27",
+    "release/f1_audit_20261010/leo900_prediction_summary_audit_20261018.py": "8c2fbabdcedf8a3263a951baa3114415687a970446666f1e87e9b3af09450c2c",
+    "release/f1_audit_20261010/leo900_prediction_summary_audit_deployment_20261017T211424Z.json": "1e79319f2809660973b5b8549afda1b7bc7fe3055624bbf6b3d3ad9bd6cee3d8",
+    "release/f1_audit_20261010/leo900_statistics_numerical_audit_20261018.py": "105618a87df69fd750c70f3388e93c70af9d33ec46e60cfe73677dd8bc55f179",
+    "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+    "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r1.json": "0046cea59c053f5fbe4f46ab7693db052c5f6ec4e3e7cca10b524318bbf4b00b",
+    "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r2.json": "e541a2c36f011dde2ebd5d354bd589873311edc569b4ca1f9eb11c224e797038",
+    "release/f1_audit_20261010/prediction_summary_audit_red_20261018_r1.json": "7ccb2e4218384f16d512f3dc7575c854a5a482ac8c098ea002daa636ee84317d",
+    "release/f1_audit_20261010/test_leo900_prediction_summary_audit_20261018.py": "7d195a43649c5c615f223b395c8ed501d55988eccd3d2c2b5d9edb0759b68411"
+  },
+  "created_utc": "2026-10-17T21:15:57.666034+00:00",
+  "f1_closed": false,
+  "findings": [
+    {
+      "command": "python -B -m unittest -v test_leo900_prediction_summary_audit_20261018; after full terminal only, invoke the deployed read-only CLI with a new output name.",
+      "confidence": "High for the stated implementation, synthetic tests, byte identity and observations; no final scientific conclusion follows before complete terminal review.",
+      "cross_validation": "Interleaved unequal-size units have independently hand-derived physical errors: candidate A SSE16/SAE4 and B SSE56/SAE12, pooled RMSEsqrt(14.4)/MAE3.2; control pooled RMSEsqrt8/MAE2.4. A rehashed contradictory seed metric passes structural binding but is rejected here. These are independent calculations, not independent research data.",
+      "date": "2026-10-17T21:15:57.666034+00:00",
+      "evidence": [
+        "release/f1_audit_20261010/leo900_prediction_summary_audit_20261018.py",
+        "release/f1_audit_20261010/test_leo900_prediction_summary_audit_20261018.py",
+        "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py",
+        "release/f1_audit_20261010/leo900_statistics_numerical_audit_20261018.py",
+        "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json"
+      ],
+      "finding": "F1",
+      "hash": "Full artifact SHA256 values appear in artifact_sha256; the original review is separately hash-bound.",
+      "id": "F1-R9-01",
+      "location": "Prediction NPZ -> formal metrics and saved unit sufficient summaries",
+      "modification": "Add an independent read-only scalar-error/math.fsum auditor of original single-pass predictions. It first requires R2 complete terminal verification, then checks pooled/unit errors, physical scale, label division dtype, route alpha, float32 blend and constituent descriptions without invoking model, evaluator or statistical producer.",
+      "original": "R8 explicitly retained saved sufficient summaries as an input assumption of its independent bootstrap verifier.",
+      "problem": "Hash-linked internally consistent unit errors may still disagree with the original saved predictions. An independent numerical bootstrap check alone would not detect that upstream contradiction.",
+      "remaining_risk": "Does not independently decode raw MAT/PT, reconstruct label eligibility, or reproduce projection/centering/model predictions. Saved prediction arrays and their row metadata remain inputs. Passing these checks cannot establish population generalization.",
+      "result": "Prepared verifier covers projected/candidate-only/control-only pooled RMSE/MAE/bias, unit-macro RMSE, upward fraction, unit/window membership, per-unit SSE/SAE/RMSE/MAE, saved deltas/relative changes and three seed constituent descriptions. Alternative descriptive sums allow64 ULP; the original1e-12 gate remains exact and unchanged.",
+      "source": "Review F1; saved registered prediction/statistical contracts; independent scalar arithmetic; hand-derived artificial cases; hash-bound local/Rack receipts. Independence is qualified in cross_validation.",
+      "status": "PREDICTION-SUMMARY VERIFIER PREPARED; REAL FINAL READ DEFERRED"
+    },
+    {
+      "command": "Recorded python -B -m unittest -v test_leo900_prediction_summary_audit_20261018, numerical libraries constrained to one thread.",
+      "confidence": "High for the stated implementation, synthetic tests, byte identity and observations; no final scientific conclusion follows before complete terminal review.",
+      "cross_validation": "Hand-derived arithmetic provides an oracle separate from the implementation. Synthetic ProductionFixture exercises complete R2 provenance binding before independent scalar checking. No real final data were used by tests.",
+      "date": "2026-10-17T21:15:57.666034+00:00",
+      "evidence": [
+        "release/f1_audit_20261010/prediction_summary_audit_red_20261018_r1.json",
+        "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r1.json",
+        "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r2.json",
+        "release/f1_audit_20261010/test_leo900_prediction_summary_audit_20261018.py",
+        "release/f1_audit_20261010/leo900_prediction_summary_audit_20261018.py"
+      ],
+      "finding": "F1",
+      "hash": "Full artifact SHA256 values appear in artifact_sha256; the original review is separately hash-bound.",
+      "id": "F1-R9-02",
+      "location": "Missing-implementation RED, first GREEN attempt and corrected synthetic fixture",
+      "modification": "Preserve the genuine missing-implementation RED and failed first GREEN receipt. Correct only the artificial fixture statistics rmax to3, then run the full12-test suite with unchanged implementation and source hashes recorded.",
+      "original": "Tests must reach the intended arithmetic contract and preserve failed attempts.",
+      "problem": "The first12-test GREEN attempt had11 passes and1 failure: its label-division fixture changed layout rmax8->3 but left statistics rmax8, so validation correctly stopped at the scale mismatch before testing dtype arithmetic.",
+      "remaining_risk": "The corrected fixture failure was not a missing-implementation RED. Tests do not exhaust all possible inputs or validate the actual final scientific result.",
+      "result": "Local12/12 pass in19.636s, sources_unchanged=true. Tests reject wrong summaries, relabelled rows, wrong physical scale, NaN/shape mismatch, duplicate NPZ members, wrong alpha/blend/dtype and contradictory seed metrics. Pending-terminal witness leaves poisoned predictions unread; complete synthetic production-shaped chain remains byte-identical.",
+      "source": "Review F1; saved registered prediction/statistical contracts; independent scalar arithmetic; hand-derived artificial cases; hash-bound local/Rack receipts. Independence is qualified in cross_validation.",
+      "status": "12/12 LOCAL; RED AND FAILED ATTEMPT RETAINED"
+    },
+    {
+      "command": "python -B release/f1_audit_20261010/deploy_leo900_prediction_summary_audit_20261018_r1.py (already executed once; never repeat over this directory).",
+      "confidence": "High for the stated implementation, synthetic tests, byte identity and observations; no final scientific conclusion follows before complete terminal review.",
+      "cross_validation": "Local GREEN source hashes agree with transfer records and deployed-file hashes. Windows/Python3.12 and Linux/Python3.10 run the same12 artificial cases successfully. This establishes portability of the tested code, not independent model replication.",
+      "date": "2026-10-17T21:15:57.666034+00:00",
+      "evidence": [
+        "release/f1_audit_20261010/leo900_prediction_summary_audit_deployment_20261017T211424Z.json",
+        "release/f1_audit_20261010/deploy_leo900_prediction_summary_audit_20261018_r1.py",
+        "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r2.json",
+        "release/f1_audit_20261010/leo900_prediction_summary_audit_20261018.py",
+        "release/f1_audit_20261010/test_leo900_prediction_summary_audit_20261018.py"
+      ],
+      "finding": "F1",
+      "hash": "Full artifact SHA256 values appear in artifact_sha256; the original review is separately hash-bound.",
+      "id": "F1-R9-03",
+      "location": "Rack prediction_summary_audit_support_20261018_r1 deployment",
+      "modification": "Deploy six small source/receipt files once to a new exclusive support directory; run only artificial tests and the fixed read-only audit on CPU4/nice15 with one numerical thread.",
+      "original": "Existing one-shot final execution and simulation must be preserved.",
+      "problem": "Local passing tests alone do not establish deployed code identity or behavior on Rack.",
+      "remaining_risk": "Real saved prediction/summary agreement remains to be checked after terminal. Do not repeat evaluation or alter the frozen candidate after observing final data.",
+      "result": "Rack12/12 passes.144218 raw code/receipt bytes uploaded;0 tensor bytes. Preflight validates156 registered inputs and defers prediction decoding until complete terminal. Audit SHA256 c1190d3ebd7b87184b102676fc05bd31f50712d883191cb6109b52f9b77c03ac. Candidate, controller and simulation unchanged.",
+      "source": "Review F1; saved registered prediction/statistical contracts; independent scalar arithmetic; hand-derived artificial cases; hash-bound local/Rack receipts. Independence is qualified in cross_validation.",
+      "status": "DEPLOYED; REAL PREDICTION AUDIT AWAITS COMPLETE TERMINAL"
+    },
+    {
+      "command": "Read-only metadata/controller captures at2026-10-17T21:14:39Z; SHA256-check main.tex/main.pdf and both existing package manifests.",
+      "confidence": "High for the stated implementation, synthetic tests, byte identity and observations; no final scientific conclusion follows before complete terminal review.",
+      "cross_validation": "File metadata, OS process observations and controller event chain agree at capture time but share one host. GitHub readback corroborates the published bytes by server response time; it is neither historical non-access proof nor immutable notarization.",
+      "date": "2026-10-17T21:15:57.666034+00:00",
+      "evidence": [
+        "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+        "release/f1_audit_20261010/leo900_generation_metadata_20261017T211439Z.json",
+        "release/f1_audit_20261010/leo900_continuation_observation_20261017T211439Z.json",
+        "release/f1_audit_20261010/leo900_audit_addendum_publication_20261017T210327Z.json",
+        "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json"
+      ],
+      "finding": "F1",
+      "hash": "Full artifact SHA256 values appear in artifact_sha256; the original review is separately hash-bound.",
+      "id": "F1-R9-04",
+      "location": "F1 disposition, continuing simulation, frozen manuscript and public audit addendum",
+      "modification": "Maintain F1 OPEN and goal active, preserve original commitments/manuscript and append this evidence. Historical outer counts5,4,3,1,3,0 and LEO800 remain development/diagnostic evidence. Preserve the running simulation and existing automatic controller.",
+      "original": "Review F1 requires an untouched final test after development used outer feedback; F1 must precede substantive F2-F10/manuscript changes.",
+      "problem": "Auxiliary tests, public audit publication and normal process activity cannot close F1. Earlier15/15-closed wording in the retained goal objective is obsolete.",
+      "remaining_risk": "Remaining generated members, seal/freeze/evaluation/statistics chronology, original gate, physical effects and uncertainty require actual terminal audit. One held-out orbit and ensemble constituents cannot establish independent multi-orbit replication.",
+      "result": "BAT25/48,RWA0/48 at this observation; four MATLAB workers near99.7%CPU, no MATLAB stderr. Controller616411 waiting, two-event hash chain valid. Frozen file hashes unchanged. Earlier R5-R8 audit addendum published and read back in BRPHM commit b8ad940e5779692f25643cdaa2fac346e4385760.",
+      "source": "Review F1; saved registered prediction/statistical contracts; independent scalar arithmetic; hand-derived artificial cases; hash-bound local/Rack receipts. Independence is qualified in cross_validation.",
+      "status": "F1 OPEN; GOAL ACTIVE; SUBSTANTIVE MANUSCRIPT/F2-F10 FREEZE"
+    }
+  ],
+  "first_read_only_prediction_audit": {
+    "command": [
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/leo900_prediction_summary_audit_20261018.py",
+      "--output",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/first_read_only_prediction_summary_audit.json"
+    ],
+    "exit_code": 0,
+    "record": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/first_read_only_prediction_summary_audit.json",
+      "sha256": "c1190d3ebd7b87184b102676fc05bd31f50712d883191cb6109b52f9b77c03ac",
+      "size": 579
+    },
+    "report": {
+      "created_utc": "2026-10-17T21:14:24.057449+00:00",
+      "f1_closed": false,
+      "final_truth_or_prediction_arrays_decoded": false,
+      "prediction_summary_audit_code_sha256": "8c2fbabdcedf8a3263a951baa3114415687a970446666f1e87e9b3af09450c2c",
+      "prediction_summary_status": "DEFERRED_UNTIL_COMPLETE_TERMINAL",
+      "registered_inputs_verified": 156,
+      "runtime": {
+        "numpy": "1.26.4",
+        "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.35",
+        "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]"
+      },
+      "scientific_success_claimed": false,
+      "semantic_final_labels_read_by_auditor": false,
+      "status": "PENDING_TERMINAL"
+    },
+    "stderr": "",
+    "stdout": "{\"f1_closed\":false,\"output\":\"/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/first_read_only_prediction_summary_audit.json\",\"sha256\":\"c1190d3ebd7b87184b102676fc05bd31f50712d883191cb6109b52f9b77c03ac\",\"status\":\"PENDING_TERMINAL\"}\n"
+  },
+  "frozen_artifact_sha256": {
+    "release/f1_leo900_audit_addendum_20261018_r1/SHA256_MANIFEST.json": "7101789f22c45000d8d6c5e3476e7e7f40af26125d45b9363afeb4aff1b39b2e",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/SHA256_MANIFEST.json": "7a489927d3cb6001fff91b7b9af77d9da0468f6721a053fa90be8d8025ca9490",
+    "research/rul_space_paper_20261001/en/main.pdf": "468338bb904734cd49649680e37b8ce447a447e46e45e7083a5b3bfa13460750",
+    "research/rul_space_paper_20261001/en/main.tex": "4e1c2c1b3f1fedbb902af7d1a3415e8730d39d2702fbf5ad921a0ae6d522665b"
+  },
+  "goal_status": "active",
+  "manuscript_and_f2_f10_substantive_edits_frozen": true,
+  "new_support_directory": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1",
+  "next_required": [
+    "Preserve the existing simulation/controller through normal terminal.",
+    "At complete terminal run R2, numerical-statistics and prediction-summary auditors to new output names; never repeat evaluation.",
+    "Audit96 generated members versus positive-window evaluated subset, freeze/access chronology and original precision gate.",
+    "Assess registered statistics, physical-unit effect size and uncertainty before deciding F1.",
+    "After actual F1 closure, resume F2-F10 and all final deliverables; auxiliary tests cannot complete the goal."
+  ],
+  "previous_r8_sha256": "7ace7afcbb8756f681134975fc999865745086d8b62db751977c73a138de2f29",
+  "protected_boundaries": {
+    "BRPHM-preview": "no access or modification",
+    "IEEE": "no upload/submission/email/contact",
+    "ModelScope": "read-only; not accessed here",
+    "controller": "no duplicate start/freeze/evaluate",
+    "simulation": "no stop/restart/copy/configuration modification"
+  },
+  "review_report": {
+    "lines": "19-25",
+    "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-01\\ni-d\\outputs\\IEEE_Review_Report_English.md",
+    "sha256": "9d75bf227ae883552af326352f3586bc23b84ebaf4c73d2a7fa4d1a26cfc8be5"
+  },
+  "schema": "brphm-f1-additive-pre-final-evidence-r9",
+  "scientific_success_claimed": false,
+  "status": "F1 OPEN"
+}

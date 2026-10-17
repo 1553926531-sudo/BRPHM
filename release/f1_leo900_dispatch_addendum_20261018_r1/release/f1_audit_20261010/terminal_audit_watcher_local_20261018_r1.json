@@ -1,0 +1,17 @@
+{
+  "code_sha256": {
+    "leo900_terminal_audit_watcher_20261018_r1.py": "a5f309edd78d0b902ce62a06a0965e7d9ddc67a8328e64ea046d13cf34194fc7",
+    "test_leo900_terminal_audit_watcher_20261018_r1.py": "cbdb6ec4f4a577f3eea296ec55337a6814fbdf6b5c649b2b3dc05df54c91f393"
+  },
+  "ended_utc": "2026-10-17T21:27:53.779646+00:00",
+  "exit_code": 0,
+  "real_final_data_read": false,
+  "runtime": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "schema": "brphm-f1-terminal-audit-watcher-local-tests-v1",
+  "sources_unchanged": true,
+  "stage": "GREEN_ATTEMPT",
+  "started_utc": "2026-10-17T21:27:48.728969+00:00",
+  "stderr": "test_controller_drift_after_first_audit_stops_later_stages (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests.test_controller_drift_after_first_audit_stops_later_stages) ... ok\ntest_duplicate_start_cannot_repeat_any_audit (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests.test_duplicate_start_cannot_repeat_any_audit) ... ok\ntest_error_controller_preserves_evidence_without_running_an_audit (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests.test_error_controller_preserves_evidence_without_running_an_audit) ... ok\ntest_existing_report_is_preserved_and_blocks_first_stage (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests.test_existing_report_is_preserved_and_blocks_first_stage) ... ok\ntest_exit_zero_with_pending_report_cannot_advance (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests.test_exit_zero_with_pending_report_cannot_advance) ... ok\ntest_input_drift_while_waiting_blocks_all_audits (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests.test_input_drift_while_waiting_blocks_all_audits) ... ok\ntest_nonzero_exit_stops_chain_without_retry (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests.test_nonzero_exit_stops_chain_without_retry) ... ok\ntest_pending_check_creates_nothing_and_does_not_invoke_auditors (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests.test_pending_check_creates_nothing_and_does_not_invoke_auditors) ... ok\ntest_wait_then_runs_three_audits_once_in_order_without_claiming_f1 (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests.test_wait_then_runs_three_audits_once_in_order_without_claiming_f1) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 4.547s\n\nOK\n",
+  "stdout": "",
+  "test_count": 9
+}

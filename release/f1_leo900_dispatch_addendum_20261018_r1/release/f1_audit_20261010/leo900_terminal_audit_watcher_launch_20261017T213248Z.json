@@ -1,0 +1,108 @@
+{
+  "deployment_receipt_sha256": "7ad1cc4ec56a0289606bd49823448d818b0f6ac26ad241994c99c69b64bf126e",
+  "ended_utc": "2026-10-17T21:32:48.222555+00:00",
+  "launch_intent": {
+    "audit_only": true,
+    "automatic_retry_permitted": false,
+    "candidate_modified": false,
+    "command": [
+      "/usr/bin/taskset",
+      "-c",
+      "4",
+      "/usr/bin/nice",
+      "-n",
+      "15",
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/leo900_terminal_audit_watcher_20261018_r1.py",
+      "--run",
+      "--registration-sha256",
+      "ee50eff95fa3232f5b7c0133a5c328a57c560a8cc0344ac7bd057415c119dbf3"
+    ],
+    "created_utc": "2026-10-17T21:32:48.028510+00:00",
+    "evaluator_invoked": false,
+    "preflight": {
+      "observed_utc": "2026-10-17T21:32:48.022155+00:00",
+      "state": "WAITING_FOR_CONTROLLER_TERMINAL"
+    },
+    "preflight_command": [
+      "/usr/bin/taskset",
+      "-c",
+      "4",
+      "/usr/bin/nice",
+      "-n",
+      "15",
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/leo900_terminal_audit_watcher_20261018_r1.py",
+      "--check",
+      "--registration-sha256",
+      "ee50eff95fa3232f5b7c0133a5c328a57c560a8cc0344ac7bd057415c119dbf3"
+    ],
+    "registration": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/terminal_audit_watcher_registration.json",
+      "sha256": "ee50eff95fa3232f5b7c0133a5c328a57c560a8cc0344ac7bd057415c119dbf3",
+      "size": 7473
+    },
+    "schema": "brphm-f1-terminal-audit-watcher-launch-intent-v1",
+    "simulation_or_controller_modified": false,
+    "verification": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/verification.json",
+      "sha256": "df1a60683a3abc6d079fae9aee9462abd8aac1fc72971914ca1ca54d2318bfcd",
+      "size": 2806
+    }
+  },
+  "launch_receipt": {
+    "audit_only": true,
+    "created_utc": "2026-10-17T21:32:48.049738+00:00",
+    "f1_closed": false,
+    "intent": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/launch_intent.json",
+      "sha256": "c35916b7fc621d9265ca92899534b2deee4794e8aa87c5dd9b3fdf8110dbd627",
+      "size": 1837
+    },
+    "pid": 792920,
+    "pid_record": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/watcher_pid.json",
+      "sha256": "d825a2bf06514a8efdeb371fd1dc73a4256253d826a329fa0274926d6c1e8472",
+      "size": 770
+    },
+    "schema": "brphm-f1-terminal-audit-watcher-launch-receipt-v1",
+    "scientific_success_claimed": false,
+    "simulation_or_controller_modified": false,
+    "state": "LAUNCHED_UNCONFIRMED"
+  },
+  "launch_receipt_record": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/launch_receipt.json",
+    "sha256": "4783614aae1926b3d707dca05e2f670fcefe8a90622eaf2fda182e670e31e8cf",
+    "size": 811
+  },
+  "launcher_sha256": "d740262eb243ceae6f61218f5912b31493d7d478ebbe0fc8516d283ffadcef12",
+  "pid_record": {
+    "command": [
+      "/usr/bin/taskset",
+      "-c",
+      "4",
+      "/usr/bin/nice",
+      "-n",
+      "15",
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/leo900_terminal_audit_watcher_20261018_r1.py",
+      "--run",
+      "--registration-sha256",
+      "ee50eff95fa3232f5b7c0133a5c328a57c560a8cc0344ac7bd057415c119dbf3"
+    ],
+    "launch_intent": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/launch_intent.json",
+      "sha256": "c35916b7fc621d9265ca92899534b2deee4794e8aa87c5dd9b3fdf8110dbd627",
+      "size": 1837
+    },
+    "launched_utc": "2026-10-17T21:32:48.045153+00:00",
+    "pid": 792920
+  },
+  "run": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1",
+  "ssh_exit_code": 0,
+  "ssh_stderr": "",
+  "started_utc": "2026-10-17T21:32:46.618963+00:00"
+}

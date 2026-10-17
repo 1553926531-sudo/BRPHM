@@ -1,0 +1,552 @@
+{
+  "api_blob_files_verified": 142,
+  "api_ref_response_headers": {
+    "Date": "Sat, 17 Oct 2026 21:18:43 GMT",
+    "ETag": "\"744c7e657a16707e445cb4dd94c5265d61f575d5ce5b95aec73e11544764525b\"",
+    "X-GitHub-Request-Id": "88FE:25929D:346FF:3935D:6AD3E632"
+  },
+  "api_request_body_bytes": 2516659,
+  "api_requests": [
+    {
+      "ended_utc": "2026-10-17T21:17:47.299513+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:17:47 GMT",
+        "ETag": "\"266ccef3d14dc0430c055f4e159dbdc9d9b92a4790afbc840a09ddc7760b40f0\"",
+        "X-GitHub-Request-Id": "88F2:24C44E:337E6:3814E:6AD3E5FA"
+      },
+      "method": "GET",
+      "path": "",
+      "request_body_bytes": 0,
+      "response_bytes": 6078,
+      "response_sha256": "f87df5892f8f7c98e3f8a9c3e6a83432fb19ca16d97b733f9eb29eab17abacc6",
+      "started_utc": "2026-10-17T21:17:46.404451+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:17:48.095314+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:17:47 GMT",
+        "ETag": "\"a583ebfe432f15d9bfa4281dcfd207d46be7a83e91df19771bce80e2c99c529a\"",
+        "X-GitHub-Request-Id": "88F3:25431B:38634:3CFA8:6AD3E5FB"
+      },
+      "method": "GET",
+      "path": "/git/ref/heads/main",
+      "request_body_bytes": 0,
+      "response_bytes": 340,
+      "response_sha256": "e5bc3432530bc66538c08c255fd0f215705fbd2d1bc643092e5c3404e5264cb0",
+      "started_utc": "2026-10-17T21:17:47.299513+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:17:48.877237+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:17:48 GMT",
+        "ETag": "\"ea32888917d3f7122c41891f0ddb18373df2c740d4f6fa32b5ffe6118e8b47bc\"",
+        "X-GitHub-Request-Id": "88F4:78CDB:3715B:3BB4E:6AD3E5FC"
+      },
+      "method": "GET",
+      "path": "/git/ref/heads/f1-leo900-prefinal-20261018-r1",
+      "request_body_bytes": 0,
+      "response_bytes": 429,
+      "response_sha256": "512eaf4b7890f220a17b0832d32a6ad83b738a84c9c424a2173b443098795e91",
+      "started_utc": "2026-10-17T21:17:48.095314+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:17:49.682524+00:00",
+      "method": "GET",
+      "path": "/git/ref/heads/f1-leo900-audit-addendum-20261018-r2",
+      "request_body_bytes": 0,
+      "started_utc": "2026-10-17T21:17:48.878747+00:00",
+      "status": 404
+    },
+    {
+      "ended_utc": "2026-10-17T21:17:50.450762+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:17:50 GMT",
+        "ETag": "\"f20c013fac71a0c2fe7ab36ed30621cb3a08afaf6630cedb73a91a08e0aa477f\"",
+        "X-GitHub-Request-Id": "88F6:84F06:34C28:39576:6AD3E5FE"
+      },
+      "method": "GET",
+      "path": "/git/commits/846cdaac03beab2bacb9834bde1ed8fff1c77141",
+      "request_body_bytes": 0,
+      "response_bytes": 1321,
+      "response_sha256": "8ed6aab55e755ae4013e1993dd540c0beaaed3be7720249d7a2aafa48717aae7",
+      "started_utc": "2026-10-17T21:17:49.683521+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:17:51.265923+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:17:51 GMT",
+        "ETag": "\"e9a9a0defbc96c8eadfba70e6fe777f1986733a5152e049938dab1de5de05fbe\"",
+        "X-GitHub-Request-Id": "88F7:22B1:381B7:3CB53:6AD3E5FE"
+      },
+      "method": "GET",
+      "path": "/git/trees/87c1a74e03b851c4612e9b88d113b065fa3a59c6",
+      "request_body_bytes": 0,
+      "response_bytes": 1057,
+      "response_sha256": "500ca70c2ec77d8124385451043e242aa79de85c94b82fba788f7a25c4e8ce76",
+      "started_utc": "2026-10-17T21:17:50.450762+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:17:52.069639+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:17:51 GMT",
+        "ETag": "\"a934af109e2647daf1cd23c0f71b755bc75b84c85a6a2781a26ce280e20f1b5d\"",
+        "X-GitHub-Request-Id": "88F8:25AEB6:33B40:384BD:6AD3E5FF"
+      },
+      "method": "GET",
+      "path": "/git/trees/09303b463639f10c8150e4e86ec2ded58349c363",
+      "request_body_bytes": 0,
+      "response_bytes": 655,
+      "response_sha256": "56dc3665b221de40a44c8a0fbc7d0e353d2d315f642bb0c14c0ccbe6cc1fcb4e",
+      "started_utc": "2026-10-17T21:17:51.266987+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:35.600568+00:00",
+      "method": "GET",
+      "path": "/git/trees/c304befb3d2e494d944ec6ecc4d9084aa4362624",
+      "request_body_bytes": 0,
+      "started_utc": "2026-10-17T21:18:34.786974+00:00",
+      "status": 404
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:39.411332+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:39 GMT",
+        "ETag": "\"dd8605ce06d293b6bf9381b5e88ad161c3e490eea42c11dc29ebc74ad84768b4\"",
+        "X-GitHub-Request-Id": "88FA:3157C7:365A0:3B1D9:6AD3E62B"
+      },
+      "method": "POST",
+      "path": "/git/trees",
+      "request_body_bytes": 2515998,
+      "response_bytes": 1057,
+      "response_sha256": "339af19e0c74f377cbf7740ce2ce962d160e71909c7608f264872c416a5b6c83",
+      "started_utc": "2026-10-17T21:18:35.645740+00:00",
+      "status": 201
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:40.233046+00:00",
+      "method": "GET",
+      "path": "/git/commits/523619aed9dfb8f5622332acfe26363ffd682b2c",
+      "request_body_bytes": 0,
+      "started_utc": "2026-10-17T21:18:39.412842+00:00",
+      "status": 404
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:41.176369+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:41 GMT",
+        "ETag": "\"97194e0dee4e7e9803bfd9e336518c6865cc91a80a06f526ffd1c49293eb9551\"",
+        "X-GitHub-Request-Id": "88FC:314905:3913D:3DDB2:6AD3E630"
+      },
+      "method": "POST",
+      "path": "/git/commits",
+      "request_body_bytes": 552,
+      "response_bytes": 1321,
+      "response_sha256": "b9068aa2619103bd0a79b265d55696f43bb06af4923fdc64d225d48aeae4e77b",
+      "started_utc": "2026-10-17T21:18:40.234053+00:00",
+      "status": 201
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:42.381578+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:42 GMT",
+        "ETag": "\"744c7e657a16707e445cb4dd94c5265d61f575d5ce5b95aec73e11544764525b\"",
+        "X-GitHub-Request-Id": "88FD:30DA73:33789:383CC:6AD3E631"
+      },
+      "method": "POST",
+      "path": "/git/refs",
+      "request_body_bytes": 109,
+      "response_bytes": 449,
+      "response_sha256": "3b00ca9de0fecbb3fd0986228d0de5e48ba16406cf68e1dc97bc19fb7ad0f2c2",
+      "started_utc": "2026-10-17T21:18:41.176369+00:00",
+      "status": 201
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:43.181306+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:43 GMT",
+        "ETag": "\"744c7e657a16707e445cb4dd94c5265d61f575d5ce5b95aec73e11544764525b\"",
+        "X-GitHub-Request-Id": "88FE:25929D:346FF:3935D:6AD3E632"
+      },
+      "method": "GET",
+      "path": "/git/ref/heads/f1-leo900-audit-addendum-20261018-r2",
+      "request_body_bytes": 0,
+      "response_bytes": 449,
+      "response_sha256": "3b00ca9de0fecbb3fd0986228d0de5e48ba16406cf68e1dc97bc19fb7ad0f2c2",
+      "started_utc": "2026-10-17T21:18:42.382589+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:43.941113+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:43 GMT",
+        "ETag": "\"c304befb3d2e494d944ec6ecc4d9084aa4362624\"",
+        "X-GitHub-Request-Id": "88FF:3C7659:3CD29:419C2:6AD3E633"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_audit_addendum_20261018_r2?ref=523619aed9dfb8f5622332acfe26363ffd682b2c",
+      "request_body_bytes": 0,
+      "response_bytes": 6090,
+      "response_sha256": "4a23b85f84a52bb459849bf209b6f0435ec60beb4360f830766ef2cdd9bbda59",
+      "started_utc": "2026-10-17T21:18:43.181306+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:44.728697+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:44 GMT",
+        "ETag": "\"c304befb3d2e494d944ec6ecc4d9084aa4362624\"",
+        "X-GitHub-Request-Id": "8900:22B1:3A3F5:3F09B:6AD3E634"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_audit_addendum_20261018_r2/release?ref=523619aed9dfb8f5622332acfe26363ffd682b2c",
+      "request_body_bytes": 0,
+      "response_bytes": 2435,
+      "response_sha256": "d3a8b5454e443a303c3ad3f016c64dbb3574c9658a7ac04b8b6af66a74bb317e",
+      "started_utc": "2026-10-17T21:18:43.941113+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:46.240005+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:45 GMT",
+        "ETag": "\"c304befb3d2e494d944ec6ecc4d9084aa4362624\"",
+        "X-GitHub-Request-Id": "8901:25AEB6:35DD2:3AA4F:6AD3E635"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_audit_addendum_20261018_r2/release/f1_audit_20261010?ref=523619aed9dfb8f5622332acfe26363ffd682b2c",
+      "request_body_bytes": 0,
+      "response_bytes": 159017,
+      "response_sha256": "9676c07c52d0562849e6cc17027d2996803f8e4072bff81be9b09da82dfeaa7f",
+      "started_utc": "2026-10-17T21:18:44.729708+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:47.455635+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:46 GMT",
+        "ETag": "\"c304befb3d2e494d944ec6ecc4d9084aa4362624\"",
+        "X-GitHub-Request-Id": "8902:258E6A:482DD:4E1B7:6AD3E636"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_audit_addendum_20261018_r2/release/f1_leo900_pre_final_commitment_20261018_r1?ref=523619aed9dfb8f5622332acfe26363ffd682b2c",
+      "request_body_bytes": 0,
+      "response_bytes": 54040,
+      "response_sha256": "dce947100a6f9bbac0bce914e18d1f358bbeece240febc627a090b06ff89431e",
+      "started_utc": "2026-10-17T21:18:46.241012+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:48.222588+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:48 GMT",
+        "ETag": "\"c304befb3d2e494d944ec6ecc4d9084aa4362624\"",
+        "X-GitHub-Request-Id": "8903:3157C7:37008:3BCB2:6AD3E637"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_audit_addendum_20261018_r2/release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs?ref=523619aed9dfb8f5622332acfe26363ffd682b2c",
+      "request_body_bytes": 0,
+      "response_bytes": 4480,
+      "response_sha256": "a90b35c712640c72bc8c53ea28c211e2b4f2d9c3db9305865087a262c27583ce",
+      "started_utc": "2026-10-17T21:18:47.456634+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:49.024869+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:48 GMT",
+        "ETag": "\"c304befb3d2e494d944ec6ecc4d9084aa4362624\"",
+        "X-GitHub-Request-Id": "8904:7C030:3C9AB:415F7:6AD3E638"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_audit_addendum_20261018_r2/release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/channel_policy_support_20261018_r4a?ref=523619aed9dfb8f5622332acfe26363ffd682b2c",
+      "request_body_bytes": 0,
+      "response_bytes": 2125,
+      "response_sha256": "9d815f5acfc649697b71ccb33264a66faba11054d1a38164c042393ed9050d55",
+      "started_utc": "2026-10-17T21:18:48.223860+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:49.866849+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:49 GMT",
+        "ETag": "\"c304befb3d2e494d944ec6ecc4d9084aa4362624\"",
+        "X-GitHub-Request-Id": "8905:314905:39743:3E41E:6AD3E639"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_audit_addendum_20261018_r2/release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/dependency_support_20261018_r3a?ref=523619aed9dfb8f5622332acfe26363ffd682b2c",
+      "request_body_bytes": 0,
+      "response_bytes": 2060,
+      "response_sha256": "261b29c27dc8ef635eaabc73c26e98aacd0a7932799e84c9cc9ced6c3c9e0a4b",
+      "started_utc": "2026-10-17T21:18:49.024869+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:50.844704+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:50 GMT",
+        "ETag": "\"c304befb3d2e494d944ec6ecc4d9084aa4362624\"",
+        "X-GitHub-Request-Id": "8906:30DA73:33CE6:389BF:6AD3E63A"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_audit_addendum_20261018_r2/release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence?ref=523619aed9dfb8f5622332acfe26363ffd682b2c",
+      "request_body_bytes": 0,
+      "response_bytes": 16366,
+      "response_sha256": "9c61165f831a80967654bee44840709f32813adc88475e8af095cf5e147ab211",
+      "started_utc": "2026-10-17T21:18:49.866849+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:51.905255+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:51 GMT",
+        "ETag": "\"1fe9f1effb229778b3c098552eb2d36e100651b7ab421a2c5c07f8c35ae6d431\"",
+        "X-GitHub-Request-Id": "8907:25929D:34BE9:398D5:6AD3E63B"
+      },
+      "method": "GET",
+      "path": "/git/blobs/2e0932cddaafaacdd362e8a7854fb2031b745239",
+      "request_body_bytes": 0,
+      "response_bytes": 31070,
+      "response_sha256": "5adf6d810c00b4aad99133a27429a71736bf4962c5071cd6e00b9c534c20125b",
+      "started_utc": "2026-10-17T21:18:50.850450+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:53.167416+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:52 GMT",
+        "ETag": "\"5bc8d00c11a7beb00d8761e64d8cd5cc702dd754cbdcbe40918c81dc327094df\"",
+        "X-GitHub-Request-Id": "8908:3C7659:3D258:41F74:6AD3E63C"
+      },
+      "method": "GET",
+      "path": "/git/blobs/13572af633c946d30da5ac910d13a020b6dd7e54",
+      "request_body_bytes": 0,
+      "response_bytes": 80646,
+      "response_sha256": "e0e26cac33381dbaf27d1b714fbbf574ba11ae66e46921a017894a7b06743c2e",
+      "started_utc": "2026-10-17T21:18:51.906249+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:53.953910+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:53 GMT",
+        "ETag": "\"a583ebfe432f15d9bfa4281dcfd207d46be7a83e91df19771bce80e2c99c529a\"",
+        "X-GitHub-Request-Id": "8909:DB37:38857:3D5E8:6AD3E63D"
+      },
+      "method": "GET",
+      "path": "/git/ref/heads/main",
+      "request_body_bytes": 0,
+      "response_bytes": 340,
+      "response_sha256": "e5bc3432530bc66538c08c255fd0f215705fbd2d1bc643092e5c3404e5264cb0",
+      "started_utc": "2026-10-17T21:18:53.168426+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T21:18:54.783271+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 21:18:54 GMT",
+        "ETag": "\"ea32888917d3f7122c41891f0ddb18373df2c740d4f6fa32b5ffe6118e8b47bc\"",
+        "X-GitHub-Request-Id": "890A:303E43:2F938:3421F:6AD3E63E"
+      },
+      "method": "GET",
+      "path": "/git/ref/heads/f1-leo900-prefinal-20261018-r1",
+      "request_body_bytes": 0,
+      "response_bytes": 429,
+      "response_sha256": "512eaf4b7890f220a17b0832d32a6ad83b738a84c9c424a2173b443098795e91",
+      "started_utc": "2026-10-17T21:18:53.953910+00:00",
+      "status": 200
+    }
+  ],
+  "api_response_bytes": 372254,
+  "base_commit": "846cdaac03beab2bacb9834bde1ed8fff1c77141",
+  "branch": "f1-leo900-audit-addendum-20261018-r2",
+  "commit": "523619aed9dfb8f5622332acfe26363ffd682b2c",
+  "commit_url": "https://github.com/1553926531-sudo/BRPHM/commit/523619aed9dfb8f5622332acfe26363ffd682b2c",
+  "default_branch": "main",
+  "default_branch_commit_preserved": "8449f14551c4ba229b2596e86b9fabd80df72a2a",
+  "ended_utc": "2026-10-17T21:18:55.505420+00:00",
+  "expected_tree": "c304befb3d2e494d944ec6ecc4d9084aa4362624",
+  "f1_closed": false,
+  "files": {
+    "INTEGRITY_GRAPH.json": "7b801212d77042251f81d86bab95db9b3422f764029f5c0de430eb6a82008222",
+    "README.md": "e4013763122877a9e0e07d0cbbe52a2abc979ab1cb48806c20ce310a37fd3da2",
+    "SHA256_MANIFEST.json": "204714677d70194eb42dc7f6bc7d856270e5ce9e2681f929d9f8308890aeaf9e",
+    "release/f1_audit_20261010/F1_EVIDENCE_LEDGER_20261017.md": "820d95cc95eb97353a1b0ea14b8e83079571b6f548e9af4acb4d511a35822558",
+    "release/f1_audit_20261010/F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+    "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+    "release/f1_audit_20261010/F1_LEO900_INFERENCE_DEPENDENCIES_20261018R1.json": "37675a2e28c74abd0a0858010faf8171e1bdf1753e655b7f93c3256ec41605b0",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.json": "5d7f153acf7bbac5de6dbf7b28e02d49bc72931744a4e27c4d053b1faf03f2b6",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.md": "860bd82336048bb6c78d0e9774cf0f9e57db5fb508bae8aff156ef0d51da7980",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json": "cfeb3f3b08f83db22c1e41e03dacb97a2d9513a8488c7edaeade4574843da2ea",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json": "78b50a8c44c47719359420a562c5be8334c18bcfb57203b8ceeb2f7d631493ff",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json": "803a221e053008077d18d69a8ede52960d5b8de9c4e42dae9bcc2ef476900b2b",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json": "7ace7afcbb8756f681134975fc999865745086d8b62db751977c73a138de2f29",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.md": "c53f7a071ba28b8f05e99b790018e2545f7975e259a6132f8f4abeacb2530068",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json": "6de13be7865f3b603933ccf2aece3d97297d7dd01fe98a61bac0b3ee56695ca1",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.md": "ae8c19b314c9727506e6e85a8695ca6919e83f35b83b0ccfe8f6b55b24d2d57d",
+    "release/f1_audit_20261010/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+    "release/f1_audit_20261010/F1_LEO900_TRAINING_LABEL_FLOW_20261018R1.json": "36a7830e40f498823b24f18cbe8f46a704ba4b50b83a33b48d00c9fff94e7168",
+    "release/f1_audit_20261010/append_f1_leo900_preflight_r6_20261018.py": "4e7b04326a24b17173764d559b893477e9ad35f6aae1dd2170f5f53cafbb96fd",
+    "release/f1_audit_20261010/append_f1_leo900_preflight_r7_20261018.py": "850039d68ece7be3de88e7714508c425235f77397d63e449f852a24a00127f52",
+    "release/f1_audit_20261010/append_f1_leo900_preflight_r8_20261018.py": "f40788e5237d07423141c9e870e5ca9f603510e4d7405d0197129fe97db4c126",
+    "release/f1_audit_20261010/append_f1_leo900_preflight_r9_20261018.py": "bd5f74b59cff75a3bac0f280d26f96df99c0d0784a01cfd9303bb8f47f9372b8",
+    "release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py": "b44c4daf0771d09638e225b5dbe46762d5a43a389c7938a006a74434d01cf6f4",
+    "release/f1_audit_20261010/audit_leo900_training_label_flow_20261018.py": "e39f8a2cdb21906bb9e648346c04a2d8c0d45d441ebba908ea396d06b6f671f5",
+    "release/f1_audit_20261010/capture_leo900_continuation_20261018.py": "b071ba38e446d8625ba1a4f234cf4c2327e5d7c9c842d6e11c751a7d70ff169c",
+    "release/f1_audit_20261010/capture_leo900_metadata_20261018.py": "092436282a00aa4e89aac3f56c2b521e05b6ecdb14febf7d74fba7b6efb01877",
+    "release/f1_audit_20261010/check_f1_statistics_registered_oracles_20261018.py": "c4a475de652e0b84b0881f7941d20ae8905794289dde9d1b6a175bfc26467405",
+    "release/f1_audit_20261010/deploy_leo900_prediction_summary_audit_20261018_r1.py": "a06aabdb79202c90ba579713a01eba27604c01e8a12104e1bf5b70c3df76288c",
+    "release/f1_audit_20261010/deploy_leo900_statistics_numerical_audit_20261018_r1.py": "dccb0e40629e247afc65a53b897a30edff05705aefdeea637c1ee5f8701dd05d",
+    "release/f1_audit_20261010/deploy_leo900_terminal_evidence_20261018.py": "6b5671d750cbca5aaf14f3e2b4ecd679edd5eb27ff978362b001467b1d8e09cf",
+    "release/f1_audit_20261010/deploy_leo900_terminal_evidence_20261018_r2.py": "f9da83127597cc41957ae6527b86b0a0ca9f2e3e4dbd5b061976aa451d63b35d",
+    "release/f1_audit_20261010/f1_clean_final_test_20261018_v3.py": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+    "release/f1_audit_20261010/f1_leo900_channel_policy_clean_final_test_20261018_r4.py": "5b8acfe1eccc4f01e1e67ce0ef13f9d6768bb2ae9da152672974c2a7f1cf7a76",
+    "release/f1_audit_20261010/f1_lossless_gate_statistics_20261018.py": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+    "release/f1_audit_20261010/f1_paired_predictions_20261018.py": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+    "release/f1_audit_20261010/leo900_audit_addendum_publication_20261017T210327Z.json": "887d833e37c1d499180a0eda9459475de54af1186d7baaa4c2b143929c1018a7",
+    "release/f1_audit_20261010/leo900_channel_policy_20261018_r4.py": "8ef26ac31b69397d4ce3d9960bee9c212c05d2f732698b575f0de90779c7326e",
+    "release/f1_audit_20261010/leo900_continuation_observation_20261017T192737Z.json": "3f412213523cff937b823b3efb7cef4a71b0dedba57369e8d625d0c265930cbe",
+    "release/f1_audit_20261010/leo900_continuation_observation_20261017T201536Z.json": "0347a1ca6034a34bb80d5da4d4a32bfc79fcaca92a6714c2f3ecf38500af3601",
+    "release/f1_audit_20261010/leo900_continuation_observation_20261017T203836Z.json": "e24abe05b386d46c29fdaa53d201ffb6cca0f35cbc099e6069261ef10858802b",
+    "release/f1_audit_20261010/leo900_continuation_observation_20261017T205244Z.json": "5df42319d954718ad76775cbb0fc420a421aaf3eda51bb880bb53a79b7512326",
+    "release/f1_audit_20261010/leo900_continuation_observation_20261017T210004Z.json": "311a3574e18d0de2dedc2272e55d9203270b4ecdba80a183ce25c120182986fe",
+    "release/f1_audit_20261010/leo900_continuation_observation_20261017T211439Z.json": "6dc96dbfedbbb5ca5946ad15ccc3b97733755b660b22f94a5c5d8a3afe769ace",
+    "release/f1_audit_20261010/leo900_external_commitment_publication_20261017T193202Z.json": "f52853d109f7ccafa87c31ad8f5b56ec3ef41bc9a4e8fdcc9126c3176a69c0a6",
+    "release/f1_audit_20261010/leo900_external_commitment_publication_20261017T193303Z.json": "c0af1db3df6c84857186ba2f295d6c546c47164c8323faeaaaff3fd26cd8903e",
+    "release/f1_audit_20261010/leo900_external_commitment_rest_publication_20261017T193737Z.json": "370c208c3d2a8b874e37fbf4e2c559009eb27d4ea89e0a11626b965bbad21236",
+    "release/f1_audit_20261010/leo900_external_commitment_rest_publication_20261017T193909Z.json": "5c60799f4d6154bf6235453a44e7ca385b27b5653d428ebc23031c2535bf7025",
+    "release/f1_audit_20261010/leo900_final_continuation_20261018.py": "95980e282428c016f0b44918fb25eecbd5e6555550bf38e3cd1161dbb2ec753e",
+    "release/f1_audit_20261010/leo900_final_continuation_deployment_20261017T191902Z.json": "c83ee791045abf85a07b1af650d9b4d50fb76223db09e52e22c52ab512a4ce18",
+    "release/f1_audit_20261010/leo900_final_continuation_deployment_20261017T192006Z.json": "6dd65edb9feb895fbe103c748a9958a31580246810b322ea151d199e8f997d74",
+    "release/f1_audit_20261010/leo900_final_continuation_launch_20261017T192053Z.json": "40efbc9805b30034fa98051e83beff89c7eea4adf4623202b7f96b98fcd43add",
+    "release/f1_audit_20261010/leo900_final_continuation_local_green_20261018_r1.json": "d211403227b3116733fe3a8ca4b48651fc1c614f1198d8b134f714df6e0310af",
+    "release/f1_audit_20261010/leo900_final_continuation_local_green_20261018_r2.json": "9bcbb40f42b81a89dd0bf465138d73837cf0c929a18f587aba86506007669eeb",
+    "release/f1_audit_20261010/leo900_final_continuation_local_green_20261018_r3.json": "353a9b2a0800cbb9e182d5b78e385eb3107316dbe0dac3450e66940aaf1438ce",
+    "release/f1_audit_20261010/leo900_final_continuation_red_20261018_r1.json": "9a9932a387804e2a851aee8edfed54b3de02cfa244d4e7c804738dc71ede3f5b",
+    "release/f1_audit_20261010/leo900_generation_metadata_20261017T191247Z.json": "d48f6ed163908d0428afb2418058cc60228fc9e5e95c33dfa54f0243427b6daf",
+    "release/f1_audit_20261010/leo900_generation_metadata_20261017T201536Z.json": "4b07ab07aee3029cb5aba18dfd3d17b0d877fa79fd39aa23c83a77d66b008ecd",
+    "release/f1_audit_20261010/leo900_generation_metadata_20261017T203836Z.json": "b3189fc5c020ec81856eaf7225e099736713ad585cf0b8021af2c54d644d9e28",
+    "release/f1_audit_20261010/leo900_generation_metadata_20261017T205243Z.json": "ca63432c0fb6795264ae6f8b01e006020299b4bc4ea05eb4f59c21cbedb7d51a",
+    "release/f1_audit_20261010/leo900_generation_metadata_20261017T210004Z.json": "3bd52b9e337cc1712970959f2a928098600fad2547039468b33b18bac29a0170",
+    "release/f1_audit_20261010/leo900_generation_metadata_20261017T211439Z.json": "2deb91e8032abf7884f5e353a7381265fbd9a18f3a22e07294833e289c987c27",
+    "release/f1_audit_20261010/leo900_prediction_summary_audit_20261018.py": "8c2fbabdcedf8a3263a951baa3114415687a970446666f1e87e9b3af09450c2c",
+    "release/f1_audit_20261010/leo900_prediction_summary_audit_deployment_20261017T211424Z.json": "1e79319f2809660973b5b8549afda1b7bc7fe3055624bbf6b3d3ad9bd6cee3d8",
+    "release/f1_audit_20261010/leo900_r6_ledger_path_binding_rejection_20261018_r1.json": "53c3ea187dd58c414beb7959bd4c920a3c1d10b47075c09b78d816cb8b0a027a",
+    "release/f1_audit_20261010/leo900_static_training_label_flow_binding_rejection_20261018_r1.json": "49494dc26fcbd090397b122fdb5c5e88f0a1ebdd26fa437963fe05aadfec2d59",
+    "release/f1_audit_20261010/leo900_statistics_numerical_audit_20261018.py": "105618a87df69fd750c70f3388e93c70af9d33ec46e60cfe73677dd8bc55f179",
+    "release/f1_audit_20261010/leo900_statistics_numerical_audit_deployment_20261017T205500Z.json": "bda4a63b1350420e76fdc929633fbde87654499a07dfab0a8020da1ab11bb443",
+    "release/f1_audit_20261010/leo900_statistics_protocol_deployment_r1_20261017T190734Z.json": "5b9f025c9220f88f5a1dc5e204d00c189a514a87d38b949c176ba768177db73b",
+    "release/f1_audit_20261010/leo900_terminal_evidence_20261018.py": "f565bb1feeab8b963c124f1490a7b5de33d4bd8794ed400d839843e01304ad8e",
+    "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+    "release/f1_audit_20261010/leo900_terminal_evidence_deployment_20261017T200942Z.json": "118ef7aec4209cd588b12393081ac5bbe5646eb18462e4570941cdad0cc51c68",
+    "release/f1_audit_20261010/leo900_terminal_evidence_r2_deployment_20261017T204027Z.json": "7bb5ba31f64a7317f3787167f6ccd6844525f7b8ef1a61226f1773ebe604fc4e",
+    "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r1.json": "0046cea59c053f5fbe4f46ab7693db052c5f6ec4e3e7cca10b524318bbf4b00b",
+    "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r2.json": "e541a2c36f011dde2ebd5d354bd589873311edc569b4ca1f9eb11c224e797038",
+    "release/f1_audit_20261010/prediction_summary_audit_red_20261018_r1.json": "7ccb2e4218384f16d512f3dc7575c854a5a482ac8c098ea002daa636ee84317d",
+    "release/f1_audit_20261010/prepare_leo900_audit_addendum_20261018_r1.py": "7a2cc7178d9e72bf4604a61ea15b2d1405abf2169fdb5cf1667fa65d5a1eab2c",
+    "release/f1_audit_20261010/prepare_leo900_audit_addendum_20261018_r2.py": "5d05a1321ea1996e89aaf62911c2138c75b84819cdb4e0f886197a94459c92ea",
+    "release/f1_audit_20261010/publish_leo900_audit_addendum_20261018_r1.py": "2d476f98e062b4e4191b8c8bdc1f58b4e8324c007d84ca6290a9314db1ddc771",
+    "release/f1_audit_20261010/publish_leo900_audit_addendum_20261018_r2.py": "53ed2a3ce21581cbebadc1fac2f44735f53566d61623e714a39cb025713ad23b",
+    "release/f1_audit_20261010/publish_leo900_external_commitment_20261018.py": "7ee666f598fe45c02f343c441b402dedc8bf1539a0db69dbba2dab92a27e1290",
+    "release/f1_audit_20261010/publish_leo900_external_commitment_rest_20261018.py": "4e584ee37f61b0cbc95c67abcd8411465a0e90dcee6eb757b6825623ae9e858f",
+    "release/f1_audit_20261010/statistics_numerical_audit_local_20261018_r1.json": "eb42b406dfb04977dbd4d0c8eaf7c0ede75728273f1fcf32f68f9d9f5e690653",
+    "release/f1_audit_20261010/statistics_numerical_audit_local_20261018_r2.json": "4efe49d29b1453e2f5250e624ff8653a5aeaecbf478b9b2890c20f41a81a3ec8",
+    "release/f1_audit_20261010/statistics_numerical_audit_local_20261018_r3.json": "da952e4a4c976e7559f3275d7ef570c60720c0e5af30e154392ebb89de4e3e1d",
+    "release/f1_audit_20261010/statistics_numerical_audit_red_20261018_r1.json": "410b6bb34dafd8039efd2dcf31ea2852124eb6c2c7bf549113a2f84ad5b1360b",
+    "release/f1_audit_20261010/terminal_evidence_local_green_attempt_20261018_r4.json": "35df69e99c390fad56cf4dec24ee56ae438c843e7cae6cf5e22cf83a716ec74f",
+    "release/f1_audit_20261010/terminal_evidence_local_green_attempt_20261018_r6.json": "f3293b3610bdc0f2700d88051238ffe2645693b065cf2972d5d3bfdcbeb05e98",
+    "release/f1_audit_20261010/terminal_evidence_plan_binding_red_20261018_r2.json": "1fb20f02109c280c2f217556e59ecea33db0078d62dcbf67e6442e4133223a88",
+    "release/f1_audit_20261010/terminal_evidence_production_red_20261018_r3.json": "a7dadf215f6974a871913a23740d6783f847017bf6b709dcfd6e3aa4688c7aa1",
+    "release/f1_audit_20261010/terminal_evidence_r2_local_green_20261018_r1.json": "3ba6d5a092dc3c4be17062e2a0713560a77c89614f8c4eacb2949298dc90842e",
+    "release/f1_audit_20261010/terminal_evidence_registered_gate_schema_red_20261018_r5.json": "9bad77434f4db3e0400a1344f7a5c27e2efe2844a912df1e2cb46cd4611e5a2f",
+    "release/f1_audit_20261010/terminal_unit_membership_red_20261018_r1.json": "c0e110bc912710e8d52aaa5838ea82359ed27d4ed921af91133ae5ca14556087",
+    "release/f1_audit_20261010/terminal_unit_membership_red_20261018_r2.json": "219f33920a63dc284fa98f5be24d138418bb0741408e45e6ba0a6f3d3dcbfa62",
+    "release/f1_audit_20261010/terminal_unit_membership_targeted_20261018_r1.json": "aa025f2adfc6b078d75d1024dc42d2d14321506c6734b27875b7c8fc466f86eb",
+    "release/f1_audit_20261010/test_f1_lossless_gate_statistics_20261018.py": "bcb13da9b40dd1c2ab2861946d33b340f0aac7bcf1a6db4b95ffa306bbb0c7db",
+    "release/f1_audit_20261010/test_leo900_final_continuation_20261018.py": "7048632593088cadaa33f5b0a023ff9e1c3ca7b8f50b9da35c16647d206437bb",
+    "release/f1_audit_20261010/test_leo900_prediction_summary_audit_20261018.py": "7d195a43649c5c615f223b395c8ed501d55988eccd3d2c2b5d9edb0759b68411",
+    "release/f1_audit_20261010/test_leo900_statistics_numerical_audit_20261018.py": "c8bfd63d3f93425ca6756900019f11509ffbf5c116146a980b9a03c1852c40b3",
+    "release/f1_audit_20261010/test_leo900_terminal_evidence_20261018.py": "b5f3766d31165823c68db2b21743c1c8f1e17bde84df2c00778cdcad28a87eec",
+    "release/f1_audit_20261010/test_leo900_terminal_evidence_20261018_r2.py": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/F1_EVIDENCE_LEDGER_20261017.md": "820d95cc95eb97353a1b0ea14b8e83079571b6f548e9af4acb4d511a35822558",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.json": "5d7f153acf7bbac5de6dbf7b28e02d49bc72931744a4e27c4d053b1faf03f2b6",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.md": "860bd82336048bb6c78d0e9774cf0f9e57db5fb508bae8aff156ef0d51da7980",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json": "cfeb3f3b08f83db22c1e41e03dacb97a2d9513a8488c7edaeade4574843da2ea",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.md": "22b78c012c32d8e84d07b9064543dd4aa14e6875da8075d62c6c477a5f54cc90",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/README.md": "65a6b6920b212d51215d0724b92ee4661eb24cde522aa0490ea17e5d9727732b",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/SHA256_MANIFEST.json": "7a489927d3cb6001fff91b7b9af77d9da0468f6721a053fa90be8d8025ca9490",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/check_f1_statistics_registered_oracles_20261018.py": "c4a475de652e0b84b0881f7941d20ae8905794289dde9d1b6a175bfc26467405",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/f1_leo900_channel_policy_clean_final_test_20261018_r4.py": "5b8acfe1eccc4f01e1e67ce0ef13f9d6768bb2ae9da152672974c2a7f1cf7a76",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/f1_lossless_gate_statistics_20261018.py": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/f1_paired_predictions_20261018.py": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_channel_policy_20261018_r4.py": "8ef26ac31b69397d4ce3d9960bee9c212c05d2f732698b575f0de90779c7326e",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_continuation_observation_20261017T192737Z.json": "3f412213523cff937b823b3efb7cef4a71b0dedba57369e8d625d0c265930cbe",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_20261018.py": "95980e282428c016f0b44918fb25eecbd5e6555550bf38e3cd1161dbb2ec753e",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_deployment_20261017T191902Z.json": "c83ee791045abf85a07b1af650d9b4d50fb76223db09e52e22c52ab512a4ce18",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_deployment_20261017T192006Z.json": "6dd65edb9feb895fbe103c748a9958a31580246810b322ea151d199e8f997d74",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_launch_20261017T192053Z.json": "40efbc9805b30034fa98051e83beff89c7eea4adf4623202b7f96b98fcd43add",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_local_green_20261018_r1.json": "d211403227b3116733fe3a8ca4b48651fc1c614f1198d8b134f714df6e0310af",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_local_green_20261018_r2.json": "9bcbb40f42b81a89dd0bf465138d73837cf0c929a18f587aba86506007669eeb",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_local_green_20261018_r3.json": "353a9b2a0800cbb9e182d5b78e385eb3107316dbe0dac3450e66940aaf1438ce",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_red_20261018_r1.json": "9a9932a387804e2a851aee8edfed54b3de02cfa244d4e7c804738dc71ede3f5b",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_generation_metadata_20261017T191247Z.json": "d48f6ed163908d0428afb2418058cc60228fc9e5e95c33dfa54f0243427b6daf",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_statistics_protocol_deployment_r1_20261017T190734Z.json": "5b9f025c9220f88f5a1dc5e204d00c189a514a87d38b949c176ba768177db73b",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_input_export.json": "1ea8fae448f863fcc8f044cc46eb6f49bfb15e288583898b06f71686db83988c",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/candidate_preregistration.json": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/candidate_snapshot.json": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/formal_candidate_receipt.json": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/partition_plan.json": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/preparation_attempt_history.json": "8a2eebc431c68acd4866bb4ea39c10ee931446f95451a17860a755756135128b",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/preparation_postflight_verification.json": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/simulation_schedule.json": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/source_route_replay_certificate.json": "d232448e1a8e9b8bf727a982df0e72ea235e9519271534ddfe1f038046cd0f51",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/template_exclusion_manifest.json": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/test_f1_lossless_gate_statistics_20261018.py": "bcb13da9b40dd1c2ab2861946d33b340f0aac7bcf1a6db4b95ffa306bbb0c7db",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/test_leo900_final_continuation_20261018.py": "7048632593088cadaa33f5b0a023ff9e1c3ca7b8f50b9da35c16647d206437bb",
+    "release/f1_leo900_pre_final_commitment_20261018_r1/verify_commitment.py": "970b1f9063654d2dc1216720f37e9e5713f4cc6e866e8b2b2ae2ba772bae851d",
+    "verify_addendum.py": "eaf627d6ac3f6e8a070f94e5fb08b9735ba147bb0f484fbf08ce2289f0d3f9d9"
+  },
+  "helper_sha256": {
+    "publish_leo900_external_commitment_20261018.py": "7ee666f598fe45c02f343c441b402dedc8bf1539a0db69dbba2dab92a27e1290",
+    "publish_leo900_external_commitment_rest_20261018.py": "4e584ee37f61b0cbc95c67abcd8411465a0e90dcee6eb757b6825623ae9e858f"
+  },
+  "independent_local_tree_and_commit_match": true,
+  "kind": "additional audit evidence; no new candidate/analysis registration",
+  "local_head": "ed051819e5e97a205fb0b076bc79b3cd84988662",
+  "original_commitment_branch_preserved": true,
+  "package_manifest_sha256": "204714677d70194eb42dc7f6bc7d856270e5ce9e2681f929d9f8308890aeaf9e",
+  "protected_local_sha256": {
+    "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_leo900_pre_final_commitment_20261018_r1\\SHA256_MANIFEST.json": "7a489927d3cb6001fff91b7b9af77d9da0468f6721a053fa90be8d8025ca9490",
+    "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\research\\rul_space_paper_20261001\\en\\main.pdf": "468338bb904734cd49649680e37b8ce447a447e46e45e7083a5b3bfa13460750",
+    "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\research\\rul_space_paper_20261001\\en\\main.tex": "4e1c2c1b3f1fedbb902af7d1a3415e8730d39d2702fbf5ad921a0ae6d522665b"
+  },
+  "raw_payload_bytes": 2359232,
+  "record_limits": "Observed GitHub availability is not historical non-access proof or immutable notarization; local commit dates are self-recorded.",
+  "repository": "https://github.com/1553926531-sudo/BRPHM",
+  "schema": "brphm-f1-additive-audit-publication-v1",
+  "scientific_success_claimed": false,
+  "script_sha256": "53ed2a3ce21581cbebadc1fac2f44735f53566d61623e714a39cb025713ad23b",
+  "server_repository_identity": {
+    "full_name": "1553926531-sudo/BRPHM",
+    "headers": {
+      "Date": "Sat, 17 Oct 2026 21:17:47 GMT",
+      "ETag": "\"266ccef3d14dc0430c055f4e159dbdc9d9b92a4790afbc840a09ddc7760b40f0\"",
+      "X-GitHub-Request-Id": "88F2:24C44E:337E6:3814E:6AD3E5FA"
+    },
+    "id": 1392841783
+  },
+  "started_utc": "2026-10-17T21:17:40.011108+00:00",
+  "status": "PUBLISHED_AND_READBACK_VERIFIED",
+  "transaction_sha256": "4de3ea55c14dfdad85f3863da060cf44e8c7341b97b62b47610c9bf85664ad50",
+  "working_index_and_tracked_dirty_files_preserved": true
+}

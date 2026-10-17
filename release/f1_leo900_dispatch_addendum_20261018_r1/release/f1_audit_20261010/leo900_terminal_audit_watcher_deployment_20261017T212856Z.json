@@ -1,0 +1,227 @@
+{
+  "deployer_sha256": "95527d485e76557fa902b48ae02d37cfc7c1a30c9e02193161683c340699a065",
+  "ended_utc": "2026-10-17T21:28:56.056579+00:00",
+  "input_sha256": {
+    "leo900_terminal_audit_watcher_20261018_r1.py": "a5f309edd78d0b902ce62a06a0965e7d9ddc67a8328e64ea046d13cf34194fc7",
+    "terminal_audit_watcher_local_20261018_r1.json": "bc34f257093d3eda59dda2e6709a36f3aa11f9246c2195cb8fca8b6e70da472d",
+    "test_leo900_terminal_audit_watcher_20261018_r1.py": "cbdb6ec4f4a577f3eea296ec55337a6814fbdf6b5c649b2b3dc05df54c91f393"
+  },
+  "prelaunch_check": {
+    "command": [
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/leo900_terminal_audit_watcher_20261018_r1.py",
+      "--check",
+      "--registration-sha256",
+      "ee50eff95fa3232f5b7c0133a5c328a57c560a8cc0344ac7bd057415c119dbf3"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\"observed_utc\": \"2026-10-17T21:28:56.015049+00:00\", \"state\": \"WAITING_FOR_CONTROLLER_TERMINAL\"}\n"
+  },
+  "prelaunch_check_record": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/prelaunch_read_only_check.json",
+    "sha256": "d4c602cf14fe4b9cb641cd7906e784105f64f1789b6e4f9aad2861d468ca25e9",
+    "size": 512
+  },
+  "registration": {
+    "automatic_retry_permitted": false,
+    "created_utc": "2026-10-17T21:28:55.964963+00:00",
+    "f1_closed": false,
+    "fixed_plan": {
+      "inputs": {},
+      "poll_seconds": 60,
+      "production": true,
+      "runtime": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_runtime_20261018_r1",
+      "stages": [
+        {
+          "command": [
+            "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+            "-B",
+            "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/leo900_terminal_evidence_20261018_r2.py",
+            "--output",
+            "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/postterminal_chain_audit_20261018_r1.json"
+          ],
+          "expected_status": "EXECUTION_CHAIN_VERIFIED",
+          "name": "chain",
+          "output": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/postterminal_chain_audit_20261018_r1.json"
+        },
+        {
+          "command": [
+            "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+            "-B",
+            "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/leo900_prediction_summary_audit_20261018.py",
+            "--output",
+            "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/postterminal_predictions_audit_20261018_r1.json"
+          ],
+          "expected_status": "PREDICTION_SUMMARIES_VERIFIED",
+          "name": "predictions",
+          "output": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/postterminal_predictions_audit_20261018_r1.json"
+        },
+        {
+          "command": [
+            "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+            "-B",
+            "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/leo900_statistics_numerical_audit_20261018.py",
+            "--output",
+            "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/postterminal_statistics_audit_20261018_r1.json"
+          ],
+          "expected_status": "NUMERICAL_STATISTICS_VERIFIED",
+          "name": "statistics",
+          "output": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/postterminal_statistics_audit_20261018_r1.json"
+        }
+      ],
+      "terminal": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/controller_terminal.json"
+    },
+    "inputs": [
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/leo900_terminal_audit_watcher_20261018_r1.py",
+        "sha256": "a5f309edd78d0b902ce62a06a0965e7d9ddc67a8328e64ea046d13cf34194fc7",
+        "size": 10844
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/leo900_terminal_evidence_20261018_r2.py",
+        "sha256": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+        "size": 46609
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/test_leo900_terminal_evidence_20261018_r2.py",
+        "sha256": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c",
+        "size": 46049
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/leo900_external_commitment_rest_publication_20261017T193909Z.json",
+        "sha256": "5c60799f4d6154bf6235453a44e7ca385b27b5653d428ebc23031c2535bf7025",
+        "size": 19024
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/leo900_prediction_summary_audit_20261018.py",
+        "sha256": "8c2fbabdcedf8a3263a951baa3114415687a970446666f1e87e9b3af09450c2c",
+        "size": 15405
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/leo900_terminal_evidence_20261018_r2.py",
+        "sha256": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+        "size": 46609
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/test_leo900_prediction_summary_audit_20261018.py",
+        "sha256": "7d195a43649c5c615f223b395c8ed501d55988eccd3d2c2b5d9edb0759b68411",
+        "size": 13457
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/test_leo900_terminal_evidence_20261018_r2.py",
+        "sha256": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c",
+        "size": 46049
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/prediction_summary_audit_support_20261018_r1/leo900_external_commitment_rest_publication_20261017T193909Z.json",
+        "sha256": "5c60799f4d6154bf6235453a44e7ca385b27b5653d428ebc23031c2535bf7025",
+        "size": 19024
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/f1_lossless_gate_statistics_20261018.py",
+        "sha256": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+        "size": 25400
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/leo900_statistics_numerical_audit_20261018.py",
+        "sha256": "105618a87df69fd750c70f3388e93c70af9d33ec46e60cfe73677dd8bc55f179",
+        "size": 15302
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/leo900_terminal_evidence_20261018_r2.py",
+        "sha256": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+        "size": 46609
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/test_leo900_statistics_numerical_audit_20261018.py",
+        "sha256": "c8bfd63d3f93425ca6756900019f11509ffbf5c116146a980b9a03c1852c40b3",
+        "size": 13145
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/test_leo900_terminal_evidence_20261018_r2.py",
+        "sha256": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c",
+        "size": 46049
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/leo900_external_commitment_rest_publication_20261017T193909Z.json",
+        "sha256": "5c60799f4d6154bf6235453a44e7ca385b27b5653d428ebc23031c2535bf7025",
+        "size": 19024
+      }
+    ],
+    "schema": "brphm-f1-terminal-audit-watcher-registration-v1",
+    "scientific_success_claimed": false,
+    "scope": "Audit-only operational dispatch; no scientific candidate/protocol change",
+    "simulation_or_controller_modified": false,
+    "verification": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/verification.json",
+      "sha256": "df1a60683a3abc6d079fae9aee9462abd8aac1fc72971914ca1ca54d2318bfcd",
+      "size": 2806
+    }
+  },
+  "registration_record": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/terminal_audit_watcher_registration.json",
+    "sha256": "ee50eff95fa3232f5b7c0133a5c328a57c560a8cc0344ac7bd057415c119dbf3",
+    "size": 7473
+  },
+  "runtime_exists": false,
+  "ssh_exit_code": 0,
+  "ssh_stderr": "",
+  "started_utc": "2026-10-17T21:28:54.870686+00:00",
+  "status": "PASS",
+  "transfer_budget_bytes": 64000,
+  "verification": {
+    "command": [
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "-v",
+      "test_leo900_terminal_audit_watcher_20261018_r1"
+    ],
+    "deployed_files": [
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/leo900_terminal_audit_watcher_20261018_r1.py",
+        "sha256": "a5f309edd78d0b902ce62a06a0965e7d9ddc67a8328e64ea046d13cf34194fc7",
+        "size": 10844
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/terminal_audit_watcher_local_20261018_r1.json",
+        "sha256": "bc34f257093d3eda59dda2e6709a36f3aa11f9246c2195cb8fca8b6e70da472d",
+        "size": 2428
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/test_leo900_terminal_audit_watcher_20261018_r1.py",
+        "sha256": "cbdb6ec4f4a577f3eea296ec55337a6814fbdf6b5c649b2b3dc05df54c91f393",
+        "size": 7984
+      }
+    ],
+    "ended_utc": "2026-10-17T21:28:55.938176+00:00",
+    "evaluator_invoked": false,
+    "exit_code": 0,
+    "raw_code_and_receipt_bytes_uploaded": 21256,
+    "real_final_data_read": false,
+    "resources": {
+      "cpu_affinity": [
+        4
+      ],
+      "mem_available_bytes": 126171230208,
+      "nice": 15,
+      "numeric_threads": 1
+    },
+    "simulation_or_controller_modified": false,
+    "started_utc": "2026-10-17T21:28:55.364131+00:00",
+    "status": "PASS",
+    "stderr": "test_controller_drift_after_first_audit_stops_later_stages (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests) ... ok\ntest_duplicate_start_cannot_repeat_any_audit (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests) ... ok\ntest_error_controller_preserves_evidence_without_running_an_audit (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests) ... ok\ntest_existing_report_is_preserved_and_blocks_first_stage (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests) ... ok\ntest_exit_zero_with_pending_report_cannot_advance (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests) ... ok\ntest_input_drift_while_waiting_blocks_all_audits (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests) ... ok\ntest_nonzero_exit_stops_chain_without_retry (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests) ... ok\ntest_pending_check_creates_nothing_and_does_not_invoke_auditors (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests) ... ok\ntest_wait_then_runs_three_audits_once_in_order_without_claiming_f1 (test_leo900_terminal_audit_watcher_20261018_r1.WatcherTests) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.500s\n\nOK\n",
+    "stdout": "",
+    "tensor_transfer_bytes": 0,
+    "test_count": 9
+  },
+  "verification_record": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/verification.json",
+    "sha256": "df1a60683a3abc6d079fae9aee9462abd8aac1fc72971914ca1ca54d2318bfcd",
+    "size": 2806
+  },
+  "watcher_launched": false
+}

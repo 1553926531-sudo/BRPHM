@@ -1,0 +1,103 @@
+{
+  "capture_code_sha256": "993867437229cc6605681043c159dc735c638529addc787b2735688fae375e60",
+  "evaluator_invoked": false,
+  "launch_receipt": {
+    "document": {
+      "audit_only": true,
+      "created_utc": "2026-10-17T21:32:48.049738+00:00",
+      "f1_closed": false,
+      "intent": {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/launch_intent.json",
+        "sha256": "c35916b7fc621d9265ca92899534b2deee4794e8aa87c5dd9b3fdf8110dbd627",
+        "size": 1837
+      },
+      "pid": 792920,
+      "pid_record": {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/watcher_pid.json",
+        "sha256": "d825a2bf06514a8efdeb371fd1dc73a4256253d826a329fa0274926d6c1e8472",
+        "size": 770
+      },
+      "schema": "brphm-f1-terminal-audit-watcher-launch-receipt-v1",
+      "scientific_success_claimed": false,
+      "simulation_or_controller_modified": false,
+      "state": "LAUNCHED_UNCONFIRMED"
+    },
+    "exists": true,
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/launch_receipt.json",
+    "sha256": "4783614aae1926b3d707dca05e2f670fcefe8a90622eaf2fda182e670e31e8cf",
+    "size": 811
+  },
+  "mat_or_tensor_decoded": false,
+  "observed_utc": "2026-10-17T21:36:16.582574+00:00",
+  "pid_record": {
+    "document": {
+      "command": [
+        "/usr/bin/taskset",
+        "-c",
+        "4",
+        "/usr/bin/nice",
+        "-n",
+        "15",
+        "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+        "-B",
+        "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/leo900_terminal_audit_watcher_20261018_r1.py",
+        "--run",
+        "--registration-sha256",
+        "ee50eff95fa3232f5b7c0133a5c328a57c560a8cc0344ac7bd057415c119dbf3"
+      ],
+      "launch_intent": {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/launch_intent.json",
+        "sha256": "c35916b7fc621d9265ca92899534b2deee4794e8aa87c5dd9b3fdf8110dbd627",
+        "size": 1837
+      },
+      "launched_utc": "2026-10-17T21:32:48.045153+00:00",
+      "pid": 792920
+    },
+    "exists": true,
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/watcher_pid.json",
+    "sha256": "d825a2bf06514a8efdeb371fd1dc73a4256253d826a329fa0274926d6c1e8472",
+    "size": 770
+  },
+  "processes": "    PID    PPID  NI PSR %CPU %MEM     ELAPSED STAT COMMAND\n 616411       1  15   4  0.1  0.0    02:15:24 SNs  python\n 792920       1  15   4  0.0  0.0       03:29 SNs  python\n4138426 4138417  15   1  0.4  1.1    10:34:56 SNl  MATLAB\n4141867 4138426  15   3 99.7  1.3    10:33:02 SNl  MATLAB\n4141869 4138426  15   2 99.7  1.3    10:33:02 SNl  MATLAB\n4141871 4138426  15   1 99.7  1.3    10:33:02 SNl  MATLAB\n4141873 4138426  15   0 99.7  1.3    10:33:02 SNl  MATLAB\n",
+  "read_only_capture_code": "\nimport hashlib,json,os,subprocess\nfrom datetime import datetime,timezone\nfrom pathlib import Path\nroot=Path('/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1')\nlaunch=root/'terminal_audit_watcher_launch_20261018_r1'\nruntime=root/'terminal_audit_watcher_runtime_20261018_r1'\ndef capture(path,kind='record'):\n if not path.exists():return {'path':str(path),'exists':False}\n if not path.is_file() or path.is_symlink() or path.resolve()!=path:raise RuntimeError('unsafe evidence path')\n before=path.stat();raw=path.read_bytes();after=path.stat()\n if (before.st_size,before.st_ino,before.st_mtime_ns)!=(after.st_size,after.st_ino,after.st_mtime_ns):raise RuntimeError('evidence changed while observing')\n row={'path':str(path),'exists':True,'sha256':hashlib.sha256(raw).hexdigest(),'size':len(raw)}\n if kind=='json':row['document']=json.loads(raw)\n if kind=='tail':row['tail']=raw[-2000:].decode('utf-8',errors='replace')\n return row\npid_record=capture(launch/'watcher_pid.json','json');pid=pid_record['document']['pid']\nproc=Path('/proc')/str(pid)\nlive={}\nif proc.exists():\n live={'cpu_affinity':sorted(os.sched_getaffinity(pid)),'nice':os.getpriority(os.PRIO_PROCESS,pid),\n 'cmdline':(proc/'cmdline').read_bytes().replace(b'\\x00',b' ').decode(),\n 'status':{line.split(':',1)[0]:line.split(':',1)[1].strip() for line in (proc/'status').read_text().splitlines() if line.startswith(('State:','VmRSS:','Threads:','Cpus_allowed_list:'))}}\nprocesses=subprocess.run(['ps','-p',str(pid)+',616411,4138426,4141867,4141869,4141871,4141873','-o','pid,ppid,ni,psr,pcpu,pmem,etime,stat,comm'],capture_output=True,text=True).stdout\nprint(json.dumps({'observed_utc':datetime.now(timezone.utc).isoformat(),'pid_record':pid_record,\n 'processes':processes,'watcher_process':live,'launch_receipt':capture(launch/'launch_receipt.json','json'),\n 'watcher_started':capture(runtime/'watcher_started.json'),'terminal':capture(runtime/'watcher_terminal.json','json'),\n 'stage_records':[capture(p) for p in sorted(runtime.glob('*_*.json')) if p.name not in ('watcher_terminal.json','watcher_started.json')],\n 'stdout':capture(launch/'watcher.stdout.log','tail'),'stderr':capture(launch/'watcher.stderr.log','tail'),\n 'remote_writes':False,'mat_or_tensor_decoded':False,'evaluator_invoked':False}))\n",
+  "remote_writes": false,
+  "schema": "brphm-f1-terminal-audit-watcher-observation-v1",
+  "stage_records": [],
+  "stderr": {
+    "exists": true,
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/watcher.stderr.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "tail": ""
+  },
+  "stdout": {
+    "exists": true,
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_launch_20261018_r1/watcher.stdout.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "size": 0,
+    "tail": ""
+  },
+  "terminal": {
+    "exists": false,
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_runtime_20261018_r1/watcher_terminal.json"
+  },
+  "watcher_process": {
+    "cmdline": "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python -B /mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_support_20261018_r1/leo900_terminal_audit_watcher_20261018_r1.py --run --registration-sha256 ee50eff95fa3232f5b7c0133a5c328a57c560a8cc0344ac7bd057415c119dbf3 ",
+    "cpu_affinity": [
+      4
+    ],
+    "nice": 15,
+    "status": {
+      "Cpus_allowed_list": "4",
+      "State": "S (sleeping)",
+      "Threads": "1",
+      "VmRSS": "17192 kB"
+    }
+  },
+  "watcher_started": {
+    "exists": true,
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_audit_watcher_runtime_20261018_r1/watcher_started.json",
+    "sha256": "5dee96a1a02f63659c352216fda018069a785534763f4ae274a94d574226a8ce",
+    "size": 6324
+  }
+}

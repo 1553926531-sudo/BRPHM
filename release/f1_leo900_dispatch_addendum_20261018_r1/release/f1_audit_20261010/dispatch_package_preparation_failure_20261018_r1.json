@@ -1,0 +1,14 @@
+{
+  "candidate_or_scientific_protocol_changed": false,
+  "command": "python -B prepare_leo900_dispatch_addendum_20261018_r1.py",
+  "error": "small evidence traffic budget exceeded",
+  "error_type": "AssertionError",
+  "evidence_bytes": 278449,
+  "exit_code": 1,
+  "note": "Failure occurred before any package writes; recorded after observing the actual command result.",
+  "output_package_exists": false,
+  "recorded_utc": "2026-10-17T21:39:57.798664+00:00",
+  "schema": "brphm-f1-dispatch-package-preparation-failure-v1",
+  "script_sha256_at_failed_attempt": "f8a4a87d4c70def1b70eed432eecb83e08f1f90f80232e3fb80e243b747c85ad",
+  "upload_performed": false
+}
