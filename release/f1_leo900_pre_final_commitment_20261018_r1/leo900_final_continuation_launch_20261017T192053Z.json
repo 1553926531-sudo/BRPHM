@@ -1,0 +1,137 @@
+{
+  "launcher_sha256": "7741f760e97a5a78203133a8464b35c05dbc1029a776e09dd033fb88da6f5615",
+  "receipt": {
+    "candidate_or_route_modified": false,
+    "created_utc": "2026-10-17T19:20:53.819509+00:00",
+    "events": [
+      {
+        "document": {
+          "created_utc": "2026-10-17T19:20:53.467368+00:00",
+          "event_type": "controller_started",
+          "payload": {
+            "initial_preflight": {
+              "final_stages_invoked": false,
+              "observed_utc": "2026-10-17T19:20:53.447344+00:00",
+              "resources": {
+                "cpu_affinity": [
+                  4
+                ],
+                "disk_free_bytes": 293776240640,
+                "mem_available_bytes": 121405845504,
+                "minimum_available_memory_and_disk_bytes": 8589934592,
+                "nice": 15,
+                "numeric_threads": {
+                  "MKL_NUM_THREADS": "1",
+                  "NUMEXPR_NUM_THREADS": "1",
+                  "OMP_NUM_THREADS": "1",
+                  "OPENBLAS_NUM_THREADS": "1",
+                  "VECLIB_MAXIMUM_THREADS": "1"
+                },
+                "ready": true
+              },
+              "semantic_final_labels_read": false,
+              "simulation": {
+                "complete": false,
+                "end_utc": null,
+                "exit_status": null,
+                "start_utc": "2026-10-17T11:01:20Z"
+              },
+              "state": "WAITING_FOR_SIMULATION"
+            },
+            "pid": 616411,
+            "plan": {
+              "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/controller_plan.json",
+              "sha256": "1332b939262fc911ff2c806645679efe10416f125abcf3958f5b314bcb65caaa",
+              "size": 36527
+            }
+          },
+          "previous_event_sha256": null,
+          "sequence": 1
+        },
+        "record": {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/events/0001_controller_started.json",
+          "sha256": "8dd2baff8bdade3d331b7c9404d290bf6b91e7feb81a4fd247c00e418a029302",
+          "size": 1307
+        }
+      },
+      {
+        "document": {
+          "created_utc": "2026-10-17T19:20:53.571584+00:00",
+          "event_type": "preflight_state",
+          "payload": {
+            "final_stages_invoked": false,
+            "observed_utc": "2026-10-17T19:20:53.571570+00:00",
+            "resources": {
+              "cpu_affinity": [
+                4
+              ],
+              "disk_free_bytes": 293776191488,
+              "mem_available_bytes": 121433952256,
+              "minimum_available_memory_and_disk_bytes": 8589934592,
+              "nice": 15,
+              "numeric_threads": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              },
+              "ready": true
+            },
+            "semantic_final_labels_read": false,
+            "simulation": {
+              "complete": false,
+              "end_utc": null,
+              "exit_status": null,
+              "start_utc": "2026-10-17T11:01:20Z"
+            },
+            "state": "WAITING_FOR_SIMULATION"
+          },
+          "previous_event_sha256": "8dd2baff8bdade3d331b7c9404d290bf6b91e7feb81a4fd247c00e418a029302",
+          "sequence": 2
+        },
+        "record": {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/events/0002_preflight_state.json",
+          "sha256": "d295487a2fa5b75bec5693f2f643631aa8ce7b1e5dda1ef957fd13f98d7e720a",
+          "size": 998
+        }
+      }
+    ],
+    "global_label_access_guard_exists": false,
+    "goal_completion_claimed": false,
+    "launch": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1",
+    "launch_intent": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1/launch_intent.json",
+      "sha256": "82d8dc637e952ef9881a5b4d28f671d5d68d0ee39e0bf42c8c4eee1058f77c3d",
+      "size": 1799
+    },
+    "network_tensor_transfer_bytes": 0,
+    "pid": 616411,
+    "pid_record": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1/controller_pid.json",
+      "sha256": "4d1e2d96a690adbfe93048cfda3a48502664f6f81479236fd7f7c27c1ee3c94f",
+      "size": 478
+    },
+    "process": "    PID    PPID  NI %CPU %MEM     ELAPSED COMMAND\n 616411  616409  15 24.0  0.0       00:01 python\n",
+    "process_exit_code": null,
+    "protocol": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_support_20261018_r1/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+      "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+      "size": 46839
+    },
+    "runtime": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1",
+    "schema": "brphm-f1-continuation-launch-receipt-v1",
+    "semantic_final_labels_read_at_launch": false,
+    "simulation_or_configuration_modified": false,
+    "simulation_processes": "    PID    PPID  NI %CPU %MEM     ELAPSED COMMAND\n4138426 4138417  15  0.4  1.1    08:19:33 MATLAB\n4141867 4138426  15 99.8  1.4    08:17:39 MATLAB\n4141869 4138426  15 99.7  1.3    08:17:39 MATLAB\n4141871 4138426  15 99.7  1.3    08:17:39 MATLAB\n4141873 4138426  15 99.7  1.3    08:17:39 MATLAB\n",
+    "status": "RUNNING",
+    "stderr": ""
+  },
+  "receipt_file": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1/launch_receipt.json",
+    "sha256": "24253881ccfde527a5e18e7af004fea1c7ef7bcbf3af7e53ea5e3037f681d3e3",
+    "size": 5343
+  },
+  "ssh_exit_code": 0,
+  "ssh_stderr": ""
+}

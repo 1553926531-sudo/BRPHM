@@ -1,0 +1,29 @@
+{
+  "schema": "brphm-f1-leo900-preparation-attempt-history-v1",
+  "created_utc": "2026-10-17T10:42:14Z",
+  "attempts": [
+    {
+      "attempt_id": "LEO900-PREP-R0",
+      "evidence_file": "leo900_preparation_attempt_r0_20261017.json",
+      "evidence_sha256": "e7979d066301f491881766ec51827f9b2e221e6689e2a057a20d6669e1a55394",
+      "failure_class": "preparation provenance schema mismatch",
+      "simulation_started": false,
+      "semantic_labels_read": false,
+      "final_label_access": false
+    },
+    {
+      "attempt_id": "LEO900-PREP-R1",
+      "evidence_file": "leo900_preparation_attempt_r1_20261017.json",
+      "evidence_sha256": "f2e5e17f818b9732b3de57964cfcbdcf87b661c5d03ccd78132e9bc348c78914",
+      "failure_class": "preparation attempt-log schema mismatch",
+      "simulation_started": false,
+      "semantic_labels_read": false,
+      "final_label_access": false
+    }
+  ],
+  "candidate_snapshot_sha256": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+  "simulation_started": false,
+  "semantic_labels_read": false,
+  "final_label_access": false,
+  "next_action": "Validate this history and both underlying logs, then resume the same immutable candidate in the untouched LEO900 partition."
+}

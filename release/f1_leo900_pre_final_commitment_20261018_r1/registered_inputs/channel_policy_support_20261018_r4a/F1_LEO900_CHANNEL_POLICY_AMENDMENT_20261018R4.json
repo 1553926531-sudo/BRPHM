@@ -1,0 +1,54 @@
+{
+  "candidate_or_route_modified": false,
+  "change": {
+    "correction": "honor the frozen channels_policy=impute_mean with normalized zero",
+    "finite_cells": "bitwise unchanged; labels/window identities unchanged",
+    "location": "build_raw_holdout_payload normalized x boundary",
+    "old_target_branch": "also lacks imputation; original preprocessed source tensors are preserved, not regenerated",
+    "original": "normalize only; singleton-bin ddof=1 standard deviations remain NaN",
+    "reference": "configs/preprocess/rwa_target.yaml channels_policy; existing public preprocess imputation branch",
+    "statistics": "reuse original frozen training mean/scale; no final fit"
+  },
+  "continuation": "Use this additive entry for the previously specified single final evaluation, preserving all earlier checks and the global access guard",
+  "created_utc": "2026-10-17T18:52:07.360642+00:00",
+  "evidence": [
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/raw_payload_support_20261018_r1/checks.json",
+      "sha256": "f5453ee27d9ce31465632a7be223f84b0c070488e6e0d916ee4eb16fe5b3cd06",
+      "size": 10083
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/verification.json",
+      "sha256": "684fda02bd0e7ae99c33fa5c038fa1128cf40c134cec05ee0b48576c0d5916f2",
+      "size": 26306
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/integration_checks.json",
+      "sha256": "c0a782dd161de322532d87f4ec006406e6fbeba26b706881ce395b76a4527794",
+      "size": 10656
+    }
+  ],
+  "files": [
+    {
+      "path": "leo900_channel_policy_20261018_r4.py",
+      "sha256": "8ef26ac31b69397d4ce3d9960bee9c212c05d2f732698b575f0de90779c7326e",
+      "size": 2130
+    },
+    {
+      "path": "f1_leo900_channel_policy_clean_final_test_20261018_r4.py",
+      "sha256": "5b8acfe1eccc4f01e1e67ce0ef13f9d6768bb2ae9da152672974c2a7f1cf7a76",
+      "size": 6039
+    }
+  ],
+  "final_freeze_or_evaluation_invoked": false,
+  "parent_registration": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json",
+    "sha256": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61",
+    "size": 23405
+  },
+  "project_root": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1",
+  "schema": "brphm-f1-leo900-channel-policy-amendment-v1",
+  "scope": "Implementation-contract correction tested on artificial MAT only; no generalization claim",
+  "semantic_final_labels_read": false,
+  "simulation_or_configuration_modified": false
+}

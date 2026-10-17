@@ -1,0 +1,117 @@
+{
+  "analysis_files": [
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/f1_lossless_gate_statistics_20261018.py",
+      "sha256": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+      "size": 25400
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/test_f1_lossless_gate_statistics_20261018.py",
+      "sha256": "bcb13da9b40dd1c2ab2861946d33b340f0aac7bcf1a6db4b95ffa306bbb0c7db",
+      "size": 13580
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/check_f1_statistics_registered_oracles_20261018.py",
+      "sha256": "c4a475de652e0b84b0881f7941d20ae8905794289dde9d1b6a175bfc26467405",
+      "size": 4777
+    }
+  ],
+  "candidate_or_route_modified": false,
+  "command": [
+    "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+    "-B",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/f1_lossless_gate_statistics_20261018.py",
+    "--result",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1",
+    "--output",
+    "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_statistics_20261018_r1",
+    "--bootstrap-reps",
+    "20000",
+    "--bootstrap-seed",
+    "20261018"
+  ],
+  "created_utc": "2026-10-17T19:07:34.585686+00:00",
+  "final_freeze_or_evaluation_invoked": false,
+  "fixed_input": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1",
+  "fixed_output": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_statistics_20261018_r1",
+  "frozen_oracle_checks": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/frozen_oracle_checks.json",
+    "sha256": "75ae9ac86e0a127a86cad8914192a5fda1902017b99f3d124bc38a9c2ec6df49",
+    "size": 2318
+  },
+  "limitations": [
+    "one final orbit; no independent orbit-level replication",
+    "unit-cluster uncertainty conditional on fixed simulation distribution and fitted models",
+    "signed-rank p-values assume independent units and symmetric paired differences",
+    "gate tolerance is an implementation criterion, not a practical effect threshold"
+  ],
+  "metrics": {
+    "decision": "zero regressions and at least one strict gain; this unchanged deterministic gate does not imply statistical or practical improvement",
+    "display": "17 significant decimal digits and float.hex; full unrounded JSON and NPZ",
+    "gate": [
+      "BAT RMSE",
+      "BAT MAE",
+      "RWA RMSE",
+      "RWA MAE"
+    ],
+    "prediction": "clip to [0,1], float64 multiply by physical rmax",
+    "regression_arithmetic": "observed > baseline + tolerance",
+    "strict_gain_arithmetic": "observed < baseline - tolerance",
+    "tolerance": 1e-12,
+    "truth": "same-pass truth_relative retaining original float32 label division, then float64 multiply by rmax"
+  },
+  "parent_r4_registration": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json",
+    "sha256": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+    "size": 2734
+  },
+  "schema": "brphm-f1-pre-final-statistical-analysis-protocol-v1",
+  "scope": "Read-only postprocessing of the original single final pass; no candidate selection or re-evaluation",
+  "semantic_final_labels_read": false,
+  "simulation_or_configuration_modified": false,
+  "synthetic_full_cli_receipt": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/synthetic_statistics/statistics_receipt.json",
+    "sha256": "92bb9b4005272db046d62ef8214974f8c777eb7247119a95f7a1acec621baa64",
+    "size": 322
+  },
+  "timestamps": "self-recorded UTC, not external notarization",
+  "unit_uncertainty": {
+    "components": [
+      "bat",
+      "rwa"
+    ],
+    "effects": [
+      "mean/median paired unit delta",
+      "paired SD",
+      "rank-biserial",
+      "paired standardized dz",
+      "relative percentage change"
+    ],
+    "estimands": [
+      "window-pooled RMSE",
+      "window-pooled MAE",
+      "unit-macro RMSE",
+      "unit-macro MAE"
+    ],
+    "familywise_quantiles": [
+      0.003125,
+      0.996875
+    ],
+    "interval": "linear percentile; pointwise 95% and Bonferroni familywise 95% over 8 intervals",
+    "repetitions": 20000,
+    "sampling": "paired unit-cluster bootstrap, all windows retained; same sampled units for both models",
+    "seed_interpretation": "17/42/73 are ensemble constituents, zero independent repeats",
+    "seeds": {
+      "bat": 20261018,
+      "rwa": 20261019
+    },
+    "test_multiplicity": "Holm over four BAT/RWA by RMSE/MAE unit paired tests",
+    "tests": "two-sided signed-rank sign randomization exact with tied average ranks for <=20 nonzero unit differences; tie-corrected normal Wilcoxon otherwise; zero differences excluded",
+    "undefined_values": "null with explicit reason for zero reference error, zero paired variance, or a single unit"
+  },
+  "verification": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/verification.json",
+    "sha256": "3421b02344be01bbce6d8f8e9186cd349bf30d0d5265b3322326cdf77929dae3",
+    "size": 12619
+  }
+}

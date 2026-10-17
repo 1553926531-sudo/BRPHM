@@ -1,0 +1,307 @@
+{
+  "amendment_id": "LEO900-EXECUTION-20261018-R1",
+  "boundaries": {
+    "brphm_preview_accessed": false,
+    "external_messages_sent": false,
+    "ieee_upload_or_submission": false,
+    "modelscope_written": false,
+    "real_leo900_freeze_or_evaluation_started": false
+  },
+  "changes": [
+    {
+      "correction": "-0.25 times the arithmetic mean of each source unit's median residual, using the registered helper.",
+      "evidence": "Unequal unit lengths (10 and 1) give correction -0.1125; the old correction was -0.025.",
+      "id": "calibration",
+      "location": "fit_plain_l1_formal",
+      "original": "-0.25 times median of all source-fit window residuals",
+      "problem": "The old formal adapter gives longer units greater calibration mass and differs from the registered source candidate."
+    },
+    {
+      "correction": "Reuse the exact hash-bound source fit_model_mmd(mmd_lambda=0.0, epochs_override=90), seeds 17/42/73.",
+      "evidence": "Synthetic full 90-epoch three-seed predictions equal the registered implementation element by element; ordinary L1 differs.",
+      "id": "trainer",
+      "location": "fit_plain_l1_formal",
+      "original": "fit_model_unit_first_l1",
+      "problem": "The source receipt used fit_model_mmd(lambda=0); its extra representation forward consumes dropout random numbers."
+    },
+    {
+      "correction": "candidate_or_route_selection_input=true; candidate_continuation_input=true; source_route_ranking_input=false. Explicitly label LEO800 development/diagnostic.",
+      "evidence": "A new real CLI regression failed on the old flag and passes after the additive adapter override.",
+      "id": "visibility",
+      "location": "freeze_manifest.visible_information_before_freeze.prior_clean_retry1",
+      "original": "candidate_or_route_selection_input=false for visible LEO800 feedback",
+      "problem": "LEO800 outcomes influenced candidate continuation; the old combined flag contradicts that history."
+    },
+    {
+      "correction": "Check every amended executable size/hash before any snapshot write; freeze binds amendment and executable/config/src/tensor/norm/reference dependencies; evaluate rechecks them.",
+      "evidence": "Real synthetic CLI rejects missing amendment and changed execution bytes before snapshot creation.",
+      "id": "dependency_closure",
+      "location": "freeze/evaluation preflight",
+      "original": "Incomplete enforcement of executable dependency drift before label access",
+      "problem": "A recorded hash alone does not reject changed implementation bytes."
+    },
+    {
+      "correction": "Exclusive global guard at root.parent/leo900_final_label_access_guard.json, retained even after failure; partition/event/selection checks precede the claim.",
+      "evidence": "Synthetic integration verifies second-output rejection, partition/dependency drift rejection, and no overwrite.",
+      "id": "single_access",
+      "location": "label access guard",
+      "original": "Output-local state permits accidental reuse with a different output name",
+      "problem": "A new output directory must not authorize another final-label read."
+    },
+    {
+      "correction": "Exclusive NPZ plus JSON row/dtype/shape/hash records for candidate, control, alpha, blend, projection, truth and seed raw predictions, plus training diagnostics.",
+      "evidence": "Synthetic original bits and row order round-trip; unit and aggregate metrics can be reconstructed. Missing seed metadata is rejected before writing.",
+      "id": "paired_predictions",
+      "location": "original evaluation artifacts",
+      "original": "No lossless candidate/control/truth arrays retained for full paired recomputation",
+      "problem": "Rounded summaries cannot audit a 1e-12 gate or unit-cluster uncertainty."
+    }
+  ],
+  "created_utc": "2026-10-17T17:39:10.136030Z",
+  "environment_preflight": {
+    "path": "release/f1_audit_20261010/execution_venv_preflight_20261017T172943Z.json",
+    "sha256": "69233597fe9fbde1cb1c79703dcaaa66fa05bb910d2aafb8cf17eaf54c047478",
+    "size": 860
+  },
+  "execution_files": [
+    {
+      "path": "f1_leo900_plain_l1_clean_final_test_20261018_r1.py",
+      "sha256": "1c78f1c068f21c28be3442593b2a740e3a3775bc87a09bc7e76bad0e355f85f3",
+      "size": 9970
+    },
+    {
+      "path": "f1_leo900_plain_l1_clean_final_test_20261017.py",
+      "sha256": "f550bd10e7a1575fa28f24de4b2426ff5713dc884fabfbf144a24a2495334f32",
+      "size": 27612
+    },
+    {
+      "path": "f1_clean_final_test_20261018_v3.py",
+      "sha256": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+      "size": 33908
+    },
+    {
+      "path": "f1_clean_final_test_20261001_v2.py",
+      "sha256": "7cf9be5fc5d19859955f71384afcfd27533dbd098369e0767fac73c0715f2482",
+      "size": 28537
+    },
+    {
+      "path": "f1_paired_predictions_20261018.py",
+      "sha256": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+      "size": 4401
+    },
+    {
+      "path": "temporal_tcn_unit_first_residual_centered_l1_source_gate_20261001.py",
+      "sha256": "0ff29f22a8cb99eb35d7bf1ea2b99cd3c58c37f74d6e475e1c14f386f59515a0",
+      "size": 4106
+    },
+    {
+      "path": "leo900_source_trainer_20261018/run_l1_mmd_source_only_20261015.py",
+      "sha256": "4718889b61d75c70ff130da3e41b795ac4229af9cc1b60060049075d385b6b88",
+      "size": 19558
+    },
+    {
+      "path": "leo900_source_trainer_20261018/mmd_source_only.py",
+      "sha256": "b592231890cffbdfcfbea98e3349a222b79842180123d01f6495f59ef5885c8e",
+      "size": 2995
+    },
+    {
+      "path": "leo900_source_trainer_20261018/calibration_source_only.py",
+      "sha256": "2f156835e0d6d2847a562f4c335eb425873f8448b8896d388ee1e023a784ac59",
+      "size": 1036
+    }
+  ],
+  "immutable_parent_records": {
+    "candidate_preregistration.json": {
+      "sha256": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+      "size": 4975
+    },
+    "candidate_snapshot.json": {
+      "sha256": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+      "size": 988
+    },
+    "formal_candidate_receipt.json": {
+      "sha256": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+      "size": 2426
+    },
+    "preparation_manifest.json": {
+      "sha256": "a683191622ed3fc5546f86ccd0c8e8ba59cdddefe953719bc81523dac57c3e92",
+      "size": 67667
+    },
+    "preparation_postflight_verification.json": {
+      "sha256": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+      "size": 2528
+    }
+  },
+  "metadata_only_progress": {
+    "path": "release/f1_audit_20261010/leo900_generation_metadata_20261017T173557Z.json",
+    "sha256": "fe5e1afd131f5b5f9f55ecc38b1dc53e4a677e0d596abf94faf903f7624b9454",
+    "size": 5002
+  },
+  "parent_evidence_capture": {
+    "path": "release/f1_audit_20261010/leo900_execution_parent_evidence_20261017T173341Z.json",
+    "sha256": "9812d8869453ae89b7be339c1fc144b4499304a26813466e326187dff55fe16f",
+    "size": 19850
+  },
+  "post_simulation_sequence": [
+    "Check successful simulation termination and exact 96-unit registered metadata membership.",
+    "Create exclusive metadata-only raw-file partition hashes and audit bindings without loading MAT variables.",
+    "Freeze amended implementation and all dependencies to a new formal_output_execution_r1 directory.",
+    "Claim the single global label-access guard, evaluate once and retain original paired predictions.",
+    "Recompute full precision gates and unit-cluster statistics; report results without outcome-dependent final-test retuning."
+  ],
+  "preserved_registration": {
+    "gate_tolerance": 1e-12,
+    "known_alpha": {
+      "bat": {
+        "LEO500": 1e-05,
+        "LEO550": 1e-05,
+        "LEO700": 1e-05
+      },
+      "rwa": {
+        "LEO500": 0.01,
+        "LEO550": 1e-05,
+        "LEO700": 0.001
+      }
+    },
+    "old_preregistration_protocol_inputs_and_evidence": "retained byte for byte; this amendment is additive",
+    "route_ranking": "alpha_sum,max_alpha,worst_residual_ks,mean_rmse,mean_mae,route_id ascending",
+    "simulation_parent_and_workers": "unchanged; no signal, restart, duplicate or configuration change",
+    "unit_contract": "96 predeclared units, 48 BAT/48 RWA, S1300-S1395; exclusions and seeds from original partition plan",
+    "unseen_leo900_alpha": {
+      "bat": 1e-05,
+      "rwa": 1e-05
+    }
+  },
+  "purpose": "Restore the already registered source implementation before the first LEO900 semantic-label evaluation; correct provenance disclosure and retain audit-ready original predictions.",
+  "registration_generator": {
+    "path": "release/f1_audit_20261010/register_leo900_execution_amendment_20261018.py",
+    "sha256": "f653a6e68f56e4e4c264c9ceb02139e6c826778604ac9a85c6df004e1f280171",
+    "size": 13308
+  },
+  "remaining_work": [
+    "Remote independent installation and smoke verification",
+    "Simulation completion and partition sealing",
+    "One final evaluation, full precision gate and paired uncertainty",
+    "F1-F10 final evidence-backed disposition"
+  ],
+  "remote_source_receipt_path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/source_receipt.json",
+  "schema": "brphm-f1-leo900-execution-amendment-v1",
+  "source_receipt": {
+    "path": "release/f7_audit_20261011/host_l1_plain_20261015/host_90epoch/receipt.json",
+    "sha256": "b55ac35dc6fcee534f6d72f55d2bc35ed9568a407002a8417a252bac91128aca",
+    "size": 6501589
+  },
+  "statistical_limits": [
+    "Three seeds are members of one median ensemble, not three independent ensemble repetitions.",
+    "Component-by-orbit observations do not establish six independent experiments.",
+    "Nonpositive tiny deltas and gate passage alone do not demonstrate statistically supported superiority."
+  ],
+  "verification": {
+    "final_dataset_read": false,
+    "receipt": {
+      "path": "release/f1_audit_20261010/execution_final_verification_20261017T173727Z/receipt.json",
+      "sha256": "985cf8bf8df99fc52d34d513c71243d4c4d551e52d0ef7d1561dddc5858bdda6",
+      "size": 3555
+    },
+    "scope": "Implementation/provenance checks; no empirical generalization claim.",
+    "suites_passed": 4,
+    "synthetic_tests_passed": 17,
+    "tests": [
+      {
+        "command": [
+          "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-B",
+          "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_visibility_20261018.py",
+          "-v"
+        ],
+        "exit_code": 0,
+        "log": {
+          "path": "release/f1_audit_20261010/execution_final_verification_20261017T173727Z/test_leo900_visibility_20261018.py.log",
+          "sha256": "b99906314ad3e7db91284d30b24de0797581e08a03389551f6258f33ddcf0be4",
+          "size": 241
+        },
+        "test": {
+          "path": "release/f1_audit_20261010/test_leo900_visibility_20261018.py",
+          "sha256": "c38d2659ec629689f9aa8df527c79755dbf9e8f7b4b64f810072df5863500bfe",
+          "size": 1138
+        }
+      },
+      {
+        "command": [
+          "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-B",
+          "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_freeze_cli_20261018.py",
+          "-v"
+        ],
+        "exit_code": 0,
+        "log": {
+          "path": "release/f1_audit_20261010/execution_final_verification_20261017T173727Z/test_leo900_freeze_cli_20261018.py.log",
+          "sha256": "2b647d4a705cf9faacf70553799aaa92eaf4aa198509ebfd2534b6e57ce36804",
+          "size": 595
+        },
+        "test": {
+          "path": "release/f1_audit_20261010/test_leo900_freeze_cli_20261018.py",
+          "sha256": "629c923f8753ad97d6378bb9e08ff29f7a08ac412af89981f322169e203d7154",
+          "size": 8466
+        }
+      },
+      {
+        "command": [
+          "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-B",
+          "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_execution_amendment_20261018.py",
+          "-v"
+        ],
+        "exit_code": 0,
+        "log": {
+          "path": "release/f1_audit_20261010/execution_final_verification_20261017T173727Z/test_leo900_execution_amendment_20261018.py.log",
+          "sha256": "8a94dc513ef442b9d2cb930713cbe53fb3fdbd2a75f42c8d5d4b9ac043cb680b",
+          "size": 748
+        },
+        "test": {
+          "path": "release/f1_audit_20261010/test_leo900_execution_amendment_20261018.py",
+          "sha256": "224f5f99e58639e7d519274df528d7ac826bfa3f39897cf8340e3daf4733449a",
+          "size": 7214
+        }
+      },
+      {
+        "command": [
+          "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-B",
+          "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_f1_lossless_evaluator_20261018.py",
+          "-v"
+        ],
+        "exit_code": 0,
+        "log": {
+          "path": "release/f1_audit_20261010/execution_final_verification_20261017T173727Z/test_f1_lossless_evaluator_20261018.py.log",
+          "sha256": "903d6216bd874af7d40dc388c040d1ba6f147494c73fd42e98403c39835e729a",
+          "size": 1583
+        },
+        "test": {
+          "path": "release/f1_audit_20261010/test_f1_lossless_evaluator_20261018.py",
+          "sha256": "5602b55f9305241447cba1d93e0413263a6ee2b2e5536979f6d4a2238dc54669",
+          "size": 14564
+        }
+      }
+    ]
+  },
+  "visible_information_before_amendment": {
+    "independence_limit": "Absence of a recorded label-read artifact cannot prove the impossibility of arbitrary unlogged access. These claims cover the recorded execution trail.",
+    "leo800_influenced_candidate_revision": true,
+    "leo800_outcomes_visible": true,
+    "leo800_status": "development_or_diagnostic_only",
+    "leo900_metadata_visible": "file names, sizes, timestamps, process/log status, environment/config metadata",
+    "leo900_outcomes_used_for_correction_or_candidate_selection": false,
+    "leo900_semantic_labels_read_by_amendment_steps": false,
+    "old_outer_failure_counts": [
+      5,
+      4,
+      3,
+      1,
+      3,
+      0
+    ],
+    "old_outer_status": "development_or_diagnostic_only",
+    "source_gate_only_selection_scope": "route ranking and fixed unseen alpha; not the full candidate continuation history"
+  }
+}

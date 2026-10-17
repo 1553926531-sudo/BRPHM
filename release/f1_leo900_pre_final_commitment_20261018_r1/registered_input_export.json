@@ -1,0 +1,74 @@
+{
+  "files": [
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/candidate_preregistration.json",
+      "relative": "evidence/candidate_preregistration.json",
+      "sha256": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+      "size": 4975
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/candidate_snapshot.json",
+      "relative": "evidence/candidate_snapshot.json",
+      "sha256": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+      "size": 988
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/formal_candidate_receipt.json",
+      "relative": "evidence/formal_candidate_receipt.json",
+      "sha256": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+      "size": 2426
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/partition_plan.json",
+      "relative": "evidence/partition_plan.json",
+      "sha256": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+      "size": 30018
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/preparation_attempt_history.json",
+      "relative": "evidence/preparation_attempt_history.json",
+      "sha256": "8a2eebc431c68acd4866bb4ea39c10ee931446f95451a17860a755756135128b",
+      "size": 1235
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/preparation_postflight_verification.json",
+      "relative": "evidence/preparation_postflight_verification.json",
+      "sha256": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+      "size": 2528
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/simulation_schedule.json",
+      "relative": "evidence/simulation_schedule.json",
+      "sha256": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+      "size": 12457
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/source_route_replay_certificate.json",
+      "relative": "evidence/source_route_replay_certificate.json",
+      "sha256": "d232448e1a8e9b8bf727a982df0e72ea235e9519271534ddfe1f038046cd0f51",
+      "size": 1878
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/template_exclusion_manifest.json",
+      "relative": "evidence/template_exclusion_manifest.json",
+      "sha256": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3",
+      "size": 11517
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json",
+      "relative": "channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json",
+      "sha256": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+      "size": 2734
+    },
+    {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json",
+      "relative": "dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json",
+      "sha256": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61",
+      "size": 23405
+    }
+  ],
+  "guard_absent_before_and_after": true,
+  "observed_utc": "2026-10-17T19:30:39.101548+00:00",
+  "raw_or_tensor_contents_read": false,
+  "remote_writes": false
+}
