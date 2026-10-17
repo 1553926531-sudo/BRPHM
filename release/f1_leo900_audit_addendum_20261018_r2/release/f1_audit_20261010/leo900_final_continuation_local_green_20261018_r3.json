@@ -1,0 +1,32 @@
+{
+  "artificial_only": true,
+  "command": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "test_leo900_final_continuation_20261018",
+    "-v"
+  ],
+  "created_utc": "2026-10-17T19:17:36.884928+00:00",
+  "exit_code": 0,
+  "expected_test_count": 11,
+  "files": [
+    {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_final_continuation_20261018.py",
+      "sha256": "95980e282428c016f0b44918fb25eecbd5e6555550bf38e3cd1161dbb2ec753e",
+      "size": 17477
+    },
+    {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_final_continuation_20261018.py",
+      "sha256": "7048632593088cadaa33f5b0a023ff9e1c3ca7b8f50b9da35c16647d206437bb",
+      "size": 11472
+    }
+  ],
+  "prior_failure_evidence": "leo900_final_continuation_red_20261018_r1.json",
+  "schema": "brphm-f1-continuation-local-tests-v1",
+  "stderr": "test_existing_controller_runtime_is_never_overwritten (test_leo900_final_continuation_20261018.FinalContinuationTests.test_existing_controller_runtime_is_never_overwritten) ... ok\ntest_failed_phase_preserves_logs_and_never_advances (test_leo900_final_continuation_20261018.FinalContinuationTests.test_failed_phase_preserves_logs_and_never_advances) ... ok\ntest_full_pipeline_retains_negative_gate_and_executes_statistics (test_leo900_final_continuation_20261018.FinalContinuationTests.test_full_pipeline_retains_negative_gate_and_executes_statistics) ... ok\ntest_guard_existing_outputs_and_input_drift_are_rejected_before_commands (test_leo900_final_continuation_20261018.FinalContinuationTests.test_guard_existing_outputs_and_input_drift_are_rejected_before_commands) ... ok\ntest_incomplete_job_preflight_has_no_outputs_or_label_access (test_leo900_final_continuation_20261018.FinalContinuationTests.test_incomplete_job_preflight_has_no_outputs_or_label_access) ... ok\ntest_mismatched_statistics_gate_is_an_error_after_one_evaluation (test_leo900_final_continuation_20261018.FinalContinuationTests.test_mismatched_statistics_gate_is_an_error_after_one_evaluation) ... ok\ntest_modified_freeze_evidence_is_detected_before_statistics (test_leo900_final_continuation_20261018.FinalContinuationTests.test_modified_freeze_evidence_is_detected_before_statistics) ... ok\ntest_partial_completion_markers_do_not_start_final_stages (test_leo900_final_continuation_20261018.FinalContinuationTests.test_partial_completion_markers_do_not_start_final_stages) ... ok\ntest_simulation_failure_never_launches_a_stage (test_leo900_final_continuation_20261018.FinalContinuationTests.test_simulation_failure_never_launches_a_stage) ... ok\ntest_wait_rechecks_input_integrity_before_any_final_stage (test_leo900_final_continuation_20261018.FinalContinuationTests.test_wait_rechecks_input_integrity_before_any_final_stage) ... ok\ntest_zero_exit_without_receipt_cannot_advance_to_freeze (test_leo900_final_continuation_20261018.FinalContinuationTests.test_zero_exit_without_receipt_cannot_advance_to_freeze) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 17.407s\n\nOK\n",
+  "stdout": ""
+}

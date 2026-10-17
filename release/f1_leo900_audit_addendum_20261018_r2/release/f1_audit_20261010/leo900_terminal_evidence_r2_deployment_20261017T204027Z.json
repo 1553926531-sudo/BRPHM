@@ -1,0 +1,112 @@
+{
+  "audit_execution_file": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/first_read_only_audit_execution.json",
+    "sha256": "d5751efbf8ab67dd22fceea8debfaa436730275b8613aa3a1a20719923540a61",
+    "size": 1323
+  },
+  "deployer_sha256": "f9da83127597cc41957ae6527b86b0a0ca9f2e3e4dbd5b061976aa451d63b35d",
+  "ended_utc": "2026-10-17T20:40:27.262063+00:00",
+  "input_sha256": {
+    "leo900_external_commitment_rest_publication_20261017T193909Z.json": "5c60799f4d6154bf6235453a44e7ca385b27b5653d428ebc23031c2535bf7025",
+    "leo900_terminal_evidence_20261018_r2.py": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+    "terminal_evidence_r2_local_green_20261018_r1.json": "3ba6d5a092dc3c4be17062e2a0713560a77c89614f8c4eacb2949298dc90842e",
+    "test_leo900_terminal_evidence_20261018_r2.py": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c"
+  },
+  "read_only_audit": {
+    "command": [
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/leo900_terminal_evidence_20261018_r2.py",
+      "--output",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/first_read_only_audit.json"
+    ],
+    "exit_code": 0,
+    "record": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/first_read_only_audit.json",
+      "sha256": "1dccadb3d7de4ea56d9ee56f3579303f40a25d6675376dcff15e7a9ad7861f6e",
+      "size": 298
+    },
+    "report": {
+      "audit_code_sha256": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+      "created_utc": "2026-10-17T20:40:27.193789+00:00",
+      "f1_closed": false,
+      "registered_inputs_verified": 156,
+      "scientific_success_claimed": false,
+      "semantic_final_labels_read_by_auditor": false,
+      "status": "PENDING_TERMINAL"
+    },
+    "stderr": "",
+    "stdout": "{\"status\": \"PENDING_TERMINAL\", \"output\": \"/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/first_read_only_audit.json\", \"f1_closed\": false, \"sha256\": \"1dccadb3d7de4ea56d9ee56f3579303f40a25d6675376dcff15e7a9ad7861f6e\"}\n"
+  },
+  "run": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1",
+  "ssh_exit_code": 0,
+  "ssh_stderr": "",
+  "started_utc": "2026-10-17T20:40:24.072437+00:00",
+  "status": "PASS",
+  "support": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2",
+  "verification": {
+    "candidate_or_route_modified": false,
+    "command": [
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "-v",
+      "test_leo900_terminal_evidence_20261018_r2"
+    ],
+    "controller_or_evaluator_invoked": false,
+    "deployed_files": [
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/leo900_external_commitment_rest_publication_20261017T193909Z.json",
+        "sha256": "5c60799f4d6154bf6235453a44e7ca385b27b5653d428ebc23031c2535bf7025",
+        "size": 19024
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/leo900_terminal_evidence_20261018_r2.py",
+        "sha256": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+        "size": 46609
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/terminal_evidence_r2_local_green_20261018_r1.json",
+        "sha256": "3ba6d5a092dc3c4be17062e2a0713560a77c89614f8c4eacb2949298dc90842e",
+        "size": 7603
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/test_leo900_terminal_evidence_20261018_r2.py",
+        "sha256": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c",
+        "size": 46049
+      }
+    ],
+    "deployer_sha256": "f9da83127597cc41957ae6527b86b0a0ca9f2e3e4dbd5b061976aa451d63b35d",
+    "ended_utc": "2026-10-17T20:40:27.040846+00:00",
+    "exit_code": 0,
+    "network_bytes_uploaded": 119285,
+    "real_final_labels_read_by_tests": false,
+    "resources": {
+      "cpu_affinity": [
+        4
+      ],
+      "nice": 15,
+      "numeric_threads": {
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      }
+    },
+    "schema": "brphm-f1-independent-terminal-auditor-rack-tests-v2",
+    "simulation_or_configuration_modified": false,
+    "started_utc": "2026-10-17T20:40:24.536855+00:00",
+    "status": "PASS",
+    "stderr": "test_duplicate_json_key_rejected (test_leo900_terminal_evidence_20261018_r2.ParserAndArithmeticTests) ... ok\ntest_non_finite_json_rejected (test_leo900_terminal_evidence_20261018_r2.ParserAndArithmeticTests) ... ok\ntest_path_escape_rejected (test_leo900_terminal_evidence_20261018_r2.ParserAndArithmeticTests) ... ok\ntest_registered_gate_operation_order_at_float_boundary (test_leo900_terminal_evidence_20261018_r2.ParserAndArithmeticTests) ... ok\ntest_boolean_metric_count_is_not_an_integer_unit_count (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_bootstrap_inverted_ci_after_hash_rebinding (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_bootstrap_negative_sd_after_hash_rebinding (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_bootstrap_point_contradiction_after_hash_rebinding (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_csv_duplicate_metric_after_hash_rebinding (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_csv_numeric_tamper_after_hash_rebinding (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_duplicated_statistics_unit_cannot_hide_missing_member (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_empty_evaluated_membership_cannot_be_a_complete_component (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_extra_raw_member_is_rejected (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_history_cannot_be_relabelled_as_source_only (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_non_positive_or_non_integer_unit_windows_are_rejected (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_production_only_branches_with_opaque_artifacts (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_receipt_unit_window_total_must_match_component_count (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_snapshot_wrong_derivation_after_hash_rebinding (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_snapshot_wrong_method_after_hash_rebinding (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_statistics_unit_counts_must_match_original_layout (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_unknown_evaluated_unit_rejected_even_with_all_hash_edges_rebound (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_wrong_physical_units_after_hash_rebinding (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_zero_window_generated_units_are_distinct_from_evaluated_units (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests) ... ok\ntest_clock_reversal_even_with_valid_hash_chain (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_controller_failure_is_rejected (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_duplicate_final_access_even_with_valid_hash_chain (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_event_byte_tamper (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_freeze_after_guard_is_rejected (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_full_chain_verified_without_claiming_research_success (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_in_progress_is_pending (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_inconsistent_gate (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_missing_component (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_naive_timestamp_is_rejected (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_negative_gate_still_preserves_complete_audit (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_publication_after_access_is_rejected (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_raw_hash_drift (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_registered_source_drift (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_statistics_report_drift (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\ntest_wrong_repository_is_rejected (test_leo900_terminal_evidence_20261018_r2.TerminalEvidenceTests) ... ok\n\n----------------------------------------------------------------------\nRan 39 tests in 2.382s\n\nOK\n",
+    "stdout": "",
+    "tensor_transfer_bytes": 0,
+    "test_count": 39
+  },
+  "verification_file": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/verification.json",
+    "sha256": "d9126fcd837a62fbfd55a4265d2fc624eae37b379862aaafd236684961519c72",
+    "size": 6951
+  }
+}

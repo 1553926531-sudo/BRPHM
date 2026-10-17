@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python",
+    "-B",
+    "release/f1_audit_20261010/audit_leo900_training_label_flow_20261018.py"
+  ],
+  "exception": "RuntimeError: protocol binding mismatch: evaluator",
+  "exit_code": 1,
+  "production_files_changed": false,
+  "real_final_labels_read": false,
+  "recorded_utc": "2026-10-17T20:11:39.451921+00:00",
+  "research_code_imported": false,
+  "schema": "brphm-f1-static-audit-binding-rejection-v1",
+  "script_sha256": "c7aad90e2221b2f5a51a46dbe36ec25eabcc6dbb6ac6eff57ae984283641a941",
+  "stage": "static-source byte binding before source-flow checks"
+}

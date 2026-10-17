@@ -1,0 +1,17 @@
+# LEO900 audit evidence through R9
+
+This new bundle adds an independent prediction-to-summary auditor, its retained RED/failed/passing artificial test receipts, a separate Rack support deployment and R9 evidence ledger. It also retains the R5-R8 evidence closure and byte-exact original small text commitment. **F1 remains OPEN; the F1-F10 goal remains active; substantive manuscript/F2-F10 edits remain frozen.**
+
+The original candidate/analysis commitment is [BRPHM commit 846cdaac03beab2bacb9834bde1ed8fff1c77141](https://github.com/1553926531-sudo/BRPHM/commit/846cdaac03beab2bacb9834bde1ed8fff1c77141). The earlier R8 audit package remains [BRPHM commit b8ad940e5779692f25643cdaa2fac346e4385760](https://github.com/1553926531-sudo/BRPHM/commit/b8ad940e5779692f25643cdaa2fac346e4385760). This package changes neither commitment, candidate, gate, statistical estimand, analysis, simulation nor controller.
+
+Run `python -B verify_addendum.py` here to verify exact member hashes, all included `artifact_sha256` edges, membership and Python syntax. Source paths and historic relative references are preserved and mapped in `INTEGRITY_GRAPH.json`. This offline verifier does not execute the included publisher/deployer/evaluator/controller programs.
+
+From the included `release/f1_audit_20261010`, the artificial prediction suite is `python -B -m unittest -v test_leo900_prediction_summary_audit_20261018` (NumPy). Its saved records show12/12 local and12/12 Rack passing; both real audits defer prediction decoding until complete terminal. The independent statistics suite is `python -B -m unittest -v test_leo900_statistics_numerical_audit_20261018` (NumPy/SciPy), with16/16 saved local/Rack passes. Reproducing either artificial suite requires no real final inputs. Production auditor CLIs remain locked to their registered Rack root. Never re-run a deployed evaluator, controller launcher or deployment to reproduce these artificial tests.
+
+The three prepared audit layers check provenance and exact original gate arithmetic; original saved predictions versus per-unit/pooled summaries; and saved summaries versus bootstrap draws, intervals, SD, paired tests and Holm. The two descriptive arithmetic auditors allow64 ULP at their stated comparison scales; this is never a new gate tolerance. They do not independently regenerate raw labels/window eligibility or model/projection outputs. R9 bridges R8's previously stated saved-summary assumption only when run successfully on the eventual real terminal evidence; currently it is prepared and tested.
+
+Latest included capture:2026-10-17T21:14:39Z, BAT25/48,RWA0/48, existing simulation/controller running, no final-label guard or terminal yet. Observations can become stale and imply no completion time. Synthetic test success and public availability do not establish scientific superiority. Seed17/42/73 are ensemble constituents, not independent repetitions. Previous outer/LEO800 feedback remains development/diagnostic evidence. One new held-out orbit cannot establish population-wide generalization.
+
+Local timestamps are self-recorded. GitHub readbacks corroborate byte availability by observed server-response time, not immutable notarization or global historic non-access. Audit additions cannot be backdated or substituted for the original commitment. No dataset, model tensor or simulation output is copied here.
+
+Prepared UTC:2026-10-17T21:17:18.279991+00:00. Operations are confined to BRPHM; ModelScope remains read-only; no IEEE upload/submission/email/contact is performed.

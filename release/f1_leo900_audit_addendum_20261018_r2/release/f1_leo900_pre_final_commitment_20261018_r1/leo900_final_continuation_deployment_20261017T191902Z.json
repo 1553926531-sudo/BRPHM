@@ -1,0 +1,9 @@
+{
+  "deployer_sha256": "7e8438c472f03a98a5de59226a5b6381ab07984934a55af65c4f6fa5bb4ff004",
+  "observed_utc": "2026-10-17T19:19:02.706041+00:00",
+  "ssh_exit_code": 1,
+  "ssh_stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 23, in <module>\n  File \"<string>\", line 22, in verify_pins\nRuntimeError: pinned input drift: \\mnt\\data\\BRPHM\\rul-space\\work\\f1_leo900_formal_20261017_r1\\evidence\\partition_plan.json\n",
+  "status": "ERROR",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<string>\", line 23, in <module>\n  File \"<string>\", line 22, in verify_pins\nRuntimeError: pinned input drift: \\mnt\\data\\BRPHM\\rul-space\\work\\f1_leo900_formal_20261017_r1\\evidence\\partition_plan.json\n",
+  "stdout": ""
+}

@@ -1,0 +1,19 @@
+{
+  "started_utc": "2026-10-17T19:53:20.620829+00:00",
+  "ended_utc": "2026-10-17T19:53:22.204601+00:00",
+  "command": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_leo900_terminal_evidence_20261018.TerminalEvidenceTests.test_full_chain_verified_without_claiming_research_success"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "test_full_chain_verified_without_claiming_research_success (test_leo900_terminal_evidence_20261018.TerminalEvidenceTests.test_full_chain_verified_without_claiming_research_success) ... ERROR\r\n\r\n======================================================================\r\nERROR: test_full_chain_verified_without_claiming_research_success (test_leo900_terminal_evidence_20261018.TerminalEvidenceTests.test_full_chain_verified_without_claiming_research_success)\r\n----------------------------------------------------------------------\r\nTraceback (most recent call last):\r\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_terminal_evidence_20261018.py\", line 191, in test_full_chain_verified_without_claiming_research_success\r\n    report = self.fixture.run()\r\n             ^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_terminal_evidence_20261018.py\", line 172, in run\r\n    return audit.audit(self.root, self.root / \"publication.json\", anchors=self.anchors)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_terminal_evidence_20261018.py\", line 239, in audit\r\n    require(plan == expected_plan and plan.get('run_root') == str(root)\r\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_terminal_evidence_20261018.py\", line 44, in require\r\n    raise EvidenceError(message)\r\nleo900_terminal_evidence_20261018.EvidenceError: controller plan differs from registered fixed plan\r\n\r\n----------------------------------------------------------------------\r\nRan 1 test in 0.985s\r\n\r\nFAILED (errors=1)\r\n",
+  "code_sha256": {
+    "leo900_terminal_evidence_20261018.py": "c6a7976fe5f1495c62165e89a291f181674a47f3db6790c8b1a9ec75318a92e1",
+    "test_leo900_terminal_evidence_20261018.py": "572df2659d089aca1e188aa63cfe1a4e0e7450dcb399d2e6ef9372d1799646a1"
+  }
+}

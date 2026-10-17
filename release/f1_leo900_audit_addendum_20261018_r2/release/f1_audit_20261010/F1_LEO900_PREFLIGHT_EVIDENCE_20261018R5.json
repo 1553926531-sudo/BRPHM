@@ -1,0 +1,217 @@
+{
+  "artifact_sha256": {
+    "F1_EVIDENCE_LEDGER_20261017.md": "820d95cc95eb97353a1b0ea14b8e83079571b6f548e9af4acb4d511a35822558",
+    "F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+    "F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+    "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.json": "5d7f153acf7bbac5de6dbf7b28e02d49bc72931744a4e27c4d053b1faf03f2b6",
+    "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.md": "860bd82336048bb6c78d0e9774cf0f9e57db5fb508bae8aff156ef0d51da7980",
+    "F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+    "check_f1_statistics_registered_oracles_20261018.py": "c4a475de652e0b84b0881f7941d20ae8905794289dde9d1b6a175bfc26467405",
+    "f1_leo900_channel_policy_clean_final_test_20261018_r4.py": "5b8acfe1eccc4f01e1e67ce0ef13f9d6768bb2ae9da152672974c2a7f1cf7a76",
+    "f1_lossless_gate_statistics_20261018.py": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+    "f1_paired_predictions_20261018.py": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+    "leo900_channel_policy_20261018_r4.py": "8ef26ac31b69397d4ce3d9960bee9c212c05d2f732698b575f0de90779c7326e",
+    "leo900_continuation_observation_20261017T192737Z.json": "3f412213523cff937b823b3efb7cef4a71b0dedba57369e8d625d0c265930cbe",
+    "leo900_final_continuation_20261018.py": "95980e282428c016f0b44918fb25eecbd5e6555550bf38e3cd1161dbb2ec753e",
+    "leo900_final_continuation_deployment_20261017T191902Z.json": "c83ee791045abf85a07b1af650d9b4d50fb76223db09e52e22c52ab512a4ce18",
+    "leo900_final_continuation_deployment_20261017T192006Z.json": "6dd65edb9feb895fbe103c748a9958a31580246810b322ea151d199e8f997d74",
+    "leo900_final_continuation_launch_20261017T192053Z.json": "40efbc9805b30034fa98051e83beff89c7eea4adf4623202b7f96b98fcd43add",
+    "leo900_final_continuation_local_green_20261018_r1.json": "d211403227b3116733fe3a8ca4b48651fc1c614f1198d8b134f714df6e0310af",
+    "leo900_final_continuation_local_green_20261018_r2.json": "9bcbb40f42b81a89dd0bf465138d73837cf0c929a18f587aba86506007669eeb",
+    "leo900_final_continuation_local_green_20261018_r3.json": "353a9b2a0800cbb9e182d5b78e385eb3107316dbe0dac3450e66940aaf1438ce",
+    "leo900_final_continuation_red_20261018_r1.json": "9a9932a387804e2a851aee8edfed54b3de02cfa244d4e7c804738dc71ede3f5b",
+    "leo900_generation_metadata_20261017T191247Z.json": "d48f6ed163908d0428afb2418058cc60228fc9e5e95c33dfa54f0243427b6daf",
+    "leo900_statistics_protocol_deployment_r1_20261017T190734Z.json": "5b9f025c9220f88f5a1dc5e204d00c189a514a87d38b949c176ba768177db73b",
+    "registered_input_export.json": "1ea8fae448f863fcc8f044cc46eb6f49bfb15e288583898b06f71686db83988c",
+    "registered_inputs/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+    "registered_inputs/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61",
+    "registered_inputs/evidence/candidate_preregistration.json": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+    "registered_inputs/evidence/candidate_snapshot.json": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+    "registered_inputs/evidence/formal_candidate_receipt.json": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+    "registered_inputs/evidence/partition_plan.json": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+    "registered_inputs/evidence/preparation_attempt_history.json": "8a2eebc431c68acd4866bb4ea39c10ee931446f95451a17860a755756135128b",
+    "registered_inputs/evidence/preparation_postflight_verification.json": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+    "registered_inputs/evidence/simulation_schedule.json": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+    "registered_inputs/evidence/source_route_replay_certificate.json": "d232448e1a8e9b8bf727a982df0e72ea235e9519271534ddfe1f038046cd0f51",
+    "registered_inputs/evidence/template_exclusion_manifest.json": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3",
+    "test_f1_lossless_gate_statistics_20261018.py": "bcb13da9b40dd1c2ab2861946d33b340f0aac7bcf1a6db4b95ffa306bbb0c7db",
+    "test_leo900_final_continuation_20261018.py": "7048632593088cadaa33f5b0a023ff9e1c3ca7b8f50b9da35c16647d206437bb"
+  },
+  "created_utc": "2026-10-17T19:30:39.259353+00:00",
+  "findings": [
+    {
+      "command": "Inspect review F1, preserved chronology and registered candidate/partition input hashes.",
+      "confidence": "High for code/bytes/process observations. Self-recorded timestamps and access guards are not independent no-access attestations.",
+      "cross_validation": "Review quotations and archived candidate/failure chronology agree on reuse; new final is separately registered.",
+      "date": "2026-10-17T19:30:39.259353+00:00",
+      "evidence": [
+        "F1_EVIDENCE_LEDGER_20261017.md",
+        "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.json"
+      ],
+      "finding": "F1",
+      "hash": "See artifact_sha256 for every cited package file",
+      "id": "F1-R5-01",
+      "location": "Review F1; abstract/Fig.1/Section VII vs Section V/Table I/Fig.2",
+      "modification": "Retain historic outer/LEO800 as development evidence and require the fixed LEO900 final chain. Supersede earlier F1-closed implications.",
+      "original": "Candidate selection never reads outer labels; outer failure counts 5,4,3,1,3,0.",
+      "problem": "Historic outer results influenced subsequent development; an old provenance boolean cannot undo that reuse.",
+      "remaining_risk": "Final evaluation and provenance verification still required; no claim of scientific success.",
+      "result": "F1 OPEN; no manuscript or substantive F2-F10 editing in this continuation.",
+      "source": "Original IEEE review F1 and byte-bound project records in this package",
+      "status": "OPEN"
+    },
+    {
+      "command": "Recorded deployment/test commands; postprocessing command fixed in the statistical protocol.",
+      "confidence": "High for code/bytes/process observations. Self-recorded timestamps and access guards are not independent no-access attestations.",
+      "cross_validation": "Recomputed arithmetic checked against frozen metric/gate implementations and artificial known-answer fixtures.",
+      "date": "2026-10-17T19:30:39.259353+00:00",
+      "evidence": [
+        "F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json",
+        "leo900_statistics_protocol_deployment_r1_20261017T190734Z.json"
+      ],
+      "finding": "F1",
+      "hash": "See artifact_sha256 for every cited package file",
+      "id": "F1-R5-02",
+      "location": "Fixed final statistical postprocessing",
+      "modification": "Register lossless same-pass NPZ/JSON reconstruction, unit-cluster bootstrap and multiplicity before final access.",
+      "original": "Gate tolerance 1e-12; seeds 17/42/73 are ensemble constituents.",
+      "problem": "Rounded displays and window-wise uncertainty cannot independently substantiate the final decision.",
+      "remaining_risk": "One final orbit; intervals condition on units and fitted models. Gate success does not imply meaningful effect.",
+      "result": "Local/Rack 14-test suites; 18 metric and 124 gate oracle cases; artificial CLI with 20000 draws. All 14 input anchors unchanged.",
+      "source": "Original IEEE review F1 and byte-bound project records in this package",
+      "status": "REGISTERED; REAL RESULTS PENDING"
+    },
+    {
+      "command": "python -B -m unittest test_leo900_final_continuation_20261018 -v (local and Rack, recorded commands)",
+      "confidence": "High for code/bytes/process observations. Self-recorded timestamps and access guards are not independent no-access attestations.",
+      "cross_validation": "Disposable subprocess fixtures verify stage order, negative gate continuation, phase failures, missing receipts, drift and duplicate-output rejection; Rack deployment hashes match local files.",
+      "date": "2026-10-17T19:30:39.259353+00:00",
+      "evidence": [
+        "leo900_final_continuation_red_20261018_r1.json",
+        "leo900_final_continuation_local_green_20261018_r1.json",
+        "leo900_final_continuation_local_green_20261018_r3.json",
+        "leo900_final_continuation_deployment_20261017T192006Z.json"
+      ],
+      "finding": "F1",
+      "hash": "See artifact_sha256 for every cited package file",
+      "id": "F1-R5-03",
+      "location": "Continuation controller and preserved test history",
+      "modification": "Install a fixed-path exclusive controller with hash checks, output preservation, input drift checks and a single-access guard.",
+      "original": "seal -> freeze -> evaluate -> statistics; no automatic retries.",
+      "problem": "An interrupted chat must not cause duplicate evaluation or a skipped statistics stage after a negative gate.",
+      "remaining_risk": "Artificial tests verify execution behavior, not model performance or final-data validity.",
+      "result": "Initial missing implementation RED retained. First implementation rejected Windows short paths (7 tests: 5 failures/2 errors); corrected symlink/junction checks. Final local/Rack 11/11 pass.",
+      "source": "Original IEEE review F1 and byte-bound project records in this package",
+      "status": "IMPLEMENTED AND DEPLOYED"
+    },
+    {
+      "command": "Recorded deploy_leo900_final_continuation_20261018.py invocation; do not rerun after controller start.",
+      "confidence": "High for code/bytes/process observations. Self-recorded timestamps and access guards are not independent no-access attestations.",
+      "cross_validation": "Failure traceback plus corrected remote paths, deployed file hashes and Rack verification.",
+      "date": "2026-10-17T19:30:39.259353+00:00",
+      "evidence": [
+        "leo900_final_continuation_deployment_20261017T191902Z.json",
+        "leo900_final_continuation_deployment_20261017T192006Z.json"
+      ],
+      "finding": "F1",
+      "hash": "See artifact_sha256 for every cited package file",
+      "id": "F1-R5-04",
+      "location": "First deployment and corrected deployment",
+      "modification": "Use Path.as_posix(); preserve failed receipt and deploy only to the registered support directory.",
+      "original": "Registered paths must use POSIX separators on Rack.",
+      "problem": "First deploy attempt serialized Windows backslashes into a remote path.",
+      "remaining_risk": "Deployment success is an execution prerequisite, not an experimental result.",
+      "result": "First attempt failed before remote mkdir. Corrected deployment transferred 28949 code bytes; tests and read-only preflight passed before launch.",
+      "source": "Original IEEE review F1 and byte-bound project records in this package",
+      "status": "CORRECTED; BOTH ATTEMPTS RETAINED"
+    },
+    {
+      "command": "python -B release/f1_audit_20261010/capture_leo900_continuation_20261018.py",
+      "confidence": "High for code/bytes/process observations. Self-recorded timestamps and access guards are not independent no-access attestations.",
+      "cross_validation": "Launch receipt, /proc state, ps output and byte-linked event files from a later SSH session.",
+      "date": "2026-10-17T19:30:39.259353+00:00",
+      "evidence": [
+        "leo900_final_continuation_launch_20261017T192053Z.json",
+        "leo900_continuation_observation_20261017T192737Z.json"
+      ],
+      "finding": "F1",
+      "hash": "See artifact_sha256 for every cited package file",
+      "id": "F1-R5-05",
+      "location": "Controller launch and post-SSH process observation",
+      "modification": "Record detached controller PID, affinity/nice, event chain and later read-only process evidence.",
+      "original": "Continue after normal simulation completion using fixed stages and outputs.",
+      "problem": "A successful launch response alone does not establish process survival or protect the simulation.",
+      "remaining_risk": "Process liveness is not completion; this is a point-in-time access/metadata observation.",
+      "result": "PID616411 survives with PPID1, CPU4/nice15; four MATLAB workers CPU0-3 remain active. Two controller events; valid chain; stderr empty; waiting for simulation; guard absent.",
+      "source": "Original IEEE review F1 and byte-bound project records in this package",
+      "status": "RUNNING; WAITING FOR SIMULATION"
+    },
+    {
+      "command": "Dedicated alternate-index git commit and non-force push to BRPHM; verify commit/ref and blob hashes through independent readback.",
+      "confidence": "High for code/bytes/process observations. Self-recorded timestamps and access guards are not independent no-access attestations.",
+      "cross_validation": "Input bytes exported with registered hashes and guard absence before/after; GitHub acceptance to be checked separately.",
+      "date": "2026-10-17T19:30:39.259353+00:00",
+      "evidence": [
+        "F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+        "registered_input_export.json",
+        "registered_inputs/evidence/formal_candidate_receipt.json"
+      ],
+      "finding": "F1",
+      "hash": "See artifact_sha256 for every cited package file",
+      "id": "F1-R5-06",
+      "location": "Pre-final public commitment in BRPHM",
+      "modification": "Publish this small fixed input/protocol/evidence package to an additive BRPHM branch with server readback; preserve all dirty work.",
+      "original": "Provide timestamps, input/output hashes, outer-read and selection-decision logs.",
+      "problem": "Local hashes and clocks alone do not supply an external publication record.",
+      "remaining_risk": "A GitHub commit is editable repository history, not immutable notarization; it cannot prove historic non-access or backdate this commitment.",
+      "result": "Package prepared before observed final access. Remote commit and GitHub server metadata must be appended in a separate publication receipt.",
+      "source": "Original IEEE review F1 and byte-bound project records in this package",
+      "status": "PUBLICATION PENDING"
+    }
+  ],
+  "goal_status": "active",
+  "manuscript_and_f2_f10_substantive_edits_frozen": true,
+  "next_required": [
+    "External commitment readback",
+    "Registered simulation completion and 96-unit metadata seal",
+    "Fixed candidate freeze, single final access, evaluation and same-pass statistics",
+    "Independent terminal chronology/hash/membership/gate verification",
+    "Then resume F2-F10"
+  ],
+  "package_root": "release/f1_leo900_pre_final_commitment_20261018_r1",
+  "previous_r4_sha256": "5d7f153acf7bbac5de6dbf7b28e02d49bc72931744a4e27c4d053b1faf03f2b6",
+  "repository_write_scope": "1553926531-sudo/BRPHM only",
+  "review_report_sha256": "9d75bf227ae883552af326352f3586bc23b84ebaf4c73d2a7fa4d1a26cfc8be5",
+  "schema": "brphm-f1-additive-pre-final-evidence-r5",
+  "status": "F1 OPEN",
+  "timeline_utc": [
+    {
+      "event": "Registered simulation started",
+      "time": "2026-10-17T11:01:20Z"
+    },
+    {
+      "event": "R4 imputation policy amendment deployed before final access",
+      "time": "2026-10-17T18:52:07Z"
+    },
+    {
+      "event": "Statistical protocol registered",
+      "time": "2026-10-17T19:07:34.585686+00:00"
+    },
+    {
+      "event": "Fixed continuation protocol registered",
+      "time": "2026-10-17T19:20:06.547192+00:00"
+    },
+    {
+      "event": "Detached controller launched",
+      "time": "2026-10-17T19:20:53Z"
+    },
+    {
+      "event": "Independent later SSH observation; waiting; guard absent",
+      "time": "2026-10-17T19:27:37.367391+00:00"
+    },
+    {
+      "event": "Read-only registered-input export; guard absent before/after",
+      "time": "2026-10-17T19:30:39.101548+00:00"
+    }
+  ]
+}

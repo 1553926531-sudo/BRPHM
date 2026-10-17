@@ -1,0 +1,19 @@
+{
+  "code_sha256": {
+    "leo900_terminal_evidence_20261018.py": "4591ca380f7dfc1a9938bf0abf4365f629cb8a20f98f89d905242a284c9856c3",
+    "test_leo900_terminal_evidence_20261018.py": "b5f3766d31165823c68db2b21743c1c8f1e17bde84df2c00778cdcad28a87eec"
+  },
+  "command": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_leo900_terminal_evidence_20261018.ProductionEvidenceTests.test_production_only_branches_with_opaque_artifacts"
+  ],
+  "ended_utc": "2026-10-17T20:04:06.642625+00:00",
+  "exit_code": 1,
+  "started_utc": "2026-10-17T20:03:58.628100+00:00",
+  "stderr": "test_production_only_branches_with_opaque_artifacts (test_leo900_terminal_evidence_20261018.ProductionEvidenceTests.test_production_only_branches_with_opaque_artifacts) ... ERROR\n\n======================================================================\nERROR: test_production_only_branches_with_opaque_artifacts (test_leo900_terminal_evidence_20261018.ProductionEvidenceTests.test_production_only_branches_with_opaque_artifacts)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_terminal_evidence_20261018.py\", line 401, in test_production_only_branches_with_opaque_artifacts\n    self.assertEqual(self.fixture.run()['status'], 'EXECUTION_CHAIN_VERIFIED')\n                     ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_terminal_evidence_20261018.py\", line 386, in run\n    return audit.audit(self.root, self.root / 'publication.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_terminal_evidence_20261018.py\", line 414, in audit\n    require(gate.get('comparison') == calculated_gate, 'gate calculation contradiction')\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_terminal_evidence_20261018.py\", line 51, in require\n    raise EvidenceError(message)\nleo900_terminal_evidence_20261018.EvidenceError: gate calculation contradiction\n\n----------------------------------------------------------------------\nRan 1 test in 6.404s\n\nFAILED (errors=1)\n",
+  "stdout": ""
+}

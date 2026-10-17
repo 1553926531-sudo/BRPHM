@@ -1,0 +1,140 @@
+{
+  "audit_execution_file": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/first_read_only_numerical_audit_execution.json",
+    "sha256": "be5a3a2c9a1824b6ae03f4a9a2665c86780127ac5ba4e6986e607bf43671dfa5",
+    "size": 1748
+  },
+  "deployer_sha256": "dccb0e40629e247afc65a53b897a30edff05705aefdeea637c1ee5f8701dd05d",
+  "ended_utc": "2026-10-17T20:55:00.255300+00:00",
+  "input_sha256": {
+    "f1_lossless_gate_statistics_20261018.py": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+    "leo900_external_commitment_rest_publication_20261017T193909Z.json": "5c60799f4d6154bf6235453a44e7ca385b27b5653d428ebc23031c2535bf7025",
+    "leo900_statistics_numerical_audit_20261018.py": "105618a87df69fd750c70f3388e93c70af9d33ec46e60cfe73677dd8bc55f179",
+    "leo900_terminal_evidence_20261018_r2.py": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+    "statistics_numerical_audit_local_20261018_r3.json": "da952e4a4c976e7559f3275d7ef570c60720c0e5af30e154392ebb89de4e3e1d",
+    "test_leo900_statistics_numerical_audit_20261018.py": "c8bfd63d3f93425ca6756900019f11509ffbf5c116146a980b9a03c1852c40b3",
+    "test_leo900_terminal_evidence_20261018_r2.py": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c"
+  },
+  "read_only_audit": {
+    "command": [
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/leo900_statistics_numerical_audit_20261018.py",
+      "--output",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/first_read_only_numerical_audit.json"
+    ],
+    "exit_code": 0,
+    "record": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/first_read_only_numerical_audit.json",
+      "sha256": "3fa55b0e155a9cd20307442ebfba7871a475b862e50dd8181541c667065db9b8",
+      "size": 605
+    },
+    "report": {
+      "bootstrap_arrays_decoded": false,
+      "created_utc": "2026-10-17T20:55:00.190139+00:00",
+      "f1_closed": false,
+      "final_truth_or_prediction_arrays_decoded": false,
+      "numerical_audit_code_sha256": "105618a87df69fd750c70f3388e93c70af9d33ec46e60cfe73677dd8bc55f179",
+      "numerical_statistics_status": "DEFERRED_UNTIL_COMPLETE_TERMINAL",
+      "registered_inputs_verified": 156,
+      "runtime": {
+        "numpy": "1.26.4",
+        "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.35",
+        "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]"
+      },
+      "scientific_success_claimed": false,
+      "semantic_final_labels_read_by_auditor": false,
+      "status": "PENDING_TERMINAL"
+    },
+    "stderr": "",
+    "stdout": "{\"f1_closed\":false,\"output\":\"/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/first_read_only_numerical_audit.json\",\"sha256\":\"3fa55b0e155a9cd20307442ebfba7871a475b862e50dd8181541c667065db9b8\",\"status\":\"PENDING_TERMINAL\"}\n"
+  },
+  "run": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1",
+  "ssh_exit_code": 0,
+  "ssh_stderr": "",
+  "started_utc": "2026-10-17T20:54:57.087805+00:00",
+  "status": "PASS",
+  "support": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1",
+  "transfer_budget_bytes": 260000,
+  "verification": {
+    "candidate_or_route_modified": false,
+    "command": [
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "-m",
+      "unittest",
+      "-v",
+      "test_leo900_statistics_numerical_audit_20261018"
+    ],
+    "controller_or_evaluator_invoked": false,
+    "deployed_files": [
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/f1_lossless_gate_statistics_20261018.py",
+        "sha256": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+        "size": 25400
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/leo900_external_commitment_rest_publication_20261017T193909Z.json",
+        "sha256": "5c60799f4d6154bf6235453a44e7ca385b27b5653d428ebc23031c2535bf7025",
+        "size": 19024
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/leo900_statistics_numerical_audit_20261018.py",
+        "sha256": "105618a87df69fd750c70f3388e93c70af9d33ec46e60cfe73677dd8bc55f179",
+        "size": 15302
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/leo900_terminal_evidence_20261018_r2.py",
+        "sha256": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+        "size": 46609
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/statistics_numerical_audit_local_20261018_r3.json",
+        "sha256": "da952e4a4c976e7559f3275d7ef570c60720c0e5af30e154392ebb89de4e3e1d",
+        "size": 4549
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/test_leo900_statistics_numerical_audit_20261018.py",
+        "sha256": "c8bfd63d3f93425ca6756900019f11509ffbf5c116146a980b9a03c1852c40b3",
+        "size": 13145
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/test_leo900_terminal_evidence_20261018_r2.py",
+        "sha256": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c",
+        "size": 46049
+      }
+    ],
+    "deployer_sha256": "dccb0e40629e247afc65a53b897a30edff05705aefdeea637c1ee5f8701dd05d",
+    "ended_utc": "2026-10-17T20:54:59.949230+00:00",
+    "exit_code": 0,
+    "raw_code_and_receipt_bytes_uploaded": 170078,
+    "real_final_labels_read_by_tests": false,
+    "resources": {
+      "cpu_affinity": [
+        4
+      ],
+      "mem_available_bytes_before": 121495764992,
+      "nice": 15,
+      "numeric_threads": {
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      }
+    },
+    "schema": "brphm-f1-independent-statistics-auditor-rack-tests-v1",
+    "simulation_or_configuration_modified": false,
+    "started_utc": "2026-10-17T20:54:57.539977+00:00",
+    "status": "PASS",
+    "stderr": "test_complete_production_chain_checks_numbers_without_decoding_predictions (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_large_unit_normal_approximation_matches_registered_output (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_nonfinite_draw_is_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_permuted_draws_with_identical_summary_are_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_plausible_but_wrong_holm_adjustment_is_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_plausible_but_wrong_pvalue_is_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_plausible_nested_but_wrong_interval_is_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_positive_but_wrong_bootstrap_sd_is_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_rehashed_plausible_ci_passes_structural_auditor_but_fails_numerical_auditor (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_shifted_draws_and_consistently_shifted_intervals_are_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_signed_rank_ties_and_normal_tail_have_hand_checked_oracles (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_single_unit_and_all_zero_differences_keep_undefined_values (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_unequal_window_weights_have_a_hand_checked_distribution (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_unfinished_chain_does_not_decode_even_a_poisoned_statistics_archive (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_valid_registered_statistics_match_a_different_arithmetic_implementation (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\ntest_wrong_seed_and_missing_draw_key_are_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 1.814s\n\nOK\n",
+    "stdout": "",
+    "tensor_transfer_bytes": 0,
+    "test_count": 16
+  },
+  "verification_file": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_numerical_audit_support_20261018_r1/verification.json",
+    "sha256": "1934d411b49138ab63b1a731dbf887564589c743abdfdb1e1c9b7d465bf2ee96",
+    "size": 5547
+  }
+}

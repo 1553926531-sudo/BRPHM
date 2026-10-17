@@ -1,0 +1,688 @@
+{
+  "candidate_modified": false,
+  "capture_script_sha256": "b071ba38e446d8625ba1a4f234cf4c2327e5d7c9c842d6e11c751a7d70ff169c",
+  "controller_process": {
+    "cmdline": "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python -B /mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_support_20261018_r1/leo900_final_continuation_20261018.py --protocol-sha256 a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a --run ",
+    "cpu_affinity": [
+      4
+    ],
+    "nice": 15,
+    "stat": "616411 (python) S 1 616411 616411 0 -1 4194304 226338 0 0 0 754 198 0 0 35 15 1 0 530121294 35127296 5408 18446744073709551615 96762245099520 96762247199333 140723567920224 0 0 0 0 16781312 2 1 0 0 17 4 0 0 0 0 0 96762248225584 96762248449088 96762840358912 140723567922252 140723567922527 140723567922527 140723567923146 0\n"
+  },
+  "controller_restarted": false,
+  "documents": {
+    "controller_plan": {
+      "document": {
+        "artifacts": {
+          "evaluate": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1/same_partition_performance_gate.json",
+          "final_receipt": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1/final_receipt.json",
+          "freeze": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1/freeze_manifest.json",
+          "seal": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_seal_execution_20261018_r1/seal_receipt.json",
+          "statistics": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_statistics_20261018_r1/statistics_receipt.json"
+        },
+        "fresh_outputs": [
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_seal_execution_20261018_r1",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1.candidate_snapshot.json",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_statistics_20261018_r1"
+        ],
+        "guard": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/leo900_final_label_access_guard.json",
+        "inputs": {
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/f1_leo900_channel_policy_clean_final_test_20261018_r4.py": "5b8acfe1eccc4f01e1e67ce0ef13f9d6768bb2ae9da152672974c2a7f1cf7a76",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/integration_checks.json": "c0a782dd161de322532d87f4ec006406e6fbeba26b706881ce395b76a4527794",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/leo900_channel_policy_20261018_r4.py": "8ef26ac31b69397d4ce3d9960bee9c212c05d2f732698b575f0de90779c7326e",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/verification.json": "684fda02bd0e7ae99c33fa5c038fa1128cf40c134cec05ee0b48576c0d5916f2",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/dependency_support_20261018_r3a/f1_leo900_dependency_bound_clean_final_test_20261018_r3.py": "44b62926868111e1df531bbf23f8af48e1c446a5684b47107b61a6466fab7359",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/dependency_support_20261018_r3a/leo900_dependency_closure_20261018.py": "83270555b317fec33ac0a72dca307ec17fc08429c0f2e2ef6490491af60e56a4",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/configs/preprocess/bat_target.yaml": "a9fb5a6c22e1de4364dd44d160de9cff93d446453b90d32b839f4f86f35ab095",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/configs/preprocess/rwa_target.yaml": "95d4fc52a5de90a7fb4513fad58d6f6edcb72aa7a2460f1b325940a3e1a76457",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/data/processed/bat_target.pt": "9e2a7f3dbf22e99b4685ff2751c94e96312d380032270771f7e29a51e30057ab",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/data/processed/norm_stats/bat_target.json": "2d85f3a241a343f8ac18d0ba2c0e3d09019cfb13c913869bf2d72743fc547796",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/data/processed/norm_stats/rwa_target.json": "b65cc7be29a372748188550250dfd65ce1483b01a5796fabfc36ba1a586be0e4",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/data/processed/rwa_target.pt": "9dcbd45d668cc03089ef628068d1247eb2100f64b70c3d5b4aba8ff262813595",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/evaluation_install_receipt.json": "74912cf89075a84588101cfc210268637464354896258d1ec6a4f150083a4448",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/scripts/__init__.py": "3f60f2fd025b6205fe14f0cd2d8a57ebec696ede2e453132f9191ccf19662987",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/scripts/_serveropt.py": "62e20910ecb866ef950b2a601d0ca0d54050d922f1fe864f57613cf78936f267",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/scripts/validate_interim.py": "d38808db8278d74606607788abd8ed0f3c456190468c30792d3c41fda8739074",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/scripts/validate_tree.py": "b6eeb5e501140ca99802d2199c4d1394856c7374e83a565cb9a84a0424c6818f",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/scripts_install_receipt_20261018_r3.json": "b22e6dcd87ce88962bf3c881c0f6f42c4b0e95392ef47784a5f5c1a208b3a5ea",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/cmapss.py": "28a99c7e1ec81ba853d9d8afcf9452153a6925302ac783cf371cae2b7a2b5fcd",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/download.py": "2135b2dcc0418def74a8326aa231762d6029c66e1daacd4379c4bb35e42d6522",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/femto.py": "54544ff27e816eb9c1b268158609aa34e53561d3a5228a635c10b511c440a1c4",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/hust.py": "8faca8245e4289d3bfeda804b2ea79a1408600608bcaf732a3a4692bd921616a",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/ims.py": "72923cf478abedf2bc55618c2a7275d60c986672f818b2e31c3429735f387d56",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/labels.py": "08a5aaf74e9cb1f97f035e815da86ccd4d88485a675d0c02e64cc3451c9943d2",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/matr.py": "b57012655ba497e5e3b39c5ff34664b5037b98e528e3583450499f787ebd9aa8",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/nasa_pcoe.py": "4eeccba0eb37f28c021b6f047cb06ec86bcff290d262acbd21bf64595aaeace7",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/nasa_random.py": "af861d0162eff6e122b086a6f5c1464765941af2cd10d0761c7fa7136982a468",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/nasa_smallsat.py": "abf67dd5e5dccb7be00a4b0976e80e6571738f1e1840e788b5ed20c7bfe0a893",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/paderborn.py": "4504e97624efaceb7d1a345cfa9aff18b7d1521698d723f7c90c701f10c70118",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/plot_a2a3_acceptance.py": "38e184ddaed5e5d68c9d71b895d830656a24e82127a7ba007ccf96b96f571c83",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/preprocess.py": "5d6720d486a9c2cb7ef580881462492490b705311a69f7688487d2bda5868463",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/registry.py": "0c7501fe229fc8364521b95eb648dfc77c5994ce99d2b2c9fd30bc931602249c",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/sim_loader.py": "05afe14c78200be6523c5e23802d0c4c1298f693d5dbe580a4d478d58090dd06",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/ucf.py": "4d110322161dac88fad5faa537bf081f4f4938085de1df5225c99e356c409524",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/vib_features.py": "44848df378587501e1911e95ce74cd30e914e99b58f569e76d7b40af304b2561",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/windows.py": "0bb61ab593272c18177a33724f29bbc2f0b45595d55913c12686d2635db50945",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/datasets/xjtu.py": "20a8e324f635d4414dbf8a309e0f0c0702bd65723a10d78e24579db175afb54d",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/distill_t3c.py": "b08dd3f01eca58879e5ed4490a76b435eac559c59d8c2857423ade038abc0e3b",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/evaluate.py": "392b22fd3f5a3fcd08ff6b70bac71c9e04000c3d38009a705f4173c046e417db",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/evaluate_fd001_classic.py": "06777fd0ac4db81852d18fd478ea84f4a72ec25164086843bcc467016c21da52",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/finetune.py": "dea116c794eeef1b1388cab08de87e3bd3916a22b08961d7d6b347b1a2033c2e",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/__init__.py": "10ef90188b7451c4753f9c0fecbecb80d5b2aaf603abf436b7ad4d31d11f3922",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/cnn_bilstm.py": "fd041f5ebcde381d45cd6f50c7dd7297a99143f43e78fee14ebf1747abfb8a01",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/fm_baselines.py": "e70c9bfbcb8b0b6fbf98cb13f6e494008e1ca21ef8f7208d1226254f6565f067",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/lora.py": "58035dc9ace88b3a7d26d0e9e0f32c4b8fdcaa54460746415f2052f207e46916",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/patch_transformer.py": "98616b61e6be75b3dded8e9642fec9e7ceb81de1e6eb199cfba065ade13660aa",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/t0_pf.py": "daed53e5dfa78bd178a4d4b0302d36dd7c75b8592dcccf46a6859dc1d873f917",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/t0_shallow.py": "434ca083c3f79f325147019a6ae74ccede5095fc9f428a1a2618a3d579f65e62",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/t0_similarity.py": "afa4797f03b368a381b8b6533dfb5e08f89e830f29bc26c96767f10c35ab403c",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/tcn_small.py": "46194e588b20c6907180e17f9a1d1d7288c72258d3b7060efad2d1bf396d9322",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/transformer_rul.py": "14db3dd33f43a0f5b8a43bf564ecb1d6a44fb7c01e194529b205daebe4c3d5d1",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/trend_forecast.py": "cc82d48f2e02f93dcb5ffcebfedae74f5964bc9fe6e8d869c0916b99070e5502",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/trend_head.py": "ef4fdec0cf306bd4f59229dc416b5880ca8e6ebd601210343c64805d1e13c043",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/models/tsl_backbone.py": "1ea9745d219f12a946f6d2914f3847f9a0362a876f108d7aa1f20b56ca24eacc",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/physics/__init__.py": "70e29f1642178f9ce26ed96e9f0a30437e9374be22b43d298eb2d307410bcf57",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/physics/constraints.py": "c64294fbd0a27d6fff82238241edb498cad338e28e1763a813d2fa40574803fc",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/physics/lupi_heads.py": "b162f8241444260ecd228a293828fed3645d6a036f14ecf1a726b5140a5d6a0d",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/predict.py": "0cc6247b923b8d714fa9e37f08deb4979f8d1d332474142a074835e011553d8f",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2_research_train.py": "69ce8f6893c2567ea1494eb9a1b4023802bc9a89f84761ee5aff66c054da7701",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2_train.py": "e0545829a708577591850a0da50052c5c9a2f3689427bb98e85a8881bade3aae",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2b_train.py": "cb14203ad48dde118986f5998e392d7e3a127e0720f609f5f6b7f3da435b36b2",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_dpan.py": "83461986b84172b134c66d2070b618db41fa3137b46bf594820bc4165112c3a7",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_dpan_train.py": "c37e803b60e295c0587040e6846912f7702c1d002e5c8a137ccc075d2473f1db",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_hard_monotonic.py": "58f0e466db4b37937ecf39831de3df20bd9342163b230b7a1bb6fef3eeb4fc3e",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_hard_monotonic_audit.py": "bb9a10e154541b1bea92283ed1103021f4ff7251c9c25f28516a131021d35e66",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_hard_monotonic_train.py": "c8b7ffd876b113fe3845131e6ebd2b673e7c8308a298e8c89a40180f4d3d0447",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_patch.py": "f8fa27cc38cd147ae4bb3a9ed6852aab0d36d7843f6acd0fa8b7fc39cd0af474",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_patch_strict.py": "382857ab5b17830ec162f51512a011da890fe397f1570a2ca4cae4d1bbf1fbab",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_physics.py": "b3afcded33b873dccfc6787a7182633ed9746cfaadb2b5f27122d59856a6d4d9",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_stage_risk.py": "b25c9eddaa9b9938c0d2fe1907902c239edbd6c0e911c355539fb0a33a5831db",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_trend_direct.py": "c9133344459813af90add458fea6835df99d7d41e0d418f8a0a9e4a0ecb2e56f",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_trend_direct_audit.py": "bf7e164b5085c8f2b7ca5f63e3051148eb6e2bb3a0882e607fe22dedc33c97dc",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/t2c_trend_direct_train.py": "5088f5079489b394a93fccad19306073aa7023dee28bd1ea0c212af286c27d3a",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/train.py": "68897cab35f4cbec273a40c8f04986f0ec3523ca9c66aed8a7f74bf4bd5f5761",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/transfer/__init__.py": "34e108ac9eb832e093fb969e93d1ef9347d0f1e6adc996a4c62b6c0313346894",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/transfer/dann.py": "696b07abd2b91741ff889f3a92654dced07a590495df9c52bc62991f4a798b27",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/transfer/mmd_coral.py": "4fdd91e25160ca23c305aca6231d61dba7982dc445311db67f95a6602c4e9ad7",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/transfer/protocols.py": "bd20a11cf77c26d5d410b10ca712f758d54da304b102430e290c13b748fe2586",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/transfer/schedules.py": "3926c2ed8631ccc4ff3974de9fd6e81659c3b87dfb29a0c12e493be750aa30ca",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/uncertainty/__init__.py": "2cb15221f86b81f6acc6fb9e0fcd5447e56966a2e585d7ce60d6c7f859ce399f",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/uncertainty/config.py": "7edb6b63c6e4ce88385c3d95d3b4f011e8ea79854a4fc408119628e645213024",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/uncertainty/conformal.py": "3ac1eba6edae95fbd100bb0cd7e54b2603fddaa4e8aea39d6ea81fe643acc730",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/uncertainty/ensemble.py": "c2253a52085f32317df15e0774434cd2aeb3b5344e62b42cf52959f5cb93c5a6",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/uncertainty/quantile.py": "4b029ee41efc9938d89343f3e6365f57768777f8c8d51bfd8d7db8e4baf254ef",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/uncertainty/t2c.py": "a173498033071f94a695c53300203997df7508faa8422fee158279c84d21a473",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/uncertainty/t2c_research.py": "63e3a7d27497ae0cda7e2763f163dc3fc6256f9413142005c527958fbf175664",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/utils/__init__.py": "e5548b018feb2eee3e1d89d9bb68e983738c15c77ccb9fd211a2a985cd809572",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/src/utils/logging.py": "f297028050693ebe31e09f7bc4c143eafb87affe181e7e4eb3903376878fc1f7",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/augmented_features_isolated_20260929/reference_summary_remote.json": "b708df9c448a051b8669c29789f00d282aa7907784e6f99d7e20ef1fb96b6733",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/f1_l1_worst_direction_source_only_leo620_20261017.py": "a233e27464a1ef0ff3785424b8cabfcabb2540e6f465cf8c6b2c236d91c24661",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/run_component_blend_refinement_20260824.py": "f72b8abe51610c3cd836461a6c3de95e329e6fe2e1d8c9f83165424895da0020",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/run_leave_one_orbit_out_generalization_20260825.py": "0755aba7575097e60fa584ad645d53962667230c7f7e282474363173f6171b11",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/run_segmented_hgb_mlp_source_gate_20260929.py": "658b99fecc31689ef624e0726b330b07bccf377ce7f0977d1814331a728f6bf7",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_conservative_route_source_gate.py": "5434508361af348a97d49b62d815b7ebb5fd2472db2af841be037160786a2cf3",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_delta_source_gate.py": "93ec55cd6c9575f98db8e71aa3129045b3f60df0579719f5b0ef3f1ba7c22fc4",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_exploratory_formal_route_audit.py": "6c833f78b2882be0e2cd270327f25701ad07d407a54dc7874d0eb80d9b8d59fd",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_extended_fallback_source_gate.py": "37872bfcf2d6052dc438e9e83f0610354047c134ee7451753595a1202e07c54a",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_fine_global_inner_route_source_gate.py": "3e8d66db4f0c7adfe7a6d123be931eadf3eedf6925180434a62716311276cd90",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_global_inner_route_source_gate.py": "9f82f37eb8bc02eb670de4062d4102d7aa33f8cc0ce458fd32e8ce917c6d0749",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_inner_adaptive_route_source_gate.py": "365fba7102fcd5648fa0b93f5a09e39b97672c1b43546898fb1e810dc650994d",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_orbit_fallback_source_gate.py": "facca14f7abc9b78956245be102b131100f73a29988562766237f293b6a6f65d",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_relative_blend_alpha01_source_gate.py": "a89f9f079d74c6ade2dfc50ef7955868e04e816b56732fa40a6c626a64e565ef",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_relative_blend_alpha025_source_gate.py": "e858e6bfccf88fe740df325588a9db11556f02093af832e051b7b62ce8350988",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_relative_blend_source_gate.py": "f9fa246661793ad098231efeb45f5967f33cd83f35f80aa179453e53d1cacc09",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_relative_blend_sweep_source_gate.py": "c7276ce47234798e7d584c669ec084103e09e342ffb2502789555b5edc894de3",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_relative_orbit_balanced_source_gate.py": "284a55058b376d938457e395dd970dfa45a3ac5352e77cd33bc7ab63453f9d02",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_relative_source_gate.py": "386de2a1a2a2073215ccf7b526e2f7bb20cffd00c6366a83e08391e3830c1cbf",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_route_sweep_source_gate.py": "41e505e4f1ff7de050d86efe8766b64d96b0239e6436e7b0496f085ccb91cc7b",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_source_gate.py": "0a50fe3839fdb804903cf8ece5e6191e1cb4dd9bf6b8e23938ae13ab946b1d74",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_unit_first_residual_centered_l1_source_gate_20261001.py": "0ff29f22a8cb99eb35d7bf1ea2b99cd3c58c37f74d6e475e1c14f386f59515a0",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_unit_first_residual_centered_l1_worst_direction_source_gate_20261001.py": "158005a59bab9238788a27ad4a43f54f3590426ec2782976d063883e8b9d3a8e",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_unit_first_residual_centered_rwa_leo550_floor_source_gate_20261001.py": "64700580ab583fa5dbe5b312ed2bfe2aed9227924d16cc02653047fee73b1060",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_unit_first_residual_centered_source_gate_20261001.py": "04ff3b984e1bbed8510986f10812bb8643dee85fc46ad16b38cf6f75395ad453",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_no_projection_20261012.py": "2e5860c9a3cf79eb2533fad637219e35f5a630c7e1be23ba56d6c1d8237ceb4b",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_unit_first_residual_centered_uniform_alpha_floor_source_gate_20261001.py": "3f24394e16e58a49ceaef99448a690e13143356918aed45f1ea50f3d7b8dd126",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_unit_first_source_gate_20261001.py": "9c8c433adc1c592584e2467956f67432b635ac8f6dca51f22c4f03f0aaa70b20",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/test_temporal_tcn_source_gate.py": "88bce3ab4204ab606395b7efd3f30febd7641724bdcfed28c7836745c1d4313f",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_component_blend_refinement_20260824.py": "f72b8abe51610c3cd836461a6c3de95e329e6fe2e1d8c9f83165424895da0020",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_leave_one_orbit_out_generalization_20260825.py": "0755aba7575097e60fa584ad645d53962667230c7f7e282474363173f6171b11",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_segmented_hgb_mlp_source_gate_20260929.py": "658b99fecc31689ef624e0726b330b07bccf377ce7f0977d1814331a728f6bf7",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/candidate_preregistration.json": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/candidate_snapshot.json": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/formal_candidate_receipt.json": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/partition_plan.json": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/preparation_attempt_history.json": "8a2eebc431c68acd4866bb4ea39c10ee931446f95451a17860a755756135128b",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/preparation_manifest.json": "a683191622ed3fc5546f86ccd0c8e8ba59cdddefe953719bc81523dac57c3e92",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/preparation_postflight_verification.json": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/simulation_schedule.json": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/source_manifest_snapshot.csv": "93710e01e18684e6296d52c4ae8ea98491841440db8f2b9798e0139901fccbc8",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/source_receipt.json": "b55ac35dc6fcee534f6d72f55d2bc35ed9568a407002a8417a252bac91128aca",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/source_route_replay_certificate.json": "d232448e1a8e9b8bf727a982df0e72ea235e9519271534ddfe1f038046cd0f51",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/template_exclusion_manifest.json": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/execution_amendments/20261018_r1/release/f1_audit_20261010/F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/execution_amendments/20261018_r1/release/f1_audit_20261010/f1_leo900_plain_l1_clean_final_test_20261018_r1.py": "1c78f1c068f21c28be3442593b2a740e3a3775bc87a09bc7e76bad0e355f85f3",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_support_20261018_r1/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_support_20261018_r1/leo900_final_continuation_20261018.py": "95980e282428c016f0b44918fb25eecbd5e6555550bf38e3cd1161dbb2ec753e",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_support_20261018_r1/test_leo900_final_continuation_20261018.py": "7048632593088cadaa33f5b0a023ff9e1c3ca7b8f50b9da35c16647d206437bb",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_support_20261018_r1/verification.json": "7d5c07865388a54d160cb52d362a5431af20d2bf6bab97c35d5b280270d731d9",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_sealer_support_20261018_r1/f1_clean_final_test_20261001_v2.py": "7cf9be5fc5d19859955f71384afcfd27533dbd098369e0767fac73c0715f2482",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_sealer_support_20261018_r1/f1_leo900_partition_builder_20261017.py": "139bd9d8b53b86c3eaeff7b1d9dc8489575431a2609bc532b777a22e7069dd58",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_sealer_support_20261018_r1/leo900_metadata_sealer_20261018.py": "4d29a8a43846812a66d0d1a15c977a935a86ea167e61951e3a6b0a8a255d3e4b",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_sealer_support_20261018_r1/test_leo900_metadata_sealer_20261018.py": "c4411b284377eb772e4ae2b8f1a008377cb955a381c93ccb8c470b5c654816e5",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/project/sim/logs/manifest.csv": "413ba7b8ff2ec24e71b5bd7e28a282a0c7ded8a3af736c91a2561d1b8e81d37c",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/project/sim/logs/new_orbit_source_card_manifest.json": "566db6688c1e33718c622856c1c4210039e77e0a8e8674ec3e8c6c58137ee385",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/raw_payload_support_20261018_r1/checks.json": "f5453ee27d9ce31465632a7be223f84b0c070488e6e0d916ee4eb16fe5b3cd06",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/check_f1_statistics_registered_oracles_20261018.py": "c4a475de652e0b84b0881f7941d20ae8905794289dde9d1b6a175bfc26467405",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/f1_lossless_gate_statistics_20261018.py": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/f1_paired_predictions_20261018.py": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/frozen_oracle_checks.json": "75ae9ac86e0a127a86cad8914192a5fda1902017b99f3d124bc38a9c2ec6df49",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/synthetic_statistics/statistics_receipt.json": "92bb9b4005272db046d62ef8214974f8c777eb7247119a95f7a1acec621baa64",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/test_f1_lossless_gate_statistics_20261018.py": "bcb13da9b40dd1c2ab2861946d33b340f0aac7bcf1a6db4b95ffa306bbb0c7db",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/verification.json": "3421b02344be01bbce6d8f8e9186cd349bf30d0d5265b3322326cdf77929dae3"
+        },
+        "production": true,
+        "run_root": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1",
+        "runtime": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1",
+        "stages": [
+          {
+            "command": [
+              "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+              "-B",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_sealer_support_20261018_r1/leo900_metadata_sealer_20261018.py",
+              "--run-root",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1",
+              "--output",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_seal_execution_20261018_r1"
+            ],
+            "name": "seal"
+          },
+          {
+            "command": [
+              "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+              "-B",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/f1_leo900_channel_policy_clean_final_test_20261018_r4.py",
+              "freeze",
+              "--root",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1",
+              "--output",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1",
+              "--candidate-receipt",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evidence/formal_candidate_receipt.json",
+              "--partition-manifest",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_seal_execution_20261018_r1/partition_manifest.json"
+            ],
+            "name": "freeze"
+          },
+          {
+            "command": [
+              "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+              "-B",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/f1_leo900_channel_policy_clean_final_test_20261018_r4.py",
+              "evaluate",
+              "--root",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1",
+              "--output",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1",
+              "--partition-manifest",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_seal_execution_20261018_r1/partition_manifest.json",
+              "--device",
+              "cpu"
+            ],
+            "name": "evaluate"
+          },
+          {
+            "command": [
+              "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+              "-B",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/f1_lossless_gate_statistics_20261018.py",
+              "--result",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1",
+              "--output",
+              "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_statistics_20261018_r1",
+              "--bootstrap-reps",
+              "20000",
+              "--bootstrap-seed",
+              "20261018"
+            ],
+            "name": "statistics"
+          }
+        ]
+      },
+      "exists": true,
+      "mode": "0o444",
+      "mtime_ns": 1792264853446887598,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/controller_plan.json",
+      "sha256": "1332b939262fc911ff2c806645679efe10416f125abcf3958f5b314bcb65caaa",
+      "size": 36527
+    },
+    "final_receipt": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1/final_receipt.json"
+    },
+    "freeze_manifest": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1/freeze_manifest.json"
+    },
+    "gate": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1/same_partition_performance_gate.json"
+    },
+    "guard": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/leo900_final_label_access_guard.json"
+    },
+    "launch_intent": {
+      "document": {
+        "command": [
+          "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+          "-B",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_support_20261018_r1/leo900_final_continuation_20261018.py",
+          "--protocol-sha256",
+          "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+          "--run"
+        ],
+        "created_utc": "2026-10-17T19:20:53.282875+00:00",
+        "goal_completion_claimed": false,
+        "launcher_sha256": "7741f760e97a5a78203133a8464b35c05dbc1029a776e09dd033fb88da6f5615",
+        "preflight": {
+          "final_stages_invoked": false,
+          "observed_utc": "2026-10-17T19:20:53.274774+00:00",
+          "resources": {
+            "cpu_affinity": [
+              4
+            ],
+            "disk_free_bytes": 293776252928,
+            "mem_available_bytes": 121438937088,
+            "minimum_available_memory_and_disk_bytes": 8589934592,
+            "nice": 15,
+            "numeric_threads": {
+              "MKL_NUM_THREADS": "1",
+              "NUMEXPR_NUM_THREADS": "1",
+              "OMP_NUM_THREADS": "1",
+              "OPENBLAS_NUM_THREADS": "1",
+              "VECLIB_MAXIMUM_THREADS": "1"
+            },
+            "ready": true
+          },
+          "semantic_final_labels_read": false,
+          "simulation": {
+            "complete": false,
+            "end_utc": null,
+            "exit_status": null,
+            "start_utc": "2026-10-17T11:01:20Z"
+          },
+          "state": "WAITING_FOR_SIMULATION"
+        },
+        "protocol": {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_support_20261018_r1/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+          "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+          "size": 46839
+        },
+        "retry_policy": "exclusive launch; no automatic restart, phase retry or new final access",
+        "schema": "brphm-f1-continuation-launch-intent-v1",
+        "simulation_or_configuration_modified": false
+      },
+      "exists": true,
+      "mode": "0o444",
+      "mtime_ns": 1792264853281889147,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1/launch_intent.json",
+      "sha256": "82d8dc637e952ef9881a5b4d28f671d5d68d0ee39e0bf42c8c4eee1058f77c3d",
+      "size": 1799
+    },
+    "launch_receipt": {
+      "document": {
+        "candidate_or_route_modified": false,
+        "created_utc": "2026-10-17T19:20:53.819509+00:00",
+        "events": [
+          {
+            "document": {
+              "created_utc": "2026-10-17T19:20:53.467368+00:00",
+              "event_type": "controller_started",
+              "payload": {
+                "initial_preflight": {
+                  "final_stages_invoked": false,
+                  "observed_utc": "2026-10-17T19:20:53.447344+00:00",
+                  "resources": {
+                    "cpu_affinity": [
+                      4
+                    ],
+                    "disk_free_bytes": 293776240640,
+                    "mem_available_bytes": 121405845504,
+                    "minimum_available_memory_and_disk_bytes": 8589934592,
+                    "nice": 15,
+                    "numeric_threads": {
+                      "MKL_NUM_THREADS": "1",
+                      "NUMEXPR_NUM_THREADS": "1",
+                      "OMP_NUM_THREADS": "1",
+                      "OPENBLAS_NUM_THREADS": "1",
+                      "VECLIB_MAXIMUM_THREADS": "1"
+                    },
+                    "ready": true
+                  },
+                  "semantic_final_labels_read": false,
+                  "simulation": {
+                    "complete": false,
+                    "end_utc": null,
+                    "exit_status": null,
+                    "start_utc": "2026-10-17T11:01:20Z"
+                  },
+                  "state": "WAITING_FOR_SIMULATION"
+                },
+                "pid": 616411,
+                "plan": {
+                  "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/controller_plan.json",
+                  "sha256": "1332b939262fc911ff2c806645679efe10416f125abcf3958f5b314bcb65caaa",
+                  "size": 36527
+                }
+              },
+              "previous_event_sha256": null,
+              "sequence": 1
+            },
+            "record": {
+              "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/events/0001_controller_started.json",
+              "sha256": "8dd2baff8bdade3d331b7c9404d290bf6b91e7feb81a4fd247c00e418a029302",
+              "size": 1307
+            }
+          },
+          {
+            "document": {
+              "created_utc": "2026-10-17T19:20:53.571584+00:00",
+              "event_type": "preflight_state",
+              "payload": {
+                "final_stages_invoked": false,
+                "observed_utc": "2026-10-17T19:20:53.571570+00:00",
+                "resources": {
+                  "cpu_affinity": [
+                    4
+                  ],
+                  "disk_free_bytes": 293776191488,
+                  "mem_available_bytes": 121433952256,
+                  "minimum_available_memory_and_disk_bytes": 8589934592,
+                  "nice": 15,
+                  "numeric_threads": {
+                    "MKL_NUM_THREADS": "1",
+                    "NUMEXPR_NUM_THREADS": "1",
+                    "OMP_NUM_THREADS": "1",
+                    "OPENBLAS_NUM_THREADS": "1",
+                    "VECLIB_MAXIMUM_THREADS": "1"
+                  },
+                  "ready": true
+                },
+                "semantic_final_labels_read": false,
+                "simulation": {
+                  "complete": false,
+                  "end_utc": null,
+                  "exit_status": null,
+                  "start_utc": "2026-10-17T11:01:20Z"
+                },
+                "state": "WAITING_FOR_SIMULATION"
+              },
+              "previous_event_sha256": "8dd2baff8bdade3d331b7c9404d290bf6b91e7feb81a4fd247c00e418a029302",
+              "sequence": 2
+            },
+            "record": {
+              "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/events/0002_preflight_state.json",
+              "sha256": "d295487a2fa5b75bec5693f2f643631aa8ce7b1e5dda1ef957fd13f98d7e720a",
+              "size": 998
+            }
+          }
+        ],
+        "global_label_access_guard_exists": false,
+        "goal_completion_claimed": false,
+        "launch": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1",
+        "launch_intent": {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1/launch_intent.json",
+          "sha256": "82d8dc637e952ef9881a5b4d28f671d5d68d0ee39e0bf42c8c4eee1058f77c3d",
+          "size": 1799
+        },
+        "network_tensor_transfer_bytes": 0,
+        "pid": 616411,
+        "pid_record": {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1/controller_pid.json",
+          "sha256": "4d1e2d96a690adbfe93048cfda3a48502664f6f81479236fd7f7c27c1ee3c94f",
+          "size": 478
+        },
+        "process": "    PID    PPID  NI %CPU %MEM     ELAPSED COMMAND\n 616411  616409  15 24.0  0.0       00:01 python\n",
+        "process_exit_code": null,
+        "protocol": {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_support_20261018_r1/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+          "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+          "size": 46839
+        },
+        "runtime": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1",
+        "schema": "brphm-f1-continuation-launch-receipt-v1",
+        "semantic_final_labels_read_at_launch": false,
+        "simulation_or_configuration_modified": false,
+        "simulation_processes": "    PID    PPID  NI %CPU %MEM     ELAPSED COMMAND\n4138426 4138417  15  0.4  1.1    08:19:33 MATLAB\n4141867 4138426  15 99.8  1.4    08:17:39 MATLAB\n4141869 4138426  15 99.7  1.3    08:17:39 MATLAB\n4141871 4138426  15 99.7  1.3    08:17:39 MATLAB\n4141873 4138426  15 99.7  1.3    08:17:39 MATLAB\n",
+        "status": "RUNNING",
+        "stderr": ""
+      },
+      "exists": true,
+      "mode": "0o444",
+      "mtime_ns": 1792264853958882792,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1/launch_receipt.json",
+      "sha256": "24253881ccfde527a5e18e7af004fea1c7ef7bcbf3af7e53ea5e3037f681d3e3",
+      "size": 5343
+    },
+    "seal_receipt": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_seal_execution_20261018_r1/seal_receipt.json"
+    },
+    "statistics_receipt": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_statistics_20261018_r1/statistics_receipt.json"
+    },
+    "terminal": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/controller_terminal.json"
+    }
+  },
+  "event_chain_last_sha256": "d295487a2fa5b75bec5693f2f643631aa8ce7b1e5dda1ef957fd13f98d7e720a",
+  "event_chain_valid": true,
+  "events": [
+    {
+      "document": {
+        "created_utc": "2026-10-17T19:20:53.467368+00:00",
+        "event_type": "controller_started",
+        "payload": {
+          "initial_preflight": {
+            "final_stages_invoked": false,
+            "observed_utc": "2026-10-17T19:20:53.447344+00:00",
+            "resources": {
+              "cpu_affinity": [
+                4
+              ],
+              "disk_free_bytes": 293776240640,
+              "mem_available_bytes": 121405845504,
+              "minimum_available_memory_and_disk_bytes": 8589934592,
+              "nice": 15,
+              "numeric_threads": {
+                "MKL_NUM_THREADS": "1",
+                "NUMEXPR_NUM_THREADS": "1",
+                "OMP_NUM_THREADS": "1",
+                "OPENBLAS_NUM_THREADS": "1",
+                "VECLIB_MAXIMUM_THREADS": "1"
+              },
+              "ready": true
+            },
+            "semantic_final_labels_read": false,
+            "simulation": {
+              "complete": false,
+              "end_utc": null,
+              "exit_status": null,
+              "start_utc": "2026-10-17T11:01:20Z"
+            },
+            "state": "WAITING_FOR_SIMULATION"
+          },
+          "pid": 616411,
+          "plan": {
+            "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/controller_plan.json",
+            "sha256": "1332b939262fc911ff2c806645679efe10416f125abcf3958f5b314bcb65caaa",
+            "size": 36527
+          }
+        },
+        "previous_event_sha256": null,
+        "sequence": 1
+      },
+      "exists": true,
+      "mode": "0o444",
+      "mtime_ns": 1792264853466887411,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/events/0001_controller_started.json",
+      "sha256": "8dd2baff8bdade3d331b7c9404d290bf6b91e7feb81a4fd247c00e418a029302",
+      "size": 1307
+    },
+    {
+      "document": {
+        "created_utc": "2026-10-17T19:20:53.571584+00:00",
+        "event_type": "preflight_state",
+        "payload": {
+          "final_stages_invoked": false,
+          "observed_utc": "2026-10-17T19:20:53.571570+00:00",
+          "resources": {
+            "cpu_affinity": [
+              4
+            ],
+            "disk_free_bytes": 293776191488,
+            "mem_available_bytes": 121433952256,
+            "minimum_available_memory_and_disk_bytes": 8589934592,
+            "nice": 15,
+            "numeric_threads": {
+              "MKL_NUM_THREADS": "1",
+              "NUMEXPR_NUM_THREADS": "1",
+              "OMP_NUM_THREADS": "1",
+              "OPENBLAS_NUM_THREADS": "1",
+              "VECLIB_MAXIMUM_THREADS": "1"
+            },
+            "ready": true
+          },
+          "semantic_final_labels_read": false,
+          "simulation": {
+            "complete": false,
+            "end_utc": null,
+            "exit_status": null,
+            "start_utc": "2026-10-17T11:01:20Z"
+          },
+          "state": "WAITING_FOR_SIMULATION"
+        },
+        "previous_event_sha256": "8dd2baff8bdade3d331b7c9404d290bf6b91e7feb81a4fd247c00e418a029302",
+        "sequence": 2
+      },
+      "exists": true,
+      "mode": "0o444",
+      "mtime_ns": 1792264853570886434,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/events/0002_preflight_state.json",
+      "sha256": "d295487a2fa5b75bec5693f2f643631aa8ce7b1e5dda1ef957fd13f98d7e720a",
+      "size": 998
+    }
+  ],
+  "logs": {
+    "final_continuation_launch_20261018_r1/controller.stderr.log": {
+      "exists": true,
+      "mode": "0o664",
+      "mtime_ns": 1792264853298888988,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1/controller.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "tail": ""
+    },
+    "final_continuation_launch_20261018_r1/controller.stdout.log": {
+      "exists": true,
+      "mode": "0o664",
+      "mtime_ns": 1792264853298888988,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1/controller.stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "tail": ""
+    },
+    "final_continuation_runtime_20261018_r1/evaluate.stderr.log": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/evaluate.stderr.log"
+    },
+    "final_continuation_runtime_20261018_r1/evaluate.stdout.log": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/evaluate.stdout.log"
+    },
+    "final_continuation_runtime_20261018_r1/freeze.stderr.log": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/freeze.stderr.log"
+    },
+    "final_continuation_runtime_20261018_r1/freeze.stdout.log": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/freeze.stdout.log"
+    },
+    "final_continuation_runtime_20261018_r1/seal.stderr.log": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/seal.stderr.log"
+    },
+    "final_continuation_runtime_20261018_r1/seal.stdout.log": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/seal.stdout.log"
+    },
+    "final_continuation_runtime_20261018_r1/statistics.stderr.log": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/statistics.stderr.log"
+    },
+    "final_continuation_runtime_20261018_r1/statistics.stdout.log": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_runtime_20261018_r1/statistics.stdout.log"
+    }
+  },
+  "mat_contents_read": false,
+  "observed_utc": "2026-10-17T20:52:44.325888+00:00",
+  "pid_record": {
+    "document": {
+      "command": [
+        "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+        "-B",
+        "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_support_20261018_r1/leo900_final_continuation_20261018.py",
+        "--protocol-sha256",
+        "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+        "--run"
+      ],
+      "cpu_affinity": [
+        4
+      ],
+      "created_utc": "2026-10-17T19:20:53.303645+00:00",
+      "nice": 15,
+      "numeric_threads": 1,
+      "pid": 616411
+    },
+    "exists": true,
+    "mode": "0o444",
+    "mtime_ns": 1792264853302888950,
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/final_continuation_launch_20261018_r1/controller_pid.json",
+    "sha256": "4d1e2d96a690adbfe93048cfda3a48502664f6f81479236fd7f7c27c1ee3c94f",
+    "size": 478
+  },
+  "processes": "    PID    PPID                  STARTED  NI PSR %CPU %MEM     ELAPSED STAT COMMAND\n 616411       1 Sun Oct 18 03:20:52 2026  15   4  0.1  0.0    01:31:51 SNs  python\n4138426 4138417 Sat Oct 17 19:01:20 2026  15   1  0.4  1.1    09:51:23 SNl  MATLAB\n4141867 4138426 Sat Oct 17 19:03:14 2026  15   3 99.8  1.4    09:49:29 SNl  MATLAB\n4141869 4138426 Sat Oct 17 19:03:14 2026  15   2 99.7  1.3    09:49:29 SNl  MATLAB\n4141871 4138426 Sat Oct 17 19:03:14 2026  15   1 99.7  1.3    09:49:29 SNl  MATLAB\n4141873 4138426 Sat Oct 17 19:03:14 2026  15   0 99.7  1.3    09:49:29 SNl  MATLAB\n",
+  "raw_or_tensor_labels_read": false,
+  "remote_writes": false,
+  "root": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1",
+  "schema": "brphm-f1-leo900-controller-observation-v1",
+  "simulation": {
+    "end_utc.txt": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/simulation_logs/end_utc.txt"
+    },
+    "exit_status.txt": {
+      "exists": false,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/simulation_logs/exit_status.txt"
+    },
+    "start_utc.txt": {
+      "exists": true,
+      "mode": "0o664",
+      "mtime_ns": 1792234880946818143,
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/simulation_logs/start_utc.txt",
+      "sha256": "2baa75415584a77bb95ee2d515515882302db4b6e19bbec29ccffd5b098f8bfb",
+      "size": 21,
+      "text": "2026-10-17T11:01:20Z\n"
+    }
+  },
+  "simulation_or_configuration_modified": false
+}

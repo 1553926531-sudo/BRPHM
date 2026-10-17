@@ -1,0 +1,316 @@
+{
+  "deployer_sha256": "4ad8b2033e2dd9c27e176fdd7e77dbdd87a7e519da2335728d072f37fa9e60e0",
+  "observed_utc": "2026-10-17T19:07:34.709049+00:00",
+  "protocol": {
+    "document": {
+      "analysis_files": [
+        {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/f1_lossless_gate_statistics_20261018.py",
+          "sha256": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+          "size": 25400
+        },
+        {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/test_f1_lossless_gate_statistics_20261018.py",
+          "sha256": "bcb13da9b40dd1c2ab2861946d33b340f0aac7bcf1a6db4b95ffa306bbb0c7db",
+          "size": 13580
+        },
+        {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/check_f1_statistics_registered_oracles_20261018.py",
+          "sha256": "c4a475de652e0b84b0881f7941d20ae8905794289dde9d1b6a175bfc26467405",
+          "size": 4777
+        }
+      ],
+      "candidate_or_route_modified": false,
+      "command": [
+        "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+        "-B",
+        "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/f1_lossless_gate_statistics_20261018.py",
+        "--result",
+        "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1",
+        "--output",
+        "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_statistics_20261018_r1",
+        "--bootstrap-reps",
+        "20000",
+        "--bootstrap-seed",
+        "20261018"
+      ],
+      "created_utc": "2026-10-17T19:07:34.585686+00:00",
+      "final_freeze_or_evaluation_invoked": false,
+      "fixed_input": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_output_execution_r1",
+      "fixed_output": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/formal_statistics_20261018_r1",
+      "frozen_oracle_checks": {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/frozen_oracle_checks.json",
+        "sha256": "75ae9ac86e0a127a86cad8914192a5fda1902017b99f3d124bc38a9c2ec6df49",
+        "size": 2318
+      },
+      "limitations": [
+        "one final orbit; no independent orbit-level replication",
+        "unit-cluster uncertainty conditional on fixed simulation distribution and fitted models",
+        "signed-rank p-values assume independent units and symmetric paired differences",
+        "gate tolerance is an implementation criterion, not a practical effect threshold"
+      ],
+      "metrics": {
+        "decision": "zero regressions and at least one strict gain; this unchanged deterministic gate does not imply statistical or practical improvement",
+        "display": "17 significant decimal digits and float.hex; full unrounded JSON and NPZ",
+        "gate": [
+          "BAT RMSE",
+          "BAT MAE",
+          "RWA RMSE",
+          "RWA MAE"
+        ],
+        "prediction": "clip to [0,1], float64 multiply by physical rmax",
+        "regression_arithmetic": "observed > baseline + tolerance",
+        "strict_gain_arithmetic": "observed < baseline - tolerance",
+        "tolerance": 1e-12,
+        "truth": "same-pass truth_relative retaining original float32 label division, then float64 multiply by rmax"
+      },
+      "parent_r4_registration": {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json",
+        "sha256": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+        "size": 2734
+      },
+      "schema": "brphm-f1-pre-final-statistical-analysis-protocol-v1",
+      "scope": "Read-only postprocessing of the original single final pass; no candidate selection or re-evaluation",
+      "semantic_final_labels_read": false,
+      "simulation_or_configuration_modified": false,
+      "synthetic_full_cli_receipt": {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/synthetic_statistics/statistics_receipt.json",
+        "sha256": "92bb9b4005272db046d62ef8214974f8c777eb7247119a95f7a1acec621baa64",
+        "size": 322
+      },
+      "timestamps": "self-recorded UTC, not external notarization",
+      "unit_uncertainty": {
+        "components": [
+          "bat",
+          "rwa"
+        ],
+        "effects": [
+          "mean/median paired unit delta",
+          "paired SD",
+          "rank-biserial",
+          "paired standardized dz",
+          "relative percentage change"
+        ],
+        "estimands": [
+          "window-pooled RMSE",
+          "window-pooled MAE",
+          "unit-macro RMSE",
+          "unit-macro MAE"
+        ],
+        "familywise_quantiles": [
+          0.003125,
+          0.996875
+        ],
+        "interval": "linear percentile; pointwise 95% and Bonferroni familywise 95% over 8 intervals",
+        "repetitions": 20000,
+        "sampling": "paired unit-cluster bootstrap, all windows retained; same sampled units for both models",
+        "seed_interpretation": "17/42/73 are ensemble constituents, zero independent repeats",
+        "seeds": {
+          "bat": 20261018,
+          "rwa": 20261019
+        },
+        "test_multiplicity": "Holm over four BAT/RWA by RMSE/MAE unit paired tests",
+        "tests": "two-sided signed-rank sign randomization exact with tied average ranks for <=20 nonzero unit differences; tie-corrected normal Wilcoxon otherwise; zero differences excluded",
+        "undefined_values": "null with explicit reason for zero reference error, zero paired variance, or a single unit"
+      },
+      "verification": {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/verification.json",
+        "sha256": "3421b02344be01bbce6d8f8e9186cd349bf30d0d5265b3322326cdf77929dae3",
+        "size": 12619
+      }
+    },
+    "record": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json",
+      "sha256": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+      "size": 5417
+    }
+  },
+  "ssh_exit_code": 0,
+  "status": "PASS",
+  "support": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1",
+  "verification": {
+    "anchors_after": {
+      "evidence/candidate_preregistration.json": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+      "evidence/candidate_snapshot.json": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+      "evidence/formal_candidate_receipt.json": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+      "evidence/partition_plan.json": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+      "evidence/preparation_attempt_history.json": "8a2eebc431c68acd4866bb4ea39c10ee931446f95451a17860a755756135128b",
+      "evidence/preparation_manifest.json": "a683191622ed3fc5546f86ccd0c8e8ba59cdddefe953719bc81523dac57c3e92",
+      "evidence/preparation_postflight_verification.json": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+      "evidence/simulation_schedule.json": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+      "evidence/source_manifest_snapshot.csv": "93710e01e18684e6296d52c4ae8ea98491841440db8f2b9798e0139901fccbc8",
+      "evidence/source_receipt.json": "b55ac35dc6fcee534f6d72f55d2bc35ed9568a407002a8417a252bac91128aca",
+      "evidence/source_route_replay_certificate.json": "d232448e1a8e9b8bf727a982df0e72ea235e9519271534ddfe1f038046cd0f51",
+      "evidence/template_exclusion_manifest.json": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3",
+      "project/sim/logs/manifest.csv": "413ba7b8ff2ec24e71b5bd7e28a282a0c7ded8a3af736c91a2561d1b8e81d37c",
+      "project/sim/logs/new_orbit_source_card_manifest.json": "566db6688c1e33718c622856c1c4210039e77e0a8e8674ec3e8c6c58137ee385"
+    },
+    "anchors_before": {
+      "evidence/candidate_preregistration.json": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+      "evidence/candidate_snapshot.json": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+      "evidence/formal_candidate_receipt.json": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+      "evidence/partition_plan.json": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+      "evidence/preparation_attempt_history.json": "8a2eebc431c68acd4866bb4ea39c10ee931446f95451a17860a755756135128b",
+      "evidence/preparation_manifest.json": "a683191622ed3fc5546f86ccd0c8e8ba59cdddefe953719bc81523dac57c3e92",
+      "evidence/preparation_postflight_verification.json": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+      "evidence/simulation_schedule.json": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+      "evidence/source_manifest_snapshot.csv": "93710e01e18684e6296d52c4ae8ea98491841440db8f2b9798e0139901fccbc8",
+      "evidence/source_receipt.json": "b55ac35dc6fcee534f6d72f55d2bc35ed9568a407002a8417a252bac91128aca",
+      "evidence/source_route_replay_certificate.json": "d232448e1a8e9b8bf727a982df0e72ea235e9519271534ddfe1f038046cd0f51",
+      "evidence/template_exclusion_manifest.json": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3",
+      "project/sim/logs/manifest.csv": "413ba7b8ff2ec24e71b5bd7e28a282a0c7ded8a3af736c91a2561d1b8e81d37c",
+      "project/sim/logs/new_orbit_source_card_manifest.json": "566db6688c1e33718c622856c1c4210039e77e0a8e8674ec3e8c6c58137ee385"
+    },
+    "anchors_unchanged": true,
+    "candidate_or_route_modified": false,
+    "created_utc": "2026-10-17T19:07:34.584852+00:00",
+    "deployed_code": [
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/f1_lossless_gate_statistics_20261018.py",
+        "sha256": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+        "size": 25400
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/test_f1_lossless_gate_statistics_20261018.py",
+        "sha256": "bcb13da9b40dd1c2ab2861946d33b340f0aac7bcf1a6db4b95ffa306bbb0c7db",
+        "size": 13580
+      },
+      {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/check_f1_statistics_registered_oracles_20261018.py",
+        "sha256": "c4a475de652e0b84b0881f7941d20ae8905794289dde9d1b6a175bfc26467405",
+        "size": 4777
+      }
+    ],
+    "deployer_sha256": "4ad8b2033e2dd9c27e176fdd7e77dbdd87a7e519da2335728d072f37fa9e60e0",
+    "final_freeze_or_evaluation_invoked": false,
+    "global_label_access_guard_absent": true,
+    "local_evidence": [
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_lossless_gate_statistics_red_20261018_r1.json",
+        "sha256": "2c492cfac60c03b6a801d738adbb1bf194ac5c5a68fbd59238f13f5b4258805b",
+        "size": 609
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_lossless_gate_statistics_extensions_red_20261018_r1.json",
+        "sha256": "9f71865555393022f82ad5b409b26b358eab1f44617e05c762ef7c31c8aa69da",
+        "size": 2381
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_lossless_gate_statistics_local_green_20261018_r1.json",
+        "sha256": "da574872e299c0289373d986d6b35f883397b3a906577bed11ae9cb089ae2324",
+        "size": 3546
+      },
+      {
+        "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_statistics_frozen_oracles_local_20261018_r1.json",
+        "sha256": "f082f495eeb50ce6ae4c334efb7629844752e2265a9fd19b0f06d1e5fe100f86",
+        "size": 2396
+      }
+    ],
+    "local_paired_writer_copy": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/f1_paired_predictions_20261018.py",
+      "sha256": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+      "size": 4401
+    },
+    "network_code_bytes_uploaded": 43757,
+    "network_tensor_transfer_bytes": 0,
+    "original_gate_code": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/execution_amendments/20261018_r1/release/f1_audit_20261010/f1_leo900_plain_l1_clean_final_test_20261017.py",
+      "sha256": "f550bd10e7a1575fa28f24de4b2426ff5713dc884fabfbf144a24a2495334f32",
+      "size": 27612
+    },
+    "original_metrics_code": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_source_gate.py",
+      "sha256": "0a50fe3839fdb804903cf8ece5e6191e1cb4dd9bf6b8e23938ae13ab946b1d74",
+      "size": 26589
+    },
+    "r4_verified_before_and_after": true,
+    "registered_paired_writer": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/execution_amendments/20261018_r1/release/f1_audit_20261010/f1_paired_predictions_20261018.py",
+      "sha256": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+      "size": 4401
+    },
+    "resources": {
+      "cpu_affinity": [
+        4
+      ],
+      "nice": 15,
+      "numeric_threads": {
+        "MKL_NUM_THREADS": "1",
+        "NUMEXPR_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      }
+    },
+    "schema": "brphm-f1-statistics-remote-checks-v1",
+    "semantic_final_labels_read": false,
+    "simulation_or_configuration_modified": false,
+    "status": "PASS",
+    "suites": [
+      {
+        "command": [
+          "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+          "-B",
+          "-m",
+          "unittest",
+          "test_f1_lossless_gate_statistics_20261018",
+          "-v"
+        ],
+        "exit_code": 0,
+        "log": {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/suite_1.log",
+          "sha256": "dd312bd24dc634b87d02c2bcfe8667b336d21467fa0be76683254f1fe7508fbb",
+          "size": 2016
+        },
+        "output": "test_bootstrap_is_seed_reproducible_and_zero_differences_are_defined (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_cluster_bootstrap_retains_all_windows_and_paired_units (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_float32_label_roundtrip_is_preserved (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_gate_requires_gain_and_both_components (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_gate_uses_baseline_plus_tolerance_not_delta_threshold (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_holm_adjusts_one_family_and_keeps_original_order (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_metric_clipping_units_and_time_order_match_hand_oracle (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_npz_byte_drift_is_rejected (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_relative_change_and_standardized_effect_report_undefined_cases (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_report_output_is_exclusive_and_csv_preserves_float_precision (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_same_pass_files_reproduce_gate_and_describe_seeds_without_replication (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_signed_rank_ties_and_normal_approximation_have_independent_oracles (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_single_unit_is_descriptive_and_invalid_rows_are_rejected (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\ntest_unrounded_receipt_disagreement_is_rejected (test_f1_lossless_gate_statistics_20261018.LosslessGateStatisticsTests) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.120s\n\nOK\n"
+      },
+      {
+        "command": [
+          "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+          "-B",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/check_f1_statistics_registered_oracles_20261018.py",
+          "--metrics-code",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1/work/rul_next_electrochemical/temporal_tcn_source_gate.py",
+          "--gate-code",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/execution_amendments/20261018_r1/release/f1_audit_20261010/f1_leo900_plain_l1_clean_final_test_20261017.py",
+          "--output",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/frozen_oracle_checks.json"
+        ],
+        "exit_code": 0,
+        "log": {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/suite_2.log",
+          "sha256": "ea74165f0f6f796f9608837312fb47c9f8183f08f3434ead907c313fe3e6696b",
+          "size": 290
+        },
+        "output": "{\"gate_cases\": 124, \"metric_cases\": 18, \"record\": {\"path\": \"/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/frozen_oracle_checks.json\", \"sha256\": \"75ae9ac86e0a127a86cad8914192a5fda1902017b99f3d124bc38a9c2ec6df49\", \"size\": 2318}, \"status\": \"PASS\"}\n"
+      },
+      {
+        "command": [
+          "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+          "-B",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/f1_lossless_gate_statistics_20261018.py",
+          "--result",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/synthetic_evaluation",
+          "--output",
+          "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/synthetic_statistics",
+          "--bootstrap-reps",
+          "20000",
+          "--bootstrap-seed",
+          "20261018"
+        ],
+        "exit_code": 0,
+        "log": {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/suite_3_cli.log",
+          "sha256": "d7c2b23da45c658baae74506d12412435204b1729d2b90a33db7dfcdd73bdf7c",
+          "size": 333
+        },
+        "output": "{\"created_utc\": \"2026-10-17T19:07:34.456774+00:00\", \"gate_passes\": true, \"note\": \"PASS verifies reconstruction and artifact integrity; see gate_passes for the experiment gate\", \"report_sha256\": \"bdcbdb43b7f43a5ea0e8b6bb4099a692dc9d63b8d96258773939d750439cf60d\", \"schema\": \"brphm-f1-lossless-statistics-receipt-v1\", \"status\": \"PASS\"}\n"
+      }
+    ]
+  },
+  "verification_file": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/statistics_support_20261018_r1/verification.json",
+    "sha256": "3421b02344be01bbce6d8f8e9186cd349bf30d0d5265b3322326cdf77929dae3",
+    "size": 12619
+  }
+}

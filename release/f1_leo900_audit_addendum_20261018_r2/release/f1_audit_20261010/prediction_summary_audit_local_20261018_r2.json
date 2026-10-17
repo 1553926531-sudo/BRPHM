@@ -1,0 +1,27 @@
+{
+  "change_after_r1": "Correct synthetic float32-label test rmax metadata from 8 to 3 so it reaches the intended arithmetic check; implementation unchanged.",
+  "code_sha256": {
+    "leo900_prediction_summary_audit_20261018.py": "8c2fbabdcedf8a3263a951baa3114415687a970446666f1e87e9b3af09450c2c",
+    "leo900_terminal_evidence_20261018_r2.py": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+    "test_leo900_prediction_summary_audit_20261018.py": "7d195a43649c5c615f223b395c8ed501d55988eccd3d2c2b5d9edb0759b68411",
+    "test_leo900_terminal_evidence_20261018_r2.py": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c"
+  },
+  "command": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_leo900_prediction_summary_audit_20261018"
+  ],
+  "ended_utc": "2026-10-17T21:13:30.728916+00:00",
+  "exit_code": 0,
+  "prior_receipt_sha256": "0046cea59c053f5fbe4f46ab7693db052c5f6ec4e3e7cca10b524318bbf4b00b",
+  "real_final_labels_read": false,
+  "schema": "brphm-f1-prediction-summary-auditor-local-tests-v1",
+  "sources_unchanged": true,
+  "started_utc": "2026-10-17T21:13:08.632762+00:00",
+  "stderr": "test_alpha_must_match_frozen_source_route (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_alpha_must_match_frozen_source_route) ... ok\ntest_blend_must_use_saved_float32_predictions (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_blend_must_use_saved_float32_predictions) ... ok\ntest_complete_production_chain_verifies_saved_predictions_without_writes (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_complete_production_chain_verifies_saved_predictions_without_writes) ... ok\ntest_duplicate_npz_members_are_rejected_before_dictionary_conversion (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_duplicate_npz_members_are_rejected_before_dictionary_conversion) ... ok\ntest_interleaved_unequal_units_match_hand_calculated_physical_errors (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_interleaved_unequal_units_match_hand_calculated_physical_errors) ... ok\ntest_internally_consistent_but_wrong_unit_summary_is_rejected (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_internally_consistent_but_wrong_unit_summary_is_rejected) ... ok\ntest_pending_terminal_does_not_decode_poisoned_prediction_archive (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_pending_terminal_does_not_decode_poisoned_prediction_archive) ... ok\ntest_rehashed_seed_metric_contradiction_is_detected (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_rehashed_seed_metric_contradiction_is_detected) ... ok\ntest_relabelled_rows_with_identical_counts_are_rejected (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_relabelled_rows_with_identical_counts_are_rejected) ... ok\ntest_shape_and_nonfinite_arrays_are_rejected (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_shape_and_nonfinite_arrays_are_rejected) ... ok\ntest_truth_division_preserves_float32_instead_of_upcasting (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_truth_division_preserves_float32_instead_of_upcasting) ... ok\ntest_wrong_physical_scale_is_rejected (test_leo900_prediction_summary_audit_20261018.PredictionSummaryTests.test_wrong_physical_scale_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 19.636s\n\nOK\n",
+  "stdout": "",
+  "test_count": 12
+}

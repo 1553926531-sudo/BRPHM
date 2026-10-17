@@ -1,0 +1,18 @@
+{
+  "artificial_only": true,
+  "command": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "test_leo900_final_continuation_20261018.FinalContinuationTests.test_full_pipeline_retains_negative_gate_and_executes_statistics",
+    "-v"
+  ],
+  "created_utc": "2026-10-17T19:10:41.977095+00:00",
+  "exit_code": 1,
+  "stderr": "test_full_pipeline_retains_negative_gate_and_executes_statistics (test_leo900_final_continuation_20261018.FinalContinuationTests.test_full_pipeline_retains_negative_gate_and_executes_statistics) ... FAIL\n\n======================================================================\nFAIL: test_full_pipeline_retains_negative_gate_and_executes_statistics (test_leo900_final_continuation_20261018.FinalContinuationTests.test_full_pipeline_retains_negative_gate_and_executes_statistics)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_final_continuation_20261018.py\", line 67, in setUp\n    self.assertIsNotNone(continuation, \"final continuation implementation is missing\")\nAssertionError: unexpectedly None : final continuation implementation is missing\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+  "stdout": "",
+  "test_sha256": "99966a24fbbdaf0d18d920373926c86408371ebd3370bc8832ec11f71edaa7ae"
+}

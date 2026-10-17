@@ -1,0 +1,926 @@
+{
+  "artifact_edges": [
+    {
+      "key": "F1_EVIDENCE_LEDGER_20261017.md",
+      "sha256": "820d95cc95eb97353a1b0ea14b8e83079571b6f548e9af4acb4d511a35822558",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/F1_EVIDENCE_LEDGER_20261017.md"
+    },
+    {
+      "key": "F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json",
+      "sha256": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json"
+    },
+    {
+      "key": "F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+      "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.json",
+      "sha256": "5d7f153acf7bbac5de6dbf7b28e02d49bc72931744a4e27c4d053b1faf03f2b6",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.json"
+    },
+    {
+      "key": "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.md",
+      "sha256": "860bd82336048bb6c78d0e9774cf0f9e57db5fb508bae8aff156ef0d51da7980",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.md"
+    },
+    {
+      "key": "F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json",
+      "sha256": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "check_f1_statistics_registered_oracles_20261018.py",
+      "sha256": "c4a475de652e0b84b0881f7941d20ae8905794289dde9d1b6a175bfc26467405",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/check_f1_statistics_registered_oracles_20261018.py"
+    },
+    {
+      "key": "f1_leo900_channel_policy_clean_final_test_20261018_r4.py",
+      "sha256": "5b8acfe1eccc4f01e1e67ce0ef13f9d6768bb2ae9da152672974c2a7f1cf7a76",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/f1_leo900_channel_policy_clean_final_test_20261018_r4.py"
+    },
+    {
+      "key": "f1_lossless_gate_statistics_20261018.py",
+      "sha256": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/f1_lossless_gate_statistics_20261018.py"
+    },
+    {
+      "key": "f1_paired_predictions_20261018.py",
+      "sha256": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/f1_paired_predictions_20261018.py"
+    },
+    {
+      "key": "leo900_channel_policy_20261018_r4.py",
+      "sha256": "8ef26ac31b69397d4ce3d9960bee9c212c05d2f732698b575f0de90779c7326e",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_channel_policy_20261018_r4.py"
+    },
+    {
+      "key": "leo900_continuation_observation_20261017T192737Z.json",
+      "sha256": "3f412213523cff937b823b3efb7cef4a71b0dedba57369e8d625d0c265930cbe",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_continuation_observation_20261017T192737Z.json"
+    },
+    {
+      "key": "leo900_final_continuation_20261018.py",
+      "sha256": "95980e282428c016f0b44918fb25eecbd5e6555550bf38e3cd1161dbb2ec753e",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_final_continuation_20261018.py"
+    },
+    {
+      "key": "leo900_final_continuation_deployment_20261017T191902Z.json",
+      "sha256": "c83ee791045abf85a07b1af650d9b4d50fb76223db09e52e22c52ab512a4ce18",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_final_continuation_deployment_20261017T191902Z.json"
+    },
+    {
+      "key": "leo900_final_continuation_deployment_20261017T192006Z.json",
+      "sha256": "6dd65edb9feb895fbe103c748a9958a31580246810b322ea151d199e8f997d74",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_final_continuation_deployment_20261017T192006Z.json"
+    },
+    {
+      "key": "leo900_final_continuation_launch_20261017T192053Z.json",
+      "sha256": "40efbc9805b30034fa98051e83beff89c7eea4adf4623202b7f96b98fcd43add",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_final_continuation_launch_20261017T192053Z.json"
+    },
+    {
+      "key": "leo900_final_continuation_local_green_20261018_r1.json",
+      "sha256": "d211403227b3116733fe3a8ca4b48651fc1c614f1198d8b134f714df6e0310af",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_final_continuation_local_green_20261018_r1.json"
+    },
+    {
+      "key": "leo900_final_continuation_local_green_20261018_r2.json",
+      "sha256": "9bcbb40f42b81a89dd0bf465138d73837cf0c929a18f587aba86506007669eeb",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_final_continuation_local_green_20261018_r2.json"
+    },
+    {
+      "key": "leo900_final_continuation_local_green_20261018_r3.json",
+      "sha256": "353a9b2a0800cbb9e182d5b78e385eb3107316dbe0dac3450e66940aaf1438ce",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_final_continuation_local_green_20261018_r3.json"
+    },
+    {
+      "key": "leo900_final_continuation_red_20261018_r1.json",
+      "sha256": "9a9932a387804e2a851aee8edfed54b3de02cfa244d4e7c804738dc71ede3f5b",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_final_continuation_red_20261018_r1.json"
+    },
+    {
+      "key": "leo900_generation_metadata_20261017T191247Z.json",
+      "sha256": "d48f6ed163908d0428afb2418058cc60228fc9e5e95c33dfa54f0243427b6daf",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_generation_metadata_20261017T191247Z.json"
+    },
+    {
+      "key": "leo900_statistics_protocol_deployment_r1_20261017T190734Z.json",
+      "sha256": "5b9f025c9220f88f5a1dc5e204d00c189a514a87d38b949c176ba768177db73b",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/leo900_statistics_protocol_deployment_r1_20261017T190734Z.json"
+    },
+    {
+      "key": "registered_input_export.json",
+      "sha256": "1ea8fae448f863fcc8f044cc46eb6f49bfb15e288583898b06f71686db83988c",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_input_export.json"
+    },
+    {
+      "key": "registered_inputs/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json",
+      "sha256": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json"
+    },
+    {
+      "key": "registered_inputs/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json",
+      "sha256": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json"
+    },
+    {
+      "key": "registered_inputs/evidence/candidate_preregistration.json",
+      "sha256": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/candidate_preregistration.json"
+    },
+    {
+      "key": "registered_inputs/evidence/candidate_snapshot.json",
+      "sha256": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/candidate_snapshot.json"
+    },
+    {
+      "key": "registered_inputs/evidence/formal_candidate_receipt.json",
+      "sha256": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/formal_candidate_receipt.json"
+    },
+    {
+      "key": "registered_inputs/evidence/partition_plan.json",
+      "sha256": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/partition_plan.json"
+    },
+    {
+      "key": "registered_inputs/evidence/preparation_attempt_history.json",
+      "sha256": "8a2eebc431c68acd4866bb4ea39c10ee931446f95451a17860a755756135128b",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/preparation_attempt_history.json"
+    },
+    {
+      "key": "registered_inputs/evidence/preparation_postflight_verification.json",
+      "sha256": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/preparation_postflight_verification.json"
+    },
+    {
+      "key": "registered_inputs/evidence/simulation_schedule.json",
+      "sha256": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/simulation_schedule.json"
+    },
+    {
+      "key": "registered_inputs/evidence/source_route_replay_certificate.json",
+      "sha256": "d232448e1a8e9b8bf727a982df0e72ea235e9519271534ddfe1f038046cd0f51",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/source_route_replay_certificate.json"
+    },
+    {
+      "key": "registered_inputs/evidence/template_exclusion_manifest.json",
+      "sha256": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/template_exclusion_manifest.json"
+    },
+    {
+      "key": "test_f1_lossless_gate_statistics_20261018.py",
+      "sha256": "bcb13da9b40dd1c2ab2861946d33b340f0aac7bcf1a6db4b95ffa306bbb0c7db",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/test_f1_lossless_gate_statistics_20261018.py"
+    },
+    {
+      "key": "test_leo900_final_continuation_20261018.py",
+      "sha256": "7048632593088cadaa33f5b0a023ff9e1c3ca7b8f50b9da35c16647d206437bb",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_audit_20261010/test_leo900_final_continuation_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_EVIDENCE_LEDGER_20261017.md",
+      "sha256": "820d95cc95eb97353a1b0ea14b8e83079571b6f548e9af4acb4d511a35822558",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/F1_EVIDENCE_LEDGER_20261017.md"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json",
+      "sha256": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+      "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "sha256": "cfeb3f3b08f83db22c1e41e03dacb97a2d9513a8488c7edaeade4574843da2ea",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json",
+      "sha256": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_TRAINING_LABEL_FLOW_20261018R1.json",
+      "sha256": "36a7830e40f498823b24f18cbe8f46a704ba4b50b83a33b48d00c9fff94e7168",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_TRAINING_LABEL_FLOW_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/append_f1_leo900_preflight_r6_20261018.py",
+      "sha256": "4e7b04326a24b17173764d559b893477e9ad35f6aae1dd2170f5f53cafbb96fd",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/append_f1_leo900_preflight_r6_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/audit_leo900_training_label_flow_20261018.py",
+      "sha256": "e39f8a2cdb21906bb9e648346c04a2d8c0d45d441ebba908ea396d06b6f671f5",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/audit_leo900_training_label_flow_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/deploy_leo900_terminal_evidence_20261018.py",
+      "sha256": "6b5671d750cbca5aaf14f3e2b4ecd679edd5eb27ff978362b001467b1d8e09cf",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/deploy_leo900_terminal_evidence_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_continuation_observation_20261017T201536Z.json",
+      "sha256": "0347a1ca6034a34bb80d5da4d4a32bfc79fcaca92a6714c2f3ecf38500af3601",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_continuation_observation_20261017T201536Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_external_commitment_publication_20261017T193202Z.json",
+      "sha256": "f52853d109f7ccafa87c31ad8f5b56ec3ef41bc9a4e8fdcc9126c3176a69c0a6",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_external_commitment_publication_20261017T193202Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_external_commitment_publication_20261017T193303Z.json",
+      "sha256": "c0af1db3df6c84857186ba2f295d6c546c47164c8323faeaaaff3fd26cd8903e",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_external_commitment_publication_20261017T193303Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_external_commitment_rest_publication_20261017T193737Z.json",
+      "sha256": "370c208c3d2a8b874e37fbf4e2c559009eb27d4ea89e0a11626b965bbad21236",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_external_commitment_rest_publication_20261017T193737Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_external_commitment_rest_publication_20261017T193909Z.json",
+      "sha256": "5c60799f4d6154bf6235453a44e7ca385b27b5653d428ebc23031c2535bf7025",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_external_commitment_rest_publication_20261017T193909Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_final_continuation_launch_20261017T192053Z.json",
+      "sha256": "40efbc9805b30034fa98051e83beff89c7eea4adf4623202b7f96b98fcd43add",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_final_continuation_launch_20261017T192053Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_generation_metadata_20261017T201536Z.json",
+      "sha256": "4b07ab07aee3029cb5aba18dfd3d17b0d877fa79fd39aa23c83a77d66b008ecd",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_generation_metadata_20261017T201536Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_r6_ledger_path_binding_rejection_20261018_r1.json",
+      "sha256": "53c3ea187dd58c414beb7959bd4c920a3c1d10b47075c09b78d816cb8b0a027a",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_r6_ledger_path_binding_rejection_20261018_r1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_static_training_label_flow_binding_rejection_20261018_r1.json",
+      "sha256": "49494dc26fcbd090397b122fdb5c5e88f0a1ebdd26fa437963fe05aadfec2d59",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_static_training_label_flow_binding_rejection_20261018_r1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_terminal_evidence_20261018.py",
+      "sha256": "f565bb1feeab8b963c124f1490a7b5de33d4bd8794ed400d839843e01304ad8e",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_terminal_evidence_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_terminal_evidence_deployment_20261017T200942Z.json",
+      "sha256": "118ef7aec4209cd588b12393081ac5bbe5646eb18462e4570941cdad0cc51c68",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/leo900_terminal_evidence_deployment_20261017T200942Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/terminal_evidence_local_green_attempt_20261018_r4.json",
+      "sha256": "35df69e99c390fad56cf4dec24ee56ae438c843e7cae6cf5e22cf83a716ec74f",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/terminal_evidence_local_green_attempt_20261018_r4.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/terminal_evidence_local_green_attempt_20261018_r6.json",
+      "sha256": "f3293b3610bdc0f2700d88051238ffe2645693b065cf2972d5d3bfdcbeb05e98",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/terminal_evidence_local_green_attempt_20261018_r6.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/terminal_evidence_plan_binding_red_20261018_r2.json",
+      "sha256": "1fb20f02109c280c2f217556e59ecea33db0078d62dcbf67e6442e4133223a88",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/terminal_evidence_plan_binding_red_20261018_r2.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/terminal_evidence_production_red_20261018_r3.json",
+      "sha256": "a7dadf215f6974a871913a23740d6783f847017bf6b709dcfd6e3aa4688c7aa1",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/terminal_evidence_production_red_20261018_r3.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/terminal_evidence_registered_gate_schema_red_20261018_r5.json",
+      "sha256": "9bad77434f4db3e0400a1344f7a5c27e2efe2844a912df1e2cb46cd4611e5a2f",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/terminal_evidence_registered_gate_schema_red_20261018_r5.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/test_leo900_terminal_evidence_20261018.py",
+      "sha256": "b5f3766d31165823c68db2b21743c1c8f1e17bde84df2c00778cdcad28a87eec",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_audit_20261010/test_leo900_terminal_evidence_20261018.py"
+    },
+    {
+      "key": "release/f1_leo900_pre_final_commitment_20261018_r1/SHA256_MANIFEST.json",
+      "sha256": "7a489927d3cb6001fff91b7b9af77d9da0468f6721a053fa90be8d8025ca9490",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/SHA256_MANIFEST.json"
+    },
+    {
+      "key": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json",
+      "sha256": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json"
+    },
+    {
+      "key": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/formal_candidate_receipt.json",
+      "sha256": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/formal_candidate_receipt.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+      "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_INFERENCE_DEPENDENCIES_20261018R1.json",
+      "sha256": "37675a2e28c74abd0a0858010faf8171e1bdf1753e655b7f93c3256ec41605b0",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_INFERENCE_DEPENDENCIES_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+      "sha256": "78b50a8c44c47719359420a562c5be8334c18bcfb57203b8ceeb2f7d631493ff",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json",
+      "sha256": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_TRAINING_LABEL_FLOW_20261018R1.json",
+      "sha256": "36a7830e40f498823b24f18cbe8f46a704ba4b50b83a33b48d00c9fff94e7168",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_TRAINING_LABEL_FLOW_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/append_f1_leo900_preflight_r7_20261018.py",
+      "sha256": "850039d68ece7be3de88e7714508c425235f77397d63e449f852a24a00127f52",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/append_f1_leo900_preflight_r7_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "sha256": "b44c4daf0771d09638e225b5dbe46762d5a43a389c7938a006a74434d01cf6f4",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/deploy_leo900_terminal_evidence_20261018_r2.py",
+      "sha256": "f9da83127597cc41957ae6527b86b0a0ca9f2e3e4dbd5b061976aa451d63b35d",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/deploy_leo900_terminal_evidence_20261018_r2.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/f1_clean_final_test_20261018_v3.py",
+      "sha256": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/f1_clean_final_test_20261018_v3.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_continuation_observation_20261017T203836Z.json",
+      "sha256": "e24abe05b386d46c29fdaa53d201ffb6cca0f35cbc099e6069261ef10858802b",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/leo900_continuation_observation_20261017T203836Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_generation_metadata_20261017T203836Z.json",
+      "sha256": "b3189fc5c020ec81856eaf7225e099736713ad585cf0b8021af2c54d644d9e28",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/leo900_generation_metadata_20261017T203836Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_terminal_evidence_20261018.py",
+      "sha256": "f565bb1feeab8b963c124f1490a7b5de33d4bd8794ed400d839843e01304ad8e",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/leo900_terminal_evidence_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py",
+      "sha256": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_terminal_evidence_r2_deployment_20261017T204027Z.json",
+      "sha256": "7bb5ba31f64a7317f3787167f6ccd6844525f7b8ef1a61226f1773ebe604fc4e",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/leo900_terminal_evidence_r2_deployment_20261017T204027Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/terminal_evidence_r2_local_green_20261018_r1.json",
+      "sha256": "3ba6d5a092dc3c4be17062e2a0713560a77c89614f8c4eacb2949298dc90842e",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/terminal_evidence_r2_local_green_20261018_r1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/terminal_unit_membership_red_20261018_r1.json",
+      "sha256": "c0e110bc912710e8d52aaa5838ea82359ed27d4ed921af91133ae5ca14556087",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/terminal_unit_membership_red_20261018_r1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/terminal_unit_membership_red_20261018_r2.json",
+      "sha256": "219f33920a63dc284fa98f5be24d138418bb0741408e45e6ba0a6f3d3dcbfa62",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/terminal_unit_membership_red_20261018_r2.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/terminal_unit_membership_targeted_20261018_r1.json",
+      "sha256": "aa025f2adfc6b078d75d1024dc42d2d14321506c6734b27875b7c8fc466f86eb",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/terminal_unit_membership_targeted_20261018_r1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/test_leo900_terminal_evidence_20261018_r2.py",
+      "sha256": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "target": "release/f1_audit_20261010/test_leo900_terminal_evidence_20261018_r2.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+      "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json",
+      "sha256": "803a221e053008077d18d69a8ede52960d5b8de9c4e42dae9bcc2ef476900b2b",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R7.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json",
+      "sha256": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/append_f1_leo900_preflight_r8_20261018.py",
+      "sha256": "f40788e5237d07423141c9e870e5ca9f603510e4d7405d0197129fe97db4c126",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/append_f1_leo900_preflight_r8_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/deploy_leo900_statistics_numerical_audit_20261018_r1.py",
+      "sha256": "dccb0e40629e247afc65a53b897a30edff05705aefdeea637c1ee5f8701dd05d",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/deploy_leo900_statistics_numerical_audit_20261018_r1.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/f1_lossless_gate_statistics_20261018.py",
+      "sha256": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/f1_lossless_gate_statistics_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_continuation_observation_20261017T205244Z.json",
+      "sha256": "5df42319d954718ad76775cbb0fc420a421aaf3eda51bb880bb53a79b7512326",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/leo900_continuation_observation_20261017T205244Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_external_commitment_rest_publication_20261017T193909Z.json",
+      "sha256": "5c60799f4d6154bf6235453a44e7ca385b27b5653d428ebc23031c2535bf7025",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/leo900_external_commitment_rest_publication_20261017T193909Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_generation_metadata_20261017T205243Z.json",
+      "sha256": "ca63432c0fb6795264ae6f8b01e006020299b4bc4ea05eb4f59c21cbedb7d51a",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/leo900_generation_metadata_20261017T205243Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_statistics_numerical_audit_20261018.py",
+      "sha256": "105618a87df69fd750c70f3388e93c70af9d33ec46e60cfe73677dd8bc55f179",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/leo900_statistics_numerical_audit_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_statistics_numerical_audit_deployment_20261017T205500Z.json",
+      "sha256": "bda4a63b1350420e76fdc929633fbde87654499a07dfab0a8020da1ab11bb443",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/leo900_statistics_numerical_audit_deployment_20261017T205500Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py",
+      "sha256": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/statistics_numerical_audit_local_20261018_r1.json",
+      "sha256": "eb42b406dfb04977dbd4d0c8eaf7c0ede75728273f1fcf32f68f9d9f5e690653",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/statistics_numerical_audit_local_20261018_r1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/statistics_numerical_audit_local_20261018_r2.json",
+      "sha256": "4efe49d29b1453e2f5250e624ff8653a5aeaecbf478b9b2890c20f41a81a3ec8",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/statistics_numerical_audit_local_20261018_r2.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/statistics_numerical_audit_local_20261018_r3.json",
+      "sha256": "da952e4a4c976e7559f3275d7ef570c60720c0e5af30e154392ebb89de4e3e1d",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/statistics_numerical_audit_local_20261018_r3.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/statistics_numerical_audit_red_20261018_r1.json",
+      "sha256": "410b6bb34dafd8039efd2dcf31ea2852124eb6c2c7bf549113a2f84ad5b1360b",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/statistics_numerical_audit_red_20261018_r1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/test_leo900_statistics_numerical_audit_20261018.py",
+      "sha256": "c8bfd63d3f93425ca6756900019f11509ffbf5c116146a980b9a03c1852c40b3",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "target": "release/f1_audit_20261010/test_leo900_statistics_numerical_audit_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+      "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json",
+      "sha256": "7ace7afcbb8756f681134975fc999865745086d8b62db751977c73a138de2f29",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R8.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/append_f1_leo900_preflight_r9_20261018.py",
+      "sha256": "bd5f74b59cff75a3bac0f280d26f96df99c0d0784a01cfd9303bb8f47f9372b8",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/append_f1_leo900_preflight_r9_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/deploy_leo900_prediction_summary_audit_20261018_r1.py",
+      "sha256": "a06aabdb79202c90ba579713a01eba27604c01e8a12104e1bf5b70c3df76288c",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/deploy_leo900_prediction_summary_audit_20261018_r1.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_audit_addendum_publication_20261017T210327Z.json",
+      "sha256": "887d833e37c1d499180a0eda9459475de54af1186d7baaa4c2b143929c1018a7",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/leo900_audit_addendum_publication_20261017T210327Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_continuation_observation_20261017T211439Z.json",
+      "sha256": "6dc96dbfedbbb5ca5946ad15ccc3b97733755b660b22f94a5c5d8a3afe769ace",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/leo900_continuation_observation_20261017T211439Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_generation_metadata_20261017T211439Z.json",
+      "sha256": "2deb91e8032abf7884f5e353a7381265fbd9a18f3a22e07294833e289c987c27",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/leo900_generation_metadata_20261017T211439Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_prediction_summary_audit_20261018.py",
+      "sha256": "8c2fbabdcedf8a3263a951baa3114415687a970446666f1e87e9b3af09450c2c",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/leo900_prediction_summary_audit_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_prediction_summary_audit_deployment_20261017T211424Z.json",
+      "sha256": "1e79319f2809660973b5b8549afda1b7bc7fe3055624bbf6b3d3ad9bd6cee3d8",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/leo900_prediction_summary_audit_deployment_20261017T211424Z.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_statistics_numerical_audit_20261018.py",
+      "sha256": "105618a87df69fd750c70f3388e93c70af9d33ec46e60cfe73677dd8bc55f179",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/leo900_statistics_numerical_audit_20261018.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py",
+      "sha256": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py"
+    },
+    {
+      "key": "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r1.json",
+      "sha256": "0046cea59c053f5fbe4f46ab7693db052c5f6ec4e3e7cca10b524318bbf4b00b",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r2.json",
+      "sha256": "e541a2c36f011dde2ebd5d354bd589873311edc569b4ca1f9eb11c224e797038",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/prediction_summary_audit_local_20261018_r2.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/prediction_summary_audit_red_20261018_r1.json",
+      "sha256": "7ccb2e4218384f16d512f3dc7575c854a5a482ac8c098ea002daa636ee84317d",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/prediction_summary_audit_red_20261018_r1.json"
+    },
+    {
+      "key": "release/f1_audit_20261010/test_leo900_prediction_summary_audit_20261018.py",
+      "sha256": "7d195a43649c5c615f223b395c8ed501d55988eccd3d2c2b5d9edb0759b68411",
+      "source": "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R9.json",
+      "target": "release/f1_audit_20261010/test_leo900_prediction_summary_audit_20261018.py"
+    },
+    {
+      "key": "F1_EVIDENCE_LEDGER_20261017.md",
+      "sha256": "820d95cc95eb97353a1b0ea14b8e83079571b6f548e9af4acb4d511a35822558",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_EVIDENCE_LEDGER_20261017.md"
+    },
+    {
+      "key": "F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json",
+      "sha256": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json"
+    },
+    {
+      "key": "F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+      "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.json",
+      "sha256": "5d7f153acf7bbac5de6dbf7b28e02d49bc72931744a4e27c4d053b1faf03f2b6",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.json"
+    },
+    {
+      "key": "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.md",
+      "sha256": "860bd82336048bb6c78d0e9774cf0f9e57db5fb508bae8aff156ef0d51da7980",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.md"
+    },
+    {
+      "key": "F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json",
+      "sha256": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json"
+    },
+    {
+      "key": "check_f1_statistics_registered_oracles_20261018.py",
+      "sha256": "c4a475de652e0b84b0881f7941d20ae8905794289dde9d1b6a175bfc26467405",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/check_f1_statistics_registered_oracles_20261018.py"
+    },
+    {
+      "key": "f1_leo900_channel_policy_clean_final_test_20261018_r4.py",
+      "sha256": "5b8acfe1eccc4f01e1e67ce0ef13f9d6768bb2ae9da152672974c2a7f1cf7a76",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/f1_leo900_channel_policy_clean_final_test_20261018_r4.py"
+    },
+    {
+      "key": "f1_lossless_gate_statistics_20261018.py",
+      "sha256": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/f1_lossless_gate_statistics_20261018.py"
+    },
+    {
+      "key": "f1_paired_predictions_20261018.py",
+      "sha256": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/f1_paired_predictions_20261018.py"
+    },
+    {
+      "key": "leo900_channel_policy_20261018_r4.py",
+      "sha256": "8ef26ac31b69397d4ce3d9960bee9c212c05d2f732698b575f0de90779c7326e",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_channel_policy_20261018_r4.py"
+    },
+    {
+      "key": "leo900_continuation_observation_20261017T192737Z.json",
+      "sha256": "3f412213523cff937b823b3efb7cef4a71b0dedba57369e8d625d0c265930cbe",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_continuation_observation_20261017T192737Z.json"
+    },
+    {
+      "key": "leo900_final_continuation_20261018.py",
+      "sha256": "95980e282428c016f0b44918fb25eecbd5e6555550bf38e3cd1161dbb2ec753e",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_20261018.py"
+    },
+    {
+      "key": "leo900_final_continuation_deployment_20261017T191902Z.json",
+      "sha256": "c83ee791045abf85a07b1af650d9b4d50fb76223db09e52e22c52ab512a4ce18",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_deployment_20261017T191902Z.json"
+    },
+    {
+      "key": "leo900_final_continuation_deployment_20261017T192006Z.json",
+      "sha256": "6dd65edb9feb895fbe103c748a9958a31580246810b322ea151d199e8f997d74",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_deployment_20261017T192006Z.json"
+    },
+    {
+      "key": "leo900_final_continuation_launch_20261017T192053Z.json",
+      "sha256": "40efbc9805b30034fa98051e83beff89c7eea4adf4623202b7f96b98fcd43add",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_launch_20261017T192053Z.json"
+    },
+    {
+      "key": "leo900_final_continuation_local_green_20261018_r1.json",
+      "sha256": "d211403227b3116733fe3a8ca4b48651fc1c614f1198d8b134f714df6e0310af",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_local_green_20261018_r1.json"
+    },
+    {
+      "key": "leo900_final_continuation_local_green_20261018_r2.json",
+      "sha256": "9bcbb40f42b81a89dd0bf465138d73837cf0c929a18f587aba86506007669eeb",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_local_green_20261018_r2.json"
+    },
+    {
+      "key": "leo900_final_continuation_local_green_20261018_r3.json",
+      "sha256": "353a9b2a0800cbb9e182d5b78e385eb3107316dbe0dac3450e66940aaf1438ce",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_local_green_20261018_r3.json"
+    },
+    {
+      "key": "leo900_final_continuation_red_20261018_r1.json",
+      "sha256": "9a9932a387804e2a851aee8edfed54b3de02cfa244d4e7c804738dc71ede3f5b",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_final_continuation_red_20261018_r1.json"
+    },
+    {
+      "key": "leo900_generation_metadata_20261017T191247Z.json",
+      "sha256": "d48f6ed163908d0428afb2418058cc60228fc9e5e95c33dfa54f0243427b6daf",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_generation_metadata_20261017T191247Z.json"
+    },
+    {
+      "key": "leo900_statistics_protocol_deployment_r1_20261017T190734Z.json",
+      "sha256": "5b9f025c9220f88f5a1dc5e204d00c189a514a87d38b949c176ba768177db73b",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/leo900_statistics_protocol_deployment_r1_20261017T190734Z.json"
+    },
+    {
+      "key": "registered_input_export.json",
+      "sha256": "1ea8fae448f863fcc8f044cc46eb6f49bfb15e288583898b06f71686db83988c",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_input_export.json"
+    },
+    {
+      "key": "registered_inputs/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json",
+      "sha256": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json"
+    },
+    {
+      "key": "registered_inputs/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json",
+      "sha256": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json"
+    },
+    {
+      "key": "registered_inputs/evidence/candidate_preregistration.json",
+      "sha256": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/candidate_preregistration.json"
+    },
+    {
+      "key": "registered_inputs/evidence/candidate_snapshot.json",
+      "sha256": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/candidate_snapshot.json"
+    },
+    {
+      "key": "registered_inputs/evidence/formal_candidate_receipt.json",
+      "sha256": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/formal_candidate_receipt.json"
+    },
+    {
+      "key": "registered_inputs/evidence/partition_plan.json",
+      "sha256": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/partition_plan.json"
+    },
+    {
+      "key": "registered_inputs/evidence/preparation_attempt_history.json",
+      "sha256": "8a2eebc431c68acd4866bb4ea39c10ee931446f95451a17860a755756135128b",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/preparation_attempt_history.json"
+    },
+    {
+      "key": "registered_inputs/evidence/preparation_postflight_verification.json",
+      "sha256": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/preparation_postflight_verification.json"
+    },
+    {
+      "key": "registered_inputs/evidence/simulation_schedule.json",
+      "sha256": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/simulation_schedule.json"
+    },
+    {
+      "key": "registered_inputs/evidence/source_route_replay_certificate.json",
+      "sha256": "d232448e1a8e9b8bf727a982df0e72ea235e9519271534ddfe1f038046cd0f51",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/source_route_replay_certificate.json"
+    },
+    {
+      "key": "registered_inputs/evidence/template_exclusion_manifest.json",
+      "sha256": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/template_exclusion_manifest.json"
+    },
+    {
+      "key": "test_f1_lossless_gate_statistics_20261018.py",
+      "sha256": "bcb13da9b40dd1c2ab2861946d33b340f0aac7bcf1a6db4b95ffa306bbb0c7db",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/test_f1_lossless_gate_statistics_20261018.py"
+    },
+    {
+      "key": "test_leo900_final_continuation_20261018.py",
+      "sha256": "7048632593088cadaa33f5b0a023ff9e1c3ca7b8f50b9da35c16647d206437bb",
+      "source": "release/f1_leo900_pre_final_commitment_20261018_r1/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json",
+      "target": "release/f1_leo900_pre_final_commitment_20261018_r1/test_leo900_final_continuation_20261018.py"
+    }
+  ],
+  "created_utc": "2026-10-17T21:17:18.279991+00:00",
+  "f1_closed": false,
+  "goal_status": "active",
+  "original_commit": "846cdaac03beab2bacb9834bde1ed8fff1c77141",
+  "original_manifest_sha256": "7a489927d3cb6001fff91b7b9af77d9da0468f6721a053fa90be8d8025ca9490",
+  "r8_sha256": "7ace7afcbb8756f681134975fc999865745086d8b62db751977c73a138de2f29",
+  "r9_sha256": "6de13be7865f3b603933ccf2aece3d97297d7dd01fe98a61bac0b3ee56695ca1",
+  "schema": "brphm-f1-addendum-artifact-graph-v2",
+  "scientific_success_claimed": false,
+  "stale_goal_objective_note": "Retained15/15-closed wording is obsolete. R5-R9 maintain F1 OPEN pending actual complete final evidence."
+}

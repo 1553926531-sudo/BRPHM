@@ -1,0 +1,196 @@
+{
+  "artifact_sha256": {
+    "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+    "release/f1_audit_20261010/F1_LEO900_INFERENCE_DEPENDENCIES_20261018R1.json": "37675a2e28c74abd0a0858010faf8171e1bdf1753e655b7f93c3256ec41605b0",
+    "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json": "78b50a8c44c47719359420a562c5be8334c18bcfb57203b8ceeb2f7d631493ff",
+    "release/f1_audit_20261010/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+    "release/f1_audit_20261010/F1_LEO900_TRAINING_LABEL_FLOW_20261018R1.json": "36a7830e40f498823b24f18cbe8f46a704ba4b50b83a33b48d00c9fff94e7168",
+    "release/f1_audit_20261010/append_f1_leo900_preflight_r7_20261018.py": "850039d68ece7be3de88e7714508c425235f77397d63e449f852a24a00127f52",
+    "release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py": "b44c4daf0771d09638e225b5dbe46762d5a43a389c7938a006a74434d01cf6f4",
+    "release/f1_audit_20261010/deploy_leo900_terminal_evidence_20261018_r2.py": "f9da83127597cc41957ae6527b86b0a0ca9f2e3e4dbd5b061976aa451d63b35d",
+    "release/f1_audit_20261010/f1_clean_final_test_20261018_v3.py": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+    "release/f1_audit_20261010/leo900_continuation_observation_20261017T203836Z.json": "e24abe05b386d46c29fdaa53d201ffb6cca0f35cbc099e6069261ef10858802b",
+    "release/f1_audit_20261010/leo900_generation_metadata_20261017T203836Z.json": "b3189fc5c020ec81856eaf7225e099736713ad585cf0b8021af2c54d644d9e28",
+    "release/f1_audit_20261010/leo900_terminal_evidence_20261018.py": "f565bb1feeab8b963c124f1490a7b5de33d4bd8794ed400d839843e01304ad8e",
+    "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+    "release/f1_audit_20261010/leo900_terminal_evidence_r2_deployment_20261017T204027Z.json": "7bb5ba31f64a7317f3787167f6ccd6844525f7b8ef1a61226f1773ebe604fc4e",
+    "release/f1_audit_20261010/terminal_evidence_r2_local_green_20261018_r1.json": "3ba6d5a092dc3c4be17062e2a0713560a77c89614f8c4eacb2949298dc90842e",
+    "release/f1_audit_20261010/terminal_unit_membership_red_20261018_r1.json": "c0e110bc912710e8d52aaa5838ea82359ed27d4ed921af91133ae5ca14556087",
+    "release/f1_audit_20261010/terminal_unit_membership_red_20261018_r2.json": "219f33920a63dc284fa98f5be24d138418bb0741408e45e6ba0a6f3d3dcbfa62",
+    "release/f1_audit_20261010/terminal_unit_membership_targeted_20261018_r1.json": "aa025f2adfc6b078d75d1024dc42d2d14321506c6734b27875b7c8fc466f86eb",
+    "release/f1_audit_20261010/test_leo900_terminal_evidence_20261018_r2.py": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c"
+  },
+  "created_utc": "2026-10-17T20:42:30.915817+00:00",
+  "evidence_limit": "Local clocks/hash chains and external availability observations have distinct limits; no global historical non-access or scientific success is asserted.",
+  "f1_closed": false,
+  "findings": [
+    {
+      "command": "Inspect frozen evaluator450-519 and R2 membership checks; synthetic 48/48 generated,47/1 evaluated witness; no evaluator import or run.",
+      "confidence": "High for byte-bound code and observed test/metadata facts; not a proof of all historic non-access",
+      "cross_validation": "Frozen evaluator's skip branch and independent synthetic membership tests agree; the production branch also checks the original paired-layout Counter.",
+      "date": "2026-10-17T20:42:30.915817+00:00",
+      "evidence": [
+        "release/f1_audit_20261010/f1_clean_final_test_20261018_v3.py",
+        "release/f1_audit_20261010/leo900_terminal_evidence_20261018.py",
+        "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py",
+        "release/f1_audit_20261010/test_leo900_terminal_evidence_20261018_r2.py"
+      ],
+      "finding": "F1",
+      "hash": "SHA256 entries in artifact_sha256; review SHA256 in review_report",
+      "id": "F1-R7-01",
+      "location": "Frozen raw evaluator build_raw_holdout_payload, lines450-519; independent auditor component/statistics checks",
+      "modification": "Append R2: retain the96-unit generated partition; validate nonempty positive-integer unit-window maps as component-specific partition subsets; reconcile receipt, metrics, layout and statistics membership/counts; report generated/evaluated/zero-window sets separately.",
+      "original": "Raw evaluator skips units when len(windows_array)==0 after the fixed finite/nonnegative label mask.",
+      "problem": "The first independent auditor wrongly required48 evaluated units per component; generated partition membership and evaluable membership are distinct.",
+      "remaining_risk": "Zero-window IDs are inferred from bound output metadata. Raw eligibility and each unit's exclusion cause are not independently recomputed here.",
+      "result": "Auxiliary verification corrected. No candidate, split, window rule, gate, statistic, controller or evaluator changed. Actual evaluated counts await terminal artifacts.",
+      "source": "Original F1 review requirement and cited code/receipts; provenance limits stated per item",
+      "status": "CORRECTED; REAL TERMINAL CHECK PENDING"
+    },
+    {
+      "command": "Recorded targeted7-case and python -B -m unittest -v test_leo900_terminal_evidence_20261018_r2 runs; receipts retain complete output and exact source hashes.",
+      "confidence": "High for byte-bound code and observed test/metadata facts; not a proof of all historic non-access",
+      "cross_validation": "Genuine RED reproduces the old fixed-count failure. R2 positive subset witness passes while rehashed unknown membership, duplicate statistics units, invalid or empty maps and count contradictions are rejected.",
+      "date": "2026-10-17T20:42:30.915817+00:00",
+      "evidence": [
+        "release/f1_audit_20261010/terminal_unit_membership_red_20261018_r1.json",
+        "release/f1_audit_20261010/terminal_unit_membership_red_20261018_r2.json",
+        "release/f1_audit_20261010/terminal_unit_membership_targeted_20261018_r1.json",
+        "release/f1_audit_20261010/terminal_evidence_r2_local_green_20261018_r1.json",
+        "release/f1_audit_20261010/test_leo900_terminal_evidence_20261018_r2.py"
+      ],
+      "finding": "F1",
+      "hash": "SHA256 entries in artifact_sha256; review SHA256 in review_report",
+      "id": "F1-R7-02",
+      "location": "R2 test-first reproduction and local verification receipts",
+      "modification": "Retain the erroneous fixture attempt, fix the fixture, retain the genuine RED(final component route/count mismatch), then add seven behavior cases and verify all39 tests with unchanged source hashes.",
+      "original": "Reject the old48-unit assumption without weakening unknown-unit, duplicate-unit, invalid-count or total-count checks.",
+      "problem": "The first RED attempt had a Windows fixture path-key KeyError, so it was not a valid reproduction of the production assumption.",
+      "remaining_risk": "Artificial fixtures do not establish a real final result or rule out every production edge case.",
+      "result": "Targeted7/7 and complete39/39 pass. Local full suite204.990s; sources_unchanged=true. Synthetic files only; real_final_labels_read=false.",
+      "source": "Original F1 review requirement and cited code/receipts; provenance limits stated per item",
+      "status": "39/39 LOCAL; FAILURE ATTEMPTS PRESERVED"
+    },
+    {
+      "command": "python -B release/f1_audit_20261010/deploy_leo900_terminal_evidence_20261018_r2.py (executed once); remote unittest39 cases then fixed read-only auditor CLI.",
+      "confidence": "High for byte-bound code and observed test/metadata facts; not a proof of all historic non-access",
+      "cross_validation": "Local green source SHA256 values equal transferred files and Rack verification records; first production preflight independently validates registered input anchors. This is execution checking, not an independent historical access witness.",
+      "date": "2026-10-17T20:42:30.915817+00:00",
+      "evidence": [
+        "release/f1_audit_20261010/leo900_terminal_evidence_r2_deployment_20261017T204027Z.json",
+        "release/f1_audit_20261010/terminal_evidence_r2_local_green_20261018_r1.json",
+        "release/f1_audit_20261010/leo900_terminal_evidence_20261018_r2.py",
+        "release/f1_audit_20261010/test_leo900_terminal_evidence_20261018_r2.py",
+        "release/f1_audit_20261010/deploy_leo900_terminal_evidence_20261018_r2.py"
+      ],
+      "finding": "F1",
+      "hash": "SHA256 entries in artifact_sha256; review SHA256 in review_report",
+      "id": "F1-R7-03",
+      "location": "Separate Rack terminal_evidence_support_20261018_r2; first_read_only_audit.json",
+      "modification": "Deploy R2 into a new support directory; retain39-test Rack receipt, deployed SHA256 values and first read-only preflight. Prior support directory and all receipts remain intact.",
+      "original": "Deploy a verifier without starting or re-running evaluation or changing the running simulation.",
+      "problem": "Local success alone cannot establish deployed byte identity or Rack behavior.",
+      "remaining_risk": "Complete terminal chronology, real predictions, exact gate and fixed statistics still require audit. A process or test PASS is not scientific superiority.",
+      "result": "Rack39/39 pass, CPU4/nice15, numeric libraries single-threaded; uploaded119285 bytes, tensor transfer0. First preflight verifies156 inputs and reports PENDING_TERMINAL; audit SHA1dccadb3d7de4ea56d9ee56f3579303f40a25d6675376dcff15e7a9ad7861f6e.",
+      "source": "Original F1 review requirement and cited code/receipts; provenance limits stated per item",
+      "status": "DEPLOYED; F1 OPEN"
+    },
+    {
+      "command": "Recorded audit_leo900_inference_dependencies_20261018.py run; compare registered configs and full function excerpts; pure-function synthetic prefix/baseline witnesses only.",
+      "confidence": "High for byte-bound code and observed test/metadata facts; not a proof of all historic non-access",
+      "cross_validation": "Registered parent hashes/configurations and actual call/function excerpts cross-check the static dependency paths. Two registered projection implementations plus synthetic prefix witnesses agree. Hash copies are not independent historic no-access evidence.",
+      "date": "2026-10-17T20:42:30.915817+00:00",
+      "evidence": [
+        "release/f1_audit_20261010/F1_LEO900_INFERENCE_DEPENDENCIES_20261018R1.json",
+        "release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+        "release/f1_audit_20261010/F1_LEO900_TRAINING_LABEL_FLOW_20261018R1.json"
+      ],
+      "finding": "F1",
+      "hash": "SHA256 entries in artifact_sha256; review SHA256 in review_report",
+      "id": "F1-R7-04",
+      "location": "Registered inference/conversion/representation/projection dependencies; F1 source-only and final-access claims",
+      "modification": "Append the18-source,4-anchor,10-finding static dependency audit. Preserve the frozen method, and require subsequent disclosure of simulation feature origins, label-conditioned membership, known orbit lookup, target-unit first-window input and offline projection.",
+      "original": "Candidate selection never reads outer labels; outer labels are evaluated once after the handoff.",
+      "problem": "A training-label statement cannot describe the whole pipeline: BAT ideal capacity comes from truth/soh; conversion reads final labels/truth after guard; retained windows depend on finite/nonnegative labels; BAT PAVA uses future predictions.",
+      "remaining_risk": "This is not a full-program information-flow proof, a validated real-sensor deployment, or an executed strictly online BAT experiment. Runtime binding and actual effect remain to be checked; historic outer/LEO800 development influence stays admitted.",
+      "result": "BAT4→8 channels; RWA13→26. Frozen normalization/friction/age scales are source-based; alpha is fixed orbit-ID lookup(LEO9001e-5 each). BAT prefix[.1] becomes[.5,.5] after appending.9 under offline PAVA; RWA running-min alone preserves prefix. RWA574-second bins,30-bin window,stride1.",
+      "source": "Original F1 review requirement and cited code/receipts; provenance limits stated per item",
+      "status": "DEPENDENCIES DOCUMENTED; F1 OPEN"
+    },
+    {
+      "command": "python -B release/f1_audit_20261010/capture_leo900_metadata_20261018.py; python -B release/f1_audit_20261010/capture_leo900_continuation_20261018.py (read-only observation).",
+      "confidence": "High for byte-bound code and observed test/metadata facts; not a proof of all historic non-access",
+      "cross_validation": "Filename/size/time metadata, ps-/proc-process evidence, and independently hashed controller event records agree at observation time; all are observations from the same host.",
+      "date": "2026-10-17T20:42:30.915817+00:00",
+      "evidence": [
+        "release/f1_audit_20261010/F1_LEO900_PREFLIGHT_EVIDENCE_20261018R6.json",
+        "release/f1_audit_20261010/leo900_generation_metadata_20261017T203836Z.json",
+        "release/f1_audit_20261010/leo900_continuation_observation_20261017T203836Z.json",
+        "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+        "release/f1_audit_20261010/F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json"
+      ],
+      "finding": "F1",
+      "hash": "SHA256 entries in artifact_sha256; review SHA256 in review_report",
+      "id": "F1-R7-05",
+      "location": "2026-10-17T20:38:36Z generation/controller metadata observation; overall goal and manuscript freeze",
+      "modification": "Append point-in-time read-only observation and maintain the current F1 OPEN disposition; preserve the running chain and all earlier records.",
+      "original": "Existing normal simulation exit→seal→freeze→single evaluate→fixed statistics chain.",
+      "problem": "Partial generation and a waiting controller do not satisfy the new untouched-final-test requirement.",
+      "remaining_risk": "No MAT values or labels were decoded. No completion time or future outcome is inferred. After final results, the candidate cannot be retuned and re-confirmed on the same final set.",
+      "result": "BAT23/48,RWA0/48; four MATLAB workers near99.7%CPU; controllerPID616411 waiting, two valid chained events, stderr empty; final guard/terminal absent at this observation. F1 OPEN, goal active, manuscript/F2-F10 substantive edits frozen.",
+      "source": "Original F1 review requirement and cited code/receipts; provenance limits stated per item",
+      "status": "GENERATION RUNNING; GOAL ACTIVE"
+    }
+  ],
+  "first_read_only_audit": {
+    "command": [
+      "/mnt/data/BRPHM/rul-space/.venv-fm/bin/python",
+      "-B",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/leo900_terminal_evidence_20261018_r2.py",
+      "--output",
+      "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/first_read_only_audit.json"
+    ],
+    "exit_code": 0,
+    "record": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/first_read_only_audit.json",
+      "sha256": "1dccadb3d7de4ea56d9ee56f3579303f40a25d6675376dcff15e7a9ad7861f6e",
+      "size": 298
+    },
+    "report": {
+      "audit_code_sha256": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+      "created_utc": "2026-10-17T20:40:27.193789+00:00",
+      "f1_closed": false,
+      "registered_inputs_verified": 156,
+      "scientific_success_claimed": false,
+      "semantic_final_labels_read_by_auditor": false,
+      "status": "PENDING_TERMINAL"
+    },
+    "stderr": "",
+    "stdout": "{\"status\": \"PENDING_TERMINAL\", \"output\": \"/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2/first_read_only_audit.json\", \"f1_closed\": false, \"sha256\": \"1dccadb3d7de4ea56d9ee56f3579303f40a25d6675376dcff15e7a9ad7861f6e\"}\n"
+  },
+  "goal_status": "active",
+  "manuscript_and_f2_f10_substantive_edits_frozen": true,
+  "new_support_directory": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/terminal_evidence_support_20261018_r2",
+  "next_required": [
+    "Let the existing simulation/controller chain finish without restart or duplicate evaluation",
+    "Run the R2 auditor to a fresh output after the complete controller terminal is present",
+    "Check actual generated/evaluated/zero-window membership, freeze/access chronology, exact gate and fixed statistics",
+    "Assess physical-unit effect magnitude and uncertainty honestly, then decide F1",
+    "Only after F1 closure resume substantive F2-F10/manuscript work; overall goal remains active until all findings and deliverables are handled"
+  ],
+  "previous_r6_sha256": "78b50a8c44c47719359420a562c5be8334c18bcfb57203b8ceeb2f7d631493ff",
+  "protected_boundaries": {
+    "BRPHM-preview": "no access or modification",
+    "IEEE": "no upload/submission/email/contact",
+    "ModelScope": "read-only; not accessed here",
+    "running_simulation": "no stop/restart/copy/configuration mutation"
+  },
+  "review_report": {
+    "lines": "19-25",
+    "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-01\\ni-d\\outputs\\IEEE_Review_Report_English.md",
+    "sha256": "9d75bf227ae883552af326352f3586bc23b84ebaf4c73d2a7fa4d1a26cfc8be5"
+  },
+  "schema": "brphm-f1-additive-pre-final-evidence-r7",
+  "scientific_success_claimed": false,
+  "status": "F1 OPEN"
+}

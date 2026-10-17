@@ -1,0 +1,1122 @@
+{
+  "anchors": {
+    "release/f1_audit_20261010/F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json": {
+      "sha256": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+      "size": 14590
+    },
+    "release/f1_audit_20261010/F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json": {
+      "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+      "size": 46839
+    },
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json": {
+      "sha256": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61",
+      "size": 23405
+    },
+    "release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence/formal_candidate_receipt.json": {
+      "sha256": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+      "size": 2426
+    }
+  },
+  "archive": {
+    "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz",
+    "sha256": "e8874a5bc8c7e4ced5c0c0e495216497e5d6b5e1d633523d9a0f8167ed4cafb3"
+  },
+  "created_utc": "2026-10-17T20:27:48.366645+00:00",
+  "f1_closed": false,
+  "findings": [
+    {
+      "id": "F1-INFERENCE-01",
+      "交叉验证": "逐项比较已登记配置、真实调用函数和父级哈希绑定；纯函数另用合成输入检验。代码副本和哈希不是独立的历史无访问见证。",
+      "位置": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_unit_first_source_gate_20261001.py"
+      ],
+      "修改": "追加本条依赖证据；候选、执行链、正文保持冻结。矩阵按冻结通道白名单取值。BAT原始4通道经unit-first拼接为8；RWA原始13通道拼接为26。白名单无label列，但这不等于所有特征都是实测遥测。",
+      "剩余风险": "特征的生成来源、标签驱动的评估窗口筛选和离线投影仍分别影响可支持的主张。",
+      "原文": "channels = list(config['channels']); matrix = np.column_stack([... for ch in channels])",
+      "命令": "python -B release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "哈希": {
+        "evaluator": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+        "unit_first": "9c8c433adc1c592584e2467956f67432b635ac8f6dca51f22c4f03f0aaa70b20"
+      },
+      "日期": "2026-10-17T20:27:48.366645+00:00",
+      "来源": {
+        "evaluator": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "unit_first": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_unit_first_source_gate_20261001.py"
+      },
+      "状态": "DEPENDENCY_ESTABLISHED_F1_OPEN",
+      "结果": "矩阵按冻结通道白名单取值。BAT原始4通道经unit-first拼接为8；RWA原始13通道拼接为26。白名单无label列，但这不等于所有特征都是实测遥测。",
+      "置信度": "对所引冻结代码的依赖结论高；不据此证明历史无访问或实测部署可行性。",
+      "证据": {
+        "source_excerpts": [
+          {
+            "first_line": 450,
+            "function": "build_raw_holdout_payload",
+            "last_line": 519,
+            "source": "evaluator",
+            "text": "def build_raw_holdout_payload(root: Path, component: str, config: dict[str, Any],\n                              norm_doc: dict[str, Any], manifest_rows: list[dict[str, str]],\n                              manifest_path: Path) -> dict[str, Any]:\n    import numpy as np\n    from src.datasets import labels, preprocess, sim_loader, windows\n\n    line = component\n    dataset_id = str(config[\"dataset_id\"])\n    channels = list(config[\"channels\"])\n    absent = set(config.get(\"channels_absent_ok\") or [])\n    mode = config[\"resample\"][\"mode\"]\n    bin_s = float(config[\"resample\"].get(\"bin_s\", preprocess.SECONDS_PER_DAY)) if mode == \"daily_agg\" else None\n    bases = list(config[\"resample\"].get(\"base_channels\", preprocess.RWA_TARGET_BASE)) if mode == \"daily_agg\" else []\n    want_fric = bool(config[\"resample\"].get(\"fric_tc\", True)) and mode == \"daily_agg\" and preprocess.FRIC_TC_MEAN in channels\n    baseline = None\n    if want_fric:\n        baseline = ((norm_doc.get(\"derived\") or {}).get(\"rw\") or {}).get(\"fric_tc\", {}).get(\"baseline_coef\")\n        if not isinstance(baseline, list) or len(baseline) != 2:\n            raise RuntimeError(\"frozen RWA friction baseline is missing\")\n    L = int(config[\"window\"][\"L\"])\n    stride = int(config[\"window\"][\"stride\"])\n    rmax = float(config[\"labels\"][\"rmax\"])\n    floor = config[\"labels\"].get(\"rul_floor\", \"keep\")\n    stats = norm_doc[\"channels\"]\n    xs, ys, rows, units = [], [], [], {}\n    for item in sorted((row for row in manifest_rows if row[\"product_line\"] == line), key=lambda row: row[\"sample_id\"]):\n        uid = item[\"sample_id\"]\n        raw_path = row_raw_path(root, item)\n        if sha256_file(raw_path) != item[\"sha256\"]:\n            raise RuntimeError(f\"raw holdout hash drift: {uid}\")\n        converted, _, frame = sim_loader.convert_one(raw_path, dataset_id, root / \"data/interim\" / dataset_id,\n                                                     root=root, lenient=False, write=False)\n        if converted != uid or frame is None:\n            raise RuntimeError(f\"raw identity drift: {uid}\")\n        if mode == \"daily_agg\":\n            frame, _ = preprocess._bin_aggregate_rwa(frame, bin_s, bases, [])\n        if want_fric:\n            frame[preprocess.FRIC_TC_MEAN] = (\n                frame[\"rw.motor_current_a.mean\"].to_numpy(np.float64)\n                - (float(baseline[0]) + float(baseline[1]) * frame[\"rw.bearing_temp_c.mean\"].to_numpy(np.float64))\n            )\n        missing = [ch for ch in channels if ch not in frame.columns and ch not in absent]\n        if missing:\n            raise RuntimeError(f\"holdout channels missing for {uid}: {missing}\")\n        matrix = np.column_stack([\n            np.zeros(len(frame), dtype=np.float64) if ch in absent else frame[ch].to_numpy(np.float64)\n            for ch in channels\n        ])\n        windows_array, ends = windows.slide(matrix, L, stride)\n        y, _, _ = labels.window_labels(frame[\"label.rul\"].to_numpy(np.float64),\n                                        frame.get(\"label.hi\"), ends, rmax)\n        keep = np.isfinite(y)\n        if floor == \"drop_negative\":\n            keep &= y >= 0.0\n        windows_array, ends, y = windows_array[keep], ends[keep], y[keep]\n        if not len(windows_array):\n            continue\n        xs.append(preprocess.normalize(windows_array, channels, stats))\n        ys.append(y.astype(np.float32))\n        rows.extend(windows.build_index(uid, dataset_id, \"tgt\", \"holdout\",\n                                         frame[\"t\"].to_numpy(np.float64)[ends]))\n        units[uid] = int(len(y))\n    if not xs:\n        raise RuntimeError(f\"zero final windows for {line}\")\n    x = np.concatenate(xs).astype(np.float32)\n    y = np.concatenate(ys).astype(np.float32)\n    if len(rows) != len(x):\n        raise RuntimeError(\"final payload row/array mismatch\")\n    return {\"x\": x, \"y\": y, \"rows\": rows, \"rmax\": rmax, \"channels\": channels,\n            \"units\": units, \"manifest_path\": str(manifest_path)}"
+          },
+          {
+            "first_line": 35,
+            "function": "append_unit_first",
+            "last_line": 40,
+            "source": "unit_first",
+            "text": "def append_unit_first(values: np.ndarray, rows: list[dict]) -> np.ndarray:\n    values = np.asarray(values, dtype=np.float32)\n    if not np.isfinite(values).all():\n        raise ValueError(\"values must be finite\")\n    baseline = _unit_baselines(values, rows)\n    return np.concatenate((values, values - baseline[:, None, :]), axis=2).astype(np.float32)"
+          }
+        ],
+        "synthetic_or_configuration": {
+          "bat": {
+            "candidate_input_channels": 8,
+            "channels": [
+              "bat.capacity_ah",
+              "bat.ir_proxy_ohm",
+              "bat.temp_mean_c",
+              "bat.charge_time_s"
+            ],
+            "resample": {
+              "mode": "none"
+            },
+            "window": {
+              "L": 60,
+              "stride": 5
+            }
+          },
+          "rwa": {
+            "candidate_input_channels": 26,
+            "channels": [
+              "rw.speed_rpm.mean",
+              "rw.speed_rpm.std",
+              "rw.speed_rpm.min",
+              "rw.speed_rpm.max",
+              "rw.motor_current_a.mean",
+              "rw.motor_current_a.std",
+              "rw.motor_current_a.min",
+              "rw.motor_current_a.max",
+              "rw.bearing_temp_c.mean",
+              "rw.bearing_temp_c.std",
+              "rw.bearing_temp_c.min",
+              "rw.bearing_temp_c.max",
+              "rw.fric_tc.mean"
+            ],
+            "resample": {
+              "base_channels": [
+                "rw.speed_rpm",
+                "rw.motor_current_a",
+                "rw.bearing_temp_c"
+              ],
+              "bin_s": 574.0,
+              "fric_tc": true,
+              "mode": "daily_agg"
+            },
+            "window": {
+              "L": 30,
+              "stride": 1
+            }
+          }
+        }
+      },
+      "问题": "整个frame含标签和truth衍生量，须核实网络实际取哪些列。"
+    },
+    {
+      "id": "F1-INFERENCE-02",
+      "交叉验证": "逐项比较已登记配置、真实调用函数和父级哈希绑定；纯函数另用合成输入检验。代码副本和哈希不是独立的历史无访问见证。",
+      "位置": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\sim_loader.py"
+      ],
+      "修改": "追加本条依赖证据；候选、执行链、正文保持冻结。BAT容量是从仿真truth/soh重建的理想容量代理；标签失效循环也从容量阈值确定。这不是直接把RUL列喂给网络，但部署可测性、噪声和与标签的结构关系须披露并另行验证。",
+      "剩余风险": "未检验真实容量估计误差或在轨可用性；不得据此声称真实硬件部署已经成立。",
+      "原文": "soh_s = sample['tru']['soh'][settle]; cap = q0 * soh_s; ft_cyc = hit[0]",
+      "命令": "python -B release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "哈希": {
+        "evaluator": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+        "sim_loader": "05afe14c78200be6523c5e23802d0c4c1298f693d5dbe580a4d478d58090dd06"
+      },
+      "日期": "2026-10-17T20:27:48.366645+00:00",
+      "来源": {
+        "evaluator": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "sim_loader": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\sim_loader.py"
+      },
+      "状态": "DEPENDENCY_ESTABLISHED_F1_OPEN",
+      "结果": "BAT容量是从仿真truth/soh重建的理想容量代理；标签失效循环也从容量阈值确定。这不是直接把RUL列喂给网络，但部署可测性、噪声和与标签的结构关系须披露并另行验证。",
+      "置信度": "对所引冻结代码的依赖结论高；不据此证明历史无访问或实测部署可行性。",
+      "证据": {
+        "source_excerpts": [
+          {
+            "first_line": 536,
+            "function": "to_battery_cycle_frame",
+            "last_line": 609,
+            "source": "sim_loader",
+            "text": "def to_battery_cycle_frame(sample, q0=Q0_AH):\n    \"\"\"按 /truth cycle_index 把 0.1 Hz 时序重建为逐循环表（整块向量化）。\n\n    取样锚（附录 AE [查3]：t=kP 样本记结算后 SOH）：\n      第 k 轨（k=0..n_orb−1，行 = 完整轨）的容量取「本轨末结算」样本\n      j=(k+1)·574 —— bat.capacity_ah(k) = q0·soh[j]；label.hi(k)=labels/hi[j]\n      （数学上 ≡ (1−soh[j])/0.2，装载时互证）。逐轨聚合（温度均值/充电时长/\n      平均倍率）取本轨 574 拍窗 [k·574, (k+1)·574)。\n    失效循环量化（承 §6.7 A1/B1 电池卡「首个容量越阈循环」惯例）：\n      failure_time(cycle) = min{k : capacity(k) ≤ 0.8·q0}（整数 ⇒ label.rul\n      为整数值，f32 精确，R6 天然满足）；时间域精确 Tf 保留在\n      units[].extra.failure_time_days_exact（AE.4 折线穿越原值，不丢信息）。\n    \"\"\"\n    if sample[\"line\"] != \"bat\":\n        raise ContractViolation(\"battery_cycle 重建仅适用于 BAT 线（§6.7）\")\n    n = sample[\"n\"]\n    n_orb = (n - 1) // BEATS_PER_ORBIT\n    if n_orb < 1:\n        raise ContractViolation(\"样本不足一整轨，无法逐循环重建（§6.7 SIM_bat）\")\n    m = n_orb * BEATS_PER_ORBIT\n\n    def seg(x):\n        return np.asarray(x[:m], dtype=np.float64).reshape(n_orb,\n                                                           BEATS_PER_ORBIT)\n\n    settle = (np.arange(n_orb) + 1) * BEATS_PER_ORBIT       # 结算样本索引\n    soh_s = np.asarray(sample[\"tru\"][\"soh\"], dtype=np.float64)[settle]\n    cap = q0 * soh_s\n    i_seg = seg(sample[\"tel\"][\"current_a\"])\n    temp_mean = seg(sample[\"tel\"][\"temp_c\"]).mean(axis=1)\n    charge_time = DT01 * (i_seg < 0.0).sum(axis=1)          # K.3：i<0=充电\n    c_rate = np.abs(i_seg).mean(axis=1) / q0\n    hi_s = np.asarray(sample[\"labels\"][\"hi\"])[settle]\n    if not np.allclose(np.asarray(hi_s, dtype=np.float64),\n                       (1.0 - soh_s) / (1.0 - BAT_FAIL_SOH), atol=5e-6):\n        raise ContractViolation(\n            \"逐循环 hi 与 (1−soh)/0.2 不一致：labels/hi 或 truth/soh 口径漂移\"\n            \"（AE.4-3 / §6.6-2）\")\n\n    thr = BAT_FAIL_SOH * q0\n    hit = np.nonzero(cap <= thr + 1e-9)[0]\n    censored = hit.size == 0\n    ft_cyc = None if censored else int(hit[0])\n    if not censored and sample[\"failure_time_days\"] is not None:\n        ft_time_cyc = int(math.floor(\n            sample[\"failure_time_days\"] * 86400.0 / P_ORBIT + 1e-9))\n        if abs(ft_time_cyc - ft_cyc) > 1:\n            raise ContractViolation(\n                f\"失效循环量化 {ft_cyc} 与时间域 floor(Tf/P)={ft_time_cyc} \"\n                \"偏差 >1 轨：labels 与 truth 折线口径漂移（AE.4）\")\n\n    t_cyc = np.arange(n_orb, dtype=np.float64)\n    if censored:\n        rul = np.full(n_orb, np.nan, dtype=np.float32)\n        failc = np.zeros(n_orb, dtype=np.int8)\n    else:\n        rul = _f32(float(ft_cyc) - t_cyc)                   # 整数差 ⇒ f32 精确\n        failc = (t_cyc >= ft_cyc).astype(np.int8)\n    df = pd.DataFrame({\n        \"t\": t_cyc,\n        \"bat.capacity_ah\": _f32(cap),\n        \"bat.temp_mean_c\": _f32(temp_mean),\n        \"bat.charge_time_s\": _f32(charge_time),\n        \"bat.c_rate_mean\": _f32(c_rate),\n        \"bat.soh\": _f32(soh_s),\n        \"bat.lli\": _f32(np.asarray(sample[\"tru\"][\"lli\"])[settle]),\n        \"bat.lam\": _f32(np.asarray(sample[\"tru\"][\"lam\"])[settle]),\n        \"label.rul\": rul,\n        \"label.hi\": _f32(hi_s),\n        \"label.fail\": failc,\n    })[CYCLE_COLS]\n    unit = _unit_meta(sample, df, t_unit_days=False,\n                      cycle_ft=ft_cyc, cycle_censored=censored, q0=q0)\n    return df, unit"
+          },
+          {
+            "first_line": 450,
+            "function": "build_raw_holdout_payload",
+            "last_line": 519,
+            "source": "evaluator",
+            "text": "def build_raw_holdout_payload(root: Path, component: str, config: dict[str, Any],\n                              norm_doc: dict[str, Any], manifest_rows: list[dict[str, str]],\n                              manifest_path: Path) -> dict[str, Any]:\n    import numpy as np\n    from src.datasets import labels, preprocess, sim_loader, windows\n\n    line = component\n    dataset_id = str(config[\"dataset_id\"])\n    channels = list(config[\"channels\"])\n    absent = set(config.get(\"channels_absent_ok\") or [])\n    mode = config[\"resample\"][\"mode\"]\n    bin_s = float(config[\"resample\"].get(\"bin_s\", preprocess.SECONDS_PER_DAY)) if mode == \"daily_agg\" else None\n    bases = list(config[\"resample\"].get(\"base_channels\", preprocess.RWA_TARGET_BASE)) if mode == \"daily_agg\" else []\n    want_fric = bool(config[\"resample\"].get(\"fric_tc\", True)) and mode == \"daily_agg\" and preprocess.FRIC_TC_MEAN in channels\n    baseline = None\n    if want_fric:\n        baseline = ((norm_doc.get(\"derived\") or {}).get(\"rw\") or {}).get(\"fric_tc\", {}).get(\"baseline_coef\")\n        if not isinstance(baseline, list) or len(baseline) != 2:\n            raise RuntimeError(\"frozen RWA friction baseline is missing\")\n    L = int(config[\"window\"][\"L\"])\n    stride = int(config[\"window\"][\"stride\"])\n    rmax = float(config[\"labels\"][\"rmax\"])\n    floor = config[\"labels\"].get(\"rul_floor\", \"keep\")\n    stats = norm_doc[\"channels\"]\n    xs, ys, rows, units = [], [], [], {}\n    for item in sorted((row for row in manifest_rows if row[\"product_line\"] == line), key=lambda row: row[\"sample_id\"]):\n        uid = item[\"sample_id\"]\n        raw_path = row_raw_path(root, item)\n        if sha256_file(raw_path) != item[\"sha256\"]:\n            raise RuntimeError(f\"raw holdout hash drift: {uid}\")\n        converted, _, frame = sim_loader.convert_one(raw_path, dataset_id, root / \"data/interim\" / dataset_id,\n                                                     root=root, lenient=False, write=False)\n        if converted != uid or frame is None:\n            raise RuntimeError(f\"raw identity drift: {uid}\")\n        if mode == \"daily_agg\":\n            frame, _ = preprocess._bin_aggregate_rwa(frame, bin_s, bases, [])\n        if want_fric:\n            frame[preprocess.FRIC_TC_MEAN] = (\n                frame[\"rw.motor_current_a.mean\"].to_numpy(np.float64)\n                - (float(baseline[0]) + float(baseline[1]) * frame[\"rw.bearing_temp_c.mean\"].to_numpy(np.float64))\n            )\n        missing = [ch for ch in channels if ch not in frame.columns and ch not in absent]\n        if missing:\n            raise RuntimeError(f\"holdout channels missing for {uid}: {missing}\")\n        matrix = np.column_stack([\n            np.zeros(len(frame), dtype=np.float64) if ch in absent else frame[ch].to_numpy(np.float64)\n            for ch in channels\n        ])\n        windows_array, ends = windows.slide(matrix, L, stride)\n        y, _, _ = labels.window_labels(frame[\"label.rul\"].to_numpy(np.float64),\n                                        frame.get(\"label.hi\"), ends, rmax)\n        keep = np.isfinite(y)\n        if floor == \"drop_negative\":\n            keep &= y >= 0.0\n        windows_array, ends, y = windows_array[keep], ends[keep], y[keep]\n        if not len(windows_array):\n            continue\n        xs.append(preprocess.normalize(windows_array, channels, stats))\n        ys.append(y.astype(np.float32))\n        rows.extend(windows.build_index(uid, dataset_id, \"tgt\", \"holdout\",\n                                         frame[\"t\"].to_numpy(np.float64)[ends]))\n        units[uid] = int(len(y))\n    if not xs:\n        raise RuntimeError(f\"zero final windows for {line}\")\n    x = np.concatenate(xs).astype(np.float32)\n    y = np.concatenate(ys).astype(np.float32)\n    if len(rows) != len(x):\n        raise RuntimeError(\"final payload row/array mismatch\")\n    return {\"x\": x, \"y\": y, \"rows\": rows, \"rmax\": rmax, \"channels\": channels,\n            \"units\": units, \"manifest_path\": str(manifest_path)}"
+          }
+        ],
+        "synthetic_or_configuration": null
+      },
+      "问题": "BAT容量输入和失效标签共享模拟SOH状态，不能统称为在线实测传感器。"
+    },
+    {
+      "id": "F1-INFERENCE-03",
+      "交叉验证": "逐项比较已登记配置、真实调用函数和父级哈希绑定；纯函数另用合成输入检验。代码副本和哈希不是独立的历史无访问见证。",
+      "位置": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\sim_loader.py"
+      ],
+      "修改": "追加本条依赖证据；候选、执行链、正文保持冻结。最终evaluate在独占访问guard之后转换MAT；转换器读取标签、失效时间和truth以校验契约和构造评估数据。因此全pipeline从不读目标标签这一说法不成立。它与训练不以final标签拟合是不同结论。",
+      "剩余风险": "需终态收据证明读取发生在freeze之后；静态审查不能证明历史没有其他读取者。",
+      "原文": "convert_one -> read_simout loads telemetry, truth, labels and failure_time_days",
+      "命令": "python -B release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "哈希": {
+        "evaluator": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+        "sim_loader": "05afe14c78200be6523c5e23802d0c4c1298f693d5dbe580a4d478d58090dd06"
+      },
+      "日期": "2026-10-17T20:27:48.366645+00:00",
+      "来源": {
+        "evaluator": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "sim_loader": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\sim_loader.py"
+      },
+      "状态": "DEPENDENCY_ESTABLISHED_F1_OPEN",
+      "结果": "最终evaluate在独占访问guard之后转换MAT；转换器读取标签、失效时间和truth以校验契约和构造评估数据。因此全pipeline从不读目标标签这一说法不成立。它与训练不以final标签拟合是不同结论。",
+      "置信度": "对所引冻结代码的依赖结论高；不据此证明历史无访问或实测部署可行性。",
+      "证据": {
+        "source_excerpts": [
+          {
+            "first_line": 532,
+            "function": "evaluate",
+            "last_line": 657,
+            "source": "evaluator",
+            "text": "def evaluate(args: argparse.Namespace) -> int:\n    import numpy as np\n    import torch\n    import yaml\n\n    root = args.root.resolve()\n    output = args.output.resolve()\n    manifest, partition_path, holdout_rows, label_claim = final_access_preflight(args)\n    append_event(output / \"events\", \"final_label_access_started\", {\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"reason\": \"one-time construction of evaluation-only holdout tensors\",\n        \"candidate_or_route_mutation_allowed\": False,\n        \"global_label_access_guard\": label_claim,\n    })\n    sys.path.insert(0, str(root))\n    centered, global_inner, fallback, segmented, loader = import_project_modules(root)\n    centered.b.CONFIG_CURRENT = centered.b.CONFIG\n    centered.b.fit_source_predictions = centered.fit_source_predictions_centered\n    old_data = {component: loader.load_component(root, component) for component in COMPONENTS}\n    results = {}\n    payloads = {}\n    for component in COMPONENTS:\n        config_path = root / f\"configs/preprocess/{component}_target.yaml\"\n        norm_path = root / f\"data/processed/norm_stats/{component}_target.json\"\n        config = yaml.safe_load(config_path.read_text(encoding=\"utf-8\"))\n        norm_doc = read_json(norm_path)\n        payload = build_raw_holdout_payload(root, component, config, norm_doc, holdout_rows, partition_path)\n        payloads[component] = payload\n        old = old_data[component]\n        n_old = len(old[\"rows\"])\n        n_final = len(payload[\"rows\"])\n        combined = {\n            \"x\": np.concatenate([old[\"x\"], payload[\"x\"]], axis=0),\n            \"y\": np.concatenate([old[\"y\"], payload[\"y\"]], axis=0),\n            \"rows\": list(old[\"rows\"]) + list(payload[\"rows\"]),\n            \"rmax\": float(old[\"rmax\"]),\n            \"path\": old[\"path\"],\n        }\n        if float(payload[\"rmax\"]) != float(old[\"rmax\"]):\n            raise RuntimeError(f\"rmax drift for {component}\")\n        train = np.zeros(n_old + n_final, dtype=bool)\n        train[:n_old] = True\n        valid = ~train\n        control_candidate = global_inner.reference_control_candidate(segmented, component)\n        candidate_prediction = fallback.fit_tcn_formal(\n            combined, component, train, valid, args.device\n        )\n        control = segmented.fit_predict_fixed(\n            combined, component, train, valid, control_candidate, args.device,\n            return_prediction=True,\n        )[3]\n        final_rows = list(payload[\"rows\"])\n        route = manifest[\"candidate\"][\"selected_routes\"][component]\n        alpha_by_target = route[\"alpha_by_target\"]\n        alpha = np.asarray([\n            float(alpha_by_target[str(row[\"unit_id\"]).split(\"_\")[1]]) for row in final_rows\n        ], dtype=np.float32)\n        blended = alpha * np.asarray(candidate_prediction, dtype=np.float32) + (1.0 - alpha) * np.asarray(control, dtype=np.float32)\n        prediction = centered.b.project(blended, final_rows, centered.b.CONFIG[component][\"postprocess\"])\n        metrics = centered.b.metrics(prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                     float(payload[\"rmax\"]), final_rows)\n        control_metrics = centered.b.metrics(control, payload[\"y\"] / float(payload[\"rmax\"]),\n                                             float(payload[\"rmax\"]), final_rows)\n        candidate_metrics = centered.b.metrics(candidate_prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                               float(payload[\"rmax\"]), final_rows)\n        results[component] = {\n            \"route\": route,\n            \"n_windows\": n_final,\n            \"n_units\": len(payload[\"units\"]),\n            \"unit_window_counts\": payload[\"units\"],\n            \"metrics\": metrics,\n            \"candidate_only_metrics\": candidate_metrics,\n            \"control_only_metrics\": control_metrics,\n            \"candidate_control_blend\": \"alpha*unit-first-residual-centered-TCN + (1-alpha)*frozen HGB/MLP control; final unit projection applied once\",\n        }\n        payload_path = output / f\"final_{component}_payload.pt\"\n        torch.save({\"x\": torch.from_numpy(payload[\"x\"]), \"y_rul\": torch.from_numpy(payload[\"y\"]),\n                    \"meta\": {\"channels\": payload[\"channels\"], \"rmax\": payload[\"rmax\"],\n                             \"index\": payload[\"rows\"], \"split\": \"holdout\"}}, payload_path)\n        results[component][\"payload_path\"] = payload_path.name\n        results[component][\"payload_sha256\"] = sha256_file(payload_path)\n        from f1_paired_predictions_20261018 import write_paired_predictions\n        results[component][\"paired_predictions\"] = write_paired_predictions(\n            output, component, final_rows, truth_rul=payload[\"y\"], rmax=payload[\"rmax\"],\n            candidate=candidate_prediction, control=control, alpha=alpha, blended=blended,\n            projected=prediction, payload_sha256=results[component][\"payload_sha256\"],\n            seed_raw_predictions=combined.get(\"_candidate_per_seed_raw\"),\n            seeds=centered.b.SEEDS if \"_candidate_per_seed_raw\" in combined else None)\n        results[component][\"training_diagnostics\"] = combined.get(\"formal_training_diagnostics\")\n    final_receipt = {\n        \"schema\": \"brphm-f1-clean-final-evaluation-v1\",\n        \"created_utc\": now_utc(),\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"selection_decision_sha256\": sha256_file(output / \"selection_decision.json\"),\n        \"evaluation\": \"exactly_once_after_freeze\",\n        \"label_access_event\": \"final_label_access_started\",\n        \"global_label_access_guard\": label_claim,\n        \"candidate_id\": manifest[\"candidate\"][\"method_id\"],\n        \"outer_reuse_disposition\": \"all_old_outer_results_development_or_diagnostic_only\",\n        \"training\": {\n            \"data\": {component: {\"path\": f\"data/processed/{component}_target.pt\",\n                                  \"sha256\": manifest[\"training\"][\"tensor_hashes\"][component]}\n                     for component in COMPONENTS},\n            \"holdout_used_for_training_or_selection\": False,\n        },\n        \"holdout\": {\n            \"manifest_sha256\": manifest[\"final_partition\"][\"manifest\"][\"sha256\"],\n            \"units\": manifest[\"final_partition\"][\"n_units\"],\n            \"raw_files_hash_bound\": True,\n        },\n        \"results\": results,\n        \"runtime\": {\"python\": sys.version, \"platform\": platform.platform(),\n                    \"packages\": package_versions(), \"device\": args.device},\n        \"mutation\": {\"canonical_project_modified\": False, \"competition_line_modified\": False,\n                      \"sealed_read\": False, \"a1_b1_read\": False, \"holdout_written\": False},\n    }\n    receipt_hash = write_new(output / \"final_receipt.json\", final_receipt)\n    append_event(output / \"events\", \"final_evaluation_completed\", {\n        \"final_receipt_sha256\": receipt_hash,\n        \"candidate_route_unchanged\": True,\n        \"final_metrics_used_for_selection\": False,\n        \"final_metrics_used_for_paper_decision\": False,\n    })\n    print(json.dumps({\"status\": \"evaluated\", \"receipt_sha256\": receipt_hash,\n                      \"results\": results}, ensure_ascii=True))\n    return 0"
+          },
+          {
+            "first_line": 782,
+            "function": "convert_one",
+            "last_line": 803,
+            "source": "sim_loader",
+            "text": "def convert_one(path, dataset_id, out_dir, root=\".\", lenient=False,\n                q0=Q0_AH, write=True):\n    \"\"\"单文件全程：读 → 组帧 → （可选）写 parquet。返回 (unit_id, unit_meta, df|None)。\"\"\"\n    ds = DATASETS[dataset_id]\n    t0 = time.perf_counter()\n    sample = read_simout(path, lenient=lenient)\n    if sample[\"line\"] not in ds[\"lines\"]:\n        raise ContractViolation(\n            f\"{sample['sample_id']}（{sample['line']} 线）不属于 {dataset_id} \"\n            f\"的受理线 {ds['lines']}（AF.3 按线过滤 / §6.7）\")\n    if ds[\"mode\"] == \"cycle\":\n        df, unit = to_battery_cycle_frame(sample, q0=q0)\n    else:\n        df, unit = to_timeseries_frame(sample)\n    if write:\n        outp = _guard_write(Path(out_dir) / unit[\"file\"], root)\n        Path(out_dir).mkdir(parents=True, exist_ok=True)\n        _to_parquet(df, outp)\n    dt = time.perf_counter() - t0\n    print(f\"[i] {sample['sample_id']}: {len(df)} 行 × {df.shape[1]} 列 \"\n          f\"({sample['line']}, {ds['mode']}) — {dt:.2f}s\")\n    return sample[\"sample_id\"], unit, (None if write else df)"
+          },
+          {
+            "first_line": 339,
+            "function": "read_simout",
+            "last_line": 503,
+            "source": "sim_loader",
+            "text": "def read_simout(path, lenient=False, _h5=None):\n    \"\"\"按 AF.1/AF.2/AF.3 逐条装载与预检；返回 SimSample dict。\n\n    预检（装载即验，红=ContractViolation；lenient=True 降级为 [WARN] 继续）：\n      P1 顶层五组齐全            P2 sample_id ↔ 按线过滤（AF.3）\n      P3 t 轴严格递增/自 0 起/10 s 栅格（§5.1/AF.1）\n      P4 遥测有限性 + N 对齐      P5 labels 不变式（fail 单调、hi≥0、rul=Tf−t 原值一致）\n      P6 /labels attrs 恰 3 个 + 码表（AF.1/§5.4）\n      P7 truth 结构（cycle_index=floor(t/P)；BAT lli=1−soh、lam≡0；RWA 磨损/润滑单调）\n      P8 /meta 九个稳定字段 + meta_json 聚合逐项一致（AF.1）\n      P9 R6/R7 门禁边界预检（f32 量化余量、hi≤1.5 观测域）——interim 侧不通过的\n         输入在装载点就地拦截，错误信息给出处置指路（附录 AG-6）\n    \"\"\"\n    warns = []\n\n    def _flag(cond, tag, msg):\n        if cond:\n            return\n        line = f\"[{tag}] {msg}\"\n        if lenient:\n            warns.append(line)\n            print(\"[WARN]\", line)\n        else:\n            raise ContractViolation(line + \"（--lenient 可降级为警告以便排障）\")\n\n    f = _h5 if _h5 is not None else _open_h5(path)\n    try:\n        top = set(f.keys()) - {\"#refs#\", \"#subsystem#\"}\n        _flag({\"telemetry\", \"telemetry_hi\", \"truth\", \"labels\", \"meta\"} <= top,\n              \"P1\", f\"顶层五组不全：{sorted(top)}（§5/AF.1）\")\n\n        sid = _s(f, \"meta/sample_id\")\n        line = (\"rwa\" if sid.startswith(\"RWA\")\n                else \"bat\" if sid.startswith(\"BAT\") else None)\n        _flag(line is not None, \"P2\",\n              f\"sample_id={sid!r} 不属 RWA/BAT 线（§1.2）\")\n        spec = LINES[line]\n        g = spec[\"grp\"]\n        other = \"bat\" if g == \"rw\" else \"rw\"\n        _flag(f\"telemetry/{g}\" in f and f\"telemetry/{other}\" not in f,\n              \"P2\", f\"/telemetry 按线过滤违例（AF.3：{sid} 只应含 orbit/*+{g}/*）\")\n        _flag(f\"truth/{g}\" in f and f\"truth/{other}\" not in f,\n              \"P2\", f\"/truth 按线过滤违例（AF.3）\")\n\n        t_days = _vec(f, \"telemetry/t_days\").astype(np.float64)\n        n = t_days.size\n        _flag(bool(np.all(np.diff(t_days) > 0)), \"P3\",\n              \"t_days 非严格递增（§5.1）\")\n        _flag(abs(float(t_days[0])) < 1e-12\n              and bool(np.allclose(np.diff(t_days) * 86400.0, DT01, atol=1e-6)),\n              \"P3\", \"主档非自 0 起的 10 s 均匀栅格（§5.1/AF.1）\")\n\n        env = {\"eclipse_flag\": _vec(f, \"telemetry/orbit/eclipse_flag\"),\n               \"beta_deg\": _vec(f, \"telemetry/orbit/beta_deg\")}\n        tel, tru = {}, {}\n        for c in spec[\"tel\"]:\n            x = _vec(f, f\"telemetry/{g}/{c}\")\n            _flag(x.size == n and bool(np.all(np.isfinite(\n                np.asarray(x, dtype=np.float64)))), \"P4\",\n                f\"telemetry/{g}/{c} 长度或有限性违例\")\n            tel[c] = x\n        for c in spec[\"tru\"]:\n            x = _vec(f, f\"truth/{g}/{c}\")\n            _flag(x.size == n, \"P4\", f\"truth/{g}/{c} 长度违例\")\n            tru[c] = x\n\n        # cycle_index：AF.1 定稿位 /truth/cycle_index；§5.3 骨架旧位兼容读并告警\n        if \"truth/cycle_index\" in f:\n            cyc = _vec(f, \"truth/cycle_index\").astype(np.int64)\n        elif f\"truth/{g}/cycle_index\" in f:\n            print(f\"[WARN] [P7] {sid}: cycle_index 位于 §5.3 骨架旧位 \"\n                  f\"/truth/{g}/cycle_index（AF.1 定稿位为 /truth/cycle_index）；\"\n                  \"已兼容读取，请提醒写手按 AF 重存\")\n            cyc = _vec(f, f\"truth/{g}/cycle_index\").astype(np.int64)\n        else:\n            _flag(False, \"P7\", \"缺 /truth/cycle_index（AF.1）——按 floor(t/P) 重建\")\n            cyc = np.floor(t_days * 86400.0 / P_ORBIT + 1e-9).astype(np.int64)\n        _flag(bool(np.array_equal(\n            cyc, np.floor(t_days * 86400.0 / P_ORBIT + 1e-9).astype(np.int64))),\n            \"P7\", \"cycle_index ≠ floor(t/P)（AF.1）\")\n\n        lab = {\"rul_days\": _vec(f, \"labels/rul_days\"),\n               \"hi\": _vec(f, \"labels/hi\"),\n               \"fail\": _vec(f, \"labels/fail\")}\n        fail_i = np.asarray(lab[\"fail\"], dtype=np.int64)\n        _flag(set(np.unique(fail_i)).issubset({0, 1})\n              and bool(np.all(np.diff(fail_i) >= 0)),\n              \"P5\", \"labels/fail 取值或单调性违例（§6.6-4）\")\n        hi64 = np.asarray(lab[\"hi\"], dtype=np.float64)\n        _flag(bool(np.all(hi64 >= -1e-6)), \"P5\", \"labels/hi 出现 <0（§6.6-2 只下夹 0）\")\n\n        ua = _user_attrs(f[\"labels\"])\n        _flag(set(ua) == {\"failure_time_days\", \"failure_mode_code\",\n                          \"criterion_text\"},\n              \"P6\", f\"/labels attrs 应恰 3 个契约属性，得 {sorted(ua)}（AF.1）\")\n        tf_days = _attr_scalar(ua.get(\"failure_time_days\", np.nan))\n        mode = int(_attr_scalar(ua.get(\"failure_mode_code\", 0)))\n        criterion = _attr_text(ua.get(\"criterion_text\", b\"\"))\n        _flag(mode in FAILURE_MODE_NAMES and len(criterion) > 0,\n              \"P6\", f\"失效码 {mode} 不在 §5.4 码表或判据串为空\")\n\n        rul64 = np.asarray(lab[\"rul_days\"], dtype=np.float64)\n        if math.isfinite(tf_days):\n            _flag(bool(np.allclose(rul64, tf_days - t_days,\n                                   atol=RUL_CARRY_ATOL)),\n                  \"P5\", \"rul_days ≠ Tf − t（原值直搬一致性，f32 容差 2e-4）\")\n            _flag(bool(np.max(np.abs(rul64 - (tf_days - t_days)))\n                       <= RUL_R6_TOL),\n                  \"P9\", \"label.rul 的 f32 量化超 R6 容差 1e-6：本样本 RUL 量程\"\n                        \"超出 f32 精确带（|rul|≥32 天进入 2^5 指数档，半 ULP\"\n                        \"≈1.9e-6）。§6.2 钉 label.rul=float32、§10.1-R6 钉 1e-6，\"\n                        \"两者在长视界样本上冲突——\"\n                        \"按附录 AG-6 走 §11 澄清后再收此样本，勿静默放行\")\n        else:\n            _flag(bool(np.all(fail_i == 0))\n                  and bool(np.all(np.isnan(rul64))),\n                  \"P5\", \"删失口径违例：应 rul≡NaN 且 fail≡0（AF.1/§6.6）\")\n        _flag(bool(np.nanmax(hi64) <= HI_R7_MAX + 1e-9), \"P9\",\n              f\"labels/hi 最大值 {np.nanmax(hi64):.4f} 超 §10.1-R7 观测域上界 \"\n              f\"{HI_R7_MAX}：原值直搬将红 R7。SIM 系 hi 可由特权列还原，处置\"\n              \"（截断留痕 vs 放宽 R7）须走 §11，见附录 AG-6；本装载不静默截断\")\n\n        if line == \"bat\":\n            soh = np.asarray(tru[\"soh\"], dtype=np.float64)\n            _flag(bool(np.allclose(np.asarray(tru[\"lli\"], dtype=np.float64),\n                                   1.0 - soh, atol=2e-6)),\n                  \"P7\", \"lli ≠ 1−soh（附录 AE.2 一阶等价）\")\n            _flag(bool(np.allclose(np.asarray(tru[\"lam\"], dtype=np.float64),\n                                   0.0, atol=2e-6)),\n                  \"P7\", \"lam ≠ 0（v1 占位，附录 AE.2）\")\n            _flag(bool(np.all(np.diff(soh) <= 1e-9)), \"P7\", \"SOH 非单调不增\")\n        else:\n            wear = np.asarray(tru[\"wear_volume_mm3\"], dtype=np.float64)\n            lube = np.asarray(tru[\"lube_level\"], dtype=np.float64)\n            _flag(bool(np.all(np.diff(wear) >= -1e-7)), \"P7\", \"磨损非单调不减\")\n            _flag(bool(np.all(np.diff(lube) <= 1e-7))\n                  and float(lube.min()) >= -1e-9\n                  and float(lube.max()) <= 1 + 1e-9,\n                  \"P7\", \"润滑非单调不增或越 [0,1]\")\n\n        meta = {}\n        for k in META_FIELDS:\n            if k == \"seed\":\n                meta[k] = int(np.asarray(f[\"meta/seed\"][()]).ravel()[0])\n            else:\n                meta[k] = _s(f, f\"meta/{k}\")\n                _flag(len(meta[k]) > 0, \"P8\", f\"meta/{k} 为空（AF.1）\")\n        _flag(meta[\"schema_version\"] == SIMOUT_SCHEMA, \"P8\",\n              f\"schema_version={meta['schema_version']!r} ≠ {SIMOUT_SCHEMA}\")\n        _flag(meta[\"sample_id\"] == sid, \"P8\", \"meta/sample_id 与判线所用不一致\")\n        mj = json.loads(_s(f, \"meta/meta_json\"))\n        _flag(all(mj.get(k) == meta[k] for k in META_FIELDS), \"P8\",\n              \"meta_json 与独立字段不逐项一致（AF.1/V8c 同口径）\")\n    finally:\n        if _h5 is None:\n            f.close()\n\n    return {\"sample_id\": sid, \"line\": line, \"n\": int(n),\n            \"t_days\": t_days, \"env\": env, \"tel\": tel, \"tru\": tru,\n            \"cycle_index\": cyc,\n            \"labels\": lab,\n            \"failure_time_days\": (tf_days if math.isfinite(tf_days) else None),\n            \"failure_mode_code\": mode, \"criterion_text\": criterion,\n            \"meta\": meta, \"warns\": warns,\n            \"source_mat\": str(path) if path is not None else \"<in-memory>\"}"
+          }
+        ],
+        "synthetic_or_configuration": null
+      },
+      "问题": "一次性评估的读入层事实上会读完整的标签与真值结构。"
+    },
+    {
+      "id": "F1-INFERENCE-04",
+      "交叉验证": "逐项比较已登记配置、真实调用函数和父级哈希绑定；纯函数另用合成输入检验。代码副本和哈希不是独立的历史无访问见证。",
+      "位置": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\labels.py"
+      ],
+      "修改": "追加本条依赖证据；候选、执行链、正文保持冻结。标签先按窗末取值并封顶，再剔除非有限或负标签窗口；筛选发生在预测之前。网络拟合虽不使用final标签，后续unit baseline和投影的输入成员关系依赖这份固定评估筛选。只能在给定该评估成员关系时讨论label-free预测算子。",
+      "剩余风险": "删失unit或短unit可零窗口；最终96个生成unit不自动等于96个有评估窗口的unit。必须读取终态per-unit counts核对，不能提前保证。",
+      "原文": "keep = np.isfinite(y); keep &= y >= 0.0; windows_array, ends, y = ...[keep]",
+      "命令": "python -B release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "哈希": {
+        "evaluator": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+        "labels": "08a5aaf74e9cb1f97f035e815da86ccd4d88485a675d0c02e64cc3451c9943d2"
+      },
+      "日期": "2026-10-17T20:27:48.366645+00:00",
+      "来源": {
+        "evaluator": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "labels": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\labels.py"
+      },
+      "状态": "DEPENDENCY_ESTABLISHED_F1_OPEN",
+      "结果": "标签先按窗末取值并封顶，再剔除非有限或负标签窗口；筛选发生在预测之前。网络拟合虽不使用final标签，后续unit baseline和投影的输入成员关系依赖这份固定评估筛选。只能在给定该评估成员关系时讨论label-free预测算子。",
+      "置信度": "对所引冻结代码的依赖结论高；不据此证明历史无访问或实测部署可行性。",
+      "证据": {
+        "source_excerpts": [
+          {
+            "first_line": 450,
+            "function": "build_raw_holdout_payload",
+            "last_line": 519,
+            "source": "evaluator",
+            "text": "def build_raw_holdout_payload(root: Path, component: str, config: dict[str, Any],\n                              norm_doc: dict[str, Any], manifest_rows: list[dict[str, str]],\n                              manifest_path: Path) -> dict[str, Any]:\n    import numpy as np\n    from src.datasets import labels, preprocess, sim_loader, windows\n\n    line = component\n    dataset_id = str(config[\"dataset_id\"])\n    channels = list(config[\"channels\"])\n    absent = set(config.get(\"channels_absent_ok\") or [])\n    mode = config[\"resample\"][\"mode\"]\n    bin_s = float(config[\"resample\"].get(\"bin_s\", preprocess.SECONDS_PER_DAY)) if mode == \"daily_agg\" else None\n    bases = list(config[\"resample\"].get(\"base_channels\", preprocess.RWA_TARGET_BASE)) if mode == \"daily_agg\" else []\n    want_fric = bool(config[\"resample\"].get(\"fric_tc\", True)) and mode == \"daily_agg\" and preprocess.FRIC_TC_MEAN in channels\n    baseline = None\n    if want_fric:\n        baseline = ((norm_doc.get(\"derived\") or {}).get(\"rw\") or {}).get(\"fric_tc\", {}).get(\"baseline_coef\")\n        if not isinstance(baseline, list) or len(baseline) != 2:\n            raise RuntimeError(\"frozen RWA friction baseline is missing\")\n    L = int(config[\"window\"][\"L\"])\n    stride = int(config[\"window\"][\"stride\"])\n    rmax = float(config[\"labels\"][\"rmax\"])\n    floor = config[\"labels\"].get(\"rul_floor\", \"keep\")\n    stats = norm_doc[\"channels\"]\n    xs, ys, rows, units = [], [], [], {}\n    for item in sorted((row for row in manifest_rows if row[\"product_line\"] == line), key=lambda row: row[\"sample_id\"]):\n        uid = item[\"sample_id\"]\n        raw_path = row_raw_path(root, item)\n        if sha256_file(raw_path) != item[\"sha256\"]:\n            raise RuntimeError(f\"raw holdout hash drift: {uid}\")\n        converted, _, frame = sim_loader.convert_one(raw_path, dataset_id, root / \"data/interim\" / dataset_id,\n                                                     root=root, lenient=False, write=False)\n        if converted != uid or frame is None:\n            raise RuntimeError(f\"raw identity drift: {uid}\")\n        if mode == \"daily_agg\":\n            frame, _ = preprocess._bin_aggregate_rwa(frame, bin_s, bases, [])\n        if want_fric:\n            frame[preprocess.FRIC_TC_MEAN] = (\n                frame[\"rw.motor_current_a.mean\"].to_numpy(np.float64)\n                - (float(baseline[0]) + float(baseline[1]) * frame[\"rw.bearing_temp_c.mean\"].to_numpy(np.float64))\n            )\n        missing = [ch for ch in channels if ch not in frame.columns and ch not in absent]\n        if missing:\n            raise RuntimeError(f\"holdout channels missing for {uid}: {missing}\")\n        matrix = np.column_stack([\n            np.zeros(len(frame), dtype=np.float64) if ch in absent else frame[ch].to_numpy(np.float64)\n            for ch in channels\n        ])\n        windows_array, ends = windows.slide(matrix, L, stride)\n        y, _, _ = labels.window_labels(frame[\"label.rul\"].to_numpy(np.float64),\n                                        frame.get(\"label.hi\"), ends, rmax)\n        keep = np.isfinite(y)\n        if floor == \"drop_negative\":\n            keep &= y >= 0.0\n        windows_array, ends, y = windows_array[keep], ends[keep], y[keep]\n        if not len(windows_array):\n            continue\n        xs.append(preprocess.normalize(windows_array, channels, stats))\n        ys.append(y.astype(np.float32))\n        rows.extend(windows.build_index(uid, dataset_id, \"tgt\", \"holdout\",\n                                         frame[\"t\"].to_numpy(np.float64)[ends]))\n        units[uid] = int(len(y))\n    if not xs:\n        raise RuntimeError(f\"zero final windows for {line}\")\n    x = np.concatenate(xs).astype(np.float32)\n    y = np.concatenate(ys).astype(np.float32)\n    if len(rows) != len(x):\n        raise RuntimeError(\"final payload row/array mismatch\")\n    return {\"x\": x, \"y\": y, \"rows\": rows, \"rmax\": rmax, \"channels\": channels,\n            \"units\": units, \"manifest_path\": str(manifest_path)}"
+          },
+          {
+            "first_line": 29,
+            "function": "cap_rul",
+            "last_line": 40,
+            "source": "labels",
+            "text": "def cap_rul(rul, rmax: float) -> np.ndarray:\n    \"\"\"§7.3 / 白皮书附录 B 式 1: y_rul = min(label.rul, Rmax), float32。\n\n    - 分段线性: 早期(rul > Rmax)恒 Rmax, 之后随 t 线性下降 —— min 即该折线;\n    - NaN 原样透传(删失单元, §6.6-1), 由调用方决定剔除口径(附录 X2-6);\n    - rmax 必须为有限正数(Rmax 由训练集寿命分布统计确定, §7.3)。\n    \"\"\"\n    rmax = float(rmax)\n    if not np.isfinite(rmax) or rmax <= 0:\n        raise ValueError(f\"Rmax 必须为有限正数(interfaces.md §7.3), 得到: {rmax!r}\")\n    arr = np.asarray(rul, dtype=np.float64)\n    return np.minimum(arr, rmax).astype(np.float32)"
+          },
+          {
+            "first_line": 43,
+            "function": "window_labels",
+            "last_line": 71,
+            "source": "labels",
+            "text": "def window_labels(rul_col, hi_col, end_idx, rmax: float):\n    \"\"\"按窗末行取标签(§7.1: y_rul / y_hi 均为「窗末」值)。\n\n    参数\n    ----\n    rul_col : 单元级 `label.rul` 原值序列(interim 列, §6.6-1);\n    hi_col  : 单元级 `label.hi` 序列(可整列 NaN, §6.6-2), 传 None 视同全 NaN;\n    end_idx : 各窗窗末的**行下标**(0 基), 由 windows.window_ends 给出;\n    rmax    : §7.3 封顶值。\n\n    返回\n    ----\n    (y_rul[N] float32 已封顶, y_hi[N] float32 不封顶, mask_y_hi[N] bool)\n    —— 形状与 §7.1 逐键一致; y_rul 的 NaN(删失)不在此处剔除。\n    \"\"\"\n    end_idx = np.asarray(end_idx, dtype=np.int64)\n    rul = np.asarray(rul_col, dtype=np.float64)\n    if end_idx.size and (end_idx.min() < 0 or end_idx.max() >= rul.shape[0]):\n        raise IndexError(\"窗末下标越界: 窗口不得越出单元(§7.2 不得跨 unit)\")\n    y_rul = cap_rul(rul[end_idx], rmax)\n    if hi_col is None:\n        y_hi = np.full(end_idx.shape[0], np.nan, dtype=np.float32)\n    else:\n        hi = np.asarray(hi_col, dtype=np.float64)\n        if hi.shape[0] != rul.shape[0]:\n            raise ValueError(\"label.hi 与 label.rul 长度不一致(interim 同表同轴, §6.2)\")\n        y_hi = hi[end_idx].astype(np.float32)  # §7.3: y_hi 不封顶\n    mask_y_hi = np.isfinite(y_hi)\n    return y_rul, y_hi, mask_y_hi"
+          }
+        ],
+        "synthetic_or_configuration": {
+          "bat": {
+            "H": 0,
+            "rmax": 150,
+            "rul_floor": "drop_negative"
+          },
+          "rwa": {
+            "H": 0,
+            "rmax": 0.2,
+            "rul_floor": "drop_negative"
+          }
+        }
+      },
+      "问题": "最终评估成员关系依赖目标标签有效性与失效后尾部剔除。"
+    },
+    {
+      "id": "F1-INFERENCE-05",
+      "交叉验证": "逐项比较已登记配置、真实调用函数和父级哈希绑定；纯函数另用合成输入检验。代码副本和哈希不是独立的历史无访问见证。",
+      "位置": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_unit_first_source_gate_20261001.py"
+      ],
+      "修改": "追加本条依赖证据；候选、执行链、正文保持冻结。每个目标unit从保留窗口中取最小t_end窗口的第一个sample作baseline。可在首个完整窗口可用后取得；不估计目标总体均值，不使用该窗口的RUL数值。baseline依赖既定评估成员关系。",
+      "剩余风险": "不能把需要目标unit历史输入的路径写成仅凭source输入完成；输入缺失或评估筛选变化需新的预定义处理。",
+      "原文": "baseline[index] = values[first[unit_id][1], 0, :]",
+      "命令": "python -B release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "哈希": {
+        "unit_first": "9c8c433adc1c592584e2467956f67432b635ac8f6dca51f22c4f03f0aaa70b20"
+      },
+      "日期": "2026-10-17T20:27:48.366645+00:00",
+      "来源": {
+        "unit_first": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_unit_first_source_gate_20261001.py"
+      },
+      "状态": "DEPENDENCY_ESTABLISHED_F1_OPEN",
+      "结果": "每个目标unit从保留窗口中取最小t_end窗口的第一个sample作baseline。可在首个完整窗口可用后取得；不估计目标总体均值，不使用该窗口的RUL数值。baseline依赖既定评估成员关系。",
+      "置信度": "对所引冻结代码的依赖结论高；不据此证明历史无访问或实测部署可行性。",
+      "证据": {
+        "source_excerpts": [
+          {
+            "first_line": 19,
+            "function": "_unit_baselines",
+            "last_line": 32,
+            "source": "unit_first",
+            "text": "def _unit_baselines(values: np.ndarray, rows: list[dict]) -> np.ndarray:\n    values = np.asarray(values, dtype=np.float32)\n    if values.ndim != 3 or len(rows) != len(values):\n        raise ValueError(\"values and rows must align\")\n    first: dict[str, tuple[float, int]] = {}\n    for index, row in enumerate(rows):\n        key = str(row[\"unit_id\"])\n        t_end = float(row.get(\"t_end\", index))\n        if key not in first or t_end < first[key][0]:\n            first[key] = (t_end, index)\n    baseline = np.empty((len(rows), values.shape[2]), dtype=np.float32)\n    for index, row in enumerate(rows):\n        baseline[index] = values[first[str(row[\"unit_id\"])][1], 0, :]\n    return baseline"
+          },
+          {
+            "first_line": 35,
+            "function": "append_unit_first",
+            "last_line": 40,
+            "source": "unit_first",
+            "text": "def append_unit_first(values: np.ndarray, rows: list[dict]) -> np.ndarray:\n    values = np.asarray(values, dtype=np.float32)\n    if not np.isfinite(values).all():\n        raise ValueError(\"values must be finite\")\n    baseline = _unit_baselines(values, rows)\n    return np.concatenate((values, values - baseline[:, None, :]), axis=2).astype(np.float32)"
+          },
+          {
+            "first_line": 47,
+            "function": "predict_models_unit_first",
+            "last_line": 55,
+            "source": "unit_first",
+            "text": "def predict_models_unit_first(models, sequences, rows, center, scale, device_name):\n    normalized = ((np.asarray(sequences, dtype=np.float32) - center[None, None, :]) / scale[None, None, :]).astype(np.float32)\n    values = torch.from_numpy(np.transpose(append_unit_first(normalized, rows), (0, 2, 1)))\n    outputs = []\n    device = torch.device(device_name)\n    for model, tmax in models:\n        with torch.no_grad():\n            outputs.append(model(values.to(device), torch.from_numpy(b._age(rows, tmax)).to(device)).cpu().numpy())\n    return np.median(np.stack(outputs, axis=0), axis=0).astype(np.float32)"
+          }
+        ],
+        "synthetic_or_configuration": {
+          "after_later_window_and_other_unit_changes": [
+            [
+              10.0
+            ],
+            [
+              10.0
+            ],
+            [
+              900.0
+            ]
+          ],
+          "baseline": [
+            [
+              10.0
+            ],
+            [
+              10.0
+            ],
+            [
+              100.0
+            ]
+          ],
+          "conclusion": "The baseline is the first sample of the smallest-t_end retained window in the same unit, rather than that window's last sample or another unit's input.",
+          "id": "earliest_window_first_sample"
+        }
+      },
+      "问题": "unit-first需要目标unit的历史输入，须明确最早窗口和样本位置。"
+    },
+    {
+      "id": "F1-INFERENCE-06",
+      "交叉验证": "逐项比较已登记配置、真实调用函数和父级哈希绑定；纯函数另用合成输入检验。代码副本和哈希不是独立的历史无访问见证。",
+      "位置": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_leo900_plain_l1_clean_final_test_20261018_r1.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_segmented_hgb_mlp_source_gate_20260929.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\preprocess.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_source_gate.py"
+      ],
+      "修改": "追加本条依赖证据；候选、执行链、正文保持冻结。最终raw转换使用已冻结的归一化和RWA摩擦基线；TCN的第二层标准化仅取source_x，年龄分母仅取训练rows。固定源码未在final样本上重新拟合这些参数。",
+      "剩余风险": "norm_doc的旧训练来源仍须保留其原始split provenance；这不追溯证明旧source gate的全部历史独立性。",
+      "原文": "source mean/std; frozen norm_doc baseline_coef; tmax from train_rows",
+      "命令": "python -B release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "哈希": {
+        "adapter": "1c78f1c068f21c28be3442593b2a740e3a3775bc87a09bc7e76bad0e355f85f3",
+        "control": "658b99fecc31689ef624e0726b330b07bccf377ce7f0977d1814331a728f6bf7",
+        "evaluator": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+        "preprocess": "5d6720d486a9c2cb7ef580881462492490b705311a69f7688487d2bda5868463",
+        "tcn": "0a50fe3839fdb804903cf8ece5e6191e1cb4dd9bf6b8e23938ae13ab946b1d74"
+      },
+      "日期": "2026-10-17T20:27:48.366645+00:00",
+      "来源": {
+        "adapter": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_leo900_plain_l1_clean_final_test_20261018_r1.py",
+        "control": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_segmented_hgb_mlp_source_gate_20260929.py",
+        "evaluator": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "preprocess": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\preprocess.py",
+        "tcn": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_source_gate.py"
+      },
+      "状态": "DEPENDENCY_ESTABLISHED_F1_OPEN",
+      "结果": "最终raw转换使用已冻结的归一化和RWA摩擦基线；TCN的第二层标准化仅取source_x，年龄分母仅取训练rows。固定源码未在final样本上重新拟合这些参数。",
+      "置信度": "对所引冻结代码的依赖结论高；不据此证明历史无访问或实测部署可行性。",
+      "证据": {
+        "source_excerpts": [
+          {
+            "first_line": 450,
+            "function": "build_raw_holdout_payload",
+            "last_line": 519,
+            "source": "evaluator",
+            "text": "def build_raw_holdout_payload(root: Path, component: str, config: dict[str, Any],\n                              norm_doc: dict[str, Any], manifest_rows: list[dict[str, str]],\n                              manifest_path: Path) -> dict[str, Any]:\n    import numpy as np\n    from src.datasets import labels, preprocess, sim_loader, windows\n\n    line = component\n    dataset_id = str(config[\"dataset_id\"])\n    channels = list(config[\"channels\"])\n    absent = set(config.get(\"channels_absent_ok\") or [])\n    mode = config[\"resample\"][\"mode\"]\n    bin_s = float(config[\"resample\"].get(\"bin_s\", preprocess.SECONDS_PER_DAY)) if mode == \"daily_agg\" else None\n    bases = list(config[\"resample\"].get(\"base_channels\", preprocess.RWA_TARGET_BASE)) if mode == \"daily_agg\" else []\n    want_fric = bool(config[\"resample\"].get(\"fric_tc\", True)) and mode == \"daily_agg\" and preprocess.FRIC_TC_MEAN in channels\n    baseline = None\n    if want_fric:\n        baseline = ((norm_doc.get(\"derived\") or {}).get(\"rw\") or {}).get(\"fric_tc\", {}).get(\"baseline_coef\")\n        if not isinstance(baseline, list) or len(baseline) != 2:\n            raise RuntimeError(\"frozen RWA friction baseline is missing\")\n    L = int(config[\"window\"][\"L\"])\n    stride = int(config[\"window\"][\"stride\"])\n    rmax = float(config[\"labels\"][\"rmax\"])\n    floor = config[\"labels\"].get(\"rul_floor\", \"keep\")\n    stats = norm_doc[\"channels\"]\n    xs, ys, rows, units = [], [], [], {}\n    for item in sorted((row for row in manifest_rows if row[\"product_line\"] == line), key=lambda row: row[\"sample_id\"]):\n        uid = item[\"sample_id\"]\n        raw_path = row_raw_path(root, item)\n        if sha256_file(raw_path) != item[\"sha256\"]:\n            raise RuntimeError(f\"raw holdout hash drift: {uid}\")\n        converted, _, frame = sim_loader.convert_one(raw_path, dataset_id, root / \"data/interim\" / dataset_id,\n                                                     root=root, lenient=False, write=False)\n        if converted != uid or frame is None:\n            raise RuntimeError(f\"raw identity drift: {uid}\")\n        if mode == \"daily_agg\":\n            frame, _ = preprocess._bin_aggregate_rwa(frame, bin_s, bases, [])\n        if want_fric:\n            frame[preprocess.FRIC_TC_MEAN] = (\n                frame[\"rw.motor_current_a.mean\"].to_numpy(np.float64)\n                - (float(baseline[0]) + float(baseline[1]) * frame[\"rw.bearing_temp_c.mean\"].to_numpy(np.float64))\n            )\n        missing = [ch for ch in channels if ch not in frame.columns and ch not in absent]\n        if missing:\n            raise RuntimeError(f\"holdout channels missing for {uid}: {missing}\")\n        matrix = np.column_stack([\n            np.zeros(len(frame), dtype=np.float64) if ch in absent else frame[ch].to_numpy(np.float64)\n            for ch in channels\n        ])\n        windows_array, ends = windows.slide(matrix, L, stride)\n        y, _, _ = labels.window_labels(frame[\"label.rul\"].to_numpy(np.float64),\n                                        frame.get(\"label.hi\"), ends, rmax)\n        keep = np.isfinite(y)\n        if floor == \"drop_negative\":\n            keep &= y >= 0.0\n        windows_array, ends, y = windows_array[keep], ends[keep], y[keep]\n        if not len(windows_array):\n            continue\n        xs.append(preprocess.normalize(windows_array, channels, stats))\n        ys.append(y.astype(np.float32))\n        rows.extend(windows.build_index(uid, dataset_id, \"tgt\", \"holdout\",\n                                         frame[\"t\"].to_numpy(np.float64)[ends]))\n        units[uid] = int(len(y))\n    if not xs:\n        raise RuntimeError(f\"zero final windows for {line}\")\n    x = np.concatenate(xs).astype(np.float32)\n    y = np.concatenate(ys).astype(np.float32)\n    if len(rows) != len(x):\n        raise RuntimeError(\"final payload row/array mismatch\")\n    return {\"x\": x, \"y\": y, \"rows\": rows, \"rmax\": rmax, \"channels\": channels,\n            \"units\": units, \"manifest_path\": str(manifest_path)}"
+          },
+          {
+            "first_line": 100,
+            "function": "fit_plain_l1_formal",
+            "last_line": 141,
+            "source": "adapter",
+            "text": "def fit_plain_l1_formal(data, component, train, valid, device_name):\n    import numpy as np\n\n    trainer = load_registered_source_trainer()\n    centered = trainer.centered\n    centered.b.CONFIG_CURRENT = centered.b.CONFIG\n    rows = data[\"rows\"]\n    train_rows = [rows[i] for i in np.flatnonzero(train)]\n    valid_rows = [rows[i] for i in np.flatnonzero(valid)]\n    if (not train_rows or not valid_rows or np.any(train & valid)\n            or {r[\"unit_id\"] for r in train_rows} & {r[\"unit_id\"] for r in valid_rows}):\n        raise ValueError(\"formal training and final units must be non-empty and disjoint\")\n    source_x = data[\"x\"][train]\n    source_y = data[\"y\"][train] / float(data[\"rmax\"])\n    center = source_x.mean(axis=(0, 1), dtype=np.float64).astype(np.float32)\n    scale = np.maximum(source_x.std(axis=(0, 1), dtype=np.float64), 1e-6).astype(np.float32)\n    normalized = ((source_x - center[None, None, :]) / scale[None, None, :]).astype(np.float32)\n    cfg = centered.b.CONFIG_CURRENT[component]\n    if int(cfg[\"epochs\"]) != 90 or tuple(centered.b.SEEDS) != (17, 42, 73):\n        raise RuntimeError(\"registered 90-epoch/three-seed training configuration drift\")\n    models = [trainer.fit_model_mmd(normalized, source_y, train_rows, cfg, seed, device_name,\n                                   mmd_lambda=0.0, epochs_override=90)\n              for seed in centered.b.SEEDS]\n    train_raw = centered.r.predict_models_relative(models, source_x, train_rows, center, scale, device_name)\n    correction, unit_medians = trainer.unit_median_correction(\n        [str(row[\"unit_id\"]) for row in train_rows],\n        np.asarray(train_raw, dtype=np.float64) - np.asarray(source_y, dtype=np.float64), shrink=0.25)\n    seed_raw = np.stack([centered.r.predict_models_relative([model], data[\"x\"][valid], valid_rows,\n                                                          center, scale, device_name) for model in models])\n    valid_raw = np.median(seed_raw, axis=0).astype(np.float32)\n    data[\"_candidate_per_seed_raw\"] = seed_raw\n    data[\"formal_training_diagnostics\"] = {\n        \"trainer\": \"fit_model_mmd(mmd_lambda=0, epochs_override=90); original extra representation forward preserved\",\n        \"source_implementation_sha256\": SOURCE_HASHES,\n        \"config\": cfg, \"seeds\": list(centered.b.SEEDS), \"train_windows\": len(train_rows),\n        \"train_units\": len(unit_medians), \"correction\": correction,\n        \"unit_median_residuals\": unit_medians,\n        \"source_center\": center.tolist(), \"source_scale\": scale.tolist(),\n        \"calibration\": \"-0.25 times arithmetic mean of per-unit median source-fit residuals\",\n        \"target_labels_used_in_training_or_correction\": False,\n    }\n    return centered.b.project(valid_raw + np.float32(correction), valid_rows, cfg[\"postprocess\"])"
+          },
+          {
+            "first_line": 1415,
+            "function": "normalize",
+            "last_line": 1419,
+            "source": "preprocess",
+            "text": "def normalize(X: np.ndarray, channels: list[str], stats: dict) -> np.ndarray:\n    mean = np.array([stats[c][\"mean\"] for c in channels], dtype=np.float64)\n    std = np.array([stats[c][\"std\"] for c in channels], dtype=np.float64)\n    std_eff = np.where(std > STD_EPS, std, 1.0)   # 常量通道: 以 1.0 代入 ⇒ 归一后恒 0(X2-7)\n    return ((X - mean) / std_eff).astype(np.float32)"
+          },
+          {
+            "first_line": 215,
+            "function": "_age",
+            "last_line": 219,
+            "source": "tcn",
+            "text": "def _age(rows: list[dict[str, Any]], tmax: float) -> np.ndarray:\n    return np.asarray(\n        [float(row.get(\"t_end\", 0.0)) / max(float(tmax), 1e-9) for row in rows],\n        dtype=np.float32,\n    )"
+          },
+          {
+            "first_line": 99,
+            "function": "fit_predict_fixed",
+            "last_line": 130,
+            "source": "control",
+            "text": "def fit_predict_fixed(data: dict, component: str, train: np.ndarray, valid: np.ndarray, candidate: dict, device_name: str, return_prediction: bool = False):\n    import torch\n    from sklearn.ensemble import HistGradientBoostingRegressor\n\n    rows = data[\"rows\"]\n    train_rows = [rows[i] for i in np.flatnonzero(train)]\n    valid_rows = [rows[i] for i in np.flatnonzero(valid)]\n    x_train, x_valid = data[\"x\"][train], data[\"x\"][valid]\n    y_train = data[\"y\"][train] / data[\"rmax\"]\n    feature_kind = base.HGB[component][\"feature\"]\n    h_train = base.flat(x_train) if feature_kind == \"flat\" else base.stats_v1(x_train)\n    h_valid = base.flat(x_valid) if feature_kind == \"flat\" else base.stats_v1(x_valid)\n    hcfg = base.HGB[component]\n    hgb = HistGradientBoostingRegressor(max_iter=hcfg[\"max_iter\"], learning_rate=hcfg[\"learning_rate\"], max_leaf_nodes=hcfg[\"max_leaf_nodes\"], min_samples_leaf=hcfg[\"min_samples_leaf\"], l2_regularization=hcfg[\"l2_regularization\"], random_state=17)\n    hgb.fit(h_train, y_train)\n    h_pred = np.asarray(hgb.predict(h_valid), dtype=np.float32)\n    tmax = max(float(row.get(\"t_end\", 0.0)) for row in train_rows)\n    age_train = torch.from_numpy(base.stats_age(x_train, train_rows, tmax))\n    age_valid = torch.from_numpy(base.stats_age(x_valid, valid_rows, tmax))\n    target = torch.from_numpy(y_train.astype(np.float32))\n    models = [\n        fit_mlp(age_train, target, base.MLP[component], seed, candidate[\"mlp_epochs\"], device_name)\n        for seed in SEEDS\n    ]\n    mlp_pred = predict_members(models, age_valid, candidate[\"aggregation\"], device_name)\n    projected = base.project(segmented(h_pred, mlp_pred, valid_rows, candidate), valid_rows, candidate[\"postprocess\"])\n    metrics = base.metrics(projected, data[\"y\"][valid] / data[\"rmax\"], data[\"rmax\"], valid_rows)\n    residual = np.asarray(projected, dtype=np.float64) - np.asarray(data[\"y\"][valid] / data[\"rmax\"], dtype=np.float64)\n    diagnostics = {\"train_windows\": int(train.sum()), \"valid_windows\": int(valid.sum()), \"train_units\": len({str(r[\"unit_id\"]) for r in train_rows}), \"valid_units\": len({str(r[\"unit_id\"]) for r in valid_rows}), \"tmax\": float(tmax), \"seeds\": list(SEEDS), \"aggregation\": candidate[\"aggregation\"]}\n    if return_prediction:\n        return metrics, residual, diagnostics, np.asarray(projected, dtype=np.float32)\n    return metrics, residual, diagnostics"
+          }
+        ],
+        "synthetic_or_configuration": {
+          "bat": {
+            "computed_on": {
+              "dataset_ids": [
+                "SIM_bat"
+              ],
+              "n_windows": 2364,
+              "split": "train",
+              "split_manifest": "data/processed/splits/bat_target_split.csv"
+            },
+            "created_utc": "2026-07-17T17:41:08Z",
+            "derived": {}
+          },
+          "rwa": {
+            "computed_on": {
+              "dataset_ids": [
+                "SIM_rwa"
+              ],
+              "n_windows": 4884,
+              "split": "train",
+              "split_manifest": "data/processed/splits/rwa_target_split.csv"
+            },
+            "created_utc": "2026-07-17T17:40:47Z",
+            "derived": {
+              "rw": {
+                "fric_tc": {
+                  "baseline_coef": [
+                    0.1333878052760591,
+                    0.01686660878399565
+                  ],
+                  "degenerate": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "问题": "需排除以目标总体统计量重新归一化或拟合摩擦基线。"
+    },
+    {
+      "id": "F1-INFERENCE-07",
+      "交叉验证": "逐项比较已登记配置、真实调用函数和父级哈希绑定；纯函数另用合成输入检验。代码副本和哈希不是独立的历史无访问见证。",
+      "位置": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_global_inner_route_source_gate.py"
+      ],
+      "修改": "追加本条依赖证据；候选、执行链、正文保持冻结。最终alpha按unit_id中的已知轨道名查固定映射；LEO900两个组件均固定1e-5。目标标签或预测误差未用于这一运行时查表。未知或未登记轨道缺少键会报错，不存在自动学习该轨道alpha的机制。",
+      "剩余风险": "旧outer与LEO800反馈影响过开发过程；本次冻结查表不能把整个方法历史改称source-only。",
+      "原文": "alpha_by_target[str(row['unit_id']).split('_')[1]]",
+      "命令": "python -B release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "哈希": {
+        "evaluator": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+        "route": "9f82f37eb8bc02eb670de4062d4102d7aa33f8cc0ce458fd32e8ce917c6d0749"
+      },
+      "日期": "2026-10-17T20:27:48.366645+00:00",
+      "来源": {
+        "evaluator": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "route": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_global_inner_route_source_gate.py"
+      },
+      "状态": "DEPENDENCY_ESTABLISHED_F1_OPEN",
+      "结果": "最终alpha按unit_id中的已知轨道名查固定映射；LEO900两个组件均固定1e-5。目标标签或预测误差未用于这一运行时查表。未知或未登记轨道缺少键会报错，不存在自动学习该轨道alpha的机制。",
+      "置信度": "对所引冻结代码的依赖结论高；不据此证明历史无访问或实测部署可行性。",
+      "证据": {
+        "source_excerpts": [
+          {
+            "first_line": 532,
+            "function": "evaluate",
+            "last_line": 657,
+            "source": "evaluator",
+            "text": "def evaluate(args: argparse.Namespace) -> int:\n    import numpy as np\n    import torch\n    import yaml\n\n    root = args.root.resolve()\n    output = args.output.resolve()\n    manifest, partition_path, holdout_rows, label_claim = final_access_preflight(args)\n    append_event(output / \"events\", \"final_label_access_started\", {\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"reason\": \"one-time construction of evaluation-only holdout tensors\",\n        \"candidate_or_route_mutation_allowed\": False,\n        \"global_label_access_guard\": label_claim,\n    })\n    sys.path.insert(0, str(root))\n    centered, global_inner, fallback, segmented, loader = import_project_modules(root)\n    centered.b.CONFIG_CURRENT = centered.b.CONFIG\n    centered.b.fit_source_predictions = centered.fit_source_predictions_centered\n    old_data = {component: loader.load_component(root, component) for component in COMPONENTS}\n    results = {}\n    payloads = {}\n    for component in COMPONENTS:\n        config_path = root / f\"configs/preprocess/{component}_target.yaml\"\n        norm_path = root / f\"data/processed/norm_stats/{component}_target.json\"\n        config = yaml.safe_load(config_path.read_text(encoding=\"utf-8\"))\n        norm_doc = read_json(norm_path)\n        payload = build_raw_holdout_payload(root, component, config, norm_doc, holdout_rows, partition_path)\n        payloads[component] = payload\n        old = old_data[component]\n        n_old = len(old[\"rows\"])\n        n_final = len(payload[\"rows\"])\n        combined = {\n            \"x\": np.concatenate([old[\"x\"], payload[\"x\"]], axis=0),\n            \"y\": np.concatenate([old[\"y\"], payload[\"y\"]], axis=0),\n            \"rows\": list(old[\"rows\"]) + list(payload[\"rows\"]),\n            \"rmax\": float(old[\"rmax\"]),\n            \"path\": old[\"path\"],\n        }\n        if float(payload[\"rmax\"]) != float(old[\"rmax\"]):\n            raise RuntimeError(f\"rmax drift for {component}\")\n        train = np.zeros(n_old + n_final, dtype=bool)\n        train[:n_old] = True\n        valid = ~train\n        control_candidate = global_inner.reference_control_candidate(segmented, component)\n        candidate_prediction = fallback.fit_tcn_formal(\n            combined, component, train, valid, args.device\n        )\n        control = segmented.fit_predict_fixed(\n            combined, component, train, valid, control_candidate, args.device,\n            return_prediction=True,\n        )[3]\n        final_rows = list(payload[\"rows\"])\n        route = manifest[\"candidate\"][\"selected_routes\"][component]\n        alpha_by_target = route[\"alpha_by_target\"]\n        alpha = np.asarray([\n            float(alpha_by_target[str(row[\"unit_id\"]).split(\"_\")[1]]) for row in final_rows\n        ], dtype=np.float32)\n        blended = alpha * np.asarray(candidate_prediction, dtype=np.float32) + (1.0 - alpha) * np.asarray(control, dtype=np.float32)\n        prediction = centered.b.project(blended, final_rows, centered.b.CONFIG[component][\"postprocess\"])\n        metrics = centered.b.metrics(prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                     float(payload[\"rmax\"]), final_rows)\n        control_metrics = centered.b.metrics(control, payload[\"y\"] / float(payload[\"rmax\"]),\n                                             float(payload[\"rmax\"]), final_rows)\n        candidate_metrics = centered.b.metrics(candidate_prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                               float(payload[\"rmax\"]), final_rows)\n        results[component] = {\n            \"route\": route,\n            \"n_windows\": n_final,\n            \"n_units\": len(payload[\"units\"]),\n            \"unit_window_counts\": payload[\"units\"],\n            \"metrics\": metrics,\n            \"candidate_only_metrics\": candidate_metrics,\n            \"control_only_metrics\": control_metrics,\n            \"candidate_control_blend\": \"alpha*unit-first-residual-centered-TCN + (1-alpha)*frozen HGB/MLP control; final unit projection applied once\",\n        }\n        payload_path = output / f\"final_{component}_payload.pt\"\n        torch.save({\"x\": torch.from_numpy(payload[\"x\"]), \"y_rul\": torch.from_numpy(payload[\"y\"]),\n                    \"meta\": {\"channels\": payload[\"channels\"], \"rmax\": payload[\"rmax\"],\n                             \"index\": payload[\"rows\"], \"split\": \"holdout\"}}, payload_path)\n        results[component][\"payload_path\"] = payload_path.name\n        results[component][\"payload_sha256\"] = sha256_file(payload_path)\n        from f1_paired_predictions_20261018 import write_paired_predictions\n        results[component][\"paired_predictions\"] = write_paired_predictions(\n            output, component, final_rows, truth_rul=payload[\"y\"], rmax=payload[\"rmax\"],\n            candidate=candidate_prediction, control=control, alpha=alpha, blended=blended,\n            projected=prediction, payload_sha256=results[component][\"payload_sha256\"],\n            seed_raw_predictions=combined.get(\"_candidate_per_seed_raw\"),\n            seeds=centered.b.SEEDS if \"_candidate_per_seed_raw\" in combined else None)\n        results[component][\"training_diagnostics\"] = combined.get(\"formal_training_diagnostics\")\n    final_receipt = {\n        \"schema\": \"brphm-f1-clean-final-evaluation-v1\",\n        \"created_utc\": now_utc(),\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"selection_decision_sha256\": sha256_file(output / \"selection_decision.json\"),\n        \"evaluation\": \"exactly_once_after_freeze\",\n        \"label_access_event\": \"final_label_access_started\",\n        \"global_label_access_guard\": label_claim,\n        \"candidate_id\": manifest[\"candidate\"][\"method_id\"],\n        \"outer_reuse_disposition\": \"all_old_outer_results_development_or_diagnostic_only\",\n        \"training\": {\n            \"data\": {component: {\"path\": f\"data/processed/{component}_target.pt\",\n                                  \"sha256\": manifest[\"training\"][\"tensor_hashes\"][component]}\n                     for component in COMPONENTS},\n            \"holdout_used_for_training_or_selection\": False,\n        },\n        \"holdout\": {\n            \"manifest_sha256\": manifest[\"final_partition\"][\"manifest\"][\"sha256\"],\n            \"units\": manifest[\"final_partition\"][\"n_units\"],\n            \"raw_files_hash_bound\": True,\n        },\n        \"results\": results,\n        \"runtime\": {\"python\": sys.version, \"platform\": platform.platform(),\n                    \"packages\": package_versions(), \"device\": args.device},\n        \"mutation\": {\"canonical_project_modified\": False, \"competition_line_modified\": False,\n                      \"sealed_read\": False, \"a1_b1_read\": False, \"holdout_written\": False},\n    }\n    receipt_hash = write_new(output / \"final_receipt.json\", final_receipt)\n    append_event(output / \"events\", \"final_evaluation_completed\", {\n        \"final_receipt_sha256\": receipt_hash,\n        \"candidate_route_unchanged\": True,\n        \"final_metrics_used_for_selection\": False,\n        \"final_metrics_used_for_paper_decision\": False,\n    })\n    print(json.dumps({\"status\": \"evaluated\", \"receipt_sha256\": receipt_hash,\n                      \"results\": results}, ensure_ascii=True))\n    return 0"
+          },
+          {
+            "first_line": 33,
+            "function": "reference_control_candidate",
+            "last_line": 37,
+            "source": "route",
+            "text": "def reference_control_candidate(segmented, component: str) -> dict:\n    \"\"\"Bind formal controls to the aggregation used by the frozen reference.\"\"\"\n    candidate = dict(segmented.CANDIDATES[component])\n    candidate[\"aggregation\"] = \"median3\"\n    return candidate"
+          }
+        ],
+        "synthetic_or_configuration": {
+          "bat": {
+            "alpha_by_target": {
+              "LEO500": 1e-05,
+              "LEO550": 1e-05,
+              "LEO700": 1e-05,
+              "LEO900": 1e-05
+            },
+            "gate": {
+              "mean_mae": 2.7269691169035983,
+              "mean_rmse": 4.338803519608276,
+              "passes": true,
+              "reason_codes": [],
+              "strict_error_gain": true,
+              "worst_residual_ks": 0.24453693061988957
+            },
+            "route_id": "target_alpha_LEO500_1e-05_LEO550_1e-05_LEO700_1e-05",
+            "unseen_target_rule": "fixed source-protocol alpha floor; selected without unseen labels"
+          },
+          "rwa": {
+            "alpha_by_target": {
+              "LEO500": 0.01,
+              "LEO550": 1e-05,
+              "LEO700": 0.001,
+              "LEO900": 1e-05
+            },
+            "gate": {
+              "mean_mae": 0.016654016070160812,
+              "mean_rmse": 0.02221005666713342,
+              "passes": true,
+              "reason_codes": [],
+              "strict_error_gain": true,
+              "worst_residual_ks": 0.15532964942476674
+            },
+            "route_id": "target_alpha_LEO500_0.01_LEO550_1e-05_LEO700_0.001",
+            "unseen_target_rule": "fixed source-protocol alpha floor; selected without unseen labels"
+          }
+        }
+      },
+      "问题": "该执行入口需要已知轨道身份，不能声称轨道未知时也自动选择。"
+    },
+    {
+      "id": "F1-INFERENCE-08",
+      "交叉验证": "逐项比较已登记配置、真实调用函数和父级哈希绑定；纯函数另用合成输入检验。代码副本和哈希不是独立的历史无访问见证。",
+      "位置": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_component_blend_refinement_20260824.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_source_gate.py"
+      ],
+      "修改": "追加本条依赖证据；候选、执行链、正文保持冻结。BAT candidate、control及最终blend均采用整unit离线PAVA，后期输入可修订早期输出。两个注册实现的合成反例均为prefix[0.1]→0.1、追加0.9后早值→0.5。RWA running-min算子在相同prefix与成员关系下为因果；这不等于完整评估管线已证明在线。",
+      "剩余风险": "尚无单独冻结并执行的严格在线BAT结果；不能以离线结果代替该结果。",
+      "原文": "BAT: isotonic_nonincreasing; RWA: causal_running_min",
+      "命令": "python -B release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "哈希": {
+        "base": "f72b8abe51610c3cd836461a6c3de95e329e6fe2e1d8c9f83165424895da0020",
+        "evaluator": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+        "tcn": "0a50fe3839fdb804903cf8ece5e6191e1cb4dd9bf6b8e23938ae13ab946b1d74"
+      },
+      "日期": "2026-10-17T20:27:48.366645+00:00",
+      "来源": {
+        "base": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_component_blend_refinement_20260824.py",
+        "evaluator": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "tcn": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_source_gate.py"
+      },
+      "状态": "DEPENDENCY_ESTABLISHED_F1_OPEN",
+      "结果": "BAT candidate、control及最终blend均采用整unit离线PAVA，后期输入可修订早期输出。两个注册实现的合成反例均为prefix[0.1]→0.1、追加0.9后早值→0.5。RWA running-min算子在相同prefix与成员关系下为因果；这不等于完整评估管线已证明在线。",
+      "置信度": "对所引冻结代码的依赖结论高；不据此证明历史无访问或实测部署可行性。",
+      "证据": {
+        "source_excerpts": [
+          {
+            "first_line": 275,
+            "function": "project",
+            "last_line": 303,
+            "source": "tcn",
+            "text": "def project(prediction: np.ndarray, rows: list[dict[str, Any]], mode: str) -> np.ndarray:\n    out = np.asarray(prediction, dtype=np.float32).copy()\n    by_unit: dict[str, list[int]] = {}\n    for index, row in enumerate(rows):\n        by_unit.setdefault(str(row[\"unit_id\"]), []).append(index)\n    for indices in by_unit.values():\n        order = sorted(indices, key=lambda index: float(rows[index].get(\"t_end\", index)))\n        if mode == \"causal_running_min\":\n            running = 1.0\n            for index in order:\n                running = min(running, float(out[index]))\n                out[index] = running\n        elif mode == \"isotonic_nonincreasing\":\n            values = out[order].astype(np.float64)\n            levels: list[float] = []\n            counts: list[int] = []\n            for value in values:\n                levels.append(float(value))\n                counts.append(1)\n                while len(levels) >= 2 and levels[-2] < levels[-1]:\n                    total = counts[-2] + counts[-1]\n                    levels[-2] = (counts[-2] * levels[-2] + counts[-1] * levels[-1]) / total\n                    counts[-2] = total\n                    levels.pop()\n                    counts.pop()\n            out[order] = np.clip(np.repeat(levels, counts), 0.0, 1.0).astype(np.float32)\n        else:\n            raise ValueError(mode)\n    return np.clip(out, 0.0, 1.0)"
+          },
+          {
+            "first_line": 86,
+            "function": "pava",
+            "last_line": 94,
+            "source": "base",
+            "text": "def pava(values: np.ndarray) -> np.ndarray:\n    levels, weights = [], []\n    for value in np.asarray(values, dtype=np.float64):\n        levels.append(float(value)); weights.append(1)\n        while len(levels) >= 2 and levels[-2] < levels[-1]:\n            total = weights[-2] + weights[-1]\n            levels[-2] = (weights[-2] * levels[-2] + weights[-1] * levels[-1]) / total\n            weights[-2] = total; levels.pop(); weights.pop()\n    return np.repeat(np.asarray(levels, dtype=np.float32), np.asarray(weights, dtype=np.int64))"
+          },
+          {
+            "first_line": 97,
+            "function": "project",
+            "last_line": 114,
+            "source": "base",
+            "text": "def project(pred: np.ndarray, rows: list[dict], mode: str) -> np.ndarray:\n    if mode == \"raw\":\n        return np.asarray(pred, dtype=np.float32)\n    out = np.asarray(pred, dtype=np.float32).copy()\n    by_unit: dict[str, list[int]] = {}\n    for i, row in enumerate(rows):\n        by_unit.setdefault(str(row.get(\"unit_id\", \"\")), []).append(i)\n    for idx in by_unit.values():\n        order = sorted(idx, key=lambda i: float(rows[i].get(\"t_end\", i)))\n        if mode == \"isotonic_nonincreasing\":\n            out[order] = np.clip(pava(out[order]), 0.0, 1.0)\n        elif mode == \"causal_running_min\":\n            running = 1.0\n            for i in order:\n                running = min(running, float(out[i])); out[i] = running\n        else:\n            raise ValueError(mode)\n    return out"
+          },
+          {
+            "first_line": 532,
+            "function": "evaluate",
+            "last_line": 657,
+            "source": "evaluator",
+            "text": "def evaluate(args: argparse.Namespace) -> int:\n    import numpy as np\n    import torch\n    import yaml\n\n    root = args.root.resolve()\n    output = args.output.resolve()\n    manifest, partition_path, holdout_rows, label_claim = final_access_preflight(args)\n    append_event(output / \"events\", \"final_label_access_started\", {\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"reason\": \"one-time construction of evaluation-only holdout tensors\",\n        \"candidate_or_route_mutation_allowed\": False,\n        \"global_label_access_guard\": label_claim,\n    })\n    sys.path.insert(0, str(root))\n    centered, global_inner, fallback, segmented, loader = import_project_modules(root)\n    centered.b.CONFIG_CURRENT = centered.b.CONFIG\n    centered.b.fit_source_predictions = centered.fit_source_predictions_centered\n    old_data = {component: loader.load_component(root, component) for component in COMPONENTS}\n    results = {}\n    payloads = {}\n    for component in COMPONENTS:\n        config_path = root / f\"configs/preprocess/{component}_target.yaml\"\n        norm_path = root / f\"data/processed/norm_stats/{component}_target.json\"\n        config = yaml.safe_load(config_path.read_text(encoding=\"utf-8\"))\n        norm_doc = read_json(norm_path)\n        payload = build_raw_holdout_payload(root, component, config, norm_doc, holdout_rows, partition_path)\n        payloads[component] = payload\n        old = old_data[component]\n        n_old = len(old[\"rows\"])\n        n_final = len(payload[\"rows\"])\n        combined = {\n            \"x\": np.concatenate([old[\"x\"], payload[\"x\"]], axis=0),\n            \"y\": np.concatenate([old[\"y\"], payload[\"y\"]], axis=0),\n            \"rows\": list(old[\"rows\"]) + list(payload[\"rows\"]),\n            \"rmax\": float(old[\"rmax\"]),\n            \"path\": old[\"path\"],\n        }\n        if float(payload[\"rmax\"]) != float(old[\"rmax\"]):\n            raise RuntimeError(f\"rmax drift for {component}\")\n        train = np.zeros(n_old + n_final, dtype=bool)\n        train[:n_old] = True\n        valid = ~train\n        control_candidate = global_inner.reference_control_candidate(segmented, component)\n        candidate_prediction = fallback.fit_tcn_formal(\n            combined, component, train, valid, args.device\n        )\n        control = segmented.fit_predict_fixed(\n            combined, component, train, valid, control_candidate, args.device,\n            return_prediction=True,\n        )[3]\n        final_rows = list(payload[\"rows\"])\n        route = manifest[\"candidate\"][\"selected_routes\"][component]\n        alpha_by_target = route[\"alpha_by_target\"]\n        alpha = np.asarray([\n            float(alpha_by_target[str(row[\"unit_id\"]).split(\"_\")[1]]) for row in final_rows\n        ], dtype=np.float32)\n        blended = alpha * np.asarray(candidate_prediction, dtype=np.float32) + (1.0 - alpha) * np.asarray(control, dtype=np.float32)\n        prediction = centered.b.project(blended, final_rows, centered.b.CONFIG[component][\"postprocess\"])\n        metrics = centered.b.metrics(prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                     float(payload[\"rmax\"]), final_rows)\n        control_metrics = centered.b.metrics(control, payload[\"y\"] / float(payload[\"rmax\"]),\n                                             float(payload[\"rmax\"]), final_rows)\n        candidate_metrics = centered.b.metrics(candidate_prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                               float(payload[\"rmax\"]), final_rows)\n        results[component] = {\n            \"route\": route,\n            \"n_windows\": n_final,\n            \"n_units\": len(payload[\"units\"]),\n            \"unit_window_counts\": payload[\"units\"],\n            \"metrics\": metrics,\n            \"candidate_only_metrics\": candidate_metrics,\n            \"control_only_metrics\": control_metrics,\n            \"candidate_control_blend\": \"alpha*unit-first-residual-centered-TCN + (1-alpha)*frozen HGB/MLP control; final unit projection applied once\",\n        }\n        payload_path = output / f\"final_{component}_payload.pt\"\n        torch.save({\"x\": torch.from_numpy(payload[\"x\"]), \"y_rul\": torch.from_numpy(payload[\"y\"]),\n                    \"meta\": {\"channels\": payload[\"channels\"], \"rmax\": payload[\"rmax\"],\n                             \"index\": payload[\"rows\"], \"split\": \"holdout\"}}, payload_path)\n        results[component][\"payload_path\"] = payload_path.name\n        results[component][\"payload_sha256\"] = sha256_file(payload_path)\n        from f1_paired_predictions_20261018 import write_paired_predictions\n        results[component][\"paired_predictions\"] = write_paired_predictions(\n            output, component, final_rows, truth_rul=payload[\"y\"], rmax=payload[\"rmax\"],\n            candidate=candidate_prediction, control=control, alpha=alpha, blended=blended,\n            projected=prediction, payload_sha256=results[component][\"payload_sha256\"],\n            seed_raw_predictions=combined.get(\"_candidate_per_seed_raw\"),\n            seeds=centered.b.SEEDS if \"_candidate_per_seed_raw\" in combined else None)\n        results[component][\"training_diagnostics\"] = combined.get(\"formal_training_diagnostics\")\n    final_receipt = {\n        \"schema\": \"brphm-f1-clean-final-evaluation-v1\",\n        \"created_utc\": now_utc(),\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"selection_decision_sha256\": sha256_file(output / \"selection_decision.json\"),\n        \"evaluation\": \"exactly_once_after_freeze\",\n        \"label_access_event\": \"final_label_access_started\",\n        \"global_label_access_guard\": label_claim,\n        \"candidate_id\": manifest[\"candidate\"][\"method_id\"],\n        \"outer_reuse_disposition\": \"all_old_outer_results_development_or_diagnostic_only\",\n        \"training\": {\n            \"data\": {component: {\"path\": f\"data/processed/{component}_target.pt\",\n                                  \"sha256\": manifest[\"training\"][\"tensor_hashes\"][component]}\n                     for component in COMPONENTS},\n            \"holdout_used_for_training_or_selection\": False,\n        },\n        \"holdout\": {\n            \"manifest_sha256\": manifest[\"final_partition\"][\"manifest\"][\"sha256\"],\n            \"units\": manifest[\"final_partition\"][\"n_units\"],\n            \"raw_files_hash_bound\": True,\n        },\n        \"results\": results,\n        \"runtime\": {\"python\": sys.version, \"platform\": platform.platform(),\n                    \"packages\": package_versions(), \"device\": args.device},\n        \"mutation\": {\"canonical_project_modified\": False, \"competition_line_modified\": False,\n                      \"sealed_read\": False, \"a1_b1_read\": False, \"holdout_written\": False},\n    }\n    receipt_hash = write_new(output / \"final_receipt.json\", final_receipt)\n    append_event(output / \"events\", \"final_evaluation_completed\", {\n        \"final_receipt_sha256\": receipt_hash,\n        \"candidate_route_unchanged\": True,\n        \"final_metrics_used_for_selection\": False,\n        \"final_metrics_used_for_paper_decision\": False,\n    })\n    print(json.dumps({\"status\": \"evaluated\", \"receipt_sha256\": receipt_hash,\n                      \"results\": results}, ensure_ascii=True))\n    return 0"
+          }
+        ],
+        "synthetic_or_configuration": {
+          "control_config": {
+            "bat": {
+              "aggregation": "median3",
+              "high_mlp_weight": 0.7,
+              "low_mlp_weight": 0.2,
+              "mlp_epochs": 169,
+              "postprocess": "isotonic_nonincreasing",
+              "threshold": 139.0
+            },
+            "rwa": {
+              "aggregation": "mean3",
+              "high_mlp_weight": 1.0,
+              "low_mlp_weight": 0.7,
+              "mlp_epochs": 61,
+              "postprocess": "causal_running_min",
+              "threshold": 0.25243055555555555
+            }
+          },
+          "synthetic": [
+            {
+              "conclusion": "Both registered projection implementations revise the earlier BAT value when a later prediction is appended; their RWA running minima preserve this prefix.",
+              "id": "tcn_projection_future_dependency",
+              "input": [
+                0.10000000149011612,
+                0.8999999761581421
+              ],
+              "isotonic_full": [
+                0.5,
+                0.5
+              ],
+              "isotonic_prefix": [
+                0.10000000149011612
+              ],
+              "running_min_full": [
+                0.10000000149011612,
+                0.10000000149011612
+              ],
+              "running_min_prefix": [
+                0.10000000149011612
+              ]
+            },
+            {
+              "conclusion": "Both registered projection implementations revise the earlier BAT value when a later prediction is appended; their RWA running minima preserve this prefix.",
+              "id": "base_projection_future_dependency",
+              "input": [
+                0.10000000149011612,
+                0.8999999761581421
+              ],
+              "isotonic_full": [
+                0.5,
+                0.5
+              ],
+              "isotonic_prefix": [
+                0.10000000149011612
+              ],
+              "running_min_full": [
+                0.10000000149011612,
+                0.10000000149011612
+              ],
+              "running_min_prefix": [
+                0.10000000149011612
+              ]
+            }
+          ],
+          "tcn_config": {
+            "bat": {
+              "dilations": [
+                1,
+                2,
+                4
+              ],
+              "dropout": 0.05,
+              "epochs": 90,
+              "kernel_size": 3,
+              "lr": 0.002,
+              "postprocess": "isotonic_nonincreasing",
+              "weight_decay": 0.0001,
+              "width": 16
+            },
+            "rwa": {
+              "dilations": [
+                1,
+                2,
+                4
+              ],
+              "dropout": 0.05,
+              "epochs": 90,
+              "kernel_size": 3,
+              "lr": 0.002,
+              "postprocess": "causal_running_min",
+              "weight_decay": 0.0001,
+              "width": 16
+            }
+          }
+        }
+      },
+      "问题": "单窗模型与跨窗口投影的时间因果性必须分开审计。"
+    },
+    {
+      "id": "F1-INFERENCE-09",
+      "交叉验证": "逐项比较已登记配置、真实调用函数和父级哈希绑定；纯函数另用合成输入检验。代码副本和哈希不是独立的历史无访问见证。",
+      "位置": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_leo900_plain_l1_clean_final_test_20261018_r1.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_segmented_hgb_mlp_source_gate_20260929.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py"
+      ],
+      "修改": "追加本条依赖证据；候选、执行链、正文保持冻结。准确顺序为：source标准化→unit-first拼接→固定epoch ensemble→source残差校正→candidate投影；control经分段混合及独立投影；再按alpha混合两分支，并对blend再投影，然后计算指标。一次只指最后这一层，不能省略分支投影。",
+      "剩余风险": "真实执行的输入输出哈希、投影前后预测与终态链仍待独立核验；本报告不执行模型。",
+      "原文": "candidate projection; control projection; alpha blend; final projection; metrics",
+      "命令": "python -B release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "哈希": {
+        "adapter": "1c78f1c068f21c28be3442593b2a740e3a3775bc87a09bc7e76bad0e355f85f3",
+        "control": "658b99fecc31689ef624e0726b330b07bccf377ce7f0977d1814331a728f6bf7",
+        "evaluator": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57"
+      },
+      "日期": "2026-10-17T20:27:48.366645+00:00",
+      "来源": {
+        "adapter": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_leo900_plain_l1_clean_final_test_20261018_r1.py",
+        "control": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_segmented_hgb_mlp_source_gate_20260929.py",
+        "evaluator": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py"
+      },
+      "状态": "DEPENDENCY_ESTABLISHED_F1_OPEN",
+      "结果": "准确顺序为：source标准化→unit-first拼接→固定epoch ensemble→source残差校正→candidate投影；control经分段混合及独立投影；再按alpha混合两分支，并对blend再投影，然后计算指标。一次只指最后这一层，不能省略分支投影。",
+      "置信度": "对所引冻结代码的依赖结论高；不据此证明历史无访问或实测部署可行性。",
+      "证据": {
+        "source_excerpts": [
+          {
+            "first_line": 100,
+            "function": "fit_plain_l1_formal",
+            "last_line": 141,
+            "source": "adapter",
+            "text": "def fit_plain_l1_formal(data, component, train, valid, device_name):\n    import numpy as np\n\n    trainer = load_registered_source_trainer()\n    centered = trainer.centered\n    centered.b.CONFIG_CURRENT = centered.b.CONFIG\n    rows = data[\"rows\"]\n    train_rows = [rows[i] for i in np.flatnonzero(train)]\n    valid_rows = [rows[i] for i in np.flatnonzero(valid)]\n    if (not train_rows or not valid_rows or np.any(train & valid)\n            or {r[\"unit_id\"] for r in train_rows} & {r[\"unit_id\"] for r in valid_rows}):\n        raise ValueError(\"formal training and final units must be non-empty and disjoint\")\n    source_x = data[\"x\"][train]\n    source_y = data[\"y\"][train] / float(data[\"rmax\"])\n    center = source_x.mean(axis=(0, 1), dtype=np.float64).astype(np.float32)\n    scale = np.maximum(source_x.std(axis=(0, 1), dtype=np.float64), 1e-6).astype(np.float32)\n    normalized = ((source_x - center[None, None, :]) / scale[None, None, :]).astype(np.float32)\n    cfg = centered.b.CONFIG_CURRENT[component]\n    if int(cfg[\"epochs\"]) != 90 or tuple(centered.b.SEEDS) != (17, 42, 73):\n        raise RuntimeError(\"registered 90-epoch/three-seed training configuration drift\")\n    models = [trainer.fit_model_mmd(normalized, source_y, train_rows, cfg, seed, device_name,\n                                   mmd_lambda=0.0, epochs_override=90)\n              for seed in centered.b.SEEDS]\n    train_raw = centered.r.predict_models_relative(models, source_x, train_rows, center, scale, device_name)\n    correction, unit_medians = trainer.unit_median_correction(\n        [str(row[\"unit_id\"]) for row in train_rows],\n        np.asarray(train_raw, dtype=np.float64) - np.asarray(source_y, dtype=np.float64), shrink=0.25)\n    seed_raw = np.stack([centered.r.predict_models_relative([model], data[\"x\"][valid], valid_rows,\n                                                          center, scale, device_name) for model in models])\n    valid_raw = np.median(seed_raw, axis=0).astype(np.float32)\n    data[\"_candidate_per_seed_raw\"] = seed_raw\n    data[\"formal_training_diagnostics\"] = {\n        \"trainer\": \"fit_model_mmd(mmd_lambda=0, epochs_override=90); original extra representation forward preserved\",\n        \"source_implementation_sha256\": SOURCE_HASHES,\n        \"config\": cfg, \"seeds\": list(centered.b.SEEDS), \"train_windows\": len(train_rows),\n        \"train_units\": len(unit_medians), \"correction\": correction,\n        \"unit_median_residuals\": unit_medians,\n        \"source_center\": center.tolist(), \"source_scale\": scale.tolist(),\n        \"calibration\": \"-0.25 times arithmetic mean of per-unit median source-fit residuals\",\n        \"target_labels_used_in_training_or_correction\": False,\n    }\n    return centered.b.project(valid_raw + np.float32(correction), valid_rows, cfg[\"postprocess\"])"
+          },
+          {
+            "first_line": 99,
+            "function": "fit_predict_fixed",
+            "last_line": 130,
+            "source": "control",
+            "text": "def fit_predict_fixed(data: dict, component: str, train: np.ndarray, valid: np.ndarray, candidate: dict, device_name: str, return_prediction: bool = False):\n    import torch\n    from sklearn.ensemble import HistGradientBoostingRegressor\n\n    rows = data[\"rows\"]\n    train_rows = [rows[i] for i in np.flatnonzero(train)]\n    valid_rows = [rows[i] for i in np.flatnonzero(valid)]\n    x_train, x_valid = data[\"x\"][train], data[\"x\"][valid]\n    y_train = data[\"y\"][train] / data[\"rmax\"]\n    feature_kind = base.HGB[component][\"feature\"]\n    h_train = base.flat(x_train) if feature_kind == \"flat\" else base.stats_v1(x_train)\n    h_valid = base.flat(x_valid) if feature_kind == \"flat\" else base.stats_v1(x_valid)\n    hcfg = base.HGB[component]\n    hgb = HistGradientBoostingRegressor(max_iter=hcfg[\"max_iter\"], learning_rate=hcfg[\"learning_rate\"], max_leaf_nodes=hcfg[\"max_leaf_nodes\"], min_samples_leaf=hcfg[\"min_samples_leaf\"], l2_regularization=hcfg[\"l2_regularization\"], random_state=17)\n    hgb.fit(h_train, y_train)\n    h_pred = np.asarray(hgb.predict(h_valid), dtype=np.float32)\n    tmax = max(float(row.get(\"t_end\", 0.0)) for row in train_rows)\n    age_train = torch.from_numpy(base.stats_age(x_train, train_rows, tmax))\n    age_valid = torch.from_numpy(base.stats_age(x_valid, valid_rows, tmax))\n    target = torch.from_numpy(y_train.astype(np.float32))\n    models = [\n        fit_mlp(age_train, target, base.MLP[component], seed, candidate[\"mlp_epochs\"], device_name)\n        for seed in SEEDS\n    ]\n    mlp_pred = predict_members(models, age_valid, candidate[\"aggregation\"], device_name)\n    projected = base.project(segmented(h_pred, mlp_pred, valid_rows, candidate), valid_rows, candidate[\"postprocess\"])\n    metrics = base.metrics(projected, data[\"y\"][valid] / data[\"rmax\"], data[\"rmax\"], valid_rows)\n    residual = np.asarray(projected, dtype=np.float64) - np.asarray(data[\"y\"][valid] / data[\"rmax\"], dtype=np.float64)\n    diagnostics = {\"train_windows\": int(train.sum()), \"valid_windows\": int(valid.sum()), \"train_units\": len({str(r[\"unit_id\"]) for r in train_rows}), \"valid_units\": len({str(r[\"unit_id\"]) for r in valid_rows}), \"tmax\": float(tmax), \"seeds\": list(SEEDS), \"aggregation\": candidate[\"aggregation\"]}\n    if return_prediction:\n        return metrics, residual, diagnostics, np.asarray(projected, dtype=np.float32)\n    return metrics, residual, diagnostics"
+          },
+          {
+            "first_line": 532,
+            "function": "evaluate",
+            "last_line": 657,
+            "source": "evaluator",
+            "text": "def evaluate(args: argparse.Namespace) -> int:\n    import numpy as np\n    import torch\n    import yaml\n\n    root = args.root.resolve()\n    output = args.output.resolve()\n    manifest, partition_path, holdout_rows, label_claim = final_access_preflight(args)\n    append_event(output / \"events\", \"final_label_access_started\", {\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"reason\": \"one-time construction of evaluation-only holdout tensors\",\n        \"candidate_or_route_mutation_allowed\": False,\n        \"global_label_access_guard\": label_claim,\n    })\n    sys.path.insert(0, str(root))\n    centered, global_inner, fallback, segmented, loader = import_project_modules(root)\n    centered.b.CONFIG_CURRENT = centered.b.CONFIG\n    centered.b.fit_source_predictions = centered.fit_source_predictions_centered\n    old_data = {component: loader.load_component(root, component) for component in COMPONENTS}\n    results = {}\n    payloads = {}\n    for component in COMPONENTS:\n        config_path = root / f\"configs/preprocess/{component}_target.yaml\"\n        norm_path = root / f\"data/processed/norm_stats/{component}_target.json\"\n        config = yaml.safe_load(config_path.read_text(encoding=\"utf-8\"))\n        norm_doc = read_json(norm_path)\n        payload = build_raw_holdout_payload(root, component, config, norm_doc, holdout_rows, partition_path)\n        payloads[component] = payload\n        old = old_data[component]\n        n_old = len(old[\"rows\"])\n        n_final = len(payload[\"rows\"])\n        combined = {\n            \"x\": np.concatenate([old[\"x\"], payload[\"x\"]], axis=0),\n            \"y\": np.concatenate([old[\"y\"], payload[\"y\"]], axis=0),\n            \"rows\": list(old[\"rows\"]) + list(payload[\"rows\"]),\n            \"rmax\": float(old[\"rmax\"]),\n            \"path\": old[\"path\"],\n        }\n        if float(payload[\"rmax\"]) != float(old[\"rmax\"]):\n            raise RuntimeError(f\"rmax drift for {component}\")\n        train = np.zeros(n_old + n_final, dtype=bool)\n        train[:n_old] = True\n        valid = ~train\n        control_candidate = global_inner.reference_control_candidate(segmented, component)\n        candidate_prediction = fallback.fit_tcn_formal(\n            combined, component, train, valid, args.device\n        )\n        control = segmented.fit_predict_fixed(\n            combined, component, train, valid, control_candidate, args.device,\n            return_prediction=True,\n        )[3]\n        final_rows = list(payload[\"rows\"])\n        route = manifest[\"candidate\"][\"selected_routes\"][component]\n        alpha_by_target = route[\"alpha_by_target\"]\n        alpha = np.asarray([\n            float(alpha_by_target[str(row[\"unit_id\"]).split(\"_\")[1]]) for row in final_rows\n        ], dtype=np.float32)\n        blended = alpha * np.asarray(candidate_prediction, dtype=np.float32) + (1.0 - alpha) * np.asarray(control, dtype=np.float32)\n        prediction = centered.b.project(blended, final_rows, centered.b.CONFIG[component][\"postprocess\"])\n        metrics = centered.b.metrics(prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                     float(payload[\"rmax\"]), final_rows)\n        control_metrics = centered.b.metrics(control, payload[\"y\"] / float(payload[\"rmax\"]),\n                                             float(payload[\"rmax\"]), final_rows)\n        candidate_metrics = centered.b.metrics(candidate_prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                               float(payload[\"rmax\"]), final_rows)\n        results[component] = {\n            \"route\": route,\n            \"n_windows\": n_final,\n            \"n_units\": len(payload[\"units\"]),\n            \"unit_window_counts\": payload[\"units\"],\n            \"metrics\": metrics,\n            \"candidate_only_metrics\": candidate_metrics,\n            \"control_only_metrics\": control_metrics,\n            \"candidate_control_blend\": \"alpha*unit-first-residual-centered-TCN + (1-alpha)*frozen HGB/MLP control; final unit projection applied once\",\n        }\n        payload_path = output / f\"final_{component}_payload.pt\"\n        torch.save({\"x\": torch.from_numpy(payload[\"x\"]), \"y_rul\": torch.from_numpy(payload[\"y\"]),\n                    \"meta\": {\"channels\": payload[\"channels\"], \"rmax\": payload[\"rmax\"],\n                             \"index\": payload[\"rows\"], \"split\": \"holdout\"}}, payload_path)\n        results[component][\"payload_path\"] = payload_path.name\n        results[component][\"payload_sha256\"] = sha256_file(payload_path)\n        from f1_paired_predictions_20261018 import write_paired_predictions\n        results[component][\"paired_predictions\"] = write_paired_predictions(\n            output, component, final_rows, truth_rul=payload[\"y\"], rmax=payload[\"rmax\"],\n            candidate=candidate_prediction, control=control, alpha=alpha, blended=blended,\n            projected=prediction, payload_sha256=results[component][\"payload_sha256\"],\n            seed_raw_predictions=combined.get(\"_candidate_per_seed_raw\"),\n            seeds=centered.b.SEEDS if \"_candidate_per_seed_raw\" in combined else None)\n        results[component][\"training_diagnostics\"] = combined.get(\"formal_training_diagnostics\")\n    final_receipt = {\n        \"schema\": \"brphm-f1-clean-final-evaluation-v1\",\n        \"created_utc\": now_utc(),\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"selection_decision_sha256\": sha256_file(output / \"selection_decision.json\"),\n        \"evaluation\": \"exactly_once_after_freeze\",\n        \"label_access_event\": \"final_label_access_started\",\n        \"global_label_access_guard\": label_claim,\n        \"candidate_id\": manifest[\"candidate\"][\"method_id\"],\n        \"outer_reuse_disposition\": \"all_old_outer_results_development_or_diagnostic_only\",\n        \"training\": {\n            \"data\": {component: {\"path\": f\"data/processed/{component}_target.pt\",\n                                  \"sha256\": manifest[\"training\"][\"tensor_hashes\"][component]}\n                     for component in COMPONENTS},\n            \"holdout_used_for_training_or_selection\": False,\n        },\n        \"holdout\": {\n            \"manifest_sha256\": manifest[\"final_partition\"][\"manifest\"][\"sha256\"],\n            \"units\": manifest[\"final_partition\"][\"n_units\"],\n            \"raw_files_hash_bound\": True,\n        },\n        \"results\": results,\n        \"runtime\": {\"python\": sys.version, \"platform\": platform.platform(),\n                    \"packages\": package_versions(), \"device\": args.device},\n        \"mutation\": {\"canonical_project_modified\": False, \"competition_line_modified\": False,\n                      \"sealed_read\": False, \"a1_b1_read\": False, \"holdout_written\": False},\n    }\n    receipt_hash = write_new(output / \"final_receipt.json\", final_receipt)\n    append_event(output / \"events\", \"final_evaluation_completed\", {\n        \"final_receipt_sha256\": receipt_hash,\n        \"candidate_route_unchanged\": True,\n        \"final_metrics_used_for_selection\": False,\n        \"final_metrics_used_for_paper_decision\": False,\n    })\n    print(json.dumps({\"status\": \"evaluated\", \"receipt_sha256\": receipt_hash,\n                      \"results\": results}, ensure_ascii=True))\n    return 0"
+          }
+        ],
+        "synthetic_or_configuration": null
+      },
+      "问题": "收据中的final unit projection applied once容易被误读为全流程只投影一次。"
+    },
+    {
+      "id": "F1-INFERENCE-10",
+      "交叉验证": "逐项比较已登记配置、真实调用函数和父级哈希绑定；纯函数另用合成输入检验。代码副本和哈希不是独立的历史无访问见证。",
+      "位置": [
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\preprocess.py",
+        "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\windows.py"
+      ],
+      "修改": "追加本条依赖证据；候选、执行链、正文保持冻结。RWA本配置按574秒bin聚合三路遥测的mean/std/min/max，加冻结温度基线残差共13通道；窗口30bin，步长1bin。t取每组末尾原始时间，单位day。标签列单独carry并用于评估，未进入三路遥测聚合。",
+      "剩余风险": "bin内特征在该bin结束后才可用；singleton的std可能非有限，注册R4在冻结归一化后插补0，未以final统计量拟合。",
+      "原文": "resample.mode=daily_agg, bin_s=574.0; window L=30,stride=1",
+      "命令": "python -B release/f1_audit_20261010/audit_leo900_inference_dependencies_20261018.py",
+      "哈希": {
+        "evaluator": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+        "preprocess": "5d6720d486a9c2cb7ef580881462492490b705311a69f7688487d2bda5868463",
+        "windows": "0bb61ab593272c18177a33724f29bbc2f0b45595d55913c12686d2635db50945"
+      },
+      "日期": "2026-10-17T20:27:48.366645+00:00",
+      "来源": {
+        "evaluator": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+        "preprocess": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\preprocess.py",
+        "windows": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\windows.py"
+      },
+      "状态": "DEPENDENCY_ESTABLISHED_F1_OPEN",
+      "结果": "RWA本配置按574秒bin聚合三路遥测的mean/std/min/max，加冻结温度基线残差共13通道；窗口30bin，步长1bin。t取每组末尾原始时间，单位day。标签列单独carry并用于评估，未进入三路遥测聚合。",
+      "置信度": "对所引冻结代码的依赖结论高；不据此证明历史无访问或实测部署可行性。",
+      "证据": {
+        "source_excerpts": [
+          {
+            "first_line": 1224,
+            "function": "_bin_aggregate_rwa",
+            "last_line": 1269,
+            "source": "preprocess",
+            "text": "def _bin_aggregate_rwa(df: pd.DataFrame, bin_s: float, base_channels,\n                       carry_last_cols=()) -> tuple[pd.DataFrame, list[str]]:\n    \"\"\"0.1 Hz rw_telemetry → 整 bin 聚合派生列(0715-04.4; X2-8 契约的 bin 参数化形)。\n\n    - 分组 = floor(t·86400 / bin_s)(bin_s=86400 即 §7.2「整日」字面；正式\n      SIM_rwa 取 P/10=574 s ⇒ 窗 30 bin = 3 个完整轨道);\n    - 派生列 `<通道>.<算子>`(mean/std/min/max, pandas 缺省 ddof=1 —— 单样本 bin 的\n      std 如实 NaN, 交 impute_mean 入账, 不静默造 0);\n    - `label.*` 与 carry_last_cols(特权列)取组内**末行**(X2-8「日末快照」语义);\n    - `t` = 组内**末行原始 t**(与标签同取样点 ⇒ rul = Tf − t 逐行恒等 —— 对 X2-8\n      「t=组序」的登记偏差, 细则 0715-04.4);\n    - bin 序号必须连续(0.1 Hz 连续记录的结构保证; 断档 ⇒ 30-bin 窗会静默跨时段, 硬拒)。\n    返回 (聚合帧, carry 中源表缺席的列名列表)。\n    \"\"\"\n    t = df[\"t\"].to_numpy(dtype=np.float64)\n    if t.size == 0:\n        raise UsageError(\"空单元表 —— 请先过 validate_interim(§6.1)\")\n    if t.size > 1 and not np.all(np.diff(t) > 0):\n        raise UsageError(\"interim `t` 必须严格单调递增(§6.1) —— 请先过 validate_interim\")\n    missing_base = [c for c in base_channels if c not in df.columns]\n    if missing_base:\n        raise UsageError(\n            f\"daily_agg 基通道缺列 {missing_base}(§7.2 RW 行; SIM_rwa interim 应含三遥测) \"\n            f\"—— 请先过 validate_interim\")\n    b = np.floor(t * SECONDS_PER_DAY / float(bin_s)).astype(np.int64)\n    uniq = np.unique(b)\n    if uniq.size > 1 and not np.array_equal(uniq, np.arange(uniq[0], uniq[0] + uniq.size)):\n        raise UsageError(\n            \"聚合 bin 序号不连续(出现断档) —— 0.1 Hz 主档应连续记录(§5.1); \"\n            \"断档下 L 连续 bin 窗会静默跨时段, 硬拒(0715-04.4)\")\n    work = df.copy()\n    work[\"_bin\"] = b\n    g = work.groupby(\"_bin\", sort=True)\n    out: dict = {\"t\": g[\"t\"].last().to_numpy(np.float64)}     # 末行 t(见 docstring)\n    for ch in base_channels:\n        agg = g[ch].agg([\"mean\", \"std\", \"min\", \"max\"])\n        for op in DAILY_OPS:\n            out[f\"{ch}.{op}\"] = agg[op].to_numpy(np.float64)\n    missing_carry = [c for c in carry_last_cols if c not in df.columns]\n    last_cols = ([c for c in df.columns if c.startswith(\"label.\")]\n                 + [c for c in carry_last_cols if c in df.columns])\n    if last_cols:\n        lab = g[last_cols].last()\n        for c in last_cols:\n            out[c] = lab[c].to_numpy()\n    return pd.DataFrame(out), missing_carry"
+          },
+          {
+            "first_line": 450,
+            "function": "build_raw_holdout_payload",
+            "last_line": 519,
+            "source": "evaluator",
+            "text": "def build_raw_holdout_payload(root: Path, component: str, config: dict[str, Any],\n                              norm_doc: dict[str, Any], manifest_rows: list[dict[str, str]],\n                              manifest_path: Path) -> dict[str, Any]:\n    import numpy as np\n    from src.datasets import labels, preprocess, sim_loader, windows\n\n    line = component\n    dataset_id = str(config[\"dataset_id\"])\n    channels = list(config[\"channels\"])\n    absent = set(config.get(\"channels_absent_ok\") or [])\n    mode = config[\"resample\"][\"mode\"]\n    bin_s = float(config[\"resample\"].get(\"bin_s\", preprocess.SECONDS_PER_DAY)) if mode == \"daily_agg\" else None\n    bases = list(config[\"resample\"].get(\"base_channels\", preprocess.RWA_TARGET_BASE)) if mode == \"daily_agg\" else []\n    want_fric = bool(config[\"resample\"].get(\"fric_tc\", True)) and mode == \"daily_agg\" and preprocess.FRIC_TC_MEAN in channels\n    baseline = None\n    if want_fric:\n        baseline = ((norm_doc.get(\"derived\") or {}).get(\"rw\") or {}).get(\"fric_tc\", {}).get(\"baseline_coef\")\n        if not isinstance(baseline, list) or len(baseline) != 2:\n            raise RuntimeError(\"frozen RWA friction baseline is missing\")\n    L = int(config[\"window\"][\"L\"])\n    stride = int(config[\"window\"][\"stride\"])\n    rmax = float(config[\"labels\"][\"rmax\"])\n    floor = config[\"labels\"].get(\"rul_floor\", \"keep\")\n    stats = norm_doc[\"channels\"]\n    xs, ys, rows, units = [], [], [], {}\n    for item in sorted((row for row in manifest_rows if row[\"product_line\"] == line), key=lambda row: row[\"sample_id\"]):\n        uid = item[\"sample_id\"]\n        raw_path = row_raw_path(root, item)\n        if sha256_file(raw_path) != item[\"sha256\"]:\n            raise RuntimeError(f\"raw holdout hash drift: {uid}\")\n        converted, _, frame = sim_loader.convert_one(raw_path, dataset_id, root / \"data/interim\" / dataset_id,\n                                                     root=root, lenient=False, write=False)\n        if converted != uid or frame is None:\n            raise RuntimeError(f\"raw identity drift: {uid}\")\n        if mode == \"daily_agg\":\n            frame, _ = preprocess._bin_aggregate_rwa(frame, bin_s, bases, [])\n        if want_fric:\n            frame[preprocess.FRIC_TC_MEAN] = (\n                frame[\"rw.motor_current_a.mean\"].to_numpy(np.float64)\n                - (float(baseline[0]) + float(baseline[1]) * frame[\"rw.bearing_temp_c.mean\"].to_numpy(np.float64))\n            )\n        missing = [ch for ch in channels if ch not in frame.columns and ch not in absent]\n        if missing:\n            raise RuntimeError(f\"holdout channels missing for {uid}: {missing}\")\n        matrix = np.column_stack([\n            np.zeros(len(frame), dtype=np.float64) if ch in absent else frame[ch].to_numpy(np.float64)\n            for ch in channels\n        ])\n        windows_array, ends = windows.slide(matrix, L, stride)\n        y, _, _ = labels.window_labels(frame[\"label.rul\"].to_numpy(np.float64),\n                                        frame.get(\"label.hi\"), ends, rmax)\n        keep = np.isfinite(y)\n        if floor == \"drop_negative\":\n            keep &= y >= 0.0\n        windows_array, ends, y = windows_array[keep], ends[keep], y[keep]\n        if not len(windows_array):\n            continue\n        xs.append(preprocess.normalize(windows_array, channels, stats))\n        ys.append(y.astype(np.float32))\n        rows.extend(windows.build_index(uid, dataset_id, \"tgt\", \"holdout\",\n                                         frame[\"t\"].to_numpy(np.float64)[ends]))\n        units[uid] = int(len(y))\n    if not xs:\n        raise RuntimeError(f\"zero final windows for {line}\")\n    x = np.concatenate(xs).astype(np.float32)\n    y = np.concatenate(ys).astype(np.float32)\n    if len(rows) != len(x):\n        raise RuntimeError(\"final payload row/array mismatch\")\n    return {\"x\": x, \"y\": y, \"rows\": rows, \"rmax\": rmax, \"channels\": channels,\n            \"units\": units, \"manifest_path\": str(manifest_path)}"
+          },
+          {
+            "first_line": 66,
+            "function": "slide",
+            "last_line": 80,
+            "source": "windows",
+            "text": "def slide(X: np.ndarray, L: int, stride: int) -> tuple[np.ndarray, np.ndarray]:\n    \"\"\"单元内滑窗: X[rows, C] → (windows[n, L, C] float32, ends[n])。\n\n    - 窗口不得跨 unit(§7.2): 本函数按单元调用, 结构上保证;\n    - 返回窗体为**副本**(非视图), 下游可安全变换。\n    \"\"\"\n    X = np.asarray(X)\n    if X.ndim != 2:\n        raise ValueError(f\"期望 X 为 [rows, C] 二维, 得到 ndim={X.ndim}\")\n    ends = window_ends(X.shape[0], L, stride)\n    n = ends.shape[0]\n    out = np.empty((n, int(L), X.shape[1]), dtype=np.float32)\n    for k, e in enumerate(ends):\n        out[k] = X[e - L + 1 : e + 1]\n    return out, ends"
+          },
+          {
+            "first_line": 83,
+            "function": "build_index",
+            "last_line": 106,
+            "source": "windows",
+            "text": "def build_index(unit_id: str, dataset_id: str, domain: str, split: str,\n                t_end_values, window_id_prefix: str = \"\") -> list[dict]:\n    \"\"\"§7.1 meta.index「每窗一条」: 六字段字典列表, 顺序与窗一致。\n\n    window_id_prefix(附录 AJ2-6, 0711-05 追加): 缺省空串 = X2-5 字面(输出与\n    0710-04 逐字节相同); 域限定混池传 `f\"{dataset_id}/\"` ⇒ window_id 取超集文法\n    `<dataset_id>/<unit_id>:w<序:05d>`(全仓唯一由 §1.1 dataset_id 唯一性兜底);\n    `unit_id` 字段本身**不**加前缀(§7.1 六字段语义不变)。\n    \"\"\"\n    if domain not in DOMAINS:\n        raise ValueError(f\"domain 必须 ∈ {DOMAINS}(§7.5), 得到: {domain!r}\")\n    if split not in SPLITS:\n        raise ValueError(f\"split 必须 ∈ {SPLITS}(§7.5), 得到: {split!r}\")\n    rows = []\n    for k, t_end in enumerate(np.asarray(t_end_values, dtype=np.float64), start=1):\n        rows.append({\n            \"window_id\": window_id_prefix + WINDOW_ID_FMT.format(unit_id=unit_id, seq=k),\n            \"dataset_id\": dataset_id,\n            \"unit_id\": unit_id,\n            \"t_end\": float(t_end),\n            \"domain\": domain,\n            \"split\": split,\n        })\n    return rows"
+          }
+        ],
+        "synthetic_or_configuration": {
+          "bin_seconds": 574.0,
+          "rul_unit": "day",
+          "stride_bins": 1,
+          "window_bins": 30
+        }
+      },
+      "问题": "daily_agg函数名称不等于本实验按一天聚合；单位与特征时点可能被误报。"
+    }
+  ],
+  "goal_must_remain_active": true,
+  "interpretation": {
+    "bat_capacity_input_source": "simulation truth/soh; ideal capacity proxy",
+    "bat_strictly_online_result_established": false,
+    "entire_pipeline_never_reads_target_labels": false,
+    "fixed_final_training_uses_target_labels": "No use in the audited fitting path; terminal runtime evidence still required.",
+    "known_orbit_identity_required_by_entrypoint": true,
+    "new_final_population_generalization_or_practical_superiority_established": false,
+    "prediction_membership_independent_of_target_labels": false,
+    "rwa_projection_operator_prefix_causal": true,
+    "target_population_statistics_refitted": "Not present in audited frozen inference path.",
+    "unlabeled_target_unit_history_used": true
+  },
+  "limitations": [
+    "Static review and synthetic witnesses are not a whole-program information-flow proof.",
+    "Registered copies and hashes are not independent evidence of historical non-access.",
+    "The final result and all generated-unit/retained-unit counts must be checked after the guarded execution.",
+    "No result-driven modification or repeated evaluation on LEO900 is authorized by this report."
+  ],
+  "read_scope": {
+    "actual_mat_or_final_tensor_or_prediction_arrays_read": false,
+    "frozen_candidate_or_protocol_modified": false,
+    "manuscript_or_F2_F10_modified": false,
+    "real_final_labels_or_telemetry_decoded": false,
+    "remote_access_or_mutation": false,
+    "research_modules_imported": false,
+    "selected_pure_functions_executed_on_synthetic_inputs": true,
+    "training_or_final_evaluation_invoked": false
+  },
+  "schema": "brphm-f1-frozen-inference-dependency-audit-v1",
+  "scientific_success_claimed": false,
+  "script_sha256": "b44c4daf0771d09638e225b5dbe46762d5a43a389c7938a006a74434d01cf6f4",
+  "sources": {
+    "adapter": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_leo900_plain_l1_clean_final_test_20261018_r1.py",
+      "parent": "execution_amendment",
+      "registered_binding": {
+        "path": "f1_leo900_plain_l1_clean_final_test_20261018_r1.py",
+        "sha256": "1c78f1c068f21c28be3442593b2a740e3a3775bc87a09bc7e76bad0e355f85f3",
+        "size": 9970
+      },
+      "sha256": "1c78f1c068f21c28be3442593b2a740e3a3775bc87a09bc7e76bad0e355f85f3",
+      "size": 9970
+    },
+    "base": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_component_blend_refinement_20260824.py",
+      "parent": "dependency_closure_and_archive",
+      "registered_binding": {
+        "path": "work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_component_blend_refinement_20260824.py",
+        "sha256": "f72b8abe51610c3cd836461a6c3de95e329e6fe2e1d8c9f83165424895da0020",
+        "size": 15203
+      },
+      "sha256": "f72b8abe51610c3cd836461a6c3de95e329e6fe2e1d8c9f83165424895da0020",
+      "size": 15203
+    },
+    "bat_config": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\configs\\preprocess\\bat_target.yaml",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "configs/preprocess/bat_target.yaml",
+        "sha256": "a9fb5a6c22e1de4364dd44d160de9cff93d446453b90d32b839f4f86f35ab095",
+        "size": 5316
+      },
+      "sha256": "a9fb5a6c22e1de4364dd44d160de9cff93d446453b90d32b839f4f86f35ab095",
+      "size": 5316
+    },
+    "bat_norm": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\data\\processed\\norm_stats\\bat_target.json",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "data/processed/norm_stats/bat_target.json",
+        "sha256": "2d85f3a241a343f8ac18d0ba2c0e3d09019cfb13c913869bf2d72743fc547796",
+        "size": 714
+      },
+      "sha256": "2d85f3a241a343f8ac18d0ba2c0e3d09019cfb13c913869bf2d72743fc547796",
+      "size": 714
+    },
+    "centered": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_unit_first_residual_centered_source_gate_20261001.py",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "work/rul_next_electrochemical/temporal_tcn_unit_first_residual_centered_source_gate_20261001.py",
+        "sha256": "04ff3b984e1bbed8510986f10812bb8643dee85fc46ad16b38cf6f75395ad453",
+        "size": 6695
+      },
+      "sha256": "04ff3b984e1bbed8510986f10812bb8643dee85fc46ad16b38cf6f75395ad453",
+      "size": 6695
+    },
+    "control": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_segmented_hgb_mlp_source_gate_20260929.py",
+      "parent": "dependency_closure_and_archive",
+      "registered_binding": {
+        "path": "work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_segmented_hgb_mlp_source_gate_20260929.py",
+        "sha256": "658b99fecc31689ef624e0726b330b07bccf377ce7f0977d1814331a728f6bf7",
+        "size": 15497
+      },
+      "sha256": "658b99fecc31689ef624e0726b330b07bccf377ce7f0977d1814331a728f6bf7",
+      "size": 15497
+    },
+    "evaluator": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+      "parent": "execution_amendment",
+      "registered_binding": {
+        "path": "f1_clean_final_test_20261018_v3.py",
+        "sha256": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+        "size": 33908
+      },
+      "sha256": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+      "size": 33908
+    },
+    "fixed_mlp": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_leave_one_orbit_out_generalization_20260825.py",
+      "parent": "dependency_closure_and_archive",
+      "registered_binding": {
+        "path": "work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_leave_one_orbit_out_generalization_20260825.py",
+        "sha256": "0755aba7575097e60fa584ad645d53962667230c7f7e282474363173f6171b11",
+        "size": 10561
+      },
+      "sha256": "0755aba7575097e60fa584ad645d53962667230c7f7e282474363173f6171b11",
+      "size": 10561
+    },
+    "labels": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\labels.py",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "src/datasets/labels.py",
+        "sha256": "08a5aaf74e9cb1f97f035e815da86ccd4d88485a675d0c02e64cc3451c9943d2",
+        "size": 4267
+      },
+      "sha256": "08a5aaf74e9cb1f97f035e815da86ccd4d88485a675d0c02e64cc3451c9943d2",
+      "size": 4267
+    },
+    "preprocess": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\preprocess.py",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "src/datasets/preprocess.py",
+        "sha256": "5d6720d486a9c2cb7ef580881462492490b705311a69f7688487d2bda5868463",
+        "size": 282521
+      },
+      "sha256": "5d6720d486a9c2cb7ef580881462492490b705311a69f7688487d2bda5868463",
+      "size": 282521
+    },
+    "route": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_global_inner_route_source_gate.py",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "work/rul_next_electrochemical/temporal_tcn_global_inner_route_source_gate.py",
+        "sha256": "9f82f37eb8bc02eb670de4062d4102d7aa33f8cc0ce458fd32e8ce917c6d0749",
+        "size": 11179
+      },
+      "sha256": "9f82f37eb8bc02eb670de4062d4102d7aa33f8cc0ce458fd32e8ce917c6d0749",
+      "size": 11179
+    },
+    "rwa_config": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\configs\\preprocess\\rwa_target.yaml",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "configs/preprocess/rwa_target.yaml",
+        "sha256": "95d4fc52a5de90a7fb4513fad58d6f6edcb72aa7a2460f1b325940a3e1a76457",
+        "size": 7902
+      },
+      "sha256": "95d4fc52a5de90a7fb4513fad58d6f6edcb72aa7a2460f1b325940a3e1a76457",
+      "size": 7902
+    },
+    "rwa_norm": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\data\\processed\\norm_stats\\rwa_target.json",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "data/processed/norm_stats/rwa_target.json",
+        "sha256": "b65cc7be29a372748188550250dfd65ce1483b01a5796fabfc36ba1a586be0e4",
+        "size": 1835
+      },
+      "sha256": "b65cc7be29a372748188550250dfd65ce1483b01a5796fabfc36ba1a586be0e4",
+      "size": 1835
+    },
+    "sim_loader": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\sim_loader.py",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "src/datasets/sim_loader.py",
+        "sha256": "05afe14c78200be6523c5e23802d0c4c1298f693d5dbe580a4d478d58090dd06",
+        "size": 64376
+      },
+      "sha256": "05afe14c78200be6523c5e23802d0c4c1298f693d5dbe580a4d478d58090dd06",
+      "size": 64376
+    },
+    "tcn": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_source_gate.py",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "work/rul_next_electrochemical/temporal_tcn_source_gate.py",
+        "sha256": "0a50fe3839fdb804903cf8ece5e6191e1cb4dd9bf6b8e23938ae13ab946b1d74",
+        "size": 26589
+      },
+      "sha256": "0a50fe3839fdb804903cf8ece5e6191e1cb4dd9bf6b8e23938ae13ab946b1d74",
+      "size": 26589
+    },
+    "trainer": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_source_trainer_20261018\\run_l1_mmd_source_only_20261015.py",
+      "parent": "execution_amendment",
+      "registered_binding": {
+        "path": "leo900_source_trainer_20261018/run_l1_mmd_source_only_20261015.py",
+        "sha256": "4718889b61d75c70ff130da3e41b795ac4229af9cc1b60060049075d385b6b88",
+        "size": 19558
+      },
+      "sha256": "4718889b61d75c70ff130da3e41b795ac4229af9cc1b60060049075d385b6b88",
+      "size": 19558
+    },
+    "unit_first": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_unit_first_source_gate_20261001.py",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "work/rul_next_electrochemical/temporal_tcn_unit_first_source_gate_20261001.py",
+        "sha256": "9c8c433adc1c592584e2467956f67432b635ac8f6dca51f22c4f03f0aaa70b20",
+        "size": 3648
+      },
+      "sha256": "9c8c433adc1c592584e2467956f67432b635ac8f6dca51f22c4f03f0aaa70b20",
+      "size": 3648
+    },
+    "windows": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\windows.py",
+      "parent": "dependency_closure",
+      "registered_binding": {
+        "path": "src/datasets/windows.py",
+        "sha256": "0bb61ab593272c18177a33724f29bbc2f0b45595d55913c12686d2635db50945",
+        "size": 8227
+      },
+      "sha256": "0bb61ab593272c18177a33724f29bbc2f0b45595d55913c12686d2635db50945",
+      "size": 8227
+    }
+  },
+  "status": "DEPENDENCIES_ESTABLISHED_F1_OPEN",
+  "synthetic_witnesses": [
+    {
+      "conclusion": "Both registered projection implementations revise the earlier BAT value when a later prediction is appended; their RWA running minima preserve this prefix.",
+      "id": "tcn_projection_future_dependency",
+      "input": [
+        0.10000000149011612,
+        0.8999999761581421
+      ],
+      "isotonic_full": [
+        0.5,
+        0.5
+      ],
+      "isotonic_prefix": [
+        0.10000000149011612
+      ],
+      "running_min_full": [
+        0.10000000149011612,
+        0.10000000149011612
+      ],
+      "running_min_prefix": [
+        0.10000000149011612
+      ]
+    },
+    {
+      "conclusion": "Both registered projection implementations revise the earlier BAT value when a later prediction is appended; their RWA running minima preserve this prefix.",
+      "id": "base_projection_future_dependency",
+      "input": [
+        0.10000000149011612,
+        0.8999999761581421
+      ],
+      "isotonic_full": [
+        0.5,
+        0.5
+      ],
+      "isotonic_prefix": [
+        0.10000000149011612
+      ],
+      "running_min_full": [
+        0.10000000149011612,
+        0.10000000149011612
+      ],
+      "running_min_prefix": [
+        0.10000000149011612
+      ]
+    },
+    {
+      "after_later_window_and_other_unit_changes": [
+        [
+          10.0
+        ],
+        [
+          10.0
+        ],
+        [
+          900.0
+        ]
+      ],
+      "baseline": [
+        [
+          10.0
+        ],
+        [
+          10.0
+        ],
+        [
+          100.0
+        ]
+      ],
+      "conclusion": "The baseline is the first sample of the smallest-t_end retained window in the same unit, rather than that window's last sample or another unit's input.",
+      "id": "earliest_window_first_sample"
+    }
+  ]
+}

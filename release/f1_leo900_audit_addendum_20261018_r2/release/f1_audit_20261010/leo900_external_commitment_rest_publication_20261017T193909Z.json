@@ -1,0 +1,359 @@
+{
+  "api_blob_files_verified": 41,
+  "api_ref_response_headers": {
+    "Date": "Sat, 17 Oct 2026 19:39:35 GMT",
+    "ETag": "\"ea32888917d3f7122c41891f0ddb18373df2c740d4f6fa32b5ffe6118e8b47bc\"",
+    "X-GitHub-Request-Id": "88CB:64A11:190A99:1B362F:6AD3CEF6"
+  },
+  "api_requests": [
+    {
+      "ended_utc": "2026-10-17T19:39:14.042976+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:13 GMT",
+        "ETag": "\"a1b3428b298a637210680d3af19372fbcaed23d457859a830a5d57ce4ff060b5\"",
+        "X-GitHub-Request-Id": "88C0:216B64:192265:1B4F1F:6AD3CEE1"
+      },
+      "method": "GET",
+      "path": "",
+      "response_sha256": "2bfa556aa111d8d07169ccba1d0e3bce03721cb6a9d5e01e069422c0f18945d9",
+      "started_utc": "2026-10-17T19:39:13.247440+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:14.826045+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:14 GMT",
+        "ETag": "\"a583ebfe432f15d9bfa4281dcfd207d46be7a83e91df19771bce80e2c99c529a\"",
+        "X-GitHub-Request-Id": "88C1:300A8B:1826F8:1A5334:6AD3CEE2"
+      },
+      "method": "GET",
+      "path": "/git/ref/heads/main",
+      "response_sha256": "e5bc3432530bc66538c08c255fd0f215705fbd2d1bc643092e5c3404e5264cb0",
+      "started_utc": "2026-10-17T19:39:14.042976+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:15.644641+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:15 GMT",
+        "X-GitHub-Request-Id": "88C2:241B71:183954:1A6492:6AD3CEE3"
+      },
+      "method": "GET",
+      "path": "/git/ref/heads/f1-leo900-prefinal-20261018-r1",
+      "started_utc": "2026-10-17T19:39:14.826045+00:00",
+      "status": 404
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:16.447252+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:16 GMT",
+        "ETag": "\"942d19d02e84b3f160d060d37f3dff36fefb1a366a766dba8082637efca33eb2\"",
+        "X-GitHub-Request-Id": "88C3:242E28:173615:195B28:6AD3CEE4"
+      },
+      "method": "GET",
+      "path": "/git/commits/8449f14551c4ba229b2596e86b9fabd80df72a2a",
+      "response_sha256": "9ea936dbe12d4b4788d984a7df612a4642674d53225611d1576d2103674cb284",
+      "started_utc": "2026-10-17T19:39:15.645856+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:17.284416+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:17 GMT",
+        "ETag": "\"64f4952d4a155583b7a0402300cf1fc55fdb22e3f637f0b2841b97d0e49376f7\"",
+        "X-GitHub-Request-Id": "88C4:531BC:1970A1:1B9D47:6AD3CEE4"
+      },
+      "method": "GET",
+      "path": "/git/trees/a3dd1e2d0cbc8389f4886423a012917e8f656c9b",
+      "response_sha256": "f3e05f35ef1179d8655e00108bd7e3c2e35e9e84757232cdd79336f3f2542cf2",
+      "started_utc": "2026-10-17T19:39:16.447252+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:18.113831+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:17 GMT",
+        "ETag": "\"9931a73cb32c8308197f25e007ce6fa865275bb88e20fb4fd5f2ea49e67bb351\"",
+        "X-GitHub-Request-Id": "88C5:63C80:18FBE0:1B2738:6AD3CEE5"
+      },
+      "method": "GET",
+      "path": "/git/trees/c41d06abf9fee64df5e15b0fbec153d83797f621",
+      "response_sha256": "62016c14b796443bb8c9c26a1dfea4e115dfd0aea8a3fa23713b4c753049e439",
+      "started_utc": "2026-10-17T19:39:17.284416+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:28.991138+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:28 GMT",
+        "X-GitHub-Request-Id": "88C6:2429EB:17FCD8:1A29FF:6AD3CEF0"
+      },
+      "method": "GET",
+      "path": "/git/trees/87c1a74e03b851c4612e9b88d113b065fa3a59c6",
+      "started_utc": "2026-10-17T19:39:28.170521+00:00",
+      "status": 404
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:31.699426+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:31 GMT",
+        "ETag": "\"e9a9a0defbc96c8eadfba70e6fe777f1986733a5152e049938dab1de5de05fbe\"",
+        "X-GitHub-Request-Id": "88C7:3020A7:19810E:1BADDA:6AD3CEF1"
+      },
+      "method": "POST",
+      "path": "/git/trees",
+      "response_sha256": "500ca70c2ec77d8124385451043e242aa79de85c94b82fba788f7a25c4e8ce76",
+      "started_utc": "2026-10-17T19:39:29.005413+00:00",
+      "status": 201
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:32.489859+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:32 GMT",
+        "X-GitHub-Request-Id": "88C8:654D1:1A8079:1CAC98:6AD3CEF4"
+      },
+      "method": "GET",
+      "path": "/git/commits/846cdaac03beab2bacb9834bde1ed8fff1c77141",
+      "started_utc": "2026-10-17T19:39:31.699426+00:00",
+      "status": 404
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:33.531572+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:33 GMT",
+        "ETag": "\"f20c013fac71a0c2fe7ab36ed30621cb3a08afaf6630cedb73a91a08e0aa477f\"",
+        "X-GitHub-Request-Id": "88C9:29DE17:1BDE62:1E0C56:6AD3CEF4"
+      },
+      "method": "POST",
+      "path": "/git/commits",
+      "response_sha256": "8ed6aab55e755ae4013e1993dd540c0beaaed3be7720249d7a2aafa48717aae7",
+      "started_utc": "2026-10-17T19:39:32.489859+00:00",
+      "status": 201
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:34.654969+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:34 GMT",
+        "ETag": "\"ea32888917d3f7122c41891f0ddb18373df2c740d4f6fa32b5ffe6118e8b47bc\"",
+        "X-GitHub-Request-Id": "88CA:377D84:19FFD6:1C2E4F:6AD3CEF5"
+      },
+      "method": "POST",
+      "path": "/git/refs",
+      "response_sha256": "512eaf4b7890f220a17b0832d32a6ad83b738a84c9c424a2173b443098795e91",
+      "started_utc": "2026-10-17T19:39:33.532564+00:00",
+      "status": 201
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:35.454206+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:35 GMT",
+        "ETag": "\"ea32888917d3f7122c41891f0ddb18373df2c740d4f6fa32b5ffe6118e8b47bc\"",
+        "X-GitHub-Request-Id": "88CB:64A11:190A99:1B362F:6AD3CEF6"
+      },
+      "method": "GET",
+      "path": "/git/ref/heads/f1-leo900-prefinal-20261018-r1",
+      "response_sha256": "512eaf4b7890f220a17b0832d32a6ad83b738a84c9c424a2173b443098795e91",
+      "started_utc": "2026-10-17T19:39:34.654969+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:36.617315+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:36 GMT",
+        "ETag": "\"87c1a74e03b851c4612e9b88d113b065fa3a59c6\"",
+        "X-GitHub-Request-Id": "88CC:672CA:16C63A:18DE6A:6AD3CEF7"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_pre_final_commitment_20261018_r1?ref=846cdaac03beab2bacb9834bde1ed8fff1c77141",
+      "response_sha256": "4a07ea77c3bd625b9bbe043943a3be9f9de18fe43d8df3e718e5891579976087",
+      "started_utc": "2026-10-17T19:39:35.454206+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:37.403096+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:37 GMT",
+        "ETag": "\"87c1a74e03b851c4612e9b88d113b065fa3a59c6\"",
+        "X-GitHub-Request-Id": "88CD:69326:1936CE:1B653F:6AD3CEF8"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs?ref=846cdaac03beab2bacb9834bde1ed8fff1c77141",
+      "response_sha256": "ecb97c530edfbc42e5bb2e1e87d28b7cc7a54f835f24b7e5844474c3fa48df30",
+      "started_utc": "2026-10-17T19:39:36.617822+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:38.172515+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:38 GMT",
+        "ETag": "\"87c1a74e03b851c4612e9b88d113b065fa3a59c6\"",
+        "X-GitHub-Request-Id": "88CE:68807:19FB0E:1C265C:6AD3CEF9"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/channel_policy_support_20261018_r4a?ref=846cdaac03beab2bacb9834bde1ed8fff1c77141",
+      "response_sha256": "c7846dc281747600ed87a45994de74f92d8f8d5bc60ab32bf10598a8c9eaffee",
+      "started_utc": "2026-10-17T19:39:37.403096+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:38.933778+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:38 GMT",
+        "ETag": "\"87c1a74e03b851c4612e9b88d113b065fa3a59c6\"",
+        "X-GitHub-Request-Id": "88CF:64C78:195337:1B7F35:6AD3CEFA"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/dependency_support_20261018_r3a?ref=846cdaac03beab2bacb9834bde1ed8fff1c77141",
+      "response_sha256": "1ff1ff0032b5925ba574e0e033825ae6117805aa17219319695286c8cc7af257",
+      "started_utc": "2026-10-17T19:39:38.172515+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:39.897031+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:39 GMT",
+        "ETag": "\"87c1a74e03b851c4612e9b88d113b065fa3a59c6\"",
+        "X-GitHub-Request-Id": "88D0:2EF85A:16F20D:190D4A:6AD3CEFB"
+      },
+      "method": "GET",
+      "path": "/contents/release/f1_leo900_pre_final_commitment_20261018_r1/registered_inputs/evidence?ref=846cdaac03beab2bacb9834bde1ed8fff1c77141",
+      "response_sha256": "b7af5fadc30ff1bac77644f2ddc242e6861e41cce764282cfe1b9d2a78dfa5e1",
+      "started_utc": "2026-10-17T19:39:38.933778+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:40.716525+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:40 GMT",
+        "ETag": "\"78b66f8e3a0d32d4c84046c686490526f19ec2e01256dac445e0a1264c1928d0\"",
+        "X-GitHub-Request-Id": "88D1:6A9BE:191EDC:1B4BB4:6AD3CEFC"
+      },
+      "method": "GET",
+      "path": "/git/blobs/f17396ef64638c4a38635d3685171a65fc9caf90",
+      "response_sha256": "ce363d7b7596ba5259e5c8b1cef28e9f1c81baeb8af7951b4c0222ce383728bf",
+      "started_utc": "2026-10-17T19:39:39.898045+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:41.925141+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:41 GMT",
+        "ETag": "\"7d78a15e78c3e1b9f78b84e3849ce116c08b0e14cb7fb509cdc9b99d8a77abc9\"",
+        "X-GitHub-Request-Id": "88D2:242EE8:17F0EB:1A1E33:6AD3CEFD"
+      },
+      "method": "GET",
+      "path": "/git/blobs/b1d6cea1522ca44a768f2a1ed251c8e53721709c",
+      "response_sha256": "fb9595f713d415e2109484d2f2d29deece5f035e0022a41ef63e80aece56cf0e",
+      "started_utc": "2026-10-17T19:39:40.716525+00:00",
+      "status": 200
+    },
+    {
+      "ended_utc": "2026-10-17T19:39:42.724353+00:00",
+      "headers": {
+        "Date": "Sat, 17 Oct 2026 19:39:42 GMT",
+        "ETag": "\"a583ebfe432f15d9bfa4281dcfd207d46be7a83e91df19771bce80e2c99c529a\"",
+        "X-GitHub-Request-Id": "88D3:23D6A0:188370:1AB1ED:6AD3CEFE"
+      },
+      "method": "GET",
+      "path": "/git/ref/heads/main",
+      "response_sha256": "e5bc3432530bc66538c08c255fd0f215705fbd2d1bc643092e5c3404e5264cb0",
+      "started_utc": "2026-10-17T19:39:41.926139+00:00",
+      "status": 200
+    }
+  ],
+  "base_commit": "8449f14551c4ba229b2596e86b9fabd80df72a2a",
+  "base_selection": "Existing remote default-branch commit, recorded before all writes; local working HEAD has not been published and is preserved",
+  "branch": "f1-leo900-prefinal-20261018-r1",
+  "byte_readbacks": [
+    {
+      "path": "SHA256_MANIFEST.json",
+      "sha256": "7a489927d3cb6001fff91b7b9af77d9da0468f6721a053fa90be8d8025ca9490",
+      "size": 5166
+    },
+    {
+      "path": "F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+      "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+      "size": 46839
+    }
+  ],
+  "bytes_published": 519673,
+  "commit": "846cdaac03beab2bacb9834bde1ed8fff1c77141",
+  "commit_url": "https://github.com/1553926531-sudo/BRPHM/commit/846cdaac03beab2bacb9834bde1ed8fff1c77141",
+  "default_branch": "main",
+  "default_branch_commit_preserved": "8449f14551c4ba229b2596e86b9fabd80df72a2a",
+  "ended_utc": "2026-10-17T19:39:43.350423+00:00",
+  "expected_tree": "87c1a74e03b851c4612e9b88d113b065fa3a59c6",
+  "f1_closed": false,
+  "files": {
+    "F1_EVIDENCE_LEDGER_20261017.md": "820d95cc95eb97353a1b0ea14b8e83079571b6f548e9af4acb4d511a35822558",
+    "F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+    "F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a",
+    "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.json": "5d7f153acf7bbac5de6dbf7b28e02d49bc72931744a4e27c4d053b1faf03f2b6",
+    "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R4.md": "860bd82336048bb6c78d0e9774cf0f9e57db5fb508bae8aff156ef0d51da7980",
+    "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.json": "cfeb3f3b08f83db22c1e41e03dacb97a2d9513a8488c7edaeade4574843da2ea",
+    "F1_LEO900_PREFLIGHT_EVIDENCE_20261018R5.md": "22b78c012c32d8e84d07b9064543dd4aa14e6875da8075d62c6c477a5f54cc90",
+    "F1_LEO900_STATISTICAL_ANALYSIS_PROTOCOL_20261018R1.json": "754326c717669f23f82d8cf044d87333772f21fe82a8b389a169389771506da1",
+    "README.md": "65a6b6920b212d51215d0724b92ee4661eb24cde522aa0490ea17e5d9727732b",
+    "SHA256_MANIFEST.json": "7a489927d3cb6001fff91b7b9af77d9da0468f6721a053fa90be8d8025ca9490",
+    "check_f1_statistics_registered_oracles_20261018.py": "c4a475de652e0b84b0881f7941d20ae8905794289dde9d1b6a175bfc26467405",
+    "f1_leo900_channel_policy_clean_final_test_20261018_r4.py": "5b8acfe1eccc4f01e1e67ce0ef13f9d6768bb2ae9da152672974c2a7f1cf7a76",
+    "f1_lossless_gate_statistics_20261018.py": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+    "f1_paired_predictions_20261018.py": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+    "leo900_channel_policy_20261018_r4.py": "8ef26ac31b69397d4ce3d9960bee9c212c05d2f732698b575f0de90779c7326e",
+    "leo900_continuation_observation_20261017T192737Z.json": "3f412213523cff937b823b3efb7cef4a71b0dedba57369e8d625d0c265930cbe",
+    "leo900_final_continuation_20261018.py": "95980e282428c016f0b44918fb25eecbd5e6555550bf38e3cd1161dbb2ec753e",
+    "leo900_final_continuation_deployment_20261017T191902Z.json": "c83ee791045abf85a07b1af650d9b4d50fb76223db09e52e22c52ab512a4ce18",
+    "leo900_final_continuation_deployment_20261017T192006Z.json": "6dd65edb9feb895fbe103c748a9958a31580246810b322ea151d199e8f997d74",
+    "leo900_final_continuation_launch_20261017T192053Z.json": "40efbc9805b30034fa98051e83beff89c7eea4adf4623202b7f96b98fcd43add",
+    "leo900_final_continuation_local_green_20261018_r1.json": "d211403227b3116733fe3a8ca4b48651fc1c614f1198d8b134f714df6e0310af",
+    "leo900_final_continuation_local_green_20261018_r2.json": "9bcbb40f42b81a89dd0bf465138d73837cf0c929a18f587aba86506007669eeb",
+    "leo900_final_continuation_local_green_20261018_r3.json": "353a9b2a0800cbb9e182d5b78e385eb3107316dbe0dac3450e66940aaf1438ce",
+    "leo900_final_continuation_red_20261018_r1.json": "9a9932a387804e2a851aee8edfed54b3de02cfa244d4e7c804738dc71ede3f5b",
+    "leo900_generation_metadata_20261017T191247Z.json": "d48f6ed163908d0428afb2418058cc60228fc9e5e95c33dfa54f0243427b6daf",
+    "leo900_statistics_protocol_deployment_r1_20261017T190734Z.json": "5b9f025c9220f88f5a1dc5e204d00c189a514a87d38b949c176ba768177db73b",
+    "registered_input_export.json": "1ea8fae448f863fcc8f044cc46eb6f49bfb15e288583898b06f71686db83988c",
+    "registered_inputs/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+    "registered_inputs/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61",
+    "registered_inputs/evidence/candidate_preregistration.json": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+    "registered_inputs/evidence/candidate_snapshot.json": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+    "registered_inputs/evidence/formal_candidate_receipt.json": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+    "registered_inputs/evidence/partition_plan.json": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+    "registered_inputs/evidence/preparation_attempt_history.json": "8a2eebc431c68acd4866bb4ea39c10ee931446f95451a17860a755756135128b",
+    "registered_inputs/evidence/preparation_postflight_verification.json": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+    "registered_inputs/evidence/simulation_schedule.json": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+    "registered_inputs/evidence/source_route_replay_certificate.json": "d232448e1a8e9b8bf727a982df0e72ea235e9519271534ddfe1f038046cd0f51",
+    "registered_inputs/evidence/template_exclusion_manifest.json": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3",
+    "test_f1_lossless_gate_statistics_20261018.py": "bcb13da9b40dd1c2ab2861946d33b340f0aac7bcf1a6db4b95ffa306bbb0c7db",
+    "test_leo900_final_continuation_20261018.py": "7048632593088cadaa33f5b0a023ff9e1c3ca7b8f50b9da35c16647d206437bb",
+    "verify_commitment.py": "970b1f9063654d2dc1216720f37e9e5713f4cc6e866e8b2b2ae2ba772bae851d"
+  },
+  "helper_script_sha256": "7ee666f598fe45c02f343c441b402dedc8bf1539a0db69dbba2dab92a27e1290",
+  "independent_local_tree_and_commit_match": true,
+  "local_working_head": "ed051819e5e97a205fb0b076bc79b3cd84988662",
+  "manuscript_sha256": {
+    "research/rul_space_paper_20261001/en/main.pdf": "468338bb904734cd49649680e37b8ce447a447e46e45e7083a5b3bfa13460750",
+    "research/rul_space_paper_20261001/en/main.tex": "4e1c2c1b3f1fedbb902af7d1a3415e8730d39d2702fbf5ad921a0ae6d522665b"
+  },
+  "origin_identity_verified": true,
+  "package_manifest_sha256": "7a489927d3cb6001fff91b7b9af77d9da0468f6721a053fa90be8d8025ca9490",
+  "package_manifest_unchanged": true,
+  "record_limits": "Server readback confirms availability by the observed response time. Neither Git dates nor this record prove historical absence of access or immutable notarization.",
+  "repository": "https://github.com/1553926531-sudo/BRPHM",
+  "schema": "brphm-f1-rest-external-commitment-publication-v1",
+  "scientific_success_claimed": false,
+  "script_sha256": "4e584ee37f61b0cbc95c67abcd8411465a0e90dcee6eb757b6825623ae9e858f",
+  "server_repository_identity": {
+    "full_name": "1553926531-sudo/BRPHM",
+    "headers": {
+      "Date": "Sat, 17 Oct 2026 19:39:13 GMT",
+      "ETag": "\"a1b3428b298a637210680d3af19372fbcaed23d457859a830a5d57ce4ff060b5\"",
+      "X-GitHub-Request-Id": "88C0:216B64:192265:1B4F1F:6AD3CEE1"
+    },
+    "id": 1392841783
+  },
+  "started_utc": "2026-10-17T19:39:09.631981+00:00",
+  "status": "PUBLISHED_AND_READBACK_VERIFIED",
+  "transaction_sha256": "d85fa3995f82efb5f49880ae7c5c4edde6cf84f027311f393b2e359a7af7e7d0",
+  "transport": "GitHub REST Git Data API; smart Git connection reset recorded separately",
+  "working_index_and_tracked_dirty_files_preserved": true
+}
