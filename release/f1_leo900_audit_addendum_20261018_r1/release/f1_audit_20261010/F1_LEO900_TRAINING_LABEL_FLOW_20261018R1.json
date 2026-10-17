@@ -1,0 +1,275 @@
+{
+  "archive": {
+    "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz",
+    "sha256": "e8874a5bc8c7e4ced5c0c0e495216497e5d6b5e1d633523d9a0f8167ed4cafb3"
+  },
+  "closure": {
+    "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_leo900_pre_final_commitment_20261018_r1\\registered_inputs\\dependency_support_20261018_r3a\\F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json",
+    "sha256": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61"
+  },
+  "confidence": "High for the cited byte-bound static source facts; terminal runtime evidence and historical no-access claims are separate.",
+  "created_utc": "2026-10-17T20:12:19.522308+00:00",
+  "cross_validation": "Source snippets are checked against AST call/import relationships and the protocol/dependency-closure hashes. Copies and hashes are not independent no-access witnesses.",
+  "execution_amendment": {
+    "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json",
+    "sha256": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2"
+  },
+  "f1_closed": false,
+  "findings": [
+    {
+      "conclusion": "Evaluation masks train on old registered tensors and hold out all appended final windows.",
+      "evidence": [
+        {
+          "first_line": 532,
+          "function": "evaluate",
+          "last_line": 657,
+          "source": "evaluator",
+          "text": "def evaluate(args: argparse.Namespace) -> int:\n    import numpy as np\n    import torch\n    import yaml\n\n    root = args.root.resolve()\n    output = args.output.resolve()\n    manifest, partition_path, holdout_rows, label_claim = final_access_preflight(args)\n    append_event(output / \"events\", \"final_label_access_started\", {\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"reason\": \"one-time construction of evaluation-only holdout tensors\",\n        \"candidate_or_route_mutation_allowed\": False,\n        \"global_label_access_guard\": label_claim,\n    })\n    sys.path.insert(0, str(root))\n    centered, global_inner, fallback, segmented, loader = import_project_modules(root)\n    centered.b.CONFIG_CURRENT = centered.b.CONFIG\n    centered.b.fit_source_predictions = centered.fit_source_predictions_centered\n    old_data = {component: loader.load_component(root, component) for component in COMPONENTS}\n    results = {}\n    payloads = {}\n    for component in COMPONENTS:\n        config_path = root / f\"configs/preprocess/{component}_target.yaml\"\n        norm_path = root / f\"data/processed/norm_stats/{component}_target.json\"\n        config = yaml.safe_load(config_path.read_text(encoding=\"utf-8\"))\n        norm_doc = read_json(norm_path)\n        payload = build_raw_holdout_payload(root, component, config, norm_doc, holdout_rows, partition_path)\n        payloads[component] = payload\n        old = old_data[component]\n        n_old = len(old[\"rows\"])\n        n_final = len(payload[\"rows\"])\n        combined = {\n            \"x\": np.concatenate([old[\"x\"], payload[\"x\"]], axis=0),\n            \"y\": np.concatenate([old[\"y\"], payload[\"y\"]], axis=0),\n            \"rows\": list(old[\"rows\"]) + list(payload[\"rows\"]),\n            \"rmax\": float(old[\"rmax\"]),\n            \"path\": old[\"path\"],\n        }\n        if float(payload[\"rmax\"]) != float(old[\"rmax\"]):\n            raise RuntimeError(f\"rmax drift for {component}\")\n        train = np.zeros(n_old + n_final, dtype=bool)\n        train[:n_old] = True\n        valid = ~train\n        control_candidate = global_inner.reference_control_candidate(segmented, component)\n        candidate_prediction = fallback.fit_tcn_formal(\n            combined, component, train, valid, args.device\n        )\n        control = segmented.fit_predict_fixed(\n            combined, component, train, valid, control_candidate, args.device,\n            return_prediction=True,\n        )[3]\n        final_rows = list(payload[\"rows\"])\n        route = manifest[\"candidate\"][\"selected_routes\"][component]\n        alpha_by_target = route[\"alpha_by_target\"]\n        alpha = np.asarray([\n            float(alpha_by_target[str(row[\"unit_id\"]).split(\"_\")[1]]) for row in final_rows\n        ], dtype=np.float32)\n        blended = alpha * np.asarray(candidate_prediction, dtype=np.float32) + (1.0 - alpha) * np.asarray(control, dtype=np.float32)\n        prediction = centered.b.project(blended, final_rows, centered.b.CONFIG[component][\"postprocess\"])\n        metrics = centered.b.metrics(prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                     float(payload[\"rmax\"]), final_rows)\n        control_metrics = centered.b.metrics(control, payload[\"y\"] / float(payload[\"rmax\"]),\n                                             float(payload[\"rmax\"]), final_rows)\n        candidate_metrics = centered.b.metrics(candidate_prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                               float(payload[\"rmax\"]), final_rows)\n        results[component] = {\n            \"route\": route,\n            \"n_windows\": n_final,\n            \"n_units\": len(payload[\"units\"]),\n            \"unit_window_counts\": payload[\"units\"],\n            \"metrics\": metrics,\n            \"candidate_only_metrics\": candidate_metrics,\n            \"control_only_metrics\": control_metrics,\n            \"candidate_control_blend\": \"alpha*unit-first-residual-centered-TCN + (1-alpha)*frozen HGB/MLP control; final unit projection applied once\",\n        }\n        payload_path = output / f\"final_{component}_payload.pt\"\n        torch.save({\"x\": torch.from_numpy(payload[\"x\"]), \"y_rul\": torch.from_numpy(payload[\"y\"]),\n                    \"meta\": {\"channels\": payload[\"channels\"], \"rmax\": payload[\"rmax\"],\n                             \"index\": payload[\"rows\"], \"split\": \"holdout\"}}, payload_path)\n        results[component][\"payload_path\"] = payload_path.name\n        results[component][\"payload_sha256\"] = sha256_file(payload_path)\n        from f1_paired_predictions_20261018 import write_paired_predictions\n        results[component][\"paired_predictions\"] = write_paired_predictions(\n            output, component, final_rows, truth_rul=payload[\"y\"], rmax=payload[\"rmax\"],\n            candidate=candidate_prediction, control=control, alpha=alpha, blended=blended,\n            projected=prediction, payload_sha256=results[component][\"payload_sha256\"],\n            seed_raw_predictions=combined.get(\"_candidate_per_seed_raw\"),\n            seeds=centered.b.SEEDS if \"_candidate_per_seed_raw\" in combined else None)\n        results[component][\"training_diagnostics\"] = combined.get(\"formal_training_diagnostics\")\n    final_receipt = {\n        \"schema\": \"brphm-f1-clean-final-evaluation-v1\",\n        \"created_utc\": now_utc(),\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"selection_decision_sha256\": sha256_file(output / \"selection_decision.json\"),\n        \"evaluation\": \"exactly_once_after_freeze\",\n        \"label_access_event\": \"final_label_access_started\",\n        \"global_label_access_guard\": label_claim,\n        \"candidate_id\": manifest[\"candidate\"][\"method_id\"],\n        \"outer_reuse_disposition\": \"all_old_outer_results_development_or_diagnostic_only\",\n        \"training\": {\n            \"data\": {component: {\"path\": f\"data/processed/{component}_target.pt\",\n                                  \"sha256\": manifest[\"training\"][\"tensor_hashes\"][component]}\n                     for component in COMPONENTS},\n            \"holdout_used_for_training_or_selection\": False,\n        },\n        \"holdout\": {\n            \"manifest_sha256\": manifest[\"final_partition\"][\"manifest\"][\"sha256\"],\n            \"units\": manifest[\"final_partition\"][\"n_units\"],\n            \"raw_files_hash_bound\": True,\n        },\n        \"results\": results,\n        \"runtime\": {\"python\": sys.version, \"platform\": platform.platform(),\n                    \"packages\": package_versions(), \"device\": args.device},\n        \"mutation\": {\"canonical_project_modified\": False, \"competition_line_modified\": False,\n                      \"sealed_read\": False, \"a1_b1_read\": False, \"holdout_written\": False},\n    }\n    receipt_hash = write_new(output / \"final_receipt.json\", final_receipt)\n    append_event(output / \"events\", \"final_evaluation_completed\", {\n        \"final_receipt_sha256\": receipt_hash,\n        \"candidate_route_unchanged\": True,\n        \"final_metrics_used_for_selection\": False,\n        \"final_metrics_used_for_paper_decision\": False,\n    })\n    print(json.dumps({\"status\": \"evaluated\", \"receipt_sha256\": receipt_hash,\n                      \"results\": results}, ensure_ascii=True))\n    return 0"
+        }
+      ],
+      "id": "F1-LABEL-FLOW-01",
+      "remaining_risk": "Runtime masks and exact input hashes must still match the terminal receipts.",
+      "status": "STATIC_SOURCE_CHECK_PASS"
+    },
+    {
+      "conclusion": "TCN normalization, labels and residual correction use source-fit rows; the registered trainer receives 90 epochs and lambda zero.",
+      "evidence": [
+        {
+          "first_line": 100,
+          "function": "fit_plain_l1_formal",
+          "last_line": 141,
+          "source": "adapter",
+          "text": "def fit_plain_l1_formal(data, component, train, valid, device_name):\n    import numpy as np\n\n    trainer = load_registered_source_trainer()\n    centered = trainer.centered\n    centered.b.CONFIG_CURRENT = centered.b.CONFIG\n    rows = data[\"rows\"]\n    train_rows = [rows[i] for i in np.flatnonzero(train)]\n    valid_rows = [rows[i] for i in np.flatnonzero(valid)]\n    if (not train_rows or not valid_rows or np.any(train & valid)\n            or {r[\"unit_id\"] for r in train_rows} & {r[\"unit_id\"] for r in valid_rows}):\n        raise ValueError(\"formal training and final units must be non-empty and disjoint\")\n    source_x = data[\"x\"][train]\n    source_y = data[\"y\"][train] / float(data[\"rmax\"])\n    center = source_x.mean(axis=(0, 1), dtype=np.float64).astype(np.float32)\n    scale = np.maximum(source_x.std(axis=(0, 1), dtype=np.float64), 1e-6).astype(np.float32)\n    normalized = ((source_x - center[None, None, :]) / scale[None, None, :]).astype(np.float32)\n    cfg = centered.b.CONFIG_CURRENT[component]\n    if int(cfg[\"epochs\"]) != 90 or tuple(centered.b.SEEDS) != (17, 42, 73):\n        raise RuntimeError(\"registered 90-epoch/three-seed training configuration drift\")\n    models = [trainer.fit_model_mmd(normalized, source_y, train_rows, cfg, seed, device_name,\n                                   mmd_lambda=0.0, epochs_override=90)\n              for seed in centered.b.SEEDS]\n    train_raw = centered.r.predict_models_relative(models, source_x, train_rows, center, scale, device_name)\n    correction, unit_medians = trainer.unit_median_correction(\n        [str(row[\"unit_id\"]) for row in train_rows],\n        np.asarray(train_raw, dtype=np.float64) - np.asarray(source_y, dtype=np.float64), shrink=0.25)\n    seed_raw = np.stack([centered.r.predict_models_relative([model], data[\"x\"][valid], valid_rows,\n                                                          center, scale, device_name) for model in models])\n    valid_raw = np.median(seed_raw, axis=0).astype(np.float32)\n    data[\"_candidate_per_seed_raw\"] = seed_raw\n    data[\"formal_training_diagnostics\"] = {\n        \"trainer\": \"fit_model_mmd(mmd_lambda=0, epochs_override=90); original extra representation forward preserved\",\n        \"source_implementation_sha256\": SOURCE_HASHES,\n        \"config\": cfg, \"seeds\": list(centered.b.SEEDS), \"train_windows\": len(train_rows),\n        \"train_units\": len(unit_medians), \"correction\": correction,\n        \"unit_median_residuals\": unit_medians,\n        \"source_center\": center.tolist(), \"source_scale\": scale.tolist(),\n        \"calibration\": \"-0.25 times arithmetic mean of per-unit median source-fit residuals\",\n        \"target_labels_used_in_training_or_correction\": False,\n    }\n    return centered.b.project(valid_raw + np.float32(correction), valid_rows, cfg[\"postprocess\"])"
+        },
+        {
+          "first_line": 9,
+          "function": "unit_median_correction",
+          "last_line": 22,
+          "source": "calibration",
+          "text": "def unit_median_correction(unit_ids: Iterable[str], residuals: Iterable[float], shrink: float = 0.25) -> tuple[float, dict[str, float]]:\n    ids = [str(value) for value in unit_ids]\n    values = np.asarray(list(residuals), dtype=np.float64)\n    if len(ids) != values.size or values.size == 0:\n        raise ValueError(\"unit ids and residuals must be non-empty and aligned\")\n    if not np.isfinite(values).all():\n        raise ValueError(\"residuals must be finite\")\n    if not np.isfinite(shrink) or shrink < 0:\n        raise ValueError(\"shrink must be finite and non-negative\")\n    grouped: dict[str, list[float]] = defaultdict(list)\n    for unit_id, residual in zip(ids, values):\n        grouped[unit_id].append(float(residual))\n    medians = {unit_id: float(np.median(unit_values)) for unit_id, unit_values in grouped.items()}\n    return -float(shrink) * float(np.mean(list(medians.values()))), medians"
+        }
+      ],
+      "id": "F1-LABEL-FLOW-02",
+      "remaining_risk": "This follows the registered code path; it does not establish historical absence of final-data access.",
+      "status": "STATIC_SOURCE_CHECK_PASS"
+    },
+    {
+      "conclusion": "TCN fitting has a fixed epoch loop and no final-validation argument or validation early stopping. The extra representation forward remains present at lambda zero.",
+      "evidence": [
+        {
+          "first_line": 57,
+          "function": "fit_model_mmd",
+          "last_line": 108,
+          "source": "trainer",
+          "text": "def fit_model_mmd(\n    sequences: np.ndarray,\n    targets: np.ndarray,\n    rows: list[dict[str, Any]],\n    cfg: dict[str, Any],\n    seed: int,\n    device_name: str,\n    mmd_lambda: float = DEFAULT_LAMBDA,\n    epochs_override: int | None = None,\n):\n    \"\"\"Fit one source transfer using source-unit subdomain RBF-MMD only.\"\"\"\n    import temporal_tcn_unit_first_source_gate_20261001 as unit_first\n\n    base = centered.b\n    base.seed_all(seed)\n    device = torch.device(device_name)\n    normalized = unit_first.append_unit_first(np.asarray(sequences, dtype=np.float32), rows)\n    tmax = max(float(row.get(\"t_end\", 0.0)) for row in rows)\n    values = torch.from_numpy(np.transpose(normalized, (0, 2, 1)))\n    y = torch.from_numpy(np.asarray(targets, dtype=np.float32).reshape(-1))\n    ages = torch.from_numpy(base._age(rows, tmax))\n    weights = torch.from_numpy(base.unit_weights(rows))\n    domains = torch.from_numpy(source_domain_labels([str(row[\"unit_id\"]) for row in rows]))\n    model = base._build_torch_model(int(normalized.shape[2]), cfg).to(device)\n    optimizer = torch.optim.AdamW(model.parameters(), lr=float(cfg[\"lr\"]), weight_decay=float(cfg[\"weight_decay\"]))\n    generator = torch.Generator().manual_seed(seed)\n    dataset = torch.utils.data.TensorDataset(values, ages, y, weights, domains)\n    loader = torch.utils.data.DataLoader(dataset, batch_size=min(256, len(dataset)), shuffle=True, generator=generator)\n    epochs = int(epochs_override if epochs_override is not None else cfg[\"epochs\"])\n    model.train()\n    for _ in range(max(1, epochs)):\n        for xb, ab, yb, wb, db in loader:\n            optimizer.zero_grad(set_to_none=True)\n            prediction = model(xb.to(device), ab.to(device))\n            fit_loss = torch.nn.functional.l1_loss(prediction, yb.to(device), reduction=\"none\")\n            fit_loss = (fit_loss * wb.to(device)).mean()\n            reps = _representation(model, xb.to(device))\n            domain_values = db.to(device)\n            try:\n                from mmd_source_only import mmd_distance\n                penalty = mmd_distance(reps, domain_values)\n            except ValueError:\n                # A very small source split can produce one-domain batches.\n                # The full source set is checked before training; such a batch\n                # contributes zero rather than leaking a target statistic.\n                penalty = torch.zeros((), dtype=fit_loss.dtype, device=device)\n            loss = fit_loss + float(mmd_lambda) * penalty\n            loss.backward()\n            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)\n            optimizer.step()\n    model.eval()\n    return model, tmax"
+        }
+      ],
+      "id": "F1-LABEL-FLOW-03",
+      "remaining_risk": "No training was executed by this static audit; broader data-generation assumptions remain separately reviewable.",
+      "status": "STATIC_SOURCE_CHECK_PASS"
+    },
+    {
+      "conclusion": "The control calls the fixed-epoch MLP imported from the leave-one-orbit module. The distinct base.fit_mlp function with Xva/yva early stopping is not the function called here.",
+      "evidence": [
+        {
+          "first_line": 99,
+          "function": "fit_predict_fixed",
+          "last_line": 130,
+          "source": "control",
+          "text": "def fit_predict_fixed(data: dict, component: str, train: np.ndarray, valid: np.ndarray, candidate: dict, device_name: str, return_prediction: bool = False):\n    import torch\n    from sklearn.ensemble import HistGradientBoostingRegressor\n\n    rows = data[\"rows\"]\n    train_rows = [rows[i] for i in np.flatnonzero(train)]\n    valid_rows = [rows[i] for i in np.flatnonzero(valid)]\n    x_train, x_valid = data[\"x\"][train], data[\"x\"][valid]\n    y_train = data[\"y\"][train] / data[\"rmax\"]\n    feature_kind = base.HGB[component][\"feature\"]\n    h_train = base.flat(x_train) if feature_kind == \"flat\" else base.stats_v1(x_train)\n    h_valid = base.flat(x_valid) if feature_kind == \"flat\" else base.stats_v1(x_valid)\n    hcfg = base.HGB[component]\n    hgb = HistGradientBoostingRegressor(max_iter=hcfg[\"max_iter\"], learning_rate=hcfg[\"learning_rate\"], max_leaf_nodes=hcfg[\"max_leaf_nodes\"], min_samples_leaf=hcfg[\"min_samples_leaf\"], l2_regularization=hcfg[\"l2_regularization\"], random_state=17)\n    hgb.fit(h_train, y_train)\n    h_pred = np.asarray(hgb.predict(h_valid), dtype=np.float32)\n    tmax = max(float(row.get(\"t_end\", 0.0)) for row in train_rows)\n    age_train = torch.from_numpy(base.stats_age(x_train, train_rows, tmax))\n    age_valid = torch.from_numpy(base.stats_age(x_valid, valid_rows, tmax))\n    target = torch.from_numpy(y_train.astype(np.float32))\n    models = [\n        fit_mlp(age_train, target, base.MLP[component], seed, candidate[\"mlp_epochs\"], device_name)\n        for seed in SEEDS\n    ]\n    mlp_pred = predict_members(models, age_valid, candidate[\"aggregation\"], device_name)\n    projected = base.project(segmented(h_pred, mlp_pred, valid_rows, candidate), valid_rows, candidate[\"postprocess\"])\n    metrics = base.metrics(projected, data[\"y\"][valid] / data[\"rmax\"], data[\"rmax\"], valid_rows)\n    residual = np.asarray(projected, dtype=np.float64) - np.asarray(data[\"y\"][valid] / data[\"rmax\"], dtype=np.float64)\n    diagnostics = {\"train_windows\": int(train.sum()), \"valid_windows\": int(valid.sum()), \"train_units\": len({str(r[\"unit_id\"]) for r in train_rows}), \"valid_units\": len({str(r[\"unit_id\"]) for r in valid_rows}), \"tmax\": float(tmax), \"seeds\": list(SEEDS), \"aggregation\": candidate[\"aggregation\"]}\n    if return_prediction:\n        return metrics, residual, diagnostics, np.asarray(projected, dtype=np.float32)\n    return metrics, residual, diagnostics"
+        },
+        {
+          "first_line": 79,
+          "function": "fit_mlp",
+          "last_line": 110,
+          "source": "fixed_mlp",
+          "text": "def fit_mlp(X, y, cfg: dict, seed: int, epochs: int, device_name: str):\n    import torch\n    from torch import nn\n\n    seed_all(seed)\n    device = torch.device(device_name)\n    layers = []\n    dim = X.shape[1]\n    for width in cfg[\"hidden\"]:\n        layers.extend([nn.Linear(dim, width), nn.LayerNorm(width), nn.SiLU(), nn.Dropout(cfg[\"dropout\"])])\n        dim = width\n    layers.append(nn.Linear(dim, 1))\n    model = nn.Sequential(*layers).to(device)\n    opt = torch.optim.AdamW(model.parameters(), lr=cfg[\"lr\"], weight_decay=cfg[\"weight_decay\"])\n    loader = torch.utils.data.DataLoader(\n        torch.utils.data.TensorDataset(X, y),\n        batch_size=256,\n        shuffle=True,\n        generator=torch.Generator().manual_seed(seed),\n    )\n    for _ in range(max(1, int(epochs))):\n        model.train()\n        for xb, yb in loader:\n            opt.zero_grad(set_to_none=True)\n            out = model(xb.to(device)).reshape(-1)\n            loss = torch.nn.functional.smooth_l1_loss(out, yb.to(device))\n            loss.backward()\n            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)\n            opt.step()\n    model.eval()\n    with torch.no_grad():\n        return model"
+        },
+        {
+          "first_line": 143,
+          "function": "fit_mlp",
+          "last_line": 173,
+          "source": "base",
+          "text": "def fit_mlp(Xtr, ytr, Xva, yva, cfg: dict, seed: int, device_name: str):\n    import torch\n    from torch import nn\n    seed_all(seed)\n    device = torch.device(device_name)\n    layers = []; dim = Xtr.shape[1]\n    for width in cfg[\"hidden\"]:\n        layers.extend([nn.Linear(dim, width), nn.LayerNorm(width), nn.SiLU(), nn.Dropout(cfg[\"dropout\"])])\n        dim = width\n    layers.append(nn.Linear(dim, 1)); model = nn.Sequential(*layers).to(device)\n    opt = torch.optim.AdamW(model.parameters(), lr=cfg[\"lr\"], weight_decay=cfg[\"weight_decay\"])\n    loader = torch.utils.data.DataLoader(torch.utils.data.TensorDataset(Xtr, ytr), batch_size=256, shuffle=True, generator=torch.Generator().manual_seed(seed))\n    best, best_state, stale, selected_epoch = float(\"inf\"), None, 0, 0\n    for epoch in range(1, 301):\n        model.train()\n        for xb, yb in loader:\n            opt.zero_grad(set_to_none=True); out = model(xb.to(device)).reshape(-1)\n            loss = torch.nn.functional.smooth_l1_loss(out, yb.to(device)); loss.backward()\n            torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0); opt.step()\n        model.eval()\n        with torch.no_grad(): vp = model(Xva.to(device)).reshape(-1).cpu()\n        val_loss = float(torch.nn.functional.smooth_l1_loss(vp, yva))\n        if val_loss < best - 1e-6:\n            best, stale, selected_epoch = val_loss, 0, epoch\n            best_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}\n        else:\n            stale += 1\n        if stale >= 20: break\n    model.load_state_dict(best_state); model.eval()\n    with torch.no_grad(): pred = model(Xva.to(device)).reshape(-1).cpu().numpy()\n    return pred, selected_epoch"
+        }
+      ],
+      "id": "F1-LABEL-FLOW-04",
+      "remaining_risk": "Import order, frozen dependency bytes and runtime selection remain part of the terminal verification.",
+      "status": "STATIC_SOURCE_CHECK_PASS"
+    },
+    {
+      "conclusion": "The control trains HGB/MLP on y_train. It reads final labels to compute metrics and residuals after projected predictions; those labels are not inputs to its training or epoch selection.",
+      "evidence": [
+        {
+          "first_line": 99,
+          "function": "fit_predict_fixed",
+          "last_line": 130,
+          "source": "control",
+          "text": "def fit_predict_fixed(data: dict, component: str, train: np.ndarray, valid: np.ndarray, candidate: dict, device_name: str, return_prediction: bool = False):\n    import torch\n    from sklearn.ensemble import HistGradientBoostingRegressor\n\n    rows = data[\"rows\"]\n    train_rows = [rows[i] for i in np.flatnonzero(train)]\n    valid_rows = [rows[i] for i in np.flatnonzero(valid)]\n    x_train, x_valid = data[\"x\"][train], data[\"x\"][valid]\n    y_train = data[\"y\"][train] / data[\"rmax\"]\n    feature_kind = base.HGB[component][\"feature\"]\n    h_train = base.flat(x_train) if feature_kind == \"flat\" else base.stats_v1(x_train)\n    h_valid = base.flat(x_valid) if feature_kind == \"flat\" else base.stats_v1(x_valid)\n    hcfg = base.HGB[component]\n    hgb = HistGradientBoostingRegressor(max_iter=hcfg[\"max_iter\"], learning_rate=hcfg[\"learning_rate\"], max_leaf_nodes=hcfg[\"max_leaf_nodes\"], min_samples_leaf=hcfg[\"min_samples_leaf\"], l2_regularization=hcfg[\"l2_regularization\"], random_state=17)\n    hgb.fit(h_train, y_train)\n    h_pred = np.asarray(hgb.predict(h_valid), dtype=np.float32)\n    tmax = max(float(row.get(\"t_end\", 0.0)) for row in train_rows)\n    age_train = torch.from_numpy(base.stats_age(x_train, train_rows, tmax))\n    age_valid = torch.from_numpy(base.stats_age(x_valid, valid_rows, tmax))\n    target = torch.from_numpy(y_train.astype(np.float32))\n    models = [\n        fit_mlp(age_train, target, base.MLP[component], seed, candidate[\"mlp_epochs\"], device_name)\n        for seed in SEEDS\n    ]\n    mlp_pred = predict_members(models, age_valid, candidate[\"aggregation\"], device_name)\n    projected = base.project(segmented(h_pred, mlp_pred, valid_rows, candidate), valid_rows, candidate[\"postprocess\"])\n    metrics = base.metrics(projected, data[\"y\"][valid] / data[\"rmax\"], data[\"rmax\"], valid_rows)\n    residual = np.asarray(projected, dtype=np.float64) - np.asarray(data[\"y\"][valid] / data[\"rmax\"], dtype=np.float64)\n    diagnostics = {\"train_windows\": int(train.sum()), \"valid_windows\": int(valid.sum()), \"train_units\": len({str(r[\"unit_id\"]) for r in train_rows}), \"valid_units\": len({str(r[\"unit_id\"]) for r in valid_rows}), \"tmax\": float(tmax), \"seeds\": list(SEEDS), \"aggregation\": candidate[\"aggregation\"]}\n    if return_prediction:\n        return metrics, residual, diagnostics, np.asarray(projected, dtype=np.float32)\n    return metrics, residual, diagnostics"
+        },
+        {
+          "first_line": 127,
+          "function": "segmented",
+          "last_line": 130,
+          "source": "fixed_mlp",
+          "text": "def segmented(hgb: np.ndarray, mlp: np.ndarray, rows: list[dict], cfg: dict) -> np.ndarray:\n    age = np.asarray([float(r.get(\"t_end\", 0.0)) for r in rows], dtype=np.float32)\n    weight = np.where(age <= cfg[\"threshold\"], cfg[\"low_mlp_weight\"], cfg[\"high_mlp_weight\"])\n    return (weight * mlp + (1.0 - weight) * hgb).astype(np.float32)"
+        },
+        {
+          "first_line": 97,
+          "function": "project",
+          "last_line": 114,
+          "source": "base",
+          "text": "def project(pred: np.ndarray, rows: list[dict], mode: str) -> np.ndarray:\n    if mode == \"raw\":\n        return np.asarray(pred, dtype=np.float32)\n    out = np.asarray(pred, dtype=np.float32).copy()\n    by_unit: dict[str, list[int]] = {}\n    for i, row in enumerate(rows):\n        by_unit.setdefault(str(row.get(\"unit_id\", \"\")), []).append(i)\n    for idx in by_unit.values():\n        order = sorted(idx, key=lambda i: float(rows[i].get(\"t_end\", i)))\n        if mode == \"isotonic_nonincreasing\":\n            out[order] = np.clip(pava(out[order]), 0.0, 1.0)\n        elif mode == \"causal_running_min\":\n            running = 1.0\n            for i in order:\n                running = min(running, float(out[i])); out[i] = running\n        else:\n            raise ValueError(mode)\n    return out"
+        }
+      ],
+      "id": "F1-LABEL-FLOW-05",
+      "remaining_risk": "HGB may use its own source-only internal validation; this audit does not claim every kind of early stopping is disabled.",
+      "status": "STATIC_SOURCE_CHECK_PASS"
+    },
+    {
+      "conclusion": "The control configuration is copied from fixed component candidates with median3 aggregation, without final-metric-based route search.",
+      "evidence": [
+        {
+          "first_line": 33,
+          "function": "reference_control_candidate",
+          "last_line": 37,
+          "source": "route",
+          "text": "def reference_control_candidate(segmented, component: str) -> dict:\n    \"\"\"Bind formal controls to the aggregation used by the frozen reference.\"\"\"\n    candidate = dict(segmented.CANDIDATES[component])\n    candidate[\"aggregation\"] = \"median3\"\n    return candidate"
+        },
+        {
+          "first_line": 532,
+          "function": "evaluate",
+          "last_line": 657,
+          "source": "evaluator",
+          "text": "def evaluate(args: argparse.Namespace) -> int:\n    import numpy as np\n    import torch\n    import yaml\n\n    root = args.root.resolve()\n    output = args.output.resolve()\n    manifest, partition_path, holdout_rows, label_claim = final_access_preflight(args)\n    append_event(output / \"events\", \"final_label_access_started\", {\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"reason\": \"one-time construction of evaluation-only holdout tensors\",\n        \"candidate_or_route_mutation_allowed\": False,\n        \"global_label_access_guard\": label_claim,\n    })\n    sys.path.insert(0, str(root))\n    centered, global_inner, fallback, segmented, loader = import_project_modules(root)\n    centered.b.CONFIG_CURRENT = centered.b.CONFIG\n    centered.b.fit_source_predictions = centered.fit_source_predictions_centered\n    old_data = {component: loader.load_component(root, component) for component in COMPONENTS}\n    results = {}\n    payloads = {}\n    for component in COMPONENTS:\n        config_path = root / f\"configs/preprocess/{component}_target.yaml\"\n        norm_path = root / f\"data/processed/norm_stats/{component}_target.json\"\n        config = yaml.safe_load(config_path.read_text(encoding=\"utf-8\"))\n        norm_doc = read_json(norm_path)\n        payload = build_raw_holdout_payload(root, component, config, norm_doc, holdout_rows, partition_path)\n        payloads[component] = payload\n        old = old_data[component]\n        n_old = len(old[\"rows\"])\n        n_final = len(payload[\"rows\"])\n        combined = {\n            \"x\": np.concatenate([old[\"x\"], payload[\"x\"]], axis=0),\n            \"y\": np.concatenate([old[\"y\"], payload[\"y\"]], axis=0),\n            \"rows\": list(old[\"rows\"]) + list(payload[\"rows\"]),\n            \"rmax\": float(old[\"rmax\"]),\n            \"path\": old[\"path\"],\n        }\n        if float(payload[\"rmax\"]) != float(old[\"rmax\"]):\n            raise RuntimeError(f\"rmax drift for {component}\")\n        train = np.zeros(n_old + n_final, dtype=bool)\n        train[:n_old] = True\n        valid = ~train\n        control_candidate = global_inner.reference_control_candidate(segmented, component)\n        candidate_prediction = fallback.fit_tcn_formal(\n            combined, component, train, valid, args.device\n        )\n        control = segmented.fit_predict_fixed(\n            combined, component, train, valid, control_candidate, args.device,\n            return_prediction=True,\n        )[3]\n        final_rows = list(payload[\"rows\"])\n        route = manifest[\"candidate\"][\"selected_routes\"][component]\n        alpha_by_target = route[\"alpha_by_target\"]\n        alpha = np.asarray([\n            float(alpha_by_target[str(row[\"unit_id\"]).split(\"_\")[1]]) for row in final_rows\n        ], dtype=np.float32)\n        blended = alpha * np.asarray(candidate_prediction, dtype=np.float32) + (1.0 - alpha) * np.asarray(control, dtype=np.float32)\n        prediction = centered.b.project(blended, final_rows, centered.b.CONFIG[component][\"postprocess\"])\n        metrics = centered.b.metrics(prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                     float(payload[\"rmax\"]), final_rows)\n        control_metrics = centered.b.metrics(control, payload[\"y\"] / float(payload[\"rmax\"]),\n                                             float(payload[\"rmax\"]), final_rows)\n        candidate_metrics = centered.b.metrics(candidate_prediction, payload[\"y\"] / float(payload[\"rmax\"]),\n                                               float(payload[\"rmax\"]), final_rows)\n        results[component] = {\n            \"route\": route,\n            \"n_windows\": n_final,\n            \"n_units\": len(payload[\"units\"]),\n            \"unit_window_counts\": payload[\"units\"],\n            \"metrics\": metrics,\n            \"candidate_only_metrics\": candidate_metrics,\n            \"control_only_metrics\": control_metrics,\n            \"candidate_control_blend\": \"alpha*unit-first-residual-centered-TCN + (1-alpha)*frozen HGB/MLP control; final unit projection applied once\",\n        }\n        payload_path = output / f\"final_{component}_payload.pt\"\n        torch.save({\"x\": torch.from_numpy(payload[\"x\"]), \"y_rul\": torch.from_numpy(payload[\"y\"]),\n                    \"meta\": {\"channels\": payload[\"channels\"], \"rmax\": payload[\"rmax\"],\n                             \"index\": payload[\"rows\"], \"split\": \"holdout\"}}, payload_path)\n        results[component][\"payload_path\"] = payload_path.name\n        results[component][\"payload_sha256\"] = sha256_file(payload_path)\n        from f1_paired_predictions_20261018 import write_paired_predictions\n        results[component][\"paired_predictions\"] = write_paired_predictions(\n            output, component, final_rows, truth_rul=payload[\"y\"], rmax=payload[\"rmax\"],\n            candidate=candidate_prediction, control=control, alpha=alpha, blended=blended,\n            projected=prediction, payload_sha256=results[component][\"payload_sha256\"],\n            seed_raw_predictions=combined.get(\"_candidate_per_seed_raw\"),\n            seeds=centered.b.SEEDS if \"_candidate_per_seed_raw\" in combined else None)\n        results[component][\"training_diagnostics\"] = combined.get(\"formal_training_diagnostics\")\n    final_receipt = {\n        \"schema\": \"brphm-f1-clean-final-evaluation-v1\",\n        \"created_utc\": now_utc(),\n        \"freeze_manifest_sha256\": sha256_file(output / \"freeze_manifest.json\"),\n        \"selection_decision_sha256\": sha256_file(output / \"selection_decision.json\"),\n        \"evaluation\": \"exactly_once_after_freeze\",\n        \"label_access_event\": \"final_label_access_started\",\n        \"global_label_access_guard\": label_claim,\n        \"candidate_id\": manifest[\"candidate\"][\"method_id\"],\n        \"outer_reuse_disposition\": \"all_old_outer_results_development_or_diagnostic_only\",\n        \"training\": {\n            \"data\": {component: {\"path\": f\"data/processed/{component}_target.pt\",\n                                  \"sha256\": manifest[\"training\"][\"tensor_hashes\"][component]}\n                     for component in COMPONENTS},\n            \"holdout_used_for_training_or_selection\": False,\n        },\n        \"holdout\": {\n            \"manifest_sha256\": manifest[\"final_partition\"][\"manifest\"][\"sha256\"],\n            \"units\": manifest[\"final_partition\"][\"n_units\"],\n            \"raw_files_hash_bound\": True,\n        },\n        \"results\": results,\n        \"runtime\": {\"python\": sys.version, \"platform\": platform.platform(),\n                    \"packages\": package_versions(), \"device\": args.device},\n        \"mutation\": {\"canonical_project_modified\": False, \"competition_line_modified\": False,\n                      \"sealed_read\": False, \"a1_b1_read\": False, \"holdout_written\": False},\n    }\n    receipt_hash = write_new(output / \"final_receipt.json\", final_receipt)\n    append_event(output / \"events\", \"final_evaluation_completed\", {\n        \"final_receipt_sha256\": receipt_hash,\n        \"candidate_route_unchanged\": True,\n        \"final_metrics_used_for_selection\": False,\n        \"final_metrics_used_for_paper_decision\": False,\n    })\n    print(json.dumps({\"status\": \"evaluated\", \"receipt_sha256\": receipt_hash,\n                      \"results\": results}, ensure_ascii=True))\n    return 0"
+        }
+      ],
+      "id": "F1-LABEL-FLOW-06",
+      "remaining_risk": "Earlier outer and LEO800 feedback affected the development history; this narrow final execution review does not relabel that history as source-only.",
+      "status": "STATIC_SOURCE_CHECK_PASS"
+    }
+  ],
+  "limitations": [
+    "Not a whole-program information-flow proof.",
+    "Cannot prove historical absence of access or independent ownership of all logs.",
+    "Does not establish scientific or practical superiority.",
+    "No final arrays are decoded or performance results inspected."
+  ],
+  "mat_tensor_or_prediction_arrays_decoded": false,
+  "protocol": {
+    "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\F1_LEO900_FINAL_CONTINUATION_PROTOCOL_20261018R1.json",
+    "sha256": "a499b2bbf894a76c2788ed069105f5dd7694160d34f626a5d90f41464586ec3a"
+  },
+  "real_final_labels_read": false,
+  "research_code_imported": false,
+  "schema": "brphm-f1-registered-training-label-flow-review-v1",
+  "scientific_success_claimed": false,
+  "scope": "Registered LEO900 final evaluator, TCN source-fit adapter/trainer and HGB/MLP control path.",
+  "script_sha256": "e39f8a2cdb21906bb9e648346c04a2d8c0d45d441ebba908ea396d06b6f671f5",
+  "sources": {
+    "adapter": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_leo900_plain_l1_clean_final_test_20261018_r1.py",
+      "registered_bindings": [
+        {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/execution_amendments/20261018_r1/release/f1_audit_20261010/f1_leo900_plain_l1_clean_final_test_20261018_r1.py",
+          "sha256": "1c78f1c068f21c28be3442593b2a740e3a3775bc87a09bc7e76bad0e355f85f3",
+          "size": 9970
+        }
+      ],
+      "sha256": "1c78f1c068f21c28be3442593b2a740e3a3775bc87a09bc7e76bad0e355f85f3",
+      "size": 9970
+    },
+    "base": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_component_blend_refinement_20260824.py",
+      "registered_bindings": [
+        {
+          "path": "work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_component_blend_refinement_20260824.py",
+          "sha256": "f72b8abe51610c3cd836461a6c3de95e329e6fe2e1d8c9f83165424895da0020",
+          "size": 15203
+        }
+      ],
+      "sha256": "f72b8abe51610c3cd836461a6c3de95e329e6fe2e1d8c9f83165424895da0020",
+      "size": 15203
+    },
+    "calibration": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_source_trainer_20261018\\calibration_source_only.py",
+      "registered_bindings": [
+        {
+          "parent_manifest": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json",
+          "parent_manifest_sha256": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+          "path": "leo900_source_trainer_20261018/calibration_source_only.py",
+          "sha256": "2f156835e0d6d2847a562f4c335eb425873f8448b8896d388ee1e023a784ac59",
+          "size": 1036
+        }
+      ],
+      "sha256": "2f156835e0d6d2847a562f4c335eb425873f8448b8896d388ee1e023a784ac59",
+      "size": 1036
+    },
+    "control": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_segmented_hgb_mlp_source_gate_20260929.py",
+      "registered_bindings": [
+        {
+          "path": "work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_segmented_hgb_mlp_source_gate_20260929.py",
+          "sha256": "658b99fecc31689ef624e0726b330b07bccf377ce7f0977d1814331a728f6bf7",
+          "size": 15497
+        }
+      ],
+      "sha256": "658b99fecc31689ef624e0726b330b07bccf377ce7f0977d1814331a728f6bf7",
+      "size": 15497
+    },
+    "evaluator": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_clean_final_test_20261018_v3.py",
+      "registered_bindings": [
+        {
+          "parent_manifest": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json",
+          "parent_manifest_sha256": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+          "path": "f1_clean_final_test_20261018_v3.py",
+          "sha256": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+          "size": 33908
+        }
+      ],
+      "sha256": "5fa91d9a00008fbeb69ba225f57d6163027ecc807a26b111bd97d7f0da9f0f57",
+      "size": 33908
+    },
+    "fixed_mlp": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\paper_artifacts_20261018r91\\paper_reproduction_20261018r91.tar.gz::revision_20261018r91/audit/f7/host_longrun_20261015/work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_leave_one_orbit_out_generalization_20260825.py",
+      "registered_bindings": [
+        {
+          "path": "work/rul_segmented_hgb_mlp_source_gate_20260929/scripts/research/run_leave_one_orbit_out_generalization_20260825.py",
+          "sha256": "0755aba7575097e60fa584ad645d53962667230c7f7e282474363173f6171b11",
+          "size": 10561
+        }
+      ],
+      "sha256": "0755aba7575097e60fa584ad645d53962667230c7f7e282474363173f6171b11",
+      "size": 10561
+    },
+    "route": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\source_bindings\\temporal_tcn_global_inner_route_source_gate.py",
+      "registered_bindings": [
+        {
+          "path": "work/rul_next_electrochemical/temporal_tcn_global_inner_route_source_gate.py",
+          "sha256": "9f82f37eb8bc02eb670de4062d4102d7aa33f8cc0ce458fd32e8ce917c6d0749",
+          "size": 11179
+        }
+      ],
+      "sha256": "9f82f37eb8bc02eb670de4062d4102d7aa33f8cc0ce458fd32e8ce917c6d0749",
+      "size": 11179
+    },
+    "trainer": {
+      "location": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_source_trainer_20261018\\run_l1_mmd_source_only_20261015.py",
+      "registered_bindings": [
+        {
+          "parent_manifest": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\F1_LEO900_EXECUTION_AMENDMENT_20261018R1.json",
+          "parent_manifest_sha256": "50e43a0e342799976841da57116bacf09502855f27b116077826bed5b96de8f2",
+          "path": "leo900_source_trainer_20261018/run_l1_mmd_source_only_20261015.py",
+          "sha256": "4718889b61d75c70ff130da3e41b795ac4229af9cc1b60060049075d385b6b88",
+          "size": 19558
+        }
+      ],
+      "sha256": "4718889b61d75c70ff130da3e41b795ac4229af9cc1b60060049075d385b6b88",
+      "size": 19558
+    }
+  },
+  "status": "STATIC_REVIEW_CHECKS_PASS",
+  "training_or_evaluation_invoked": false
+}

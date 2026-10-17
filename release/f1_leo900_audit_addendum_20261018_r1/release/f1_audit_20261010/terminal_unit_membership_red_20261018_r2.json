@@ -1,0 +1,22 @@
+{
+  "code_sha256": {
+    "leo900_terminal_evidence_20261018.py": "f565bb1feeab8b963c124f1490a7b5de33d4bd8794ed400d839843e01304ad8e",
+    "test_leo900_terminal_evidence_20261018_r2.py": "0bb1b3a5eb7bada1511b2431ca8d3dcd67fc1e1406409385e41bd194b14350b1"
+  },
+  "command": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_zero_window_generated_units_are_distinct_from_evaluated_units"
+  ],
+  "ended_utc": "2026-10-17T20:33:37.355764+00:00",
+  "exit_code": 1,
+  "real_final_labels_read": false,
+  "schema": "brphm-f1-terminal-unit-membership-red-v1",
+  "started_utc": "2026-10-17T20:33:27.543630+00:00",
+  "stderr": "test_zero_window_generated_units_are_distinct_from_evaluated_units (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_zero_window_generated_units_are_distinct_from_evaluated_units) ... ERROR\n\n======================================================================\nERROR: test_zero_window_generated_units_are_distinct_from_evaluated_units (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_zero_window_generated_units_are_distinct_from_evaluated_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_terminal_evidence_20261018_r2.py\", line 455, in test_zero_window_generated_units_are_distinct_from_evaluated_units\n    report = self.fixture.run()\n             ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_terminal_evidence_20261018_r2.py\", line 433, in run\n    return audit.audit(self.root, self.root / 'publication.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_terminal_evidence_20261018.py\", line 407, in audit\n    require(item.get('route') == routes[c] and item.get('n_units') == 48\n  File \"C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_terminal_evidence_20261018.py\", line 53, in require\n    raise EvidenceError(message)\nleo900_terminal_evidence_20261018.EvidenceError: final component route/count mismatch\n\n----------------------------------------------------------------------\nRan 1 test in 8.651s\n\nFAILED (errors=1)\n",
+  "stdout": "",
+  "synthetic_only": true
+}

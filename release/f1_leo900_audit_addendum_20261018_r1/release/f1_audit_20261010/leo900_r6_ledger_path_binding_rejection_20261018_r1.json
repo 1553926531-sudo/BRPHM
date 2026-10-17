@@ -1,0 +1,16 @@
+{
+  "schema": "brphm-f1-ledger-path-binding-rejection-v1",
+  "recorded_utc": "2026-10-17T20:17:56Z",
+  "command": ["python", "-B", "release/f1_audit_20261010/append_f1_leo900_preflight_r6_20261018.py"],
+  "script_sha256": "5178920d709c7fe12f8f8cc197c2f4631668c550ef8b592a18ca12f73a80a8b4",
+  "exit_code": 1,
+  "stage": "In-memory evidence-reference validation before ledger creation",
+  "exception": "AssertionError: registered_inputs/evidence/formal_candidate_receipt.json",
+  "cause": "The helper resolved package registered_inputs relative to the audit directory instead of the fixed pre-final package directory.",
+  "correction": "Resolve registered_inputs through release/f1_leo900_pre_final_commitment_20261018_r1; retain exact file hashes and existing immutable package bytes.",
+  "r6_outputs_created": false,
+  "real_final_labels_read": false,
+  "fixed_package_or_research_code_modified": false,
+  "remote_access_or_writes": false,
+  "timestamp_limit": "Observation time when the failed tool result was recorded; not an instrumented subprocess start/end time."
+}

@@ -1,0 +1,274 @@
+{
+  "anchors_sha256": {
+    "evidence/candidate_preregistration.json": "254682f4f3b45d7c6469c56bfdb4972f43ab8f1da28774742326112387395830",
+    "evidence/candidate_snapshot.json": "e19b830846c2d78c63cfc5daa10150e7fb2ab020e58667c9ac5a480dbb73716c",
+    "evidence/formal_candidate_receipt.json": "2435584266069cf87cf3333c63633c317af6f9ab55406033d872bfc7b5c608bd",
+    "evidence/partition_plan.json": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+    "evidence/preparation_attempt_history.json": "8a2eebc431c68acd4866bb4ea39c10ee931446f95451a17860a755756135128b",
+    "evidence/preparation_manifest.json": "a683191622ed3fc5546f86ccd0c8e8ba59cdddefe953719bc81523dac57c3e92",
+    "evidence/preparation_postflight_verification.json": "942962894165a97e2a9ec9a2d569a493ab56ac75be92a159b496a9abbbb26a3a",
+    "evidence/simulation_schedule.json": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+    "evidence/source_manifest_snapshot.csv": "93710e01e18684e6296d52c4ae8ea98491841440db8f2b9798e0139901fccbc8",
+    "evidence/source_receipt.json": "b55ac35dc6fcee534f6d72f55d2bc35ed9568a407002a8417a252bac91128aca",
+    "evidence/source_route_replay_certificate.json": "d232448e1a8e9b8bf727a982df0e72ea235e9519271534ddfe1f038046cd0f51",
+    "evidence/template_exclusion_manifest.json": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3",
+    "project/sim/logs/manifest.csv": "413ba7b8ff2ec24e71b5bd7e28a282a0c7ded8a3af736c91a2561d1b8e81d37c",
+    "project/sim/logs/new_orbit_source_card_manifest.json": "566db6688c1e33718c622856c1c4210039e77e0a8e8674ec3e8c6c58137ee385"
+  },
+  "boundaries": {
+    "brphm_preview_access": false,
+    "candidate_or_route_modified": false,
+    "github_push": false,
+    "ieee_upload_or_contact": false,
+    "modelscope_write": false,
+    "real_final_label_or_mat_content_read_this_preflight": false,
+    "real_freeze_or_evaluate_invoked": false,
+    "simulation_modified": false
+  },
+  "created_utc": "2026-10-17T18:56:30.431930+00:00",
+  "findings": [
+    {
+      "command": "Read cited review and ledgers; verify registered partition and no-final-label execution chain.",
+      "confidence": "High for the directly reproduced code defect and local/remote byte bindings; timestamp and no-read statements are self-recorded, not third-party attestations.",
+      "cross_validation": "Review contradiction and recorded candidate/failure chronology agree; new final chain must be checked separately.",
+      "evidence": [
+        "review_report",
+        "F1_EVIDENCE_LEDGER_20261017.md",
+        "F1_CURRENT_EVIDENCE_LEDGER_20261012.md",
+        "leo900_partition_plan_20261017.json"
+      ],
+      "finding": "F1",
+      "id": "F1-LEO900-01",
+      "location": "Review F1; historic outer sequence; earlier F1 ledgers",
+      "modification": "Keep historic outer and LEO800 results as development/diagnostic evidence. Continue the registered untouched LEO900 96-unit experiment. This additive ledger supersedes any earlier implication that the current F1 task is closed.",
+      "original": "Candidate selection never reads outer labels; successive outer failure counts 5,4,3,1,3,0.",
+      "problem": "Historic outer outcomes informed continuation and candidate/route development; the older bounded LEO600 acceptance wording is not the current completion criterion.",
+      "remaining_risk": "Current clean-final confirmation and its gate have not yet been executed; old timestamps are not externally notarized.",
+      "result": "Candidate/route selection input=true; candidate continuation input=true; source-route ranking input=false for old outer results. No new success claim.",
+      "source_date": "2026-10-18 Asia/Shanghai; raw observations use UTC",
+      "status": "OPEN: clean final experiment in progress"
+    },
+    {
+      "command": "python -B -X utf8 release/f1_audit_20261010/deploy_f1_raw_payload_checks_20261018.py; then python -B -X utf8 release/f1_audit_20261010/deploy_leo900_channel_policy_20261018_r4.py --attempt r4a",
+      "confidence": "High for the directly reproduced code defect and local/remote byte bindings; timestamp and no-read statements are self-recorded, not third-party attestations.",
+      "cross_validation": "Frozen YAML and existing public imputation branch establish intended behavior; independent synthetic MAT/NumPy oracle verifies conversion, endpoint label, audit counts, strict/unknown policy, and unchanged finite cells. All 14 anchors match before/after; parent R3 verification passes.",
+      "evidence": [
+        "leo900_raw_payload_checks_r1_20261017T184448Z.json",
+        "leo900_channel_policy_deployment_r4a_20261017T185207Z.json",
+        "f1_leo900_channel_policy_clean_final_test_20261018_r4.py",
+        "leo900_channel_policy_20261018_r4.py",
+        "leo900_preprocess_source_snapshot_20261017T183744Z/src/datasets/preprocess.py",
+        "leo900_preprocess_source_snapshot_20261017T183744Z/configs/preprocess/rwa_target.yaml"
+      ],
+      "finding": "F1",
+      "id": "F1-LEO900-02",
+      "location": "Old evaluator build_raw_holdout_payload; frozen rwa_target.yaml:47; preprocess.py _bin_aggregate_rwa and normalize",
+      "modification": "Add R4 wrapper honoring the frozen policy: replace normalized non-finite x cells by zero (frozen training mean); preserve finite float32 bit patterns and all labels/identities. Do not rebuild old training tensors or fit final-data statistics.",
+      "original": "channels_policy: impute_mean; retained singleton endpoint std values become NaN under ddof=1.",
+      "problem": "The evaluator applied normalization but omitted the frozen imputation step. Original target preprocessing branch also omits it; this ledger does not claim that branch is correct.",
+      "remaining_risk": "A synthetic conversion check establishes implementation behavior; it does not establish final-data performance. Real per-channel/unit imputation counts will be saved in the single evaluation receipt.",
+      "result": "RED: 12 tests, 1 failure, 0 errors. GREEN on Rack: 11 entry/helper checks and 15 synthetic-MAT integration checks pass; zero skips/errors/failures. Exactly three singleton std cells imputed in the artificial RWA endpoint case.",
+      "source_date": "2026-10-18 Asia/Shanghai; raw observations use UTC",
+      "status": "IMPLEMENTATION CORRECTED AND REGISTERED BEFORE FINAL ACCESS"
+    },
+    {
+      "command": "python -B -X utf8 release/f1_audit_20261010/capture_leo900_metadata_20261018.py; registered sealer --run-root RUN --output NEW_DIRECT_CHILD only after completion",
+      "confidence": "High for the directly reproduced code defect and local/remote byte bindings; timestamp and no-read statements are self-recorded, not third-party attestations.",
+      "cross_validation": "Process metadata plus filesystem counts plus simulation log metadata; no MAT variable decoding. Sealer verified against missing,extra,symlink,hardlink,config-drift and completion-log fixtures.",
+      "evidence": [
+        "leo900_metadata_sealer_remote_checks_20261017T183745Z.json",
+        "leo900_generation_metadata_20261017T185424Z.json",
+        "leo900_metadata_sealer_20261018.py",
+        "leo900_partition_plan_20261017.json",
+        "leo900_simulation_schedule_20261017.json"
+      ],
+      "finding": "F1",
+      "id": "F1-LEO900-03",
+      "location": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_sealer_support_20261018_r1",
+      "modification": "Use already tested metadata-only sealer after job completion; enforce full membership, status0,96 successes,no skips/failures,config/input hashes,exclusive output,and streaming raw hashes only.",
+      "original": "96 registered LEO900 units: BAT48/RWA48, beta 0/30/60 with 16 per component-beta cell.",
+      "problem": "Incomplete generation must never be sealed or evaluated. Raw contents must remain unread before final access.",
+      "remaining_risk": "The simulation remains active. Worker liveness does not prove completion or final-unit eligibility; full gate must wait for terminal job evidence.",
+      "result": "Sealer: 26/26 Rack checks pass. Latest observation 2026-10-17T18:54:24.212737+00:00: BAT16/48,RWA0/48; four CPU-active workers; stderr0 bytes; job has no completion receipt yet.",
+      "source_date": "2026-10-18 Asia/Shanghai; raw observations use UTC",
+      "status": "GENERATION ACTIVE; SEAL DEFERRED UNTIL REGISTERED COMPLETION"
+    },
+    {
+      "command": "New postprocessing will consume final_receipt.json and hash-bound same-pass paired_predictions artifacts only; it must not load MAT/tensors/models or retrain.",
+      "confidence": "High for the directly reproduced code defect and local/remote byte bindings; timestamp and no-read statements are self-recorded, not third-party attestations.",
+      "cross_validation": "Original metric and gate source specify comparison arithmetic; forthcoming artificial fixtures will test precision boundaries,unit-cluster pairing and hash drift.",
+      "evidence": [
+        "leo900_channel_policy_deployment_r4a_20261017T185207Z.json",
+        "f1_paired_predictions_20261018.py"
+      ],
+      "finding": "F1",
+      "id": "F1-LEO900-04",
+      "location": "R4 registration; original evaluator paired-prediction output; forthcoming postprocessing",
+      "modification": "Prepare an additive reader of same-pass lossless NPZ/layout/receipt, exact float64 metric/gate recomputation, and paired unit-cluster uncertainty. Preserve original source fit, route, alpha,projection and global once-only guard.",
+      "original": "Gate compares unrounded RMSE/MAE with tolerance 1e-12; three seeds are ensemble constituents.",
+      "problem": "Eight-decimal displays cannot audit the gate; overlapping windows and ensemble constituents cannot be treated as independent repetitions.",
+      "remaining_risk": "Conditional unit uncertainty is not independent orbit-level replication. The LEO900 gate and uncertainty remain to be measured.",
+      "result": "Lossless same-pass writer is already bound; postprocessing tool preparation is the next step. No real final predictions have been read.",
+      "source_date": "2026-10-18 Asia/Shanghai; raw observations use UTC",
+      "status": "IN PREPARATION"
+    }
+  ],
+  "local_artifacts": {
+    "F1_CURRENT_EVIDENCE_LEDGER_20261012.md": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\F1_CURRENT_EVIDENCE_LEDGER_20261012.md",
+      "sha256": "90a1406d254fd02b765a8487b007bf2667bb17aef801bab4db9b2948529a892b",
+      "size": 8319
+    },
+    "F1_EVIDENCE_LEDGER_20261017.md": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\F1_EVIDENCE_LEDGER_20261017.md",
+      "sha256": "820d95cc95eb97353a1b0ea14b8e83079571b6f548e9af4acb4d511a35822558",
+      "size": 25766
+    },
+    "f1_leo900_channel_policy_clean_final_test_20261018_r4.py": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_leo900_channel_policy_clean_final_test_20261018_r4.py",
+      "sha256": "5b8acfe1eccc4f01e1e67ce0ef13f9d6768bb2ae9da152672974c2a7f1cf7a76",
+      "size": 6039
+    },
+    "f1_paired_predictions_20261018.py": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\f1_paired_predictions_20261018.py",
+      "sha256": "15a61e2c4b0221f209e759133dfec5be3f02f39ce73417a6dedd2f0e0c2d983e",
+      "size": 4401
+    },
+    "leo900_channel_policy_20261018_r4.py": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_channel_policy_20261018_r4.py",
+      "sha256": "8ef26ac31b69397d4ce3d9960bee9c212c05d2f732698b575f0de90779c7326e",
+      "size": 2130
+    },
+    "leo900_channel_policy_deployment_r4a_20261017T185207Z.json": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_channel_policy_deployment_r4a_20261017T185207Z.json",
+      "sha256": "ee582e07d0127fe9e04b904308ed2e5d431fe4d2db269d638b3bcdde581816b0",
+      "size": 32636
+    },
+    "leo900_generation_metadata_20261017T185424Z.json": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_generation_metadata_20261017T185424Z.json",
+      "sha256": "e71a9f89634dfdceb5d3dce48a5f0e86a987eb78bb0518ca20e36b142228f3bc",
+      "size": 5490
+    },
+    "leo900_metadata_sealer_20261018.py": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_metadata_sealer_20261018.py",
+      "sha256": "4d29a8a43846812a66d0d1a15c977a935a86ea167e61951e3a6b0a8a255d3e4b",
+      "size": 21136
+    },
+    "leo900_metadata_sealer_remote_checks_20261017T183745Z.json": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_metadata_sealer_remote_checks_20261017T183745Z.json",
+      "sha256": "f924b20ea1d6035c9d1aa63e87067767594c59f87c5975f12fbbf984ac861ca3",
+      "size": 8222
+    },
+    "leo900_partition_plan_20261017.json": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_partition_plan_20261017.json",
+      "sha256": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1",
+      "size": 30018
+    },
+    "leo900_preprocess_source_snapshot_20261017T183744Z/configs/preprocess/rwa_target.yaml": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\configs\\preprocess\\rwa_target.yaml",
+      "sha256": "95d4fc52a5de90a7fb4513fad58d6f6edcb72aa7a2460f1b325940a3e1a76457",
+      "size": 7902
+    },
+    "leo900_preprocess_source_snapshot_20261017T183744Z/src/datasets/preprocess.py": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_preprocess_source_snapshot_20261017T183744Z\\src\\datasets\\preprocess.py",
+      "sha256": "5d6720d486a9c2cb7ef580881462492490b705311a69f7688487d2bda5868463",
+      "size": 282521
+    },
+    "leo900_raw_payload_checks_r1_20261017T184448Z.json": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_raw_payload_checks_r1_20261017T184448Z.json",
+      "sha256": "af10facf65a571f5d5e42788543631e011c2f14a26e6cbd8c93d774f47dc2ba5",
+      "size": 19364
+    },
+    "leo900_simulation_schedule_20261017.json": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_simulation_schedule_20261017.json",
+      "sha256": "2974b0853d54eb123a7e89028da91bbabd181127451b48b9797a594152b8456e",
+      "size": 12457
+    },
+    "review_report": {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-01\\ni-d\\outputs\\IEEE_Review_Report_English.md",
+      "sha256": "9d75bf227ae883552af326352f3586bc23b84ebaf4c73d2a7fa4d1a26cfc8be5",
+      "size": 16146
+    }
+  },
+  "manuscript_and_f2_f10_substantive_edits_frozen": true,
+  "next_actions": [
+    "finish lossless gate and paired unit-cluster tools with artificial-data checks",
+    "continue read-only simulation metadata checks",
+    "after successful completion seal metadata,verify96-unit coverage,freeze via R4 entry,execute exactly once,independently recompute gate and unit statistics",
+    "only after F1 closure resume F2-F10 and manuscript delivery"
+  ],
+  "preserve_prior_evidence": true,
+  "remote_amendment": {
+    "document": {
+      "candidate_or_route_modified": false,
+      "change": {
+        "correction": "honor the frozen channels_policy=impute_mean with normalized zero",
+        "finite_cells": "bitwise unchanged; labels/window identities unchanged",
+        "location": "build_raw_holdout_payload normalized x boundary",
+        "old_target_branch": "also lacks imputation; original preprocessed source tensors are preserved, not regenerated",
+        "original": "normalize only; singleton-bin ddof=1 standard deviations remain NaN",
+        "reference": "configs/preprocess/rwa_target.yaml channels_policy; existing public preprocess imputation branch",
+        "statistics": "reuse original frozen training mean/scale; no final fit"
+      },
+      "continuation": "Use this additive entry for the previously specified single final evaluation, preserving all earlier checks and the global access guard",
+      "created_utc": "2026-10-17T18:52:07.360642+00:00",
+      "evidence": [
+        {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/raw_payload_support_20261018_r1/checks.json",
+          "sha256": "f5453ee27d9ce31465632a7be223f84b0c070488e6e0d916ee4eb16fe5b3cd06",
+          "size": 10083
+        },
+        {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/verification.json",
+          "sha256": "684fda02bd0e7ae99c33fa5c038fa1128cf40c134cec05ee0b48576c0d5916f2",
+          "size": 26306
+        },
+        {
+          "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/integration_checks.json",
+          "sha256": "c0a782dd161de322532d87f4ec006406e6fbeba26b706881ce395b76a4527794",
+          "size": 10656
+        }
+      ],
+      "files": [
+        {
+          "path": "leo900_channel_policy_20261018_r4.py",
+          "sha256": "8ef26ac31b69397d4ce3d9960bee9c212c05d2f732698b575f0de90779c7326e",
+          "size": 2130
+        },
+        {
+          "path": "f1_leo900_channel_policy_clean_final_test_20261018_r4.py",
+          "sha256": "5b8acfe1eccc4f01e1e67ce0ef13f9d6768bb2ae9da152672974c2a7f1cf7a76",
+          "size": 6039
+        }
+      ],
+      "final_freeze_or_evaluation_invoked": false,
+      "parent_registration": {
+        "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/dependency_support_20261018_r3a/F1_LEO900_DEPENDENCY_CLOSURE_20261018R3.json",
+        "sha256": "1507c2b72ad12d7bc1dc080ede4a96b4a8efb216a09d870809c2758386a7cc61",
+        "size": 23405
+      },
+      "project_root": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/evaluation_project_execution_r1",
+      "schema": "brphm-f1-leo900-channel-policy-amendment-v1",
+      "scope": "Implementation-contract correction tested on artificial MAT only; no generalization claim",
+      "semantic_final_labels_read": false,
+      "simulation_or_configuration_modified": false
+    },
+    "record": {
+      "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/F1_LEO900_CHANNEL_POLICY_AMENDMENT_20261018R4.json",
+      "sha256": "8c38fde2466d76f2ae58c8bc9a7f3f390ee1728cfc7b6a00b5066d83fd0dd261",
+      "size": 2734
+    }
+  },
+  "remote_sealer_receipt": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/metadata_sealer_support_20261018_r1/checks_receipt.json",
+    "sha256": "9e27a8cf568b8cf164a811efc1a4a23dbab794d8641c625c896d550db985d0d8"
+  },
+  "remote_verification": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/channel_policy_support_20261018_r4a/verification.json",
+    "sha256": "684fda02bd0e7ae99c33fa5c038fa1128cf40c134cec05ee0b48576c0d5916f2",
+    "size": 26306
+  },
+  "schema": "brphm-f1-leo900-additive-preflight-ledger-v1",
+  "status": "F1_OPEN_LEO900_GENERATION_ACTIVE",
+  "supersedes_completion_implications_only": true
+}

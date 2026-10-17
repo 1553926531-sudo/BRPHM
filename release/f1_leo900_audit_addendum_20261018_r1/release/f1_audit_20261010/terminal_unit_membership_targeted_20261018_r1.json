@@ -1,0 +1,28 @@
+{
+  "code_sha256": {
+    "leo900_terminal_evidence_20261018_r2.py": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+    "test_leo900_terminal_evidence_20261018_r2.py": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c"
+  },
+  "command": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_zero_window_generated_units_are_distinct_from_evaluated_units",
+    "test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_unknown_evaluated_unit_rejected_even_with_all_hash_edges_rebound",
+    "test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_non_positive_or_non_integer_unit_windows_are_rejected",
+    "test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_empty_evaluated_membership_cannot_be_a_complete_component",
+    "test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_receipt_unit_window_total_must_match_component_count",
+    "test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_duplicated_statistics_unit_cannot_hide_missing_member",
+    "test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_boolean_metric_count_is_not_an_integer_unit_count"
+  ],
+  "ended_utc": "2026-10-17T20:35:50.737198+00:00",
+  "exit_code": 0,
+  "real_final_labels_read": false,
+  "schema": "brphm-f1-terminal-unit-membership-targeted-v1",
+  "started_utc": "2026-10-17T20:34:32.442319+00:00",
+  "stderr": "test_zero_window_generated_units_are_distinct_from_evaluated_units (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_zero_window_generated_units_are_distinct_from_evaluated_units) ... ok\ntest_unknown_evaluated_unit_rejected_even_with_all_hash_edges_rebound (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_unknown_evaluated_unit_rejected_even_with_all_hash_edges_rebound) ... ok\ntest_non_positive_or_non_integer_unit_windows_are_rejected (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_non_positive_or_non_integer_unit_windows_are_rejected) ... ok\ntest_empty_evaluated_membership_cannot_be_a_complete_component (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_empty_evaluated_membership_cannot_be_a_complete_component) ... ok\ntest_receipt_unit_window_total_must_match_component_count (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_receipt_unit_window_total_must_match_component_count) ... ok\ntest_duplicated_statistics_unit_cannot_hide_missing_member (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_duplicated_statistics_unit_cannot_hide_missing_member) ... ok\ntest_boolean_metric_count_is_not_an_integer_unit_count (test_leo900_terminal_evidence_20261018_r2.ProductionEvidenceTests.test_boolean_metric_count_is_not_an_integer_unit_count) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 76.781s\n\nOK\n",
+  "stdout": "",
+  "synthetic_only": true
+}

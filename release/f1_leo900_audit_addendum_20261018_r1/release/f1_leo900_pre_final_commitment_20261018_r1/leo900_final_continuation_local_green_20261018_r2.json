@@ -1,0 +1,31 @@
+{
+  "artificial_only": true,
+  "command": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "test_leo900_final_continuation_20261018",
+    "-v"
+  ],
+  "created_utc": "2026-10-17T19:15:46.741418+00:00",
+  "exit_code": 0,
+  "files": [
+    {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\leo900_final_continuation_20261018.py",
+      "sha256": "95980e282428c016f0b44918fb25eecbd5e6555550bf38e3cd1161dbb2ec753e",
+      "size": 17477
+    },
+    {
+      "path": "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-26\\new-chat\\work\\paper_upload_target\\release\\f1_audit_20261010\\test_leo900_final_continuation_20261018.py",
+      "sha256": "99966a24fbbdaf0d18d920373926c86408371ebd3370bc8832ec11f71edaa7ae",
+      "size": 8488
+    }
+  ],
+  "prior_failure": "leo900_final_continuation_local_green_20261018_r1.json; expected safe regular Windows short-name paths were rejected",
+  "schema": "brphm-f1-continuation-local-tests-v1",
+  "stderr": "test_existing_controller_runtime_is_never_overwritten (test_leo900_final_continuation_20261018.FinalContinuationTests.test_existing_controller_runtime_is_never_overwritten) ... ok\ntest_failed_phase_preserves_logs_and_never_advances (test_leo900_final_continuation_20261018.FinalContinuationTests.test_failed_phase_preserves_logs_and_never_advances) ... ok\ntest_full_pipeline_retains_negative_gate_and_executes_statistics (test_leo900_final_continuation_20261018.FinalContinuationTests.test_full_pipeline_retains_negative_gate_and_executes_statistics) ... ok\ntest_guard_existing_outputs_and_input_drift_are_rejected_before_commands (test_leo900_final_continuation_20261018.FinalContinuationTests.test_guard_existing_outputs_and_input_drift_are_rejected_before_commands) ... ok\ntest_incomplete_job_preflight_has_no_outputs_or_label_access (test_leo900_final_continuation_20261018.FinalContinuationTests.test_incomplete_job_preflight_has_no_outputs_or_label_access) ... ok\ntest_simulation_failure_never_launches_a_stage (test_leo900_final_continuation_20261018.FinalContinuationTests.test_simulation_failure_never_launches_a_stage) ... ok\ntest_wait_rechecks_input_integrity_before_any_final_stage (test_leo900_final_continuation_20261018.FinalContinuationTests.test_wait_rechecks_input_integrity_before_any_final_stage) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 7.086s\n\nOK\n",
+  "stdout": ""
+}

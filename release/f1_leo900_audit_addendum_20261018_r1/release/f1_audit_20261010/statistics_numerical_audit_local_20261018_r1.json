@@ -1,0 +1,27 @@
+{
+  "code_sha256": {
+    "f1_lossless_gate_statistics_20261018.py": "adbd7ee1729b919fe0a5300105c78ef70689f38798ee6b2eae8b853a01e1741c",
+    "leo900_statistics_numerical_audit_20261018.py": "105618a87df69fd750c70f3388e93c70af9d33ec46e60cfe73677dd8bc55f179",
+    "leo900_terminal_evidence_20261018_r2.py": "3d8ba40c8712a9af08b8fd684dda75ba86ef70a19530fd4111b4015ee190afd0",
+    "test_leo900_statistics_numerical_audit_20261018.py": "d8701226365b226f0d08875725e732285a73354a704c31b3abf6e30144108c03",
+    "test_leo900_terminal_evidence_20261018_r2.py": "083d096d3e709fad922391a584c4d064c1a9fc0766bcaff8c3062320f1d3a15c"
+  },
+  "command": [
+    "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "test_leo900_statistics_numerical_audit_20261018"
+  ],
+  "duration_seconds": 7.618809099891223,
+  "ended_utc": "2026-10-17T20:49:02.529454+00:00",
+  "exit_code": 0,
+  "numeric_threads": 1,
+  "real_final_labels_read": false,
+  "schema": "brphm-f1-numerical-auditor-local-tests-v1",
+  "sources_unchanged": true,
+  "started_utc": "2026-10-17T20:48:54.910301+00:00",
+  "stderr": "test_large_unit_normal_approximation_matches_registered_output (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_large_unit_normal_approximation_matches_registered_output) ... ok\ntest_nonfinite_draw_is_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_nonfinite_draw_is_rejected) ... ok\ntest_permuted_draws_with_identical_summary_are_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_permuted_draws_with_identical_summary_are_rejected) ... ok\ntest_plausible_but_wrong_holm_adjustment_is_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_plausible_but_wrong_holm_adjustment_is_rejected) ... ok\ntest_plausible_but_wrong_pvalue_is_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_plausible_but_wrong_pvalue_is_rejected) ... ok\ntest_plausible_nested_but_wrong_interval_is_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_plausible_nested_but_wrong_interval_is_rejected) ... ok\ntest_positive_but_wrong_bootstrap_sd_is_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_positive_but_wrong_bootstrap_sd_is_rejected) ... ok\ntest_shifted_draws_and_consistently_shifted_intervals_are_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_shifted_draws_and_consistently_shifted_intervals_are_rejected) ... ok\ntest_signed_rank_ties_and_normal_tail_have_hand_checked_oracles (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_signed_rank_ties_and_normal_tail_have_hand_checked_oracles) ... ok\ntest_single_unit_and_all_zero_differences_keep_undefined_values (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_single_unit_and_all_zero_differences_keep_undefined_values) ... ok\ntest_unequal_window_weights_have_a_hand_checked_distribution (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_unequal_window_weights_have_a_hand_checked_distribution) ... ok\ntest_unfinished_chain_does_not_decode_even_a_poisoned_statistics_archive (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_unfinished_chain_does_not_decode_even_a_poisoned_statistics_archive) ... ok\ntest_valid_registered_statistics_match_a_different_arithmetic_implementation (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_valid_registered_statistics_match_a_different_arithmetic_implementation) ... ok\ntest_wrong_seed_and_missing_draw_key_are_rejected (test_leo900_statistics_numerical_audit_20261018.NumericalStatisticsTests.test_wrong_seed_and_missing_draw_key_are_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 3.727s\n\nOK\n",
+  "stdout": ""
+}
