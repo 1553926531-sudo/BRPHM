@@ -1,0 +1,38 @@
+{
+  "candidate_or_simulation_modified": false,
+  "capture_code_sha256": "85a4a695085310415c4bdbd6cea3e03bf8ed1706ce67f3661a53bd6a190609bd",
+  "captured_bytes": 10531,
+  "captured_prefix_sha256": "6b3366fc6f603adfea009ec33732ab9767e2a93dfbf6d33802acd71e869288aa",
+  "diagnostic_rows": [
+    {
+      "line_number": 13,
+      "text_utf8": "[env] LEO900_B00  tile@t0=2940  s | T_orb\u22486179 s (P=5740, \u5dee -439 s) | \u5f71 210 \u62cd duty 36.6% | \u7f1d\u8df3 3222 km | \u03b2=-0.02\u00b0 | i_chg=-1.154 A"
+    },
+    {
+      "line_number": 26,
+      "text_utf8": "[env] LEO900_B30  tile@t0=720   s | T_orb\u22486180 s (P=5740, \u5dee -440 s) | \u5f71 193 \u62cd duty 33.6% | \u7f1d\u8df3 3227 km | \u03b2=-30.07\u00b0 | i_chg=-1.013 A"
+    },
+    {
+      "line_number": 39,
+      "text_utf8": "[env] LEO900_B60  tile@t0=0     s | T_orb\u22486180 s (P=5740, \u5dee -440 s) | \u5f71 55 \u62cd duty 9.6% | \u7f1d\u8df3 3228 km | \u03b2=+60.08\u00b0 | i_chg=-0.212 A"
+    }
+  ],
+  "local_captured_utc": "2026-10-18T00:33:16.727497+00:00",
+  "observed_utc": "2026-10-18T00:33:16.732052+00:00",
+  "path": "/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/simulation_logs/matlab_stdout.log",
+  "raw_mat_or_tensor_decoded": false,
+  "read_only_capture_code": "\nimport hashlib,json\nfrom pathlib import Path\nfrom datetime import datetime,timezone\np=Path('/mnt/data/BRPHM/rul-space/work/f1_leo900_formal_20261017_r1/simulation_logs/matlab_stdout.log')\na=p.stat();raw=p.read_bytes();b=p.stat()\nrows=[{'line_number':i,'text_utf8':line.decode('utf-8')} for i,line in enumerate(raw.splitlines(),1) if line.startswith(b'[env]') and b'tile@t0=' in line]\nprint(json.dumps({'schema':'brphm-leo900-environment-diagnostic-read-only-v1','observed_utc':datetime.now(timezone.utc).isoformat(),'path':str(p),'captured_bytes':len(raw),'captured_prefix_sha256':hashlib.sha256(raw).hexdigest(),'stat_before':{'size':a.st_size,'mtime_ns':a.st_mtime_ns,'ino':a.st_ino},'stat_after':{'size':b.st_size,'mtime_ns':b.st_mtime_ns,'ino':b.st_ino},'diagnostic_rows':rows,'raw_mat_or_tensor_decoded':False,'semantic_final_labels_read':False,'candidate_or_simulation_modified':False,'remote_writes':False}))\n",
+  "remote_writes": false,
+  "schema": "brphm-leo900-environment-diagnostic-read-only-v1",
+  "semantic_final_labels_read": false,
+  "stat_after": {
+    "ino": 143167961,
+    "mtime_ns": 1792283128727338417,
+    "size": 10531
+  },
+  "stat_before": {
+    "ino": 143167961,
+    "mtime_ns": 1792283128727338417,
+    "size": 10531
+  }
+}

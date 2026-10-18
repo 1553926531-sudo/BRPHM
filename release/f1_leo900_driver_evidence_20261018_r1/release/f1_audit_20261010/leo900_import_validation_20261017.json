@@ -1,0 +1,87 @@
+{
+  "schema": "brphm-leo900-import-validation-v1",
+  "created_utc": "2026-10-17T09:50:59.590Z",
+  "orbit": "LEO900",
+  "semantic_labels_read": false,
+  "final_label_access": false,
+  "results": [
+    {
+      "id": "LEO900_B00",
+      "report_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b00_20261017/LEO900_B00.csv",
+      "eclipse_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b00_20261017/LEO900_B00_eclipse.txt",
+      "validated_import_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/validation/out/env_LEO900_B00.mat",
+      "grid_points": 259201,
+      "checks": [
+        "[PASS] V1 栅格 259201 点，Δ=10s，[0, 2.592e+06]s",
+        "[PASS] V2 t_s 与行时间逐点一致",
+        "[PASS] V3 ‖ŝ‖=1（最大偏差 2.2e-16）",
+        "[PASS] V4 flag∈{0,1,2} int8；分布 0/1/2 = 173326/0/85875",
+        "[PASS] V5 840 个有效边沿全部 ≤1 步内有跳变（最大 4.999s；静默 0、窗外 0）",
+        "[PASS] V6 β 有限且 |β|≤90°（来源: velocity）",
+        "[PASS] V7 首轨 β=+0.01° vs 档位 0°（差 0.01° ≤ 5°）；全弧 β∈[-30.43,+0.05]°（tile 只取首轨，故仿真见到的是首轨值）",
+        "[PASS] V8 本影边沿 840 个：|垂距−R⊕| 中位 4.7 km ≤ 60 km（锥影收缩 ~12 km + 地球扁率 ~10–19 km 理论带内）"
+      ],
+      "event_count": 420,
+      "beta_tile": 0.014984636957574928,
+      "beta_span": [
+        -30.429175471696283,
+        0.048775752226806329
+      ],
+      "ecl_geom_med_km": 4.7201368576684217,
+      "semantic_labels_read": false,
+      "final_label_access": false
+    },
+    {
+      "id": "LEO900_B30",
+      "report_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b30_20261017/LEO900_B30.csv",
+      "eclipse_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b30_20261017/LEO900_B30_eclipse.txt",
+      "validated_import_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/validation/out/env_LEO900_B30.mat",
+      "grid_points": 259201,
+      "checks": [
+        "[PASS] V1 栅格 259201 点，Δ=10s，[0, 2.592e+06]s",
+        "[PASS] V2 t_s 与行时间逐点一致",
+        "[PASS] V3 ‖ŝ‖=1（最大偏差 2.2e-16）",
+        "[PASS] V4 flag∈{0,1,2} int8；分布 0/1/2 = 173674/0/85527",
+        "[PASS] V5 838 个有效边沿全部 ≤1 步内有跳变（最大 4.997s；静默 0、窗外 0）",
+        "[PASS] V6 β 有限且 |β|≤90°（来源: velocity）",
+        "[PASS] V7 首轨 β=-30.08° vs 档位 30°（差 0.08° ≤ 5°）；全弧 β∈[-30.11,-2.59]°（tile 只取首轨，故仿真见到的是首轨值）",
+        "[PASS] V8 本影边沿 838 个：|垂距−R⊕| 中位 2.1 km ≤ 60 km（锥影收缩 ~12 km + 地球扁率 ~10–19 km 理论带内）"
+      ],
+      "event_count": 419,
+      "beta_tile": -30.076083649255427,
+      "beta_span": [
+        -30.105876994037484,
+        -2.5881860335897349
+      ],
+      "ecl_geom_med_km": 2.1221918282058141,
+      "semantic_labels_read": false,
+      "final_label_access": false
+    },
+    {
+      "id": "LEO900_B60",
+      "report_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b60_20261017/LEO900_B60.csv",
+      "eclipse_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b60_20261017/LEO900_B60_eclipse.txt",
+      "validated_import_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/validation/out/env_LEO900_B60.mat",
+      "grid_points": 259201,
+      "checks": [
+        "[PASS] V1 栅格 259201 点，Δ=10s，[0, 2.592e+06]s",
+        "[PASS] V2 t_s 与行时间逐点一致",
+        "[PASS] V3 ‖ŝ‖=1（最大偏差 2.2e-16）",
+        "[PASS] V4 flag∈{0,1,2} int8；分布 0/1/2 = 197286/0/61915",
+        "[PASS] V5 840 个有效边沿全部 ≤1 步内有跳变（最大 4.997s；静默 0、窗外 0）",
+        "[PASS] V6 β 有限且 |β|≤90°（来源: velocity）",
+        "[PASS] V7 首轨 β=+60.08° vs 档位 60°（差 0.08° ≤ 5°）；全弧 β∈[+32.14,+60.11]°（tile 只取首轨，故仿真见到的是首轨值）",
+        "[PASS] V8 本影边沿 840 个：|垂距−R⊕| 中位 2.6 km ≤ 60 km（锥影收缩 ~12 km + 地球扁率 ~10–19 km 理论带内）"
+      ],
+      "event_count": 420,
+      "beta_tile": 60.084474794407612,
+      "beta_span": [
+        32.135444294953359,
+        60.113200234811849
+      ],
+      "ecl_geom_med_km": 2.5774613969774691,
+      "semantic_labels_read": false,
+      "final_label_access": false
+    }
+  ]
+}

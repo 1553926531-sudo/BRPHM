@@ -1,0 +1,223 @@
+{
+  "created_utc": "2026-10-18T00:40:41.950086+00:00",
+  "driver_diagnostics": [
+    {
+      "case": "LEO900_B00",
+      "charge_current_recomputed_a": -1.1538461538461537,
+      "duty_percent_recomputed": 36.58536585365854,
+      "duty_precision": "one decimal percent in log",
+      "log_line": 13,
+      "logged_beta_rounded_deg": -0.02,
+      "logged_orbital_period_rounded_s": 6179,
+      "logged_period_difference_rounded_s": -439,
+      "logged_seam_rounded_km": 3222,
+      "orbital_and_seam_precision": "rounded whole seconds and kilometres in log",
+      "tile_period_s": 5740,
+      "tile_start_s": 2940,
+      "umbra_duration_on_ten_second_grid_s": 2100,
+      "umbra_samples": 210
+    },
+    {
+      "case": "LEO900_B30",
+      "charge_current_recomputed_a": -1.0131233595800524,
+      "duty_percent_recomputed": 33.62369337979094,
+      "duty_precision": "one decimal percent in log",
+      "log_line": 26,
+      "logged_beta_rounded_deg": -30.07,
+      "logged_orbital_period_rounded_s": 6180,
+      "logged_period_difference_rounded_s": -440,
+      "logged_seam_rounded_km": 3227,
+      "orbital_and_seam_precision": "rounded whole seconds and kilometres in log",
+      "tile_period_s": 5740,
+      "tile_start_s": 720,
+      "umbra_duration_on_ten_second_grid_s": 1930,
+      "umbra_samples": 193
+    },
+    {
+      "case": "LEO900_B60",
+      "charge_current_recomputed_a": -0.2119460500963391,
+      "duty_percent_recomputed": 9.581881533101045,
+      "duty_precision": "one decimal percent in log",
+      "log_line": 39,
+      "logged_beta_rounded_deg": 60.08,
+      "logged_orbital_period_rounded_s": 6180,
+      "logged_period_difference_rounded_s": -440,
+      "logged_seam_rounded_km": 3228,
+      "orbital_and_seam_precision": "rounded whole seconds and kilometres in log",
+      "tile_period_s": 5740,
+      "tile_start_s": 0,
+      "umbra_duration_on_ten_second_grid_s": 550,
+      "umbra_samples": 55
+    }
+  ],
+  "f1_closed": false,
+  "fields": {
+    "command": "python -B release/f1_audit_20261010/audit_leo900_periodic_environment_20261018_r1.py ; exact SSH read-only capture code is embedded in each observation. The first source-search attempt found no rg executable on Rack; the retained successful capture uses pathlib/regex instead, without installing software or changing execution.",
+    "confidence": "High for captured bytes, reported driver diagnostics, arithmetic and static model bindings. No confidence claim for the size or sign of an unmeasured prediction/temperature effect.",
+    "cross_validation": "Generator source fixes5740s and repeats574 samples; separate runtime diagnostics quantify the same driver. The declared7278.1363km semimajor axis with the declared Earth mu predicts the observed period and seam scale. Build source and separately captured, hash-matched SLX XML agree on environmental/thermal connections. Charging/duty arithmetic is independently recalculated from logged grid counts. These checks corroborate implementation; they are not independent physical validation or a proof of absent prior final access.",
+    "date": "2026-10-18T00:40:41.950086+00:00",
+    "evidence": [
+      "leo900_environment_diagnostic_observation_20261018T003316Z.json",
+      "leo900_environment_consumer_observation_20261018T003440Z.json",
+      "leo900_environment_slx_observation_20261018T003634Z.json",
+      "leo900_generation_manifest_20261017.json",
+      "leo900_import_validation_20261017.json",
+      "leo900_combined_execution_observation_20261018T003357Z.json",
+      "F1_LEO900_GENERATOR_STATIC_EVIDENCE_20261018R2.json",
+      "leo900_generator_code_observation_20261018T001654Z.json"
+    ],
+    "hash": {
+      "analysis_program_sha256": "e9fe290b0f00e6fd21a8cec0e8e6ab898ac7aee7cf6e53d48ff911a0a5a01572",
+      "input_sha256": {
+        "F1_LEO900_GENERATOR_STATIC_EVIDENCE_20261018R2.json": "43349e22cea2d1bf140b7b7145879628c9d6a9e40cfa8b1e16f1a9198f1fd64a",
+        "leo900_combined_execution_observation_20261018T003357Z.json": "98380be0b76ea6c1b8c763f0cb84ce6324ad1176ba7e511e8d280eaee8659f3d",
+        "leo900_environment_consumer_observation_20261018T003440Z.json": "b37f15701225a93d94792d951e05bdb3084aa44f4ef5bcbd65d35b02ae0e189d",
+        "leo900_environment_diagnostic_observation_20261018T003316Z.json": "3679f56ee1de5648b98aeeca2d3b519951a22778e4a77594be56079396c39573",
+        "leo900_environment_slx_observation_20261018T003634Z.json": "e77ed352d74c682d2a26090e47537b83fe579e4337dba691e3d2c7068f49331c",
+        "leo900_generation_manifest_20261017.json": "3c2480f15f8244dc8f645696f8fe5616a09d4f2efd8f904a1777bef2992cba52",
+        "leo900_generator_code_observation_20261018T001654Z.json": "91a79136c1efab72ba8a02585c59a762fa738d3be77870acaf7a1bfbeb8aa1a4",
+        "leo900_import_validation_20261017.json": "2181fd745d824e212c2ad904af0fac44abfe816fbbbc90b290e6c90ad0cea67a"
+      },
+      "models": {
+        "sim/model/satellite_top.slx": "85465d76a0288343836d1e5970aa8d199332d91e6414b83d75298d29f77a8066",
+        "sim/model/thermal_net_dev.slx": "de3d93cd0dba9720e5c02e460d9315c2f2e4014a885b6d249cd62802dd6547f2"
+      }
+    },
+    "location": "Original review F1 lines19-25; make_dataset.m:119,562-567,1080-1120; captured satellite_top.slx environment/thermal bindings. Evidence only; no manuscript revision.",
+    "modification": "Append this pre-outcome analysis and its read-only captures. Keep the simulation, configuration, candidate, controller, watcher, scientific gates, final access policy and manuscript unchanged. No new acceptance threshold is introduced.",
+    "original": "Exact review text:\n- **Evidence**: the manuscript says \u201cCandidate selection never reads outer labels,\u201d \u201cOuter labels are evaluated once after the handoff,\u201d and \u201couter test used for selection = false.\u201d It also reports candidate failure counts `5, 4, 3, 1, 3, 0` and says \u201cRWA LEO550 floor fixed that fold\u201d and \u201cThe uniform floor fixed all six folds.\u201d\n- **Required revision**: provide the pre-registered candidate sequence, timestamps, input/output hashes, outer-read logs, and selection-decision logs. State exactly which results were visible before the candidate was frozen. If outer outcomes affected any revision, relabel these folds as development/diagnostic evidence and run the final candidate once on a new orbit or sealed holdout.\n- **Acceptance criterion**: an independent reader can reconstruct an immutable \u201ccandidate frozen \u2192 one-time outer evaluation\u201d timeline, or the paper explicitly acknowledges outer reuse and supplies a genuinely untouched final test.",
+    "problem": "The newly generated LEO900 cohort uses a frozen periodic environmental approximation. An import PASS alone does not describe the actual repeated driver or establish physical fidelity. Its scientific interpretation must be examined alongside the final-test provenance.",
+    "remaining_risk": "Repeated geometry is not a continuously propagated30-day orbit. Its shorter cycle and position seam can change thermal forcing and the timing of eclipses/charging; their effect on temperatures, component lifetimes and model comparisons remains unmeasured. XML on disk is not an observation of every loaded MATLAB runtime state. The log periods/seams are rounded. No new arbitrary validity cutoff or post-result outcome-selection rule is introduced. This record neither establishes model superiority nor closes F1; the registered terminal chain, actual cohort/subset, single-access chronology, effects and uncertainty still require review. A new final cannot retroactively restore confirmatory status to reused historical outer folds.",
+    "result": "All three logs use P5740s against rounded tile-mean-radius periods6179-6180s and report positional seams3222-3228km. The semimajor-axis calculation gives6179.328127714831s:7.10964232089255% shorter repetition period and7.65380013440471% higher repetition rate. The circular-reference seam3224.265337627792km corroborates the scale. Logged umbra duties and charge currents are reproduced at their printed precision. Registered model XML confirms the geometry-to-solar-heat path and thermal connections to both components. No RUL error, temperature response or performance effect has been measured by this analysis.",
+    "source": "Captured generation stdout, preparation-bound generator/builders and actual registered SLX XML, analytic environment manifest, and earlier import validation. Source code and serialized model are separate representations from one pipeline. The Kepler calculation is a local mathematical cross-check, not an independent simulator or outside attestation.",
+    "status": "PERIODIC DRIVER APPROXIMATION QUANTIFIED BEFORE OBSERVED FINAL ACCESS; OUTCOME SENSITIVITY UNMEASURED; F1 OPEN"
+  },
+  "final_guard_absence_scope": "Point-in-time observation only; no claim of global historical non-access.",
+  "final_guard_absent_at_observed_utc": "2026-10-18T00:33:56.945145+00:00",
+  "finding": "F1",
+  "goal_status": "active",
+  "manuscript_and_f2_f10_substantive_edits_frozen": true,
+  "mathematical_cross_check": {
+    "approximation_scope": "The phase/chord quantities are circular-reference checks. The generator uses eccentricity 0.001, interpolation and a tile-mean-radius period; these calculations are not a substitute for runtime diagnostics or a dynamical sensitivity simulation.",
+    "circular_reference_chord_km": 3224.265337627792,
+    "circular_reference_phase_gap_deg": 25.594712355213176,
+    "formula": "T=2*pi*sqrt(a**3/mu)",
+    "fractional_period_shortening": 0.0710964232089255,
+    "gravitational_parameter_km3_s2": 398600.4418,
+    "relative_repeat_rate_increase": 0.07653800134404709,
+    "semimajor_axis_km": 7278.1363,
+    "semimajor_period_s": 6179.328127714831,
+    "tile_minus_reference_period_s": -439.32812771483077
+  },
+  "remote_writes": false,
+  "schema": "brphm-f1-leo900-periodic-driver-evidence-v1",
+  "scientific_success_claimed": false,
+  "semantic_final_labels_read": false,
+  "simulation_or_candidate_modified": false,
+  "static_model_bindings": [
+    {
+      "member": "simulink/systems/system_162.xml",
+      "member_sha256": "983a07d723886518de4576cbd1ecb5e6d31df873e0ab8242871b7badcdc1878b",
+      "model": "sim/model/satellite_top.slx",
+      "verified_edges": [
+        [
+          "g_invCstr",
+          "out:1",
+          "int_str",
+          "in:1"
+        ],
+        [
+          "sum_str",
+          "out:1",
+          "g_invCstr",
+          "in:1"
+        ],
+        [
+          "prod_qsol",
+          "out:1",
+          "sum_str",
+          "in:1"
+        ],
+        [
+          "sum_qfull",
+          "out:1",
+          "prod_qsol",
+          "in:2"
+        ],
+        [
+          "g_qzen",
+          "out:1",
+          "sum_qfull",
+          "in:2"
+        ],
+        [
+          "max_cos",
+          "out:1",
+          "g_qzen",
+          "in:1"
+        ],
+        [
+          "div_cos",
+          "out:1",
+          "max_cos",
+          "in:1"
+        ],
+        [
+          "dot_sr",
+          "out:1",
+          "div_cos",
+          "in:1"
+        ],
+        [
+          "r_eci_km",
+          "out:1",
+          "dot_sr",
+          "in:2"
+        ]
+      ]
+    },
+    {
+      "member": "simulink/systems/system_root.xml",
+      "member_sha256": "8630106659c174aae98b313e3809ae7fb9c9a7c8c5d5637831c50fb2d8dd0ceb",
+      "model": "sim/model/satellite_top.slx",
+      "verified_edges": [
+        [
+          "fw_r",
+          "out:1",
+          "thermal_net",
+          "in:2"
+        ],
+        [
+          "fw_sun",
+          "out:1",
+          "thermal_net",
+          "in:1"
+        ],
+        [
+          "fw_flag",
+          "out:1",
+          "thermal_net",
+          "in:3"
+        ],
+        [
+          "fw_flag",
+          "out:1",
+          "lut_iload",
+          "in:1"
+        ],
+        [
+          "thermal_net",
+          "out:1",
+          "rw_assembly",
+          "in:2"
+        ],
+        [
+          "thermal_net",
+          "out:2",
+          "power_ecm",
+          "in:2"
+        ]
+      ]
+    }
+  ]
+}

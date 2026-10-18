@@ -1,0 +1,70 @@
+{
+  "altitude_km": 900.0,
+  "base_generator": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/tools/generate_analytic_orbit_environment_20261017.py",
+    "sha256": "871ab24c23734c47725b26158e2d14a34e2dba9ae2e0975ad37b8a777645bc8b"
+  },
+  "cases": [
+    {
+      "altitude_km": 900.0,
+      "beta_deg": 0,
+      "duration_days": 30,
+      "eclipse_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b00_20261017/LEO900_B00_eclipse.txt",
+      "eclipse_sha256": "fdccc2649487427837cf22bcc8ec60fc65f467bc4a0284773c122ac48e0845f5",
+      "event_count": 420,
+      "id": "LEO900_B00",
+      "orbit": "LEO900",
+      "raan_deg": 261.97,
+      "report_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b00_20261017/LEO900_B00.csv",
+      "report_sha256": "6b3afbeae6205f807f1e4ad76ba64886973988bd4f354156b9f44550f4312df7",
+      "semantic_labels_read": false,
+      "semi_major_axis_km": 7278.1363,
+      "step_s": 60
+    },
+    {
+      "altitude_km": 900.0,
+      "beta_deg": 30,
+      "duration_days": 30,
+      "eclipse_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b30_20261017/LEO900_B30_eclipse.txt",
+      "eclipse_sha256": "ec1804c2b3162f06f37f8970b4be2991699eb615442d498b83a8b7c2409dbd0d",
+      "event_count": 419,
+      "id": "LEO900_B30",
+      "orbit": "LEO900",
+      "raan_deg": 41.74,
+      "report_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b30_20261017/LEO900_B30.csv",
+      "report_sha256": "4fec4c3dcfa897102db9ec71c6da2e17827e04dfedda4ac4b182ad8f4c5e51f0",
+      "semantic_labels_read": false,
+      "semi_major_axis_km": 7278.1363,
+      "step_s": 60
+    },
+    {
+      "altitude_km": 900.0,
+      "beta_deg": 60,
+      "duration_days": 30,
+      "eclipse_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b60_20261017/LEO900_B60_eclipse.txt",
+      "eclipse_sha256": "68a2efb3c66a466763323751c9ea379ff9d67a18ad0d8bfc4f17f3e70db59da7",
+      "event_count": 420,
+      "id": "LEO900_B60",
+      "orbit": "LEO900",
+      "raan_deg": 195.34,
+      "report_file": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/env_sources/f1_leo900_b60_20261017/LEO900_B60.csv",
+      "report_sha256": "acf1d17f2a2de7f7b127f22b19a2c080a5eb7aa312ae19b0bb0b70b5edaf775d",
+      "semantic_labels_read": false,
+      "semi_major_axis_km": 7278.1363,
+      "step_s": 60
+    }
+  ],
+  "created_utc": "2026-10-17T09:41:26.545000Z",
+  "duration_days": 30,
+  "final_labels_read": false,
+  "generator_script": {
+    "path": "/mnt/data/BRPHM/rul-space/work/f1_generator_20261017_leo900_v1/tools/generate_analytic_orbit_environment_leo900_20261017.py",
+    "sha256": "f5fd6f224d2ed923cda9f8c79067e5af3d2d26b72c6340e9f5e387a02112709f"
+  },
+  "gmat_executable_available": false,
+  "model": "two_body_kepler_plus_vallado_sun",
+  "orbit": "LEO900",
+  "schema": "brphm-analytic-orbit-environment-v1",
+  "semantic_labels_read": false,
+  "step_s": 60
+}

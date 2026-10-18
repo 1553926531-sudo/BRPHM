@@ -1,0 +1,28 @@
+{
+  "base_commit": "1646c1097f4e66e0c2217ccfadc37a6dde587d87",
+  "created_utc": "2026-10-18T00:42:43.896415+00:00",
+  "f1_closed": false,
+  "files": {
+    "INTEGRITY_GRAPH.json": "2ea80bfc2860e9ca886b242bea0b7b88cc22381dff303ebf53768e0e26f44abd",
+    "README.md": "b89260a023e7078e36332c6265120518e1a0e2bba39e9a1b60ab6b2e3e258102",
+    "release/f1_audit_20261010/F1_LEO900_GENERATOR_STATIC_EVIDENCE_20261018R2.json": "43349e22cea2d1bf140b7b7145879628c9d6a9e40cfa8b1e16f1a9198f1fd64a",
+    "release/f1_audit_20261010/F1_LEO900_PERIODIC_DRIVER_EVIDENCE_20261018R1.json": "c7ecff47242b4f642423a87fbb79a848b11f2e83431e495f26d24229f5162c4f",
+    "release/f1_audit_20261010/F1_LEO900_PERIODIC_DRIVER_EVIDENCE_20261018R1.md": "85e959f345576a167da04948774db8d89bd06a2b7b0e25c1429c033f47b9aad7",
+    "release/f1_audit_20261010/audit_leo900_periodic_environment_20261018_r1.py": "e9fe290b0f00e6fd21a8cec0e8e6ab898ac7aee7cf6e53d48ff911a0a5a01572",
+    "release/f1_audit_20261010/leo900_combined_execution_observation_20261018T003357Z.json": "98380be0b76ea6c1b8c763f0cb84ce6324ad1176ba7e511e8d280eaee8659f3d",
+    "release/f1_audit_20261010/leo900_environment_consumer_observation_20261018T003440Z.json": "b37f15701225a93d94792d951e05bdb3084aa44f4ef5bcbd65d35b02ae0e189d",
+    "release/f1_audit_20261010/leo900_environment_diagnostic_observation_20261018T003316Z.json": "3679f56ee1de5648b98aeeca2d3b519951a22778e4a77594be56079396c39573",
+    "release/f1_audit_20261010/leo900_environment_slx_observation_20261018T003634Z.json": "e77ed352d74c682d2a26090e47537b83fe579e4337dba691e3d2c7068f49331c",
+    "release/f1_audit_20261010/leo900_generation_manifest_20261017.json": "3c2480f15f8244dc8f645696f8fe5616a09d4f2efd8f904a1777bef2992cba52",
+    "release/f1_audit_20261010/leo900_generator_code_observation_20261018T001654Z.json": "91a79136c1efab72ba8a02585c59a762fa738d3be77870acaf7a1bfbeb8aa1a4",
+    "release/f1_audit_20261010/leo900_import_validation_20261017.json": "2181fd745d824e212c2ad904af0fac44abfe816fbbbc90b290e6c90ad0cea67a",
+    "release/f1_audit_20261010/prepare_leo900_driver_evidence_20261018_r1.py": "ad91f4e1ec6d08866d80804acf66c58a0d456a7c6d775f466d95a1b5cd0b00c1",
+    "release/f1_audit_20261010/publish_leo900_audit_addendum_20261018_r2.py": "53ed2a3ce21581cbebadc1fac2f44735f53566d61623e714a39cb025713ad23b",
+    "release/f1_audit_20261010/publish_leo900_driver_evidence_20261018_r1.py": "b92ed960722688695cfd744bbb80d78ed718ba70256a37f62ee059accd430ada",
+    "release/f1_audit_20261010/publish_leo900_external_commitment_20261018.py": "7ee666f598fe45c02f343c441b402dedc8bf1539a0db69dbba2dab92a27e1290",
+    "release/f1_audit_20261010/publish_leo900_external_commitment_rest_20261018.py": "4e584ee37f61b0cbc95c67abcd8411465a0e90dcee6eb757b6825623ae9e858f",
+    "verify_driver_evidence.py": "72361502cddefa28d1fb23cf5bae40f2a174fc5bedaed091ce2430116d063132"
+  },
+  "schema": "brphm-f1-leo900-periodic-driver-package-manifest-v1",
+  "scientific_success_claimed": false
+}

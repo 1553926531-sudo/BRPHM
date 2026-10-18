@@ -1,0 +1,20 @@
+{
+  "base_commit": "1646c1097f4e66e0c2217ccfadc37a6dde587d87",
+  "created_utc": "2026-10-18T00:42:43.896415+00:00",
+  "f1_closed": false,
+  "immediate_input_sha256": {
+    "F1_LEO900_GENERATOR_STATIC_EVIDENCE_20261018R2.json": "43349e22cea2d1bf140b7b7145879628c9d6a9e40cfa8b1e16f1a9198f1fd64a",
+    "leo900_combined_execution_observation_20261018T003357Z.json": "98380be0b76ea6c1b8c763f0cb84ce6324ad1176ba7e511e8d280eaee8659f3d",
+    "leo900_environment_consumer_observation_20261018T003440Z.json": "b37f15701225a93d94792d951e05bdb3084aa44f4ef5bcbd65d35b02ae0e189d",
+    "leo900_environment_diagnostic_observation_20261018T003316Z.json": "3679f56ee1de5648b98aeeca2d3b519951a22778e4a77594be56079396c39573",
+    "leo900_environment_slx_observation_20261018T003634Z.json": "e77ed352d74c682d2a26090e47537b83fe579e4337dba691e3d2c7068f49331c",
+    "leo900_generation_manifest_20261017.json": "3c2480f15f8244dc8f645696f8fe5616a09d4f2efd8f904a1777bef2992cba52",
+    "leo900_generator_code_observation_20261018T001654Z.json": "91a79136c1efab72ba8a02585c59a762fa738d3be77870acaf7a1bfbeb8aa1a4",
+    "leo900_import_validation_20261017.json": "2181fd745d824e212c2ad904af0fac44abfe816fbbbc90b290e6c90ad0cea67a"
+  },
+  "original_candidate_and_analysis_commit": "846cdaac03beab2bacb9834bde1ed8fff1c77141",
+  "periodic_driver_record_sha256": "c7ecff47242b4f642423a87fbb79a848b11f2e83431e495f26d24229f5162c4f",
+  "schema": "brphm-f1-leo900-periodic-driver-package-graph-v1",
+  "scientific_success_claimed": false,
+  "transitive_history_recursively_included": false
+}

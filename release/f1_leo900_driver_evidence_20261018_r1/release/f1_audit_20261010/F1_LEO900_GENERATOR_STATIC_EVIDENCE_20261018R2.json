@@ -1,0 +1,61 @@
+{
+  "created_utc": "2026-10-18T00:22:26.046238+00:00",
+  "f1_closed": false,
+  "fields": {
+    "command": "The exact read-only capture code and its SHA256 are embedded in each observation. Local review rehashed both observations, compared the registered/observed generator hashes, and checked source lines 506,511,512,572,577,697,709,721,722 without executing MATLAB. Local plan review used csv.DictReader, Counter and set intersections on the three hash-linked metadata files, without reading generated MAT/PT or final outcomes.",
+    "confidence": "High for captured byte identity and the described static control flow; no claim of independently verified runtime seeds or semantic MAT validity.",
+    "cross_validation": "The preparation-bound source-tree entry and a separate actual-file capture agree on path, size 76258 bytes and SHA256. Direct code inspection corroborates the seed-use/save path. Neither record independently observes values inside the generated MAT files or every Simulink random block. Separately, plan references match the local source-manifest and exclusion-manifest byte hashes; set/count calculations were recomputed directly. These documents originate from the same research pipeline. No independent simulator replication or external non-access attestation is claimed.",
+    "date": "2026-10-18T00:22:26.046238+00:00",
+    "evidence": [
+      "release/f1_audit_20261010/leo900_generator_registry_observation_20261018T001635Z.json",
+      "release/f1_audit_20261010/leo900_generator_code_observation_20261018T001654Z.json",
+      "release/f1_audit_20261010/leo900_partition_plan_20261017.json",
+      "release/f1_audit_20261010/leo900_source_manifest_20261017.csv",
+      "release/f1_audit_20261010/leo800_run3_20261017/inputs/template_exclusion_manifest.json",
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-10-01\\ni-d\\outputs\\IEEE_Review_Report_English.md"
+    ],
+    "hash": {
+      "local_observations": {
+        "leo900_generator_code_observation_20261018T001654Z.json": "91a79136c1efab72ba8a02585c59a762fa738d3be77870acaf7a1bfbeb8aa1a4",
+        "leo900_generator_registry_observation_20261018T001635Z.json": "e8e3780f61a4505c6871167c190bcef647d8ad1bf41b0b4fb9f05ad7fb29b8dd"
+      },
+      "registered_and_observed_make_dataset_sha256": "636811eb745ae0be5725842c2413559220c4d6ef7265027397cb342196416d5b",
+      "registered_base_source_tree_file_hashes_sha256": "e8692f8e5dd0b02a47e8e2743781e098620617a8b1bfea95eb8414a5c75a46a4",
+      "registered_plan_inputs": {
+        "exclusion_manifest": {
+          "path": "release/f1_audit_20261010/leo800_run3_20261017/inputs/template_exclusion_manifest.json",
+          "sha256": "08964681db2198ac289f6101cbacafb86d0a1ac35d76199f0b9b0b35dc4d26b3"
+        },
+        "plan": {
+          "path": "release/f1_audit_20261010/leo900_partition_plan_20261017.json",
+          "sha256": "c1a15e02fdedee94177ca3b1effae5d3781e12016ec86e5f88fe266e24e4c5b1"
+        },
+        "source_manifest": {
+          "path": "release/f1_audit_20261010/leo900_source_manifest_20261017.csv",
+          "sha256": "93710e01e18684e6296d52c4ae8ea98491841440db8f2b9798e0139901fccbc8"
+        }
+      },
+      "registered_preparation_manifest_sha256": "a683191622ed3fc5546f86ccd0c8e8ba59cdddefe953719bc81523dac57c3e92",
+      "review_report_sha256": "9d75bf227ae883552af326352f3586bc23b84ebaf4c73d2a7fa4d1a26cfc8be5"
+    },
+    "location": "Original review F1 lines19-25; registered LEO900 plan; actual generator source at lines506-512,526-531,572-577,695-744. This side record does not revise the manuscript.",
+    "modification": "Append this static-code evidence only. Preserve the running simulation, candidate, controller, watcher, protocols, previous ledgers and frozen manuscript.",
+    "original": "Exact review text:\n- **Evidence**: the manuscript says \u201cCandidate selection never reads outer labels,\u201d \u201cOuter labels are evaluated once after the handoff,\u201d and \u201couter test used for selection = false.\u201d It also reports candidate failure counts `5, 4, 3, 1, 3, 0` and says \u201cRWA LEO550 floor fixed that fold\u201d and \u201cThe uniform floor fixed all six folds.\u201d\n- **Required revision**: provide the pre-registered candidate sequence, timestamps, input/output hashes, outer-read logs, and selection-decision logs. State exactly which results were visible before the candidate was frozen. If outer outcomes affected any revision, relabel these folds as development/diagnostic evidence and run the final candidate once on a new orbit or sealed holdout.\n- **Acceptance criterion**: an independent reader can reconstruct an immutable \u201ccandidate frozen \u2192 one-time outer evaluation\u201d timeline, or the paper explicitly acknowledges outer reuse and supplies a genuinely untouched final test.",
+    "problem": "An untouched final test needs a traceable cohort and generator in addition to the eventual freeze/read timeline. Planned seeds and file counts cannot independently establish actual MAT metadata, valid windows or scientific performance.",
+    "remaining_risk": "Actual 96-member completion, per-file metadata/seed values, all model-internal randomness, successful validation, positive-window eligibility and final effects remain unestablished by this static record. Later evidence must keep these scopes distinct. This does not close F1 or support model superiority. Distinct planned seeds and templates do not by themselves establish independent population samples. Reused source configuration families and one fixed orbit/three beta environments restrict later uncertainty and generalization claims.",
+    "result": "The observed generator bytes equal the registered base version. Source code reads the YAML seed, asserts agreement with row.seed, calls rng(seed) before sim(mdl), resets the Twister state for sensor noise, and puts the same seed variable in meta before save_simout and movefile. Existing-output skip is possible in source, so the separately registered terminal zero-skip requirement remains necessary. Validator execution is conditional on C.validate; this record does not assert that it ran. Local plan recomputation additionally finds96 unique target IDs,96 unique source-template IDs and96 seeds, exact seed sequence894000-894095,16 units per component/beta cell, no planned template outside the source manifest and no intersection with the152 registered excluded IDs or24 excluded source-template IDs. Source templates come from LEO500:32,LEO550:33,LEO700:31. These are metadata/plan results, not a claim about completed artifacts.",
+    "source": "Read-only Rack captures: registered preparation/source-tree manifests and the actual generator text. These are two corroborating records on one host, not independent external attestations.",
+    "status": "STATIC GENERATOR AND REGISTERED PLAN CORROBORATED; ACTUAL TERMINAL REVIEW PENDING; F1 OPEN"
+  },
+  "finding": "F1",
+  "goal_status": "active",
+  "previous_record": {
+    "path": "release/f1_audit_20261010/F1_LEO900_GENERATOR_STATIC_EVIDENCE_20261018R1.json",
+    "sha256": "be19eba9a9f0092ec23435e7a9fc36af9f09efc928c26c0d57f655d114d97c38"
+  },
+  "remote_writes": false,
+  "revision_scope": "Adds exact review quotations and registered-plan cross-checks; retains R1 unchanged; no execution/protocol changes.",
+  "schema": "brphm-f1-leo900-generator-static-evidence-v1",
+  "semantic_final_labels_read": false,
+  "simulation_or_candidate_modified": false
+}
